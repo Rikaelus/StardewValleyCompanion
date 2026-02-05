@@ -1,0 +1,6 @@
+# Ignore all intermediate/temporary processing files
+*
+
+# But keep documentation
+!.gitignore
+!README.md

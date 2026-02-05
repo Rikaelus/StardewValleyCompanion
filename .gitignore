@@ -33,11 +33,9 @@ yarn-error.log*
 .eslintcache
 
 # Data files
-# - data/game-exports/ = Raw exports from SMAPI mod (DO NOT COMMIT - large, user-specific)
-# - data/rules/ = Game rules and mechanics (DO COMMIT - our formulas/mappings)
-# - data/processing/ = Intermediate files during processing (DO NOT COMMIT - temporary/debugging)
-# - data/processed/ = Processed data (DO COMMIT - output of process-game-data.cjs)
-# - public/data/ = Compiled pages (DO NOT COMMIT - generated at build time)
-data/game-exports/
-data/processing/
+# - data/game-exports/ = Raw exports (has own .gitignore - ignores all JSON files)
+# - data/rules/ = Game rules and mechanics (tracked - our formulas/mappings)
+# - data/processing/ = Intermediate files (has own .gitignore - ignores all except README)
+# - data/processed/ = Processed data (tracked - output of process-game-data.cjs)
+# - public/data/ = Compiled pages (ignored - generated at build time)
 public/data/
