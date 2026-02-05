@@ -769,31 +769,6 @@
   },
   {
     "type": "artisan",
-    "id": "agedroe",
-    "gameId": 447,
-    "name": "AgedRoe",
-    "category": "Artisan Goods",
-    "price": 100,
-    "edibility": 40,
-    "icon": "assets/artisan/AgedRoe.png",
-    "contextTags": [
-      "color_orange",
-      "use_reverse_name_for_sorting"
-    ],
-    "producedBy": {
-      "machine": "Preserves Jar",
-      "machineId": "preserves-jar",
-      "inputType": "vegetable",
-      "processingTimeMinutes": 4000,
-      "valueFormula": "baseValue * 1",
-      "inputDetails": []
-    },
-    "bundles": [],
-    "gifts": {},
-    "processingTimeMinutes": 4000
-  },
-  {
-    "type": "artisan",
     "id": "pickle",
     "gameId": 342,
     "name": "Pickle",
@@ -1852,96 +1827,6 @@
   },
   {
     "type": "artisan",
-    "id": "milk",
-    "gameId": 184,
-    "name": "Milk",
-    "category": "Artisan Goods",
-    "price": 125,
-    "edibility": 15,
-    "icon": "assets/artisan/Milk.png",
-    "source": "Cow",
-    "contextTags": [
-      "color_white",
-      "cow_milk_item",
-      "drink_item",
-      "milk_item"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
-    "id": "large-milk",
-    "gameId": 186,
-    "name": "Large Milk",
-    "category": "Artisan Goods",
-    "price": 190,
-    "edibility": 20,
-    "icon": "assets/artisan/Large_Milk.png",
-    "source": "Cow",
-    "contextTags": [
-      "color_white",
-      "cow_milk_item",
-      "drink_item",
-      "large_milk_item",
-      "milk_item"
-    ],
-    "bundles": [
-      "animal"
-    ],
-    "gifts": {},
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
-    "id": "goat-milk",
-    "gameId": 436,
-    "name": "Goat Milk",
-    "category": "Artisan Goods",
-    "price": 225,
-    "edibility": 25,
-    "icon": "assets/artisan/Goat_Milk.png",
-    "source": "Goat",
-    "contextTags": [
-      "color_white",
-      "goat_milk_item",
-      "milk_item"
-    ],
-    "bundles": [],
-    "gifts": {
-      "harvey": "like",
-      "sandy": "like"
-    },
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
-    "id": "large-goat-milk",
-    "gameId": 438,
-    "name": "Large Goat Milk",
-    "category": "Artisan Goods",
-    "price": 345,
-    "edibility": 35,
-    "icon": "assets/artisan/Large_Goat_Milk.png",
-    "source": "Goat",
-    "contextTags": [
-      "color_white",
-      "goat_milk_item",
-      "large_milk_item",
-      "milk_item"
-    ],
-    "bundles": [
-      "animal"
-    ],
-    "gifts": {
-      "harvey": "like",
-      "sandy": "like"
-    },
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
     "id": "egg",
     "gameId": 176,
     "name": "Egg",
@@ -1949,25 +1834,7 @@
     "price": 50,
     "edibility": 10,
     "icon": "assets/artisan/Egg.png",
-    "source": "Chicken",
-    "contextTags": [
-      "color_white",
-      "egg_item"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
-    "id": "brown-egg",
-    "gameId": 180,
-    "name": "Brown Egg",
-    "category": "Artisan Goods",
-    "price": 50,
-    "edibility": 10,
-    "icon": "assets/artisan/Brown_Egg.png",
-    "source": "Chicken",
+    "source": "White Chicken",
     "contextTags": [
       "color_white",
       "egg_item"
@@ -1985,7 +1852,7 @@
     "price": 95,
     "edibility": 15,
     "icon": "assets/artisan/Large_Egg.png",
-    "source": "Chicken",
+    "source": "White Chicken",
     "contextTags": [
       "color_white",
       "egg_item",
@@ -1999,45 +1866,41 @@
   },
   {
     "type": "artisan",
-    "id": "large-brown-egg",
-    "gameId": 182,
-    "name": "Large Brown Egg",
+    "id": "egg",
+    "gameId": 180,
+    "name": "Egg",
     "category": "Artisan Goods",
-    "price": 95,
-    "edibility": 15,
-    "icon": "assets/artisan/Large_Brown_Egg.png",
-    "source": "Chicken",
-    "contextTags": [
-      "color_white",
-      "egg_item",
-      "large_egg_item"
-    ],
-    "bundles": [
-      "animal"
-    ],
-    "gifts": {},
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
-    "id": "duck-egg",
-    "gameId": 442,
-    "name": "Duck Egg",
-    "category": "Artisan Goods",
-    "price": 95,
-    "edibility": 15,
-    "icon": "assets/artisan/Duck_Egg.png",
-    "source": "Duck",
+    "price": 50,
+    "edibility": 10,
+    "icon": "assets/artisan/Egg.png",
+    "source": "Brown Chicken",
     "contextTags": [
       "color_white",
       "egg_item"
     ],
+    "bundles": [],
+    "gifts": {},
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "large-egg",
+    "gameId": 182,
+    "name": "Large Egg",
+    "category": "Artisan Goods",
+    "price": 95,
+    "edibility": 15,
+    "icon": "assets/artisan/Large_Egg.png",
+    "source": "Brown Chicken",
+    "contextTags": [
+      "color_white",
+      "egg_item",
+      "large_egg_item"
+    ],
     "bundles": [
       "animal"
     ],
-    "gifts": {
-      "harvey": "like"
-    },
+    "gifts": {},
     "hasQuality": true
   },
   {
@@ -2095,68 +1958,40 @@
   },
   {
     "type": "artisan",
-    "id": "dinosaur-egg",
-    "gameId": 107,
-    "name": "Dinosaur Egg",
-    "category": "Artisan Goods",
-    "price": 350,
-    "edibility": -300,
-    "icon": "assets/artisan/Dinosaur_Egg.png",
-    "source": "Dinosaur",
-    "contextTags": [
-      "color_green",
-      "dinosaur_item",
-      "dye_strong",
-      "egg_item"
-    ],
-    "bundles": [],
-    "gifts": {
-      "demetrius": "like",
-      "alex": "like"
-    },
-    "hasQuality": true
-  },
-  {
-    "type": "artisan",
     "id": "golden-egg",
-    "gameId": 289,
+    "gameId": 928,
     "name": "Golden Egg",
     "category": "Artisan Goods",
-    "price": 600,
-    "edibility": 15,
+    "price": 500,
+    "edibility": 10,
     "icon": "assets/artisan/Golden_Egg.png",
     "source": "Golden Chicken",
     "contextTags": [
-      "color_white",
-      "egg_item",
-      "large_egg_item"
+      "egg_item"
     ],
     "bundles": [],
-    "gifts": {
-      "leo": "love"
-    },
+    "gifts": {},
     "hasQuality": true
   },
   {
     "type": "artisan",
-    "id": "wool",
-    "gameId": 440,
-    "name": "Wool",
+    "id": "duck-egg",
+    "gameId": 442,
+    "name": "Duck Egg",
     "category": "Artisan Goods",
-    "price": 340,
-    "edibility": -300,
-    "icon": "assets/artisan/Wool.png",
-    "source": "Sheep",
+    "price": 95,
+    "edibility": 15,
+    "icon": "assets/artisan/Duck_Egg.png",
+    "source": "Duck",
     "contextTags": [
-      "color_white"
+      "color_white",
+      "egg_item"
     ],
     "bundles": [
       "animal"
     ],
     "gifts": {
-      "penny": "dislike",
-      "emily": "love",
-      "sandy": "like"
+      "harvey": "like"
     },
     "hasQuality": true
   },
@@ -2181,6 +2016,29 @@
       "elliott": "love",
       "harvey": "like",
       "leo": "love"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "wool",
+    "gameId": 440,
+    "name": "Wool",
+    "category": "Artisan Goods",
+    "price": 340,
+    "edibility": -300,
+    "icon": "assets/artisan/Wool.png",
+    "source": "Rabbit",
+    "contextTags": [
+      "color_white"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "penny": "dislike",
+      "emily": "love",
+      "sandy": "like"
     },
     "hasQuality": true
   },
@@ -2240,6 +2098,163 @@
   },
   {
     "type": "artisan",
+    "id": "dinosaur-egg",
+    "gameId": 107,
+    "name": "Dinosaur Egg",
+    "category": "Artisan Goods",
+    "price": 350,
+    "edibility": -300,
+    "icon": "assets/artisan/Dinosaur_Egg.png",
+    "source": "Dinosaur",
+    "contextTags": [
+      "color_green",
+      "dinosaur_item",
+      "dye_strong",
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "demetrius": "like",
+      "alex": "like"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "milk",
+    "gameId": 184,
+    "name": "Milk",
+    "category": "Artisan Goods",
+    "price": 125,
+    "edibility": 15,
+    "icon": "assets/artisan/Milk.png",
+    "source": "White Cow",
+    "contextTags": [
+      "color_white",
+      "cow_milk_item",
+      "drink_item",
+      "milk_item"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "large-milk",
+    "gameId": 186,
+    "name": "Large Milk",
+    "category": "Artisan Goods",
+    "price": 190,
+    "edibility": 20,
+    "icon": "assets/artisan/Large_Milk.png",
+    "source": "White Cow",
+    "contextTags": [
+      "color_white",
+      "cow_milk_item",
+      "drink_item",
+      "large_milk_item",
+      "milk_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {},
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "goat-milk",
+    "gameId": 436,
+    "name": "Goat Milk",
+    "category": "Artisan Goods",
+    "price": 225,
+    "edibility": 25,
+    "icon": "assets/artisan/Goat_Milk.png",
+    "source": "Goat",
+    "contextTags": [
+      "color_white",
+      "goat_milk_item",
+      "milk_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "harvey": "like",
+      "sandy": "like"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "l-goat-milk",
+    "gameId": 438,
+    "name": "L. Goat Milk",
+    "category": "Artisan Goods",
+    "price": 345,
+    "edibility": 35,
+    "icon": "assets/artisan/L._Goat_Milk.png",
+    "source": "Goat",
+    "contextTags": [
+      "color_white",
+      "goat_milk_item",
+      "large_milk_item",
+      "milk_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "harvey": "like",
+      "sandy": "like"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "truffle",
+    "gameId": 430,
+    "name": "Truffle",
+    "category": "Artisan Goods",
+    "price": 625,
+    "edibility": 5,
+    "icon": "assets/artisan/Truffle.png",
+    "source": "Pig",
+    "contextTags": [
+      "color_brown"
+    ],
+    "bundles": [
+      "chef-s"
+    ],
+    "gifts": {
+      "maru": "hate",
+      "leah": "love",
+      "gus": "like"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
+    "id": "ostrich-egg",
+    "gameId": 289,
+    "name": "Ostrich Egg",
+    "category": "Artisan Goods",
+    "price": 600,
+    "edibility": 15,
+    "icon": "assets/artisan/Ostrich_Egg.png",
+    "source": "Ostrich",
+    "contextTags": [
+      "color_white",
+      "egg_item",
+      "large_egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "leo": "love"
+    },
+    "hasQuality": true
+  },
+  {
+    "type": "artisan",
     "id": "maple-syrup",
     "gameId": 724,
     "name": "Maple Syrup",
@@ -2247,7 +2262,7 @@
     "price": 200,
     "edibility": 20,
     "icon": "assets/artisan/Maple_Syrup.png",
-    "source": "Tapper",
+    "source": "Tapper (Maple Tree)",
     "contextTags": [
       "color_brown",
       "syrup_item"
@@ -2302,7 +2317,7 @@
     "price": 150,
     "edibility": -300,
     "icon": "assets/artisan/Oak_Resin.png",
-    "source": "Tapper",
+    "source": "Tapper (Oak Tree)",
     "contextTags": [
       "color_green",
       "syrup_item"
@@ -2357,7 +2372,7 @@
     "price": 100,
     "edibility": -300,
     "icon": "assets/artisan/Pine_Tar.png",
-    "source": "Tapper",
+    "source": "Tapper (Pine Tree)",
     "contextTags": [
       "color_brown",
       "syrup_item"
@@ -2411,35 +2426,12 @@
     "price": 1000,
     "edibility": 200,
     "icon": "assets/artisan/Mystic_Syrup.png",
-    "source": "Tapper",
+    "source": "Tapper (Mystic Tree)",
     "contextTags": [
       "color_cyan"
     ],
     "bundles": [],
     "gifts": {}
-  },
-  {
-    "type": "artisan",
-    "id": "truffle",
-    "gameId": 430,
-    "name": "Truffle",
-    "category": "Artisan Goods",
-    "price": 625,
-    "edibility": 5,
-    "icon": "assets/artisan/Truffle.png",
-    "source": "Pig",
-    "contextTags": [
-      "color_brown"
-    ],
-    "bundles": [
-      "chef-s"
-    ],
-    "gifts": {
-      "maru": "hate",
-      "leah": "love",
-      "gus": "like"
-    },
-    "hasQuality": true
   },
   {
     "id": "roe",

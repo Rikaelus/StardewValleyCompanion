@@ -28,12 +28,14 @@ const gameData = {
   npcGiftTastes: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'NPCGiftTastes.json'), 'utf8')),
   crops: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Crops.json'), 'utf8')),
   machines: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Machines.json'), 'utf8')),
+  farmAnimals: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'FarmAnimals.json'), 'utf8')),
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
 console.log(`Loaded ${Object.keys(gameData.fish).length} fish`);
 console.log(`Loaded ${Object.keys(gameData.bundles).length} bundles`);
 console.log(`Loaded ${Object.keys(gameData.machines).length} machines`);
+console.log(`Loaded ${Object.keys(gameData.farmAnimals).length} farm animals`);
 
 // Create source directories
 fs.mkdirSync(path.join(SOURCE_DIR, 'items'), { recursive: true });
@@ -220,192 +222,73 @@ const priceFormulas = {
   'Smoked Fish': { multiplier: 2, addition: 0 },
 };
 
-// Hardcoded rules for items NOT in machine data (animal products, tapper items, etc.)
+// ============================================================================
+// Parse Animal Products from FarmAnimals.json
+// ============================================================================
+// These products have quality based on animal friendship (not machine-processed)
+console.log('\nParsing animal products...');
+const animalProducts = new Map(); // gameId -> {source: animalName, hasQuality: true}
+
+for (const [animalName, animalData] of Object.entries(gameData.farmAnimals)) {
+  // Parse regular produce
+  if (animalData.ProduceItemIds) {
+    for (const produce of animalData.ProduceItemIds) {
+      const itemId = produce.ItemId;
+      if (itemId && !animalProducts.has(itemId)) {
+        animalProducts.set(itemId, {
+          source: animalName,
+          hasQuality: true // Animal products can have quality based on friendship
+        });
+      }
+    }
+  }
+
+  // Parse deluxe produce
+  if (animalData.DeluxeProduceItemIds) {
+    for (const produce of animalData.DeluxeProduceItemIds) {
+      const itemId = produce.ItemId;
+      if (itemId && !animalProducts.has(itemId)) {
+        animalProducts.set(itemId, {
+          source: animalName,
+          hasQuality: true
+        });
+      }
+    }
+  }
+}
+
+console.log(`  Parsed ${animalProducts.size} unique animal products`);
+
+// Hardcoded rules for items NOT in machine data or animal data
+// ONLY for items that truly cannot be parsed from game exports
 const staticArtisanRules = [
-  {
-    gameId: 348,
-    name: 'Wine',
-    machine: 'Keg',
-    machineId: 'keg',
-    inputType: 'fruit',
-    processingTimeMinutes: 10080, // 7 days
-    valueFormula: 'baseValue * 3',
-    valueMultiplier: 3,
-    valueAddition: 0,
-    canBeAged: true,
-    agingDaysToIridium: 56
-  },
-  {
-    gameId: 350,
-    name: 'Juice',
-    machine: 'Keg',
-    machineId: 'keg',
-    inputType: 'vegetable',
-    processingTimeMinutes: 8640, // 6 days
-    valueFormula: 'baseValue * 2.25',
-    valueMultiplier: 2.25,
-    valueAddition: 0,
-    canBeAged: true,
-    agingDaysToIridium: 28
-  },
-  {
-    gameId: 344,
-    name: 'Jelly',
-    machine: 'Preserves Jar',
-    machineId: 'preserves-jar',
-    inputType: 'fruit',
-    processingTimeMinutes: 5760, // 4 days
-    valueFormula: '(baseValue * 2) + 50',
-    valueMultiplier: 2,
-    valueAddition: 50
-  },
-  {
-    gameId: 342,
-    name: 'Pickles',
-    machine: 'Preserves Jar',
-    machineId: 'preserves-jar',
-    inputType: 'vegetable',
-    processingTimeMinutes: 5760, // 4 days
-    valueFormula: '(baseValue * 2) + 50',
-    valueMultiplier: 2,
-    valueAddition: 50
-  },
-  // NOTE: Pale Ale, Beer, Mead, Coffee, Green Tea, Vinegar, and Caviar are now
-  // parsed from Machines.json and don't need static rules
-  // Oil Maker items
-  // Animal products (no processing) - these can have quality based on animal friendship
-  {
-    gameId: 184,
-    name: 'Milk',
-    source: 'Cow',
-    hasQuality: true
-  },
-  {
-    gameId: 186,
-    name: 'Large Milk',
-    source: 'Cow',
-    hasQuality: true
-  },
-  {
-    gameId: 436,
-    name: 'Goat Milk',
-    source: 'Goat',
-    hasQuality: true
-  },
-  {
-    gameId: 438,
-    name: 'Large Goat Milk',
-    source: 'Goat',
-    hasQuality: true
-  },
-  {
-    gameId: 176,
-    name: 'Egg',
-    source: 'Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 180,
-    name: 'Brown Egg',
-    source: 'Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 174,
-    name: 'Large Egg',
-    source: 'Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 182,
-    name: 'Large Brown Egg',
-    source: 'Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 442,
-    name: 'Duck Egg',
-    source: 'Duck',
-    hasQuality: true
-  },
-  {
-    gameId: 305,
-    name: 'Void Egg',
-    source: 'Void Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 107,
-    name: 'Dinosaur Egg',
-    source: 'Dinosaur',
-    hasQuality: true
-  },
-  {
-    gameId: 289,
-    name: 'Golden Egg',
-    source: 'Golden Chicken',
-    hasQuality: true
-  },
-  {
-    gameId: 440,
-    name: 'Wool',
-    source: 'Sheep',
-    hasQuality: true
-  },
-  {
-    gameId: 444,
-    name: 'Duck Feather',
-    source: 'Duck',
-    hasQuality: true
-  },
-  {
-    gameId: 446,
-    name: 'Rabbit\'s Foot',
-    source: 'Rabbit',
-    hasQuality: true
-  },
-  // Bee House items
-  {
-    gameId: 340,
-    name: 'Honey',
-    machine: 'Bee House',
-    machineId: 'bee-house',
-    inputType: 'flower',
-    processingTimeMinutes: 5760, // 4 days
-    valueFormula: '100 + (flowerPrice * 2)',
-    valueMultiplier: 2,
-    valueAddition: 100,
-    includeWildVariant: true // Add Wild Honey (no flower) variant
-  },
-  // Tapper items
+  // NOTE: Wine, Juice, Jelly, Pickles are now parsed from Machines.json (FLAVORED_ITEM)
+  // NOTE: Pale Ale, Beer, Mead, Coffee, Green Tea, Vinegar, Caviar are now parsed from Machines.json
+  // NOTE: Cheese, Mayonnaise, Cloth, Oil, Truffle Oil, Aged Roe are now parsed from Machines.json
+  // NOTE: Animal products (Milk, Eggs, Wool, Duck Feather, Rabbit's Foot, etc.) are now parsed from FarmAnimals.json
+  // NOTE: Honey is now parsed from Machines.json (FLAVORED_ITEM)
+
+  // Tapper items - these don't have machine recipes in Machines.json in a parseable way
   {
     gameId: 724,
     name: 'Maple Syrup',
-    source: 'Tapper'
+    source: 'Tapper (Maple Tree)'
   },
   {
     gameId: 725,
     name: 'Oak Resin',
-    source: 'Tapper'
+    source: 'Tapper (Oak Tree)'
   },
   {
     gameId: 726,
     name: 'Pine Tar',
-    source: 'Tapper'
+    source: 'Tapper (Pine Tree)'
   },
   {
     gameId: 'MysticSyrup',
     name: 'Mystic Syrup',
-    source: 'Tapper'
-  },
-  {
-    gameId: 430,
-    name: 'Truffle',
-    source: 'Pig',
-    hasQuality: true
+    source: 'Tapper (Mystic Tree)'
   }
-  // NOTE: Cheese, Mayonnaise, Cloth, Oil, Truffle Oil, Caviar, and Aged Roe are now
-  // parsed from Machines.json instead of being hardcoded here
 ];
 
 // ============================================================================
@@ -436,6 +319,9 @@ const flavoredDisplayNames = {
 for (const recipe of machineRecipes) {
   // Skip Cask (it's for aging, not production)
   if (recipe.machine === 'Cask') continue;
+
+  // Skip AgedRoe - it's handled manually later with fish-specific pricing
+  if (recipe.outputName === 'AgedRoe') continue;
 
   // Determine the actual item ID
   let outputItemId = recipe.outputItemId;
@@ -602,14 +488,64 @@ for (const recipe of machineRecipes) {
 console.log(`  Processed ${machineRecipes.length} machine recipes into ${artisanData.length} unique items`);
 
 // ============================================================================
-// Process Static Artisan Rules (non-machine items)
+// Process Animal Products (parsed from FarmAnimals.json)
 // ============================================================================
 
-// Track which items we've already added from machine recipes
+console.log('\nProcessing animal products into artisan data...');
+let animalProductsAdded = 0;
+
+// Track which items we've already added
 const processedGameIds = new Set(artisanData.map(item => item.gameId));
 
-for (const rule of staticArtisanRules) {
+for (const [itemIdString, productInfo] of animalProducts.entries()) {
+  // Parse item ID (can be string like "928" or numeric)
+  const itemId = isNaN(itemIdString) ? itemIdString : parseInt(itemIdString);
+
   // Skip if already processed from machine data
+  if (processedGameIds.has(itemId)) {
+    continue;
+  }
+
+  const objectData = gameData.objects[itemIdString];
+
+  if (!objectData) {
+    console.warn(`  Warning: Animal product ${itemIdString} not found in Objects.json`);
+    continue;
+  }
+
+  const item = {
+    type: 'artisan',
+    id: toKebabCase(objectData.Name),
+    gameId: itemId,
+    name: objectData.Name,
+    category: 'Artisan Goods',
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    icon: `assets/artisan/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    source: productInfo.source,
+    contextTags: objectData.ContextTags || [],
+    bundles: [], // Will be populated when processing bundles
+    gifts: {} // Will be populated when processing gift tastes
+  };
+
+  // Add natural quality flag (animal products can have quality based on friendship)
+  if (productInfo.hasQuality) {
+    item.hasQuality = true;
+  }
+
+  artisanData.push(item);
+  processedGameIds.add(itemId);
+  animalProductsAdded++;
+}
+
+console.log(`  Added ${animalProductsAdded} animal products to artisan goods`);
+
+// ============================================================================
+// Process Static Artisan Rules (items that can't be parsed from exports)
+// ============================================================================
+
+for (const rule of staticArtisanRules) {
+  // Skip if already processed from machine data or animal data
   if (processedGameIds.has(rule.gameId)) {
     continue;
   }

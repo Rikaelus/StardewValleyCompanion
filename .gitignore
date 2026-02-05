@@ -3,15 +3,11 @@ node_modules/
 
 # Build outputs
 dist/
-public/data/pages/
 
 # Local configuration
 *.local.md
 *.local.json
 .claude/settings.local.json
-
-# Game exports (large files)
-data/game-exports/
 
 # IDE
 .vscode/
