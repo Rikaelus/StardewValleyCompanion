@@ -1,0 +1,38 @@
+.gift-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  line-height: 1;
+  padding-bottom: 3px;
+}
+
+.gift-love {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 18px;
+}
+
+.gift-like {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.gift-neutral {
+  background: #f5f5f5;
+  color: #757575;
+}
+
+.gift-dislike {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.gift-hate {
+  background: #ffebee;
+  color: #c62828;
+}

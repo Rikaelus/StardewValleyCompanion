@@ -1,0 +1,47 @@
+.villager-modal {
+  color: #2d1b00;
+}
+
+.villager-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e8d4b0;
+}
+
+.villager-modal-icon {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.villager-modal-title-section h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 24px;
+  color: #2d1b00;
+}
+
+.villager-placeholder {
+  color: #999;
+  font-style: italic;
+  margin: 0;
+}
+
+.villager-modal-section {
+  color: #5c4a32;
+  line-height: 1.6;
+}
+
+.villager-modal-section ul {
+  margin: 0.5rem 0 0 1.5rem;
+  color: #5c4a32;
+}
+
+.villager-modal-section li {
+  margin: 0.25rem 0;
+}

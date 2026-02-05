@@ -1,0 +1,40 @@
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #8b6f47;
+}
+
+.tab {
+  padding: 0.4rem 0.85rem;
+  background: #fdfbf7;
+  border: 2px solid #c4b49a;
+  border-bottom: 2px solid #8b6f47;
+  cursor: pointer;
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: #5c4a32;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  position: relative;
+  bottom: -2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.tab:hover {
+  color: #2d1b00;
+  background: #d4c4a0;
+  border-color: #8b6f47;
+}
+
+.tab.active {
+  color: #2d1b00;
+  background: #f9f6f0;
+  border-color: #8b6f47;
+  border-bottom: 2px solid #f9f6f0;
+  z-index: 1;
+}
+
+.tab:first-child {
+  margin-left: 0;
+}

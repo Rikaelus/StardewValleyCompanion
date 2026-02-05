@@ -1,0 +1,10 @@
+{
+  "Name": "Data Exporter",
+  "Author": "Your Name",
+  "Version": "1.0.0",
+  "Description": "Exports all game data to JSON files",
+  "UniqueID": "YourName.DataExporter",
+  "UpdateKeys": [],
+  "EntryDll": "DataExporter.dll",
+  "MinimumApiVersion": "4.0.0"
+}

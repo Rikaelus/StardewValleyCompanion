@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'Stardew Valley';
+  src: url('./fonts/Stardew Valley.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stardew Valley All Caps';
+  src: url('./fonts/Stardew Valley ALL CAPS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #2d1b00;
+  background: url('assets/branding/stardew_background.png') no-repeat fixed center center / cover;
+  image-rendering: pixelated;
+  min-height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.animated-content {
+  flex: 1;
+  animation: fadeIn 0.5s ease-in;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-padding {
+  flex: 1;
+  padding: 2rem 4rem;
+}
+
+.app-header {
+  background-color: rgba(21, 71, 148, 0.8);
+  color: white;
+  padding: 0.25rem 2rem 0.75rem 2rem;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-logo {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+  margin-bottom: 4px;
+}
+
+.header-companion {
+  font-family: 'Stardew Valley All Caps', sans-serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Stardew Valley', sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+  transition: opacity 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.header-nav a:hover {
+  opacity: 0.8;
+}
+
+.header-nav a.active {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.page-content {
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

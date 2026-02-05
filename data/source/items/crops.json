@@ -1,0 +1,502 @@
+[
+  {
+    "id": "unmilled-rice",
+    "gameId": 271,
+    "name": "Unmilled Rice",
+    "seedId": 273,
+    "type": "vegetable",
+    "category": -75,
+    "price": 30,
+    "edibility": 1
+  },
+  {
+    "id": "amaranth",
+    "gameId": 300,
+    "name": "Amaranth",
+    "seedId": 299,
+    "type": "vegetable",
+    "category": -75,
+    "price": 150,
+    "edibility": 20
+  },
+  {
+    "id": "grape",
+    "gameId": 398,
+    "name": "Grape",
+    "seedId": 301,
+    "type": "fruit",
+    "category": -79,
+    "price": 80,
+    "edibility": 15
+  },
+  {
+    "id": "hops",
+    "gameId": 304,
+    "name": "Hops",
+    "seedId": 302,
+    "type": "vegetable",
+    "category": -75,
+    "price": 25,
+    "edibility": 18
+  },
+  {
+    "id": "sweet-gem-berry",
+    "gameId": 417,
+    "name": "Sweet Gem Berry",
+    "seedId": 347,
+    "type": "other",
+    "category": -17,
+    "price": 3000,
+    "edibility": -300
+  },
+  {
+    "id": "fairy-rose",
+    "gameId": 595,
+    "name": "Fairy Rose",
+    "seedId": 425,
+    "type": "flower",
+    "category": -80,
+    "price": 290,
+    "edibility": 18
+  },
+  {
+    "id": "tulip",
+    "gameId": 591,
+    "name": "Tulip",
+    "seedId": 427,
+    "type": "flower",
+    "category": -80,
+    "price": 30,
+    "edibility": 18
+  },
+  {
+    "id": "blue-jazz",
+    "gameId": 597,
+    "name": "Blue Jazz",
+    "seedId": 429,
+    "type": "flower",
+    "category": -80,
+    "price": 50,
+    "edibility": 18
+  },
+  {
+    "id": "sunflower",
+    "gameId": 421,
+    "name": "Sunflower",
+    "seedId": 431,
+    "type": "flower",
+    "category": -80,
+    "price": 80,
+    "edibility": 18
+  },
+  {
+    "id": "coffee-bean",
+    "gameId": 433,
+    "name": "Coffee Bean",
+    "seedId": 433,
+    "type": "other",
+    "category": -74,
+    "price": 15,
+    "edibility": -300
+  },
+  {
+    "id": "poppy",
+    "gameId": 376,
+    "name": "Poppy",
+    "seedId": 453,
+    "type": "flower",
+    "category": -80,
+    "price": 140,
+    "edibility": 18
+  },
+  {
+    "id": "summer-spangle",
+    "gameId": 593,
+    "name": "Summer Spangle",
+    "seedId": 455,
+    "type": "flower",
+    "category": -80,
+    "price": 90,
+    "edibility": 18
+  },
+  {
+    "id": "parsnip",
+    "gameId": 24,
+    "name": "Parsnip",
+    "seedId": 472,
+    "type": "vegetable",
+    "category": -75,
+    "price": 35,
+    "edibility": 10
+  },
+  {
+    "id": "green-bean",
+    "gameId": 188,
+    "name": "Green Bean",
+    "seedId": 473,
+    "type": "vegetable",
+    "category": -75,
+    "price": 40,
+    "edibility": 10
+  },
+  {
+    "id": "cauliflower",
+    "gameId": 190,
+    "name": "Cauliflower",
+    "seedId": 474,
+    "type": "vegetable",
+    "category": -75,
+    "price": 175,
+    "edibility": 30
+  },
+  {
+    "id": "potato",
+    "gameId": 192,
+    "name": "Potato",
+    "seedId": 475,
+    "type": "vegetable",
+    "category": -75,
+    "price": 80,
+    "edibility": 10
+  },
+  {
+    "id": "garlic",
+    "gameId": 248,
+    "name": "Garlic",
+    "seedId": 476,
+    "type": "vegetable",
+    "category": -75,
+    "price": 60,
+    "edibility": 8
+  },
+  {
+    "id": "kale",
+    "gameId": 250,
+    "name": "Kale",
+    "seedId": 477,
+    "type": "vegetable",
+    "category": -75,
+    "price": 110,
+    "edibility": 20
+  },
+  {
+    "id": "rhubarb",
+    "gameId": 252,
+    "name": "Rhubarb",
+    "seedId": 478,
+    "type": "fruit",
+    "category": -79,
+    "price": 220,
+    "edibility": -300
+  },
+  {
+    "id": "melon",
+    "gameId": 254,
+    "name": "Melon",
+    "seedId": 479,
+    "type": "fruit",
+    "category": -79,
+    "price": 250,
+    "edibility": 45
+  },
+  {
+    "id": "tomato",
+    "gameId": 256,
+    "name": "Tomato",
+    "seedId": 480,
+    "type": "vegetable",
+    "category": -75,
+    "price": 60,
+    "edibility": 8
+  },
+  {
+    "id": "blueberry",
+    "gameId": 258,
+    "name": "Blueberry",
+    "seedId": 481,
+    "type": "fruit",
+    "category": -79,
+    "price": 50,
+    "edibility": 10
+  },
+  {
+    "id": "hot-pepper",
+    "gameId": 260,
+    "name": "Hot Pepper",
+    "seedId": 482,
+    "type": "fruit",
+    "category": -79,
+    "price": 40,
+    "edibility": 5
+  },
+  {
+    "id": "wheat",
+    "gameId": 262,
+    "name": "Wheat",
+    "seedId": 483,
+    "type": "vegetable",
+    "category": -75,
+    "price": 25,
+    "edibility": -300
+  },
+  {
+    "id": "radish",
+    "gameId": 264,
+    "name": "Radish",
+    "seedId": 484,
+    "type": "vegetable",
+    "category": -75,
+    "price": 90,
+    "edibility": 18
+  },
+  {
+    "id": "red-cabbage",
+    "gameId": 266,
+    "name": "Red Cabbage",
+    "seedId": 485,
+    "type": "vegetable",
+    "category": -75,
+    "price": 260,
+    "edibility": 30
+  },
+  {
+    "id": "starfruit",
+    "gameId": 268,
+    "name": "Starfruit",
+    "seedId": 486,
+    "type": "fruit",
+    "category": -79,
+    "price": 750,
+    "edibility": 50
+  },
+  {
+    "id": "corn",
+    "gameId": 270,
+    "name": "Corn",
+    "seedId": 487,
+    "type": "vegetable",
+    "category": -75,
+    "price": 50,
+    "edibility": 10
+  },
+  {
+    "id": "eggplant",
+    "gameId": 272,
+    "name": "Eggplant",
+    "seedId": 488,
+    "type": "vegetable",
+    "category": -75,
+    "price": 60,
+    "edibility": 8
+  },
+  {
+    "id": "artichoke",
+    "gameId": 274,
+    "name": "Artichoke",
+    "seedId": 489,
+    "type": "vegetable",
+    "category": -75,
+    "price": 160,
+    "edibility": 12
+  },
+  {
+    "id": "pumpkin",
+    "gameId": 276,
+    "name": "Pumpkin",
+    "seedId": 490,
+    "type": "vegetable",
+    "category": -75,
+    "price": 320,
+    "edibility": -300
+  },
+  {
+    "id": "bok-choy",
+    "gameId": 278,
+    "name": "Bok Choy",
+    "seedId": 491,
+    "type": "vegetable",
+    "category": -75,
+    "price": 80,
+    "edibility": 10
+  },
+  {
+    "id": "yam",
+    "gameId": 280,
+    "name": "Yam",
+    "seedId": 492,
+    "type": "vegetable",
+    "category": -75,
+    "price": 160,
+    "edibility": 18
+  },
+  {
+    "id": "cranberries",
+    "gameId": 282,
+    "name": "Cranberries",
+    "seedId": 493,
+    "type": "fruit",
+    "category": -79,
+    "price": 75,
+    "edibility": 15
+  },
+  {
+    "id": "beet",
+    "gameId": 284,
+    "name": "Beet",
+    "seedId": 494,
+    "type": "vegetable",
+    "category": -75,
+    "price": 100,
+    "edibility": 12
+  },
+  {
+    "id": "wild-horseradish",
+    "gameId": 16,
+    "name": "Wild Horseradish",
+    "seedId": 495,
+    "type": "other",
+    "category": -81,
+    "price": 50,
+    "edibility": 5
+  },
+  {
+    "id": "spice-berry",
+    "gameId": 396,
+    "name": "Spice Berry",
+    "seedId": 496,
+    "type": "fruit",
+    "category": -79,
+    "price": 80,
+    "edibility": 10
+  },
+  {
+    "id": "common-mushroom",
+    "gameId": 404,
+    "name": "Common Mushroom",
+    "seedId": 497,
+    "type": "other",
+    "category": -81,
+    "price": 40,
+    "edibility": 15
+  },
+  {
+    "id": "winter-root",
+    "gameId": 412,
+    "name": "Winter Root",
+    "seedId": 498,
+    "type": "other",
+    "category": -81,
+    "price": 70,
+    "edibility": 10
+  },
+  {
+    "id": "ancient-fruit",
+    "gameId": 454,
+    "name": "Ancient Fruit",
+    "seedId": 499,
+    "type": "fruit",
+    "category": -79,
+    "price": 550,
+    "edibility": -300
+  },
+  {
+    "id": "strawberry",
+    "gameId": 400,
+    "name": "Strawberry",
+    "seedId": 745,
+    "type": "fruit",
+    "category": -79,
+    "price": 120,
+    "edibility": 20
+  },
+  {
+    "id": "cactus-fruit",
+    "gameId": 90,
+    "name": "Cactus Fruit",
+    "seedId": 802,
+    "type": "fruit",
+    "category": -79,
+    "price": 75,
+    "edibility": 30
+  },
+  {
+    "id": "taro-root",
+    "gameId": 830,
+    "name": "Taro Root",
+    "seedId": 831,
+    "type": "vegetable",
+    "category": -75,
+    "price": 100,
+    "edibility": 15
+  },
+  {
+    "id": "pineapple",
+    "gameId": 832,
+    "name": "Pineapple",
+    "seedId": 833,
+    "type": "fruit",
+    "category": -79,
+    "price": 300,
+    "edibility": 55
+  },
+  {
+    "id": "fiber",
+    "gameId": 771,
+    "name": "Fiber",
+    "seedId": 885,
+    "type": "other",
+    "category": -16,
+    "price": 1,
+    "edibility": -300
+  },
+  {
+    "id": "qi-fruit",
+    "gameId": 889,
+    "name": "Qi Fruit",
+    "seedId": 890,
+    "type": "fruit",
+    "category": -79,
+    "price": 1,
+    "edibility": 1
+  },
+  {
+    "id": "carrot",
+    "gameId": null,
+    "name": "Carrot",
+    "seedId": null,
+    "type": "vegetable",
+    "category": -75,
+    "price": 35,
+    "edibility": 30
+  },
+  {
+    "id": "summer-squash",
+    "gameId": null,
+    "name": "Summer Squash",
+    "seedId": null,
+    "type": "vegetable",
+    "category": -75,
+    "price": 45,
+    "edibility": 25
+  },
+  {
+    "id": "broccoli",
+    "gameId": null,
+    "name": "Broccoli",
+    "seedId": null,
+    "type": "vegetable",
+    "category": -75,
+    "price": 70,
+    "edibility": 25
+  },
+  {
+    "id": "powdermelon",
+    "gameId": null,
+    "name": "Powdermelon",
+    "seedId": null,
+    "type": "fruit",
+    "category": -79,
+    "price": 60,
+    "edibility": 25
+  }
+]

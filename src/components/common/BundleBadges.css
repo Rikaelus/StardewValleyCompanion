@@ -1,0 +1,19 @@
+.bundle-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.bundle-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 11px;
+  background: #e8e4df;
+  color: #5c4a32;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.no-bundles {
+  color: #999;
+}

@@ -1,0 +1,27 @@
+.fish-page {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.fish-page h2 {
+  margin: 0;
+  color: #5c4a32;
+}
+
+.fish-page .error {
+  color: #c62828;
+  padding: 1rem;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.fish-page .result-count {
+  font-size: 14px;
+  color: #2d1b00;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(253, 251, 247, 0.9);
+  border-radius: 4px;
+  display: inline-block;
+}
