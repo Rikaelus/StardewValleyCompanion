@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SOURCE_DIR = path.join(__dirname, '../data/source');
+const SOURCE_DIR = path.join(__dirname, '../data/processed');
 const OUTPUT_DIR = path.join(__dirname, '../public/data');
 
 // Helper functions
@@ -97,22 +97,29 @@ const fishPageData = {
 writeJson(path.join(OUTPUT_DIR, 'pages/fish.json'), fishPageData);
 console.log(`  ✓ Compiled fish.json (${compiledFish.length} items, ${Object.keys(fishGameIdIndex).length} IDs indexed)`);
 
+// Load rules quality multipliers
+const CURATED_DIR = path.join(__dirname, '../data/rules');
+function loadJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+const qualityMultipliers = loadJson(path.join(CURATED_DIR, 'quality-multipliers.json')).multipliers;
+
 // Compile Artisan Page
 console.log('\n🍷 Compiling artisan page data...');
 
 // Helper function to calculate quality prices
-// Stardew Valley quality multipliers: Silver=1.25x, Gold=1.5x, Iridium=2x
+// Uses quality multipliers from rules data
 // Only include quality tiers if the item can actually achieve them (via aging or natural quality)
 function calculateQualityPrices(basePrice, canBeAged, hasQuality) {
   const prices = {
-    regular: Math.floor(basePrice)
+    regular: Math.floor(basePrice * qualityMultipliers.regular)
   };
 
   // Add quality tiers for items that can be aged OR have natural quality (animal products)
   if (canBeAged || hasQuality) {
-    prices.silver = Math.floor(basePrice * 1.25);
-    prices.gold = Math.floor(basePrice * 1.5);
-    prices.iridium = Math.floor(basePrice * 2);
+    prices.silver = Math.floor(basePrice * qualityMultipliers.silver);
+    prices.gold = Math.floor(basePrice * qualityMultipliers.gold);
+    prices.iridium = Math.floor(basePrice * qualityMultipliers.iridium);
   }
 
   return prices;

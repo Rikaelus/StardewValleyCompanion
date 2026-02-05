@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Items produced by tappers on trees. These don't have machine recipes in Machines.json in a parseable way.",
+  "source": "https://stardewvalleywiki.com/Tapper",
+  "products": [
+    {
+      "gameId": 724,
+      "name": "Maple Syrup",
+      "source": "Tapper (Maple Tree)",
+      "treeType": "Maple",
+      "daysToHarvest": 4
+    },
+    {
+      "gameId": 725,
+      "name": "Oak Resin",
+      "source": "Tapper (Oak Tree)",
+      "treeType": "Oak",
+      "daysToHarvest": 3
+    },
+    {
+      "gameId": 726,
+      "name": "Pine Tar",
+      "source": "Tapper (Pine Tree)",
+      "treeType": "Pine",
+      "daysToHarvest": 2
+    },
+    {
+      "gameId": "MysticSyrup",
+      "name": "Mystic Syrup",
+      "source": "Tapper (Mystic Tree)",
+      "treeType": "Mystic",
+      "daysToHarvest": 7,
+      "notes": "1.6+ exclusive. Requires special mystic tree."
+    }
+  ]
+}

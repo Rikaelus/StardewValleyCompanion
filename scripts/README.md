@@ -54,7 +54,7 @@ bash scripts/build-data-exporter.sh
 **Purpose**: Converts raw game exports into structured source files
 
 **Input**: `data/game-exports/*.json`
-**Output**: `data/source/` (items, collections, reference)
+**Output**: `data/processed/` (items, collections, reference)
 
 **Usage**:
 ```bash
@@ -70,15 +70,15 @@ node scripts/process-game-data.cjs
 - Structures data for easy maintenance
 
 **Output Files**:
-- `data/source/items/fish.json` - 74 fish with full metadata
-- `data/source/collections/bundles.json` - 31 bundles with item refs
-- `data/source/reference/villagers.json` - 34 villagers
+- `data/processed/items/fish.json` - 74 fish with full metadata
+- `data/processed/collections/bundles.json` - 31 bundles with item refs
+- `data/processed/reference/villagers.json` - 34 villagers
 
 ### 3. compileData.cjs
 
 **Purpose**: Compiles source files into optimized page-specific JSON
 
-**Input**: `data/source/**/*.json`
+**Input**: `data/processed/**/*.json`
 **Output**: `public/data/pages/*.json`
 
 **Usage**:
@@ -113,7 +113,7 @@ npm run build
 }
 ```
 
-**2. Source File** (`data/source/items/fish.json`):
+**2. Source File** (`data/processed/items/fish.json`):
 ```json
 {
   "id": "pufferfish",
@@ -175,7 +175,7 @@ npm run build
    ```javascript
    // Add crop processing
    const crops = processCrops(gameData.crops, gameData.objects);
-   writeJson('data/source/items/crops.json', crops);
+   writeJson('data/processed/items/crops.json', crops);
    ```
 
 2. **Update compileData.cjs**:
@@ -212,9 +212,9 @@ These are normal! Bundles contain many non-fish items (crops, artisan goods, min
 node scripts/compileData.cjs
 
 # Check for missing source files
-ls -la data/source/items/
-ls -la data/source/collections/
-ls -la data/source/reference/
+ls -la data/processed/items/
+ls -la data/processed/collections/
+ls -la data/processed/reference/
 ```
 
 ## Performance Notes

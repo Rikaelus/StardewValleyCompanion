@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Mapping of Fish.json MinLevel values to specific mine floors. Used to provide precise floor information for mine fish.",
+  "source": "https://stardewvalleywiki.com/Fishing#Mine_Fish",
+  "floorMappings": {
+    "3": {
+      "floors": [20],
+      "fish": ["Stonefish"],
+      "notes": "MinLevel 3 = Floor 20 (first major water level)"
+    },
+    "5": {
+      "floors": [60],
+      "fish": ["Ice Pip"],
+      "notes": "MinLevel 5 = Floor 60 (frozen levels)"
+    },
+    "7": {
+      "floors": [100],
+      "fish": ["Lava Eel"],
+      "notes": "MinLevel 7 = Floor 100+ (lava levels)"
+    }
+  },
+  "specialRules": {
+    "freshwaterFloors": {
+      "floors": [20, 60],
+      "fish": ["Ghostfish", "Green Algae", "White Algae"],
+      "notes": "These items spawn in any mine floor with freshwater (20, 60). Floor 100+ has lava, not freshwater."
+    }
+  }
+}

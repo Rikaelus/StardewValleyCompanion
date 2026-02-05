@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Price calculation formulas for artisan goods. Format: (input_price × multiplier) + addition",
+  "source": "https://stardewvalleywiki.com/Artisan_Goods",
+  "formulas": {
+    "Wine": {
+      "multiplier": 3,
+      "addition": 0,
+      "notes": "Price = Fruit Price × 3"
+    },
+    "Juice": {
+      "multiplier": 2.25,
+      "addition": 0,
+      "notes": "Price = Vegetable/Fruit Price × 2.25"
+    },
+    "Jelly": {
+      "multiplier": 2,
+      "addition": 50,
+      "notes": "Price = (Fruit Price × 2) + 50g"
+    },
+    "Pickle": {
+      "multiplier": 2,
+      "addition": 50,
+      "notes": "Price = (Vegetable Price × 2) + 50g"
+    },
+    "Dried Fruit": {
+      "multiplier": 7.5,
+      "addition": 25,
+      "requiresCount": 5,
+      "notes": "Price = ((5 Fruits × Price) × 7.5) + 25g total / 5 = effective 1.5x per fruit"
+    },
+    "Dried Mushrooms": {
+      "multiplier": 7.5,
+      "addition": 25,
+      "requiresCount": 5,
+      "notes": "Price = ((5 Mushrooms × Price) × 7.5) + 25g total / 5 = effective 1.5x per mushroom"
+    },
+    "Smoked Fish": {
+      "multiplier": 2,
+      "addition": 0,
+      "notes": "Price = Fish Price × 2"
+    }
+  }
+}

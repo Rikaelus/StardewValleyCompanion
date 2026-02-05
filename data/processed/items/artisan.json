@@ -113,8 +113,7 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 2250,
-    "canBeAged": true,
-    "agingDaysToIridium": 28
+    "canBeAged": true
   },
   {
     "type": "artisan",
@@ -288,8 +287,7 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 600,
-    "canBeAged": true,
-    "agingDaysToIridium": 28
+    "canBeAged": true
   },
   {
     "type": "artisan",
@@ -578,8 +576,7 @@
     "bundles": [],
     "gifts": {},
     "processingTimeMinutes": 6000,
-    "canBeAged": true,
-    "agingDaysToIridium": 28
+    "canBeAged": true
   },
   {
     "type": "artisan",
@@ -730,8 +727,7 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 10000,
-    "canBeAged": true,
-    "agingDaysToIridium": 56
+    "canBeAged": true
   },
   {
     "type": "artisan",
@@ -1180,8 +1176,7 @@
       "harvey": "dislike"
     },
     "processingTimeMinutes": 200,
-    "canBeAged": true,
-    "agingDaysToIridium": 14
+    "canBeAged": true
   },
   {
     "type": "artisan",
@@ -1227,8 +1222,7 @@
       "harvey": "dislike"
     },
     "processingTimeMinutes": 200,
-    "canBeAged": true,
-    "agingDaysToIridium": 14
+    "canBeAged": true
   },
   {
     "type": "artisan",

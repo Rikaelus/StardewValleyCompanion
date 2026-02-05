@@ -8,52 +8,21 @@
 const fs = require('fs');
 const path = require('path');
 
-// Map internal location names to user-friendly display names
-// Unmapped locations will be filtered out (interior locations, temp locations, etc.)
-const LOCATION_NAME_MAP = {
-  // Main valley locations
-  'Mountain': 'Mountain Lake',
-  'Forest': 'Forest River',
-  'Town': 'Town River',
-  'Beach': 'Ocean',
-  'UndergroundMine': 'Mines',
-  'Woods': 'Secret Woods',
-  'Sewer': 'Sewers',
-  'Desert': 'Desert',
-  'Backwoods': null, // No fishable water (placeholder data in game files)
-  'Railroad': 'Railroad',
+// Helper function to load JSON files
+function loadJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
 
-  // Farm types (ponds/rivers on farms)
-  'Farm_Standard': 'Farm',
-  'Farm_Beach': 'Beach Farm',
-  'Farm_Forest': 'Forest Farm',
-  'Farm_FourCorners': 'Four Corners Farm',
-  'Farm_Hilltop': 'Hilltop Farm',
-  'Farm_Riverland': 'Riverland Farm',
-  'Farm_Wilderness': 'Wilderness Farm',
-  'Farm_MeadowlandsFarm': 'Meadowlands Farm',
+// Load rules location mappings
+const CURATED_DIR = path.join(__dirname, '../data/rules');
+const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
+const mineFloorsData = loadJson(path.join(CURATED_DIR, 'mine-floors.json'));
 
-  // Special locations
-  'BugLand': 'Mutant Bug Lair',
-  'WitchSwamp': 'Witch\'s Swamp',
-  'Submarine': 'Night Market',
-  'BeachNightMarket': 'Night Market',
-
-  // Ginger Island
-  'IslandWest': 'Ginger Island West',
-  'IslandSouth': 'Ginger Island South',
-  'IslandNorth': 'Ginger Island North',
-  'IslandSouthEast': 'Ginger Island Southeast',
-  'IslandSouthEastCave': 'Ginger Island Pirate Cove',
-  'IslandFishing': 'Ginger Island Ocean',
-  'Caldera': 'Volcano Caldera',
-
-  // Mines/Caves
-  'Mine': 'Mines',
-  'SkullCave': 'Skull Cavern',
-  'Volcano': 'Volcano',
-  'FarmCave': 'Farm Cave',
-};
+// Convert location data to simple map for backward compatibility
+const LOCATION_NAME_MAP = {};
+for (const [key, data] of Object.entries(locationData)) {
+  LOCATION_NAME_MAP[key] = data.displayName;
+}
 
 // Extract ID from game ID format "(O)136" or qualified string IDs
 function extractGameId(itemId) {
@@ -223,16 +192,14 @@ function extractFishLocations() {
         // Note: This appears to be hardcoded in game logic, not a formula
         // MinLevel may represent minimum fishing level or spawn tier, not direct floor calculation
 
-        // Hardcoded mappings based on wiki/observed behavior
-        const mineLevelFloorMap = {
-          3: [20],      // Stonefish
-          5: [60],      // Ice Pip
-          7: [100],     // Lava Eel
-        };
+        // Load mine floor mappings from rules data
+        const mineLevelFloorMap = {};
+        for (const [minLevel, data] of Object.entries(mineFloorsData.floorMappings)) {
+          mineLevelFloorMap[minLevel] = data.floors;
+        }
 
         // Special cases: Freshwater fish/algae spawn on floors with water (20, 60)
-        // Floor 100+ has lava, not freshwater
-        const freshwaterFloors = [20, 60];
+        const freshwaterFloors = mineFloorsData.specialRules.freshwaterFloors.floors;
 
         let floors;
         if (isGhostfish || isGreenAlgae || isWhiteAlgae) {
@@ -276,8 +243,8 @@ function extractFishLocations() {
     result.minFishingLevels[fishId] = level;
   });
 
-  // Save to file
-  const outputPath = path.join(__dirname, '../data/extracted-locations.json');
+  // Save to file (intermediate output for debugging/verification)
+  const outputPath = path.join(__dirname, '../data/processing/extracted-locations.json');
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 
   console.log(`📄 Saved to: ${outputPath}\n`);

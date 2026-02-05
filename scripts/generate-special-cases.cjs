@@ -8,41 +8,20 @@
 const fs = require('fs');
 const path = require('path');
 
-const LOCATION_NAME_MAP = {
-  'Mountain': 'Mountain Lake',
-  'Forest': 'Forest River',
-  'Town': 'Town River',
-  'Beach': 'Ocean',
-  'UndergroundMine': 'Mines',
-  'Woods': 'Secret Woods',
-  'Sewer': 'Sewers',
-  'Desert': 'Desert',
-  'Backwoods': null,
-  'Railroad': 'Railroad',
-  'Farm_Standard': 'Farm',
-  'Farm_Beach': 'Beach Farm',
-  'Farm_Forest': 'Forest Farm',
-  'Farm_FourCorners': 'Four Corners Farm',
-  'Farm_Hilltop': 'Hilltop Farm',
-  'Farm_Riverland': 'Riverland Farm',
-  'Farm_Wilderness': 'Wilderness Farm',
-  'Farm_MeadowlandsFarm': 'Meadowlands Farm',
-  'BugLand': 'Mutant Bug Lair',
-  'WitchSwamp': 'Witch\'s Swamp',
-  'Submarine': 'Night Market',
-  'BeachNightMarket': 'Night Market',
-  'IslandWest': 'Ginger Island West',
-  'IslandSouth': 'Ginger Island South',
-  'IslandNorth': 'Ginger Island North',
-  'IslandSouthEast': 'Ginger Island Southeast',
-  'IslandSouthEastCave': 'Ginger Island Pirate Cove',
-  'IslandFishing': 'Ginger Island Ocean',
-  'Caldera': 'Volcano Caldera',
-  'Mine': 'Mines',
-  'SkullCave': 'Skull Cavern',
-  'Volcano': 'Volcano',
-  'FarmCave': 'Farm Cave',
-};
+// Helper function to load JSON files
+function loadJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
+// Load rules location mappings
+const CURATED_DIR = path.join(__dirname, '../data/rules');
+const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
+
+// Convert location data to simple map
+const LOCATION_NAME_MAP = {};
+for (const [key, data] of Object.entries(locationData)) {
+  LOCATION_NAME_MAP[key] = data.displayName;
+}
 
 function extractGameId(itemId) {
   const numericMatch = itemId.match(/\(O\)(\d+)/);
@@ -144,7 +123,7 @@ function generateSpecialCases() {
   console.log('🔍 Analyzing fish spawn rules for special cases...\n');
 
   const locationsPath = path.join(__dirname, '../data/game-exports/Locations.json');
-  const fishPath = path.join(__dirname, '../data/source/items/fish.json');
+  const fishPath = path.join(__dirname, '../data/processed/items/fish.json');
 
   const locationsData = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
   const fishData = JSON.parse(fs.readFileSync(fishPath, 'utf8'));

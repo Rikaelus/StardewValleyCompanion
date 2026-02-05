@@ -22,10 +22,10 @@ function compileGameData() {
     configureServer(server) {
       // Watch source data files and recompile on change
       const watcher = server.watcher;
-      watcher.add('data/source/**/*.json');
+      watcher.add('data/processed/**/*.json');
 
       watcher.on('change', (path) => {
-        if (path.includes('data/source/')) {
+        if (path.includes('data/processed/')) {
           console.log('\n🔄 Source data changed, recompiling...');
           try {
             execSync('node scripts/compileData.cjs', {

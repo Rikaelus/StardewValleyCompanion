@@ -65,34 +65,48 @@ fishData.items.forEach(fish => {
 ### Directory Structure
 
 ```
-/data/source/              # Source of truth - ONLY edit these files
+/data/game-exports/        # Raw game data from SMAPI mod (gitignored)
+  ├── Objects.json
+  ├── Fish.json
+  └── ...
+
+/data/rules/             # Rules game mechanics (tracked in git)
+  ├── price-formulas.json  # Artisan price calculations
+  ├── aging-rules.json     # Cask aging times
+  ├── locations.json       # Location name mappings
+  └── ...
+
+/data/processing/          # Intermediate files (gitignored)
+  └── extracted-locations.json  # Debugging output from extraction scripts
+
+/data/processed/           # Final processed data (tracked in git)
   ├── items/
   │   ├── fish.json        # All fish with gameId, bundle refs, gift refs
   │   ├── crops.json       # All crops with gameId, bundle refs
-  │   └── ...
+  │   └── artisan.json     # All artisan goods with recipes
   ├── collections/
-  │   ├── bundles.json     # Bundles with item refs
-  │   └── ...
+  │   └── bundles.json     # Bundles with item refs
   └── reference/
-      ├── villagers.json   # Shared reference data
-      └── ...
+      └── villagers.json   # Shared reference data
 
-/public/data/              # Generated at build - NEVER edit manually
+/public/data/              # Compiled page data (gitignored, generated at build)
   ├── pages/
   │   ├── fish.json        # Pre-joined: fish + bundles + villagers
   │   ├── bundles.json     # Pre-joined: bundles + full item objects
-  │   └── ...
+  │   └── artisan.json     # Pre-joined: artisan + bundles + gifts
   └── reference/
-      └── villagers.json   # Copied from source
+      └── villagers.json   # Copied from processed/
 
 /scripts/
-  └── compileData.js       # Build-time compilation script
+  ├── process-game-data.cjs     # game-exports + rules → processed
+  ├── extract-fish-locations.cjs # Helper for fish location extraction
+  └── compileData.cjs           # processed → public/data (runs at build)
 ```
 
 ### Build Process
 
 **Flow**:
-1. Developer edits files in `data/source/`
+1. Developer edits files in `data/processed/`
 2. Run `npm run dev` or `npm run build`
 3. Vite plugin triggers `compileData.js` before build
 4. Script reads source files and generates optimized page files
@@ -107,7 +121,7 @@ fishData.items.forEach(fish => {
 
 **In Source Files** (use friendly IDs):
 ```json
-// data/source/items/fish.json
+// data/processed/items/fish.json
 {
   "id": "largemouth-bass",
   "gameId": 136,
@@ -223,7 +237,7 @@ When adding or modifying data:
 ### Editing Existing Data
 
 1. **Check if data is hardcoded** - if so, consider moving to parsed approach
-2. **ONLY edit** files in `data/source/` for manual data
+2. **ONLY edit** files in `data/processed/` for manual data
 3. **NEVER edit** files in `public/data/` (regenerated on build)
 4. **Run dev server** to trigger recompilation
 5. **Verify output** in browser
@@ -370,7 +384,7 @@ The build script should fail loudly if:
    - Add parsing logic to extract from game exports
    - Avoid hardcoding item lists, recipes, or formulas that exist in exports
    - Only hardcode game mechanics not present in exports
-   - Create source file in `data/source/items/`
+   - Create source file in `data/processed/items/`
 
 3. **Update compileData.cjs**:
    - Add compilation logic for new item type

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Mapping of FLAVORED_ITEM names from Machines.json to their gameIds and display names. These items change their name based on input (e.g., 'Blueberry Wine', 'Hot Pepper Jelly').",
+  "source": "Game data and https://stardewvalleywiki.com/Artisan_Goods",
+  "items": {
+    "Wine": {
+      "gameId": 348,
+      "displayName": "Wine",
+      "notes": "Made from fruits in kegs"
+    },
+    "Juice": {
+      "gameId": 350,
+      "displayName": "Juice",
+      "notes": "Made from vegetables or fruits in kegs"
+    },
+    "Jelly": {
+      "gameId": 344,
+      "displayName": "Jelly",
+      "notes": "Made from fruits in preserves jars"
+    },
+    "Pickle": {
+      "gameId": 342,
+      "displayName": "Pickle",
+      "notes": "Made from vegetables in preserves jars"
+    },
+    "AgedRoe": {
+      "gameId": 447,
+      "displayName": "Aged Roe",
+      "notes": "Made from roe in preserves jars"
+    },
+    "Honey": {
+      "gameId": 340,
+      "displayName": "Honey",
+      "notes": "Made in bee houses (can be flavored with nearby flowers)"
+    },
+    "DriedFruit": {
+      "gameId": "DriedFruit",
+      "displayName": "Dried Fruit",
+      "notes": "1.6+ exclusive. Made from 5 fruits in dehydrators."
+    },
+    "DriedMushroom": {
+      "gameId": "DriedMushrooms",
+      "displayName": "Dried Mushrooms",
+      "notes": "1.6+ exclusive. Made from 5 mushrooms in dehydrators."
+    },
+    "SmokedFish": {
+      "gameId": "SmokedFish",
+      "displayName": "Smoked Fish",
+      "notes": "1.6+ exclusive. Made from fish in fish smokers."
+    }
+  }
+}

@@ -9,7 +9,8 @@ const fs = require('fs');
 const path = require('path');
 
 const GAME_EXPORTS_DIR = path.join(__dirname, '../data/game-exports');
-const SOURCE_DIR = path.join(__dirname, '../data/source');
+const RULES_DIR = path.join(__dirname, '../data/rules');
+const PROCESSED_DIR = path.join(__dirname, '../data/processed');
 
 // Helper function to create kebab-case IDs from names
 function toKebabCase(str) {
@@ -19,16 +20,33 @@ function toKebabCase(str) {
     .replace(/^-+|-+$/g, '');
 }
 
+// Helper function to load JSON files
+function loadJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
 // Load game data
 console.log('Loading game data...');
 const gameData = {
-  objects: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Objects.json'), 'utf8')),
-  fish: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Fish.json'), 'utf8')),
-  bundles: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Bundles.json'), 'utf8')),
-  npcGiftTastes: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'NPCGiftTastes.json'), 'utf8')),
-  crops: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Crops.json'), 'utf8')),
-  machines: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'Machines.json'), 'utf8')),
-  farmAnimals: JSON.parse(fs.readFileSync(path.join(GAME_EXPORTS_DIR, 'FarmAnimals.json'), 'utf8')),
+  objects: loadJson(path.join(GAME_EXPORTS_DIR, 'Objects.json')),
+  fish: loadJson(path.join(GAME_EXPORTS_DIR, 'Fish.json')),
+  bundles: loadJson(path.join(GAME_EXPORTS_DIR, 'Bundles.json')),
+  npcGiftTastes: loadJson(path.join(GAME_EXPORTS_DIR, 'NPCGiftTastes.json')),
+  crops: loadJson(path.join(GAME_EXPORTS_DIR, 'Crops.json')),
+  machines: loadJson(path.join(GAME_EXPORTS_DIR, 'Machines.json')),
+  farmAnimals: loadJson(path.join(GAME_EXPORTS_DIR, 'FarmAnimals.json')),
+};
+
+// Load game rules and mechanics
+console.log('Loading game rules and mechanics...');
+const rules = {
+  priceFormulas: loadJson(path.join(RULES_DIR, 'price-formulas.json')).formulas,
+  agingRules: loadJson(path.join(RULES_DIR, 'aging-rules.json')).rules,
+  qualityMultipliers: loadJson(path.join(RULES_DIR, 'quality-multipliers.json')).multipliers,
+  tapperProducts: loadJson(path.join(RULES_DIR, 'tapper-products.json')).products,
+  flavoredItems: loadJson(path.join(RULES_DIR, 'flavored-items.json')).items,
+  categories: loadJson(path.join(RULES_DIR, 'categories.json')).categories,
+  roeMechanics: loadJson(path.join(RULES_DIR, 'roe-mechanics.json')).mechanics,
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
@@ -38,9 +56,9 @@ console.log(`Loaded ${Object.keys(gameData.machines).length} machines`);
 console.log(`Loaded ${Object.keys(gameData.farmAnimals).length} farm animals`);
 
 // Create source directories
-fs.mkdirSync(path.join(SOURCE_DIR, 'items'), { recursive: true });
-fs.mkdirSync(path.join(SOURCE_DIR, 'collections'), { recursive: true });
-fs.mkdirSync(path.join(SOURCE_DIR, 'reference'), { recursive: true });
+fs.mkdirSync(path.join(PROCESSED_DIR, 'items'), { recursive: true });
+fs.mkdirSync(path.join(PROCESSED_DIR, 'collections'), { recursive: true });
+fs.mkdirSync(path.join(PROCESSED_DIR, 'reference'), { recursive: true });
 
 // Process Crops first (needed for artisan goods)
 console.log('\nProcessing crops...');
@@ -59,12 +77,12 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
   const cropName = harvestObject.Name;
   const category = harvestObject.Category;
 
-  // Determine crop type based on category
-  // -75 = Vegetable, -79 = Fruit, -80 = Flower, 0 = Generic
+  // Determine crop type based on category (from curated data)
   let cropType = 'other';
-  if (category === -75) cropType = 'vegetable';
-  else if (category === -79) cropType = 'fruit';
-  else if (category === -80) cropType = 'flower';
+  const categoryData = rules.categories[category];
+  if (categoryData) {
+    cropType = categoryData.type;
+  }
 
   const cropEntry = {
     id: toKebabCase(cropName),
@@ -201,26 +219,7 @@ const artisanData = [];
 const machineRecipes = parseMachineRecipes(gameData.machines);
 console.log(`  Parsed ${machineRecipes.length} machine recipes`);
 
-// Hardcoded aging data (not in machine files)
-const agingData = {
-  348: { canBeAged: true, agingDaysToIridium: 56 }, // Wine
-  350: { canBeAged: true, agingDaysToIridium: 28 }, // Juice
-  303: { canBeAged: true, agingDaysToIridium: 28 }, // Pale Ale
-  459: { canBeAged: true, agingDaysToIridium: 28 }, // Mead
-  424: { canBeAged: true, agingDaysToIridium: 14 }, // Cheese
-  426: { canBeAged: true, agingDaysToIridium: 14 }, // Goat Cheese
-};
-
-// Price calculation formulas (hardcoded game mechanics)
-const priceFormulas = {
-  'Wine': { multiplier: 3, addition: 0 },
-  'Juice': { multiplier: 2.25, addition: 0 },
-  'Jelly': { multiplier: 2, addition: 50 },
-  'Pickle': { multiplier: 2, addition: 50 },
-  'Dried Fruit': { multiplier: 7.5, addition: 25, requiresCount: 5 }, // 5 fruits → 7.5x + 25g total
-  'Dried Mushrooms': { multiplier: 7.5, addition: 25, requiresCount: 5 }, // Same as dried fruit
-  'Smoked Fish': { multiplier: 2, addition: 0 },
-};
+// Aging data and price formulas loaded from curated data above
 
 // ============================================================================
 // Parse Animal Products from FarmAnimals.json
@@ -259,62 +258,20 @@ for (const [animalName, animalData] of Object.entries(gameData.farmAnimals)) {
 
 console.log(`  Parsed ${animalProducts.size} unique animal products`);
 
-// Hardcoded rules for items NOT in machine data or animal data
-// ONLY for items that truly cannot be parsed from game exports
-const staticArtisanRules = [
-  // NOTE: Wine, Juice, Jelly, Pickles are now parsed from Machines.json (FLAVORED_ITEM)
-  // NOTE: Pale Ale, Beer, Mead, Coffee, Green Tea, Vinegar, Caviar are now parsed from Machines.json
-  // NOTE: Cheese, Mayonnaise, Cloth, Oil, Truffle Oil, Aged Roe are now parsed from Machines.json
-  // NOTE: Animal products (Milk, Eggs, Wool, Duck Feather, Rabbit's Foot, etc.) are now parsed from FarmAnimals.json
-  // NOTE: Honey is now parsed from Machines.json (FLAVORED_ITEM)
-
-  // Tapper items - these don't have machine recipes in Machines.json in a parseable way
-  {
-    gameId: 724,
-    name: 'Maple Syrup',
-    source: 'Tapper (Maple Tree)'
-  },
-  {
-    gameId: 725,
-    name: 'Oak Resin',
-    source: 'Tapper (Oak Tree)'
-  },
-  {
-    gameId: 726,
-    name: 'Pine Tar',
-    source: 'Tapper (Pine Tree)'
-  },
-  {
-    gameId: 'MysticSyrup',
-    name: 'Mystic Syrup',
-    source: 'Tapper (Mystic Tree)'
-  }
-];
+// Tapper items loaded from curated data (these don't have machine recipes in Machines.json in a parseable way)
+const staticArtisanRules = rules.tapperProducts;
 
 // ============================================================================
 // Process Machine Recipes
 // ============================================================================
 
-// Map of flavored item names to their gameIds and display names
-const flavoredItemIds = {
-  'Wine': 348,
-  'Juice': 350,
-  'Jelly': 344,
-  'Pickle': 342,
-  'AgedRoe': 447,
-  'Honey': 340,
-  // 1.6 flavored items (string IDs)
-  'DriedFruit': 'DriedFruit',
-  'DriedMushroom': 'DriedMushrooms',
-  'SmokedFish': 'SmokedFish'
-};
-
-// Display name overrides for flavored items (how they appear in-game)
-const flavoredDisplayNames = {
-  'DriedFruit': 'Dried Fruit',
-  'DriedMushroom': 'Dried Mushrooms',
-  'SmokedFish': 'Smoked Fish'
-};
+// Map of flavored item names to their gameIds and display names (from curated data)
+const flavoredItemIds = {};
+const flavoredDisplayNames = {};
+for (const [key, data] of Object.entries(rules.flavoredItems)) {
+  flavoredItemIds[key] = data.gameId;
+  flavoredDisplayNames[key] = data.displayName;
+}
 
 for (const recipe of machineRecipes) {
   // Skip Cask (it's for aging, not production)
@@ -343,7 +300,7 @@ for (const recipe of machineRecipes) {
 
   // Handle flavored items (Wine, Juice, Pickle, Jelly, etc.)
   if (recipe.isFlavored) {
-    const formula = priceFormulas[recipe.outputName] || { multiplier: 1, addition: 0 };
+    const formula = rules.priceFormulas[recipe.outputName] || { multiplier: 1, addition: 0 };
 
     // Find matching items by tag
     let matchingItems = [];
@@ -409,7 +366,7 @@ for (const recipe of machineRecipes) {
     }
 
     // Add aging data if applicable
-    const aging = agingData[outputItemId];
+    const aging = rules.agingRules[outputItemId];
     if (aging) {
       artisanItem.canBeAged = aging.canBeAged;
       artisanItem.agingDaysToIridium = aging.agingDaysToIridium;
@@ -465,7 +422,7 @@ for (const recipe of machineRecipes) {
     }
 
     // Add aging data if applicable
-    const aging = agingData[outputItemId];
+    const aging = rules.agingRules[outputItemId];
     if (aging) {
       artisanItem.canBeAged = aging.canBeAged;
       artisanItem.agingDaysToIridium = aging.agingDaysToIridium;
@@ -1135,34 +1092,34 @@ console.log(`  Processed ${bundleData.length} bundles`);
 console.log('\nWriting source files...');
 
 fs.writeFileSync(
-  path.join(SOURCE_DIR, 'items/fish.json'),
+  path.join(PROCESSED_DIR, 'items/fish.json'),
   JSON.stringify(fishData, null, 2)
 );
 console.log(`  ✓ Wrote items/fish.json (${fishData.length} fish)`);
 
 fs.writeFileSync(
-  path.join(SOURCE_DIR, 'items/artisan.json'),
+  path.join(PROCESSED_DIR, 'items/artisan.json'),
   JSON.stringify(artisanData, null, 2)
 );
 console.log(`  ✓ Wrote items/artisan.json (${artisanData.length} artisan goods)`);
 
 fs.writeFileSync(
-  path.join(SOURCE_DIR, 'items/crops.json'),
+  path.join(PROCESSED_DIR, 'items/crops.json'),
   JSON.stringify(cropData, null, 2)
 );
 console.log(`  ✓ Wrote items/crops.json (${cropData.length} crops)`);
 
 fs.writeFileSync(
-  path.join(SOURCE_DIR, 'reference/villagers.json'),
+  path.join(PROCESSED_DIR, 'reference/villagers.json'),
   JSON.stringify(villagerData, null, 2)
 );
 console.log(`  ✓ Wrote reference/villagers.json (${villagerData.length} villagers)`);
 
 fs.writeFileSync(
-  path.join(SOURCE_DIR, 'collections/bundles.json'),
+  path.join(PROCESSED_DIR, 'collections/bundles.json'),
   JSON.stringify(bundleData, null, 2)
 );
 console.log(`  ✓ Wrote collections/bundles.json (${bundleData.length} bundles)`);
 
 console.log('\n✅ Game data processing complete!');
-console.log(`\nSource files created in: ${SOURCE_DIR}`);
+console.log(`\nSource files created in: ${PROCESSED_DIR}`);

@@ -1,10 +1,10 @@
-# Source Data Files
+# Processed Data Files
 
-This directory contains structured source data files that have been processed from raw game exports.
+This directory contains structured, processed data files generated from raw game exports and rules game mechanics.
 
 ## What's Here
 
-These JSON files are the "source of truth" for the application's data, organized into:
+These JSON files serve as the input for page compilation, organized into:
 
 - **items/** - Game items (fish, crops, artisan goods, etc.)
 - **collections/** - Game collections (bundles, etc.)
@@ -13,9 +13,10 @@ These JSON files are the "source of truth" for the application's data, organized
 ## Data Flow
 
 ```
-Game Exports (raw)         →  Source Files (structured)  →  Compiled Pages (optimized)
-data/game-exports/*.json       data/source/**/*.json         public/data/pages/*.json
-[NOT in repo]                  [IN repo - derived work]      [NOT in repo - generated]
+Game Exports + Curated Data  →  Processed Files     →  Compiled Pages
+data/game-exports/*.json         data/processed/         public/data/pages/*.json
+data/rules/*.json              [IN repo]               [NOT in repo]
+[NOT in repo]
 ```
 
 ## How These Are Created

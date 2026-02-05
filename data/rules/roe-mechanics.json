@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Formulas for calculating Roe and Aged Roe prices from fish prices",
+  "source": "https://stardewvalleywiki.com/Fish_Pond",
+  "mechanics": {
+    "roe": {
+      "gameId": 812,
+      "formula": "(fishPrice / 2) + 30",
+      "producedBy": "Fish Pond",
+      "processingTimeMinutes": 5760,
+      "notes": "Fish ponds produce roe every 4 days typically. Base roe price depends on the fish species."
+    },
+    "agedRoe": {
+      "gameId": 447,
+      "formula": "roePrice * 2",
+      "producedBy": "Preserves Jar",
+      "inputType": "roe",
+      "processingTimeMinutes": 4000,
+      "notes": "Roe processed in preserves jar doubles in value. Sturgeon Roe becomes Caviar instead."
+    },
+    "caviar": {
+      "gameId": 445,
+      "inputFish": 698,
+      "inputFishName": "Sturgeon",
+      "notes": "Special case: Sturgeon Roe → Caviar (not Aged Roe)"
+    }
+  }
+}

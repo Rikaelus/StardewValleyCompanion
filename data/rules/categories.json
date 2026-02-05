@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Game category IDs used to determine item types (vegetables, fruits, flowers, etc.)",
+  "source": "Stardew Valley game code (Object.cs)",
+  "categories": {
+    "-75": {
+      "name": "Vegetable",
+      "type": "vegetable",
+      "notes": "Used for crops, determines Pickle vs Jelly"
+    },
+    "-79": {
+      "name": "Fruit",
+      "type": "fruit",
+      "notes": "Used for crops, determines Wine vs Juice, Jelly processing"
+    },
+    "-80": {
+      "name": "Flower",
+      "type": "flower",
+      "notes": "Used for flower crops, can flavor honey"
+    }
+  }
+}

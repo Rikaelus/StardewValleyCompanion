@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Quality multipliers for item prices in Stardew Valley",
+  "source": "https://stardewvalleywiki.com/Quality",
+  "multipliers": {
+    "regular": 1.0,
+    "silver": 1.25,
+    "gold": 1.5,
+    "iridium": 2.0,
+    "artisanProfession": 1.4
+  },
+  "notes": {
+    "artisanProfession": "Artisan profession adds 40% to artisan goods prices (stacks with quality multipliers)"
+  }
+}
