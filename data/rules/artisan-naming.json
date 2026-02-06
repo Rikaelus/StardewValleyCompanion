@@ -1,0 +1,56 @@
+{
+  "description": "Naming patterns for artisan goods with multiple input variations. Based on game data from Objects.json preserve types.",
+  "patterns": {
+    "Wine": {
+      "pattern": "suffix",
+      "format": "{input} {product}"
+    },
+    "Juice": {
+      "pattern": "suffix",
+      "format": "{input} {product}"
+    },
+    "Jelly": {
+      "pattern": "suffix",
+      "format": "{input} {product}"
+    },
+    "Pickles": {
+      "pattern": "suffix",
+      "format": "{input} {product}"
+    },
+    "Roe": {
+      "pattern": "suffix",
+      "format": "{input} {product}"
+    },
+    "Aged Roe": {
+      "pattern": "suffix",
+      "format": "{input} {product}",
+      "note": "Uses 'Aged' prefix on the product name, then input as suffix"
+    },
+    "Dried Fruit": {
+      "pattern": "prefix",
+      "format": "Dried {input}",
+      "note": "Game uses 'Dried' as preserve type name, not 'Dried Fruit'"
+    },
+    "Dried Mushrooms": {
+      "pattern": "prefix",
+      "format": "Dried {input}",
+      "note": "Game uses 'Dried' as preserve type name (same as fruits)"
+    },
+    "Cheese": {
+      "pattern": "none",
+      "format": "{product}",
+      "note": "Both Milk and Large Milk produce the same 'Cheese' (no input name prefix)"
+    },
+    "Goat Cheese": {
+      "pattern": "none",
+      "format": "{product}",
+      "note": "Both Goat Milk and Large Goat Milk produce the same 'Goat Cheese' (no input name prefix)"
+    }
+  },
+  "notes": [
+    "The 'pattern' field indicates whether the input name is a prefix or suffix",
+    "suffix: '{input} {product}' → 'Ancient Fruit Wine'",
+    "prefix: 'Dried {input}' → 'Dried Ancient Fruit'",
+    "These patterns match the game's preserve type naming in Objects.json"
+  ]
+}

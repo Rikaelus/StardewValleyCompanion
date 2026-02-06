@@ -1,5 +1,7 @@
 import { useRef, useEffect } from 'react'
 import Modal from '../common/Modal'
+import ModalHeader from '../common/ModalHeader'
+import ModalSection from '../common/ModalSection'
 import './VillagerModal.css'
 
 function VillagerModal({ villager, isOpen, onClose }) {
@@ -16,16 +18,12 @@ function VillagerModal({ villager, isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={displayVillager?.name || 'Villager'}>
-      {displayVillager && <div className="villager-modal">
-        <div className="villager-modal-header">
-          <img src={displayVillager.icon} alt={displayVillager.name} className="villager-modal-icon" />
-          <div className="villager-modal-title-section">
-            <h3>{displayVillager.name}</h3>
-            <p className="villager-placeholder">Villager details coming soon...</p>
-          </div>
-        </div>
+      {displayVillager && <>
+        <ModalHeader icon={displayVillager.icon} name={displayVillager.name}>
+          <p className="villager-placeholder">Villager details coming soon...</p>
+        </ModalHeader>
 
-        <div className="villager-modal-section">
+        <ModalSection>
           <p>This is a placeholder modal to demonstrate cascading modals.</p>
           <p>In the future, this could show:</p>
           <ul>
@@ -34,8 +32,8 @@ function VillagerModal({ villager, isOpen, onClose }) {
             <li>Heart events</li>
             <li>Gift preferences for all items</li>
           </ul>
-        </div>
-      </div>}
+        </ModalSection>
+      </>}
     </Modal>
   )
 }

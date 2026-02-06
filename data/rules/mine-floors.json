@@ -22,7 +22,8 @@
   "specialRules": {
     "freshwaterFloors": {
       "floors": [20, 60],
-      "fish": ["Ghostfish", "Green Algae", "White Algae"],
+      "fishGameIds": [153, 156, 157],
+      "fish": ["Green Algae", "Ghostfish", "White Algae"],
       "notes": "These items spawn in any mine floor with freshwater (20, 60). Floor 100+ has lava, not freshwater."
     }
   }

@@ -26,7 +26,7 @@ for (const [key, data] of Object.entries(locationData)) {
 function extractGameId(itemId) {
   const numericMatch = itemId.match(/\(O\)(\d+)/);
   if (numericMatch) {
-    return parseInt(numericMatch[1]);
+    return parseInt(numericMatch[1], 10);
   }
   const stringMatch = itemId.match(/\(O\)(\w+)/);
   if (stringMatch) {

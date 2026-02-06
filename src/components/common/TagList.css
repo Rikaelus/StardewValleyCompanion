@@ -1,0 +1,76 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-list-empty {
+  color: #999;
+  font-style: italic;
+}
+
+.tag-list .tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Default variant */
+.tag-list-default .tag {
+  background-color: #e8e0d5;
+  color: #2d1b00;
+}
+
+/* Location tags (green) */
+.tag-list-location .tag {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+/* Bundle tags (orange) */
+.tag-list-bundle .tag {
+  background-color: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ffcc80;
+}
+
+/* Context tags (gray) */
+.tag-list-context .tag {
+  background-color: #f5f5f5;
+  color: #616161;
+  border: 1px solid #e0e0e0;
+  font-size: 0.8rem;
+}
+
+/* Season tags (colorful) */
+.tag-list-season .tag {
+  font-weight: 600;
+}
+
+.tag-list-season .tag:nth-child(1) {
+  /* Spring */
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.tag-list-season .tag:nth-child(2) {
+  /* Summer */
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.tag-list-season .tag:nth-child(3) {
+  /* Fall */
+  background-color: #ffe0b2;
+  color: #e65100;
+}
+
+.tag-list-season .tag:nth-child(4) {
+  /* Winter */
+  background-color: #e1f5fe;
+  color: #01579b;
+}

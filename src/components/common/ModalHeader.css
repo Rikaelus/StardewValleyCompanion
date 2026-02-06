@@ -1,0 +1,62 @@
+.modal-item-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-item-header-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #fff;
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.modal-item-header-icon-fallback {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #666;
+  font-weight: bold;
+  font-size: 24px;
+  border: 2px solid #8b6f47;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.modal-item-header-title-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-item-header-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.modal-item-header-title-section h3 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #2d1b00;
+}
+
+.modal-item-header-subtitle {
+  color: #5c4a32;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Price display in header */
+.modal-item-header .modal-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f57c00;
+}

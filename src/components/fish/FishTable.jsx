@@ -34,6 +34,7 @@ function FishTable({ fish, villagers }) {
         header: 'Name',
         cell: ({ row }) => (
           <strong>
+            {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐ </span>}
             {row.original.name}
             {row.original.notes && <span className="special-indicator" title="See Special Cases below">*</span>}
           </strong>

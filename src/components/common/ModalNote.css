@@ -1,0 +1,37 @@
+.modal-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-note strong {
+  color: #5c4a32;
+}
+
+/* Default note (warning/special case style) */
+.modal-note-default {
+  background: #fff8e7;
+  border-left: 4px solid #f57c00;
+}
+
+/* Info note */
+.modal-note-info {
+  background: #e3f2fd;
+  border-left: 4px solid #1976d2;
+}
+
+.modal-note-info strong {
+  color: #1565c0;
+}
+
+/* Warning note */
+.modal-note-warning {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.modal-note-warning strong {
+  color: #e65100;
+}

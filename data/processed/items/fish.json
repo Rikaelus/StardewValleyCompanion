@@ -23,6 +23,13 @@
     "price": 200,
     "edibility": -40,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "season_summer"
+    ],
     "bundles": [
       "specialty-fish"
     ],
@@ -95,6 +102,14 @@
     "price": 30,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_demanding",
+      "season_fall",
+      "season_spring"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -161,6 +176,13 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [
       "ocean-fish"
     ],
@@ -236,6 +258,15 @@
     "price": 40,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_demanding",
+      "season_fall",
+      "season_spring",
+      "season_winter"
+    ],
     "bundles": [
       "ocean-fish"
     ],
@@ -306,6 +337,12 @@
     "price": 45,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_river",
+      "season_all"
+    ],
     "bundles": [
       "night-fishing"
     ],
@@ -377,6 +414,12 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_lake",
+      "season_all"
+    ],
     "bundles": [
       "lake-fish"
     ],
@@ -445,6 +488,14 @@
     "price": 50,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_pond",
+      "fish_river",
+      "season_fall",
+      "season_spring"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -511,6 +562,12 @@
     "price": 65,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_has_roe",
+      "fish_river",
+      "season_summer"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -579,6 +636,12 @@
     "price": 75,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_salmon",
+      "fish_has_roe",
+      "fish_river",
+      "season_fall"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -646,6 +709,15 @@
     "price": 105,
     "edibility": 12,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_lake",
+      "fish_pond",
+      "fish_river",
+      "season_fall",
+      "season_winter"
+    ],
     "bundles": [
       "night-fishing"
     ],
@@ -715,6 +787,14 @@
     "price": 55,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_lake",
+      "fish_pond",
+      "fish_river",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -784,6 +864,16 @@
     "price": 30,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_lake",
+      "fish_secret_pond",
+      "fish_sewers",
+      "season_fall",
+      "season_spring",
+      "season_winter"
+    ],
     "bundles": [
       "lake-fish"
     ],
@@ -857,6 +947,16 @@
     "price": 200,
     "edibility": 20,
     "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_has_roe",
+      "fish_river",
+      "fish_secret_pond",
+      "fish_swamp",
+      "season_fall",
+      "season_spring",
+      "season_summer"
+    ],
     "bundles": [
       "river-fish"
     ],
@@ -929,6 +1029,15 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_carnivorous",
+      "fish_has_roe",
+      "fish_pond",
+      "fish_river",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -996,6 +1105,13 @@
     "price": 30,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_has_roe",
+      "fish_river",
+      "season_spring",
+      "season_summer"
+    ],
     "bundles": [
       "river-fish"
     ],
@@ -1065,6 +1181,13 @@
     "price": 75,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1131,6 +1254,14 @@
     "price": 30,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_demanding",
+      "season_spring",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1197,6 +1328,15 @@
     "price": 85,
     "edibility": 12,
     "category": -4,
+    "contextTags": [
+      "color_copper",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_rude",
+      "fish_upright",
+      "season_fall",
+      "season_spring"
+    ],
     "bundles": [
       "night-fishing"
     ],
@@ -1264,6 +1404,13 @@
     "price": 150,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "season_summer"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1333,6 +1480,14 @@
     "price": 50,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_fall",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [
       "ocean-fish"
     ],
@@ -1400,6 +1555,13 @@
     "price": 80,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_white",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1468,6 +1630,10 @@
     "price": 20,
     "edibility": 5,
     "category": 0,
+    "contextTags": [
+      "color_green",
+      "fish_nonfish"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
@@ -1538,6 +1704,12 @@
     "price": 15,
     "edibility": 5,
     "category": 0,
+    "contextTags": [
+      "algae_item",
+      "color_dark_green",
+      "fish_nonfish",
+      "use_reverse_name_for_sorting"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
@@ -1612,6 +1784,14 @@
     "price": 75,
     "edibility": -10,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "season_fall",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1680,6 +1860,14 @@
     "price": 250,
     "edibility": 50,
     "category": -4,
+    "contextTags": [
+      "color_purple",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "season_fall",
+      "season_summer"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1754,6 +1942,12 @@
     "price": 45,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_white",
+      "fish_has_roe",
+      "fish_mines",
+      "season_all"
+    ],
     "bundles": [
       "specialty-fish"
     ],
@@ -1825,6 +2019,12 @@
     "price": 25,
     "edibility": 8,
     "category": 0,
+    "contextTags": [
+      "algae_item",
+      "color_white",
+      "fish_nonfish",
+      "use_reverse_name_for_sorting"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
@@ -1897,6 +2097,14 @@
     "price": 300,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_mines",
+      "fish_semi_rare",
+      "fish_upright",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -1962,6 +2170,11 @@
     "price": 1500,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_has_roe",
+      "fish_legendary"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2031,6 +2244,12 @@
     "price": 900,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_upright"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2100,6 +2319,14 @@
     "price": 500,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_mines",
+      "fish_semi_rare",
+      "fish_talk_demanding",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2168,6 +2395,14 @@
     "price": 700,
     "edibility": 20,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_has_roe",
+      "fish_mines",
+      "fish_semi_rare",
+      "fish_upright",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2237,6 +2472,11 @@
     "price": 5000,
     "edibility": 200,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_legendary"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2306,6 +2546,12 @@
     "price": 75,
     "edibility": 5,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_desert",
+      "fish_has_roe",
+      "season_all"
+    ],
     "bundles": [
       "specialty-fish"
     ],
@@ -2376,6 +2622,13 @@
     "price": 150,
     "edibility": -50,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_desert",
+      "fish_has_roe",
+      "fish_semi_rare",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2442,6 +2695,13 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_spring",
+      "season_summer"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2513,6 +2773,13 @@
     "price": 150,
     "edibility": 20,
     "category": -4,
+    "contextTags": [
+      "color_iridium",
+      "fish_has_roe",
+      "fish_lake",
+      "season_fall",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2577,6 +2844,16 @@
     "price": 50,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "beach_item",
+      "color_light_cyan",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "forage_item",
+      "forage_item_beach"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -2591,7 +2868,7 @@
       "abigail": "dislike",
       "alex": "dislike",
       "george": "dislike",
-      "evelyn": "hate",
+      "evelyn": "like",
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
@@ -2647,6 +2924,11 @@
     "price": 1000,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_legendary"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -2713,6 +2995,13 @@
     "price": 200,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_cyan",
+      "fish_has_roe",
+      "fish_lake",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [
       "lake-fish"
     ],
@@ -2783,6 +3072,13 @@
     "price": 150,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_river",
+      "season_fall",
+      "season_winter"
+    ],
     "bundles": [
       "river-fish"
     ],
@@ -2854,6 +3150,12 @@
     "price": 75,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_lake",
+      "season_all"
+    ],
     "bundles": [
       "lake-fish"
     ],
@@ -2922,6 +3224,13 @@
     "price": 75,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_fall",
+      "season_summer"
+    ],
     "bundles": [
       "ocean-fish"
     ],
@@ -2995,6 +3304,13 @@
     "price": 50,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_has_roe",
+      "fish_lake",
+      "fish_river",
+      "season_all"
+    ],
     "bundles": [
       "field-research"
     ],
@@ -3063,6 +3379,13 @@
     "price": 100,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_carnivorous",
+      "fish_has_roe",
+      "fish_river",
+      "season_summer"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -3133,6 +3456,13 @@
     "price": 75,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_fall",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -3200,6 +3530,14 @@
     "price": 60,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_river",
+      "season_fall",
+      "season_spring",
+      "season_summer"
+    ],
     "bundles": [
       "river-fish"
     ],
@@ -3268,6 +3606,14 @@
     "price": 120,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_carnivorous",
+      "fish_has_roe",
+      "fish_lake",
+      "fish_river",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -3341,6 +3687,14 @@
     "price": 80,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_dark_gray",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_spring",
+      "season_summer",
+      "season_winter"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -3401,6 +3755,12 @@
     "price": 120,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3463,6 +3823,12 @@
     "price": 75,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_dark_gray",
+      "fish_crab_pot",
+      "fish_freshwater",
+      "fish_has_roe"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3525,6 +3891,13 @@
     "price": 100,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3587,6 +3960,14 @@
     "price": 50,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_dark_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "forage_item",
+      "forage_item_beach"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3601,7 +3982,7 @@
       "abigail": "dislike",
       "alex": "dislike",
       "george": "dislike",
-      "evelyn": "hate",
+      "evelyn": "like",
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
@@ -3649,6 +4030,14 @@
     "price": 30,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "forage_item",
+      "forage_item_beach"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3663,7 +4052,7 @@
       "abigail": "dislike",
       "alex": "dislike",
       "george": "dislike",
-      "evelyn": "hate",
+      "evelyn": "like",
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
@@ -3711,6 +4100,13 @@
     "price": 60,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_pink",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3773,6 +4169,13 @@
     "price": 65,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_yellow",
+      "fish_crab_pot",
+      "fish_freshwater",
+      "fish_has_roe",
+      "fish_upright"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3835,6 +4238,13 @@
     "price": 20,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_cyan",
+      "fish_crab_pot",
+      "fish_freshwater",
+      "fish_has_roe",
+      "fish_upright"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3897,6 +4307,15 @@
     "price": 40,
     "edibility": -300,
     "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "forage_item",
+      "forage_item_beach"
+    ],
     "bundles": [
       "crab-pot"
     ],
@@ -3911,7 +4330,7 @@
       "abigail": "dislike",
       "alex": "dislike",
       "george": "dislike",
-      "evelyn": "hate",
+      "evelyn": "like",
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
@@ -3967,6 +4386,13 @@
     "price": 75,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_has_roe",
+      "fish_pond",
+      "fish_secret_pond",
+      "season_all"
+    ],
     "bundles": [
       "specialty-fish"
     ],
@@ -4035,6 +4461,12 @@
     "price": 1000,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_upright"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4104,6 +4536,14 @@
     "price": 150,
     "edibility": 25,
     "category": -4,
+    "contextTags": [
+      "color_dark_purple",
+      "fish_has_roe",
+      "fish_semi_rare",
+      "fish_swamp",
+      "fish_talk_stiff",
+      "season_all"
+    ],
     "bundles": [
       "the-missing"
     ],
@@ -4174,6 +4614,13 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_bug_lair",
+      "fish_has_roe",
+      "fish_semi_rare",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4242,6 +4689,14 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_night_market",
+      "fish_semi_rare",
+      "fish_talk_stiff",
+      "fish_upright"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4310,6 +4765,12 @@
     "price": 220,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_night_market",
+      "fish_semi_rare"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4378,6 +4839,12 @@
     "price": 500,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_sand",
+      "fish_has_roe",
+      "fish_night_market",
+      "fish_upright"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4446,6 +4913,13 @@
     "price": 180,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_stiff",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4514,6 +4988,13 @@
     "price": 100,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_orange",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_talk_demanding",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4584,6 +5065,12 @@
     "price": 120,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_cyan",
+      "fish_has_roe",
+      "fish_ocean",
+      "season_all"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4650,6 +5137,12 @@
     "price": 1500,
     "edibility": 15,
     "category": -4,
+    "contextTags": [
+      "color_red",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_legendary_family"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4720,6 +5213,13 @@
     "price": 900,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_pink",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_legendary_family",
+      "fish_upright"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4789,6 +5289,12 @@
     "price": 5000,
     "edibility": 200,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_legendary_family"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4858,6 +5364,12 @@
     "price": 1000,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_green",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_legendary_family"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4923,6 +5435,12 @@
     "price": 1000,
     "edibility": 10,
     "category": -4,
+    "contextTags": [
+      "color_blue",
+      "fish_has_roe",
+      "fish_legendary",
+      "fish_legendary_family"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -4991,6 +5509,14 @@
     "price": 150,
     "edibility": -25,
     "category": -4,
+    "contextTags": [
+      "color_brown",
+      "fish_has_roe",
+      "fish_river",
+      "season_spring",
+      "season_summer",
+      "season_fall"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",

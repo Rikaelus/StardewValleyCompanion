@@ -98,11 +98,9 @@ writeJson(path.join(OUTPUT_DIR, 'pages/fish.json'), fishPageData);
 console.log(`  ✓ Compiled fish.json (${compiledFish.length} items, ${Object.keys(fishGameIdIndex).length} IDs indexed)`);
 
 // Load rules quality multipliers
-const CURATED_DIR = path.join(__dirname, '../data/rules');
-function loadJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-}
-const qualityMultipliers = loadJson(path.join(CURATED_DIR, 'quality-multipliers.json')).multipliers;
+const RULES_DIR = path.join(__dirname, '../data/rules');
+const qualityMultipliers = loadJson(path.join(RULES_DIR, 'quality-multipliers.json')).multipliers;
+const artisanNaming = loadJson(path.join(RULES_DIR, 'artisan-naming.json')).patterns;
 
 // Compile Artisan Page
 console.log('\n🍷 Compiling artisan page data...');
@@ -145,26 +143,23 @@ sourceData.artisan.forEach(artisan => {
 
   // Check if this item has inputDetails (variations like Wine, Juice, etc.)
   if (artisan.producedBy?.inputDetails && artisan.producedBy.inputDetails.length > 0) {
-    // Expand into individual variations
-    artisan.producedBy.inputDetails.forEach(inputDetail => {
-      // For items with only one input, keep the original name
-      // For items with multiple inputs (Wine, Juice, etc.), prefix with input name
-      const variantName = artisan.producedBy.inputDetails.length === 1
-        ? artisan.name
-        : `${inputDetail.inputName} ${artisan.name}`;
+    // Check naming pattern to determine if we should create separate items or one merged item
+    const namingRule = artisanNaming[artisan.name];
+    const shouldMergeInputs = artisan.producedBy.inputDetails.length > 1 &&
+                               namingRule &&
+                               namingRule.pattern === 'none';
 
-      const variantId = artisan.producedBy.inputDetails.length === 1
-        ? artisan.id
-        : `${inputDetail.inputId}-${artisan.id}`;
-
-      // Use the specific output price for this variation
-      const basePrice = inputDetail.outputPrice;
+    if (shouldMergeInputs) {
+      // Multiple inputs produce the same item (e.g., Milk & Large Milk both make Cheese)
+      // Create a single item with all inputDetails
+      const basePrice = artisan.producedBy.inputDetails[0].outputPrice;
       const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality);
 
       const compiledItem = {
-        id: variantId,
-        gameId: artisan.gameId, // All variations share the same gameId
-        name: variantName,
+        id: artisan.id,
+        gameId: artisan.gameId,
+        name: artisan.name,
+        type: 'artisan',
         category: artisan.category,
         icon: artisan.icon,
         contextTags: artisan.contextTags,
@@ -174,23 +169,18 @@ sourceData.artisan.forEach(artisan => {
           machine: artisan.producedBy.machine,
           machineId: artisan.producedBy.machineId,
           inputType: artisan.producedBy.inputType,
-          processingTimeDays: artisan.producedBy.processingTimeDays,
-          processingTimeMinutes: artisan.producedBy.processingTimeMinutes,
-          inputId: inputDetail.inputId,
-          inputName: inputDetail.inputName,
-          inputGameId: inputDetail.inputGameId,
-          inputBasePrice: inputDetail.inputBasePrice
+          inputDetails: artisan.producedBy.inputDetails,
+          valueFormula: artisan.producedBy.valueFormula
         },
         bundleDetails,
         giftDetails
       };
 
-      // Copy processing time if present (from producedBy or top level)
-      if (artisan.producedBy.processingTimeMinutes) {
-        compiledItem.producedBy.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
-      }
+      // Copy processing time if present
       if (artisan.processingTimeMinutes) {
         compiledItem.processingTimeMinutes = artisan.processingTimeMinutes;
+      } else if (artisan.producedBy.processingTimeMinutes) {
+        compiledItem.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
       }
 
       // Copy canBeAged flag and aging time if present
@@ -202,7 +192,74 @@ sourceData.artisan.forEach(artisan => {
       }
 
       compiledArtisan.push(compiledItem);
-    });
+    } else {
+      // Expand into individual variations (e.g., "Ancient Fruit Wine", "Starfruit Wine")
+      artisan.producedBy.inputDetails.forEach(inputDetail => {
+        // For items with only one input, keep the original name
+        // For items with multiple inputs, use naming rules
+        let variantName;
+        if (artisan.producedBy.inputDetails.length === 1) {
+          variantName = artisan.name;
+        } else {
+          // Apply naming pattern from rules
+          if (namingRule && namingRule.pattern === 'prefix') {
+            // Use the format string from rules (e.g., "Dried {input}")
+            variantName = namingRule.format.replace('{input}', inputDetail.inputName);
+          } else {
+            // Default suffix pattern: "{input} {product}"
+            variantName = `${inputDetail.inputName} ${artisan.name}`;
+          }
+        }
+
+        const variantId = artisan.producedBy.inputDetails.length === 1
+          ? artisan.id
+          : `${inputDetail.inputId}-${artisan.id}`;
+
+        // Use the specific output price for this variation
+        const basePrice = inputDetail.outputPrice;
+        const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality);
+
+        const compiledItem = {
+          id: variantId,
+          gameId: artisan.gameId, // All variations share the same gameId
+          name: variantName,
+          type: 'artisan',
+          category: artisan.category,
+          icon: artisan.icon,
+          contextTags: artisan.contextTags,
+          edibility: artisan.edibility,
+          prices: qualityPrices,
+          producedBy: {
+            machine: artisan.producedBy.machine,
+            machineId: artisan.producedBy.machineId,
+            inputType: artisan.producedBy.inputType,
+            inputId: inputDetail.inputId,
+            inputName: inputDetail.inputName,
+            inputGameId: inputDetail.inputGameId,
+            inputBasePrice: inputDetail.inputBasePrice
+          },
+          bundleDetails,
+          giftDetails
+        };
+
+        // Copy processing time if present (check top level first, then producedBy)
+        if (artisan.processingTimeMinutes) {
+          compiledItem.processingTimeMinutes = artisan.processingTimeMinutes;
+        } else if (artisan.producedBy.processingTimeMinutes) {
+          compiledItem.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
+        }
+
+        // Copy canBeAged flag and aging time if present
+        if (artisan.canBeAged) {
+          compiledItem.canBeAged = true;
+          if (artisan.agingDaysToIridium) {
+            compiledItem.agingDaysToIridium = artisan.agingDaysToIridium;
+          }
+        }
+
+        compiledArtisan.push(compiledItem);
+      });
+    }
 
     // Add Wild variant if requested (for Honey without flowers)
     if (artisan.includeWildVariant) {
@@ -210,6 +267,7 @@ sourceData.artisan.forEach(artisan => {
         id: `wild-${artisan.id}`,
         gameId: artisan.gameId,
         name: `Wild ${artisan.name}`,
+        type: 'artisan',
         category: artisan.category,
         icon: artisan.icon,
         contextTags: artisan.contextTags,
@@ -240,6 +298,7 @@ sourceData.artisan.forEach(artisan => {
 
       compiledArtisan.push({
         ...artisan,
+        type: 'artisan',
         prices: qualityPrices,
         bundleDetails,
         giftDetails

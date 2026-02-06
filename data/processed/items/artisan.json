@@ -113,7 +113,8 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 2250,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 28
   },
   {
     "type": "artisan",
@@ -287,7 +288,8 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 600,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 28
   },
   {
     "type": "artisan",
@@ -576,7 +578,8 @@
     "bundles": [],
     "gifts": {},
     "processingTimeMinutes": 6000,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 28
   },
   {
     "type": "artisan",
@@ -727,7 +730,8 @@
       "leo": "dislike"
     },
     "processingTimeMinutes": 10000,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 56
   },
   {
     "type": "artisan",
@@ -1176,7 +1180,8 @@
       "harvey": "dislike"
     },
     "processingTimeMinutes": 200,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 14
   },
   {
     "type": "artisan",
@@ -1222,7 +1227,8 @@
       "harvey": "dislike"
     },
     "processingTimeMinutes": 200,
-    "canBeAged": true
+    "canBeAged": true,
+    "agingDaysToIridium": 14
   },
   {
     "type": "artisan",
@@ -1614,119 +1620,119 @@
       "machineId": "dehydrator",
       "inputType": "fruit",
       "processingTimeMinutes": 1440,
-      "valueFormula": "baseValue * 1",
+      "valueFormula": "baseValue * 7.5 + 25",
       "inputDetails": [
         {
           "inputId": "starfruit",
           "inputName": "Starfruit",
           "inputGameId": 268,
           "inputBasePrice": 750,
-          "outputPrice": 750,
-          "outputIridiumPrice": 1050
+          "outputPrice": 5650,
+          "outputIridiumPrice": 7909
         },
         {
           "inputId": "ancient-fruit",
           "inputName": "Ancient Fruit",
           "inputGameId": 454,
           "inputBasePrice": 550,
-          "outputPrice": 550,
-          "outputIridiumPrice": 770
+          "outputPrice": 4150,
+          "outputIridiumPrice": 5810
         },
         {
           "inputId": "pineapple",
           "inputName": "Pineapple",
           "inputGameId": 832,
           "inputBasePrice": 300,
-          "outputPrice": 300,
-          "outputIridiumPrice": 420
+          "outputPrice": 2275,
+          "outputIridiumPrice": 3185
         },
         {
           "inputId": "melon",
           "inputName": "Melon",
           "inputGameId": 254,
           "inputBasePrice": 250,
-          "outputPrice": 250,
-          "outputIridiumPrice": 350
+          "outputPrice": 1900,
+          "outputIridiumPrice": 2660
         },
         {
           "inputId": "rhubarb",
           "inputName": "Rhubarb",
           "inputGameId": 252,
           "inputBasePrice": 220,
-          "outputPrice": 220,
-          "outputIridiumPrice": 308
+          "outputPrice": 1675,
+          "outputIridiumPrice": 2345
         },
         {
           "inputId": "strawberry",
           "inputName": "Strawberry",
           "inputGameId": 400,
           "inputBasePrice": 120,
-          "outputPrice": 120,
-          "outputIridiumPrice": 168
+          "outputPrice": 925,
+          "outputIridiumPrice": 1295
         },
         {
           "inputId": "grape",
           "inputName": "Grape",
           "inputGameId": 398,
           "inputBasePrice": 80,
-          "outputPrice": 80,
-          "outputIridiumPrice": 112
+          "outputPrice": 625,
+          "outputIridiumPrice": 875
         },
         {
           "inputId": "spice-berry",
           "inputName": "Spice Berry",
           "inputGameId": 396,
           "inputBasePrice": 80,
-          "outputPrice": 80,
-          "outputIridiumPrice": 112
+          "outputPrice": 625,
+          "outputIridiumPrice": 875
         },
         {
           "inputId": "cranberries",
           "inputName": "Cranberries",
           "inputGameId": 282,
           "inputBasePrice": 75,
-          "outputPrice": 75,
-          "outputIridiumPrice": 105
+          "outputPrice": 587,
+          "outputIridiumPrice": 822
         },
         {
           "inputId": "cactus-fruit",
           "inputName": "Cactus Fruit",
           "inputGameId": 90,
           "inputBasePrice": 75,
-          "outputPrice": 75,
-          "outputIridiumPrice": 105
+          "outputPrice": 587,
+          "outputIridiumPrice": 822
         },
         {
           "inputId": "powdermelon",
           "inputName": "Powdermelon",
           "inputGameId": null,
           "inputBasePrice": 60,
-          "outputPrice": 60,
-          "outputIridiumPrice": 84
+          "outputPrice": 475,
+          "outputIridiumPrice": 665
         },
         {
           "inputId": "blueberry",
           "inputName": "Blueberry",
           "inputGameId": 258,
           "inputBasePrice": 50,
-          "outputPrice": 50,
-          "outputIridiumPrice": 70
+          "outputPrice": 400,
+          "outputIridiumPrice": 560
         },
         {
           "inputId": "hot-pepper",
           "inputName": "Hot Pepper",
           "inputGameId": 260,
           "inputBasePrice": 40,
-          "outputPrice": 40,
-          "outputIridiumPrice": 56
+          "outputPrice": 325,
+          "outputIridiumPrice": 454
         },
         {
           "inputId": "qi-fruit",
           "inputName": "Qi Fruit",
           "inputGameId": 889,
           "inputBasePrice": 1,
-          "outputPrice": 1,
-          "outputIridiumPrice": 1
+          "outputPrice": 32,
+          "outputIridiumPrice": 45
         }
       ]
     },
@@ -1749,47 +1755,47 @@
       "machineId": "dehydrator",
       "inputType": "vegetable",
       "processingTimeMinutes": 1440,
-      "valueFormula": "baseValue * 1",
+      "valueFormula": "baseValue * 7.5 + 25",
       "inputDetails": [
         {
           "inputId": "magma-cap",
           "inputName": "Magma Cap",
           "inputGameId": 851,
           "inputBasePrice": 400,
-          "outputPrice": 400,
-          "outputIridiumPrice": 560
+          "outputPrice": 3025,
+          "outputIridiumPrice": 4235
         },
         {
           "inputId": "purple-mushroom",
           "inputName": "Purple Mushroom",
           "inputGameId": 422,
           "inputBasePrice": 250,
-          "outputPrice": 250,
-          "outputIridiumPrice": 350
+          "outputPrice": 1900,
+          "outputIridiumPrice": 2660
         },
         {
           "inputId": "chanterelle",
           "inputName": "Chanterelle",
           "inputGameId": 281,
           "inputBasePrice": 160,
-          "outputPrice": 160,
-          "outputIridiumPrice": 224
+          "outputPrice": 1225,
+          "outputIridiumPrice": 1715
         },
         {
           "inputId": "morel",
           "inputName": "Morel",
           "inputGameId": 257,
           "inputBasePrice": 150,
-          "outputPrice": 150,
-          "outputIridiumPrice": 210
+          "outputPrice": 1150,
+          "outputIridiumPrice": 1610
         },
         {
           "inputId": "common-mushroom",
           "inputName": "Common Mushroom",
           "inputGameId": 404,
           "inputBasePrice": 40,
-          "outputPrice": 40,
-          "outputIridiumPrice": 56
+          "outputPrice": 325,
+          "outputIridiumPrice": 454
         }
       ]
     },
@@ -1812,8 +1818,577 @@
       "machineId": "fish-smoker",
       "inputType": "vegetable",
       "processingTimeMinutes": 50,
-      "valueFormula": "baseValue * 1",
-      "inputDetails": []
+      "valueFormula": "baseValue * 2",
+      "inputDetails": [
+        {
+          "inputId": "legend",
+          "inputName": "Legend",
+          "inputGameId": 163,
+          "inputBasePrice": 5000,
+          "outputPrice": 10000,
+          "outputIridiumPrice": 14000
+        },
+        {
+          "inputId": "legend-ii",
+          "inputName": "Legend II",
+          "inputGameId": 900,
+          "inputBasePrice": 5000,
+          "outputPrice": 10000,
+          "outputIridiumPrice": 14000
+        },
+        {
+          "inputId": "crimsonfish",
+          "inputName": "Crimsonfish",
+          "inputGameId": 159,
+          "inputBasePrice": 1500,
+          "outputPrice": 3000,
+          "outputIridiumPrice": 4200
+        },
+        {
+          "inputId": "son-of-crimsonfish",
+          "inputName": "Son of Crimsonfish",
+          "inputGameId": 898,
+          "inputBasePrice": 1500,
+          "outputPrice": 3000,
+          "outputIridiumPrice": 4200
+        },
+        {
+          "inputId": "mutant-carp",
+          "inputName": "Mutant Carp",
+          "inputGameId": 682,
+          "inputBasePrice": 1000,
+          "outputPrice": 2000,
+          "outputIridiumPrice": 2800
+        },
+        {
+          "inputId": "glacierfish",
+          "inputName": "Glacierfish",
+          "inputGameId": 775,
+          "inputBasePrice": 1000,
+          "outputPrice": 2000,
+          "outputIridiumPrice": 2800
+        },
+        {
+          "inputId": "radioactive-carp",
+          "inputName": "Radioactive Carp",
+          "inputGameId": 901,
+          "inputBasePrice": 1000,
+          "outputPrice": 2000,
+          "outputIridiumPrice": 2800
+        },
+        {
+          "inputId": "glacierfish-jr",
+          "inputName": "Glacierfish Jr.",
+          "inputGameId": 902,
+          "inputBasePrice": 1000,
+          "outputPrice": 2000,
+          "outputIridiumPrice": 2800
+        },
+        {
+          "inputId": "angler",
+          "inputName": "Angler",
+          "inputGameId": 160,
+          "inputBasePrice": 900,
+          "outputPrice": 1800,
+          "outputIridiumPrice": 2520
+        },
+        {
+          "inputId": "ms-angler",
+          "inputName": "Ms. Angler",
+          "inputGameId": 899,
+          "inputBasePrice": 900,
+          "outputPrice": 1800,
+          "outputIridiumPrice": 2520
+        },
+        {
+          "inputId": "lava-eel",
+          "inputName": "Lava Eel",
+          "inputGameId": 162,
+          "inputBasePrice": 700,
+          "outputPrice": 1400,
+          "outputIridiumPrice": 1959
+        },
+        {
+          "inputId": "ice-pip",
+          "inputName": "Ice Pip",
+          "inputGameId": 161,
+          "inputBasePrice": 500,
+          "outputPrice": 1000,
+          "outputIridiumPrice": 1400
+        },
+        {
+          "inputId": "blobfish",
+          "inputName": "Blobfish",
+          "inputGameId": 800,
+          "inputBasePrice": 500,
+          "outputPrice": 1000,
+          "outputIridiumPrice": 1400
+        },
+        {
+          "inputId": "stonefish",
+          "inputName": "Stonefish",
+          "inputGameId": 158,
+          "inputBasePrice": 300,
+          "outputPrice": 600,
+          "outputIridiumPrice": 840
+        },
+        {
+          "inputId": "super-cucumber",
+          "inputName": "Super Cucumber",
+          "inputGameId": 155,
+          "inputBasePrice": 250,
+          "outputPrice": 500,
+          "outputIridiumPrice": 700
+        },
+        {
+          "inputId": "spook-fish",
+          "inputName": "Spook Fish",
+          "inputGameId": 799,
+          "inputBasePrice": 220,
+          "outputPrice": 440,
+          "outputIridiumPrice": 616
+        },
+        {
+          "inputId": "pufferfish",
+          "inputName": "Pufferfish",
+          "inputGameId": 128,
+          "inputBasePrice": 200,
+          "outputPrice": 400,
+          "outputIridiumPrice": 560
+        },
+        {
+          "inputId": "catfish",
+          "inputName": "Catfish",
+          "inputGameId": 143,
+          "inputBasePrice": 200,
+          "outputPrice": 400,
+          "outputIridiumPrice": 560
+        },
+        {
+          "inputId": "sturgeon",
+          "inputName": "Sturgeon",
+          "inputGameId": 698,
+          "inputBasePrice": 200,
+          "outputPrice": 400,
+          "outputIridiumPrice": 560
+        },
+        {
+          "inputId": "stingray",
+          "inputName": "Stingray",
+          "inputGameId": 836,
+          "inputBasePrice": 180,
+          "outputPrice": 360,
+          "outputIridiumPrice": 503
+        },
+        {
+          "inputId": "octopus",
+          "inputName": "Octopus",
+          "inputGameId": 149,
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "scorpion-carp",
+          "inputName": "Scorpion Carp",
+          "inputGameId": 165,
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "midnight-carp",
+          "inputName": "Midnight Carp",
+          "inputGameId": 269,
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "tiger-trout",
+          "inputName": "Tiger Trout",
+          "inputGameId": 699,
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "void-salmon",
+          "inputName": "Void Salmon",
+          "inputGameId": 795,
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "goby",
+          "inputName": "Goby",
+          "inputGameId": "Goby",
+          "inputBasePrice": 150,
+          "outputPrice": 300,
+          "outputIridiumPrice": 420
+        },
+        {
+          "inputId": "lingcod",
+          "inputName": "Lingcod",
+          "inputGameId": 707,
+          "inputBasePrice": 120,
+          "outputPrice": 240,
+          "outputIridiumPrice": 336
+        },
+        {
+          "inputId": "lobster",
+          "inputName": "Lobster",
+          "inputGameId": 715,
+          "inputBasePrice": 120,
+          "outputPrice": 240,
+          "outputIridiumPrice": 336
+        },
+        {
+          "inputId": "blue-discus",
+          "inputName": "Blue Discus",
+          "inputGameId": 838,
+          "inputBasePrice": 120,
+          "outputPrice": 240,
+          "outputIridiumPrice": 336
+        },
+        {
+          "inputId": "walleye",
+          "inputName": "Walleye",
+          "inputGameId": 140,
+          "inputBasePrice": 105,
+          "outputPrice": 210,
+          "outputIridiumPrice": 294
+        },
+        {
+          "inputId": "tuna",
+          "inputName": "Tuna",
+          "inputGameId": 130,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "largemouth-bass",
+          "inputName": "Largemouth Bass",
+          "inputGameId": 136,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "pike",
+          "inputName": "Pike",
+          "inputGameId": 144,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "flounder",
+          "inputName": "Flounder",
+          "inputGameId": 267,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "dorado",
+          "inputName": "Dorado",
+          "inputGameId": 704,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "crab",
+          "inputName": "Crab",
+          "inputGameId": 717,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "slimejack",
+          "inputName": "Slimejack",
+          "inputGameId": 796,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "midnight-squid",
+          "inputName": "Midnight Squid",
+          "inputGameId": 798,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "lionfish",
+          "inputName": "Lionfish",
+          "inputGameId": 837,
+          "inputBasePrice": 100,
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "eel",
+          "inputName": "Eel",
+          "inputGameId": 148,
+          "inputBasePrice": 85,
+          "outputPrice": 170,
+          "outputIridiumPrice": 237
+        },
+        {
+          "inputId": "squid",
+          "inputName": "Squid",
+          "inputGameId": 151,
+          "inputBasePrice": 80,
+          "outputPrice": 160,
+          "outputIridiumPrice": 224
+        },
+        {
+          "inputId": "halibut",
+          "inputName": "Halibut",
+          "inputGameId": 708,
+          "inputBasePrice": 80,
+          "outputPrice": 160,
+          "outputIridiumPrice": 224
+        },
+        {
+          "inputId": "salmon",
+          "inputName": "Salmon",
+          "inputGameId": 139,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "red-mullet",
+          "inputName": "Red Mullet",
+          "inputGameId": 146,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "sea-cucumber",
+          "inputName": "Sea Cucumber",
+          "inputGameId": 154,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "sandfish",
+          "inputName": "Sandfish",
+          "inputGameId": 164,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "bullhead",
+          "inputName": "Bullhead",
+          "inputGameId": 700,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "tilapia",
+          "inputName": "Tilapia",
+          "inputGameId": 701,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "albacore",
+          "inputName": "Albacore",
+          "inputGameId": 705,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "crayfish",
+          "inputName": "Crayfish",
+          "inputGameId": 716,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "woodskip",
+          "inputName": "Woodskip",
+          "inputGameId": 734,
+          "inputBasePrice": 75,
+          "outputPrice": 150,
+          "outputIridiumPrice": 210
+        },
+        {
+          "inputId": "rainbow-trout",
+          "inputName": "Rainbow Trout",
+          "inputGameId": 138,
+          "inputBasePrice": 65,
+          "outputPrice": 130,
+          "outputIridiumPrice": 182
+        },
+        {
+          "inputId": "snail",
+          "inputName": "Snail",
+          "inputGameId": 721,
+          "inputBasePrice": 65,
+          "outputPrice": 130,
+          "outputIridiumPrice": 182
+        },
+        {
+          "inputId": "shad",
+          "inputName": "Shad",
+          "inputGameId": 706,
+          "inputBasePrice": 60,
+          "outputPrice": 120,
+          "outputIridiumPrice": 168
+        },
+        {
+          "inputId": "shrimp",
+          "inputName": "Shrimp",
+          "inputGameId": 720,
+          "inputBasePrice": 60,
+          "outputPrice": 120,
+          "outputIridiumPrice": 168
+        },
+        {
+          "inputId": "perch",
+          "inputName": "Perch",
+          "inputGameId": 141,
+          "inputBasePrice": 55,
+          "outputPrice": 110,
+          "outputIridiumPrice": 154
+        },
+        {
+          "inputId": "smallmouth-bass",
+          "inputName": "Smallmouth Bass",
+          "inputGameId": 137,
+          "inputBasePrice": 50,
+          "outputPrice": 100,
+          "outputIridiumPrice": 140
+        },
+        {
+          "inputId": "red-snapper",
+          "inputName": "Red Snapper",
+          "inputGameId": 150,
+          "inputBasePrice": 50,
+          "outputPrice": 100,
+          "outputIridiumPrice": 140
+        },
+        {
+          "inputId": "clam",
+          "inputName": "Clam",
+          "inputGameId": 372,
+          "inputBasePrice": 50,
+          "outputPrice": 100,
+          "outputIridiumPrice": 140
+        },
+        {
+          "inputId": "chub",
+          "inputName": "Chub",
+          "inputGameId": 702,
+          "inputBasePrice": 50,
+          "outputPrice": 100,
+          "outputIridiumPrice": 140
+        },
+        {
+          "inputId": "cockle",
+          "inputName": "Cockle",
+          "inputGameId": 718,
+          "inputBasePrice": 50,
+          "outputPrice": 100,
+          "outputIridiumPrice": 140
+        },
+        {
+          "inputId": "bream",
+          "inputName": "Bream",
+          "inputGameId": 132,
+          "inputBasePrice": 45,
+          "outputPrice": 90,
+          "outputIridiumPrice": 125
+        },
+        {
+          "inputId": "ghostfish",
+          "inputName": "Ghostfish",
+          "inputGameId": 156,
+          "inputBasePrice": 45,
+          "outputPrice": 90,
+          "outputIridiumPrice": 125
+        },
+        {
+          "inputId": "sardine",
+          "inputName": "Sardine",
+          "inputGameId": 131,
+          "inputBasePrice": 40,
+          "outputPrice": 80,
+          "outputIridiumPrice": 112
+        },
+        {
+          "inputId": "oyster",
+          "inputName": "Oyster",
+          "inputGameId": 723,
+          "inputBasePrice": 40,
+          "outputPrice": 80,
+          "outputIridiumPrice": 112
+        },
+        {
+          "inputId": "anchovy",
+          "inputName": "Anchovy",
+          "inputGameId": 129,
+          "inputBasePrice": 30,
+          "outputPrice": 60,
+          "outputIridiumPrice": 84
+        },
+        {
+          "inputId": "carp",
+          "inputName": "Carp",
+          "inputGameId": 142,
+          "inputBasePrice": 30,
+          "outputPrice": 60,
+          "outputIridiumPrice": 84
+        },
+        {
+          "inputId": "sunfish",
+          "inputName": "Sunfish",
+          "inputGameId": 145,
+          "inputBasePrice": 30,
+          "outputPrice": 60,
+          "outputIridiumPrice": 84
+        },
+        {
+          "inputId": "herring",
+          "inputName": "Herring",
+          "inputGameId": 147,
+          "inputBasePrice": 30,
+          "outputPrice": 60,
+          "outputIridiumPrice": 84
+        },
+        {
+          "inputId": "mussel",
+          "inputName": "Mussel",
+          "inputGameId": 719,
+          "inputBasePrice": 30,
+          "outputPrice": 60,
+          "outputIridiumPrice": 84
+        },
+        {
+          "inputId": "periwinkle",
+          "inputName": "Periwinkle",
+          "inputGameId": 722,
+          "inputBasePrice": 20,
+          "outputPrice": 40,
+          "outputIridiumPrice": 56
+        }
+      ]
     },
     "bundles": [],
     "gifts": {},
@@ -2684,7 +3259,7 @@
           "inputGameId": 140,
           "inputBasePrice": 105,
           "outputPrice": 82,
-          "outputIridiumPrice": 115
+          "outputIridiumPrice": 114
         },
         {
           "inputId": "tuna",
@@ -2764,7 +3339,7 @@
           "inputGameId": 148,
           "inputBasePrice": 85,
           "outputPrice": 72,
-          "outputIridiumPrice": 101
+          "outputIridiumPrice": 100
         },
         {
           "inputId": "squid",
@@ -2788,7 +3363,7 @@
           "inputGameId": 139,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "red-mullet",
@@ -2796,7 +3371,7 @@
           "inputGameId": 146,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "sea-cucumber",
@@ -2804,7 +3379,7 @@
           "inputGameId": 154,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "sandfish",
@@ -2812,7 +3387,7 @@
           "inputGameId": 164,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "bullhead",
@@ -2820,7 +3395,7 @@
           "inputGameId": 700,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "tilapia",
@@ -2828,7 +3403,7 @@
           "inputGameId": 701,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "albacore",
@@ -2836,7 +3411,7 @@
           "inputGameId": 705,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "crayfish",
@@ -2844,7 +3419,7 @@
           "inputGameId": 716,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "woodskip",
@@ -2852,7 +3427,7 @@
           "inputGameId": 734,
           "inputBasePrice": 75,
           "outputPrice": 67,
-          "outputIridiumPrice": 94
+          "outputIridiumPrice": 93
         },
         {
           "inputId": "rainbow-trout",
@@ -2860,7 +3435,7 @@
           "inputGameId": 138,
           "inputBasePrice": 65,
           "outputPrice": 62,
-          "outputIridiumPrice": 87
+          "outputIridiumPrice": 86
         },
         {
           "inputId": "snail",
@@ -2868,7 +3443,7 @@
           "inputGameId": 721,
           "inputBasePrice": 65,
           "outputPrice": 62,
-          "outputIridiumPrice": 87
+          "outputIridiumPrice": 86
         },
         {
           "inputId": "shad",
@@ -2892,7 +3467,7 @@
           "inputGameId": 141,
           "inputBasePrice": 55,
           "outputPrice": 57,
-          "outputIridiumPrice": 80
+          "outputIridiumPrice": 79
         },
         {
           "inputId": "smallmouth-bass",
@@ -2940,7 +3515,7 @@
           "inputGameId": 132,
           "inputBasePrice": 45,
           "outputPrice": 52,
-          "outputIridiumPrice": 73
+          "outputIridiumPrice": 72
         },
         {
           "inputId": "ghostfish",
@@ -2948,7 +3523,7 @@
           "inputGameId": 156,
           "inputBasePrice": 45,
           "outputPrice": 52,
-          "outputIridiumPrice": 73
+          "outputIridiumPrice": 72
         },
         {
           "inputId": "sardine",

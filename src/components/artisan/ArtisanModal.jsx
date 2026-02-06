@@ -1,5 +1,10 @@
 import { useRef, useEffect, useMemo } from 'react'
 import Modal from '../common/Modal'
+import ModalHeader from '../common/ModalHeader'
+import ModalSection from '../common/ModalSection'
+import { ModalGrid, ModalGridItem } from '../common/ModalGrid'
+import TagList from '../common/TagList'
+import ModalNote from '../common/ModalNote'
 import DataTable from '../common/DataTable'
 import ModalGiftPreferences from '../common/ModalGiftPreferences'
 import ItemSellPrice from '../common/ItemSellPrice'
@@ -79,75 +84,57 @@ function ArtisanModal({ item, isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={displayItem?.name || 'Artisan Good'}>
-      {displayItem && <div className="artisan-modal">
-        <div className="artisan-modal-header">
-          <img
-            src={displayItem.icon}
-            alt={displayItem.name}
-            className="artisan-modal-icon"
-            onError={(e) => {
-              // Prevent duplicate fallbacks
-              if (e.target.dataset.errorHandled) return
-              e.target.dataset.errorHandled = 'true'
-
-              // Fallback to text if image fails to load
-              e.target.style.display = 'none'
-              const fallback = document.createElement('div')
-              fallback.className = 'artisan-modal-icon-fallback'
-              fallback.textContent = displayItem.name.slice(0, 2).toUpperCase()
-              fallback.title = `${displayItem.name} (icon not found)`
-              e.target.parentNode.insertBefore(fallback, e.target)
-            }}
-          />
-          <div className="artisan-modal-title-section">
-            <h3>{displayItem.name}</h3>
-            <div className="artisan-modal-category">{displayItem.category}</div>
-            {displayItem.prices && (
-              <div className="artisan-modal-price">
-                <ItemSellPrice item={displayItem} showQualities={true} showProfession={true} />
-              </div>
-            )}
-          </div>
-        </div>
+      {displayItem && <>
+        <ModalHeader icon={displayItem.icon} name={displayItem.name} subtitle={displayItem.category}>
+          {displayItem.prices && (
+            <div className="modal-price">
+              <ItemSellPrice item={displayItem} showQualities={true} showProfession={true} />
+            </div>
+          )}
+        </ModalHeader>
 
         {displayItem.producedBy && (
-          <div className="artisan-modal-section">
-            <h4>Production Info</h4>
-            <div className="artisan-modal-grid">
-              <div className="artisan-modal-item">
-                <span className="label">Machine:</span>
-                <span className="value">{displayItem.producedBy.machine}</span>
-              </div>
+          <ModalSection title="Production Info">
+            <ModalGrid>
+              <ModalGridItem
+                label="Machine:"
+                value={displayItem.producedBy.machine}
+              />
 
-              <div className="artisan-modal-item">
-                <span className="label">Input Type:</span>
-                <span className="value">
-                  {displayItem.producedBy.inputType === 'specific'
+              <ModalGridItem
+                label="Input Type:"
+                value={
+                  displayItem.producedBy.inputType === 'specific'
                     ? 'Specific Item'
                     : displayItem.producedBy.inputType.charAt(0).toUpperCase() + displayItem.producedBy.inputType.slice(1)
-                  }
-                </span>
-              </div>
+                }
+              />
 
-              <div className="artisan-modal-item">
-                <span className="label">Processing Time:</span>
-                <span className="value">
-                  {displayItem.producedBy.processingTimeDays} {displayItem.producedBy.processingTimeDays === 1 ? 'day' : 'days'}
-                </span>
-              </div>
+              {displayItem.processingTimeMinutes && (
+                <ModalGridItem
+                  label="Processing Time:"
+                  value={(() => {
+                    const minutes = displayItem.processingTimeMinutes;
+                    const hours = minutes / 60;
+                    if (hours >= 24) {
+                      const days = Math.round(hours / 24 * 10) / 10;
+                      return `${days}d`;
+                    }
+                    const displayHours = Math.round(hours * 10) / 10;
+                    return `${displayHours}h`;
+                  })()}
+                />
+              )}
 
-              <div className="artisan-modal-item">
-                <span className="label">Value Formula:</span>
+              <ModalGridItem label="Value Formula:">
                 <span className="value formula">{displayItem.producedBy.valueFormula}</span>
-              </div>
-            </div>
-          </div>
+              </ModalGridItem>
+            </ModalGrid>
+          </ModalSection>
         )}
 
         {displayItem.producedBy?.inputDetails && displayItem.producedBy.inputDetails.length > 0 && (
-          <div className="artisan-modal-section">
-            <h4>Input Value Table</h4>
-
+          <ModalSection title="Input Value Table">
             <div className="input-value-table">
               <DataTable
                 data={displayItem.producedBy.inputDetails}
@@ -158,42 +145,30 @@ function ArtisanModal({ item, isOpen, onClose }) {
               />
             </div>
 
-            <div className="artisan-modal-note">
+            <ModalNote type="info">
               <strong>Note:</strong> Iridium quality with Artisan profession (+40% sell price)
-            </div>
-          </div>
+            </ModalNote>
+          </ModalSection>
         )}
 
         {displayItem.bundleDetails && displayItem.bundleDetails.length > 0 && (
-          <div className="artisan-modal-section">
-            <h4>Bundles</h4>
-            <div className="artisan-modal-bundles">
-              {displayItem.bundleDetails.map(bundle => (
-                <div key={bundle.id} className="bundle-tag">
-                  {bundle.name}
-                </div>
-              ))}
-            </div>
-          </div>
+          <ModalSection title="Bundles">
+            <TagList items={displayItem.bundleDetails} variant="bundle" nameKey="name" />
+          </ModalSection>
         )}
 
         <ModalGiftPreferences
           giftDetails={displayItem.giftDetails}
-          sectionClass="artisan-modal-section"
-          giftsClass="artisan-modal-gifts"
+          sectionClass="modal-section"
+          giftsClass="modal-gifts"
         />
 
         {displayItem.contextTags && displayItem.contextTags.length > 0 && (
-          <div className="artisan-modal-section context-tags-section">
-            <h4>Context Tags</h4>
-            <div className="context-tags">
-              {displayItem.contextTags.map((tag, i) => (
-                <span key={i} className="context-tag">{tag}</span>
-              ))}
-            </div>
-          </div>
+          <ModalSection title="Context Tags">
+            <TagList items={displayItem.contextTags} variant="context" />
+          </ModalSection>
         )}
-      </div>}
+      </>}
     </Modal>
   )
 }

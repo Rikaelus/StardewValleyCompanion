@@ -29,7 +29,7 @@ function extractGameId(itemId) {
   // Try numeric format first: "(O)136"
   const numericMatch = itemId.match(/\(O\)(\d+)/);
   if (numericMatch) {
-    return parseInt(numericMatch[1]);
+    return parseInt(numericMatch[1], 10);
   }
 
   // Try qualified string format: "(O)Goby"
@@ -134,7 +134,7 @@ function extractFishLocations() {
       // Crab pot fish have water type in position 4
       const waterType = parts[4]; // "ocean" or "freshwater"
 
-      const fishId = isNaN(gameId) ? gameId : parseInt(gameId);
+      const fishId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
 
       if (!fishLocations.has(fishId)) {
         fishLocations.set(fishId, new Set());
@@ -151,16 +151,16 @@ function extractFishLocations() {
     // Handle mines fish
     // For regular fish, MinLevel is at position 12
     else {
-      const minLevel = parseInt(parts[12]) || 0;
+      const minLevel = parseInt(parts[12], 10) || 0;
 
       // Special cases: Fish with MinLevel 0 that spawn on specific mine floors
       // These spawn in freshwater areas (floors 20, 60) but not lava areas (floor 100+)
-      const isGhostfish = fishName === 'Ghostfish';
-      const isGreenAlgae = fishName === 'Green Algae';
-      const isWhiteAlgae = fishName === 'White Algae';
+      const freshwaterFishIds = mineFloorsData.specialRules.freshwaterFloors.fishGameIds;
+      const numericGameId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
+      const isFreshwaterFish = freshwaterFishIds.includes(numericGameId);
 
-      if (minLevel > 0 || isGhostfish || isGreenAlgae || isWhiteAlgae) {
-      const fishId = isNaN(gameId) ? gameId : parseInt(gameId);
+      if (minLevel > 0 || isFreshwaterFish) {
+      const fishId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
 
       // MinLevel can mean two things:
       // 1. For mines fish with no other locations: actual mine floor spawn requirement
@@ -181,7 +181,7 @@ function extractFishLocations() {
         }
 
         // For fish with specific mine floors, remove the generic "Mines" from Locations.json
-        if ((isGhostfish || isGreenAlgae || isWhiteAlgae) && fishLocations.has(fishId)) {
+        if (isFreshwaterFish && fishLocations.has(fishId)) {
           const locations = fishLocations.get(fishId);
           if (locations.has('Mines')) {
             locations.delete('Mines');
@@ -202,7 +202,7 @@ function extractFishLocations() {
         const freshwaterFloors = mineFloorsData.specialRules.freshwaterFloors.floors;
 
         let floors;
-        if (isGhostfish || isGreenAlgae || isWhiteAlgae) {
+        if (isFreshwaterFish) {
           floors = freshwaterFloors;
         } else if (mineLevelFloorMap[minLevel]) {
           floors = mineLevelFloorMap[minLevel];

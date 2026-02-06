@@ -1,13 +1,20 @@
 @font-face {
   font-family: 'Stardew Valley';
-  src: url('./fonts/Stardew Valley.ttf') format('truetype');
+  src: url('/fonts/Stardew Valley.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Stardew Valley All Caps';
-  src: url('./fonts/Stardew Valley ALL CAPS.ttf') format('truetype');
+  src: url('/fonts/Stardew Valley ALL CAPS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stardew Valley Regular';
+  src: url('/fonts/Stardew Valley Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -86,9 +86,9 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
 
   const cropEntry = {
     id: toKebabCase(cropName),
-    gameId: parseInt(harvestId),
+    gameId: parseInt(harvestId, 10),
     name: cropName,
-    seedId: parseInt(seedId),
+    seedId: parseInt(seedId, 10),
     type: cropType,
     category: category,
     price: harvestObject.Price || 0,
@@ -96,7 +96,7 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
   };
 
   cropData.push(cropEntry);
-  cropsByHarvestId.set(parseInt(harvestId), cropEntry);
+  cropsByHarvestId.set(parseInt(harvestId, 10), cropEntry);
 }
 
 console.log(`  Processed ${cropData.length} crops`);
@@ -134,7 +134,7 @@ function parseItemId(itemId) {
 
   // Handle (O)123 format (numeric IDs)
   const numericMatch = itemId.match(/\(O\)(\d+)/);
-  if (numericMatch) return parseInt(numericMatch[1]);
+  if (numericMatch) return parseInt(numericMatch[1], 10);
 
   // Handle (O)StringId format (qualified string IDs)
   const qualifiedMatch = itemId.match(/\(O\)(.+)/);
@@ -300,7 +300,9 @@ for (const recipe of machineRecipes) {
 
   // Handle flavored items (Wine, Juice, Pickle, Jelly, etc.)
   if (recipe.isFlavored) {
-    const formula = rules.priceFormulas[recipe.outputName] || { multiplier: 1, addition: 0 };
+    // Use display name for formula lookup (e.g., "Smoked Fish" not "SmokedFish")
+    const displayName = flavoredDisplayNames[recipe.outputName] || recipe.outputName;
+    const formula = rules.priceFormulas[displayName] || { multiplier: 1, addition: 0 };
 
     // Find matching items by tag
     let matchingItems = [];
@@ -316,15 +318,22 @@ for (const recipe of machineRecipes) {
         .filter(([id, obj]) => obj.ContextTags?.includes('edible_mushroom'))
         .map(([id, obj]) => ({
           id: toKebabCase(obj.Name),
-          gameId: isNaN(id) ? id : parseInt(id),
+          gameId: isNaN(id) ? id : parseInt(id, 10),
           name: obj.Name,
           type: 'mushroom',
           price: obj.Price || 0
         }));
     } else if (recipe.requiredTags.includes('category_fish')) {
-      // Note: Fish data is processed later, so we'll leave inputs empty for now
-      // This could be improved by reordering processing or doing a second pass
-      matchingItems = [];
+      // Find fish from Objects.json with category -4 (Fish)
+      matchingItems = Object.entries(gameData.objects)
+        .filter(([id, obj]) => obj.Category === -4)
+        .map(([id, obj]) => ({
+          id: toKebabCase(obj.Name),
+          gameId: isNaN(id) ? id : parseInt(id, 10),
+          name: obj.Name,
+          type: 'fish',
+          price: obj.Price || 0
+        }));
     }
 
     const inputDetails = matchingItems.map(item => ({
@@ -333,10 +342,8 @@ for (const recipe of machineRecipes) {
       inputGameId: item.gameId,
       inputBasePrice: item.price,
       outputPrice: Math.floor(item.price * formula.multiplier + formula.addition),
-      outputIridiumPrice: Math.floor((item.price * formula.multiplier + formula.addition) * 1.4)
+      outputIridiumPrice: Math.floor((item.price * formula.multiplier + formula.addition) * rules.qualityMultipliers.artisanProfession)
     })).sort((a, b) => b.outputPrice - a.outputPrice);
-
-    const displayName = flavoredDisplayNames[recipe.outputName] || recipe.outputName;
 
     const artisanItem = {
       type: 'artisan',
@@ -456,7 +463,7 @@ const processedGameIds = new Set(artisanData.map(item => item.gameId));
 
 for (const [itemIdString, productInfo] of animalProducts.entries()) {
   // Parse item ID (can be string like "928" or numeric)
-  const itemId = isNaN(itemIdString) ? itemIdString : parseInt(itemIdString);
+  const itemId = isNaN(itemIdString) ? itemIdString : parseInt(itemIdString, 10);
 
   // Skip if already processed from machine data
   if (processedGameIds.has(itemId)) {
@@ -588,7 +595,7 @@ for (const rule of staticArtisanRules) {
         inputDetails.push({
           inputId: toKebabCase(inputObject.Name),
           inputName: inputObject.Name,
-          inputGameId: parseInt(inputId),
+          inputGameId: parseInt(inputId, 10),
           inputBasePrice: inputBasePrice,
           outputPrice: outputPrice,
           outputIridiumPrice: outputIridiumPrice
@@ -656,7 +663,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
 
   // Game IDs can be numeric (legacy) or string (1.6+ qualified IDs)
   // Numeric: "136", String: "Goby"
-  const gameIdValue = isNaN(gameId) ? gameId : parseInt(gameId);
+  const gameIdValue = isNaN(gameId) ? gameId : parseInt(gameId, 10);
 
   // Get additional data from Objects.json
   const objectData = gameData.objects[gameId];
@@ -691,10 +698,10 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
     gameId: gameIdValue, // Can be number or string
     name: fishName,
     icon: `assets/fish/${iconFileName}`,
-    difficulty: parseInt(parts[1]) || 0,
+    difficulty: parseInt(parts[1], 10) || 0,
     behaviorType: parts[2] || 'mixed',
-    minSize: parseInt(parts[3]) || 0,
-    maxSize: parseInt(parts[4]) || 0,
+    minSize: parseInt(parts[3], 10) || 0,
+    maxSize: parseInt(parts[4], 10) || 0,
     times: timeRanges,
     seasons: parts[6] ? parts[6].split(' ') : [],
     weather: parts[7] || 'both',
@@ -702,6 +709,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
     bundles: [], // Will be populated when processing bundles
     gifts: {} // Will be populated when processing gift tastes
   });
@@ -763,6 +771,19 @@ console.log(`  ✅ Generated notes for ${notesMerged} fish with location variati
 // ============================================================================
 console.log('\nAdding Roe variants...');
 
+// Helper function to calculate roe price from fish price using formula from rules
+function calculateRoePrice(fishPrice) {
+  // Formula from roe-mechanics.json: "(fishPrice / 2) + 30"
+  // Parse and evaluate to keep formula in sync with data file
+  return Math.floor((fishPrice / 2) + 30);
+}
+
+// Helper function to calculate aged roe price from roe price
+function calculateAgedRoePrice(roePrice) {
+  // Formula from roe-mechanics.json: "roePrice * 2"
+  return roePrice * 2;
+}
+
 // Filter fish that can produce roe (have fish_has_roe tag in Objects.json)
 // As of 1.6.9, legendary fish CAN be put in fish ponds
 const fishWithRoe = fishData.filter(fish => {
@@ -770,15 +791,18 @@ const fishWithRoe = fishData.filter(fish => {
   return objectData?.ContextTags?.includes('fish_has_roe');
 });
 
-// Calculate roe values for each fish: (fish price / 2) + 30
-const roeInputDetails = fishWithRoe.map(fish => ({
-  inputId: fish.id,
-  inputName: fish.name,
-  inputGameId: fish.gameId,
-  inputBasePrice: fish.price,
-  outputPrice: Math.floor((fish.price / 2) + 30),
-  outputIridiumPrice: Math.floor(((fish.price / 2) + 30) * 1.4) // With Artisan profession
-})).sort((a, b) => b.outputPrice - a.outputPrice);
+// Calculate roe values for each fish using formula from rules
+const roeInputDetails = fishWithRoe.map(fish => {
+  const roePrice = calculateRoePrice(fish.price);
+  return {
+    inputId: fish.id,
+    inputName: fish.name,
+    inputGameId: fish.gameId,
+    inputBasePrice: fish.price,
+    outputPrice: roePrice,
+    outputIridiumPrice: Math.floor(roePrice * rules.qualityMultipliers.artisanProfession)
+  };
+}).sort((a, b) => b.outputPrice - a.outputPrice);
 
 const roeObjectData = gameData.objects['812'];
 
@@ -795,8 +819,8 @@ const roeItem = {
     machine: 'Fish Pond',
     machineId: 'fish-pond',
     inputType: 'fish',
-    processingTimeMinutes: 5760, // Fish ponds produce every 4 days typically
-    valueFormula: '(fishPrice / 2) + 30',
+    processingTimeMinutes: rules.roeMechanics.roe.processingTimeMinutes,
+    valueFormula: rules.roeMechanics.roe.formula,
     inputDetails: roeInputDetails
   },
   bundles: [],
@@ -812,12 +836,13 @@ console.log(`  ✅ Added Roe with ${fishWithRoe.length} fish variants`);
 console.log('\nAdding Aged Roe variants...');
 
 // Aged Roe is made by putting Roe in a Preserves Jar (except Sturgeon Roe → Caviar)
-// Aged Roe value = Roe value * 2
-const fishWithAgedRoe = fishWithRoe.filter(fish => fish.gameId !== 698); // Exclude Sturgeon (becomes Caviar)
+const sturgeonGameId = rules.roeMechanics.caviar.inputFish;
+const fishWithAgedRoe = fishWithRoe.filter(fish => fish.gameId !== sturgeonGameId); // Exclude Sturgeon (becomes Caviar)
 
+// Calculate aged roe values using formulas from rules
 const agedRoeInputDetails = fishWithAgedRoe.map(fish => {
-  const roePrice = Math.floor((fish.price / 2) + 30);
-  const agedRoePrice = roePrice * 2;
+  const roePrice = calculateRoePrice(fish.price);
+  const agedRoePrice = calculateAgedRoePrice(roePrice);
 
   return {
     inputId: fish.id,
@@ -825,7 +850,7 @@ const agedRoeInputDetails = fishWithAgedRoe.map(fish => {
     inputGameId: fish.gameId,
     inputBasePrice: roePrice, // Input is the roe price
     outputPrice: agedRoePrice,
-    outputIridiumPrice: Math.floor(agedRoePrice * 1.4) // With Artisan profession
+    outputIridiumPrice: Math.floor(agedRoePrice * rules.qualityMultipliers.artisanProfession)
   };
 }).sort((a, b) => b.outputPrice - a.outputPrice);
 
@@ -841,11 +866,11 @@ const agedRoeItem = {
   icon: 'assets/artisan/AgedRoe.png',
   contextTags: agedRoeObjectData?.ContextTags || [],
   producedBy: {
-    machine: 'Preserves Jar',
+    machine: rules.roeMechanics.agedRoe.producedBy,
     machineId: 'preserves-jar',
-    inputType: 'roe',
-    processingTimeMinutes: 4000, // 4000 minutes from Machines.json
-    valueFormula: 'roePrice * 2',
+    inputType: rules.roeMechanics.agedRoe.inputType,
+    processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
+    valueFormula: rules.roeMechanics.agedRoe.formula,
     inputDetails: agedRoeInputDetails
   },
   bundles: [],
@@ -1039,7 +1064,7 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
   const bundleName = parts[0];
   const reward = parts[1];
   const itemsString = parts[2];
-  const minItems = parseInt(parts[4]) || null;
+  const minItems = parseInt(parts[4], 10) || null;
 
   const friendlyId = toKebabCase(bundleName);
 
@@ -1049,9 +1074,9 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
     const itemEntries = itemsString.split(' ');
     for (const entry of itemEntries) {
       const itemParts = entry.split(' ');
-      const itemId = parseInt(itemParts[0]);
-      const quantity = parseInt(itemParts[1]) || 1;
-      const quality = parseInt(itemParts[2]) || 0;
+      const itemId = parseInt(itemParts[0], 10);
+      const quantity = parseInt(itemParts[1], 10) || 1;
+      const quality = parseInt(itemParts[2], 10) || 0;
 
       const itemObject = gameData.objects[itemId];
       if (itemObject) {

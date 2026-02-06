@@ -1,0 +1,23 @@
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.modal-grid-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.modal-grid-item .label {
+  font-weight: 600;
+  color: #5c4a32;
+  white-space: nowrap;
+}
+
+.modal-grid-item .value {
+  color: #2d1b00;
+  word-break: break-word;
+}
