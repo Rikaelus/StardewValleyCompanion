@@ -7,6 +7,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  resolveBundleDetails,
+  resolveGiftDetails,
+  createGameIdIndex,
+  compilePage,
+  createItemLookupMaps,
+  calculateQualityPrices
+} = require('./lib/compilationHelpers.cjs');
 
 const SOURCE_DIR = path.join(__dirname, '../data/processed');
 const OUTPUT_DIR = path.join(__dirname, '../public/data');
@@ -29,6 +37,13 @@ const sourceData = {
   fish: loadJson(path.join(SOURCE_DIR, 'items/fish.json')),
   artisan: loadJson(path.join(SOURCE_DIR, 'items/artisan.json')),
   crops: loadJson(path.join(SOURCE_DIR, 'items/crops.json')),
+  forage: loadJson(path.join(SOURCE_DIR, 'items/forage.json')),
+  fruitTrees: loadJson(path.join(SOURCE_DIR, 'items/fruit-trees.json')),
+  treeFruits: loadJson(path.join(SOURCE_DIR, 'items/tree-fruits.json')),
+  minerals: loadJson(path.join(SOURCE_DIR, 'items/minerals.json')),
+  metalBars: loadJson(path.join(SOURCE_DIR, 'items/metal-bars.json')),
+  monsterLoot: loadJson(path.join(SOURCE_DIR, 'items/monster-loot.json')),
+  resources: loadJson(path.join(SOURCE_DIR, 'items/resources.json')),
   bundles: loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers: loadJson(path.join(SOURCE_DIR, 'reference/villagers.json'))
 };
@@ -36,6 +51,13 @@ const sourceData = {
 console.log(`  ✓ Loaded ${sourceData.fish.length} fish`);
 console.log(`  ✓ Loaded ${sourceData.artisan.length} artisan goods`);
 console.log(`  ✓ Loaded ${sourceData.crops.length} crops`);
+console.log(`  ✓ Loaded ${sourceData.forage.length} foraged items`);
+console.log(`  ✓ Loaded ${sourceData.fruitTrees.length} fruit trees`);
+console.log(`  ✓ Loaded ${sourceData.treeFruits.length} tree fruits`);
+console.log(`  ✓ Loaded ${sourceData.minerals.length} minerals`);
+console.log(`  ✓ Loaded ${sourceData.metalBars.length} metal bars`);
+console.log(`  ✓ Loaded ${sourceData.monsterLoot.length} monster loot`);
+console.log(`  ✓ Loaded ${sourceData.resources.length} resources`);
 console.log(`  ✓ Loaded ${sourceData.bundles.length} bundles`);
 console.log(`  ✓ Loaded ${sourceData.villagers.length} villagers`);
 
@@ -48,6 +70,20 @@ const lookupMaps = {
   artisanByGameId: new Map(sourceData.artisan.map(a => [a.gameId, a])),
   cropsById: new Map(sourceData.crops.map(c => [c.id, c])),
   cropsByGameId: new Map(sourceData.crops.map(c => [c.gameId, c])),
+  forageById: new Map(sourceData.forage.map(f => [f.id, f])),
+  forageByGameId: new Map(sourceData.forage.map(f => [f.gameId, f])),
+  fruitTreesById: new Map(sourceData.fruitTrees.map(f => [f.id, f])),
+  fruitTreesByGameId: new Map(sourceData.fruitTrees.map(f => [f.gameId, f])),
+  treeFruitsById: new Map(sourceData.treeFruits.map(f => [f.id, f])),
+  treeFruitsByGameId: new Map(sourceData.treeFruits.map(f => [f.gameId, f])),
+  mineralsById: new Map(sourceData.minerals.map(m => [m.id, m])),
+  mineralsByGameId: new Map(sourceData.minerals.map(m => [m.gameId, m])),
+  metalBarsById: new Map(sourceData.metalBars.map(m => [m.id, m])),
+  metalBarsByGameId: new Map(sourceData.metalBars.map(m => [m.gameId, m])),
+  monsterLootById: new Map(sourceData.monsterLoot.map(m => [m.id, m])),
+  monsterLootByGameId: new Map(sourceData.monsterLoot.map(m => [m.gameId, m])),
+  resourcesById: new Map(sourceData.resources.map(r => [r.id, r])),
+  resourcesByGameId: new Map(sourceData.resources.map(r => [r.gameId, r])),
   bundlesById: new Map(sourceData.bundles.map(b => [b.id, b])),
   villagersById: new Map(sourceData.villagers.map(v => [v.id, v]))
 };
@@ -57,45 +93,10 @@ console.log(`  ✓ Created lookup maps`);
 // Compile Fish Page
 console.log('\n📄 Compiling fish page data...');
 
-const compiledFish = sourceData.fish.map(fish => {
-  // Resolve bundle references to full bundle objects
-  const bundleDetails = fish.bundles
-    .map(bundleId => lookupMaps.bundlesById.get(bundleId))
-    .filter(Boolean); // Remove any undefined bundles
-
-  // Resolve gift references to full villager objects (exclude neutral - not useful for display)
-  const giftDetails = Object.entries(fish.gifts || {}).map(([villagerId, preference]) => {
-    if (preference === 'neutral') return null; // Don't include neutral in UI
-    const villager = lookupMaps.villagersById.get(villagerId);
-    return villager ? {
-      villager: villager,
-      preference: preference
-    } : null;
-  }).filter(Boolean);
-
-  return {
-    ...fish,
-    bundleDetails,
-    giftDetails
-  };
-});
-
-// Create gameId index for O(1) save file lookups
-const fishGameIdIndex = Object.fromEntries(
-  sourceData.fish.map(f => [f.gameId, f.id])
-);
-
-const fishPageData = {
-  items: compiledFish,
-  gameIdIndex: fishGameIdIndex,
-  meta: {
-    compiled: new Date().toISOString(),
-    totalItems: compiledFish.length
-  }
-};
+const fishPageData = compilePage(sourceData.fish, lookupMaps);
 
 writeJson(path.join(OUTPUT_DIR, 'pages/fish.json'), fishPageData);
-console.log(`  ✓ Compiled fish.json (${compiledFish.length} items, ${Object.keys(fishGameIdIndex).length} IDs indexed)`);
+console.log(`  ✓ Compiled fish.json (${fishPageData.items.length} items, ${Object.keys(fishPageData.gameIdIndex).length} IDs indexed)`);
 
 // Load rules quality multipliers
 const RULES_DIR = path.join(__dirname, '../data/rules');
@@ -105,41 +106,12 @@ const artisanNaming = loadJson(path.join(RULES_DIR, 'artisan-naming.json')).patt
 // Compile Artisan Page
 console.log('\n🍷 Compiling artisan page data...');
 
-// Helper function to calculate quality prices
-// Uses quality multipliers from rules data
-// Only include quality tiers if the item can actually achieve them (via aging or natural quality)
-function calculateQualityPrices(basePrice, canBeAged, hasQuality) {
-  const prices = {
-    regular: Math.floor(basePrice * qualityMultipliers.regular)
-  };
-
-  // Add quality tiers for items that can be aged OR have natural quality (animal products)
-  if (canBeAged || hasQuality) {
-    prices.silver = Math.floor(basePrice * qualityMultipliers.silver);
-    prices.gold = Math.floor(basePrice * qualityMultipliers.gold);
-    prices.iridium = Math.floor(basePrice * qualityMultipliers.iridium);
-  }
-
-  return prices;
-}
-
 const compiledArtisan = [];
 
 sourceData.artisan.forEach(artisan => {
-  // Resolve bundle references to full bundle objects
-  const bundleDetails = artisan.bundles
-    .map(bundleId => lookupMaps.bundlesById.get(bundleId))
-    .filter(Boolean);
-
-  // Resolve gift references to full villager objects (exclude neutral - not useful for display)
-  const giftDetails = Object.entries(artisan.gifts || {}).map(([villagerId, preference]) => {
-    if (preference === 'neutral') return null; // Don't include neutral in UI
-    const villager = lookupMaps.villagersById.get(villagerId);
-    return villager ? {
-      villager: villager,
-      preference: preference
-    } : null;
-  }).filter(Boolean);
+  // Resolve bundle and gift references using helpers
+  const bundleDetails = resolveBundleDetails(artisan.bundles, lookupMaps.bundlesById);
+  const giftDetails = resolveGiftDetails(artisan.gifts, lookupMaps.villagersById);
 
   // Check if this item has inputDetails (variations like Wine, Juice, etc.)
   if (artisan.producedBy?.inputDetails && artisan.producedBy.inputDetails.length > 0) {
@@ -153,7 +125,7 @@ sourceData.artisan.forEach(artisan => {
       // Multiple inputs produce the same item (e.g., Milk & Large Milk both make Cheese)
       // Create a single item with all inputDetails
       const basePrice = artisan.producedBy.inputDetails[0].outputPrice;
-      const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality);
+      const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
       const compiledItem = {
         id: artisan.id,
@@ -217,7 +189,7 @@ sourceData.artisan.forEach(artisan => {
 
         // Use the specific output price for this variation
         const basePrice = inputDetail.outputPrice;
-        const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality);
+        const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
         const compiledItem = {
           id: variantId,
@@ -272,7 +244,7 @@ sourceData.artisan.forEach(artisan => {
         icon: artisan.icon,
         contextTags: artisan.contextTags,
         edibility: artisan.edibility,
-        prices: calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality),
+        prices: calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers),
         producedBy: {
           machine: artisan.producedBy.machine,
           machineId: artisan.producedBy.machineId,
@@ -294,7 +266,7 @@ sourceData.artisan.forEach(artisan => {
     const isTemplate = artisan.producedBy?.inputDetails && artisan.producedBy.inputDetails.length === 0;
 
     if (!isTemplate) {
-      const qualityPrices = calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality);
+      const qualityPrices = calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
       compiledArtisan.push({
         ...artisan,
@@ -326,33 +298,78 @@ const artisanPageData = {
 writeJson(path.join(OUTPUT_DIR, 'pages/artisan.json'), artisanPageData);
 console.log(`  ✓ Compiled artisan.json (${compiledArtisan.length} items from ${sourceData.artisan.length} source items, ${Object.keys(artisanGameIdIndex).length} IDs indexed)`);
 
+// Compile Forage Page
+console.log('\n🌿 Compiling forage page data...');
+const foragePageData = compilePage(sourceData.forage, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/forage.json'), foragePageData);
+console.log(`  ✓ Compiled forage.json (${foragePageData.items.length} items, ${Object.keys(foragePageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Tree Fruits Page
+console.log('\n🍎 Compiling tree fruits page data...');
+const treeFruitsPageData = compilePage(sourceData.treeFruits, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/tree-fruits.json'), treeFruitsPageData);
+console.log(`  ✓ Compiled tree-fruits.json (${treeFruitsPageData.items.length} items, ${Object.keys(treeFruitsPageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Minerals Page
+console.log('\n💎 Compiling minerals page data...');
+const mineralsPageData = compilePage(sourceData.minerals, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/minerals.json'), mineralsPageData);
+console.log(`  ✓ Compiled minerals.json (${mineralsPageData.items.length} items, ${Object.keys(mineralsPageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Metal Bars Page
+console.log('\n⚒️  Compiling metal bars page data...');
+const metalBarsPageData = compilePage(sourceData.metalBars, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/metal-bars.json'), metalBarsPageData);
+console.log(`  ✓ Compiled metal-bars.json (${metalBarsPageData.items.length} items, ${Object.keys(metalBarsPageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Monster Loot Page
+console.log('\n👹 Compiling monster loot page data...');
+const monsterLootPageData = compilePage(sourceData.monsterLoot, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/monster-loot.json'), monsterLootPageData);
+console.log(`  ✓ Compiled monster-loot.json (${monsterLootPageData.items.length} items, ${Object.keys(monsterLootPageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Resources Page
+console.log('\n📦 Compiling resources page data...');
+const resourcesPageData = compilePage(sourceData.resources, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/resources.json'), resourcesPageData);
+console.log(`  ✓ Compiled resources.json (${resourcesPageData.items.length} items, ${Object.keys(resourcesPageData.gameIdIndex).length} IDs indexed)`);
+
 // Compile Bundles Page
 console.log('\n📦 Compiling bundles page data...');
 
 const compiledBundles = sourceData.bundles.map(bundle => {
   // Resolve item references to full item objects
   const itemsWithDetails = bundle.items.map(item => {
-    // Try to find in fish first
-    let sourceItem = lookupMaps.fishByGameId.get(item.gameId);
-    let itemType = 'fish';
+    // Try to find in all item types
+    const itemTypes = [
+      { map: lookupMaps.fishByGameId, type: 'fish' },
+      { map: lookupMaps.artisanByGameId, type: 'artisan' },
+      { map: lookupMaps.cropsByGameId, type: 'crop' },
+      { map: lookupMaps.forageByGameId, type: 'forage' },
+      { map: lookupMaps.fruitTreesByGameId, type: 'fruit-tree' },
+      { map: lookupMaps.treeFruitsByGameId, type: 'tree-fruit' },
+      { map: lookupMaps.mineralsByGameId, type: 'mineral' },
+      { map: lookupMaps.metalBarsByGameId, type: 'metal-bar' },
+      { map: lookupMaps.monsterLootByGameId, type: 'monster-loot' },
+      { map: lookupMaps.resourcesByGameId, type: 'resource' }
+    ];
 
-    // If not fish, try artisan
-    if (!sourceItem) {
-      sourceItem = lookupMaps.artisanByGameId.get(item.gameId);
-      itemType = 'artisan';
-    }
+    let sourceItem = null;
+    let itemType = null;
 
-    // If not artisan, try crops
-    if (!sourceItem) {
-      sourceItem = lookupMaps.cropsByGameId.get(item.gameId);
-      itemType = 'crop';
+    for (const { map, type } of itemTypes) {
+      sourceItem = map.get(item.gameId);
+      if (sourceItem) {
+        itemType = type;
+        break;
+      }
     }
 
     // If not found in any data source
     if (!sourceItem) {
       // Skip warning for common non-tracked items (stone, weeds, etc)
       if (item.gameId !== 0 && item.gameId !== 2 && item.gameId !== 10) {
-        console.warn(`  ⚠️  Warning: Item ${item.gameId} not found in fish, artisan, or crop data`);
+        console.warn(`  ⚠️  Warning: Item ${item.gameId} not found in any item data`);
       }
       return {
         ...item,
@@ -362,49 +379,11 @@ const compiledBundles = sourceData.bundles.map(bundle => {
       };
     }
 
-    // Return different fields based on item type
-    if (itemType === 'fish') {
-      return {
-        id: sourceItem.id,
-        gameId: sourceItem.gameId,
-        name: sourceItem.name,
-        icon: sourceItem.icon,
-        type: 'fish',
-        difficulty: sourceItem.difficulty,
-        seasons: sourceItem.seasons,
-        times: sourceItem.times,
-        location: sourceItem.location,
-        weather: sourceItem.weather,
-        price: sourceItem.price,
-        quantity: item.quantity,
-        quality: item.quality
-      };
-    } else if (itemType === 'artisan') {
-      return {
-        id: sourceItem.id,
-        gameId: sourceItem.gameId,
-        name: sourceItem.name,
-        icon: sourceItem.icon,
-        type: 'artisan',
-        category: sourceItem.category,
-        price: sourceItem.price,
-        producedBy: sourceItem.producedBy,
-        quantity: item.quantity,
-        quality: item.quality
-      };
-    } else {
-      // crop
-      return {
-        id: sourceItem.id,
-        gameId: sourceItem.gameId,
-        name: sourceItem.name,
-        icon: `assets/crops/${sourceItem.name.replace(/\s+/g, '_')}.png`,
-        type: 'crop',
-        cropType: sourceItem.type,
-        price: sourceItem.price,
-        quantity: item.quantity,
-        quality: item.quality
-      };
+    // Return item with bundle-specific quantity and quality
+    return {
+      ...sourceItem,
+      quantity: item.quantity,
+      quality: item.quality
     }
   });
 
@@ -446,10 +425,10 @@ const stats = {
   sourceFiles: 5,
   compiledPages: 3,
   referenceFiles: 1,
-  totalFish: compiledFish.length,
+  totalFish: fishPageData.items.length,
   totalArtisan: compiledArtisan.length,
   totalCrops: sourceData.crops.length,
-  totalBundles: compiledBundles.length,
+  totalBundles: bundlesPageData.bundles.length,
   totalVillagers: sourceData.villagers.length,
   artisanExpansion: compiledArtisan.length - sourceData.artisan.length
 };

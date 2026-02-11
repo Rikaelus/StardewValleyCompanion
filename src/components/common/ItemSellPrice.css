@@ -35,6 +35,8 @@
 }
 
 .profession-badge {
+  display: flex;
+  align-items: center;
   font-size: 11px;
   color: #1976d2;
   font-weight: 500;

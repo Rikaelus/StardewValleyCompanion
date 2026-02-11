@@ -12,6 +12,10 @@ const GAME_EXPORTS_DIR = path.join(__dirname, '../data/game-exports');
 const RULES_DIR = path.join(__dirname, '../data/rules');
 const PROCESSED_DIR = path.join(__dirname, '../data/processed');
 
+// Items that exist in both fish and forage contexts
+// These are crab pot catches that can also be foraged on the beach
+const DUAL_ROLE_ITEMS = [372, 718, 719, 723]; // Clam, Cockle, Mussel, Oyster
+
 // Helper function to create kebab-case IDs from names
 function toKebabCase(str) {
   return str
@@ -103,6 +107,439 @@ console.log(`  Processed ${cropData.length} crops`);
 console.log(`    Fruits: ${cropData.filter(c => c.type === 'fruit').length}`);
 console.log(`    Vegetables: ${cropData.filter(c => c.type === 'vegetable').length}`);
 console.log(`    Flowers: ${cropData.filter(c => c.type === 'flower').length}`);
+
+// ============================================================================
+// Process Foraged Items
+// ============================================================================
+console.log('\nProcessing foraged items...');
+const forageData = [];
+
+// Season number to name mapping
+const seasonMap = { 0: 'spring', 1: 'summer', 2: 'fall', 3: 'winter' };
+
+// Load Locations.json to extract forage spawn data
+let locationData = {};
+try {
+  locationData = loadJson(path.join(GAME_EXPORTS_DIR, 'Locations.json'));
+} catch (e) {
+  console.warn('  Warning: Could not load Locations.json for forage locations');
+}
+
+// Build a map of item ID to locations and seasons
+const forageLocationMap = new Map(); // gameId -> {locations: Set, seasons: Set}
+
+for (const [locationName, locationInfo] of Object.entries(locationData)) {
+  if (locationInfo.Forage) {
+    for (const forageRule of locationInfo.Forage) {
+      const itemId = parseItemId(forageRule.ItemId);
+      if (!itemId) continue;
+
+      if (!forageLocationMap.has(itemId)) {
+        forageLocationMap.set(itemId, { locations: new Set(), seasons: new Set() });
+      }
+
+      const data = forageLocationMap.get(itemId);
+
+      // Add location (clean up internal names)
+      const cleanLocation = locationName
+        .replace(/^Custom_/, '')
+        .replace(/_/g, ' ');
+      data.locations.add(cleanLocation);
+
+      // Add season if specified (either from Season field or Condition field)
+      if (forageRule.Season !== undefined && forageRule.Season !== null) {
+        const seasonName = seasonMap[forageRule.Season];
+        if (seasonName) data.seasons.add(seasonName);
+      }
+      // Parse Condition field for season data (format: "LOCATION_SEASON Here spring summer fall")
+      else if (forageRule.Condition && forageRule.Condition.includes('LOCATION_SEASON')) {
+        const conditionMatch = forageRule.Condition.match(/LOCATION_SEASON\s+Here\s+(.+)/);
+        if (conditionMatch) {
+          const conditionSeasons = conditionMatch[1].split(' ');
+          conditionSeasons.forEach(season => {
+            if (season && seasonMap[Object.keys(seasonMap).find(k => seasonMap[k] === season.toLowerCase())]) {
+              data.seasons.add(season.toLowerCase());
+            }
+          });
+        }
+      }
+    }
+  }
+}
+
+// Add mine forage locations (hardcoded game knowledge not in exports)
+const mineForageRules = loadJson(path.join(RULES_DIR, 'mine-forage.json'));
+for (const mineForage of mineForageRules.items) {
+  if (!forageLocationMap.has(mineForage.gameId)) {
+    forageLocationMap.set(mineForage.gameId, { locations: new Set(), seasons: new Set() });
+  }
+  const data = forageLocationMap.get(mineForage.gameId);
+  data.locations.add(`Mines (Floors ${mineForage.floors})`);
+  // No seasons for mines - available year-round
+}
+
+// Filter items with forage_item context tag (plus special cases)
+for (const [gameId, objectData] of Object.entries(gameData.objects)) {
+  const itemGameId = parseInt(gameId, 10);
+  const isForageItem = objectData.ContextTags?.includes('forage_item');
+  const isSpecialForage = itemGameId === 416; // Snow Yam (lacks forage_item tag but is forage)
+
+  if (!isForageItem && !isSpecialForage) continue;
+
+  const friendlyId = toKebabCase(objectData.Name);
+
+  // Get location and season data
+  const locationInfo = forageLocationMap.get(itemGameId) || { locations: new Set(), seasons: new Set() };
+  const locations = Array.from(locationInfo.locations).sort();
+  let seasons = Array.from(locationInfo.seasons).sort();
+
+  // Note: Beach forage items (forage_item_beach tag) are now correctly extracted
+  // from Locations.json with proper seasonal data. No special handling needed.
+
+  // Determine if it's a flower (has flower context tag)
+  const isFlower = objectData.ContextTags?.includes('flower_item') || false;
+
+  forageData.push({
+    type: 'forage',
+    id: friendlyId,
+    gameId: itemGameId,
+    name: objectData.Name,
+    icon: `assets/forage/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    seasons: seasons.length > 0 ? seasons : ['spring', 'summer', 'fall', 'winter'],
+    locations: locations,
+    isFlower: isFlower,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${forageData.length} foraged items`);
+console.log(`    Flowers: ${forageData.filter(f => f.isFlower).length}`);
+
+// Generate special case notes for forage items
+console.log('\nGenerating forage special case notes...');
+const { generateForageSpecialCases } = require('./generate-forage-special-cases.cjs');
+const forageSpecialCases = generateForageSpecialCases();
+
+// Merge special case notes into forage data
+forageData.forEach(item => {
+  if (forageSpecialCases.has(item.gameId)) {
+    item.notes = forageSpecialCases.get(item.gameId);
+  }
+});
+
+// Curate dual-role items in forage context
+console.log('\nCurating dual-role forage items...');
+
+forageData.forEach(item => {
+  if (DUAL_ROLE_ITEMS.includes(item.gameId)) {
+    // For forage context, mark that this item also exists as fish
+    item.alsoAvailableAs = {
+      type: 'fish',
+      id: item.id, // Same friendly ID
+      context: 'Crab pot fishing'
+    };
+
+    // Preserve original category for game mechanics (selling, professions)
+    // But set a display category for the modal subtitle
+    item.originalCategory = item.category; // -4 (Fish) - used for professions/selling
+    item.displayCategory = -81; // Forage - used for modal subtitle
+
+    // Note: Quality detection is now handled automatically in ItemSellPrice component
+    // Foraged items (type='forage') automatically show no quality
+    // Fish items (type='fish', even if isTrapFish) show appropriate quality levels
+  }
+});
+
+console.log(`  ✅ Curated ${DUAL_ROLE_ITEMS.length} dual-role items in forage data`);
+
+// ============================================================================
+// Process Fruit Tree Items
+// ============================================================================
+console.log('\nProcessing fruit tree items...');
+const fruitTreeData = [];
+
+// Load fruit trees data
+let fruitTreesData = {};
+try {
+  fruitTreesData = loadJson(path.join(GAME_EXPORTS_DIR, 'fruitTrees.json'));
+} catch (e) {
+  console.warn('  Warning: Could not load fruitTrees.json');
+}
+
+for (const [treeId, treeInfo] of Object.entries(fruitTreesData)) {
+  // Get the fruit item ID from the first fruit entry
+  const fruitEntry = treeInfo.Fruit?.[0];
+  if (!fruitEntry?.ItemId) continue;
+
+  const fruitGameId = parseItemId(fruitEntry.ItemId);
+  if (!fruitGameId) continue;
+
+  const fruitObject = gameData.objects[fruitGameId];
+  if (!fruitObject) {
+    console.warn(`  Warning: Fruit tree fruit ${fruitGameId} not found in Objects.json`);
+    continue;
+  }
+
+  const treeGameId = isNaN(treeId) ? treeId : parseInt(treeId, 10);
+  const fruitName = fruitObject.Name;
+
+  // Map season numbers to names
+  const seasons = (treeInfo.Seasons || []).map(s => seasonMap[s]).filter(Boolean);
+
+  // Fruit trees take 28 days to mature
+  const daysToMature = 28;
+
+  fruitTreeData.push({
+    type: 'fruit-tree',
+    id: toKebabCase(fruitName),
+    gameId: treeGameId,
+    name: `${fruitName} Tree`,
+    fruitGameId: fruitGameId,
+    fruitName: fruitName,
+    icon: `assets/fruit-trees/${fruitName.replace(/\s+/g, '_')}.png`,
+    price: fruitObject.Price || 0,
+    edibility: fruitObject.Edibility || -300,
+    category: fruitObject.Category || 0,
+    contextTags: fruitObject.ContextTags || [],
+    seasons: seasons,
+    daysToMature: daysToMature,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${fruitTreeData.length} fruit tree items`);
+
+// ============================================================================
+// Process Tree Fruits (outputs from fruit trees)
+// ============================================================================
+console.log('\nProcessing tree fruits...');
+const treeFruitsData = [];
+
+// Fruit items are category -79 (Fruit)
+// These are the outputs from fruit trees, distinct from the tree items themselves
+for (const [gameId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -79) continue;
+
+  const itemGameId = parseInt(gameId, 10);
+  const friendlyId = toKebabCase(objectData.Name);
+
+  // Get the season from the fruit tree data (where this fruit comes from)
+  const sourceTree = fruitTreeData.find(t => t.fruitGameId === itemGameId);
+  const seasons = sourceTree ? sourceTree.seasons : [];
+
+  treeFruitsData.push({
+    type: 'tree-fruit',
+    id: friendlyId,
+    gameId: itemGameId,
+    name: objectData.Name,
+    icon: `assets/tree-fruits/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    seasons: seasons,
+    treeId: sourceTree ? sourceTree.id : null,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${treeFruitsData.length} tree fruit items`);
+
+// ============================================================================
+// Process Minerals
+// ============================================================================
+console.log('\nProcessing minerals...');
+const mineralData = [];
+
+// Mineral type classification based on name/properties
+function classifyMineral(name, contextTags) {
+  // Gems are the precious ones (high value, typically)
+  const gems = ['Diamond', 'Ruby', 'Emerald', 'Aquamarine', 'Amethyst', 'Topaz', 'Jade', 'Prismatic Shard'];
+  if (gems.includes(name)) return 'gem';
+
+  // Crystals have specific patterns
+  if (name.includes('Crystal') || name === 'Fire Quartz' || name === 'Frozen Tear' || name === 'Earth Crystal') {
+    return 'crystal';
+  }
+
+  // Everything else is a mineral
+  return 'mineral';
+}
+
+// Filter items with category -2 (Minerals)
+for (const [gameId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -2) continue;
+
+  const itemGameId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
+  const friendlyId = toKebabCase(objectData.Name);
+  const mineralType = classifyMineral(objectData.Name, objectData.ContextTags);
+
+  mineralData.push({
+    type: 'mineral',
+    id: friendlyId,
+    gameId: itemGameId,
+    name: objectData.Name,
+    icon: `assets/minerals/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    mineralType: mineralType,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${mineralData.length} minerals`);
+console.log(`    Gems: ${mineralData.filter(m => m.mineralType === 'gem').length}`);
+console.log(`    Crystals: ${mineralData.filter(m => m.mineralType === 'crystal').length}`);
+console.log(`    Other minerals: ${mineralData.filter(m => m.mineralType === 'mineral').length}`);
+
+// ============================================================================
+// Process Metal Bars
+// ============================================================================
+console.log('\nProcessing metal bars...');
+const metalBarData = [];
+
+// Filter items with category -15 and furnace_item tag
+for (const [gameId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -15) continue;
+  if (!objectData.ContextTags?.includes('furnace_item')) continue;
+
+  const itemGameId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
+  const friendlyId = toKebabCase(objectData.Name);
+
+  // Determine the ore/input for this bar
+  // Most bars follow pattern: "X Bar" comes from "X Ore"
+  let producedBy = {
+    machine: 'Furnace',
+    machineId: 'furnace',
+    inputs: []
+  };
+
+  // Common smelting patterns
+  const barToOreMap = {
+    'Copper Bar': [{ gameId: 378, name: 'Copper Ore', quantity: 5 }],
+    'Iron Bar': [{ gameId: 380, name: 'Iron Ore', quantity: 5 }],
+    'Gold Bar': [{ gameId: 384, name: 'Gold Ore', quantity: 5 }],
+    'Iridium Bar': [{ gameId: 386, name: 'Iridium Ore', quantity: 5 }],
+    'Refined Quartz': [{ gameId: 80, name: 'Quartz', quantity: 1 }, { gameId: 82, name: 'Fire Quartz', quantity: 1 }],
+    'Radioactive Bar': [{ gameId: 909, name: 'Radioactive Ore', quantity: 5 }]
+  };
+
+  if (barToOreMap[objectData.Name]) {
+    producedBy.inputs = barToOreMap[objectData.Name];
+  }
+
+  metalBarData.push({
+    type: 'metal-bar',
+    id: friendlyId,
+    gameId: itemGameId,
+    name: objectData.Name,
+    icon: `assets/metal-bars/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    producedBy: producedBy,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${metalBarData.length} metal bars`);
+
+// ============================================================================
+// Process Monster Loot
+// ============================================================================
+console.log('\nProcessing monster loot...');
+const monsterLootData = [];
+
+// Rarity classification (based on typical drop rates and value)
+function classifyMonsterLootRarity(name, price) {
+  // Rare items
+  const rareItems = ['Prismatic Shard', 'Diamond', 'Ancient Seed', 'Dwarf Scroll I', 'Dwarf Scroll II',
+                     'Dwarf Scroll III', 'Dwarf Scroll IV', 'Void Essence', 'Solar Essence'];
+  if (rareItems.includes(name) || price >= 500) return 'rare';
+
+  // Uncommon items
+  const uncommonItems = ['Slime', 'Bat Wing', 'Bug Meat', 'Coal'];
+  if (uncommonItems.includes(name) || price >= 50) return 'uncommon';
+
+  // Everything else is common
+  return 'common';
+}
+
+// Filter items with category -28 (Monster Loot)
+for (const [gameId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -28) continue;
+
+  const itemGameId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
+  const friendlyId = toKebabCase(objectData.Name);
+  const rarity = classifyMonsterLootRarity(objectData.Name, objectData.Price);
+
+  monsterLootData.push({
+    type: 'monster-loot',
+    id: friendlyId,
+    gameId: itemGameId,
+    name: objectData.Name,
+    icon: `assets/monster-loot/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    rarity: rarity,
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${monsterLootData.length} monster loot items`);
+console.log(`    Rare: ${monsterLootData.filter(m => m.rarity === 'rare').length}`);
+console.log(`    Uncommon: ${monsterLootData.filter(m => m.rarity === 'uncommon').length}`);
+console.log(`    Common: ${monsterLootData.filter(m => m.rarity === 'common').length}`);
+
+// ============================================================================
+// Process Resources
+// ============================================================================
+console.log('\nProcessing resources...');
+const resourceData = [];
+
+// Specific resource IDs (category -16)
+const resourceIds = [388, 390, 709, 330, 92]; // Wood, Stone, Hardwood, Clay, Sap
+
+for (const id of resourceIds) {
+  const objectData = gameData.objects[id];
+  if (!objectData) {
+    console.warn(`  Warning: Resource ${id} not found in Objects.json`);
+    continue;
+  }
+
+  const friendlyId = toKebabCase(objectData.Name);
+
+  resourceData.push({
+    type: 'resource',
+    id: friendlyId,
+    gameId: id,
+    name: objectData.Name,
+    icon: `assets/resources/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    category: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    bundles: [],
+    gifts: {}
+  });
+}
+
+console.log(`  Processed ${resourceData.length} resources`);
 
 // ============================================================================
 // Machine Recipe Parser
@@ -660,6 +1097,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
 
   const parts = fishInfo.split('/');
   const fishName = parts[0];
+  const isTrapFish = parts[1] === 'trap';
 
   // Game IDs can be numeric (legacy) or string (1.6+ qualified IDs)
   // Numeric: "136", String: "Goby"
@@ -678,41 +1116,69 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
   // Generate icon path - replace spaces with underscores to match file naming
   const iconFileName = fishName.replace(/\s+/g, '_') + '.png';
 
-  // Parse times
-  let timeRanges = [];
-  if (parts[5]) {
-    const times = parts[5].split(' ');
-    for (let i = 0; i < times.length; i += 2) {
-      if (times[i] && times[i + 1]) {
-        timeRanges.push({
-          start: times[i],
-          end: times[i + 1]
-        });
+  // Trap fish have a different format than regular fish
+  if (isTrapFish) {
+    // Trap format: Name/trap/chance/junkItems/waterType/minSize/maxSize/isJunk
+    // Example: "Clam/trap/.15/681 .35/ocean/1/5/false"
+    fishData.push({
+      type: 'fish',
+      id: friendlyId,
+      gameId: gameIdValue,
+      name: fishName,
+      icon: `assets/fish/${iconFileName}`,
+      difficulty: 0, // Crab pots don't have difficulty
+      behaviorType: 'trap',
+      minSize: parseInt(parts[5], 10) || 0,
+      maxSize: parseInt(parts[6], 10) || 0,
+      times: [], // Crab pots work 24/7
+      seasons: [], // Crab pots work year-round
+      weather: 'both', // Crab pots work in all weather
+      isTrapFish: true,
+      price: objectData.Price || 0,
+      edibility: objectData.Edibility || -300,
+      category: objectData.Category || 0,
+      contextTags: objectData.ContextTags || [],
+      bundles: [],
+      gifts: {}
+    });
+  } else {
+    // Regular fish format: Name/Difficulty/BehaviorType/MinSize/MaxSize/Times/Seasons/Weather/...
+    // Parse times
+    let timeRanges = [];
+    if (parts[5]) {
+      const times = parts[5].split(' ');
+      for (let i = 0; i < times.length; i += 2) {
+        if (times[i] && times[i + 1]) {
+          timeRanges.push({
+            start: times[i],
+            end: times[i + 1]
+          });
+        }
       }
     }
-  }
 
-  fishData.push({
-    type: 'fish',
-    id: friendlyId,
-    gameId: gameIdValue, // Can be number or string
-    name: fishName,
-    icon: `assets/fish/${iconFileName}`,
-    difficulty: parseInt(parts[1], 10) || 0,
-    behaviorType: parts[2] || 'mixed',
-    minSize: parseInt(parts[3], 10) || 0,
-    maxSize: parseInt(parts[4], 10) || 0,
-    times: timeRanges,
-    seasons: parts[6] ? parts[6].split(' ') : [],
-    weather: parts[7] || 'both',
-    isTrapFish: parts[parts.length - 1] === 'false' ? false : parts[12] === 'trap',
-    price: objectData.Price || 0,
-    edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
-    contextTags: objectData.ContextTags || [],
-    bundles: [], // Will be populated when processing bundles
-    gifts: {} // Will be populated when processing gift tastes
-  });
+    fishData.push({
+      type: 'fish',
+      id: friendlyId,
+      gameId: gameIdValue,
+      name: fishName,
+      icon: `assets/fish/${iconFileName}`,
+      difficulty: parseInt(parts[1], 10) || 0,
+      behaviorType: parts[2] || 'mixed',
+      minSize: parseInt(parts[3], 10) || 0,
+      maxSize: parseInt(parts[4], 10) || 0,
+      times: timeRanges,
+      seasons: parts[6] ? parts[6].split(' ') : [],
+      weather: parts[7] || 'both',
+      isTrapFish: false,
+      price: objectData.Price || 0,
+      edibility: objectData.Edibility || -300,
+      category: objectData.Category || 0,
+      contextTags: objectData.ContextTags || [],
+      bundles: [],
+      gifts: {}
+    });
+  }
 }
 
 console.log(`  Processed ${fishData.length} fish`);
@@ -765,6 +1231,27 @@ specialCaseNotes.forEach((note, fishId) => {
 });
 
 console.log(`  ✅ Generated notes for ${notesMerged} fish with location variations`);
+
+// ============================================================================
+// Curate dual-role items (items that appear in both fish and forage contexts)
+// ============================================================================
+console.log('\nCurating dual-role items...');
+
+fishData.forEach(fish => {
+  if (DUAL_ROLE_ITEMS.includes(fish.gameId)) {
+    // For fish context, mark that this item also exists as forage
+    fish.alsoAvailableAs = {
+      type: 'forage',
+      id: fish.id, // Same friendly ID
+      context: 'Beach foraging'
+    };
+
+    // Override category display for fish context - it's primarily a fish/crab pot catch
+    // Category -4 (Fish) is correct for this context
+  }
+});
+
+console.log(`  ✅ Marked ${DUAL_ROLE_ITEMS.length} dual-role items in fish data`);
 
 // ============================================================================
 // Add Roe as flavored artisan item (using fish data)
@@ -1050,6 +1537,41 @@ for (const artisan of artisanData) {
   giftCount += processGiftTastes(artisan, gameData.npcGiftTastes);
 }
 
+// Process gift tastes for forage items
+for (const forage of forageData) {
+  giftCount += processGiftTastes(forage, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for fruit tree items
+for (const fruitTree of fruitTreeData) {
+  giftCount += processGiftTastes(fruitTree, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for tree fruits
+for (const fruit of treeFruitsData) {
+  giftCount += processGiftTastes(fruit, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for minerals
+for (const mineral of mineralData) {
+  giftCount += processGiftTastes(mineral, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for metal bars
+for (const metalBar of metalBarData) {
+  giftCount += processGiftTastes(metalBar, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for monster loot
+for (const monsterLoot of monsterLootData) {
+  giftCount += processGiftTastes(monsterLoot, gameData.npcGiftTastes);
+}
+
+// Process gift tastes for resources
+for (const resource of resourceData) {
+  giftCount += processGiftTastes(resource, gameData.npcGiftTastes);
+}
+
 console.log(`  Processed ${giftCount} gift preferences`);
 
 // Process Bundles
@@ -1098,6 +1620,48 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
         if (artisan && !artisan.bundles.includes(friendlyId)) {
           artisan.bundles.push(friendlyId);
         }
+
+        // Add bundle reference to forage items
+        const forage = forageData.find(f => f.gameId === itemId);
+        if (forage && !forage.bundles.includes(friendlyId)) {
+          forage.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to fruit tree items (searches by fruit output ID)
+        const fruitTree = fruitTreeData.find(f => f.fruitGameId === itemId);
+        if (fruitTree && !fruitTree.bundles.includes(friendlyId)) {
+          fruitTree.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to tree fruits (the fruit items themselves)
+        const treeFruit = treeFruitsData.find(f => f.gameId === itemId);
+        if (treeFruit && !treeFruit.bundles.includes(friendlyId)) {
+          treeFruit.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to minerals
+        const mineral = mineralData.find(m => m.gameId === itemId);
+        if (mineral && !mineral.bundles.includes(friendlyId)) {
+          mineral.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to metal bars
+        const metalBar = metalBarData.find(m => m.gameId === itemId);
+        if (metalBar && !metalBar.bundles.includes(friendlyId)) {
+          metalBar.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to monster loot
+        const monsterLoot = monsterLootData.find(m => m.gameId === itemId);
+        if (monsterLoot && !monsterLoot.bundles.includes(friendlyId)) {
+          monsterLoot.bundles.push(friendlyId);
+        }
+
+        // Add bundle reference to resources
+        const resource = resourceData.find(r => r.gameId === itemId);
+        if (resource && !resource.bundles.includes(friendlyId)) {
+          resource.bundles.push(friendlyId);
+        }
       }
     }
   }
@@ -1133,6 +1697,48 @@ fs.writeFileSync(
   JSON.stringify(cropData, null, 2)
 );
 console.log(`  ✓ Wrote items/crops.json (${cropData.length} crops)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/forage.json'),
+  JSON.stringify(forageData, null, 2)
+);
+console.log(`  ✓ Wrote items/forage.json (${forageData.length} foraged items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/fruit-trees.json'),
+  JSON.stringify(fruitTreeData, null, 2)
+);
+console.log(`  ✓ Wrote items/fruit-trees.json (${fruitTreeData.length} fruit trees)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/tree-fruits.json'),
+  JSON.stringify(treeFruitsData, null, 2)
+);
+console.log(`  ✓ Wrote items/tree-fruits.json (${treeFruitsData.length} tree fruits)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/minerals.json'),
+  JSON.stringify(mineralData, null, 2)
+);
+console.log(`  ✓ Wrote items/minerals.json (${mineralData.length} minerals)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/metal-bars.json'),
+  JSON.stringify(metalBarData, null, 2)
+);
+console.log(`  ✓ Wrote items/metal-bars.json (${metalBarData.length} metal bars)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/monster-loot.json'),
+  JSON.stringify(monsterLootData, null, 2)
+);
+console.log(`  ✓ Wrote items/monster-loot.json (${monsterLootData.length} monster loot items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/resources.json'),
+  JSON.stringify(resourceData, null, 2)
+);
+console.log(`  ✓ Wrote items/resources.json (${resourceData.length} resources)`);
 
 fs.writeFileSync(
   path.join(PROCESSED_DIR, 'reference/villagers.json'),

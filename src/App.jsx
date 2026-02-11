@@ -1,10 +1,12 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import FishPage from './components/fish/FishPage'
 import ArtisanPage from './components/artisan/ArtisanPage'
+import ForagePage from './components/forage/ForagePage'
 import Footer from './components/layout/Footer'
 import CharacterBar from './components/common/CharacterBar'
 import { ModalProvider } from './contexts/ModalContext'
 import { PlayerProvider } from './contexts/PlayerContext'
+import { VillagersProvider } from './contexts/VillagersContext'
 
 function Navigation() {
   const location = useLocation()
@@ -32,6 +34,11 @@ function Navigation() {
                 Artisan Goods
               </Link>
             </li>
+            <li>
+              <Link to="/forage" className={isActive('/forage') ? 'active' : ''}>
+                Forage
+              </Link>
+            </li>
             <li><Link to="/crops">Crops</Link></li>
             <li><Link to="/villagers">Villagers</Link></li>
             <li><Link to="/bundles">Bundles</Link></li>
@@ -54,6 +61,7 @@ function MainContent() {
               <Route path="/" element={<FishPage />} />
               <Route path="/fish" element={<FishPage />} />
               <Route path="/artisan/*" element={<ArtisanPage />} />
+              <Route path="/forage" element={<ForagePage />} />
             </Routes>
           </main>
         </div>
@@ -66,15 +74,17 @@ function MainContent() {
 function App() {
   return (
     <HashRouter>
-      <PlayerProvider>
-        <ModalProvider>
-          <div className="app">
-            <Navigation />
-            <CharacterBar />
-            <MainContent />
-          </div>
-        </ModalProvider>
-      </PlayerProvider>
+      <VillagersProvider>
+        <PlayerProvider>
+          <ModalProvider>
+            <div className="app">
+              <Navigation />
+              <CharacterBar />
+              <MainContent />
+            </div>
+          </ModalProvider>
+        </PlayerProvider>
+      </VillagersProvider>
     </HashRouter>
   )
 }

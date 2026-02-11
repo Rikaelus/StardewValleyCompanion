@@ -1,0 +1,74 @@
+.info-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.info-tooltip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #8b6f47;
+  color: #fdfbf7;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: serif;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: background 0.15s ease;
+  user-select: none;
+}
+
+.info-tooltip:hover {
+  background: #5c4a32;
+}
+
+.info-tooltip:active {
+  background: #3d2e1a;
+}
+
+/* Tooltip popup */
+.info-tooltip-popup {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2d1b00;
+  color: #fdfbf7;
+  border: 2px solid #8b6f47;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-style: normal;
+  white-space: nowrap;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}
+
+/* Arrow pointing down */
+.info-tooltip-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #8b6f47;
+}
+
+.info-tooltip-popup::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #2d1b00;
+  z-index: 1;
+  margin-top: -1px;
+}

@@ -29,10 +29,62 @@ export function useData(files) {
   return { data, loading, error }
 }
 
-export function useFishData() {
+/**
+ * Generic hook for loading item data by type
+ * Maps item types to their data file paths and transforms the response
+ *
+ * @param {string} itemType - The type of item (fish, artisan, crops, forage, etc.)
+ * @returns {Object} { data, loading, error }
+ */
+export function useItemData(itemType) {
+  // Configuration for each item type
+  const typeConfig = {
+    fish: {
+      pagePath: 'data/pages/fish.json',
+      itemsKey: 'fish'
+    },
+    artisan: {
+      pagePath: 'data/pages/artisan.json',
+      itemsKey: 'artisan'
+    },
+    crops: {
+      pagePath: 'data/pages/crops.json',
+      itemsKey: 'crops'
+    },
+    forage: {
+      pagePath: 'data/pages/forage.json',
+      itemsKey: 'forage'
+    },
+    minerals: {
+      pagePath: 'data/pages/minerals.json',
+      itemsKey: 'minerals'
+    },
+    'metal-bars': {
+      pagePath: 'data/pages/metal-bars.json',
+      itemsKey: 'metalBars'
+    },
+    'monster-loot': {
+      pagePath: 'data/pages/monster-loot.json',
+      itemsKey: 'monsterLoot'
+    },
+    resources: {
+      pagePath: 'data/pages/resources.json',
+      itemsKey: 'resources'
+    },
+    cooking: {
+      pagePath: 'data/pages/cooking.json',
+      itemsKey: 'cooking'
+    }
+  }
+
+  const config = typeConfig[itemType]
+
+  if (!config) {
+    throw new Error(`Unknown item type: ${itemType}. Valid types: ${Object.keys(typeConfig).join(', ')}`)
+  }
+
   const { data, loading, error } = useData({
-    fishPage: 'data/pages/fish.json',
-    villagers: 'data/reference/villagers.json'
+    page: config.pagePath
   })
 
   // Transform compiled data to match component expectations
@@ -41,31 +93,26 @@ export function useFishData() {
   }
 
   const transformed = {
-    fish: data.fishPage?.items || [],
-    villagers: data.villagers?.villagers || [],
-    bundles: [], // Bundles are now embedded in fish items as bundleDetails
-    gameIdIndex: data.fishPage?.gameIdIndex || {}
+    [config.itemsKey]: data.page?.items || [],
+    items: data.page?.items || [], // Generic alias
+    gameIdIndex: data.page?.gameIdIndex || {}
   }
 
   return { data: transformed, loading, error }
 }
 
+/**
+ * Specialized hook for fish data (backward compatibility)
+ * Uses the generic useItemData hook internally
+ */
+export function useFishData() {
+  return useItemData('fish')
+}
+
+/**
+ * Specialized hook for artisan goods data (backward compatibility)
+ * Uses the generic useItemData hook internally
+ */
 export function useArtisanData() {
-  const { data, loading, error } = useData({
-    artisanPage: 'data/pages/artisan.json',
-    villagers: 'data/reference/villagers.json'
-  })
-
-  // Transform compiled data to match component expectations
-  if (loading || error) {
-    return { data: {}, loading, error }
-  }
-
-  const transformed = {
-    artisan: data.artisanPage?.items || [],
-    villagers: data.villagers?.villagers || [],
-    gameIdIndex: data.artisanPage?.gameIdIndex || {}
-  }
-
-  return { data: transformed, loading, error }
+  return useItemData('artisan')
 }

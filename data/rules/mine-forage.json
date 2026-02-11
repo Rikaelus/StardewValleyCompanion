@@ -1,0 +1,17 @@
+{
+  "description": "Forage items that spawn on specific mine levels. This data is not available in game exports and is curated from game knowledge.",
+  "items": [
+    {
+      "gameId": 420,
+      "name": "Red Mushroom",
+      "floors": "81-119",
+      "note": "Mushroom levels"
+    },
+    {
+      "gameId": 422,
+      "name": "Purple Mushroom",
+      "floors": "81-119",
+      "note": "Mushroom levels"
+    }
+  ]
+}

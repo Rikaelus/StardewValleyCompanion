@@ -61,6 +61,24 @@ function ItemButton({
     return <span className="item-button-label">{item.name}</span>
   }
 
+  // If showing both icon and label, wrap in a container
+  if (showIcon && showLabel) {
+    return (
+      <span className="item-button-with-label">
+        <button
+          className={`item-button ${className}`}
+          onClick={handleClick}
+          title={item.name}
+          type="button"
+        >
+          {renderIcon()}
+        </button>
+        {renderLabel()}
+      </span>
+    )
+  }
+
+  // Otherwise, render button as before (icon or label only)
   return (
     <button
       className={`item-button ${className}`}

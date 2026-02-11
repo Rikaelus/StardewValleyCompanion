@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useFishData } from '../../hooks/useData'
 import PagePanel from '../common/PagePanel'
 import FishTable from './FishTable'
-import SpecialCases from './SpecialCases'
+import SpecialCases from '../common/SpecialCases'
 import './FishPage.css'
 
 function FishPage() {
@@ -21,15 +21,41 @@ function FishPage() {
 
   // Update URL when filters change
   useEffect(() => {
-    const params = new URLSearchParams()
-    if (filters.search) params.set('search', filters.search)
-    if (filters.seasons?.length > 0) params.set('seasons', filters.seasons.join(','))
-    if (filters.weather) params.set('weather', filters.weather)
-    if (filters.location) params.set('location', filters.location)
-    if (filters.bundle) params.set('bundle', filters.bundle)
+    const params = new URLSearchParams(searchParams) // Preserve existing params (sort, page)
+
+    // Update filter params
+    if (filters.search) {
+      params.set('search', filters.search)
+    } else {
+      params.delete('search')
+    }
+
+    if (filters.seasons?.length > 0) {
+      params.set('seasons', filters.seasons.join(','))
+    } else {
+      params.delete('seasons')
+    }
+
+    if (filters.weather) {
+      params.set('weather', filters.weather)
+    } else {
+      params.delete('weather')
+    }
+
+    if (filters.location) {
+      params.set('location', filters.location)
+    } else {
+      params.delete('location')
+    }
+
+    if (filters.bundle) {
+      params.set('bundle', filters.bundle)
+    } else {
+      params.delete('bundle')
+    }
 
     setSearchParams(params, { replace: true })
-  }, [filters, setSearchParams])
+  }, [filters, setSearchParams, searchParams])
 
   const filterOptions = useMemo(() => {
     if (!data.fish) return {}
@@ -198,9 +224,8 @@ function FishPage() {
 
       <FishTable
         fish={filteredFish}
-        villagers={data.villagers || []}
       />
-      <SpecialCases fish={data.fish || []} />
+      <SpecialCases items={data.fish || []} />
     </div>
   )
 }

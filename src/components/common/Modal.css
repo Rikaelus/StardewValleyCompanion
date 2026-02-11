@@ -53,6 +53,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding-bottom: 5px;
   animation: slideUp 0.3s ease-out;
 }
 

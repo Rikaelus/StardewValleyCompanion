@@ -6,15 +6,87 @@ import {
   getPaginationRowModel,
   flexRender,
 } from '@tanstack/react-table'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import './DataTable.css'
 
-function DataTable({ data, columns, pinnedColumns = 0, onRowClick, initialSortBy = [{ id: 'name', desc: false }], enablePagination = true }) {
-  const [sorting, setSorting] = useState(initialSortBy)
-  const [pagination, setPagination] = useState({
-    pageIndex: 0,
-    pageSize: enablePagination ? 10 : data.length,
-  })
+/**
+ * DataTable component with URL state synchronization
+ *
+ * URL Parameters (when syncUrlState=true):
+ * - sortBy: Column ID to sort by (e.g., "name", "price")
+ * - sortOrder: Sort direction ("asc" or "desc")
+ * - page: Current page number (1-indexed, e.g., "1", "2", "3")
+ *
+ * Example URL: /fish?sortBy=price&sortOrder=desc&page=2
+ */
+function DataTable({
+  data,
+  columns,
+  pinnedColumns = 0,
+  onRowClick,
+  initialSortBy = [{ id: 'name', desc: false }],
+  enablePagination = true,
+  syncUrlState = true // Enable URL state synchronization by default
+}) {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  // Initialize sorting from URL or use default
+  const getSortingFromUrl = () => {
+    if (!syncUrlState) return initialSortBy
+
+    const sortBy = searchParams.get('sortBy')
+    const sortOrder = searchParams.get('sortOrder')
+
+    if (sortBy) {
+      return [{ id: sortBy, desc: sortOrder === 'desc' }]
+    }
+    return initialSortBy
+  }
+
+  // Initialize pagination from URL or use default
+  const getPaginationFromUrl = () => {
+    if (!syncUrlState || !enablePagination) {
+      return {
+        pageIndex: 0,
+        pageSize: enablePagination ? 10 : data.length,
+      }
+    }
+
+    const page = parseInt(searchParams.get('page'), 10)
+    return {
+      pageIndex: !isNaN(page) && page > 0 ? page - 1 : 0, // URL is 1-indexed, state is 0-indexed
+      pageSize: 10,
+    }
+  }
+
+  const [sorting, setSorting] = useState(getSortingFromUrl)
+  const [pagination, setPagination] = useState(getPaginationFromUrl)
+
+  // Sync sorting and pagination to URL
+  useEffect(() => {
+    if (!syncUrlState) return
+
+    const params = new URLSearchParams(searchParams)
+
+    // Update sort parameters
+    if (sorting.length > 0) {
+      params.set('sortBy', sorting[0].id)
+      params.set('sortOrder', sorting[0].desc ? 'desc' : 'asc')
+    } else {
+      params.delete('sortBy')
+      params.delete('sortOrder')
+    }
+
+    // Update page parameter (convert 0-indexed to 1-indexed for URL)
+    if (enablePagination && pagination.pageIndex > 0) {
+      params.set('page', (pagination.pageIndex + 1).toString())
+    } else {
+      params.delete('page')
+    }
+
+    setSearchParams(params, { replace: true })
+  }, [sorting, pagination, syncUrlState, enablePagination, setSearchParams, searchParams])
 
   const table = useReactTable({
     data,
@@ -32,6 +104,19 @@ function DataTable({ data, columns, pinnedColumns = 0, onRowClick, initialSortBy
 
   const headerGroups = table.getHeaderGroups()
   const rows = table.getRowModel().rows
+
+  // Show empty state message instead of table when no results
+  if (rows.length === 0) {
+    return (
+      <div className="data-table-container">
+        <div className="empty-results">
+          <div className="empty-results-icon">🔍</div>
+          <p className="empty-results-message">No items found matching your filters.</p>
+          <p className="empty-results-hint">Try adjusting your search criteria or clearing filters.</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="data-table-container">

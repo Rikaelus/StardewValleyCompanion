@@ -1,3 +1,11 @@
+/* Wrapper for button + label layout */
+.item-button-with-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
 .item-button {
   display: inline-flex;
   align-items: center;
@@ -11,6 +19,7 @@
   font: inherit;
   color: inherit;
   user-select: none;
+  vertical-align: middle; /* Align button with surrounding text */
 }
 
 .item-button:hover {
@@ -36,4 +45,8 @@
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
+  line-height: 1;
+  color: inherit;
+  position: relative;
+  top: -1px; /* Lift text up slightly for better visual alignment */
 }

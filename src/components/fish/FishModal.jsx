@@ -39,6 +39,37 @@ function FishModal({ fish, isOpen, onClose }) {
     return seasons.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')
   }
 
+  const getCategoryName = (category) => {
+    // Map Stardew Valley category codes to friendly names
+    const categoryMap = {
+      '-4': 'Fish',
+      '-5': 'Egg',
+      '-6': 'Milk',
+      '-7': 'Cooking',
+      '-12': 'Minerals',
+      '-15': 'Metal Resources',
+      '-16': 'Building Resources',
+      '-17': 'Sell at Pierre\'s',
+      '-18': 'Sell at Pierre\'s and Marnie\'s',
+      '-19': 'Fertilizer',
+      '-20': 'Junk',
+      '-21': 'Bait',
+      '-22': 'Tackle',
+      '-23': 'Sell at Fish Shop',
+      '-24': 'Furniture',
+      '-25': 'Ingredients',
+      '-26': 'Artisan Goods',
+      '-27': 'Syrup',
+      '-28': 'Monster Loot',
+      '-74': 'Seeds',
+      '-75': 'Vegetables',
+      '-79': 'Fruit',
+      '-80': 'Flowers',
+      '-81': 'Forage'
+    }
+    return categoryMap[String(category)] || 'Item'
+  }
+
   const modalTitle = displayFish
     ? `${displayFish.contextTags?.includes('fish_legendary') ? '⭐' : ''}${displayFish.name}`
     : 'Fish'
@@ -47,10 +78,12 @@ function FishModal({ fish, isOpen, onClose }) {
     ? `${displayFish.contextTags?.includes('fish_legendary') ? '⭐' : ''}${displayFish.name}`
     : ''
 
+  const categoryName = displayFish ? getCategoryName(displayFish.category) : ''
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={modalTitle}>
       {displayFish && <>
-        <ModalHeader icon={displayFish.icon} name={fishName} subtitle={displayFish.category}>
+        <ModalHeader icon={displayFish.icon} name={fishName} subtitle={categoryName}>
           <div className="modal-price">
             <ItemSellPrice item={displayFish} showQualities={true} showProfession={true} />
           </div>

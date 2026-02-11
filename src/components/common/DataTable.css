@@ -185,3 +185,28 @@
   outline: none;
   border-color: #5c4a32;
 }
+
+/* Empty results state */
+.empty-results {
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+.empty-results-icon {
+  font-size: 48px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-results-message {
+  font-size: 18px;
+  color: #5c4a32;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-results-hint {
+  font-size: 14px;
+  color: #8b6f47;
+  margin: 0;
+}

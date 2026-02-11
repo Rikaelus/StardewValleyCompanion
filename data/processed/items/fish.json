@@ -229,7 +229,23 @@
       "Ginger Island West",
       "Ocean"
     ],
-    "notes": "Ocean: Summer, Winter. Ginger Island South, Ginger Island Southeast, Ginger Island Pirate Cove, Ginger Island West: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Ocean"
+        ],
+        "seasons": "Summer, Winter"
+      },
+      {
+        "locations": [
+          "Ginger Island South",
+          "Ginger Island Southeast",
+          "Ginger Island Pirate Cove",
+          "Ginger Island West"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -610,7 +626,21 @@
       "Mountain Lake",
       "Town River"
     ],
-    "notes": "Town River, Mountain Lake: all seasons. Forest River: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Town River",
+          "Mountain Lake"
+        ],
+        "seasons": "All Seasons"
+      },
+      {
+        "locations": [
+          "Forest River"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -919,7 +949,22 @@
       "Secret Woods",
       "Sewers"
     ],
-    "notes": "Mountain Lake: Fall, Spring, Summer. Sewers, Mutant Bug Lair, Secret Woods: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Mountain Lake"
+        ],
+        "seasons": "Fall, Spring, Summer"
+      },
+      {
+        "locations": [
+          "Sewers",
+          "Mutant Bug Lair",
+          "Secret Woods"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -1002,7 +1047,22 @@
       "Town River",
       "Witch's Swamp"
     ],
-    "notes": "Town River, Forest River: Fall, Spring, Winter. Secret Woods, Witch's Swamp: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Town River",
+          "Forest River"
+        ],
+        "seasons": "Fall, Spring, Winter"
+      },
+      {
+        "locations": [
+          "Secret Woods",
+          "Witch's Swamp"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -1833,7 +1893,20 @@
       "Night Market",
       "Ocean"
     ],
-    "notes": "Ocean: Fall, Winter. Night Market: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Ocean"
+        ],
+        "seasons": "Fall, Winter"
+      },
+      {
+        "locations": [
+          "Night Market"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -1913,7 +1986,24 @@
       "Night Market",
       "Ocean"
     ],
-    "notes": "Ocean: Fall, Summer. Night Market, Ginger Island South, Ginger Island Southeast, Ginger Island Pirate Cove, Ginger Island West: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Ocean"
+        ],
+        "seasons": "Fall, Summer"
+      },
+      {
+        "locations": [
+          "Night Market",
+          "Ginger Island South",
+          "Ginger Island Southeast",
+          "Ginger Island Pirate Cove",
+          "Ginger Island West"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2746,7 +2836,23 @@
       "Ginger Island West",
       "Ocean"
     ],
-    "notes": "Ocean: Spring, Summer. Ginger Island South, Ginger Island Southeast, Ginger Island Pirate Cove, Ginger Island West: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Ocean"
+        ],
+        "seasons": "Spring, Summer"
+      },
+      {
+        "locations": [
+          "Ginger Island South",
+          "Ginger Island Southeast",
+          "Ginger Island Pirate Cove",
+          "Ginger Island West"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2823,7 +2929,22 @@
       "Ginger Island West",
       "Mountain Lake"
     ],
-    "notes": "Mountain Lake, Forest River: Fall, Winter. Ginger Island West, Ginger Island North: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Mountain Lake",
+          "Forest River"
+        ],
+        "seasons": "Fall, Winter"
+      },
+      {
+        "locations": [
+          "Ginger Island West",
+          "Ginger Island North"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2832,15 +2953,13 @@
     "name": "Clam",
     "icon": "assets/fish/Clam.png",
     "difficulty": 0,
-    "behaviorType": ".15",
-    "minSize": 681,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 5,
     "times": [],
-    "seasons": [
-      "5"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 50,
     "edibility": -300,
     "category": -4,
@@ -2895,7 +3014,12 @@
     },
     "location": [
       "Ocean (Crab Pot)"
-    ]
+    ],
+    "alsoAvailableAs": {
+      "type": "forage",
+      "id": "clam",
+      "context": "Beach foraging"
+    }
   },
   {
     "type": "fish",
@@ -3275,7 +3399,21 @@
       "Ginger Island West",
       "Ocean"
     ],
-    "notes": "Ocean: Fall, Summer. Ginger Island West, Ginger Island North: all seasons."
+    "notes": [
+      {
+        "locations": [
+          "Ocean"
+        ],
+        "seasons": "Fall, Summer"
+      },
+      {
+        "locations": [
+          "Ginger Island West",
+          "Ginger Island North"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
   },
   {
     "type": "fish",
@@ -3743,15 +3881,13 @@
     "name": "Lobster",
     "icon": "assets/fish/Lobster.png",
     "difficulty": 0,
-    "behaviorType": ".05",
-    "minSize": 688,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 2,
+    "maxSize": 20,
     "times": [],
-    "seasons": [
-      "20"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 120,
     "edibility": -300,
     "category": -4,
@@ -3811,15 +3947,13 @@
     "name": "Crayfish",
     "icon": "assets/fish/Crayfish.png",
     "difficulty": 0,
-    "behaviorType": ".35",
-    "minSize": 682,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 8,
     "times": [],
-    "seasons": [
-      "8"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 75,
     "edibility": -300,
     "category": -4,
@@ -3879,15 +4013,13 @@
     "name": "Crab",
     "icon": "assets/fish/Crab.png",
     "difficulty": 0,
-    "behaviorType": ".1",
-    "minSize": 684,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 20,
     "times": [],
-    "seasons": [
-      "20"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 100,
     "edibility": -300,
     "category": -4,
@@ -3948,15 +4080,13 @@
     "name": "Cockle",
     "icon": "assets/fish/Cockle.png",
     "difficulty": 0,
-    "behaviorType": ".3",
-    "minSize": 680,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 5,
     "times": [],
-    "seasons": [
-      "5"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 50,
     "edibility": -300,
     "category": -4,
@@ -4009,7 +4139,12 @@
     },
     "location": [
       "Ocean (Crab Pot)"
-    ]
+    ],
+    "alsoAvailableAs": {
+      "type": "forage",
+      "id": "cockle",
+      "context": "Beach foraging"
+    }
   },
   {
     "type": "fish",
@@ -4018,15 +4153,13 @@
     "name": "Mussel",
     "icon": "assets/fish/Mussel.png",
     "difficulty": 0,
-    "behaviorType": ".35",
-    "minSize": 683,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 5,
     "times": [],
-    "seasons": [
-      "5"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 30,
     "edibility": -300,
     "category": -4,
@@ -4079,7 +4212,12 @@
     },
     "location": [
       "Ocean (Crab Pot)"
-    ]
+    ],
+    "alsoAvailableAs": {
+      "type": "forage",
+      "id": "mussel",
+      "context": "Beach foraging"
+    }
   },
   {
     "type": "fish",
@@ -4088,15 +4226,13 @@
     "name": "Shrimp",
     "icon": "assets/fish/Shrimp.png",
     "difficulty": 0,
-    "behaviorType": ".2",
-    "minSize": 681,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 3,
     "times": [],
-    "seasons": [
-      "3"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 60,
     "edibility": -300,
     "category": -4,
@@ -4157,15 +4293,13 @@
     "name": "Snail",
     "icon": "assets/fish/Snail.png",
     "difficulty": 0,
-    "behaviorType": ".25",
-    "minSize": 680,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 5,
     "times": [],
-    "seasons": [
-      "5"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 65,
     "edibility": -300,
     "category": -4,
@@ -4226,15 +4360,13 @@
     "name": "Periwinkle",
     "icon": "assets/fish/Periwinkle.png",
     "difficulty": 0,
-    "behaviorType": ".55",
-    "minSize": 681,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 3,
     "times": [],
-    "seasons": [
-      "3"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 20,
     "edibility": -300,
     "category": -4,
@@ -4295,15 +4427,13 @@
     "name": "Oyster",
     "icon": "assets/fish/Oyster.png",
     "difficulty": 0,
-    "behaviorType": ".15",
-    "minSize": 682,
-    "maxSize": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 5,
     "times": [],
-    "seasons": [
-      "5"
-    ],
-    "weather": "false",
-    "isTrapFish": false,
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
     "price": 40,
     "edibility": -300,
     "category": -4,
@@ -4357,7 +4487,12 @@
     },
     "location": [
       "Ocean (Crab Pot)"
-    ]
+    ],
+    "alsoAvailableAs": {
+      "type": "forage",
+      "id": "oyster",
+      "context": "Beach foraging"
+    }
   },
   {
     "type": "fish",

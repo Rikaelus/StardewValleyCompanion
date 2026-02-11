@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import ItemButton from './ItemButton'
-import FishModal from '../fish/FishModal'
-import ArtisanModal from '../artisan/ArtisanModal'
+import ItemModal from './ItemModal'
 import VillagerModal from '../villagers/VillagerModal'
 
 /**
@@ -44,34 +43,19 @@ function ModalItemButton({
       />
 
       {/* Render appropriate modal based on type */}
-      {type === 'fish' && (
-        <FishModal
-          fish={selectedItem}
-          isOpen={selectedItem !== null}
-          onClose={handleClose}
-        />
-      )}
-
-      {type === 'artisan' && (
-        <ArtisanModal
-          item={selectedItem}
-          isOpen={selectedItem !== null}
-          onClose={handleClose}
-        />
-      )}
-
-      {type === 'villager' && (
+      {type === 'villager' ? (
         <VillagerModal
           villager={selectedItem}
           isOpen={selectedItem !== null}
           onClose={handleClose}
         />
+      ) : (
+        <ItemModal
+          item={selectedItem}
+          isOpen={selectedItem !== null}
+          onClose={handleClose}
+        />
       )}
-
-      {/* Add more modal types as needed:
-      {type === 'crop' && <CropModal ... />}
-      {type === 'bundle' && <BundleModal ... />}
-      */}
     </>
   )
 }

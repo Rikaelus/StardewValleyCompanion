@@ -1,4 +1,5 @@
 import { usePlayer } from '../../contexts/PlayerContext'
+import InfoTooltip from './InfoTooltip'
 import './ItemSellPrice.css'
 
 /**
@@ -11,7 +12,9 @@ export function calculateProfessionMultiplier(item, professions) {
   if (!item || !professions) return 1.0
 
   // Fishing professions (Angler replaces Fisher, doesn't stack)
-  if (item.type === 'fish') {
+  // Check both type and category - items can be forage type but Fish category
+  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+  if (item.type === 'fish' || actualCategory === -4) {
     if (professions.angler) return 1.5  // Angler +50%
     if (professions.fisher) return 1.25  // Fisher +25%
   }
@@ -73,7 +76,9 @@ export function createPriceSortingFn(professions) {
 function getAppliedProfession(item, professions) {
   if (!item || !professions) return null
 
-  if (item.type === 'fish') {
+  // Check both type and category - items can be forage type but Fish category
+  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+  if (item.type === 'fish' || actualCategory === -4) {
     if (professions.angler) return 'Angler'
     if (professions.fisher) return 'Fisher'
   }
@@ -94,11 +99,12 @@ function getAppliedProfession(item, professions) {
  * Centralized sell price display component that applies profession modifiers
  *
  * Usage:
- *   <ItemSellPrice item={fish} showQualities={false} />
- *   <ItemSellPrice item={artisan} showQualities={true} />
- *   <ItemSellPrice item={fish} showQualities={true} showProfession={true} />
+ *   <ItemSellPrice item={fish} />  // Shows qualities (default)
+ *   <ItemSellPrice item={artisan} showQualities={true} />  // Force show qualities
+ *   <ItemSellPrice item={fish} showQualities={false} />  // Force single price
+ *   <ItemSellPrice item={fish} showProfession={true} />  // Show profession badge
  */
-function ItemSellPrice({ item, showQualities = false, showProfession = false, className = '' }) {
+function ItemSellPrice({ item, showQualities = true, showProfession = false, className = '' }) {
   const { player } = usePlayer()
 
   if (!item) return null
@@ -115,6 +121,28 @@ function ItemSellPrice({ item, showQualities = false, showProfession = false, cl
 
   // If we should show quality variants
   if (showQualities) {
+    // Crab pot fish can only be normal or silver quality (with Deluxe Bait)
+    if (item.isTrapFish) {
+      return (
+        <div className={`item-sell-price-container ${className}`}>
+          <div className="item-sell-price item-sell-price-qualities">
+            <span className="price-regular" title="Regular Quality">
+              {regularPrice}g
+            </span>
+            <span className="price-silver" title="Silver Quality (with Deluxe Bait)">
+              {Math.floor(basePrice * 1.25 * multiplier)}g
+            </span>
+          </div>
+          {appliedProfession && (
+            <div className="profession-badge">
+              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+            </div>
+          )}
+        </div>
+      )
+    }
+
     // If item has explicit quality prices, use those
     if (hasQualityPrices && item.prices.silver) {
       return (
@@ -134,7 +162,10 @@ function ItemSellPrice({ item, showQualities = false, showProfession = false, cl
             </span>
           </div>
           {appliedProfession && (
-            <div className="profession-badge">+{Math.round((multiplier - 1) * 100)}% {appliedProfession}</div>
+            <div className="profession-badge">
+              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+            </div>
           )}
         </div>
       )
@@ -158,7 +189,10 @@ function ItemSellPrice({ item, showQualities = false, showProfession = false, cl
           </span>
         </div>
         {appliedProfession && (
-          <div className="profession-badge">+{Math.round((multiplier - 1) * 100)}% {appliedProfession}</div>
+          <div className="profession-badge">
+            +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+            <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+          </div>
         )}
       </div>
     )

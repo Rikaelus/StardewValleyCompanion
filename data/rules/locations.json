@@ -134,6 +134,10 @@
       "displayName": "Volcano",
       "type": "island"
     },
+    "IslandNorthCave1": {
+      "displayName": "Volcano Dungeon",
+      "type": "island"
+    },
     "FarmCave": {
       "displayName": "Farm Cave",
       "type": "farm"

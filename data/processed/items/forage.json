@@ -1,0 +1,1907 @@
+[
+  {
+    "type": "forage",
+    "id": "wild-horseradish",
+    "gameId": 16,
+    "name": "Wild Horseradish",
+    "icon": "assets/forage/Wild_Horseradish.png",
+    "price": 50,
+    "edibility": 5,
+    "category": -81,
+    "contextTags": [
+      "color_brown",
+      "forage_item",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring"
+    ],
+    "locations": [
+      "Backwoods",
+      "Forest",
+      "Mountain",
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "spring-foraging"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "like",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "pam": "dislike",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "love",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "daffodil",
+    "gameId": 18,
+    "name": "Daffodil",
+    "icon": "assets/forage/Daffodil.png",
+    "price": 30,
+    "edibility": -300,
+    "category": -81,
+    "contextTags": [
+      "color_yellow",
+      "forage_item",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring"
+    ],
+    "locations": [
+      "BusStop",
+      "Railroad",
+      "Town"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "spring-foraging"
+    ],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "george": "like",
+      "evelyn": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "gus": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "love",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "leek",
+    "gameId": 20,
+    "name": "Leek",
+    "icon": "assets/forage/Leek.png",
+    "price": 60,
+    "edibility": 16,
+    "category": -81,
+    "contextTags": [
+      "color_white",
+      "forage_item",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Mountain",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "spring-foraging"
+    ],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "george": "love",
+      "penny": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "dandelion",
+    "gameId": 22,
+    "name": "Dandelion",
+    "icon": "assets/forage/Dandelion.png",
+    "price": 40,
+    "edibility": 10,
+    "category": -81,
+    "contextTags": [
+      "color_yellow",
+      "forage_item",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring"
+    ],
+    "locations": [
+      "BusStop",
+      "Forest",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "spring-foraging"
+    ],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "dislike",
+      "george": "hate",
+      "penny": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "hate",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "cave-carrot",
+    "gameId": 78,
+    "name": "Cave Carrot",
+    "icon": "assets/forage/Cave_Carrot.png",
+    "price": 25,
+    "edibility": 12,
+    "category": -81,
+    "contextTags": [
+      "color_brown",
+      "forage_item",
+      "forage_item_mines",
+      "season_all"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "like",
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "coconut",
+    "gameId": 88,
+    "name": "Coconut",
+    "icon": "assets/forage/Coconut.png",
+    "price": 100,
+    "edibility": -300,
+    "category": -79,
+    "contextTags": [
+      "color_dark_brown",
+      "forage_item",
+      "forage_item_desert",
+      "season_all"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [
+      "Desert"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "linus": "love",
+      "abigail": "dislike",
+      "lewis": "like",
+      "pam": "like",
+      "haley": "love",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "cactus-fruit",
+    "gameId": 90,
+    "name": "Cactus Fruit",
+    "icon": "assets/forage/Cactus_Fruit.png",
+    "price": 75,
+    "edibility": 30,
+    "category": -79,
+    "contextTags": [
+      "color_green",
+      "forage_item",
+      "forage_item_desert"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [
+      "Desert"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "linus": "love",
+      "abigail": "dislike",
+      "lewis": "like",
+      "pam": "love",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "love",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "morel",
+    "gameId": 257,
+    "name": "Morel",
+    "icon": "assets/forage/Morel.png",
+    "price": 150,
+    "edibility": 8,
+    "category": -81,
+    "contextTags": [
+      "color_brown",
+      "edible_mushroom",
+      "forage_item",
+      "forage_item_cave",
+      "forage_item_secret",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring"
+    ],
+    "locations": [
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging"
+    ],
+    "gifts": {
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "hate"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "fiddlehead-fern",
+    "gameId": 259,
+    "name": "Fiddlehead Fern",
+    "icon": "assets/forage/Fiddlehead_Fern.png",
+    "price": 90,
+    "edibility": 10,
+    "category": -75,
+    "contextTags": [
+      "color_green",
+      "dye_strong",
+      "forage_item",
+      "forage_item_secret",
+      "season_summer"
+    ],
+    "seasons": [
+      "summer"
+    ],
+    "locations": [
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "chef-s"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "chanterelle",
+    "gameId": 281,
+    "name": "Chanterelle",
+    "icon": "assets/forage/Chanterelle.png",
+    "price": 160,
+    "edibility": 30,
+    "category": -81,
+    "contextTags": [
+      "color_orange",
+      "edible_mushroom",
+      "forage_item",
+      "forage_item_cave",
+      "forage_item_secret",
+      "season_fall"
+    ],
+    "seasons": [
+      "fall"
+    ],
+    "locations": [
+      "IslandNorthCave1",
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "notes": [
+      {
+        "locations": [
+          "Secret Woods"
+        ],
+        "seasons": "Fall"
+      },
+      {
+        "locations": [
+          "Volcano Dungeon"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
+  },
+  {
+    "type": "forage",
+    "id": "holly",
+    "gameId": 283,
+    "name": "Holly",
+    "icon": "assets/forage/Holly.png",
+    "price": 80,
+    "edibility": -15,
+    "category": -81,
+    "contextTags": [
+      "color_red",
+      "forage_item",
+      "season_winter"
+    ],
+    "seasons": [
+      "winter"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Forest",
+      "Mountain",
+      "Town",
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "hate"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "clam",
+    "gameId": 372,
+    "name": "Clam",
+    "icon": "assets/forage/Clam.png",
+    "price": 50,
+    "edibility": -300,
+    "category": -4,
+    "contextTags": [
+      "beach_item",
+      "color_light_cyan",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "crab-pot"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "alsoAvailableAs": {
+      "type": "fish",
+      "id": "clam",
+      "context": "Crab pot fishing"
+    },
+    "originalCategory": -4,
+    "displayCategory": -81,
+    "hasQuality": false
+  },
+  {
+    "type": "forage",
+    "id": "nautilus-shell",
+    "gameId": 392,
+    "name": "Nautilus Shell",
+    "icon": "assets/forage/Nautilus_Shell.png",
+    "price": 120,
+    "edibility": -300,
+    "category": -23,
+    "contextTags": [
+      "color_orange",
+      "forage_item",
+      "forage_item_beach",
+      "marine_item",
+      "season_winter"
+    ],
+    "seasons": [
+      "winter"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "field-research"
+    ],
+    "gifts": {
+      "evelyn": "like",
+      "elliott": "neutral",
+      "harvey": "hate",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "coral",
+    "gameId": 393,
+    "name": "Coral",
+    "icon": "assets/forage/Coral.png",
+    "price": 80,
+    "edibility": -300,
+    "category": -23,
+    "contextTags": [
+      "color_red",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "evelyn": "like",
+      "elliott": "neutral",
+      "harvey": "hate"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "rainbow-shell",
+    "gameId": 394,
+    "name": "Rainbow Shell",
+    "icon": "assets/forage/Rainbow_Shell.png",
+    "price": 300,
+    "edibility": -300,
+    "category": -23,
+    "contextTags": [
+      "color_prismatic",
+      "forage_item",
+      "forage_item_beach",
+      "season_summer"
+    ],
+    "seasons": [
+      "summer"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "neutral",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "hate",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "spice-berry",
+    "gameId": 396,
+    "name": "Spice Berry",
+    "icon": "assets/forage/Spice_Berry.png",
+    "price": 80,
+    "edibility": 10,
+    "category": -79,
+    "contextTags": [
+      "color_orange",
+      "forage_item",
+      "season_summer"
+    ],
+    "seasons": [
+      "summer"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Forest",
+      "Mountain",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "summer-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "linus": "like",
+      "abigail": "dislike",
+      "evelyn": "hate",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "hate",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "hate",
+      "sandy": "like",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "sea-urchin",
+    "gameId": 397,
+    "name": "Sea Urchin",
+    "icon": "assets/forage/Sea_Urchin.png",
+    "price": 160,
+    "edibility": -300,
+    "category": -23,
+    "contextTags": [
+      "color_purple",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [
+      "dye"
+    ],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "like",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "neutral",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "grape",
+    "gameId": 398,
+    "name": "Grape",
+    "icon": "assets/forage/Grape.png",
+    "price": 80,
+    "edibility": 15,
+    "category": -79,
+    "contextTags": [
+      "color_purple",
+      "forage_item",
+      "season_summer"
+    ],
+    "seasons": [
+      "summer"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Mountain",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "summer-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "linus": "like",
+      "abigail": "dislike",
+      "penny": "hate",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "love",
+      "jodi": "like",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "spring-onion",
+    "gameId": 399,
+    "name": "Spring Onion",
+    "icon": "assets/forage/Spring_Onion.png",
+    "price": 8,
+    "edibility": 5,
+    "category": -81,
+    "contextTags": [
+      "color_white",
+      "forage_item",
+      "season_spring"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "sweet-pea",
+    "gameId": 402,
+    "name": "Sweet Pea",
+    "icon": "assets/forage/Sweet_Pea.png",
+    "price": 50,
+    "edibility": -300,
+    "category": -80,
+    "contextTags": [
+      "color_purple",
+      "dye_medium",
+      "flower_item",
+      "forage_item",
+      "season_summer"
+    ],
+    "seasons": [
+      "summer"
+    ],
+    "locations": [
+      "BusStop",
+      "Forest",
+      "Railroad",
+      "Town"
+    ],
+    "isFlower": true,
+    "bundles": [
+      "summer-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "love",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "common-mushroom",
+    "gameId": 404,
+    "name": "Common Mushroom",
+    "icon": "assets/forage/Common_Mushroom.png",
+    "price": 40,
+    "edibility": 15,
+    "category": -81,
+    "contextTags": [
+      "color_dark_brown",
+      "edible_mushroom",
+      "forage_item",
+      "season_fall",
+      "season_spring"
+    ],
+    "seasons": [
+      "fall",
+      "spring"
+    ],
+    "locations": [
+      "Backwoods",
+      "Forest",
+      "IslandNorthCave1",
+      "Mountain",
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "fall-foraging"
+    ],
+    "gifts": {
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "notes": [
+      {
+        "locations": [
+          "Mountain Lake",
+          "Forest River"
+        ],
+        "seasons": "Fall"
+      },
+      {
+        "locations": [
+          "Secret Woods"
+        ],
+        "seasons": "Fall, Spring"
+      },
+      {
+        "locations": [
+          "Volcano Dungeon"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
+  },
+  {
+    "type": "forage",
+    "id": "wild-plum",
+    "gameId": 406,
+    "name": "Wild Plum",
+    "icon": "assets/forage/Wild_Plum.png",
+    "price": 80,
+    "edibility": 10,
+    "category": -79,
+    "contextTags": [
+      "color_dark_purple",
+      "forage_item",
+      "season_fall"
+    ],
+    "seasons": [
+      "fall"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Mountain",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "fall-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "linus": "like",
+      "abigail": "dislike",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "hazelnut",
+    "gameId": 408,
+    "name": "Hazelnut",
+    "icon": "assets/forage/Hazelnut.png",
+    "price": 90,
+    "edibility": 12,
+    "category": -81,
+    "contextTags": [
+      "color_brown",
+      "forage_item",
+      "season_fall"
+    ],
+    "seasons": [
+      "fall"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Mountain",
+      "Railroad"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "fall-foraging"
+    ],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "blackberry",
+    "gameId": 410,
+    "name": "Blackberry",
+    "icon": "assets/forage/Blackberry.png",
+    "price": 20,
+    "edibility": 10,
+    "category": -79,
+    "contextTags": [
+      "color_dark_blue",
+      "forage_item",
+      "season_fall"
+    ],
+    "seasons": [
+      "fall"
+    ],
+    "locations": [
+      "Forest",
+      "Railroad",
+      "Town"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "fall-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "dislike",
+      "linus": "like",
+      "abigail": "dislike",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "winter-root",
+    "gameId": 412,
+    "name": "Winter Root",
+    "icon": "assets/forage/Winter_Root.png",
+    "price": 70,
+    "edibility": 10,
+    "category": -81,
+    "contextTags": [
+      "color_orange",
+      "forage_item",
+      "forage_item_mines",
+      "season_winter"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [
+      "winter-foraging"
+    ],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "crystal-fruit",
+    "gameId": 414,
+    "name": "Crystal Fruit",
+    "icon": "assets/forage/Crystal_Fruit.png",
+    "price": 150,
+    "edibility": 25,
+    "category": -79,
+    "contextTags": [
+      "color_blue",
+      "forage_item",
+      "season_winter"
+    ],
+    "seasons": [
+      "winter"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Forest",
+      "Mountain",
+      "Railroad",
+      "Town"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "winter-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "dislike",
+      "linus": "like",
+      "abigail": "dislike",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "leah": "like",
+      "shane": "like",
+      "elliott": "like",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "snow-yam",
+    "gameId": 416,
+    "name": "Snow Yam",
+    "icon": "assets/forage/Snow_Yam.png",
+    "price": 100,
+    "edibility": 12,
+    "category": -81,
+    "contextTags": [
+      "color_white"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [
+      "winter-foraging"
+    ],
+    "gifts": {
+      "maru": "hate",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "crocus",
+    "gameId": 418,
+    "name": "Crocus",
+    "icon": "assets/forage/Crocus.png",
+    "price": 60,
+    "edibility": -300,
+    "category": -80,
+    "contextTags": [
+      "color_purple",
+      "dye_medium",
+      "flower_item",
+      "forage_item",
+      "season_winter"
+    ],
+    "seasons": [
+      "winter"
+    ],
+    "locations": [
+      "Backwoods",
+      "BusStop",
+      "Forest",
+      "Mountain",
+      "Railroad",
+      "Town"
+    ],
+    "isFlower": true,
+    "bundles": [
+      "winter-foraging"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "love",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    }
+  },
+  {
+    "type": "forage",
+    "id": "red-mushroom",
+    "gameId": 420,
+    "name": "Red Mushroom",
+    "icon": "assets/forage/Red_Mushroom.png",
+    "price": 75,
+    "edibility": -20,
+    "category": -81,
+    "contextTags": [
+      "color_red",
+      "forage_item",
+      "forage_item_mines",
+      "forage_item_secret",
+      "season_fall",
+      "season_summer"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "IslandNorthCave1",
+      "Mines (Floors 81-119)",
+      "Woods"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging",
+      "dye"
+    ],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "dislike",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "like",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "like",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "notes": [
+      {
+        "locations": [
+          "Secret Woods"
+        ],
+        "seasons": "Fall, Summer"
+      },
+      {
+        "locations": [
+          "Volcano Dungeon"
+        ],
+        "seasons": "Fall, Spring, Summer, Winter"
+      },
+      {
+        "locations": [
+          "Mines (Floors 81-119)"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
+  },
+  {
+    "type": "forage",
+    "id": "purple-mushroom",
+    "gameId": 422,
+    "name": "Purple Mushroom",
+    "icon": "assets/forage/Purple_Mushroom.png",
+    "price": 250,
+    "edibility": 50,
+    "category": -81,
+    "contextTags": [
+      "color_purple",
+      "edible_mushroom",
+      "forage_item",
+      "forage_item_mines"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "IslandNorthCave1",
+      "Mines (Floors 81-119)"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "exotic-foraging",
+      "field-research"
+    ],
+    "gifts": {
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "penny": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "love",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "notes": [
+      {
+        "locations": [
+          "Volcano Dungeon"
+        ],
+        "seasons": "Fall, Spring, Summer, Winter"
+      },
+      {
+        "locations": [
+          "Mines (Floors 81-119)"
+        ],
+        "seasons": "All Seasons"
+      }
+    ]
+  },
+  {
+    "type": "forage",
+    "id": "cockle",
+    "gameId": 718,
+    "name": "Cockle",
+    "icon": "assets/forage/Cockle.png",
+    "price": 50,
+    "edibility": -300,
+    "category": -4,
+    "contextTags": [
+      "color_dark_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "crab-pot"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "alsoAvailableAs": {
+      "type": "fish",
+      "id": "cockle",
+      "context": "Crab pot fishing"
+    },
+    "originalCategory": -4,
+    "displayCategory": -81,
+    "hasQuality": false
+  },
+  {
+    "type": "forage",
+    "id": "mussel",
+    "gameId": 719,
+    "name": "Mussel",
+    "icon": "assets/forage/Mussel.png",
+    "price": 30,
+    "edibility": -300,
+    "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "crab-pot"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "alsoAvailableAs": {
+      "type": "fish",
+      "id": "mussel",
+      "context": "Crab pot fishing"
+    },
+    "originalCategory": -4,
+    "displayCategory": -81,
+    "hasQuality": false
+  },
+  {
+    "type": "forage",
+    "id": "oyster",
+    "gameId": 723,
+    "name": "Oyster",
+    "icon": "assets/forage/Oyster.png",
+    "price": 40,
+    "edibility": -300,
+    "category": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_crab_pot",
+      "fish_has_roe",
+      "fish_ocean",
+      "fish_upright",
+      "forage_item",
+      "forage_item_beach"
+    ],
+    "seasons": [
+      "fall",
+      "spring",
+      "summer",
+      "winter"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "isFlower": false,
+    "bundles": [
+      "crab-pot"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "alsoAvailableAs": {
+      "type": "fish",
+      "id": "oyster",
+      "context": "Crab pot fishing"
+    },
+    "originalCategory": -4,
+    "displayCategory": -81,
+    "hasQuality": false
+  },
+  {
+    "type": "forage",
+    "id": "ginger",
+    "gameId": 829,
+    "name": "Ginger",
+    "icon": "assets/forage/Ginger.png",
+    "price": 60,
+    "edibility": 10,
+    "category": -81,
+    "contextTags": [
+      "color_yellow",
+      "forage_item",
+      "ginger_item",
+      "preserves_pickle"
+    ],
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "locations": [],
+    "isFlower": false,
+    "bundles": [],
+    "gifts": {
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  }
+]

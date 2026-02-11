@@ -1,0 +1,390 @@
+[
+  {
+    "type": "metal-bar",
+    "id": "copper-bar",
+    "gameId": 334,
+    "name": "Copper Bar",
+    "icon": "assets/metal-bars/Copper_Bar.png",
+    "price": 60,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_copper",
+      "furnace_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 378,
+          "name": "Copper Ore",
+          "quantity": 5
+        }
+      ]
+    },
+    "bundles": [
+      "blacksmith-s"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "like",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "metal-bar",
+    "id": "iron-bar",
+    "gameId": 335,
+    "name": "Iron Bar",
+    "icon": "assets/metal-bars/Iron_Bar.png",
+    "price": 120,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_iron",
+      "furnace_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 380,
+          "name": "Iron Ore",
+          "quantity": 5
+        }
+      ]
+    },
+    "bundles": [
+      "blacksmith-s"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "like",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "metal-bar",
+    "id": "gold-bar",
+    "gameId": 336,
+    "name": "Gold Bar",
+    "icon": "assets/metal-bars/Gold_Bar.png",
+    "price": 250,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_gold",
+      "furnace_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 384,
+          "name": "Gold Ore",
+          "quantity": 5
+        }
+      ]
+    },
+    "bundles": [
+      "blacksmith-s"
+    ],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "love",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "love",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "love",
+      "krobus": "like",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "metal-bar",
+    "id": "iridium-bar",
+    "gameId": 337,
+    "name": "Iridium Bar",
+    "icon": "assets/metal-bars/Iridium_Bar.png",
+    "price": 1000,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_iridium",
+      "furnace_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 386,
+          "name": "Iridium Ore",
+          "quantity": 5
+        }
+      ]
+    },
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "love",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "love",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "like",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "love",
+      "krobus": "love",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "metal-bar",
+    "id": "refined-quartz",
+    "gameId": 338,
+    "name": "Refined Quartz",
+    "icon": "assets/metal-bars/Refined_Quartz.png",
+    "price": 50,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_iridium",
+      "furnace_item"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 80,
+          "name": "Quartz",
+          "quantity": 1
+        },
+        {
+          "gameId": 82,
+          "name": "Fire Quartz",
+          "quantity": 1
+        }
+      ]
+    },
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "metal-bar",
+    "id": "radioactive-bar",
+    "gameId": 910,
+    "name": "Radioactive Bar",
+    "icon": "assets/metal-bars/Radioactive_Bar.png",
+    "price": 3000,
+    "edibility": -300,
+    "category": -15,
+    "contextTags": [
+      "color_lime",
+      "furnace_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "producedBy": {
+      "machine": "Furnace",
+      "machineId": "furnace",
+      "inputs": [
+        {
+          "gameId": 909,
+          "name": "Radioactive Ore",
+          "quantity": 5
+        }
+      ]
+    },
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "love",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "neutral",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    }
+  }
+]

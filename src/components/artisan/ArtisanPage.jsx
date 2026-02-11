@@ -21,17 +21,39 @@ function ArtisanPage() {
 
   // Update URL when filters change
   useEffect(() => {
-    const params = new URLSearchParams()
-    if (activeTab !== 'goods') params.set('tab', activeTab)
-    if (filters.search) params.set('search', filters.search)
-    if (filters.source) params.set('source', filters.source)
-    if (filters.bundle) params.set('bundle', filters.bundle)
+    const params = new URLSearchParams(searchParams) // Preserve existing params (sort, page)
+
+    // Update tab param
+    if (activeTab !== 'goods') {
+      params.set('tab', activeTab)
+    } else {
+      params.delete('tab')
+    }
+
+    // Update filter params
+    if (filters.search) {
+      params.set('search', filters.search)
+    } else {
+      params.delete('search')
+    }
+
+    if (filters.source) {
+      params.set('source', filters.source)
+    } else {
+      params.delete('source')
+    }
+
+    if (filters.bundle) {
+      params.set('bundle', filters.bundle)
+    } else {
+      params.delete('bundle')
+    }
 
     setSearchParams(params, { replace: true })
-  }, [activeTab, filters, setSearchParams])
+  }, [activeTab, filters, setSearchParams, searchParams])
 
   const handleTabChange = (tabId) => {
-    const params = new URLSearchParams()
+    const params = new URLSearchParams(searchParams) // Preserve sort/page when changing tabs
     params.set('tab', tabId)
     setSearchParams(params)
     setFilters({ search: '', source: '', bundle: '' })
@@ -223,21 +245,16 @@ function ArtisanPage() {
         </PagePanel.Controls>
       </PagePanel>
 
-      {filteredArtisan.length > 0 ? (
+      {activeTab === 'goods' ? (
         <ArtisanTable
           artisanGoods={filteredArtisan}
-          villagers={data.villagers || []}
         />
       ) : (
         <div className="empty-state">
-          {activeTab === 'goods' ? (
-            <p>No items found matching your filters.</p>
-          ) : (
-            <div className="coming-soon">
-              <h3>Coming Soon!</h3>
-              <p>{tabs.find(t => t.id === activeTab)?.label} will be added in a future update.</p>
-            </div>
-          )}
+          <div className="coming-soon">
+            <h3>Coming Soon!</h3>
+            <p>{tabs.find(t => t.id === activeTab)?.label} will be added in a future update.</p>
+          </div>
         </div>
       )}
     </div>

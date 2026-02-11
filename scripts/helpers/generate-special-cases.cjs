@@ -73,7 +73,7 @@ function capitalizeFirst(str) {
 }
 
 function formatSeasons(seasons) {
-  if (!seasons || seasons.length === 0) return 'all seasons';
+  if (!seasons || seasons.length === 0) return 'All Seasons';
   return seasons.map(capitalizeFirst).join(', ');
 }
 
@@ -109,14 +109,11 @@ function generateNote(locationRules) {
     return 0;
   });
 
-  // Generate note parts
-  const parts = groups.map(group => {
-    const locations = group.locations.join(', ');
-    const seasons = formatSeasons(group.normalized.seasons);
-    return `${locations}: ${seasons}`;
-  });
-
-  return parts.join('. ') + '.';
+  // Return array of structured notes
+  return groups.map(group => ({
+    locations: group.locations,
+    seasons: formatSeasons(group.normalized.seasons)
+  }));
 }
 
 function generateSpecialCases() {
@@ -224,10 +221,13 @@ function generateSpecialCases() {
 
   console.log(`📋 Generated ${specialCases.size} special case notes:\n`);
 
-  specialCases.forEach((note, fishId) => {
+  specialCases.forEach((notes, fishId) => {
     const fish = fishData.find(f => f.gameId === fishId);
     if (fish) {
-      console.log(`${fish.name}: ${note}`);
+      console.log(`${fish.name}:`);
+      notes.forEach(note => {
+        console.log(`  ${note.locations.join(', ')}: ${note.seasons}`);
+      });
     }
   });
   console.log();
