@@ -2,6 +2,7 @@ import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useVillagers } from '../../contexts/VillagersContext'
+import { useRelationalData } from '../../hooks/useRelationalData'
 import {
   createIconColumn,
   createNameColumn,
@@ -13,6 +14,7 @@ import {
 function ArtisanTable({ artisanGoods }) {
   const { player } = usePlayer()
   const { villagers } = useVillagers()
+  const relationalData = useRelationalData()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -21,6 +23,11 @@ function ArtisanTable({ artisanGoods }) {
   }, [player.professions])
 
   const columns = useMemo(() => {
+    // Don't build columns until relational data is loaded
+    if (relationalData.loading) {
+      return []
+    }
+
     const baseColumns = [
       createIconColumn(),
       createNameColumn(),
@@ -69,13 +76,18 @@ function ArtisanTable({ artisanGoods }) {
         meta: { align: 'center' },
       },
       createPriceColumn(professionsRef),
-      createBundleColumn(),
+      createBundleColumn(relationalData),
     ]
 
-    const villagerColumns = createVillagerGiftColumns(villagers)
+    const villagerColumns = createVillagerGiftColumns(villagers, relationalData)
 
     return [...baseColumns, ...villagerColumns]
-  }, [villagers])
+  }, [villagers, relationalData])
+
+  // Show loading state while data loads
+  if (relationalData.loading || columns.length === 0) {
+    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
+  }
 
   return (
     <DataTable

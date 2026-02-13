@@ -85,8 +85,13 @@ function DataTable({
       params.delete('page')
     }
 
-    setSearchParams(params, { replace: true })
-  }, [sorting, pagination, syncUrlState, enablePagination, setSearchParams, searchParams])
+    // Only update if params actually changed
+    const currentParams = searchParams.toString()
+    const newParams = params.toString()
+    if (currentParams !== newParams) {
+      setSearchParams(params, { replace: true })
+    }
+  }, [sorting, pagination, syncUrlState, enablePagination, setSearchParams])
 
   const table = useReactTable({
     data,

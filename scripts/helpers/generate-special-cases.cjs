@@ -14,7 +14,7 @@ function loadJson(filePath) {
 }
 
 // Load rules location mappings
-const CURATED_DIR = path.join(__dirname, '../data/rules');
+const CURATED_DIR = path.join(__dirname, '../../data/rules');
 const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
 
 // Convert location data to simple map
@@ -119,8 +119,8 @@ function generateNote(locationRules) {
 function generateSpecialCases() {
   console.log('🔍 Analyzing fish spawn rules for special cases...\n');
 
-  const locationsPath = path.join(__dirname, '../data/game-exports/Locations.json');
-  const fishPath = path.join(__dirname, '../data/processed/items/fish.json');
+  const locationsPath = path.join(__dirname, '../../data/game-exports/Locations.json');
+  const fishPath = path.join(__dirname, '../../data/processed/items/fish.json');
 
   const locationsData = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
   const fishData = JSON.parse(fs.readFileSync(fishPath, 'utf8'));

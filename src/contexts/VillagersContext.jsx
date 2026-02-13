@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useMemo } from 'react'
 
 const VillagersContext = createContext(null)
 
@@ -23,8 +23,11 @@ export function VillagersProvider({ children }) {
     loadVillagers()
   }, [])
 
+  // Memoize the context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({ villagers, loading, error }), [villagers, loading, error])
+
   return (
-    <VillagersContext.Provider value={{ villagers, loading, error }}>
+    <VillagersContext.Provider value={value}>
       {children}
     </VillagersContext.Provider>
   )

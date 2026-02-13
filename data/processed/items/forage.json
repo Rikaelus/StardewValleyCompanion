@@ -55,7 +55,10 @@
       "willy": "dislike",
       "krobus": "love",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -109,7 +112,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -159,7 +165,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -208,7 +217,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -271,7 +283,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -318,7 +333,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -365,7 +383,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -414,7 +435,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "hate"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -477,7 +501,10 @@
       "willy": "like",
       "krobus": "like",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -526,6 +553,9 @@
       "krobus": "dislike",
       "leo": "dislike"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "notes": [
       {
         "locations": [
@@ -587,7 +617,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "hate"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -657,14 +690,17 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "clam",
       "context": "Crab pot fishing"
     },
     "originalCategory": -4,
-    "displayCategory": -81,
-    "hasQuality": false
+    "displayCategory": -81
   },
   {
     "type": "forage",
@@ -697,7 +733,11 @@
       "elliott": "neutral",
       "harvey": "hate",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -726,7 +766,11 @@
       "evelyn": "like",
       "elliott": "neutral",
       "harvey": "hate"
-    }
+    },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -786,7 +830,11 @@
       "willy": "like",
       "krobus": "like",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -834,7 +882,10 @@
       "harvey": "hate",
       "sandy": "like",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -896,7 +947,11 @@
       "willy": "hate",
       "krobus": "hate",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -942,7 +997,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -986,7 +1044,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1052,7 +1113,10 @@
       "willy": "like",
       "krobus": "like",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1106,6 +1170,9 @@
       "krobus": "dislike",
       "leo": "dislike"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "notes": [
       {
         "locations": [
@@ -1171,7 +1238,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1219,7 +1289,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1264,7 +1337,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1311,7 +1387,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1359,7 +1438,10 @@
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1405,7 +1487,10 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1473,7 +1558,10 @@
       "willy": "like",
       "krobus": "like",
       "leo": "like"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "type": "forage",
@@ -1544,6 +1632,9 @@
       "krobus": "hate",
       "leo": "hate"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "notes": [
       {
         "locations": [
@@ -1618,6 +1709,9 @@
       "krobus": "dislike",
       "leo": "dislike"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "notes": [
       {
         "locations": [
@@ -1699,14 +1793,17 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "cockle",
       "context": "Crab pot fishing"
     },
     "originalCategory": -4,
-    "displayCategory": -81,
-    "hasQuality": false
+    "displayCategory": -81
   },
   {
     "type": "forage",
@@ -1774,14 +1871,17 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "mussel",
       "context": "Crab pot fishing"
     },
     "originalCategory": -4,
-    "displayCategory": -81,
-    "hasQuality": false
+    "displayCategory": -81
   },
   {
     "type": "forage",
@@ -1850,14 +1950,17 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "oyster",
       "context": "Crab pot fishing"
     },
     "originalCategory": -4,
-    "displayCategory": -81,
-    "hasQuality": false
+    "displayCategory": -81
   },
   {
     "type": "forage",
@@ -1902,6 +2005,9 @@
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
-    }
+    },
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   }
 ]

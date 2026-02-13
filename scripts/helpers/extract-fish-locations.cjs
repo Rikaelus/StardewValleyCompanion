@@ -14,7 +14,7 @@ function loadJson(filePath) {
 }
 
 // Load rules location mappings
-const CURATED_DIR = path.join(__dirname, '../data/rules');
+const CURATED_DIR = path.join(__dirname, '../../data/rules');
 const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
 const mineFloorsData = loadJson(path.join(CURATED_DIR, 'mine-floors.json'));
 
@@ -63,8 +63,8 @@ function extractFishLocations() {
   console.log('Extracting fish locations from game data...\n');
 
   // Load exported location data
-  const locationsPath = path.join(__dirname, '../data/game-exports/Locations.json');
-  const fishPath = path.join(__dirname, '../data/game-exports/Fish.json');
+  const locationsPath = path.join(__dirname, '../../data/game-exports/Locations.json');
+  const fishPath = path.join(__dirname, '../../data/game-exports/Fish.json');
 
   if (!fs.existsSync(locationsPath)) {
     console.error('❌ Locations.json not found. Run game data export first.');
@@ -244,7 +244,7 @@ function extractFishLocations() {
   });
 
   // Save to file (intermediate output for debugging/verification)
-  const outputPath = path.join(__dirname, '../data/processing/extracted-locations.json');
+  const outputPath = path.join(__dirname, '../../data/processing/extracted-locations.json');
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
 
   console.log(`📄 Saved to: ${outputPath}\n`);

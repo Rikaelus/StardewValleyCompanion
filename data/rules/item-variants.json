@@ -1,0 +1,26 @@
+{
+  "$schema": "item-variants-schema",
+  "description": "Items that share the same Name but have different gameIds and sprites. Maps gameIds to unique IDs and icon filenames. Only needed when DisplayName extraction doesn't provide correct sprite name.",
+  "variants": {
+    "176": {
+      "name": "Egg",
+      "uniqueId": "egg-white",
+      "notes": "White chicken egg - uniqueId needed because multiple items share 'Egg' name"
+    },
+    "180": {
+      "name": "Egg",
+      "uniqueId": "egg-brown",
+      "notes": "Brown chicken egg - uniqueId needed because multiple items share 'Egg' name"
+    },
+    "174": {
+      "name": "Large Egg",
+      "uniqueId": "large-egg-white",
+      "notes": "Large white chicken egg - uniqueId needed because multiple items share 'Large Egg' name"
+    },
+    "182": {
+      "name": "Large Egg",
+      "uniqueId": "large-egg-brown",
+      "notes": "Large brown chicken egg - uniqueId needed because multiple items share 'Large Egg' name"
+    }
+  }
+}

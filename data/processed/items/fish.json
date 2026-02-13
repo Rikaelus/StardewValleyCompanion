@@ -69,6 +69,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island Pirate Cove",
       "Ginger Island South",
@@ -147,6 +151,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -222,6 +230,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island Pirate Cove",
       "Ginger Island South",
@@ -322,6 +334,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -398,6 +414,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -475,6 +495,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake"
     ]
@@ -549,6 +573,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -621,6 +649,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Mountain Lake",
@@ -709,6 +741,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -787,6 +823,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Mountain Lake",
@@ -862,6 +902,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Mountain Lake",
@@ -943,6 +987,10 @@
       "krobus": "hate",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake",
       "Mutant Bug Lair",
@@ -1041,6 +1089,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Secret Woods",
@@ -1135,6 +1187,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -1211,6 +1267,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -1285,6 +1345,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -1359,6 +1423,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -1436,6 +1504,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -1508,6 +1580,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island West",
       "Night Market",
@@ -1587,6 +1663,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -1659,6 +1739,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -1731,6 +1815,9 @@
       "krobus": "hate",
       "leo": "hate"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "location": [
       "Beach Farm",
       "Night Market",
@@ -1807,6 +1894,9 @@
       "krobus": "hate",
       "leo": "hate"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "location": [
       "Desert",
       "Forest River",
@@ -1889,6 +1979,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Night Market",
       "Ocean"
@@ -1978,6 +2072,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island Pirate Cove",
       "Ginger Island South",
@@ -2077,6 +2175,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mines (F20)",
       "Mines (F60)"
@@ -2152,6 +2254,9 @@
       "krobus": "hate",
       "leo": "hate"
     },
+    "sellingLocations": [
+      "shipping-bin"
+    ],
     "location": [
       "Mines (F20)",
       "Mines (F60)",
@@ -2232,6 +2337,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mines (F20)"
     ]
@@ -2302,6 +2411,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ],
@@ -2377,6 +2490,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Town River"
     ],
@@ -2454,6 +2571,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mines (F60)"
     ]
@@ -2530,6 +2651,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mines (F100)",
       "Volcano Caldera"
@@ -2604,6 +2729,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake"
     ],
@@ -2681,6 +2810,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Desert"
     ]
@@ -2756,6 +2889,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Desert"
     ]
@@ -2829,6 +2966,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island Pirate Cove",
       "Ginger Island South",
@@ -2923,6 +3064,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Ginger Island North",
@@ -3012,6 +3157,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ],
@@ -3090,6 +3239,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Sewers"
     ]
@@ -3165,6 +3318,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake"
     ]
@@ -3242,6 +3399,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -3319,6 +3480,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake"
     ]
@@ -3394,6 +3559,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island North",
       "Ginger Island West",
@@ -3488,6 +3657,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Mountain Lake"
@@ -3561,6 +3734,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River"
     ]
@@ -3638,6 +3815,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -3715,6 +3896,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Town River"
@@ -3789,6 +3974,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River",
       "Mountain Lake",
@@ -3870,6 +4059,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean"
     ]
@@ -3936,6 +4129,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ]
@@ -4002,6 +4199,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Freshwater (Crab Pot)"
     ]
@@ -4069,6 +4270,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ]
@@ -4137,6 +4342,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ],
@@ -4210,6 +4419,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ],
@@ -4282,6 +4495,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ]
@@ -4349,6 +4566,10 @@
       "krobus": "hate",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Freshwater (Crab Pot)"
     ]
@@ -4416,6 +4637,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Freshwater (Crab Pot)"
     ]
@@ -4485,6 +4710,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ocean (Crab Pot)"
     ],
@@ -4567,6 +4796,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest Farm",
       "Secret Woods"
@@ -4639,6 +4872,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River"
     ],
@@ -4718,6 +4955,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Witch's Swamp"
     ]
@@ -4793,6 +5034,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mutant Bug Lair"
     ]
@@ -4869,6 +5114,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Night Market"
     ]
@@ -4943,6 +5192,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Night Market"
     ]
@@ -5017,6 +5270,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Night Market"
     ]
@@ -5092,6 +5349,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island Pirate Cove"
     ]
@@ -5167,6 +5428,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island South",
       "Ginger Island Southeast",
@@ -5243,6 +5508,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Ginger Island North",
       "Ginger Island West"
@@ -5315,6 +5584,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Night Market",
       "Ocean"
@@ -5392,6 +5665,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Town River"
     ],
@@ -5467,6 +5744,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Mountain Lake"
     ],
@@ -5542,6 +5823,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Sewers"
     ]
@@ -5613,6 +5898,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River"
     ],
@@ -5689,6 +5978,10 @@
       "krobus": "dislike",
       "leo": "neutral"
     },
+    "sellingLocations": [
+      "willy",
+      "shipping-bin"
+    ],
     "location": [
       "Forest River"
     ]

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 export function useData(files) {
   const [data, setData] = useState({})
@@ -88,15 +88,18 @@ export function useItemData(itemType) {
   })
 
   // Transform compiled data to match component expectations
-  if (loading || error) {
-    return { data: {}, loading, error }
-  }
+  // Memoize the transformed data to prevent unnecessary re-renders
+  const transformed = useMemo(() => {
+    if (loading || error || !data.page) {
+      return {}
+    }
 
-  const transformed = {
-    [config.itemsKey]: data.page?.items || [],
-    items: data.page?.items || [], // Generic alias
-    gameIdIndex: data.page?.gameIdIndex || {}
-  }
+    return {
+      [config.itemsKey]: data.page.items || [],
+      items: data.page.items || [], // Generic alias
+      gameIdIndex: data.page.gameIdIndex || {}
+    }
+  }, [data, loading, error, config.itemsKey])
 
   return { data: transformed, loading, error }
 }

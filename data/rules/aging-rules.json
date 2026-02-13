@@ -7,36 +7,42 @@
       "itemName": "Wine",
       "canBeAged": true,
       "agingDaysToIridium": 56,
+      "agingDaysPerTier": 14,
       "notes": "Most profitable aged item. 14 days per quality tier (Regular→Silver→Gold→Iridium)."
     },
     "350": {
       "itemName": "Juice",
       "canBeAged": true,
       "agingDaysToIridium": 28,
+      "agingDaysPerTier": 7,
       "notes": "7 days per quality tier."
     },
     "303": {
       "itemName": "Pale Ale",
       "canBeAged": true,
       "agingDaysToIridium": 28,
+      "agingDaysPerTier": 7,
       "notes": "7 days per quality tier."
     },
     "459": {
       "itemName": "Mead",
       "canBeAged": true,
       "agingDaysToIridium": 28,
+      "agingDaysPerTier": 7,
       "notes": "7 days per quality tier."
     },
     "424": {
       "itemName": "Cheese",
       "canBeAged": true,
       "agingDaysToIridium": 14,
+      "agingDaysPerTier": 3.5,
       "notes": "3.5 days per quality tier. Fastest aging item."
     },
     "426": {
       "itemName": "Goat Cheese",
       "canBeAged": true,
       "agingDaysToIridium": 14,
+      "agingDaysPerTier": 3.5,
       "notes": "3.5 days per quality tier. Same as regular cheese."
     }
   }

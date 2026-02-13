@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import ItemModal from '../common/ItemModal'
 import { useVillagers } from '../../contexts/VillagersContext'
+import { useRelationalData } from '../../hooks/useRelationalData'
 import { formatLocationNames } from '../../utils/formatters'
 import {
   createIconColumn,
@@ -14,6 +15,7 @@ import {
 
 function ForageTable({ data }) {
   const { villagers } = useVillagers()
+  const relationalData = useRelationalData()
   const [selectedForage, setSelectedForage] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -23,6 +25,11 @@ function ForageTable({ data }) {
   }
 
   const columns = useMemo(() => {
+    // Don't build columns until relational data is loaded
+    if (relationalData.loading) {
+      return []
+    }
+
     const baseColumns = [
       createIconColumn({ onClick: handleRowClick }),
       createNameColumn({ onClick: handleRowClick }),
@@ -38,13 +45,18 @@ function ForageTable({ data }) {
       },
       createSeasonColumn(),
       createPriceColumn(),
-      createBundleColumn(),
+      createBundleColumn(relationalData),
     ]
 
-    const villagerColumns = createVillagerGiftColumns(villagers)
+    const villagerColumns = createVillagerGiftColumns(villagers, relationalData)
 
     return [...baseColumns, ...villagerColumns]
-  }, [villagers])
+  }, [villagers, relationalData])
+
+  // Show loading state while data loads
+  if (relationalData.loading || columns.length === 0) {
+    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
+  }
 
   return (
     <>

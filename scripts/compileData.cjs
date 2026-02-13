@@ -109,9 +109,8 @@ console.log('\n🍷 Compiling artisan page data...');
 const compiledArtisan = [];
 
 sourceData.artisan.forEach(artisan => {
-  // Resolve bundle and gift references using helpers
-  const bundleDetails = resolveBundleDetails(artisan.bundles, lookupMaps.bundlesById);
-  const giftDetails = resolveGiftDetails(artisan.gifts, lookupMaps.villagersById);
+  // RELATIONAL: Keep only bundle IDs, not embedded objects
+  // Remove gifts field (use gifts.json pivot table instead)
 
   // Check if this item has inputDetails (variations like Wine, Juice, etc.)
   if (artisan.producedBy?.inputDetails && artisan.producedBy.inputDetails.length > 0) {
@@ -137,6 +136,7 @@ sourceData.artisan.forEach(artisan => {
         contextTags: artisan.contextTags,
         edibility: artisan.edibility,
         prices: qualityPrices,
+        sellingLocations: artisan.sellingLocations,
         producedBy: {
           machine: artisan.producedBy.machine,
           machineId: artisan.producedBy.machineId,
@@ -144,8 +144,7 @@ sourceData.artisan.forEach(artisan => {
           inputDetails: artisan.producedBy.inputDetails,
           valueFormula: artisan.producedBy.valueFormula
         },
-        bundleDetails,
-        giftDetails
+        bundles: artisan.bundles
       };
 
       // Copy processing time if present
@@ -201,6 +200,7 @@ sourceData.artisan.forEach(artisan => {
           contextTags: artisan.contextTags,
           edibility: artisan.edibility,
           prices: qualityPrices,
+          sellingLocations: artisan.sellingLocations,
           producedBy: {
             machine: artisan.producedBy.machine,
             machineId: artisan.producedBy.machineId,
@@ -210,8 +210,7 @@ sourceData.artisan.forEach(artisan => {
             inputGameId: inputDetail.inputGameId,
             inputBasePrice: inputDetail.inputBasePrice
           },
-          bundleDetails,
-          giftDetails
+          bundles: artisan.bundles
         };
 
         // Copy processing time if present (check top level first, then producedBy)
@@ -245,13 +244,13 @@ sourceData.artisan.forEach(artisan => {
         contextTags: artisan.contextTags,
         edibility: artisan.edibility,
         prices: calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers),
+        sellingLocations: artisan.sellingLocations,
         producedBy: {
           machine: artisan.producedBy.machine,
           machineId: artisan.producedBy.machineId,
           processingTimeMinutes: artisan.producedBy.processingTimeMinutes
         },
-        bundleDetails,
-        giftDetails
+        bundles: artisan.bundles
       };
 
       // Copy processing time minutes if present
@@ -272,8 +271,7 @@ sourceData.artisan.forEach(artisan => {
         ...artisan,
         type: 'artisan',
         prices: qualityPrices,
-        bundleDetails,
-        giftDetails
+        bundles: artisan.bundles
       });
     }
   }
@@ -405,7 +403,7 @@ const bundlesPageData = {
 writeJson(path.join(OUTPUT_DIR, 'pages/bundles.json'), bundlesPageData);
 console.log(`  ✓ Compiled bundles.json (${compiledBundles.length} bundles)`);
 
-// Copy Reference Data (villagers are small and shared)
+// Copy Reference Data (villagers, stores, bundles are small and shared)
 console.log('\n👥 Copying reference data...');
 
 writeJson(path.join(OUTPUT_DIR, 'reference/villagers.json'), {
@@ -416,6 +414,26 @@ writeJson(path.join(OUTPUT_DIR, 'reference/villagers.json'), {
   }
 });
 console.log(`  ✓ Copied villagers.json (${sourceData.villagers.length} villagers)`);
+
+// Copy selling-locations (stores) for frontend lookups
+const sellingLocations = loadJson(path.join(RULES_DIR, 'selling-locations.json'));
+writeJson(path.join(OUTPUT_DIR, 'reference/stores.json'), sellingLocations);
+console.log(`  ✓ Copied stores.json`);
+
+// Copy bundles for frontend lookups
+writeJson(path.join(OUTPUT_DIR, 'collections/bundles.json'), {
+  bundles: sourceData.bundles,
+  meta: {
+    compiled: new Date().toISOString(),
+    totalBundles: sourceData.bundles.length
+  }
+});
+console.log(`  ✓ Copied bundles.json (${sourceData.bundles.length} bundles)`);
+
+// Copy relationships (gifts pivot table)
+const gifts = loadJson(path.join(SOURCE_DIR, 'relationships/gifts.json'));
+writeJson(path.join(OUTPUT_DIR, 'relationships/gifts.json'), gifts);
+console.log(`  ✓ Copied gifts.json (${gifts.relationships.length} relationships)`);
 
 // Generate compilation report
 console.log('\n📊 Compilation Summary:');

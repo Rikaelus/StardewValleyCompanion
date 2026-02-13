@@ -60,8 +60,12 @@ function createGameIdIndex(items) {
 
 /**
  * Generic page compilation function
- * Applies common transformations (bundle/gift resolution, gameId indexing)
+ * Applies common transformations (gameId indexing)
  * to any item type
+ *
+ * RELATIONAL ARCHITECTURE: Items keep only IDs, not embedded objects
+ * - bundles: array of bundle IDs (already in source)
+ * - gifts: removed (use gifts.json pivot table instead)
  *
  * @param {Array} items - Array of source items
  * @param {Object} lookupMaps - Object containing bundlesById and villagersById maps
@@ -70,15 +74,10 @@ function createGameIdIndex(items) {
  */
 function compilePage(items, lookupMaps, customTransform = null) {
   const compiledItems = items.map(item => {
-    // Apply common transformations
-    const bundleDetails = resolveBundleDetails(item.bundles, lookupMaps.bundlesById)
-    const giftDetails = resolveGiftDetails(item.gifts, lookupMaps.villagersById)
+    // Remove gifts field (use gifts.json pivot table instead)
+    const { gifts, ...itemWithoutGifts } = item
 
-    let compiledItem = {
-      ...item,
-      bundleDetails,
-      giftDetails
-    }
+    let compiledItem = itemWithoutGifts
 
     // Apply custom transformation if provided
     if (customTransform) {

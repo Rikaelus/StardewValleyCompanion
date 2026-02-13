@@ -114,6 +114,14 @@
 
 .data-table img {
   vertical-align: middle;
+  /* Prevent layout shift while images load */
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  /* Prevent flicker by ensuring images are rendered at exact size */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 .pagination {

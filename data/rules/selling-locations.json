@@ -1,0 +1,73 @@
+{
+  "stores": {
+    "pierre": {
+      "id": "pierre",
+      "name": "Pierre's General Store",
+      "npc": "Pierre"
+    },
+    "willy": {
+      "id": "willy",
+      "name": "Willy's Fish Shop",
+      "npc": "Willy"
+    },
+    "clint": {
+      "id": "clint",
+      "name": "Blacksmith (Clint)",
+      "npc": "Clint"
+    },
+    "robin": {
+      "id": "robin",
+      "name": "Carpenter's Shop (Robin)",
+      "npc": "Robin"
+    },
+    "marnie": {
+      "id": "marnie",
+      "name": "Marnie's Ranch",
+      "npc": "Marnie"
+    },
+    "gus": {
+      "id": "gus",
+      "name": "Saloon (Gus)",
+      "npc": "Gus"
+    },
+    "marlon": {
+      "id": "marlon",
+      "name": "Adventurer's Guild (Marlon)",
+      "npc": "Marlon"
+    },
+    "shipping-bin": {
+      "id": "shipping-bin",
+      "name": "Shipping Bin",
+      "npc": null
+    },
+    "trash-can": {
+      "id": "trash-can",
+      "name": "Trash Can",
+      "npc": null
+    }
+  },
+  "categorySellingLocations": {
+    "-4": ["willy", "shipping-bin"],
+    "-5": ["shipping-bin"],
+    "-6": ["shipping-bin"],
+    "-7": ["gus", "shipping-bin"],
+    "-12": ["clint", "shipping-bin"],
+    "-15": ["clint", "shipping-bin"],
+    "-16": ["robin", "shipping-bin"],
+    "-17": ["pierre", "shipping-bin"],
+    "-18": ["pierre", "marnie", "shipping-bin"],
+    "-19": ["pierre", "shipping-bin"],
+    "-20": ["trash-can", "shipping-bin"],
+    "-21": ["willy", "shipping-bin"],
+    "-22": ["willy", "shipping-bin"],
+    "-23": ["willy", "shipping-bin"],
+    "-26": ["pierre", "shipping-bin"],
+    "-27": ["shipping-bin"],
+    "-28": ["marlon", "shipping-bin"],
+    "-74": ["pierre", "shipping-bin"],
+    "-75": ["shipping-bin"],
+    "-79": ["shipping-bin"],
+    "-80": ["shipping-bin"],
+    "-81": ["shipping-bin"]
+  }
+}

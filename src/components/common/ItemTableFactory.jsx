@@ -61,13 +61,28 @@ export function createPriceColumn(professionsRef, options = {}) {
 
 /**
  * Creates the bundle column showing which bundles an item belongs to
+ *
+ * RELATIONAL: Uses relationalData to resolve bundle IDs to full bundle objects
+ *
+ * @param {Object} relationalData - Relational data from useRelationalData() hook
  */
-export function createBundleColumn() {
+export function createBundleColumn(relationalData) {
   return {
-    accessorKey: 'bundleDetails',
+    accessorKey: 'bundles',
     header: 'Bundles',
-    cell: ({ getValue }) => {
-      const bundleDetails = getValue() || []
+    cell: ({ getValue, row }) => {
+      const bundleIds = getValue() || []
+      if (bundleIds.length === 0) return <span style={{ color: '#999' }}>—</span>
+
+      // RELATIONAL: Resolve bundle IDs to full bundle objects
+      if (!relationalData || relationalData.loading) {
+        return <span style={{ color: '#999' }}>—</span>
+      }
+
+      const bundleDetails = bundleIds
+        .map(bundleId => relationalData.getBundle(bundleId))
+        .filter(Boolean)
+
       if (bundleDetails.length === 0) return <span style={{ color: '#999' }}>—</span>
 
       return (
@@ -92,12 +107,15 @@ export function createBundleColumn() {
       )
     },
     sortingFn: (rowA, rowB, columnId) => {
-      const a = rowA.getValue(columnId) || []
-      const b = rowB.getValue(columnId) || []
-      // Sort by number of bundles first, then alphabetically by first bundle
-      if (a.length !== b.length) return a.length - b.length
-      if (a.length === 0) return 0
-      return a[0].name.localeCompare(b[0].name)
+      const aIds = rowA.getValue(columnId) || []
+      const bIds = rowB.getValue(columnId) || []
+
+      // Sort by number of bundles first
+      if (aIds.length !== bIds.length) return aIds.length - bIds.length
+      if (aIds.length === 0) return 0
+
+      // Then alphabetically by first bundle ID
+      return aIds[0].localeCompare(bIds[0])
     },
   }
 }
@@ -105,19 +123,25 @@ export function createBundleColumn() {
 /**
  * Creates villager gift preference columns for all villagers
  * This is the exact same pattern used in both FishTable and ArtisanTable
+ *
+ * RELATIONAL: Uses relationalData to lookup gift preferences instead of embedded giftDetails
+ *
  * @param {Array} villagers - Array of villager objects with id, name, icon
+ * @param {Object} relationalData - Relational data from useRelationalData() hook
  * @returns {Array} Array of column definitions
  */
-export function createVillagerGiftColumns(villagers) {
+export function createVillagerGiftColumns(villagers, relationalData) {
   // Define the gift preference sort order once
   const GIFT_SORT_ORDER = { love: 0, like: 1, neutral: 2, dislike: 3, hate: 4 }
 
   return villagers.map(villager => ({
     id: `gift-${villager.id}`,
     accessorFn: row => {
-      // Look for this villager in giftDetails
-      const giftDetail = row.giftDetails?.find(g => g.villager.id === villager.id)
-      return giftDetail?.preference
+      // RELATIONAL: Look up gift preference using relational data
+      if (!relationalData?.getGiftPreference) {
+        return null
+      }
+      return relationalData.getGiftPreference(row.id, villager.id)
     },
     header: () => (
       <img

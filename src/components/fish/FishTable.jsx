@@ -2,6 +2,7 @@ import { useMemo, useState, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useVillagers } from '../../contexts/VillagersContext'
+import { useRelationalData } from '../../hooks/useRelationalData'
 import ItemModal from '../common/ItemModal'
 import {
   createIconColumn,
@@ -15,6 +16,7 @@ import {
 function FishTable({ fish }) {
   const { player } = usePlayer()
   const { villagers } = useVillagers()
+  const relationalData = useRelationalData()
   const [selectedFish, setSelectedFish] = useState(null)
   const professionsRef = useRef(player.professions)
 
@@ -22,7 +24,13 @@ function FishTable({ fish }) {
   useEffect(() => {
     professionsRef.current = player.professions
   }, [player.professions])
+
   const columns = useMemo(() => {
+    // Don't build columns until relational data is loaded
+    if (relationalData.loading) {
+      return []
+    }
+
     const baseColumns = [
       createIconColumn(),
       createNameColumn({
@@ -134,13 +142,18 @@ function FishTable({ fish }) {
         meta: { align: 'center' },
       },
       createPriceColumn(professionsRef),
-      createBundleColumn(),
+      createBundleColumn(relationalData),
     ]
 
-    const villagerColumns = createVillagerGiftColumns(villagers)
+    const villagerColumns = createVillagerGiftColumns(villagers, relationalData)
 
     return [...baseColumns, ...villagerColumns]
-  }, [villagers])
+  }, [villagers, relationalData])
+
+  // Show loading state while data loads
+  if (relationalData.loading || columns.length === 0) {
+    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
+  }
 
   return (
     <>

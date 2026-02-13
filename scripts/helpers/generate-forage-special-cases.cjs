@@ -14,7 +14,7 @@ function loadJson(filePath) {
 }
 
 // Load rules location mappings
-const CURATED_DIR = path.join(__dirname, '../data/rules');
+const CURATED_DIR = path.join(__dirname, '../../data/rules');
 const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
 
 // Convert location data to simple map
@@ -109,9 +109,9 @@ function generateNote(locationSeasons) {
 function generateForageSpecialCases() {
   console.log('🔍 Analyzing forage spawn rules for special cases...\n');
 
-  const locationsPath = path.join(__dirname, '../data/game-exports/Locations.json');
-  const forageDataPath = path.join(__dirname, '../data/processed/items/forage.json');
-  const mineForagePath = path.join(__dirname, '../data/rules/mine-forage.json');
+  const locationsPath = path.join(__dirname, '../../data/game-exports/Locations.json');
+  const forageDataPath = path.join(__dirname, '../../data/processed/items/forage.json');
+  const mineForagePath = path.join(__dirname, '../../data/rules/mine-forage.json');
 
   const locationsData = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
   const forageData = JSON.parse(fs.readFileSync(forageDataPath, 'utf8'));

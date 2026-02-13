@@ -7,7 +7,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 30,
-    "edibility": 1
+    "edibility": 1,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "amaranth",
@@ -17,7 +20,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 150,
-    "edibility": 20
+    "edibility": 20,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "grape",
@@ -27,7 +33,10 @@
     "type": "fruit",
     "category": -79,
     "price": 80,
-    "edibility": 15
+    "edibility": 15,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "hops",
@@ -37,7 +46,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 25,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "sweet-gem-berry",
@@ -47,7 +59,11 @@
     "type": "other",
     "category": -17,
     "price": 3000,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
   },
   {
     "id": "fairy-rose",
@@ -57,7 +73,10 @@
     "type": "flower",
     "category": -80,
     "price": 290,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "tulip",
@@ -67,7 +86,10 @@
     "type": "flower",
     "category": -80,
     "price": 30,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "blue-jazz",
@@ -77,7 +99,10 @@
     "type": "flower",
     "category": -80,
     "price": 50,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "sunflower",
@@ -87,7 +112,10 @@
     "type": "flower",
     "category": -80,
     "price": 80,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "coffee-bean",
@@ -97,7 +125,11 @@
     "type": "other",
     "category": -74,
     "price": 15,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
   },
   {
     "id": "poppy",
@@ -107,7 +139,10 @@
     "type": "flower",
     "category": -80,
     "price": 140,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "summer-spangle",
@@ -117,7 +152,10 @@
     "type": "flower",
     "category": -80,
     "price": 90,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "parsnip",
@@ -127,7 +165,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 35,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "green-bean",
@@ -137,7 +178,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 40,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "cauliflower",
@@ -147,7 +191,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 175,
-    "edibility": 30
+    "edibility": 30,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "potato",
@@ -157,7 +204,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 80,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "garlic",
@@ -167,7 +217,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 60,
-    "edibility": 8
+    "edibility": 8,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "kale",
@@ -177,7 +230,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 110,
-    "edibility": 20
+    "edibility": 20,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "rhubarb",
@@ -187,7 +243,10 @@
     "type": "fruit",
     "category": -79,
     "price": 220,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "melon",
@@ -197,7 +256,10 @@
     "type": "fruit",
     "category": -79,
     "price": 250,
-    "edibility": 45
+    "edibility": 45,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "tomato",
@@ -207,7 +269,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 60,
-    "edibility": 8
+    "edibility": 8,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "blueberry",
@@ -217,7 +282,10 @@
     "type": "fruit",
     "category": -79,
     "price": 50,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "hot-pepper",
@@ -227,7 +295,10 @@
     "type": "fruit",
     "category": -79,
     "price": 40,
-    "edibility": 5
+    "edibility": 5,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "wheat",
@@ -237,7 +308,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 25,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "radish",
@@ -247,7 +321,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 90,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "red-cabbage",
@@ -257,7 +334,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 260,
-    "edibility": 30
+    "edibility": 30,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "starfruit",
@@ -267,7 +347,10 @@
     "type": "fruit",
     "category": -79,
     "price": 750,
-    "edibility": 50
+    "edibility": 50,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "corn",
@@ -277,7 +360,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 50,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "eggplant",
@@ -287,7 +373,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 60,
-    "edibility": 8
+    "edibility": 8,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "artichoke",
@@ -297,7 +386,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 160,
-    "edibility": 12
+    "edibility": 12,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "pumpkin",
@@ -307,7 +399,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 320,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "bok-choy",
@@ -317,7 +412,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 80,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "yam",
@@ -327,7 +425,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 160,
-    "edibility": 18
+    "edibility": 18,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "cranberries",
@@ -337,7 +438,10 @@
     "type": "fruit",
     "category": -79,
     "price": 75,
-    "edibility": 15
+    "edibility": 15,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "beet",
@@ -347,7 +451,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 100,
-    "edibility": 12
+    "edibility": 12,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "wild-horseradish",
@@ -357,7 +464,10 @@
     "type": "other",
     "category": -81,
     "price": 50,
-    "edibility": 5
+    "edibility": 5,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "spice-berry",
@@ -367,7 +477,10 @@
     "type": "fruit",
     "category": -79,
     "price": 80,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "common-mushroom",
@@ -377,7 +490,10 @@
     "type": "other",
     "category": -81,
     "price": 40,
-    "edibility": 15
+    "edibility": 15,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "winter-root",
@@ -387,7 +503,10 @@
     "type": "other",
     "category": -81,
     "price": 70,
-    "edibility": 10
+    "edibility": 10,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "ancient-fruit",
@@ -397,7 +516,10 @@
     "type": "fruit",
     "category": -79,
     "price": 550,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "strawberry",
@@ -407,7 +529,10 @@
     "type": "fruit",
     "category": -79,
     "price": 120,
-    "edibility": 20
+    "edibility": 20,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "cactus-fruit",
@@ -417,7 +542,10 @@
     "type": "fruit",
     "category": -79,
     "price": 75,
-    "edibility": 30
+    "edibility": 30,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "taro-root",
@@ -427,7 +555,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 100,
-    "edibility": 15
+    "edibility": 15,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "pineapple",
@@ -437,7 +568,10 @@
     "type": "fruit",
     "category": -79,
     "price": 300,
-    "edibility": 55
+    "edibility": 55,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "fiber",
@@ -447,7 +581,11 @@
     "type": "other",
     "category": -16,
     "price": 1,
-    "edibility": -300
+    "edibility": -300,
+    "sellingLocations": [
+      "robin",
+      "shipping-bin"
+    ]
   },
   {
     "id": "qi-fruit",
@@ -457,7 +595,10 @@
     "type": "fruit",
     "category": -79,
     "price": 1,
-    "edibility": 1
+    "edibility": 1,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "carrot",
@@ -467,7 +608,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 35,
-    "edibility": 30
+    "edibility": 30,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "summer-squash",
@@ -477,7 +621,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 45,
-    "edibility": 25
+    "edibility": 25,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "broccoli",
@@ -487,7 +634,10 @@
     "type": "vegetable",
     "category": -75,
     "price": 70,
-    "edibility": 25
+    "edibility": 25,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   },
   {
     "id": "powdermelon",
@@ -497,6 +647,9 @@
     "type": "fruit",
     "category": -79,
     "price": 60,
-    "edibility": 25
+    "edibility": 25,
+    "sellingLocations": [
+      "shipping-bin"
+    ]
   }
 ]

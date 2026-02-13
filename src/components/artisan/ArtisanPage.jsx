@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useArtisanData } from '../../hooks/useData'
+import { useDebounce } from '../../hooks/useDebounce'
 import PagePanel from '../common/PagePanel'
 import Tabs from '../common/Tabs'
 import ArtisanTable from './ArtisanTable'
@@ -12,29 +13,31 @@ function ArtisanPage() {
   const navigate = useNavigate()
 
   // Get state from URL
-  const activeTab = searchParams.get('tab') || 'goods'
   const [filters, setFilters] = useState({
     search: searchParams.get('search') || '',
+    category: searchParams.get('category') || 'all',
     source: searchParams.get('source') || '',
     bundle: searchParams.get('bundle') || '',
   })
 
-  // Update URL when filters change
+  // Debounce the search filter to avoid excessive re-renders while typing
+  const debouncedSearch = useDebounce(filters.search, 300)
+
+  // Update URL when filters change (use debounced search for URL to avoid spamming history)
   useEffect(() => {
     const params = new URLSearchParams(searchParams) // Preserve existing params (sort, page)
 
-    // Update tab param
-    if (activeTab !== 'goods') {
-      params.set('tab', activeTab)
-    } else {
-      params.delete('tab')
-    }
-
     // Update filter params
-    if (filters.search) {
-      params.set('search', filters.search)
+    if (debouncedSearch) {
+      params.set('search', debouncedSearch)
     } else {
       params.delete('search')
+    }
+
+    if (filters.category && filters.category !== 'all') {
+      params.set('category', filters.category)
+    } else {
+      params.delete('category')
     }
 
     if (filters.source) {
@@ -49,15 +52,13 @@ function ArtisanPage() {
       params.delete('bundle')
     }
 
-    setSearchParams(params, { replace: true })
-  }, [activeTab, filters, setSearchParams, searchParams])
-
-  const handleTabChange = (tabId) => {
-    const params = new URLSearchParams(searchParams) // Preserve sort/page when changing tabs
-    params.set('tab', tabId)
-    setSearchParams(params)
-    setFilters({ search: '', source: '', bundle: '' })
-  }
+    // Only update if params actually changed
+    const currentParams = searchParams.toString()
+    const newParams = params.toString()
+    if (currentParams !== newParams) {
+      setSearchParams(params, { replace: true })
+    }
+  }, [debouncedSearch, filters.category, filters.source, filters.bundle, setSearchParams])
 
   const filterOptions = useMemo(() => {
     if (!data.artisan) return {}
@@ -82,38 +83,40 @@ function ArtisanPage() {
     }
   }, [data])
 
-  // Define tabs
+  // Define tabs (now just for UI, actual filtering happens in filteredArtisan)
   const tabs = [
-    { id: 'goods', label: 'Goods' },
+    { id: 'all', label: 'All' },
     { id: 'animal', label: 'Animal Products' },
     { id: 'tree', label: 'Tree Products' },
-    { id: 'other', label: 'Other' },
+    { id: 'machine', label: 'Machine Products' },
   ]
 
-  // Filter artisan goods by active tab
-  const tabFilteredArtisan = useMemo(() => {
+  const filteredArtisan = useMemo(() => {
     if (!data.artisan) return []
 
-    // For now, all items are in "goods" tab
-    // Later we can categorize by tab if needed
-    switch (activeTab) {
-      case 'goods':
-        return data.artisan // All artisan goods
-      case 'animal':
-        return [] // TODO: Add animal product artisan goods
-      case 'tree':
-        return [] // TODO: Add tree products (Maple Syrup, Oak Resin, Pine Tar, Honey)
-      case 'other':
-        return [] // TODO: Add other artisan goods
-      default:
-        return data.artisan
-    }
-  }, [data.artisan, activeTab])
+    return data.artisan.filter(artisan => {
+      // Category filter (replaces tab logic)
+      if (filters.category && filters.category !== 'all') {
+        const source = artisan.source || artisan.producedBy?.machine
 
-  const filteredArtisan = useMemo(() => {
-    return tabFilteredArtisan.filter(artisan => {
-      if (filters.search) {
-        const search = filters.search.toLowerCase()
+        if (filters.category === 'animal') {
+          // Animal products: items with animal sources
+          const animalSources = ['White Chicken', 'Brown Chicken', 'Cow', 'Goat', 'Sheep', 'Pig', 'Rabbit', 'Duck', 'Dinosaur', 'Ostrich']
+          if (!animalSources.some(animal => source?.includes(animal))) return false
+        } else if (filters.category === 'tree') {
+          // Tree products: tapper outputs
+          const treeSources = ['Oak Tree', 'Maple Tree', 'Pine Tree', 'Mahogany Tree', 'Mystic Tree']
+          if (!treeSources.some(tree => source?.includes(tree))) return false
+        } else if (filters.category === 'machine') {
+          // Machine products: items made in machines (not from animals/trees)
+          const machines = ['Keg', 'Preserves Jar', 'Mayonnaise Machine', 'Cheese Press', 'Loom', 'Oil Maker', 'Fish Smoker']
+          if (!artisan.producedBy?.machine || !machines.some(m => artisan.producedBy.machine.includes(m))) return false
+        }
+      }
+
+      // Search filter
+      if (debouncedSearch) {
+        const search = debouncedSearch.toLowerCase()
         if (!artisan.name.toLowerCase().includes(search)) return false
       }
 
@@ -135,7 +138,7 @@ function ArtisanPage() {
 
       return true
     })
-  }, [tabFilteredArtisan, filters])
+  }, [data.artisan, debouncedSearch, filters.category, filters.source, filters.bundle])
 
   if (loading) {
     return <div className="artisan-page"></div>
@@ -145,51 +148,19 @@ function ArtisanPage() {
     return <div className="artisan-page"><p className="error">Error: {error}</p></div>
   }
 
-  // Get filter configuration based on active tab
-  const getFiltersForTab = () => {
-    switch (activeTab) {
-      case 'goods':
-        return {
-          searchPlaceholder: 'Item name...',
-          customFilters: ['source']
-        }
-      case 'animal':
-        return {
-          searchPlaceholder: 'Product name...',
-          customFilters: ['source']
-        }
-      case 'tree':
-        return {
-          searchPlaceholder: 'Product name...',
-          customFilters: ['source']
-        }
-      case 'other':
-        return {
-          searchPlaceholder: 'Item name...',
-          customFilters: ['source']
-        }
-      default:
-        return {
-          searchPlaceholder: 'Item name...',
-          customFilters: []
-        }
-    }
-  }
-
-  const tabFilters = getFiltersForTab()
 
   return (
     <div className="artisan-page">
       <PagePanel>
         <PagePanel.Header>
-          <h2>Artisan Goods Guide</h2>
+          <h2>Artisan Goods</h2>
         </PagePanel.Header>
 
         <PagePanel.Tabs>
           <Tabs
             tabs={tabs}
-            activeTab={activeTab}
-            onTabChange={handleTabChange}
+            activeTab={filters.category || 'all'}
+            onTabChange={(tabId) => setFilters({ ...filters, category: tabId })}
           />
         </PagePanel.Tabs>
 
@@ -198,13 +169,13 @@ function ArtisanPage() {
             <label className="filter-label">Search</label>
             <input
               type="text"
-              placeholder={tabFilters.searchPlaceholder}
+              placeholder="Item name..."
               value={filters.search || ''}
               onChange={e => setFilters({ ...filters, search: e.target.value })}
             />
           </div>
 
-          {tabFilters.customFilters.includes('source') && filterOptions.sources && (
+          {filterOptions.sources && (
             <div className="filter-group">
               <label className="filter-label">Source</label>
               <select
@@ -238,25 +209,16 @@ function ArtisanPage() {
 
           <button
             className="clear-filters"
-            onClick={() => setFilters({})}
+            onClick={() => setFilters({ ...filters, search: '', source: '', bundle: '' })}
           >
             Clear Filters
           </button>
         </PagePanel.Controls>
       </PagePanel>
 
-      {activeTab === 'goods' ? (
-        <ArtisanTable
-          artisanGoods={filteredArtisan}
-        />
-      ) : (
-        <div className="empty-state">
-          <div className="coming-soon">
-            <h3>Coming Soon!</h3>
-            <p>{tabs.find(t => t.id === activeTab)?.label} will be added in a future update.</p>
-          </div>
-        </div>
-      )}
+      <ArtisanTable
+        artisanGoods={filteredArtisan}
+      />
     </div>
   )
 }

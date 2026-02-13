@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useFishData } from '../../hooks/useData'
+import { useDebounce } from '../../hooks/useDebounce'
 import PagePanel from '../common/PagePanel'
 import FishTable from './FishTable'
 import SpecialCases from '../common/SpecialCases'
@@ -19,13 +20,16 @@ function FishPage() {
     bundle: searchParams.get('bundle') || '',
   })
 
-  // Update URL when filters change
+  // Debounce the search filter to avoid excessive re-renders while typing
+  const debouncedSearch = useDebounce(filters.search, 300)
+
+  // Update URL when filters change (use debounced search for URL to avoid spamming history)
   useEffect(() => {
     const params = new URLSearchParams(searchParams) // Preserve existing params (sort, page)
 
     // Update filter params
-    if (filters.search) {
-      params.set('search', filters.search)
+    if (debouncedSearch) {
+      params.set('search', debouncedSearch)
     } else {
       params.delete('search')
     }
@@ -55,7 +59,7 @@ function FishPage() {
     }
 
     setSearchParams(params, { replace: true })
-  }, [filters, setSearchParams, searchParams])
+  }, [debouncedSearch, filters.seasons, filters.weather, filters.location, filters.bundle, setSearchParams])
 
   const filterOptions = useMemo(() => {
     if (!data.fish) return {}
@@ -84,8 +88,8 @@ function FishPage() {
     if (!data.fish) return []
 
     return data.fish.filter(fish => {
-      if (filters.search) {
-        const search = filters.search.toLowerCase()
+      if (debouncedSearch) {
+        const search = debouncedSearch.toLowerCase()
         if (!fish.name.toLowerCase().includes(search)) return false
       }
 
@@ -121,7 +125,7 @@ function FishPage() {
 
       return true
     })
-  }, [data.fish, filters])
+  }, [data.fish, debouncedSearch, filters.seasons, filters.weather, filters.location, filters.bundle])
 
   if (loading) {
     return <div className="fish-page"></div>
@@ -135,7 +139,7 @@ function FishPage() {
     <div className="fish-page">
       <PagePanel>
         <PagePanel.Header>
-          <h2>Fish Guide</h2>
+          <h2>Fish</h2>
         </PagePanel.Header>
 
         <PagePanel.Controls>
