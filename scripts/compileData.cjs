@@ -44,6 +44,7 @@ const sourceData = {
   metalBars: loadJson(path.join(SOURCE_DIR, 'items/metal-bars.json')),
   monsterLoot: loadJson(path.join(SOURCE_DIR, 'items/monster-loot.json')),
   resources: loadJson(path.join(SOURCE_DIR, 'items/resources.json')),
+  bigCraftables: loadJson(path.join(SOURCE_DIR, 'items/big-craftables.json')),
   bundles: loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers: loadJson(path.join(SOURCE_DIR, 'reference/villagers.json'))
 };
@@ -58,6 +59,7 @@ console.log(`  ✓ Loaded ${sourceData.minerals.length} minerals`);
 console.log(`  ✓ Loaded ${sourceData.metalBars.length} metal bars`);
 console.log(`  ✓ Loaded ${sourceData.monsterLoot.length} monster loot`);
 console.log(`  ✓ Loaded ${sourceData.resources.length} resources`);
+console.log(`  ✓ Loaded ${sourceData.bigCraftables.length} big craftables`);
 console.log(`  ✓ Loaded ${sourceData.bundles.length} bundles`);
 console.log(`  ✓ Loaded ${sourceData.villagers.length} villagers`);
 
@@ -84,6 +86,8 @@ const lookupMaps = {
   monsterLootByGameId: new Map(sourceData.monsterLoot.map(m => [m.gameId, m])),
   resourcesById: new Map(sourceData.resources.map(r => [r.id, r])),
   resourcesByGameId: new Map(sourceData.resources.map(r => [r.gameId, r])),
+  bigCraftablesById: new Map(sourceData.bigCraftables.map(b => [b.id, b])),
+  bigCraftablesByGameId: new Map(sourceData.bigCraftables.map(b => [b.gameId, b])),
   bundlesById: new Map(sourceData.bundles.map(b => [b.id, b])),
   villagersById: new Map(sourceData.villagers.map(v => [v.id, v]))
 };
@@ -165,6 +169,40 @@ sourceData.artisan.forEach(artisan => {
       compiledArtisan.push(compiledItem);
     } else {
       // Expand into individual variations (e.g., "Ancient Fruit Wine", "Starfruit Wine")
+      // Also create a generic item if there are multiple inputs with naming
+      const isExpandable = artisan.producedBy.inputDetails.length > 1;
+      const genericItem = isExpandable ? {
+        id: artisan.id,
+        gameId: artisan.gameId,
+        name: artisan.name,
+        type: 'artisan',
+        isGeneric: true,
+        category: artisan.category,
+        icon: artisan.icon,
+        contextTags: artisan.contextTags,
+        edibility: artisan.edibility,
+        sellingLocations: artisan.sellingLocations,
+        producedBy: {
+          machine: artisan.producedBy.machine,
+          machineId: artisan.producedBy.machineId,
+          inputType: artisan.producedBy.inputType,
+          valueFormula: artisan.producedBy.valueFormula,
+        },
+        canBeAged: artisan.canBeAged || false,
+        agingDaysToIridium: artisan.agingDaysToIridium,
+        bundles: artisan.bundles,
+        variations: []
+      } : null;
+
+      // Copy processing time to generic if present
+      if (genericItem) {
+        if (artisan.processingTimeMinutes) {
+          genericItem.processingTimeMinutes = artisan.processingTimeMinutes;
+        } else if (artisan.producedBy.processingTimeMinutes) {
+          genericItem.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
+        }
+      }
+
       artisan.producedBy.inputDetails.forEach(inputDetail => {
         // For items with only one input, keep the original name
         // For items with multiple inputs, use naming rules
@@ -208,7 +246,8 @@ sourceData.artisan.forEach(artisan => {
             inputId: inputDetail.inputId,
             inputName: inputDetail.inputName,
             inputGameId: inputDetail.inputGameId,
-            inputBasePrice: inputDetail.inputBasePrice
+            inputBasePrice: inputDetail.inputBasePrice,
+            inputCategory: inputDetail.inputCategory
           },
           bundles: artisan.bundles
         };
@@ -228,52 +267,64 @@ sourceData.artisan.forEach(artisan => {
           }
         }
 
+        // Add genericId backlink and track variation in generic
+        if (genericItem) {
+          compiledItem.genericId = artisan.id;
+          genericItem.variations.push(variantId);
+        }
+
         compiledArtisan.push(compiledItem);
       });
-    }
 
-    // Add Wild variant if requested (for Honey without flowers)
-    if (artisan.includeWildVariant) {
-      const wildVariant = {
-        id: `wild-${artisan.id}`,
-        gameId: artisan.gameId,
-        name: `Wild ${artisan.name}`,
-        type: 'artisan',
-        category: artisan.category,
-        icon: artisan.icon,
-        contextTags: artisan.contextTags,
-        edibility: artisan.edibility,
-        prices: calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers),
-        sellingLocations: artisan.sellingLocations,
-        producedBy: {
-          machine: artisan.producedBy.machine,
-          machineId: artisan.producedBy.machineId,
-          processingTimeMinutes: artisan.producedBy.processingTimeMinutes
-        },
-        bundles: artisan.bundles
-      };
+      // Add Wild variant if requested (for Honey without flowers)
+      if (artisan.includeWildVariant) {
+        const wildVariant = {
+          id: `wild-${artisan.id}`,
+          gameId: artisan.gameId,
+          name: `Wild ${artisan.name}`,
+          type: 'artisan',
+          category: artisan.category,
+          icon: artisan.icon,
+          contextTags: artisan.contextTags,
+          edibility: artisan.edibility,
+          prices: calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers),
+          sellingLocations: artisan.sellingLocations,
+          producedBy: {
+            machine: artisan.producedBy.machine,
+            machineId: artisan.producedBy.machineId,
+            processingTimeMinutes: artisan.producedBy.processingTimeMinutes
+          },
+          bundles: artisan.bundles
+        };
 
-      // Copy processing time minutes if present
-      if (artisan.producedBy.processingTimeMinutes) {
-        wildVariant.producedBy.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
+        // Copy processing time minutes if present
+        if (artisan.producedBy.processingTimeMinutes) {
+          wildVariant.producedBy.processingTimeMinutes = artisan.producedBy.processingTimeMinutes;
+        }
+
+        // Add genericId backlink and track in generic
+        if (genericItem) {
+          wildVariant.genericId = artisan.id;
+          genericItem.variations.push(wildVariant.id);
+        }
+
+        compiledArtisan.push(wildVariant);
       }
 
-      compiledArtisan.push(wildVariant);
+      // Push the generic item after all its variations
+      if (genericItem) {
+        compiledArtisan.push(genericItem);
+      }
     }
   } else {
-    // No variations - keep as-is (but skip templates with empty inputDetails)
-    const isTemplate = artisan.producedBy?.inputDetails && artisan.producedBy.inputDetails.length === 0;
+    const qualityPrices = calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
-    if (!isTemplate) {
-      const qualityPrices = calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
-
-      compiledArtisan.push({
-        ...artisan,
-        type: 'artisan',
-        prices: qualityPrices,
-        bundles: artisan.bundles
-      });
-    }
+    compiledArtisan.push({
+      ...artisan,
+      type: 'artisan',
+      prices: qualityPrices,
+      bundles: artisan.bundles
+    });
   }
 });
 
@@ -295,6 +346,12 @@ const artisanPageData = {
 
 writeJson(path.join(OUTPUT_DIR, 'pages/artisan.json'), artisanPageData);
 console.log(`  ✓ Compiled artisan.json (${compiledArtisan.length} items from ${sourceData.artisan.length} source items, ${Object.keys(artisanGameIdIndex).length} IDs indexed)`);
+
+// Compile Crops Page
+console.log('\n🌾 Compiling crops page data...');
+const cropsPageData = compilePage(sourceData.crops, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/crops.json'), cropsPageData);
+console.log(`  ✓ Compiled crops.json (${cropsPageData.items.length} items, ${Object.keys(cropsPageData.gameIdIndex).length} IDs indexed)`);
 
 // Compile Forage Page
 console.log('\n🌿 Compiling forage page data...');
@@ -332,6 +389,12 @@ const resourcesPageData = compilePage(sourceData.resources, lookupMaps);
 writeJson(path.join(OUTPUT_DIR, 'pages/resources.json'), resourcesPageData);
 console.log(`  ✓ Compiled resources.json (${resourcesPageData.items.length} items, ${Object.keys(resourcesPageData.gameIdIndex).length} IDs indexed)`);
 
+// Compile Big Craftables Page
+console.log('\n🔧 Compiling big craftables page data...');
+const bigCraftablesPageData = compilePage(sourceData.bigCraftables, lookupMaps);
+writeJson(path.join(OUTPUT_DIR, 'pages/big-craftables.json'), bigCraftablesPageData);
+console.log(`  ✓ Compiled big-craftables.json (${bigCraftablesPageData.items.length} items, ${Object.keys(bigCraftablesPageData.gameIdIndex).length} IDs indexed)`);
+
 // Compile Bundles Page
 console.log('\n📦 Compiling bundles page data...');
 
@@ -349,7 +412,8 @@ const compiledBundles = sourceData.bundles.map(bundle => {
       { map: lookupMaps.mineralsByGameId, type: 'mineral' },
       { map: lookupMaps.metalBarsByGameId, type: 'metal-bar' },
       { map: lookupMaps.monsterLootByGameId, type: 'monster-loot' },
-      { map: lookupMaps.resourcesByGameId, type: 'resource' }
+      { map: lookupMaps.resourcesByGameId, type: 'resource' },
+      { map: lookupMaps.bigCraftablesByGameId, type: 'big-craftable' }
     ];
 
     let sourceItem = null;

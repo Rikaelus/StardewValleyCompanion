@@ -39,6 +39,11 @@
       "multiplier": 2,
       "addition": 0,
       "notes": "Price = Fish Price × 2"
+    },
+    "Honey": {
+      "multiplier": 2,
+      "addition": 100,
+      "notes": "Price = (Flower Price × 2) + 100g. Wild Honey (no flower) = 100g base."
     }
   }
 }

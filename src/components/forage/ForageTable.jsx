@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import DataTable from '../common/DataTable'
-import ItemModal from '../common/ItemModal'
+import UniversalModal from '../common/UniversalModal'
+import SpecialCases from '../common/SpecialCases'
 import { useVillagers } from '../../contexts/VillagersContext'
 import { useRelationalData } from '../../hooks/useRelationalData'
 import { formatLocationNames } from '../../utils/formatters'
@@ -13,7 +14,7 @@ import {
   createVillagerGiftColumns
 } from '../common/ItemTableFactory.jsx'
 
-function ForageTable({ data }) {
+function ForageTable({ data, allData }) {
   const { villagers } = useVillagers()
   const relationalData = useRelationalData()
   const [selectedForage, setSelectedForage] = useState(null)
@@ -66,8 +67,9 @@ function ForageTable({ data }) {
         initialSortBy={[{ id: 'name', desc: false }]}
         itemsPerPage={25}
       />
-      <ItemModal
-        item={selectedForage}
+      <SpecialCases items={allData || data} />
+      <UniversalModal
+        entity={selectedForage}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

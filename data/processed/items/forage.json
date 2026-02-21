@@ -335,6 +335,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -385,6 +386,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -503,6 +505,7 @@
       "leo": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -735,7 +738,6 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "willy",
       "shipping-bin"
     ]
   },
@@ -768,7 +770,6 @@
       "harvey": "hate"
     },
     "sellingLocations": [
-      "willy",
       "shipping-bin"
     ]
   },
@@ -832,7 +833,6 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "willy",
       "shipping-bin"
     ]
   },
@@ -884,6 +884,7 @@
       "leo": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -949,7 +950,6 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "willy",
       "shipping-bin"
     ]
   },
@@ -999,6 +999,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -1115,6 +1116,7 @@
       "leo": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -1240,6 +1242,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -1339,6 +1342,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -1440,6 +1444,7 @@
       "sandy": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -1560,6 +1565,7 @@
       "leo": "like"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },

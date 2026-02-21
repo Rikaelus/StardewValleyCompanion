@@ -50,3 +50,83 @@
   position: relative;
   top: -1px; /* Lift text up slightly for better visual alignment */
 }
+
+/* Bundle item variant - larger icon with quality/quantity overlays */
+.bundle-item-button {
+  position: relative;
+  display: inline-block;
+  border: 2px solid #8b6f47;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f9f6f0;
+}
+
+/* Bundle item with slot background */
+.bundle-item-button.bundle-item-with-slot {
+  background: #f9f6f0 url('/assets/bundles/Bundle_Slot.png') center/contain no-repeat;
+}
+
+.bundle-item-button:hover {
+  background: #e3f2fd;
+  border-color: #5c8ec9;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.bundle-item-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  image-rendering: pixelated;
+  object-fit: contain;
+  object-position: center;
+}
+
+.bundle-item-icon-fallback {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+/* Quality star overlay - bottom-left, positioned from button edge */
+.bundle-item-quality-star {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 24px;
+  line-height: 1;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 0 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Quantity overlay - bottom-right, positioned from button edge */
+.bundle-item-quantity {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 2px 6px 0 6px;
+  border-radius: 3px;
+  text-align: center;
+  pointer-events: none;
+  font-family: 'Stardew Valley', sans-serif;
+  z-index: 1;
+}

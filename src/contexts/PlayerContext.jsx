@@ -8,13 +8,17 @@ const DEFAULT_PLAYER = {
   name: '',
   farmName: '',
   professions: {
-    // Farming Level 10
+    // Farming Level 5 & 10
+    tiller: false,     // Crops worth 10% more
     artisan: false,    // Artisan goods worth 40% more
     rancher: false,    // Animal products worth 20% more
 
     // Fishing Level 5 & 10
     fisher: false,     // Fish worth 25% more
     angler: false,     // Fish worth 50% more (requires Fisher)
+
+    // Foraging Level 5
+    tapper: false,     // Syrups worth 25% more
 
     // Mining Level 10
     blacksmith: false, // Bars worth 50% more

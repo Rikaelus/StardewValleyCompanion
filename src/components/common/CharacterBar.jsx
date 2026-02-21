@@ -119,6 +119,18 @@ function CharacterBar() {
                 <label className="profession-checkbox">
                   <input
                     type="checkbox"
+                    checked={player.professions.tiller}
+                    onChange={() => toggleProfession('tiller')}
+                  />
+                  <div className="profession-info">
+                    <span className="profession-name">Tiller</span>
+                    <span className="profession-bonus">Crops worth 10% more</span>
+                  </div>
+                </label>
+
+                <label className="profession-checkbox">
+                  <input
+                    type="checkbox"
                     checked={player.professions.rancher}
                     onChange={() => toggleProfession('rancher')}
                   />
@@ -166,6 +178,23 @@ function CharacterBar() {
                   <div className="profession-info">
                     <span className="profession-name">Angler</span>
                     <span className="profession-bonus">Fish worth 50% more (requires Fisher, replaces bonus)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div className="profession-category">
+              <h4>Foraging</h4>
+              <div className="professions-grid">
+                <label className="profession-checkbox">
+                  <input
+                    type="checkbox"
+                    checked={player.professions.tapper}
+                    onChange={() => toggleProfession('tapper')}
+                  />
+                  <div className="profession-info">
+                    <span className="profession-name">Tapper</span>
+                    <span className="profession-bonus">Syrups worth 25% more</span>
                   </div>
                 </label>
               </div>

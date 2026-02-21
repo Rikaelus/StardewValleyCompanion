@@ -2307,10 +2307,71 @@
     "producedBy": {
       "machine": "Bee House",
       "machineId": "bee-house",
-      "inputType": "vegetable",
+      "inputType": "flower",
       "processingTimeMinutes": 5760,
-      "valueFormula": "baseValue * 1",
-      "inputDetails": []
+      "valueFormula": "baseValue * 2 + 100",
+      "inputDetails": [
+        {
+          "inputId": "fairy-rose",
+          "inputName": "Fairy Rose",
+          "inputGameId": 595,
+          "inputBasePrice": 290,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 680,
+          "outputIridiumPrice": 951
+        },
+        {
+          "inputId": "poppy",
+          "inputName": "Poppy",
+          "inputGameId": 376,
+          "inputBasePrice": 140,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 380,
+          "outputIridiumPrice": 532
+        },
+        {
+          "inputId": "summer-spangle",
+          "inputName": "Summer Spangle",
+          "inputGameId": 593,
+          "inputBasePrice": 90,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 280,
+          "outputIridiumPrice": 392
+        },
+        {
+          "inputId": "sunflower",
+          "inputName": "Sunflower",
+          "inputGameId": 421,
+          "inputBasePrice": 80,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 260,
+          "outputIridiumPrice": 364
+        },
+        {
+          "inputId": "blue-jazz",
+          "inputName": "Blue Jazz",
+          "inputGameId": 597,
+          "inputBasePrice": 50,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 200,
+          "outputIridiumPrice": 280
+        },
+        {
+          "inputId": "tulip",
+          "inputName": "Tulip",
+          "inputGameId": 591,
+          "inputBasePrice": 30,
+          "inputCategory": -80,
+          "inputType": "flower",
+          "outputPrice": 160,
+          "outputIridiumPrice": 224
+        }
+      ]
     },
     "bundles": [
       "artisan"
@@ -2646,7 +2707,7 @@
     "producedBy": {
       "machine": "Dehydrator",
       "machineId": "dehydrator",
-      "inputType": "vegetable",
+      "inputType": "mushroom",
       "processingTimeMinutes": 1440,
       "valueFormula": "baseValue * 7.5 + 25",
       "inputDetails": [
@@ -2758,7 +2819,7 @@
     "producedBy": {
       "machine": "Fish Smoker",
       "machineId": "fish-smoker",
-      "inputType": "vegetable",
+      "inputType": "fish",
       "processingTimeMinutes": 50,
       "valueFormula": "baseValue * 2",
       "inputDetails": [
@@ -3522,7 +3583,7 @@
     "id": "egg-white",
     "gameId": 176,
     "name": "Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 50,
     "edibility": 10,
     "icon": "assets/artisan/WhiteEgg.png",
@@ -3532,9 +3593,30 @@
       "egg_item"
     ],
     "bundles": [],
-    "gifts": {},
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3543,7 +3625,7 @@
     "id": "large-egg-white",
     "gameId": 174,
     "name": "Large Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/artisan/LargeWhiteEgg.png",
@@ -3556,9 +3638,30 @@
     "bundles": [
       "animal"
     ],
-    "gifts": {},
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3567,7 +3670,7 @@
     "id": "egg-brown",
     "gameId": 180,
     "name": "Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 50,
     "edibility": 10,
     "icon": "assets/artisan/BrownEgg.png",
@@ -3577,9 +3680,30 @@
       "egg_item"
     ],
     "bundles": [],
-    "gifts": {},
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3588,7 +3712,7 @@
     "id": "large-egg-brown",
     "gameId": 182,
     "name": "Large Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/artisan/LargeBrownEgg.png",
@@ -3601,9 +3725,30 @@
     "bundles": [
       "animal"
     ],
-    "gifts": {},
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3612,7 +3757,7 @@
     "id": "void-egg",
     "gameId": 305,
     "name": "Void Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 65,
     "edibility": -15,
     "icon": "assets/artisan/VoidEgg.png",
@@ -3624,14 +3769,14 @@
     "bundles": [],
     "gifts": {
       "robin": "dislike",
-      "demetrius": "dislike",
+      "demetrius": "like",
       "maru": "dislike",
       "sebastian": "love",
-      "linus": "dislike",
-      "pierre": "dislike",
+      "linus": "like",
+      "pierre": "like",
       "caroline": "dislike",
       "abigail": "dislike",
-      "alex": "dislike",
+      "alex": "like",
       "george": "dislike",
       "evelyn": "dislike",
       "lewis": "dislike",
@@ -3642,12 +3787,12 @@
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
       "leah": "hate",
-      "shane": "dislike",
-      "marnie": "dislike",
+      "shane": "like",
+      "marnie": "like",
       "elliott": "dislike",
       "gus": "dislike",
       "dwarf": "dislike",
@@ -3660,6 +3805,8 @@
     },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3668,7 +3815,7 @@
     "id": "golden-egg",
     "gameId": 928,
     "name": "Golden Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 500,
     "edibility": 10,
     "icon": "assets/artisan/GoldenEgg.png",
@@ -3677,9 +3824,30 @@
       "egg_item"
     ],
     "bundles": [],
-    "gifts": {},
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3688,7 +3856,7 @@
     "id": "duck-egg",
     "gameId": 442,
     "name": "Duck Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/artisan/DuckEgg.png",
@@ -3701,10 +3869,30 @@
       "animal"
     ],
     "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike",
       "harvey": "like"
     },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3713,7 +3901,7 @@
     "id": "duck-feather",
     "gameId": 444,
     "name": "Duck Feather",
-    "category": "Artisan Goods",
+    "category": -18,
     "price": 250,
     "edibility": -300,
     "icon": "assets/artisan/DuckFeather.png",
@@ -3740,7 +3928,7 @@
     "id": "wool",
     "gameId": 440,
     "name": "Wool",
-    "category": "Artisan Goods",
+    "category": -18,
     "price": 340,
     "edibility": -300,
     "icon": "assets/artisan/Wool.png",
@@ -3766,7 +3954,7 @@
     "id": "rabbit-s-foot",
     "gameId": 446,
     "name": "Rabbit's Foot",
-    "category": "Artisan Goods",
+    "category": -18,
     "price": 565,
     "edibility": -300,
     "icon": "assets/artisan/RabbitsFoot.png",
@@ -3823,7 +4011,7 @@
     "id": "dinosaur-egg",
     "gameId": 107,
     "name": "Dinosaur Egg",
-    "category": "Artisan Goods",
+    "category": -26,
     "price": 350,
     "edibility": -300,
     "icon": "assets/artisan/DinosaurEgg.png",
@@ -3836,11 +4024,44 @@
     ],
     "bundles": [],
     "gifts": {
+      "robin": "like",
       "demetrius": "like",
-      "alex": "like"
+      "maru": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
     },
     "hasQuality": true,
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3849,7 +4070,7 @@
     "id": "milk",
     "gameId": 184,
     "name": "Milk",
-    "category": "Artisan Goods",
+    "category": -6,
     "price": 125,
     "edibility": 15,
     "icon": "assets/artisan/Milk.png",
@@ -3861,9 +4082,29 @@
       "milk_item"
     ],
     "bundles": [],
-    "gifts": {},
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3872,7 +4113,7 @@
     "id": "large-milk",
     "gameId": 186,
     "name": "Large Milk",
-    "category": "Artisan Goods",
+    "category": -6,
     "price": 190,
     "edibility": 20,
     "icon": "assets/artisan/LargeMilk.png",
@@ -3887,9 +4128,29 @@
     "bundles": [
       "animal"
     ],
-    "gifts": {},
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike"
+    },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3898,7 +4159,7 @@
     "id": "goat-milk",
     "gameId": 436,
     "name": "Goat Milk",
-    "category": "Artisan Goods",
+    "category": -6,
     "price": 225,
     "edibility": 25,
     "icon": "assets/artisan/GoatMilk.png",
@@ -3910,11 +4171,30 @@
     ],
     "bundles": [],
     "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike",
       "harvey": "like",
       "sandy": "like"
     },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3923,7 +4203,7 @@
     "id": "l-goat-milk",
     "gameId": 438,
     "name": "L. Goat Milk",
-    "category": "Artisan Goods",
+    "category": -6,
     "price": 345,
     "edibility": 35,
     "icon": "assets/artisan/LGoatMilk.png",
@@ -3938,11 +4218,30 @@
       "animal"
     ],
     "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike",
       "harvey": "like",
       "sandy": "like"
     },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -3951,7 +4250,7 @@
     "id": "truffle",
     "gameId": 430,
     "name": "Truffle",
-    "category": "Artisan Goods",
+    "category": -17,
     "price": 625,
     "edibility": 5,
     "icon": "assets/artisan/Truffle.png",
@@ -3977,7 +4276,7 @@
     "id": "ostrich-egg",
     "gameId": 289,
     "name": "Ostrich Egg",
-    "category": "Artisan Goods",
+    "category": -5,
     "price": 600,
     "edibility": 15,
     "icon": "assets/artisan/OstrichEgg.png",
@@ -3989,10 +4288,30 @@
     ],
     "bundles": [],
     "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike",
       "leo": "love"
     },
     "hasQuality": true,
     "sellingLocations": [
+      "marnie",
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -4924,7 +5243,6 @@
     "bundles": [],
     "gifts": {},
     "sellingLocations": [
-      "willy",
       "shipping-bin"
     ]
   },

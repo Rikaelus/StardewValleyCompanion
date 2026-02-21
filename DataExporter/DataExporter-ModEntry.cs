@@ -26,39 +26,70 @@ namespace DataExporter
                 // Export all available game data assets
                 var assetsToExport = new[]
                 {
+                    // Items
                     "Data/Objects",
                     "Data/BigCraftables",
                     "Data/Crops",
                     "Data/Fish",
-                    "Data/FishPondData",
-                    "Data/Locations",
-                    "Data/NPCDispositions",
-                    "Data/NPCGiftTastes",
-                    "Data/Bundles",
-                    "Data/Machines",
-                    "Data/CookingRecipes",
-                    "Data/CraftingRecipes",
-                    "Data/Achievements",
-                    "Data/Weapons",
-                    "Data/Tools",
-                    "Data/Buildings",
-                    "Data/Movies",
-                    "Data/Concessions",
+                    "Data/AquariumFish",
                     "Data/Furniture",
                     "Data/Boots",
                     "Data/Hats",
                     "Data/Shirts",
                     "Data/Pants",
+                    "Data/Weapons",
+                    "Data/Tools",
+                    "Data/Fences",
+                    "Data/FloorsAndPaths",
+                    "Data/AdditionalWallpaperFlooring",
+                    "Data/WildTrees",
+                    "Data/fruitTrees",
+
+                    // Shops & Economy
+                    "Data/Shops",
+                    "Data/GarbageCans",
+
+                    // Locations & World
+                    "Data/Locations",
+                    "Data/LocationContexts",
+                    "Data/Minecarts",
+                    "Data/WorldMap",
+
+                    // NPCs & Characters
+                    "Data/Characters",
+                    "Data/NPCDispositions",
+                    "Data/NPCGiftTastes",
+
+                    // Production & Processing
+                    "Data/Machines",
+                    "Data/FishPondData",
+                    "Data/CookingRecipes",
+                    "Data/CraftingRecipes",
                     "Data/TailoringRecipes",
-                    "Data/Monsters",
+
+                    // Quests & Progress
+                    "Data/Bundles",
                     "Data/Quests",
                     "Data/SpecialOrders",
-                    "Data/Events/Farm",
-                    "Data/Events/Town",
+                    "Data/Achievements",
+                    "Data/MuseumRewards",
+
+                    // Other
+                    "Data/Buildings",
                     "Data/FarmAnimals",
-                    "Data/fruitTrees",
+                    "Data/Movies",
+                    "Data/Concessions",
+                    "Data/Monsters",
+                    "Data/PassiveFestivals",
+                    "Data/TriggerActions",
                     "Data/SecretNotes",
                     "Data/mail",
+
+                    // Events
+                    "Data/Events/Farm",
+                    "Data/Events/Town",
+
+                    // Festivals
                     "Data/Festivals/spring13",
                     "Data/Festivals/spring24",
                     "Data/Festivals/summer11",

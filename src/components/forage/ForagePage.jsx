@@ -3,7 +3,6 @@ import { useSearchParams } from 'react-router-dom'
 import { useItemData } from '../../hooks/useData'
 import PagePanel from '../common/PagePanel'
 import ForageTable from './ForageTable'
-import SpecialCases from '../common/SpecialCases'
 import './ForagePage.css'
 
 function ForagePage() {
@@ -203,8 +202,7 @@ function ForagePage() {
         </PagePanel.Controls>
       </PagePanel>
 
-      <ForageTable data={filteredData} />
-      <SpecialCases items={data.items || []} />
+      <ForageTable data={filteredData} allData={data.items || []} />
     </div>
   )
 }

@@ -65,8 +65,8 @@
     "-27": ["shipping-bin"],
     "-28": ["marlon", "shipping-bin"],
     "-74": ["pierre", "shipping-bin"],
-    "-75": ["shipping-bin"],
-    "-79": ["shipping-bin"],
+    "-75": ["pierre", "shipping-bin"],
+    "-79": ["pierre", "shipping-bin"],
     "-80": ["shipping-bin"],
     "-81": ["shipping-bin"]
   }

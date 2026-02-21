@@ -3,7 +3,8 @@ import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useVillagers } from '../../contexts/VillagersContext'
 import { useRelationalData } from '../../hooks/useRelationalData'
-import ItemModal from '../common/ItemModal'
+import UniversalModal from '../common/UniversalModal'
+import SpecialCases from '../common/SpecialCases'
 import {
   createIconColumn,
   createNameColumn,
@@ -13,7 +14,7 @@ import {
   createVillagerGiftColumns
 } from '../common/ItemTableFactory.jsx'
 
-function FishTable({ fish }) {
+function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
   const { villagers } = useVillagers()
   const relationalData = useRelationalData()
@@ -152,7 +153,7 @@ function FishTable({ fish }) {
 
   // Show loading state while data loads
   if (relationalData.loading || columns.length === 0) {
-    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
+    return null
   }
 
   return (
@@ -170,8 +171,9 @@ function FishTable({ fish }) {
         columns={columns}
         pinnedColumns={2}
       />
-      <ItemModal
-        item={selectedFish}
+      <SpecialCases items={allFish || fish} />
+      <UniversalModal
+        entity={selectedFish}
         isOpen={selectedFish !== null}
         onClose={() => setSelectedFish(null)}
       />

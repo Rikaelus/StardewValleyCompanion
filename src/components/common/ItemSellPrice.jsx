@@ -11,9 +11,16 @@ import './ItemSellPrice.css'
 export function calculateProfessionMultiplier(item, professions) {
   if (!item || !professions) return 1.0
 
+  // Get actual category (some items have originalCategory set)
+  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+
+  // Farming professions (crops)
+  if (actualCategory === -75 || actualCategory === -79) {
+    if (professions.tiller) return 1.1  // Tiller +10%
+  }
+
   // Fishing professions (Angler replaces Fisher, doesn't stack)
   // Check both type and category - items can be forage type but Fish category
-  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
   if (item.type === 'fish' || actualCategory === -4) {
     if (professions.angler) return 1.5  // Angler +50%
     if (professions.fisher) return 1.25  // Fisher +25%
@@ -22,8 +29,12 @@ export function calculateProfessionMultiplier(item, professions) {
   // Artisan goods (check if it's an artisan good and not an animal product)
   if (item.type === 'artisan') {
     const isAnimalProduct = item.source && ['Cow', 'Goat', 'Chicken', 'Duck', 'Sheep', 'Rabbit', 'Pig', 'Fish Pond'].includes(item.source)
+    const isSyrup = item.contextTags && item.contextTags.includes('syrup_item')
 
-    if (professions.artisan && !isAnimalProduct) {
+    if (professions.tapper && isSyrup) {
+      return 1.25  // Tapper +25%
+    }
+    if (professions.artisan && !isAnimalProduct && !isSyrup) {
       return 1.4  // Artisan +40%
     }
     if (professions.rancher && isAnimalProduct) {
@@ -78,6 +89,12 @@ function getAppliedProfession(item, professions) {
 
   // Check both type and category - items can be forage type but Fish category
   const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+
+  // Crops
+  if (actualCategory === -75 || actualCategory === -79) {
+    if (professions.tiller) return 'Tiller'
+  }
+
   if (item.type === 'fish' || actualCategory === -4) {
     if (professions.angler) return 'Angler'
     if (professions.fisher) return 'Fisher'
@@ -85,7 +102,9 @@ function getAppliedProfession(item, professions) {
 
   if (item.type === 'artisan') {
     const isAnimalProduct = item.source && ['Cow', 'Goat', 'Chicken', 'Duck', 'Sheep', 'Rabbit', 'Pig', 'Fish Pond'].includes(item.source)
-    if (professions.artisan && !isAnimalProduct) return 'Artisan'
+    const isSyrup = item.contextTags && item.contextTags.includes('syrup_item')
+    if (professions.tapper && isSyrup) return 'Tapper'
+    if (professions.artisan && !isAnimalProduct && !isSyrup) return 'Artisan'
     if (professions.rancher && isAnimalProduct) return 'Rancher'
   }
 

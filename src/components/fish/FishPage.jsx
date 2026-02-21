@@ -4,7 +4,6 @@ import { useFishData } from '../../hooks/useData'
 import { useDebounce } from '../../hooks/useDebounce'
 import PagePanel from '../common/PagePanel'
 import FishTable from './FishTable'
-import SpecialCases from '../common/SpecialCases'
 import './FishPage.css'
 
 function FishPage() {
@@ -228,8 +227,8 @@ function FishPage() {
 
       <FishTable
         fish={filteredFish}
+        allFish={data.fish || []}
       />
-      <SpecialCases items={data.fish || []} />
     </div>
   )
 }

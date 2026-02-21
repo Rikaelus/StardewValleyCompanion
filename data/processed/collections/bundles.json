@@ -2,17 +2,12 @@
   {
     "id": "spring-crops",
     "name": "Spring Crops",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "O 465 20",
     "items": [
       {
         "id": "parsnip",
         "gameId": 24,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -23,32 +18,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "cauliflower",
         "gameId": 190,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "potato",
         "gameId": 192,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -58,17 +35,12 @@
   {
     "id": "summer-crops",
     "name": "Summer Crops",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "O 621 1",
     "items": [
       {
         "id": "tomato",
         "gameId": 256,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -79,32 +51,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "blueberry",
         "gameId": 258,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "melon",
         "gameId": 254,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -114,17 +68,12 @@
   {
     "id": "fall-crops",
     "name": "Fall Crops",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "BO 10 1",
     "items": [
       {
         "id": "corn",
         "gameId": 270,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -135,32 +84,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "pumpkin",
         "gameId": 276,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "yam",
         "gameId": 280,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -170,55 +101,32 @@
   {
     "id": "quality-crops",
     "name": "Quality Crops",
+    "icon": "assets/bundles/Bundle_Teal.png",
     "reward": "BO 15 1",
     "items": [
       {
         "id": "parsnip",
         "gameId": 24,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quantity": 5,
+        "quality": 2
       },
       {
         "id": "melon",
         "gameId": 254,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quantity": 5,
+        "quality": 2
       },
       {
         "id": "pumpkin",
         "gameId": 276,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quantity": 5,
+        "quality": 2
       },
       {
         "id": "corn",
         "gameId": 270,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quantity": 5,
+        "quality": 2
       }
     ],
     "minItemsRequired": 3
@@ -226,17 +134,12 @@
   {
     "id": "animal",
     "name": "Animal",
+    "icon": "assets/bundles/Bundle_Red.png",
     "reward": "BO 16 1",
     "items": [
       {
         "id": "large-milk",
         "gameId": 186,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -247,20 +150,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "large-egg",
         "gameId": 174,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -271,32 +162,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "wool",
         "gameId": 440,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "duck-egg",
         "gameId": 442,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -306,17 +179,12 @@
   {
     "id": "artisan",
     "name": "Artisan",
+    "icon": "assets/bundles/Bundle_Purple.png",
     "reward": "BO 12 1",
     "items": [
       {
         "id": "truffle-oil",
         "gameId": 432,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -327,20 +195,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "goat-cheese",
         "gameId": 426,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -351,20 +207,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "honey",
         "gameId": 340,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -375,20 +219,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "apple",
         "gameId": 613,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -399,20 +231,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "orange",
         "gameId": 635,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -423,32 +243,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "pomegranate",
         "gameId": 637,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "cherry",
         "gameId": 638,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -458,17 +260,12 @@
   {
     "id": "spring-foraging",
     "name": "Spring Foraging",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "O 495 30",
     "items": [
       {
         "id": "wild-horseradish",
         "gameId": 16,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -479,32 +276,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "leek",
         "gameId": 20,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "dandelion",
         "gameId": 22,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -514,17 +293,12 @@
   {
     "id": "summer-foraging",
     "name": "Summer Foraging",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "O 496 30",
     "items": [
       {
         "id": "spice-berry",
         "gameId": 396,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -535,20 +309,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "sweet-pea",
         "gameId": 402,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -558,17 +320,12 @@
   {
     "id": "fall-foraging",
     "name": "Fall Foraging",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "O 497 30",
     "items": [
       {
         "id": "common-mushroom",
         "gameId": 404,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -579,32 +336,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "hazelnut",
         "gameId": 408,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "blackberry",
         "gameId": 410,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -614,17 +353,12 @@
   {
     "id": "winter-foraging",
     "name": "Winter Foraging",
+    "icon": "assets/bundles/Bundle_Teal.png",
     "reward": "O 498 30",
     "items": [
       {
         "id": "winter-root",
         "gameId": 412,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -635,32 +369,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "snow-yam",
         "gameId": 416,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "crocus",
         "gameId": 418,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -670,78 +386,31 @@
   {
     "id": "construction",
     "name": "Construction",
+    "icon": "assets/bundles/Bundle_Red.png",
     "reward": "BO 114 1",
     "items": [
       {
         "id": "wood",
         "gameId": 388,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "dwarf-scroll-iv",
-        "gameId": 99,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 99,
         "quality": 0
       },
       {
         "id": "wood",
         "gameId": 388,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "dwarf-scroll-iv",
-        "gameId": 99,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 99,
         "quality": 0
       },
       {
         "id": "stone",
         "gameId": 390,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "dwarf-scroll-iv",
-        "gameId": 99,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 99,
         "quality": 0
       },
       {
         "id": "hardwood",
         "gameId": 709,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 10,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 10,
         "quality": 0
       }
     ],
@@ -750,17 +419,12 @@
   {
     "id": "exotic-foraging",
     "name": "Exotic Foraging",
+    "icon": "assets/bundles/Bundle_Purple.png",
     "reward": "O 235 5",
     "items": [
       {
         "id": "coconut",
         "gameId": 88,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -771,20 +435,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "cave-carrot",
         "gameId": 78,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -795,20 +447,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "purple-mushroom",
         "gameId": 422,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -819,20 +459,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "oak-resin",
         "gameId": 725,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -843,20 +471,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "morel",
         "gameId": 257,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -866,17 +482,12 @@
   {
     "id": "river-fish",
     "name": "River Fish",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "O DeluxeBait 30",
     "items": [
       {
         "id": "sunfish",
         "gameId": 145,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -887,32 +498,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "shad",
         "gameId": 706,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "tiger-trout",
         "gameId": 699,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -922,17 +515,12 @@
   {
     "id": "lake-fish",
     "name": "Lake Fish",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "O 687 1",
     "items": [
       {
         "id": "largemouth-bass",
         "gameId": 136,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -943,32 +531,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "bullhead",
         "gameId": 700,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "sturgeon",
         "gameId": 698,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -978,17 +548,12 @@
   {
     "id": "ocean-fish",
     "name": "Ocean Fish",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "O 690 5",
     "items": [
       {
         "id": "sardine",
         "gameId": 131,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -999,32 +564,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "red-snapper",
         "gameId": 150,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "tilapia",
         "gameId": 701,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1034,17 +581,12 @@
   {
     "id": "night-fishing",
     "name": "Night Fishing",
+    "icon": "assets/bundles/Bundle_Teal.png",
     "reward": "R 517 1",
     "items": [
       {
         "id": "walleye",
         "gameId": 140,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1055,20 +597,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "eel",
         "gameId": 148,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1078,17 +608,12 @@
   {
     "id": "specialty-fish",
     "name": "Specialty Fish",
+    "icon": "assets/bundles/Bundle_Red.png",
     "reward": "O 242 5",
     "items": [
       {
         "id": "pufferfish",
         "gameId": 128,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1099,32 +624,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "sandfish",
         "gameId": 164,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "woodskip",
         "gameId": 734,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1134,17 +641,12 @@
   {
     "id": "crab-pot",
     "name": "Crab Pot",
+    "icon": "assets/bundles/Bundle_Purple.png",
     "reward": "O 710 3",
     "items": [
       {
         "id": "lobster",
         "gameId": 715,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1155,20 +657,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "crab",
         "gameId": 717,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1179,20 +669,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "mussel",
         "gameId": 719,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1203,20 +681,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "snail",
         "gameId": 721,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1227,32 +693,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "oyster",
         "gameId": 723,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "clam",
         "gameId": 372,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1262,17 +710,12 @@
   {
     "id": "blacksmith-s",
     "name": "Blacksmith's",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "BO 13 1",
     "items": [
       {
         "id": "copper-bar",
         "gameId": 334,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1283,20 +726,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "gold-bar",
         "gameId": 336,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1306,17 +737,12 @@
   {
     "id": "geologist-s",
     "name": "Geologist's",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "O 749 5",
     "items": [
       {
         "id": "quartz",
         "gameId": 80,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1327,32 +753,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "frozen-tear",
         "gameId": 84,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "fire-quartz",
         "gameId": 82,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1362,42 +770,19 @@
   {
     "id": "adventurer-s",
     "name": "Adventurer's",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "R 518 1",
     "items": [
       {
         "id": "slime",
         "gameId": 766,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "dwarf-scroll-iv",
-        "gameId": 99,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 99,
         "quality": 0
       },
       {
         "id": "bat-wing",
         "gameId": 767,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 10,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 10,
         "quality": 0
       },
       {
@@ -1407,20 +792,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "void-essence",
         "gameId": 769,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1430,6 +803,7 @@
   {
     "id": "2-500g",
     "name": "2,500g",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "O 220 3",
     "items": [],
     "minItemsRequired": null
@@ -1437,6 +811,7 @@
   {
     "id": "5-000g",
     "name": "5,000g",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "O 369 30",
     "items": [],
     "minItemsRequired": null
@@ -1444,6 +819,7 @@
   {
     "id": "10-000g",
     "name": "10,000g",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "BO 9 1",
     "items": [],
     "minItemsRequired": null
@@ -1451,6 +827,7 @@
   {
     "id": "25-000g",
     "name": "25,000g",
+    "icon": "assets/bundles/Bundle_Teal.png",
     "reward": "BO 21 1",
     "items": [],
     "minItemsRequired": null
@@ -1458,17 +835,12 @@
   {
     "id": "chef-s",
     "name": "Chef's",
+    "icon": "assets/bundles/Bundle_Green.png",
     "reward": "O 221 3",
     "items": [
       {
         "id": "maple-syrup",
         "gameId": 724,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1479,20 +851,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "truffle",
         "gameId": 430,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1503,32 +863,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "maki-roll",
         "gameId": 228,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "fried-egg",
         "gameId": 194,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1538,17 +880,12 @@
   {
     "id": "field-research",
     "name": "Field Research",
+    "icon": "assets/bundles/Bundle_Yellow.png",
     "reward": "BO 20 1",
     "items": [
       {
         "id": "purple-mushroom",
         "gameId": 422,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1559,32 +896,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "chub",
         "gameId": 702,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "frozen-geode",
         "gameId": 536,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1594,6 +913,7 @@
   {
     "id": "enchanter-s",
     "name": "Enchanter's",
+    "icon": "assets/bundles/Bundle_Orange.png",
     "reward": "O 336 5",
     "items": [
       {
@@ -1603,20 +923,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "wine",
         "gameId": 348,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1627,20 +935,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "pomegranate",
         "gameId": 637,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1650,17 +946,12 @@
   {
     "id": "dye",
     "name": "Dye",
+    "icon": "assets/bundles/Bundle_Teal.png",
     "reward": "BO 25 1",
     "items": [
       {
         "id": "red-mushroom",
         "gameId": 420,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1671,20 +962,8 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "sunflower",
         "gameId": 421,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1695,32 +974,14 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "aquamarine",
         "gameId": 62,
         "quantity": 1,
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "red-cabbage",
         "gameId": 266,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }
@@ -1730,54 +991,25 @@
   {
     "id": "fodder",
     "name": "Fodder",
+    "icon": "assets/bundles/Bundle_Red.png",
     "reward": "BO 104 1",
     "items": [
       {
         "id": "wheat",
         "gameId": 262,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 10,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 10,
         "quality": 0
       },
       {
         "id": "hay",
         "gameId": 178,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 10,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 10,
         "quality": 0
       },
       {
         "id": "apple",
         "gameId": 613,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
+        "quantity": 3,
         "quality": 0
       }
     ],
@@ -1786,23 +1018,18 @@
   {
     "id": "the-missing",
     "name": "The Missing",
+    "icon": "assets/bundles/Bundle_Purple.png",
     "reward": "",
     "items": [
       {
         "id": "wine",
         "gameId": 348,
         "quantity": 1,
-        "quality": 0
+        "quality": 1
       },
       {
         "id": "dinosaur-mayonnaise",
         "gameId": 807,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       },
@@ -1813,44 +1040,20 @@
         "quality": 0
       },
       {
-        "id": "weeds",
-        "gameId": 0,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
         "id": "ancient-fruit",
         "gameId": 454,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quantity": 5,
+        "quality": 2
       },
       {
         "id": "void-salmon",
         "gameId": 795,
         "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "stone",
-        "gameId": 2,
-        "quantity": 1,
-        "quality": 0
+        "quality": 2
       },
       {
         "id": "caviar",
         "gameId": 445,
-        "quantity": 1,
-        "quality": 0
-      },
-      {
-        "id": "weeds",
-        "gameId": 0,
         "quantity": 1,
         "quality": 0
       }

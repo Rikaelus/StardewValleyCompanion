@@ -89,6 +89,7 @@ function ArtisanPage() {
     { id: 'animal', label: 'Animal Products' },
     { id: 'tree', label: 'Tree Products' },
     { id: 'machine', label: 'Machine Products' },
+    { id: 'generics', label: 'Generics' },
   ]
 
   const filteredArtisan = useMemo(() => {
@@ -96,21 +97,29 @@ function ArtisanPage() {
 
     return data.artisan.filter(artisan => {
       // Category filter (replaces tab logic)
-      if (filters.category && filters.category !== 'all') {
-        const source = artisan.source || artisan.producedBy?.machine
+      if (filters.category === 'generics') {
+        // Generics tab: only show generic items
+        if (!artisan.isGeneric) return false
+      } else {
+        // All other tabs: hide generic items
+        if (artisan.isGeneric) return false
 
-        if (filters.category === 'animal') {
-          // Animal products: items with animal sources
-          const animalSources = ['White Chicken', 'Brown Chicken', 'Cow', 'Goat', 'Sheep', 'Pig', 'Rabbit', 'Duck', 'Dinosaur', 'Ostrich']
-          if (!animalSources.some(animal => source?.includes(animal))) return false
-        } else if (filters.category === 'tree') {
-          // Tree products: tapper outputs
-          const treeSources = ['Oak Tree', 'Maple Tree', 'Pine Tree', 'Mahogany Tree', 'Mystic Tree']
-          if (!treeSources.some(tree => source?.includes(tree))) return false
-        } else if (filters.category === 'machine') {
-          // Machine products: items made in machines (not from animals/trees)
-          const machines = ['Keg', 'Preserves Jar', 'Mayonnaise Machine', 'Cheese Press', 'Loom', 'Oil Maker', 'Fish Smoker']
-          if (!artisan.producedBy?.machine || !machines.some(m => artisan.producedBy.machine.includes(m))) return false
+        if (filters.category && filters.category !== 'all') {
+          const source = artisan.source || artisan.producedBy?.machine
+
+          if (filters.category === 'animal') {
+            // Animal products: items with animal sources
+            const animalSources = ['White Chicken', 'Brown Chicken', 'Cow', 'Goat', 'Sheep', 'Pig', 'Rabbit', 'Duck', 'Dinosaur', 'Ostrich']
+            if (!animalSources.some(animal => source?.includes(animal))) return false
+          } else if (filters.category === 'tree') {
+            // Tree products: tapper outputs
+            const treeSources = ['Oak Tree', 'Maple Tree', 'Pine Tree', 'Mahogany Tree', 'Mystic Tree']
+            if (!treeSources.some(tree => source?.includes(tree))) return false
+          } else if (filters.category === 'machine') {
+            // Machine products: items made in machines (not from animals/trees)
+            const machines = ['Keg', 'Preserves Jar', 'Mayonnaise Machine', 'Cheese Press', 'Loom', 'Oil Maker', 'Fish Smoker']
+            if (!artisan.producedBy?.machine || !machines.some(m => artisan.producedBy.machine.includes(m))) return false
+          }
         }
       }
 
@@ -218,6 +227,7 @@ function ArtisanPage() {
 
       <ArtisanTable
         artisanGoods={filteredArtisan}
+        allArtisan={data.artisan}
       />
     </div>
   )

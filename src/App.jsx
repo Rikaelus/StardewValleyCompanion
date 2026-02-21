@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import FishPage from './components/fish/FishPage'
 import ArtisanPage from './components/artisan/ArtisanPage'
 import ForagePage from './components/forage/ForagePage'
+import CropsPage from './components/crops/CropsPage'
 import Footer from './components/layout/Footer'
 import CharacterBar from './components/common/CharacterBar'
 import { ModalProvider } from './contexts/ModalContext'
@@ -39,7 +40,11 @@ function Navigation() {
                 Forage
               </Link>
             </li>
-            <li><Link to="/crops">Crops</Link></li>
+            <li>
+              <Link to="/crops" className={isActive('/crops') ? 'active' : ''}>
+                Crops
+              </Link>
+            </li>
             <li><Link to="/villagers">Villagers</Link></li>
             <li><Link to="/bundles">Bundles</Link></li>
           </ul>
@@ -62,6 +67,7 @@ function MainContent() {
               <Route path="/fish" element={<FishPage />} />
               <Route path="/artisan/*" element={<ArtisanPage />} />
               <Route path="/forage" element={<ForagePage />} />
+              <Route path="/crops" element={<CropsPage />} />
             </Routes>
           </main>
         </div>

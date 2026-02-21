@@ -36,6 +36,11 @@
       "format": "Dried {input}",
       "note": "Game uses 'Dried' as preserve type name (same as fruits)"
     },
+    "Honey": {
+      "pattern": "suffix",
+      "format": "{input} {product}",
+      "note": "Flavored by nearby flower: 'Poppy Honey', 'Fairy Rose Honey', etc."
+    },
     "Cheese": {
       "pattern": "none",
       "format": "{product}",

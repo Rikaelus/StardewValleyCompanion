@@ -2,6 +2,7 @@ import GiftCell from './GiftCell'
 import ModalItemButton from './ModalItemButton'
 import SeasonBadges from './SeasonBadges'
 import ItemSellPrice, { createPriceSortingFn } from './ItemSellPrice'
+import BundleList from './BundleList'
 
 /**
  * Factory functions for creating reusable table columns across all item types.
@@ -86,24 +87,11 @@ export function createBundleColumn(relationalData) {
       if (bundleDetails.length === 0) return <span style={{ color: '#999' }}>—</span>
 
       return (
-        <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-          {bundleDetails.map(bundle => (
-            <span
-              key={bundle.id}
-              style={{
-                background: '#e3f2fd',
-                color: '#1976d2',
-                padding: '2px 6px',
-                borderRadius: '3px',
-                fontSize: '11px',
-                whiteSpace: 'nowrap'
-              }}
-              title={bundle.name}
-            >
-              {bundle.name}
-            </span>
-          ))}
-        </div>
+        <BundleList
+          bundles={bundleDetails}
+          showModal={true}
+          modalDepth={0}
+        />
       )
     },
     sortingFn: (rowA, rowB, columnId) => {

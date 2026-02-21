@@ -177,6 +177,7 @@ export function useRelationalData() {
     return match ? match.preference : null
   }, [indexes])
 
+
   // Memoize nested objects separately to prevent reference changes
   const bundles = useMemo(() => ({
     all: data.bundlesRaw || [],
