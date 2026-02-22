@@ -44,6 +44,36 @@
       "id": "trash-can",
       "name": "Trash Can",
       "npc": null
+    },
+    "joja": {
+      "id": "joja",
+      "name": "JojaMart",
+      "npc": null
+    },
+    "sandy": {
+      "id": "sandy",
+      "name": "Oasis (Sandy)",
+      "npc": "Sandy"
+    },
+    "traveling-merchant": {
+      "id": "traveling-merchant",
+      "name": "Traveling Merchant",
+      "npc": null
+    },
+    "island-trader": {
+      "id": "island-trader",
+      "name": "Island Trader",
+      "npc": null
+    },
+    "egg-festival": {
+      "id": "egg-festival",
+      "name": "Egg Festival",
+      "npc": null
+    },
+    "night-market": {
+      "id": "night-market",
+      "name": "Night Market",
+      "npc": null
     }
   },
   "categorySellingLocations": {

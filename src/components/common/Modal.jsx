@@ -1,13 +1,23 @@
-import { useEffect, useId, useState, useRef } from 'react'
+import { useEffect, useId, useState, useRef, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useModalStack } from '../../contexts/ModalContext'
 import './Modal.css'
 
-function Modal({ isOpen, onClose, title, children }) {
+function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
   const modalId = useId()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
   const [isClosing, setIsClosing] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
+  const bodyRef = useRef(null)
+
+  const scrollToSection = useCallback((sectionId) => {
+    const body = bodyRef.current
+    if (!body) return
+    const target = body.querySelector(`#${sectionId}`)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [])
 
   // Handle opening/closing with animation
   useEffect(() => {
@@ -100,8 +110,23 @@ function Modal({ isOpen, onClose, title, children }) {
           <button className="modal-close" onClick={onClose} aria-label="Close">
             ×
           </button>
+          {breadcrumb && breadcrumb}
+          {sections && sections.length > 0 && (
+            <nav className="modal-section-nav">
+              {sections.map(({ id, label }) => (
+                <button
+                  key={id}
+                  className="modal-section-nav-link"
+                  onClick={() => scrollToSection(id)}
+                  type="button"
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+          )}
         </div>
-        <div className="modal-body">
+        <div className="modal-body" ref={bodyRef}>
           {children}
         </div>
       </div>

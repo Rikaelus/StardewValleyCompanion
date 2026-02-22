@@ -255,7 +255,11 @@
 .processing-row:nth-child(odd) { background-color: #fdfbf7; }
 .processing-row:nth-child(even) { background-color: #f9f6f0; }
 .processing-row--input { grid-template-columns: 140px 60px auto; gap: 0.75rem; }
-.processing-row--output { grid-template-columns: 24px 140px auto; gap: 0; }
+.processing-row--output { grid-template-columns: 24px 1fr auto; gap: 0; }
+.processing-row--output.processing-row--with-price { grid-template-columns: 24px 1fr auto auto; gap: 0.75rem; }
+
+.processing-row__name { display: flex; align-items: center; }
+.processing-row__growth { font-size: 0.875rem; color: #666; white-space: nowrap; }
 
 /* ============================================================================
    Monospace price display (profit sections)
@@ -319,10 +323,10 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e0d5c0;
-  background: #f5f0e8;
+  width: calc(100% + 3rem);
+  margin: 0.5rem -1.5rem 0;
+  padding: 0.4rem 1.5rem;
+  border-top: 1px solid rgba(139, 111, 71, 0.3);
   font-size: 0.8rem;
 }
 
@@ -330,12 +334,12 @@
   background: none;
   border: none;
   padding: 0;
-  color: #8b6f47;
+  color: #2d1b00;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 500;
 }
-.breadcrumb-link:hover { color: #2d1b00; text-decoration: underline; }
+.breadcrumb-link:hover { text-decoration: underline; }
 
 .breadcrumb-current {
   color: #2d1b00;
@@ -344,6 +348,6 @@
 }
 
 .breadcrumb-separator {
-  color: #c4b49a;
-  margin: 0 0.15rem;
+  color: #2d1b00;
+  margin: 0 0.4rem;
 }

@@ -1,0 +1,1670 @@
+[
+  {
+    "id": "amaranth-seeds",
+    "gameId": 299,
+    "name": "Amaranth Seeds",
+    "icon": "assets/seeds/Amaranth_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 35,
+    "buyPrice": 70,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "amaranth",
+        "cropGameId": 300,
+        "cropName": "Amaranth",
+        "cropIcon": "assets/crops/Amaranth.png",
+        "cropPrice": 150,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "ancient-seeds",
+    "gameId": 499,
+    "name": "Ancient Seeds",
+    "icon": "assets/seeds/Ancient_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "ancient-fruit",
+        "cropGameId": 454,
+        "cropName": "Ancient Fruit",
+        "cropIcon": "assets/crops/Ancient_Fruit.png",
+        "cropPrice": 550,
+        "growthDays": 28,
+        "regrowDays": 7,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "artichoke-seeds",
+    "gameId": 489,
+    "name": "Artichoke Seeds",
+    "icon": "assets/seeds/Artichoke_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 15,
+    "buyPrice": 30,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "artichoke",
+        "cropGameId": 274,
+        "cropName": "Artichoke",
+        "cropIcon": "assets/crops/Artichoke.png",
+        "cropPrice": 160,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "bean-starter",
+    "gameId": 473,
+    "name": "Bean Starter",
+    "icon": "assets/seeds/Bean_Starter.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "green-bean",
+        "cropGameId": 188,
+        "cropName": "Green Bean",
+        "cropIcon": "assets/crops/Green_Bean.png",
+        "cropPrice": 40,
+        "growthDays": 10,
+        "regrowDays": 3,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "beet-seeds",
+    "gameId": 494,
+    "name": "Beet Seeds",
+    "icon": "assets/seeds/Beet_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 10,
+    "buyPrice": 20,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "beet",
+        "cropGameId": 284,
+        "cropName": "Beet",
+        "cropIcon": "assets/crops/Beet.png",
+        "cropPrice": 100,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "sandy"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "blueberry-seeds",
+    "gameId": 481,
+    "name": "Blueberry Seeds",
+    "icon": "assets/seeds/Blueberry_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 40,
+    "buyPrice": 80,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "blueberry",
+        "cropGameId": 258,
+        "cropName": "Blueberry",
+        "cropIcon": "assets/crops/Blueberry.png",
+        "cropPrice": 50,
+        "growthDays": 13,
+        "regrowDays": 4,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "bok-choy-seeds",
+    "gameId": 491,
+    "name": "Bok Choy Seeds",
+    "icon": "assets/seeds/Bok_Choy_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 25,
+    "buyPrice": 50,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "bok-choy",
+        "cropGameId": 278,
+        "cropName": "Bok Choy",
+        "cropIcon": "assets/crops/Bok_Choy.png",
+        "cropPrice": 80,
+        "growthDays": 4,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "cactus-seeds",
+    "gameId": 802,
+    "name": "Cactus Seeds",
+    "icon": "assets/seeds/Cactus_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 0,
+    "buyPrice": 0,
+    "seasons": [],
+    "produces": [
+      {
+        "cropId": "cactus-fruit",
+        "cropGameId": 90,
+        "cropName": "Cactus Fruit",
+        "cropIcon": "assets/crops/Cactus_Fruit.png",
+        "cropPrice": 75,
+        "growthDays": 12,
+        "regrowDays": 3,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "sandy"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "cauliflower-seeds",
+    "gameId": 474,
+    "name": "Cauliflower Seeds",
+    "icon": "assets/seeds/Cauliflower_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 40,
+    "buyPrice": 80,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "cauliflower",
+        "cropGameId": 190,
+        "cropName": "Cauliflower",
+        "cropIcon": "assets/crops/Cauliflower.png",
+        "cropPrice": 175,
+        "growthDays": 12,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "coffee-bean",
+    "gameId": 433,
+    "name": "Coffee Bean",
+    "icon": "assets/seeds/Coffee_Bean.png",
+    "type": "seed",
+    "category": -74,
+    "price": 15,
+    "buyPrice": 30,
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "coffee-bean",
+        "cropGameId": 433,
+        "cropName": "Coffee Bean",
+        "cropIcon": "assets/crops/Coffee_Bean.png",
+        "cropPrice": 15,
+        "growthDays": 10,
+        "regrowDays": 2,
+        "cropType": "other"
+      }
+    ],
+    "sellers": [
+      "traveling-merchant"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "corn-seeds",
+    "gameId": 487,
+    "name": "Corn Seeds",
+    "icon": "assets/seeds/Corn_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 75,
+    "buyPrice": 150,
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "corn",
+        "cropGameId": 270,
+        "cropName": "Corn",
+        "cropIcon": "assets/crops/Corn.png",
+        "cropPrice": 50,
+        "growthDays": 14,
+        "regrowDays": 4,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "cranberry-seeds",
+    "gameId": 493,
+    "name": "Cranberry Seeds",
+    "icon": "assets/seeds/Cranberry_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 120,
+    "buyPrice": 240,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "cranberries",
+        "cropGameId": 282,
+        "cropName": "Cranberries",
+        "cropIcon": "assets/crops/Cranberries.png",
+        "cropPrice": 75,
+        "growthDays": 7,
+        "regrowDays": 5,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "eggplant-seeds",
+    "gameId": 488,
+    "name": "Eggplant Seeds",
+    "icon": "assets/seeds/Eggplant_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 10,
+    "buyPrice": 20,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "eggplant",
+        "cropGameId": 272,
+        "cropName": "Eggplant",
+        "cropIcon": "assets/crops/Eggplant.png",
+        "cropPrice": 60,
+        "growthDays": 5,
+        "regrowDays": 5,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "fairy-seeds",
+    "gameId": 425,
+    "name": "Fairy Seeds",
+    "icon": "assets/seeds/Fairy_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 100,
+    "buyPrice": 200,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "fairy-rose",
+        "cropGameId": 595,
+        "cropName": "Fairy Rose",
+        "cropIcon": "assets/crops/Fairy_Rose.png",
+        "cropPrice": 290,
+        "growthDays": 12,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "fall-seeds",
+    "gameId": 497,
+    "name": "Fall Seeds",
+    "icon": "assets/seeds/Fall_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 45,
+    "buyPrice": 90,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "common-mushroom",
+        "cropGameId": 404,
+        "cropName": "Common Mushroom",
+        "cropIcon": "assets/forage/Common_Mushroom.png",
+        "cropPrice": 40,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "forage"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "fiber-seeds",
+    "gameId": 885,
+    "name": "Fiber Seeds",
+    "icon": "assets/seeds/Fiber_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 5,
+    "buyPrice": 10,
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "produces": [
+      {
+        "cropId": "fiber",
+        "cropGameId": 771,
+        "cropName": "Fiber",
+        "cropIcon": "assets/crops/Fiber.png",
+        "cropPrice": 1,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "other"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "garlic-seeds",
+    "gameId": 476,
+    "name": "Garlic Seeds",
+    "icon": "assets/seeds/Garlic_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "garlic",
+        "cropGameId": 248,
+        "cropName": "Garlic",
+        "cropIcon": "assets/crops/Garlic.png",
+        "cropPrice": 60,
+        "growthDays": 4,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "grape-starter",
+    "gameId": 301,
+    "name": "Grape Starter",
+    "icon": "assets/seeds/Grape_Starter.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "grape",
+        "cropGameId": 398,
+        "cropName": "Grape",
+        "cropIcon": "assets/crops/Grape.png",
+        "cropPrice": 80,
+        "growthDays": 10,
+        "regrowDays": 3,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "hops-starter",
+    "gameId": 302,
+    "name": "Hops Starter",
+    "icon": "assets/seeds/Hops_Starter.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "hops",
+        "cropGameId": 304,
+        "cropName": "Hops",
+        "cropIcon": "assets/crops/Hops.png",
+        "cropPrice": 25,
+        "growthDays": 11,
+        "regrowDays": 1,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "jazz-seeds",
+    "gameId": 429,
+    "name": "Jazz Seeds",
+    "icon": "assets/seeds/Jazz_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 15,
+    "buyPrice": 30,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "blue-jazz",
+        "cropGameId": 597,
+        "cropName": "Blue Jazz",
+        "cropIcon": "assets/crops/Blue_Jazz.png",
+        "cropPrice": 50,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "kale-seeds",
+    "gameId": 477,
+    "name": "Kale Seeds",
+    "icon": "assets/seeds/Kale_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 35,
+    "buyPrice": 70,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "kale",
+        "cropGameId": 250,
+        "cropName": "Kale",
+        "cropIcon": "assets/crops/Kale.png",
+        "cropPrice": 110,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "melon-seeds",
+    "gameId": 479,
+    "name": "Melon Seeds",
+    "icon": "assets/seeds/Melon_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 40,
+    "buyPrice": 80,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "melon",
+        "cropGameId": 254,
+        "cropName": "Melon",
+        "cropIcon": "assets/crops/Melon.png",
+        "cropPrice": 250,
+        "growthDays": 12,
+        "regrowDays": null,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "mixed-flower-seeds",
+    "gameId": "MixedFlowerSeeds",
+    "name": "Mixed Flower Seeds",
+    "icon": "assets/seeds/Mixed_Flower_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 0,
+    "buyPrice": 0,
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "tulip",
+        "cropGameId": 591,
+        "cropName": "Tulip",
+        "cropIcon": "assets/crops/Tulip.png",
+        "cropPrice": 30,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "flower"
+      },
+      {
+        "cropId": "blue-jazz",
+        "cropGameId": 597,
+        "cropName": "Blue Jazz",
+        "cropIcon": "assets/crops/Blue_Jazz.png",
+        "cropPrice": 50,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "flower"
+      },
+      {
+        "cropId": "poppy",
+        "cropGameId": 376,
+        "cropName": "Poppy",
+        "cropIcon": "assets/crops/Poppy.png",
+        "cropPrice": 140,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "flower"
+      },
+      {
+        "cropId": "summer-spangle",
+        "cropGameId": 593,
+        "cropName": "Summer Spangle",
+        "cropIcon": "assets/crops/Summer_Spangle.png",
+        "cropPrice": 90,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "flower"
+      },
+      {
+        "cropId": "sunflower",
+        "cropGameId": 421,
+        "cropName": "Sunflower",
+        "cropIcon": "assets/crops/Sunflower.png",
+        "cropPrice": 80,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "flower"
+      },
+      {
+        "cropId": "fairy-rose",
+        "cropGameId": 595,
+        "cropName": "Fairy Rose",
+        "cropIcon": "assets/crops/Fairy_Rose.png",
+        "cropPrice": 290,
+        "growthDays": 12,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "mixed-seeds",
+    "gameId": 770,
+    "name": "Mixed Seeds",
+    "icon": "assets/seeds/Mixed_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 0,
+    "buyPrice": 0,
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "produces": [
+      {
+        "cropId": "wild-horseradish",
+        "cropGameId": 16,
+        "cropName": "Wild Horseradish",
+        "cropIcon": "assets/forage/Wild_Horseradish.png",
+        "cropPrice": 50,
+        "growthDays": null,
+        "regrowDays": null,
+        "cropType": "forage"
+      },
+      {
+        "cropId": "spice-berry",
+        "cropGameId": 396,
+        "cropName": "Spice Berry",
+        "cropIcon": "assets/forage/Spice_Berry.png",
+        "cropPrice": 80,
+        "growthDays": null,
+        "regrowDays": null,
+        "cropType": "forage"
+      },
+      {
+        "cropId": "common-mushroom",
+        "cropGameId": 404,
+        "cropName": "Common Mushroom",
+        "cropIcon": "assets/forage/Common_Mushroom.png",
+        "cropPrice": 40,
+        "growthDays": null,
+        "regrowDays": null,
+        "cropType": "forage"
+      },
+      {
+        "cropId": "winter-root",
+        "cropGameId": 412,
+        "cropName": "Winter Root",
+        "cropIcon": "assets/forage/Winter_Root.png",
+        "cropPrice": 70,
+        "growthDays": null,
+        "regrowDays": null,
+        "cropType": "forage"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "parsnip-seeds",
+    "gameId": 472,
+    "name": "Parsnip Seeds",
+    "icon": "assets/seeds/Parsnip_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 10,
+    "buyPrice": 20,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "parsnip",
+        "cropGameId": 24,
+        "cropName": "Parsnip",
+        "cropIcon": "assets/crops/Parsnip.png",
+        "cropPrice": 35,
+        "growthDays": 4,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "pepper-seeds",
+    "gameId": 482,
+    "name": "Pepper Seeds",
+    "icon": "assets/seeds/Pepper_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "hot-pepper",
+        "cropGameId": 260,
+        "cropName": "Hot Pepper",
+        "cropIcon": "assets/crops/Hot_Pepper.png",
+        "cropPrice": 40,
+        "growthDays": 5,
+        "regrowDays": 3,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "pineapple-seeds",
+    "gameId": 833,
+    "name": "Pineapple Seeds",
+    "icon": "assets/seeds/Pineapple_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 240,
+    "buyPrice": 480,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "pineapple",
+        "cropGameId": 832,
+        "cropName": "Pineapple",
+        "cropIcon": "assets/crops/Pineapple.png",
+        "cropPrice": 300,
+        "growthDays": 14,
+        "regrowDays": 7,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "island-trader"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "poppy-seeds",
+    "gameId": 453,
+    "name": "Poppy Seeds",
+    "icon": "assets/seeds/Poppy_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 50,
+    "buyPrice": 100,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "poppy",
+        "cropGameId": 376,
+        "cropName": "Poppy",
+        "cropIcon": "assets/crops/Poppy.png",
+        "cropPrice": 140,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "potato-seeds",
+    "gameId": 475,
+    "name": "Potato Seeds",
+    "icon": "assets/seeds/Potato_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 25,
+    "buyPrice": 50,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "potato",
+        "cropGameId": 192,
+        "cropName": "Potato",
+        "cropIcon": "assets/crops/Potato.png",
+        "cropPrice": 80,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "pumpkin-seeds",
+    "gameId": 490,
+    "name": "Pumpkin Seeds",
+    "icon": "assets/seeds/Pumpkin_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 50,
+    "buyPrice": 100,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "pumpkin",
+        "cropGameId": 276,
+        "cropName": "Pumpkin",
+        "cropIcon": "assets/crops/Pumpkin.png",
+        "cropPrice": 320,
+        "growthDays": 13,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "qi-bean",
+    "gameId": 890,
+    "name": "Qi Bean",
+    "icon": "assets/seeds/Qi_Bean.png",
+    "type": "seed",
+    "category": -74,
+    "price": 1,
+    "buyPrice": 2,
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "produces": [
+      {
+        "cropId": "qi-fruit",
+        "cropGameId": 889,
+        "cropName": "Qi Fruit",
+        "cropIcon": "assets/crops/Qi_Fruit.png",
+        "cropPrice": 1,
+        "growthDays": 4,
+        "regrowDays": null,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "radish-seeds",
+    "gameId": 484,
+    "name": "Radish Seeds",
+    "icon": "assets/seeds/Radish_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "radish",
+        "cropGameId": 264,
+        "cropName": "Radish",
+        "cropIcon": "assets/crops/Radish.png",
+        "cropPrice": 90,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "rare-seed",
+    "gameId": 347,
+    "name": "Rare Seed",
+    "icon": "assets/seeds/Rare_Seed.png",
+    "type": "seed",
+    "category": -74,
+    "price": 200,
+    "buyPrice": 400,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "sweet-gem-berry",
+        "cropGameId": 417,
+        "cropName": "Sweet Gem Berry",
+        "cropIcon": "assets/crops/Sweet_Gem_Berry.png",
+        "cropPrice": 3000,
+        "growthDays": 24,
+        "regrowDays": null,
+        "cropType": "other"
+      }
+    ],
+    "sellers": [
+      "traveling-merchant"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "red-cabbage-seeds",
+    "gameId": 485,
+    "name": "Red Cabbage Seeds",
+    "icon": "assets/seeds/Red_Cabbage_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 50,
+    "buyPrice": 100,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "red-cabbage",
+        "cropGameId": 266,
+        "cropName": "Red Cabbage",
+        "cropIcon": "assets/crops/Red_Cabbage.png",
+        "cropPrice": 260,
+        "growthDays": 9,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "night-market",
+      "pierre",
+      "traveling-merchant"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "rhubarb-seeds",
+    "gameId": 478,
+    "name": "Rhubarb Seeds",
+    "icon": "assets/seeds/Rhubarb_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 50,
+    "buyPrice": 100,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "rhubarb",
+        "cropGameId": 252,
+        "cropName": "Rhubarb",
+        "cropIcon": "assets/crops/Rhubarb.png",
+        "cropPrice": 220,
+        "growthDays": 13,
+        "regrowDays": null,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "sandy"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "rice-shoot",
+    "gameId": 273,
+    "name": "Rice Shoot",
+    "icon": "assets/seeds/Rice_Shoot.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "unmilled-rice",
+        "cropGameId": 271,
+        "cropName": "Unmilled Rice",
+        "cropIcon": "assets/crops/Unmilled_Rice.png",
+        "cropPrice": 30,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "spangle-seeds",
+    "gameId": 455,
+    "name": "Spangle Seeds",
+    "icon": "assets/seeds/Spangle_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 25,
+    "buyPrice": 50,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "summer-spangle",
+        "cropGameId": 593,
+        "cropName": "Summer Spangle",
+        "cropIcon": "assets/crops/Summer_Spangle.png",
+        "cropPrice": 90,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "spring-seeds",
+    "gameId": 495,
+    "name": "Spring Seeds",
+    "icon": "assets/seeds/Spring_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 35,
+    "buyPrice": 70,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "wild-horseradish",
+        "cropGameId": 16,
+        "cropName": "Wild Horseradish",
+        "cropIcon": "assets/forage/Wild_Horseradish.png",
+        "cropPrice": 50,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "forage"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "starfruit-seeds",
+    "gameId": 486,
+    "name": "Starfruit Seeds",
+    "icon": "assets/seeds/Starfruit_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 200,
+    "buyPrice": 400,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "starfruit",
+        "cropGameId": 268,
+        "cropName": "Starfruit",
+        "cropIcon": "assets/crops/Starfruit.png",
+        "cropPrice": 750,
+        "growthDays": 13,
+        "regrowDays": null,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "sandy"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "strawberry-seeds",
+    "gameId": 745,
+    "name": "Strawberry Seeds",
+    "icon": "assets/seeds/Strawberry_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 0,
+    "buyPrice": 0,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "strawberry",
+        "cropGameId": 400,
+        "cropName": "Strawberry",
+        "cropIcon": "assets/crops/Strawberry.png",
+        "cropPrice": 120,
+        "growthDays": 8,
+        "regrowDays": 4,
+        "cropType": "fruit"
+      }
+    ],
+    "sellers": [
+      "egg-festival"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "summer-seeds",
+    "gameId": 496,
+    "name": "Summer Seeds",
+    "icon": "assets/seeds/Summer_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 55,
+    "buyPrice": 110,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "spice-berry",
+        "cropGameId": 396,
+        "cropName": "Spice Berry",
+        "cropIcon": "assets/forage/Spice_Berry.png",
+        "cropPrice": 80,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "forage"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "sunflower-seeds",
+    "gameId": 431,
+    "name": "Sunflower Seeds",
+    "icon": "assets/seeds/Sunflower_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "sunflower",
+        "cropGameId": 421,
+        "cropName": "Sunflower",
+        "cropIcon": "assets/crops/Sunflower.png",
+        "cropPrice": 80,
+        "growthDays": 8,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "taro-tuber",
+    "gameId": 831,
+    "name": "Taro Tuber",
+    "icon": "assets/seeds/Taro_Tuber.png",
+    "type": "seed",
+    "category": -74,
+    "price": 20,
+    "buyPrice": 40,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "taro-root",
+        "cropGameId": 830,
+        "cropName": "Taro Root",
+        "cropIcon": "assets/crops/Taro_Root.png",
+        "cropPrice": 100,
+        "growthDays": 10,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "island-trader"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "tomato-seeds",
+    "gameId": 480,
+    "name": "Tomato Seeds",
+    "icon": "assets/seeds/Tomato_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 25,
+    "buyPrice": 50,
+    "seasons": [
+      "summer"
+    ],
+    "produces": [
+      {
+        "cropId": "tomato",
+        "cropGameId": 256,
+        "cropName": "Tomato",
+        "cropIcon": "assets/crops/Tomato.png",
+        "cropPrice": 60,
+        "growthDays": 11,
+        "regrowDays": 4,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "tulip-bulb",
+    "gameId": 427,
+    "name": "Tulip Bulb",
+    "icon": "assets/seeds/Tulip_Bulb.png",
+    "type": "seed",
+    "category": -74,
+    "price": 10,
+    "buyPrice": 20,
+    "seasons": [
+      "spring"
+    ],
+    "produces": [
+      {
+        "cropId": "tulip",
+        "cropGameId": 591,
+        "cropName": "Tulip",
+        "cropIcon": "assets/crops/Tulip.png",
+        "cropPrice": 30,
+        "growthDays": 6,
+        "regrowDays": null,
+        "cropType": "flower"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "wheat-seeds",
+    "gameId": 483,
+    "name": "Wheat Seeds",
+    "icon": "assets/seeds/Wheat_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 5,
+    "buyPrice": 10,
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "wheat",
+        "cropGameId": 262,
+        "cropName": "Wheat",
+        "cropIcon": "assets/crops/Wheat.png",
+        "cropPrice": 25,
+        "growthDays": 4,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "winter-seeds",
+    "gameId": 498,
+    "name": "Winter Seeds",
+    "icon": "assets/seeds/Winter_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "winter"
+    ],
+    "produces": [
+      {
+        "cropId": "winter-root",
+        "cropGameId": 412,
+        "cropName": "Winter Root",
+        "cropIcon": "assets/forage/Winter_Root.png",
+        "cropPrice": 70,
+        "growthDays": 7,
+        "regrowDays": null,
+        "cropType": "forage"
+      }
+    ],
+    "sellers": [],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  },
+  {
+    "id": "yam-seeds",
+    "gameId": 492,
+    "name": "Yam Seeds",
+    "icon": "assets/seeds/Yam_Seeds.png",
+    "type": "seed",
+    "category": -74,
+    "price": 30,
+    "buyPrice": 60,
+    "seasons": [
+      "fall"
+    ],
+    "produces": [
+      {
+        "cropId": "yam",
+        "cropGameId": 280,
+        "cropName": "Yam",
+        "cropIcon": "assets/crops/Yam.png",
+        "cropPrice": 160,
+        "growthDays": 10,
+        "regrowDays": null,
+        "cropType": "vegetable"
+      }
+    ],
+    "sellers": [
+      "joja",
+      "night-market",
+      "pierre"
+    ],
+    "sellingLocations": [
+      "pierre",
+      "shipping-bin"
+    ]
+  }
+]

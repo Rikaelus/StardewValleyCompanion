@@ -219,9 +219,19 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
 
   // Simple single price
   return (
-    <span className={`item-sell-price ${className}`}>
-      {regularPrice}g
-    </span>
+    <div className={`item-sell-price-container ${className}`}>
+      <div className="item-sell-price item-sell-price-qualities">
+        <span className="price-regular" title="Regular Quality">
+          {regularPrice}g
+        </span>
+      </div>
+      {appliedProfession && (
+        <div className="profession-badge">
+          +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+          <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+        </div>
+      )}
+    </div>
   )
 }
 

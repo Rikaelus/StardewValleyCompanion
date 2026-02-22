@@ -45,6 +45,7 @@ const sourceData = {
   monsterLoot: loadJson(path.join(SOURCE_DIR, 'items/monster-loot.json')),
   resources: loadJson(path.join(SOURCE_DIR, 'items/resources.json')),
   bigCraftables: loadJson(path.join(SOURCE_DIR, 'items/big-craftables.json')),
+  seeds: loadJson(path.join(SOURCE_DIR, 'items/seeds.json')),
   bundles: loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers: loadJson(path.join(SOURCE_DIR, 'reference/villagers.json'))
 };
@@ -60,6 +61,7 @@ console.log(`  ✓ Loaded ${sourceData.metalBars.length} metal bars`);
 console.log(`  ✓ Loaded ${sourceData.monsterLoot.length} monster loot`);
 console.log(`  ✓ Loaded ${sourceData.resources.length} resources`);
 console.log(`  ✓ Loaded ${sourceData.bigCraftables.length} big craftables`);
+console.log(`  ✓ Loaded ${sourceData.seeds.length} seeds`);
 console.log(`  ✓ Loaded ${sourceData.bundles.length} bundles`);
 console.log(`  ✓ Loaded ${sourceData.villagers.length} villagers`);
 
@@ -88,6 +90,8 @@ const lookupMaps = {
   resourcesByGameId: new Map(sourceData.resources.map(r => [r.gameId, r])),
   bigCraftablesById: new Map(sourceData.bigCraftables.map(b => [b.id, b])),
   bigCraftablesByGameId: new Map(sourceData.bigCraftables.map(b => [b.gameId, b])),
+  seedsById: new Map(sourceData.seeds.map(s => [s.id, s])),
+  seedsByGameId: new Map(sourceData.seeds.map(s => [s.gameId, s])),
   bundlesById: new Map(sourceData.bundles.map(b => [b.id, b])),
   villagersById: new Map(sourceData.villagers.map(v => [v.id, v]))
 };
@@ -394,6 +398,19 @@ console.log('\n🔧 Compiling big craftables page data...');
 const bigCraftablesPageData = compilePage(sourceData.bigCraftables, lookupMaps);
 writeJson(path.join(OUTPUT_DIR, 'pages/big-craftables.json'), bigCraftablesPageData);
 console.log(`  ✓ Compiled big-craftables.json (${bigCraftablesPageData.items.length} items, ${Object.keys(bigCraftablesPageData.gameIdIndex).length} IDs indexed)`);
+
+// Compile Seeds Page
+console.log('\n🌱 Compiling seeds page data...');
+const seedsPageData = {
+  items: sourceData.seeds,
+  gameIdIndex: Object.fromEntries(sourceData.seeds.map(s => [s.gameId, s.id])),
+  meta: {
+    compiled: new Date().toISOString(),
+    totalItems: sourceData.seeds.length
+  }
+};
+writeJson(path.join(OUTPUT_DIR, 'pages/seeds.json'), seedsPageData);
+console.log(`  ✓ Compiled seeds.json (${seedsPageData.items.length} items, ${Object.keys(seedsPageData.gameIdIndex).length} IDs indexed)`);
 
 // Compile Bundles Page
 console.log('\n📦 Compiling bundles page data...');

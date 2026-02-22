@@ -12,9 +12,9 @@ import './ModalSection.css'
  *     <ModalGrid>...</ModalGrid>
  *   </ModalSection>
  */
-function ModalSection({ title, children, className = '' }) {
+function ModalSection({ title, id, children, className = '' }) {
   return (
-    <div className={`modal-section ${className}`}>
+    <div id={id} className={`modal-section ${className}`}>
       {title && <h4>{title}</h4>}
       {children}
     </div>

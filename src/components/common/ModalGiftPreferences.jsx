@@ -1,6 +1,6 @@
 import ModalItemButton from './ModalItemButton'
 
-function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass }) {
+function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id }) {
   if (!giftDetails || giftDetails.length === 0) {
     return null
   }
@@ -15,7 +15,7 @@ function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass }) {
   })
 
   return (
-    <div className={sectionClass}>
+    <div id={id} className={sectionClass}>
       <h4>Gift Preferences</h4>
       <div className={giftsClass}>
         {sortedGifts.map(gift => (

@@ -136,6 +136,7 @@ function DataTable({
                     className={index < pinnedColumns ? 'pinned' : ''}
                     data-pinned-index={index < pinnedColumns ? index : undefined}
                     onClick={header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined}
+                    style={header.column.columnDef.meta?.width ? { width: header.column.columnDef.meta.width } : undefined}
                   >
                     <div className="th-content" style={{ justifyContent: header.column.columnDef.meta?.align === 'center' ? 'center' : 'flex-start' }}>
                       {header.isPlaceholder
@@ -164,7 +165,10 @@ function DataTable({
                     key={cell.id}
                     className={index < pinnedColumns ? 'pinned' : ''}
                     data-pinned-index={index < pinnedColumns ? index : undefined}
-                    style={{ textAlign: cell.column.columnDef.meta?.align || 'left' }}
+                    style={{
+                      textAlign: cell.column.columnDef.meta?.align || 'left',
+                      ...(cell.column.columnDef.meta?.width ? { width: cell.column.columnDef.meta.width } : {})
+                    }}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>

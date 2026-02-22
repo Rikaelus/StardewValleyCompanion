@@ -44,7 +44,13 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Navigate to a new entity (called by child ModalItemButtons/BundleBadges)
   const handleNavigate = useCallback((newEntity) => {
-    setHistory(prev => [...prev, newEntity])
+    setHistory(prev => {
+      // If the new entity is the previous item in the breadcrumb, go back instead of deeper
+      if (prev.length >= 2 && prev[prev.length - 2].id === newEntity.id) {
+        return prev.slice(0, -1)
+      }
+      return [...prev, newEntity]
+    })
   }, [])
 
   // Navigate back to a specific point in the breadcrumb
@@ -90,6 +96,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const { data: metalBarsData, error: metalBarsError } = useData({ metalBars: '/data/pages/metal-bars.json' })
   const { data: monsterLootData, error: monsterLootError } = useData({ monsterLoot: '/data/pages/monster-loot.json' })
   const { data: resourcesData, error: resourcesError } = useData({ resources: '/data/pages/resources.json' })
+  const { data: seedsData, error: seedsError } = useData({ seeds: '/data/pages/seeds.json' })
 
   // Log any errors
   useEffect(() => {
@@ -103,13 +110,14 @@ function UniversalModal({ entity, isOpen, onClose }) {
       minerals: mineralsError,
       metalBars: metalBarsError,
       monsterLoot: monsterLootError,
-      resources: resourcesError
+      resources: resourcesError,
+      seeds: seedsError
     }
     const failed = Object.entries(errors).filter(([k, v]) => v)
     if (failed.length > 0) {
       console.error('Failed to load data:', failed)
     }
-  }, [fishError, forageError, cropsError, artisanError, bigCraftablesError, treeFruitsError, mineralsError, metalBarsError, monsterLootError, resourcesError])
+  }, [fishError, forageError, cropsError, artisanError, bigCraftablesError, treeFruitsError, mineralsError, metalBarsError, monsterLootError, resourcesError, seedsError])
 
   // Load relational data for lookups
   const relationalData = useRelationalData()
@@ -349,14 +357,22 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const hasWeather = displayEntity.weather
     const hasNotes = displayEntity.notes
 
-    if (!hasLocations && !hasSeasons && !hasTimes && !hasWeather) return null
+    // Seed buying info to fold in
+    const isSeed = displayEntity.type === 'seed'
+    const hasBuyingInfo = isSeed && (displayEntity.buyPrice > 0 || (displayEntity.sellers && displayEntity.sellers.length > 0))
+
+    if (!hasLocations && !hasSeasons && !hasTimes && !hasWeather && !hasBuyingInfo) return null
 
     // Get locations (fish uses 'location', forage uses 'locations')
     const locations = displayEntity.location || displayEntity.locations || []
     const formattedLocations = displayEntity.type === 'forage' ? formatLocationNames(locations) : locations
 
+    const sellerNames = isSeed
+      ? (displayEntity.sellers || []).map(id => relationalData.getStore(id)?.name ?? id)
+      : []
+
     return (
-      <ModalSection title="Location & Availability">
+      <ModalSection id="section-location" title="Location & Availability">
         {hasLocations && (
           <div className="modal-label-with-tags">
             <span className="label">Locations:</span>
@@ -392,7 +408,24 @@ function UniversalModal({ entity, isOpen, onClose }) {
               value="🌸 Flower"
             />
           )}
+
+          {isSeed && displayEntity.buyPrice > 0 && (
+            <ModalGridItem label="Buy Price:">
+              <span style={{ fontFamily: 'monospace', fontWeight: 500 }}>{displayEntity.buyPrice}g</span>
+            </ModalGridItem>
+          )}
         </ModalGrid>
+
+        {sellerNames.length > 0 && (
+          <div className="sell-locations">
+            <span className="modal-label">Sold by:</span>
+            <div className="tag-list tag-list-location">
+              {sellerNames.map((name, i) => (
+                <span key={i} className="tag">{name}</span>
+              ))}
+            </div>
+          </div>
+        )}
 
         {hasNotes && (
           <ModalNote>
@@ -420,7 +453,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     // Crab pot fish have different info than rod-caught fish
     if (displayEntity.isTrapFish) {
       return (
-        <ModalSection title="Fishing Info">
+        <ModalSection id="section-fishing" title="Fishing Info">
           <ModalGrid>
             <ModalGridItem
               label="Method:"
@@ -436,7 +469,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
     // Regular rod-caught fish
     return (
-      <ModalSection title="Fishing Info">
+      <ModalSection id="section-fishing" title="Fishing Info">
         <ModalGrid>
           <ModalGridItem label="Difficulty:">
             <span className="value difficulty" style={{ color: getDifficultyColor(displayEntity.difficulty) }}>
@@ -522,7 +555,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     }
 
     return (
-      <ModalSection title="Production Info">
+      <ModalSection id="section-production" title="Production Info">
         <ModalGrid>
           <ModalGridItem
             label="Machine:"
@@ -638,7 +671,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     return (
       <div className="profit-section">
         <div className="profit-header">
-          <div className="modal-label">Produced From:</div>
+          <div className="modal-label">Processed From:</div>
           <InfoTooltip text="Shows the cost of each source item at the selected quality vs. the profit from selling this item at each quality tier. Professions affect both source and output prices." />
         </div>
 
@@ -730,23 +763,62 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const renderOutputProfitAnalysis = () => {
     if (!displayEntity) return null
 
+    const actualCategory = displayEntity.originalCategory !== undefined
+      ? displayEntity.originalCategory
+      : displayEntity.category
+
+    // Map category/type to generic artisan inputType
+    const genericInputType = (() => {
+      if (actualCategory === -79) return 'fruit'
+      if (actualCategory === -75) return 'vegetable'
+      if (actualCategory === -4 || displayEntity.type === 'fish') return 'fish'
+      if (actualCategory === -80) return 'flower'
+      if (displayEntity.contextTags?.includes('edible_mushroom')) return 'mushroom'
+      return null
+    })()
+
     // Search through artisan data to find what this item can be turned into
     const outputs = []
     if (artisanData?.artisan?.items) {
       artisanData.artisan.items.forEach(artisan => {
-        if (artisan.producedBy?.inputDetails) {
+        if (!artisan.producedBy) return
+
+        // Specific match via inputDetails (formula-based items like Wine have per-input prices)
+        if (artisan.producedBy.inputDetails) {
           artisan.producedBy.inputDetails.forEach(inputDetail => {
             if (inputDetail.inputId === displayEntity.id) {
               outputs.push({
                 outputItem: artisan,
-                outputName: artisan.name,
-                // Use the specific output price for this input (handles formula-based items like Wine)
                 outputBasePrice: inputDetail.outputPrice || artisan.prices?.regular || artisan.price || 0,
                 machine: artisan.producedBy.machine,
-                processingTime: artisan.processingTimeMinutes
               })
             }
           })
+          return
+        }
+
+        // Specific match via inputId (no inputDetails)
+        if (artisan.producedBy.inputId === displayEntity.id) {
+          outputs.push({
+            outputItem: artisan,
+            outputBasePrice: artisan.prices?.regular || artisan.price || 0,
+            machine: artisan.producedBy.machine,
+          })
+          return
+        }
+
+        // Generic match: category-based (Wine for all fruits, Juice for all vegetables, etc.)
+        // Only include if the item is generic (isGeneric) — these show what's possible but
+        // have no fixed output price, so they're excluded from the profit calculator
+        if (!artisan.producedBy.inputId && genericInputType && artisan.producedBy.inputType === genericInputType) {
+          if (artisan.isGeneric) {
+            outputs.push({
+              outputItem: artisan,
+              outputBasePrice: null, // no fixed price — exclude from profit math
+              machine: artisan.producedBy.machine,
+              isGeneric: true,
+            })
+          }
         }
       })
     }
@@ -855,7 +927,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
         {/* Arrow lines to each output */}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {outputs.map((output, idx) => {
+          {outputs.filter(o => !o.isGeneric).map((output, idx, specificOutputs) => {
             const outputProfessionMultiplier = getOutputProfessionMultiplier(output.outputItem)
 
             // Apply profession and trash can multipliers to each output quality tier
@@ -873,7 +945,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
               <div key={idx} className="processing-row processing-row--output">
                 {/* Arrow connector */}
                 <span className="processing-arrow">
-                  {outputs.length === 1 ? '└→' : idx === outputs.length - 1 ? '└→' : '├→'}
+                  {specificOutputs.length === 1 ? '└→' : idx === specificOutputs.length - 1 ? '└→' : '├→'}
                 </span>
 
                 {/* Output item with modal link */}
@@ -916,6 +988,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
             )
           })}
         </div>
+
       </div>
     )
   }
@@ -926,7 +999,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const { agingDaysToIridium, agingDaysPerTier } = displayEntity
 
     return (
-      <ModalSection title="Cask Aging">
+      <ModalSection id="section-aging" title="Cask Aging">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           <div style={{ fontSize: '0.875rem', color: '#5c4a32' }}>
             This item can be aged in a cask to improve its quality and value.
@@ -981,7 +1054,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     if (variationItems.length === 0) return null
 
     return (
-      <ModalSection title={`Variations (${variationItems.length})`}>
+      <ModalSection id="section-variations" title={`Variations (${variationItems.length})`}>
         <div className="variations-list">
           {variationItems.map(variation => {
             const source = variation.producedBy
@@ -1003,6 +1076,72 @@ function UniversalModal({ entity, isOpen, onClose }) {
             )
           })}
         </div>
+      </ModalSection>
+    )
+  }
+
+  const renderCropSeedInfo = () => {
+    if (!displayEntity || !seedsData?.seeds?.items) return null
+
+    // Find all seeds whose produces array includes this item (exclude self-referencing seeds like Coffee Bean)
+    const seeds = seedsData.seeds.items.filter(s =>
+      s.id !== displayEntity.id && s.produces?.some(p => p.cropId === displayEntity.id)
+    )
+    if (seeds.length === 0) return null
+
+    return (
+      <ModalSection id="section-grown-from" title="Grown From">
+        <div className="variations-list">
+          {seeds.map((seed) => {
+            const produceEntry = seed.produces.find(p => p.cropId === displayEntity.id)
+            return (
+              <div key={seed.id} className="variation-row">
+                <ModalItemButton item={seed} variant="inline" onNavigate={handleNavigate} />
+                {produceEntry?.growthDays && (
+                  <span className="variation-source">
+                    {produceEntry.growthDays}d{produceEntry.regrowDays ? ` (+${produceEntry.regrowDays}d)` : ''}
+                  </span>
+                )}
+                {seed.buyPrice > 0 && (
+                  <span className="variation-price">{seed.buyPrice}g</span>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </ModalSection>
+    )
+  }
+
+  const renderSeedProduces = () => {
+    if (!displayEntity || displayEntity.type !== 'seed') return null
+    const produces = displayEntity.produces
+    if (!produces || produces.length === 0) return null
+
+    return (
+      <ModalSection id="section-produces" title="Produces">
+        {produces.map((p) => {
+          const crop = cropsData?.crops?.items?.find(c => c.id === p.cropId)
+          return (
+            <div key={p.cropId} className="processing-row processing-row--output processing-row--with-price">
+              <span className="processing-arrow">└→</span>
+              <div className="processing-row__name">
+                {crop
+                  ? <ModalItemButton item={crop} variant="inline" onNavigate={handleNavigate} />
+                  : <strong>{p.cropName}</strong>
+                }
+              </div>
+              <div className="processing-row__growth">
+                {p.growthDays && (
+                  <span>{p.growthDays}d{p.regrowDays ? ` (+${p.regrowDays}d)` : ''}</span>
+                )}
+              </div>
+              {crop && (
+                <ItemSellPrice item={crop} showQualities={crop.maxQuality !== 0} />
+              )}
+            </div>
+          )
+        })}
       </ModalSection>
     )
   }
@@ -1197,7 +1336,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const availableProfessions = getAvailableProfessions()
 
     return (
-      <ModalSection title="Selling Calculator">
+      <ModalSection id="section-calculator" title="Selling Calculator">
         {/* Selling Locations */}
         <div className="sell-locations">
           <span className="modal-label">Sell At:</span>
@@ -1300,12 +1439,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         </span>
                       </div>
                     </>
-                  ) : displayEntity.type === 'forage' && displayEntity.displayCategory === -81 ? (
-                    // Beach forage items: no quality
-                    <span className={`sell-price-value${trashCanUpgrade !== null ? ' sell-price-value--trash' : ''}`} style={{ color: trashCanUpgrade !== null ? undefined : (multiplier > 1 ? '#1976d2' : '#666') }}>
+                  ) : displayEntity.type === 'seed' || (displayEntity.type === 'forage' && displayEntity.displayCategory === -81) ? (
+                    // Seeds and beach forage: no quality tiers
+                    <span className={`sell-price-value${trashCanUpgrade !== null ? ' sell-price-value--trash' : ''}`} style={{ color: trashCanUpgrade !== null ? undefined : '#666' }}>
                       {Math.floor(basePrice * multiplier * priceMultiplier)}g
                     </span>
-                  ) : displayEntity.maxHarvestQuality === 0 ? (
+                  ) : displayEntity.maxQuality === 0 ? (
                     // Normal quality only (e.g. Fiber, Qi Fruit)
                     <div>
                       <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
@@ -1360,7 +1499,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
               </div>
 
             {/* Note for normal-quality-only crops */}
-            {displayEntity.maxHarvestQuality === 0 && (
+            {displayEntity.maxQuality === 0 && (
               <ModalNote>
                 This crop always harvests at normal quality regardless of Farming level or fertilizer.
               </ModalNote>
@@ -1449,7 +1588,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     }
 
     return (
-      <ModalSection title="Bundles">
+      <ModalSection id="section-bundles" title="Bundles">
         <div className="bundle-badges-list">
           {bundleDetails.map(bundle => (
             <BundleBadge
@@ -1563,7 +1702,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const requiredCount = displayEntity.minItemsRequired || realItems.length
 
     return (
-      <ModalSection title="Required Items">
+      <ModalSection id="section-required" title="Required Items">
         <div className="bundle-items-list">
           {realItems.map((bundleItem, idx) => {
             const item = findEntityByGameId(bundleItem.gameId)
@@ -1613,7 +1752,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const reward = parseReward(displayEntity.reward)
     if (!reward) {
       return (
-        <ModalSection title="Reward">
+        <ModalSection id="section-reward" title="Reward">
           <div className="bundle-reward">
             {displayEntity.reward}
           </div>
@@ -1625,7 +1764,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const rewardItem = findEntityByGameId(reward.gameId)
 
     return (
-      <ModalSection title="Reward">
+      <ModalSection id="section-reward" title="Reward">
         <div className="bundle-reward">
           {rewardItem ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -1660,7 +1799,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
           const isLast = index === history.length - 1
           return (
             <span key={index} className="breadcrumb-item">
-              {index > 0 && <span className="breadcrumb-separator">&rsaquo;</span>}
+              {index > 0 && <span className="breadcrumb-separator">&gt;</span>}
               {isLast ? (
                 <span className="breadcrumb-current">{item.name}</span>
               ) : (
@@ -1713,7 +1852,8 @@ function UniversalModal({ entity, isOpen, onClose }) {
       'mineral': 'Mineral',
       'metal-bar': 'Metal Bar',
       'monster-loot': 'Monster Loot',
-      'resource': 'Resource'
+      'resource': 'Resource',
+      'seed': 'Seeds'
     }[type] || 'Item'
 
     subtitle = categoryName
@@ -1731,11 +1871,49 @@ function UniversalModal({ entity, isOpen, onClose }) {
   // Icon path handling
   const iconPath = displayEntity.icon ? (displayEntity.icon.startsWith('/') ? displayEntity.icon : `/${displayEntity.icon}`) : undefined
 
+  // Compute which sections are visible for the section nav
+  const visibleSections = (() => {
+    if (entityType === 'bundle') {
+      return [
+        { id: 'section-required', label: 'Required Items' },
+        displayEntity.reward && { id: 'section-reward', label: 'Reward' },
+      ].filter(Boolean)
+    }
+
+    const hasLocations = (displayEntity.location?.length > 0) || (displayEntity.locations?.length > 0)
+    const hasSeasons = displayEntity.seasons?.length > 0
+    const hasTimes = displayEntity.times?.length > 0
+    const hasWeather = !!displayEntity.weather
+    const hasNotes = !!displayEntity.notes
+    const isSeed = type === 'seed'
+    const hasBuyingInfo = isSeed && (displayEntity.buyPrice > 0 || displayEntity.sellers?.length > 0)
+    const hasLocationSection = hasLocations || hasSeasons || hasTimes || hasWeather || hasNotes || hasBuyingInfo
+
+    const hasGrownFrom = seedsData?.seeds?.items?.some(s => s.id !== displayEntity.id && s.produces?.some(p => p.cropId === displayEntity.id))
+    const hasProduces = isSeed && displayEntity.produces?.length > 0
+    const hasAging = !!displayEntity.canBeAged
+    const basePrice = displayEntity.prices?.regular || displayEntity.price || 0
+    const hasCalculator = !displayEntity.isGeneric && basePrice > 0
+    const hasBundles = displayEntity.bundles?.length > 0
+    const hasGifts = relationalData.getGiftPreferences(displayEntity.id)?.length > 0
+
+    return [
+      type === 'fish' && { id: 'section-fishing', label: 'Fishing Info' },
+      type === 'artisan' && displayEntity.producedBy && { id: 'section-production', label: 'Production Info' },
+      type === 'artisan' && displayEntity.isGeneric && displayEntity.variations?.length > 0 && { id: 'section-variations', label: 'Variations' },
+      hasLocationSection && { id: 'section-location', label: 'Location & Availability' },
+      hasGrownFrom && { id: 'section-grown-from', label: 'Grown From' },
+      hasProduces && { id: 'section-produces', label: 'Produces' },
+      hasAging && { id: 'section-aging', label: 'Cask Aging' },
+      hasCalculator && { id: 'section-calculator', label: 'Calculator' },
+      hasBundles && { id: 'section-bundles', label: 'Bundles' },
+      hasGifts && { id: 'section-gifts', label: 'Gift Preferences' },
+    ].filter(Boolean)
+  })()
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={modalTitle}>
+    <Modal isOpen={isOpen} onClose={onClose} title={modalTitle} breadcrumb={renderBreadcrumbs()} sections={visibleSections.length > 1 ? visibleSections : null}>
       <div className="modal-item-wrapper">
-        {/* Breadcrumb trail for navigation history */}
-        {renderBreadcrumbs()}
 
         {/* Context tabs for dual-role items (items only) */}
         {entityType !== 'bundle' && renderContextTabs()}
@@ -1747,6 +1925,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
               <div className="modal-price">
                 <ItemSellPrice
                   item={displayEntity}
+                  showQualities={displayEntity.type !== 'seed'}
                   showProfession={true}
                 />
               </div>
@@ -1764,12 +1943,15 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
           {/* Universal Item Sections (items only) */}
           {entityType !== 'bundle' && renderLocationAvailability()}
+          {entityType !== 'bundle' && renderCropSeedInfo()}
+          {entityType !== 'bundle' && renderSeedProduces()}
           {entityType !== 'bundle' && renderAgingInfo()}
           {entityType !== 'bundle' && renderSellingInfo()}
           {entityType !== 'bundle' && renderBundles()}
 
           {entityType !== 'bundle' && (
             <ModalGiftPreferences
+              id="section-gifts"
               giftDetails={relationalData.getGiftPreferences(displayEntity.id)}
               sectionClass="modal-section"
               giftsClass="modal-gifts"

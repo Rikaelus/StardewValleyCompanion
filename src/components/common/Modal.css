@@ -47,7 +47,7 @@
     inset 0 0 0 3px #8b6f47,
     inset 0 0 0 4px #f4e4c1;
   border: 2px solid #5c4a32;
-  max-width: 600px;
+  max-width: 720px;
   width: 100%;
   max-height: 85vh;
   overflow: hidden;
@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1rem 1.5rem;
   border-bottom: 3px solid #8b6f47;
   background: linear-gradient(180deg, #e8d4b0 0%, #d4c4a8 100%);
@@ -94,6 +95,32 @@
     inset 4px 0 0 0 #f4e4c1,
     inset -4px 0 0 0 #f4e4c1,
     inset 0 4px 0 0 #f4e4c1;
+}
+
+.modal-section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  width: calc(100% + 3rem);
+  margin: 0 -1.5rem -1rem;
+  padding: 0 1.5rem 0.4rem;
+}
+
+.modal-section-nav-link {
+  background: rgba(92, 74, 50, 0.1);
+  border: 1px solid rgba(92, 74, 50, 0.25);
+  border-radius: 3px;
+  padding: 0.15rem 0.5rem;
+  color: #2d1b00;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.modal-section-nav-link:hover {
+  background: rgba(92, 74, 50, 0.2);
+  border-color: rgba(92, 74, 50, 0.5);
 }
 
 .modal-header::after {

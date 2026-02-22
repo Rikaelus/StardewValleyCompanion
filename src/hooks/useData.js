@@ -74,6 +74,10 @@ export function useItemData(itemType) {
     cooking: {
       pagePath: 'data/pages/cooking.json',
       itemsKey: 'cooking'
+    },
+    seeds: {
+      pagePath: 'data/pages/seeds.json',
+      itemsKey: 'seeds'
     }
   }
 

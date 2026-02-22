@@ -103,6 +103,7 @@ function parseShopSellingLocations(shopsData) {
     'category_minerals': -12,
     'category_metal': -15,
     'category_building_resources': -16,
+    'category_seeds': -74,
     'category_sell_at_pierres': null, // Special tag
     'category_sell_at_pierres_and_marnies': null, // Special tag
     'category_sell_at_fish_shop': null, // Special tag
@@ -262,7 +263,7 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
     seasons: isSeasonIndependent ? [] : seasons,  // Clear seasons if only growable in season-independent locations
     growthDays: growthDays,
     regrowDays: regrowDays > 0 ? regrowDays : null,
-    maxHarvestQuality: cropInfo.HarvestMaxQuality ?? 2,
+    maxQuality: cropInfo.HarvestMaxQuality ?? 2,
     notes: plantingNotes,
     bundles: [],
     gifts: {}
@@ -1949,6 +1950,207 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
 
 console.log(`  Processed ${bundleData.length} bundles`);
 
+// ============================================================================
+// Process Seeds
+// ============================================================================
+console.log('\nProcessing seeds...');
+const seedData = [];
+
+// Shop ID to seller name mapping for seeds
+const seedShopSellerMap = {
+  'SeedShop': 'pierre',
+  'Joja': 'joja',
+  'Sandy': 'sandy',
+  'Traveler': 'traveling-merchant',
+  'IslandTrade': 'island-trader',
+};
+
+// Build a map: seedId -> [seller IDs]
+const seedSellersMap = new Map(); // gameId -> Set of seller IDs
+
+// Check all shops for seed items
+for (const [shopId, shopData] of Object.entries(gameData.shops)) {
+  let sellerName = seedShopSellerMap[shopId];
+  if (!sellerName) {
+    // Check festival shops
+    if (shopId === 'Festival_EggFestival_Pierre') {
+      sellerName = 'egg-festival';
+    } else if (shopId.startsWith('Festival_NightMarket_')) {
+      sellerName = 'night-market';
+    } else {
+      continue; // skip unmapped shops
+    }
+  }
+
+  for (const item of (shopData.Items || [])) {
+    const m = item.ItemId && item.ItemId.match(/\(O\)(\d+)/);
+    if (!m) continue;
+    const id = parseInt(m[1], 10);
+    if (!seedSellersMap.has(id)) {
+      seedSellersMap.set(id, new Set());
+    }
+    seedSellersMap.get(id).add(sellerName);
+  }
+}
+
+// Items to skip (non-crop seeds)
+const SKIP_SEED_IDS = new Set([69, 251]); // Saplings: Banana Sapling, Tea Sapling
+
+// Build crop lookup by seedId for easy cross-reference
+const cropBySeedId = new Map();
+for (const crop of cropData) {
+  if (crop.seedId) {
+    cropBySeedId.set(crop.seedId, crop);
+  }
+}
+
+// Build forage lookup by gameId
+const forageByGameId = new Map();
+for (const item of forageData) {
+  forageByGameId.set(item.gameId, item);
+}
+
+// Helper: build a produces entry from either a crop or forage item
+const makeProducesEntry = (item) => ({
+  cropId: item.id,
+  cropGameId: item.gameId,
+  cropName: item.name,
+  cropIcon: item.icon,
+  cropPrice: item.price,
+  growthDays: item.growthDays || null,
+  regrowDays: item.regrowDays || null,
+  cropType: item.type,
+});
+
+// Seasonal wild seeds: each has a Crops.json entry with a single deterministic forage output
+const SEASONAL_SEED_IDS = new Set([495, 496, 497, 498]);
+
+// Mixed Seeds and Mixed Flower Seeds: no Crops.json entry, hardcoded produce pools
+// Mixed Seeds (770): produces one random seasonal forage seed for current season
+// Outputs are the same items as the four seasonal seeds
+const MIXED_SEEDS_ID = 770;
+const MIXED_SEEDS_PRODUCE_GAME_IDS = [16, 396, 404, 412]; // Wild Horseradish, Spice Berry, Common Mushroom, Winter Root
+
+// Mixed Flower Seeds: produces a random flower for current season
+const mfse = Object.entries(gameData.objects).find(([id, obj]) => obj.Name === 'Mixed Flower Seeds');
+const MIXED_FLOWER_SEEDS_ID = mfse ? mfse[0] : null; // May be a string ID like 'MixedFlowerSeeds'
+const MIXED_FLOWER_SEEDS_PRODUCE_GAME_IDS = [591, 597, 376, 593, 421, 595]; // Tulip, Blue Jazz, Poppy, Summer Spangle, Sunflower, Fairy Rose
+
+for (const [seedGameIdStr, cropInfo] of Object.entries(gameData.crops)) {
+  const seedGameId = parseInt(seedGameIdStr, 10);
+
+  // Skip saplings
+  if (SKIP_SEED_IDS.has(seedGameId)) continue;
+
+  // Skip tree seeds (tree_seed_item context tag)
+  const seedObjectData = gameData.objects[seedGameIdStr];
+  if (!seedObjectData) {
+    console.warn(`  Warning: Seed ${seedGameIdStr} not found in Objects.json`);
+    continue;
+  }
+  if (seedObjectData.ContextTags && seedObjectData.ContextTags.includes('tree_seed_item')) continue;
+
+  const sellers = Array.from(seedSellersMap.get(seedGameId) || []).sort();
+  const sellPrice = seedObjectData.Price || 0;
+
+  let produces;
+  let seasons;
+
+  if (SEASONAL_SEED_IDS.has(seedGameId)) {
+    // Seasonal seeds: look up produce item from forage data via HarvestItemId
+    const harvestGameId = parseInt(cropInfo.HarvestItemId, 10);
+    const forageItem = forageByGameId.get(harvestGameId);
+    if (!forageItem) {
+      console.warn(`  Warning: Forage item ${harvestGameId} not found for seasonal seed ${seedGameId}`);
+      continue;
+    }
+    const growthDays = (cropInfo.DaysInPhase || []).reduce((sum, d) => sum + d, 0);
+    produces = [{ ...makeProducesEntry(forageItem), growthDays }];
+    // Use the crop's season, not the forage item's (forage may be available in more seasons)
+    const seasonMap = ['spring', 'summer', 'fall', 'winter'];
+    seasons = (cropInfo.Seasons || []).map(s => seasonMap[s]).filter(Boolean);
+  } else {
+    // Regular crop seed
+    const crop = cropBySeedId.get(seedGameId);
+    if (!crop) {
+      console.warn(`  Warning: No crop found for seed ${seedGameId} (${seedObjectData.Name})`);
+      continue;
+    }
+    produces = [makeProducesEntry(crop)];
+    seasons = crop.seasons;
+  }
+
+  seedData.push({
+    id: toKebabCase(seedObjectData.Name),
+    gameId: seedGameId,
+    name: seedObjectData.Name,
+    icon: `assets/seeds/${seedObjectData.Name.replace(/\s+/g, '_')}.png`,
+    type: 'seed',
+    category: -74,
+    price: sellPrice,
+    buyPrice: sellPrice * 2,
+    seasons,
+    produces,
+    sellers,
+    sellingLocations: getSellingLocations(-74, shopSellingLocations),
+  });
+}
+
+// Mixed Seeds (770): no Crops.json entry, random seasonal output
+if (gameData.objects[String(MIXED_SEEDS_ID)]) {
+  const obj = gameData.objects[String(MIXED_SEEDS_ID)];
+  const produces = MIXED_SEEDS_PRODUCE_GAME_IDS
+    .map(gid => forageByGameId.get(gid))
+    .filter(Boolean)
+    .map(item => makeProducesEntry(item));
+  const sellPrice = obj.Price || 0;
+  seedData.push({
+    id: toKebabCase(obj.Name),
+    gameId: MIXED_SEEDS_ID,
+    name: obj.Name,
+    icon: `assets/seeds/${obj.Name.replace(/\s+/g, '_')}.png`,
+    type: 'seed',
+    category: -74,
+    price: sellPrice,
+    buyPrice: sellPrice * 2,
+    seasons: ['spring', 'summer', 'fall', 'winter'],
+    produces,
+    sellers: Array.from(seedSellersMap.get(MIXED_SEEDS_ID) || []).sort(),
+    sellingLocations: getSellingLocations(-74, shopSellingLocations),
+  });
+}
+
+// Mixed Flower Seeds: no Crops.json entry, random seasonal flower output
+if (MIXED_FLOWER_SEEDS_ID && gameData.objects[String(MIXED_FLOWER_SEEDS_ID)]) {
+  const obj = gameData.objects[String(MIXED_FLOWER_SEEDS_ID)];
+  const produces = MIXED_FLOWER_SEEDS_PRODUCE_GAME_IDS
+    .map(gid => {
+      const crop = cropData.find(c => c.gameId === gid);
+      return crop ? makeProducesEntry(crop) : null;
+    })
+    .filter(Boolean);
+  const sellPrice = obj.Price || 0;
+  seedData.push({
+    id: toKebabCase(obj.Name),
+    gameId: MIXED_FLOWER_SEEDS_ID,
+    name: obj.Name,
+    icon: `assets/seeds/${obj.Name.replace(/\s+/g, '_')}.png`,
+    type: 'seed',
+    category: -74,
+    price: sellPrice,
+    buyPrice: sellPrice * 2,
+    seasons: ['spring', 'summer', 'fall'],
+    produces,
+    sellers: Array.from(seedSellersMap.get(MIXED_FLOWER_SEEDS_ID) || []).sort(),
+    sellingLocations: getSellingLocations(-74, shopSellingLocations),
+  });
+}
+
+// Sort seeds alphabetically by name
+seedData.sort((a, b) => a.name.localeCompare(b.name));
+
+console.log(`  Processed ${seedData.length} seeds`);
+
 // Write source files
 console.log('\nWriting source files...');
 
@@ -1969,6 +2171,12 @@ fs.writeFileSync(
   JSON.stringify(cropData, null, 2)
 );
 console.log(`  ✓ Wrote items/crops.json (${cropData.length} crops)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/seeds.json'),
+  JSON.stringify(seedData, null, 2)
+);
+console.log(`  ✓ Wrote items/seeds.json (${seedData.length} seeds)`);
 
 fs.writeFileSync(
   path.join(PROCESSED_DIR, 'items/forage.json'),

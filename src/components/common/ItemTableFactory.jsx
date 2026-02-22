@@ -24,6 +24,7 @@ export function createIconColumn() {
       />
     ),
     enableSorting: false,
+    meta: { width: '48px' },
   }
 }
 

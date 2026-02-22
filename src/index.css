@@ -87,6 +87,7 @@ body {
   color: white;
   padding: 0.25rem 2rem 0.75rem 2rem;
   position: relative;
+  z-index: 200;
 }
 
 .header-content {
@@ -147,6 +148,91 @@ body {
 
 .header-nav a.active {
   text-decoration: underline;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Stardew Valley', sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.nav-dropdown-trigger:hover {
+  opacity: 0.8;
+}
+
+.nav-dropdown-trigger.active {
+  text-decoration: underline;
+}
+
+.nav-dropdown-trigger::after {
+  content: ' ▾';
+  font-size: 14px;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(21, 71, 148);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  min-width: 160px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-dropdown-menu a,
+.nav-dropdown-disabled {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown-menu li:last-child a,
+.nav-dropdown-menu li:last-child .nav-dropdown-disabled {
+  border-bottom: none;
+}
+
+.nav-dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.15s, opacity 0.2s;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.nav-dropdown-menu a.active {
+  text-decoration: underline;
+}
+
+.nav-dropdown-disabled {
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
 }
 
 main {

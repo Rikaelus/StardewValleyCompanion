@@ -14,7 +14,7 @@
     ],
     "growthDays": 8,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -73,7 +73,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -132,7 +132,7 @@
     ],
     "growthDays": 10,
     "regrowDays": 3,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-foraging"
@@ -175,7 +175,7 @@
     ],
     "growthDays": 11,
     "regrowDays": 1,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -234,7 +234,7 @@
     ],
     "growthDays": 24,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {},
@@ -257,7 +257,7 @@
     ],
     "growthDays": 12,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -316,7 +316,7 @@
     ],
     "growthDays": 6,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -375,7 +375,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -435,7 +435,7 @@
     ],
     "growthDays": 8,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "dye"
@@ -497,7 +497,7 @@
     ],
     "growthDays": 10,
     "regrowDays": 2,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -537,6 +537,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
+      "pierre",
       "shipping-bin"
     ]
   },
@@ -555,7 +556,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "chef-s"
@@ -616,7 +617,7 @@
     ],
     "growthDays": 8,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -675,7 +676,7 @@
     ],
     "growthDays": 4,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "spring-crops",
@@ -737,7 +738,7 @@
     ],
     "growthDays": 10,
     "regrowDays": 3,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "spring-crops"
@@ -798,7 +799,7 @@
     ],
     "growthDays": 12,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "spring-crops"
@@ -859,7 +860,7 @@
     ],
     "growthDays": 6,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "spring-crops"
@@ -920,7 +921,7 @@
     ],
     "growthDays": 4,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -979,7 +980,7 @@
     ],
     "growthDays": 6,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1038,7 +1039,7 @@
     ],
     "growthDays": 13,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1078,7 +1079,7 @@
     ],
     "growthDays": 12,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-crops",
@@ -1122,7 +1123,7 @@
     ],
     "growthDays": 11,
     "regrowDays": 4,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-crops"
@@ -1183,7 +1184,7 @@
     ],
     "growthDays": 13,
     "regrowDays": 4,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-crops"
@@ -1226,7 +1227,7 @@
     ],
     "growthDays": 5,
     "regrowDays": 3,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-crops"
@@ -1270,7 +1271,7 @@
     ],
     "growthDays": 4,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fodder"
@@ -1331,7 +1332,7 @@
     ],
     "growthDays": 6,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1390,7 +1391,7 @@
     ],
     "growthDays": 9,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "dye"
@@ -1451,7 +1452,7 @@
     ],
     "growthDays": 13,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1492,7 +1493,7 @@
     ],
     "growthDays": 14,
     "regrowDays": 4,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fall-crops",
@@ -1554,7 +1555,7 @@
     ],
     "growthDays": 5,
     "regrowDays": 5,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fall-crops"
@@ -1615,7 +1616,7 @@
     ],
     "growthDays": 8,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1674,7 +1675,7 @@
     ],
     "growthDays": 13,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fall-crops",
@@ -1736,7 +1737,7 @@
     ],
     "growthDays": 4,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1795,7 +1796,7 @@
     ],
     "growthDays": 10,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fall-crops"
@@ -1856,7 +1857,7 @@
     ],
     "growthDays": 7,
     "regrowDays": 5,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1896,7 +1897,7 @@
     ],
     "growthDays": 6,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -1955,7 +1956,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "spring-foraging"
@@ -2009,7 +2010,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "summer-foraging"
@@ -2053,7 +2054,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "fall-foraging"
@@ -2098,7 +2099,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "winter-foraging"
@@ -2144,7 +2145,7 @@
     ],
     "growthDays": 28,
     "regrowDays": 7,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [
       "the-missing"
@@ -2186,7 +2187,7 @@
     ],
     "growthDays": 8,
     "regrowDays": 4,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2225,7 +2226,7 @@
     "seasons": [],
     "growthDays": 12,
     "regrowDays": 3,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": "Cannot be planted outdoors on your farm. Can only be grown in Greenhouse, Garden Pots (indoors), or on Ginger Island (all year-round in these locations).",
     "bundles": [
       "exotic-foraging"
@@ -2269,7 +2270,7 @@
     ],
     "growthDays": 10,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2328,7 +2329,7 @@
     ],
     "growthDays": 14,
     "regrowDays": 7,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2371,7 +2372,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 0,
+    "maxQuality": 0,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2433,7 +2434,7 @@
     ],
     "growthDays": 4,
     "regrowDays": null,
-    "maxHarvestQuality": 0,
+    "maxQuality": 0,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2473,7 +2474,7 @@
     ],
     "growthDays": 3,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2532,7 +2533,7 @@
     ],
     "growthDays": 6,
     "regrowDays": 3,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2591,7 +2592,7 @@
     ],
     "growthDays": 8,
     "regrowDays": 4,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {
@@ -2650,7 +2651,7 @@
     ],
     "growthDays": 7,
     "regrowDays": null,
-    "maxHarvestQuality": 2,
+    "maxQuality": 2,
     "notes": null,
     "bundles": [],
     "gifts": {

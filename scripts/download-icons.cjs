@@ -121,6 +121,7 @@ async function main() {
   const PROCESSED_DIR = path.join(__dirname, '../data/processed/items');
 
   const itemTypes = [
+    { type: 'seeds', file: 'seeds.json' },
     { type: 'forage', file: 'forage.json' },
     { type: 'fruit-trees', file: 'fruit-trees.json' },
     { type: 'tree-fruits', file: 'tree-fruits.json' },

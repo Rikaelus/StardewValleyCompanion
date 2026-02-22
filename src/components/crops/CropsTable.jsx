@@ -53,7 +53,7 @@ function CropsTable({ data }) {
         cell: ({ row }) => (
           <ItemSellPrice
             item={row.original}
-            showQualities={row.original.maxHarvestQuality !== 0}
+            showQualities={row.original.maxQuality !== 0}
           />
         ),
         sortingFn: (rowA, rowB) => createPriceSortingFn(professionsRef.current)(rowA, rowB),
