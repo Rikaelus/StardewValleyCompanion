@@ -1,80 +1,37 @@
 {
   "stores": {
-    "pierre": {
-      "id": "pierre",
-      "name": "Pierre's General Store",
-      "npc": "Pierre"
-    },
-    "willy": {
-      "id": "willy",
-      "name": "Willy's Fish Shop",
-      "npc": "Willy"
-    },
-    "clint": {
-      "id": "clint",
-      "name": "Blacksmith (Clint)",
-      "npc": "Clint"
-    },
-    "robin": {
-      "id": "robin",
-      "name": "Carpenter's Shop (Robin)",
-      "npc": "Robin"
-    },
-    "marnie": {
-      "id": "marnie",
-      "name": "Marnie's Ranch",
-      "npc": "Marnie"
-    },
-    "gus": {
-      "id": "gus",
-      "name": "Saloon (Gus)",
-      "npc": "Gus"
-    },
-    "marlon": {
-      "id": "marlon",
-      "name": "Adventurer's Guild (Marlon)",
-      "npc": "Marlon"
-    },
-    "shipping-bin": {
-      "id": "shipping-bin",
-      "name": "Shipping Bin",
-      "npc": null
-    },
-    "trash-can": {
-      "id": "trash-can",
-      "name": "Trash Can",
-      "npc": null
-    },
-    "joja": {
-      "id": "joja",
-      "name": "JojaMart",
-      "npc": null
-    },
-    "sandy": {
-      "id": "sandy",
-      "name": "Oasis (Sandy)",
-      "npc": "Sandy"
-    },
-    "traveling-merchant": {
-      "id": "traveling-merchant",
-      "name": "Traveling Merchant",
-      "npc": null
-    },
-    "island-trader": {
-      "id": "island-trader",
-      "name": "Island Trader",
-      "npc": null
-    },
-    "egg-festival": {
-      "id": "egg-festival",
-      "name": "Egg Festival",
-      "npc": null
-    },
-    "night-market": {
-      "id": "night-market",
-      "name": "Night Market",
-      "npc": null
-    }
+    "pierre": { "id": "pierre", "name": "Pierre's General Store", "npc": "Pierre" },
+    "joja": { "id": "joja", "name": "JojaMart", "npc": null },
+    "willy": { "id": "willy", "name": "Willy's Fish Shop", "npc": "Willy" },
+    "marnie": { "id": "marnie", "name": "Marnie's Ranch", "npc": "Marnie" },
+    "clint": { "id": "clint", "name": "Blacksmith (Clint)", "npc": "Clint" },
+    "robin": { "id": "robin", "name": "Carpenter's Shop (Robin)", "npc": "Robin" },
+    "gus": { "id": "gus", "name": "Saloon (Gus)", "npc": "Gus" },
+    "marlon": { "id": "marlon", "name": "Adventurer's Guild (Marlon)", "npc": "Marlon" },
+    "sandy": { "id": "sandy", "name": "Oasis (Sandy)", "npc": "Sandy" },
+    "desert-trade": { "id": "desert-trade", "name": "Desert Trade (Sandy)", "npc": "Sandy" },
+    "traveling-merchant": { "id": "traveling-merchant", "name": "Traveling Merchant", "npc": null },
+    "island-trader": { "id": "island-trader", "name": "Island Trader", "npc": null },
+    "dwarf": { "id": "dwarf", "name": "Dwarf Shop", "npc": "Dwarf" },
+    "hat-mouse": { "id": "hat-mouse", "name": "Hat Mouse", "npc": null },
+    "qi-gem-shop": { "id": "qi-gem-shop", "name": "Qi's Walnut Room", "npc": "Mr. Qi" },
+    "volcano-shop": { "id": "volcano-shop", "name": "Volcano Forge Shop", "npc": null },
+    "raccoon": { "id": "raccoon", "name": "Raccoon Shop", "npc": null },
+    "krobus": { "id": "krobus", "name": "Krobus's Shop", "npc": "Krobus" },
+    "resort-bar": { "id": "resort-bar", "name": "Resort Bar", "npc": null },
+    "bookseller": { "id": "bookseller", "name": "Bookseller", "npc": null },
+    "shipping-bin": { "id": "shipping-bin", "name": "Shipping Bin", "npc": null },
+    "trash-can": { "id": "trash-can", "name": "Trash Can", "npc": null },
+    "egg-festival": { "id": "egg-festival", "name": "Egg Festival", "npc": "Pierre" },
+    "flower-dance": { "id": "flower-dance", "name": "Flower Dance", "npc": "Pierre" },
+    "luau": { "id": "luau", "name": "Luau", "npc": "Pierre" },
+    "spirits-eve": { "id": "spirits-eve", "name": "Spirit's Eve", "npc": "Pierre" },
+    "moonlight-jellies": { "id": "moonlight-jellies", "name": "Dance of the Moonlight Jellies", "npc": "Pierre" },
+    "winter-star": { "id": "winter-star", "name": "Feast of the Winter Star", "npc": "Pierre" },
+    "festival-of-ice": { "id": "festival-of-ice", "name": "Festival of Ice", "npc": null },
+    "night-market": { "id": "night-market", "name": "Night Market", "npc": null },
+    "stardew-valley-fair": { "id": "stardew-valley-fair", "name": "Stardew Valley Fair", "npc": null },
+    "desert-festival": { "id": "desert-festival", "name": "Desert Festival", "npc": null }
   },
   "categorySellingLocations": {
     "-4": ["willy", "shipping-bin"],

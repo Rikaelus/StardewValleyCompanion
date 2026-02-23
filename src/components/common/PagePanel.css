@@ -3,11 +3,8 @@
   border-radius: 8px;
   padding: 0;
   margin-bottom: 1.5rem;
-  box-shadow:
-    0 4px 6px rgba(0,0,0,0.1),
-    inset 0 0 0 3px #8b6f47,
-    inset 0 0 0 4px #f4e4c1;
-  border: 2px solid #5c4a32;
+  box-shadow: var(--panel-shadow);
+  border: var(--panel-border);
 }
 
 .page-panel-header-section {

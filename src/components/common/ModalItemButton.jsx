@@ -3,6 +3,7 @@ import { Tooltip } from 'react-tooltip'
 import ItemButton from './ItemButton'
 import UniversalModal from './UniversalModal'
 import VillagerModal from '../villagers/VillagerModal'
+import { pluralize } from '../../utils/pluralize'
 import 'react-tooltip/dist/react-tooltip.css'
 
 /**
@@ -23,6 +24,7 @@ function ModalItemButton({
   stopPropagation = false,
   variant = 'default', // 'default' | 'inline' | 'bundle-item'
   onNavigate = null, // Navigation callback from parent modal (breadcrumb navigation)
+  plural = false, // Display the item name in plural form (inline variant only)
   quality = 0, // Quality level: 0=normal, 1=silver, 2=gold, 4=iridium (bundle-item variant only)
   quantity = 1, // Stack quantity (bundle-item variant only)
   showSlotBackground = false // Show bundle slot background (bundle-item variant only)
@@ -170,7 +172,7 @@ function ModalItemButton({
           type="button"
         >
           <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
-          {item.name}
+          {plural ? pluralize(item.name) : item.name}
         </button>
 
         {/* Render appropriate modal (only when not using parent navigation) */}

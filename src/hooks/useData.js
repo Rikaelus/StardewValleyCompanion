@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useItems } from '../contexts/ItemsContext'
 
 export function useData(files) {
   const [data, setData] = useState({})
@@ -29,88 +30,74 @@ export function useData(files) {
   return { data, loading, error }
 }
 
+// Maps the item type names used by page components to the 'type' field in items.json
+const TYPE_MAP = {
+  fish: 'fish',
+  artisan: 'artisan',
+  crops: 'crop',
+  forage: 'forage',
+  minerals: 'mineral',
+  'metal-bars': 'metal-bar',
+  'monster-loot': 'monster-loot',
+  resources: 'resource',
+  seeds: 'seed',
+  furniture: 'furniture',
+  hats: 'hat',
+  'animal-products': 'animal-product',
+  'big-craftables': 'big-craftable',
+  'tree-fruits': 'tree-fruit',
+}
+
+// Legacy itemsKey map (used for backward-compat data shape { [itemsKey]: items, items, gameIdIndex })
+const ITEMS_KEY_MAP = {
+  fish: 'fish',
+  artisan: 'artisan',
+  crops: 'crops',
+  forage: 'forage',
+  minerals: 'minerals',
+  'metal-bars': 'metalBars',
+  'monster-loot': 'monsterLoot',
+  resources: 'resources',
+  seeds: 'seeds',
+  furniture: 'furniture',
+  hats: 'hats',
+  'animal-products': 'animalProducts',
+  'big-craftables': 'bigCraftables',
+  'tree-fruits': 'treeFruits',
+}
+
 /**
- * Generic hook for loading item data by type
- * Maps item types to their data file paths and transforms the response
+ * Generic hook for loading item data by type.
+ * Now reads from the unified ItemsContext (data fetched once for the whole app).
  *
  * @param {string} itemType - The type of item (fish, artisan, crops, forage, etc.)
  * @returns {Object} { data, loading, error }
  */
 export function useItemData(itemType) {
-  // Configuration for each item type
-  const typeConfig = {
-    fish: {
-      pagePath: 'data/pages/fish.json',
-      itemsKey: 'fish'
-    },
-    artisan: {
-      pagePath: 'data/pages/artisan.json',
-      itemsKey: 'artisan'
-    },
-    crops: {
-      pagePath: 'data/pages/crops.json',
-      itemsKey: 'crops'
-    },
-    forage: {
-      pagePath: 'data/pages/forage.json',
-      itemsKey: 'forage'
-    },
-    minerals: {
-      pagePath: 'data/pages/minerals.json',
-      itemsKey: 'minerals'
-    },
-    'metal-bars': {
-      pagePath: 'data/pages/metal-bars.json',
-      itemsKey: 'metalBars'
-    },
-    'monster-loot': {
-      pagePath: 'data/pages/monster-loot.json',
-      itemsKey: 'monsterLoot'
-    },
-    resources: {
-      pagePath: 'data/pages/resources.json',
-      itemsKey: 'resources'
-    },
-    cooking: {
-      pagePath: 'data/pages/cooking.json',
-      itemsKey: 'cooking'
-    },
-    seeds: {
-      pagePath: 'data/pages/seeds.json',
-      itemsKey: 'seeds'
-    }
+  const { byType, gameIdIndex, loading, error } = useItems()
+
+  const typeKey = TYPE_MAP[itemType]
+  if (!typeKey && !loading) {
+    throw new Error(`Unknown item type: ${itemType}. Valid types: ${Object.keys(TYPE_MAP).join(', ')}`)
   }
 
-  const config = typeConfig[itemType]
+  const itemsKey = ITEMS_KEY_MAP[itemType] || itemType
 
-  if (!config) {
-    throw new Error(`Unknown item type: ${itemType}. Valid types: ${Object.keys(typeConfig).join(', ')}`)
-  }
-
-  const { data, loading, error } = useData({
-    page: config.pagePath
-  })
-
-  // Transform compiled data to match component expectations
-  // Memoize the transformed data to prevent unnecessary re-renders
   const transformed = useMemo(() => {
-    if (loading || error || !data.page) {
-      return {}
-    }
-
+    if (loading || error) return {}
+    const items = byType[typeKey] || []
     return {
-      [config.itemsKey]: data.page.items || [],
-      items: data.page.items || [], // Generic alias
-      gameIdIndex: data.page.gameIdIndex || {}
+      [itemsKey]: items,
+      items, // Generic alias used by most page components
+      gameIdIndex: gameIdIndex || {}
     }
-  }, [data, loading, error, config.itemsKey])
+  }, [byType, typeKey, itemsKey, gameIdIndex, loading, error])
 
   return { data: transformed, loading, error }
 }
 
 /**
  * Specialized hook for fish data (backward compatibility)
- * Uses the generic useItemData hook internally
  */
 export function useFishData() {
   return useItemData('fish')
@@ -118,7 +105,6 @@ export function useFishData() {
 
 /**
  * Specialized hook for artisan goods data (backward compatibility)
- * Uses the generic useItemData hook internally
  */
 export function useArtisanData() {
   return useItemData('artisan')

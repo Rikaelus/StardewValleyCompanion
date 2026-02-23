@@ -1,0 +1,857 @@
+[
+  {
+    "type": "animal-product",
+    "id": "egg-white",
+    "gameId": 176,
+    "name": "Egg",
+    "category": -5,
+    "price": 50,
+    "edibility": 10,
+    "icon": "assets/objects/WhiteEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "White Chicken",
+        "animalId": "white-chicken"
+      },
+      {
+        "type": "animal",
+        "animalName": "Blue Chicken",
+        "animalId": "blue-chicken"
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-festival",
+        "storeName": "Desert Festival (Shane)",
+        "storeBaseName": "Desert Festival",
+        "price": 100,
+        "quantity": 12,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemAmount": 1
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "large-egg-white",
+    "gameId": 174,
+    "name": "Large Egg",
+    "category": -5,
+    "price": 95,
+    "edibility": 15,
+    "icon": "assets/objects/LargeWhiteEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "White Chicken",
+        "animalId": "white-chicken"
+      },
+      {
+        "type": "animal",
+        "animalName": "Blue Chicken",
+        "animalId": "blue-chicken"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item",
+      "large_egg_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "egg-brown",
+    "gameId": 180,
+    "name": "Egg",
+    "category": -5,
+    "price": 50,
+    "edibility": 10,
+    "icon": "assets/objects/BrownEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Brown Chicken",
+        "animalId": "brown-chicken"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "large-egg-brown",
+    "gameId": 182,
+    "name": "Large Egg",
+    "category": -5,
+    "price": 95,
+    "edibility": 15,
+    "icon": "assets/objects/LargeBrownEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Brown Chicken",
+        "animalId": "brown-chicken"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item",
+      "large_egg_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "void-egg",
+    "gameId": 305,
+    "name": "Void Egg",
+    "category": -5,
+    "price": 65,
+    "edibility": -15,
+    "icon": "assets/objects/VoidEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Void Chicken",
+        "animalId": "void-chicken"
+      },
+      {
+        "type": "shop",
+        "storeId": "krobus",
+        "storeName": "Krobus's Shop",
+        "storeBaseName": "Krobus's Shop",
+        "price": 5000
+      }
+    ],
+    "contextTags": [
+      "color_black",
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "like",
+      "maru": "dislike",
+      "sebastian": "love",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "like",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "hate",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "love",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "golden-egg",
+    "gameId": 928,
+    "name": "Golden Egg",
+    "category": -5,
+    "price": 500,
+    "edibility": 10,
+    "icon": "assets/objects/GoldenEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Golden Chicken",
+        "animalId": "golden-chicken"
+      },
+      {
+        "type": "shop",
+        "storeId": "marnie",
+        "storeName": "Marnie's Ranch",
+        "storeBaseName": "Marnie's Ranch",
+        "price": 100000
+      },
+      {
+        "type": "shop",
+        "storeId": "qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "storeBaseName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 1000,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/Qi_Gem.png",
+        "tradeItemAmount": 100
+      }
+    ],
+    "contextTags": [
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "duck-egg",
+    "gameId": 442,
+    "name": "Duck Egg",
+    "category": -5,
+    "price": 95,
+    "edibility": 15,
+    "icon": "assets/objects/DuckEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Duck",
+        "animalId": "duck"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "duck-feather",
+    "gameId": 444,
+    "name": "Duck Feather",
+    "category": -18,
+    "price": 250,
+    "edibility": -300,
+    "icon": "assets/objects/DuckFeather.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Duck",
+        "animalId": "duck"
+      }
+    ],
+    "contextTags": [
+      "color_green"
+    ],
+    "bundles": [
+      "dye"
+    ],
+    "gifts": {
+      "penny": "dislike",
+      "elliott": "love",
+      "harvey": "like",
+      "leo": "love"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "wool",
+    "gameId": 440,
+    "name": "Wool",
+    "category": -18,
+    "price": 340,
+    "edibility": -300,
+    "icon": "assets/objects/Wool.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Rabbit",
+        "animalId": "rabbit"
+      },
+      {
+        "type": "animal",
+        "animalName": "Sheep",
+        "animalId": "sheep"
+      }
+    ],
+    "contextTags": [
+      "color_white"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "penny": "dislike",
+      "emily": "love",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "rabbit-s-foot",
+    "gameId": 446,
+    "name": "Rabbit's Foot",
+    "category": -18,
+    "price": 565,
+    "edibility": -300,
+    "icon": "assets/objects/RabbitsFoot.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Rabbit",
+        "animalId": "rabbit"
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-festival",
+        "storeName": "Desert Festival (Jas)",
+        "storeBaseName": "Desert Festival",
+        "price": 1130,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemAmount": 100,
+        "stock": 1
+      }
+    ],
+    "contextTags": [
+      "color_yellow"
+    ],
+    "bundles": [
+      "enchanter-s"
+    ],
+    "gifts": {
+      "robin": "love",
+      "demetrius": "love",
+      "maru": "love",
+      "sebastian": "love",
+      "linus": "love",
+      "pierre": "love",
+      "caroline": "love",
+      "abigail": "love",
+      "alex": "love",
+      "george": "love",
+      "evelyn": "love",
+      "lewis": "love",
+      "clint": "love",
+      "penny": "hate",
+      "pam": "love",
+      "emily": "love",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
+      "jodi": "love",
+      "kent": "love",
+      "sam": "love",
+      "leah": "love",
+      "shane": "love",
+      "marnie": "love",
+      "elliott": "love",
+      "gus": "love",
+      "dwarf": "love",
+      "wizard": "love",
+      "harvey": "love",
+      "sandy": "love",
+      "willy": "love",
+      "krobus": "love",
+      "leo": "love"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "dinosaur-egg",
+    "gameId": 107,
+    "name": "Dinosaur Egg",
+    "category": 0,
+    "price": 350,
+    "edibility": -300,
+    "icon": "assets/objects/DinosaurEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Dinosaur",
+        "animalId": "dinosaur"
+      }
+    ],
+    "contextTags": [
+      "color_green",
+      "dinosaur_item",
+      "dye_strong",
+      "egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "like",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "like",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "milk",
+    "gameId": 184,
+    "name": "Milk",
+    "category": -6,
+    "price": 125,
+    "edibility": 15,
+    "icon": "assets/objects/Milk.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "White Cow",
+        "animalId": "white-cow"
+      },
+      {
+        "type": "animal",
+        "animalName": "Brown Cow",
+        "animalId": "brown-cow"
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-festival",
+        "storeName": "Desert Festival (Alex)",
+        "storeBaseName": "Desert Festival",
+        "price": 250,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemAmount": 10
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "cow_milk_item",
+      "drink_item",
+      "milk_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "large-milk",
+    "gameId": 186,
+    "name": "Large Milk",
+    "category": -6,
+    "price": 190,
+    "edibility": 20,
+    "icon": "assets/objects/LargeMilk.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "White Cow",
+        "animalId": "white-cow"
+      },
+      {
+        "type": "animal",
+        "animalName": "Brown Cow",
+        "animalId": "brown-cow"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "cow_milk_item",
+      "drink_item",
+      "large_milk_item",
+      "milk_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "goat-milk",
+    "gameId": 436,
+    "name": "Goat Milk",
+    "category": -6,
+    "price": 225,
+    "edibility": 25,
+    "icon": "assets/objects/GoatMilk.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Goat",
+        "animalId": "goat"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "goat_milk_item",
+      "milk_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "l-goat-milk",
+    "gameId": 438,
+    "name": "L. Goat Milk",
+    "category": -6,
+    "price": 345,
+    "edibility": 35,
+    "icon": "assets/objects/LGoatMilk.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Goat",
+        "animalId": "goat"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "goat_milk_item",
+      "large_milk_item",
+      "milk_item"
+    ],
+    "bundles": [
+      "animal"
+    ],
+    "gifts": {
+      "robin": "like",
+      "linus": "like",
+      "pierre": "like",
+      "evelyn": "like",
+      "lewis": "dislike",
+      "penny": "like",
+      "pam": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "hate",
+      "leah": "like",
+      "marnie": "like",
+      "elliott": "dislike",
+      "dwarf": "neutral",
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "like"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "truffle",
+    "gameId": 430,
+    "name": "Truffle",
+    "category": -17,
+    "price": 625,
+    "edibility": 5,
+    "icon": "assets/objects/Truffle.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Pig",
+        "animalId": "pig"
+      }
+    ],
+    "contextTags": [
+      "color_brown"
+    ],
+    "bundles": [
+      "chef-s"
+    ],
+    "gifts": {
+      "maru": "hate",
+      "leah": "love",
+      "gus": "like"
+    }
+  },
+  {
+    "type": "animal-product",
+    "id": "ostrich-egg",
+    "gameId": 289,
+    "name": "Ostrich Egg",
+    "category": -5,
+    "price": 600,
+    "edibility": 15,
+    "icon": "assets/objects/OstrichEgg.png",
+    "hasQuality": true,
+    "sources": [
+      {
+        "type": "animal",
+        "animalName": "Ostrich",
+        "animalId": "ostrich"
+      }
+    ],
+    "contextTags": [
+      "color_white",
+      "egg_item",
+      "large_egg_item"
+    ],
+    "bundles": [],
+    "gifts": {
+      "demetrius": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "pam": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "leo": "love"
+    }
+  }
+]

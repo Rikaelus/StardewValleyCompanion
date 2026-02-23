@@ -64,7 +64,8 @@ function ArtisanPage() {
     if (!data.artisan) return {}
 
     // Extract unique sources (machine, animal, tree, etc.)
-    const sources = [...new Set(data.artisan.map(a => a.source || a.producedBy?.machine).filter(Boolean))].sort()
+    const getMachineSource = (a) => a.sources?.find(s => s.type === 'machine')
+    const sources = [...new Set(data.artisan.map(a => getMachineSource(a)?.machine).filter(Boolean))].sort()
 
     // Extract unique bundles from artisan bundleDetails
     const bundleMap = new Map()
@@ -86,7 +87,6 @@ function ArtisanPage() {
   // Define tabs (now just for UI, actual filtering happens in filteredArtisan)
   const tabs = [
     { id: 'all', label: 'All' },
-    { id: 'animal', label: 'Animal Products' },
     { id: 'tree', label: 'Tree Products' },
     { id: 'machine', label: 'Machine Products' },
     { id: 'generics', label: 'Generics' },
@@ -105,20 +105,15 @@ function ArtisanPage() {
         if (artisan.isGeneric) return false
 
         if (filters.category && filters.category !== 'all') {
-          const source = artisan.source || artisan.producedBy?.machine
+          const machineSource = artisan.sources?.find(s => s.type === 'machine')
+          const tapperSource = artisan.sources?.find(s => s.type === 'tapper')
 
-          if (filters.category === 'animal') {
-            // Animal products: items with animal sources
-            const animalSources = ['White Chicken', 'Brown Chicken', 'Cow', 'Goat', 'Sheep', 'Pig', 'Rabbit', 'Duck', 'Dinosaur', 'Ostrich']
-            if (!animalSources.some(animal => source?.includes(animal))) return false
-          } else if (filters.category === 'tree') {
+          if (filters.category === 'tree') {
             // Tree products: tapper outputs
-            const treeSources = ['Oak Tree', 'Maple Tree', 'Pine Tree', 'Mahogany Tree', 'Mystic Tree']
-            if (!treeSources.some(tree => source?.includes(tree))) return false
+            if (!tapperSource) return false
           } else if (filters.category === 'machine') {
-            // Machine products: items made in machines (not from animals/trees)
-            const machines = ['Keg', 'Preserves Jar', 'Mayonnaise Machine', 'Cheese Press', 'Loom', 'Oil Maker', 'Fish Smoker']
-            if (!artisan.producedBy?.machine || !machines.some(m => artisan.producedBy.machine.includes(m))) return false
+            // Machine products: items made in machines
+            if (!machineSource) return false
           }
         }
       }
@@ -130,7 +125,7 @@ function ArtisanPage() {
       }
 
       if (filters.source) {
-        const itemSource = artisan.source || artisan.producedBy?.machine
+        const itemSource = artisan.sources?.find(s => s.type === 'machine')?.machine
         if (itemSource !== filters.source) return false
       }
 

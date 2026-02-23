@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import UniversalModal from '../common/UniversalModal'
-import SpecialCases from '../common/SpecialCases'
 import { useVillagers } from '../../contexts/VillagersContext'
 import { useRelationalData } from '../../hooks/useRelationalData'
 import { formatLocationNames } from '../../utils/formatters'
@@ -33,7 +32,15 @@ function ForageTable({ data, allData }) {
 
     const baseColumns = [
       createIconColumn({ onClick: handleRowClick }),
-      createNameColumn({ onClick: handleRowClick }),
+      createNameColumn({
+        onClick: handleRowClick,
+        cellRenderer: ({ row }) => (
+          <strong>
+            {row.original.name}
+            {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
+          </strong>
+        )
+      }),
       {
         accessorKey: 'locations',
         header: 'Locations',
@@ -59,6 +66,8 @@ function ForageTable({ data, allData }) {
     return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
   }
 
+  const nuancedItems = data.filter(f => f.hasLocationNuance)
+
   return (
     <>
       <DataTable
@@ -67,7 +76,11 @@ function ForageTable({ data, allData }) {
         initialSortBy={[{ id: 'name', desc: false }]}
         itemsPerPage={25}
       />
-      <SpecialCases items={allData || data} />
+      {nuancedItems.length > 0 && (
+        <div className="nuance-note">
+          * Seasons and locations shown are the full range of possibilities. Click on an item marked with * to see exact availability per location.
+        </div>
+      )}
       <UniversalModal
         entity={selectedForage}
         isOpen={isModalOpen}

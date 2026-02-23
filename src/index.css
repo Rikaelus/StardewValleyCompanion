@@ -19,6 +19,14 @@
   font-style: normal;
 }
 
+:root {
+  --panel-border: 2px solid #5c4a32;
+  --panel-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 3px #8b6f47,
+    inset 0 0 0 4px #f4e4c1;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -238,9 +246,6 @@ body {
 main {
   max-width: 1600px;
   margin: 0 auto;
-}
-
-.page-content {
 }
 
 @keyframes fadeIn {

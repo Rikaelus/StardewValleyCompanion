@@ -1,10 +1,9 @@
 import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
-import { useRelationalData } from '../../hooks/useRelationalData'
 import ItemSellPrice, { createPriceSortingFn } from '../common/ItemSellPrice'
 import ModalItemButton from '../common/ModalItemButton'
-import TagList from '../common/TagList'
+import ShopSourceList from '../common/ShopSourceList'
 import {
   createIconColumn,
   createNameColumn,
@@ -13,7 +12,6 @@ import {
 
 function SeedsTable({ data, cropsById }) {
   const { player } = usePlayer()
-  const relationalData = useRelationalData()
   const professionsRef = useRef(player.professions)
 
   useEffect(() => {
@@ -34,22 +32,21 @@ function SeedsTable({ data, cropsById }) {
           if (!crop) return <strong>{produces[0].cropName}</strong>
           return <ModalItemButton item={crop} variant="inline" stopPropagation={true} />
         }
-        // Multi-output: list all crops
+        // Multi-output: one per line
         return (
-          <span>
-            {produces.map((p, i) => {
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {produces.map((p) => {
               const crop = cropsById.get(p.cropId)
               return (
-                <span key={p.cropId}>
-                  {i > 0 && ', '}
+                <div key={p.cropId}>
                   {crop
                     ? <ModalItemButton item={crop} variant="inline" stopPropagation={true} />
                     : <strong>{p.cropName}</strong>
                   }
-                </span>
+                </div>
               )
             })}
-          </span>
+          </div>
         )
       },
       sortingFn: (rowA, rowB) => {
@@ -107,20 +104,19 @@ function SeedsTable({ data, cropsById }) {
           if (!crop) return '—'
           return <ItemSellPrice item={crop} showQualities={crop.maxQuality !== 0} />
         }
-        // Multi-output: show each crop's price
+        // Multi-output: one per line
         return (
-          <span>
-            {produces.map((p, i) => {
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {produces.map((p) => {
               const crop = cropsById.get(p.cropId)
               if (!crop) return null
               return (
-                <span key={p.cropId}>
-                  {i > 0 && ', '}
-                  <ItemSellPrice item={crop} showQualities={false} />
-                </span>
+                <div key={p.cropId}>
+                  <ItemSellPrice item={crop} showQualities={crop.maxQuality !== 0} />
+                </div>
               )
             })}
-          </span>
+          </div>
         )
       },
       sortingFn: (rowA, rowB) => {
@@ -134,14 +130,9 @@ function SeedsTable({ data, cropsById }) {
       meta: { align: 'left' },
     },
     {
-      accessorKey: 'sellers',
+      accessorKey: 'sources',
       header: 'Where to Buy',
-      cell: ({ getValue }) => {
-        const sellers = getValue()
-        if (!sellers || sellers.length === 0) return <span style={{ color: '#999' }}>—</span>
-        const names = sellers.map(id => relationalData.getStore(id)?.name ?? id)
-        return <TagList items={names} variant="location" />
-      },
+      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact />,
       enableSorting: false,
     },
   ], [cropsById])

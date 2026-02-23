@@ -4,7 +4,7 @@
     "id": "wild-horseradish",
     "gameId": 16,
     "name": "Wild Horseradish",
-    "icon": "assets/forage/Wild_Horseradish.png",
+    "icon": "assets/objects/Wild_Horseradish.png",
     "price": 50,
     "edibility": 5,
     "category": -81,
@@ -58,6 +58,28 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "spring"
+      }
     ]
   },
   {
@@ -65,7 +87,7 @@
     "id": "daffodil",
     "gameId": 18,
     "name": "Daffodil",
-    "icon": "assets/forage/Daffodil.png",
+    "icon": "assets/objects/Daffodil.png",
     "price": 30,
     "edibility": -300,
     "category": -81,
@@ -115,6 +137,23 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "spring"
+      }
     ]
   },
   {
@@ -122,7 +161,7 @@
     "id": "leek",
     "gameId": 20,
     "name": "Leek",
-    "icon": "assets/forage/Leek.png",
+    "icon": "assets/objects/Leek.png",
     "price": 60,
     "edibility": 16,
     "category": -81,
@@ -168,6 +207,28 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "spring"
+      }
     ]
   },
   {
@@ -175,7 +236,7 @@
     "id": "dandelion",
     "gameId": 22,
     "name": "Dandelion",
-    "icon": "assets/forage/Dandelion.png",
+    "icon": "assets/objects/Dandelion.png",
     "price": 40,
     "edibility": 10,
     "category": -81,
@@ -220,6 +281,23 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "spring"
+      }
     ]
   },
   {
@@ -227,7 +305,7 @@
     "id": "cave-carrot",
     "gameId": 78,
     "name": "Cave Carrot",
-    "icon": "assets/forage/Cave_Carrot.png",
+    "icon": "assets/objects/Cave_Carrot.png",
     "price": 25,
     "edibility": 12,
     "category": -81,
@@ -286,14 +364,15 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   },
   {
     "type": "forage",
     "id": "coconut",
     "gameId": 88,
     "name": "Coconut",
-    "icon": "assets/forage/Coconut.png",
+    "icon": "assets/objects/Coconut.png",
     "price": 100,
     "edibility": -300,
     "category": -79,
@@ -337,6 +416,12 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Desert"
+      }
     ]
   },
   {
@@ -344,7 +429,7 @@
     "id": "cactus-fruit",
     "gameId": 90,
     "name": "Cactus Fruit",
-    "icon": "assets/forage/Cactus_Fruit.png",
+    "icon": "assets/objects/Cactus_Fruit.png",
     "price": 75,
     "edibility": 30,
     "category": -79,
@@ -388,6 +473,12 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Desert"
+      }
     ]
   },
   {
@@ -395,7 +486,7 @@
     "id": "morel",
     "gameId": 257,
     "name": "Morel",
-    "icon": "assets/forage/Morel.png",
+    "icon": "assets/objects/Morel.png",
     "price": 150,
     "edibility": 8,
     "category": -81,
@@ -440,6 +531,13 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      }
     ]
   },
   {
@@ -447,7 +545,7 @@
     "id": "fiddlehead-fern",
     "gameId": 259,
     "name": "Fiddlehead Fern",
-    "icon": "assets/forage/Fiddlehead_Fern.png",
+    "icon": "assets/objects/Fiddlehead_Fern.png",
     "price": 90,
     "edibility": 10,
     "category": -75,
@@ -507,6 +605,13 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "summer"
+      }
     ]
   },
   {
@@ -514,7 +619,7 @@
     "id": "chanterelle",
     "gameId": 281,
     "name": "Chanterelle",
-    "icon": "assets/forage/Chanterelle.png",
+    "icon": "assets/objects/Chanterelle.png",
     "price": 160,
     "edibility": 30,
     "category": -81,
@@ -559,18 +664,15 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Secret Woods"
-        ],
-        "seasons": "Fall"
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "fall"
       },
       {
-        "locations": [
-          "Volcano Dungeon"
-        ],
-        "seasons": "All Seasons"
+        "type": "forage",
+        "location": "Volcano Dungeon"
       }
     ]
   },
@@ -579,7 +681,7 @@
     "id": "holly",
     "gameId": 283,
     "name": "Holly",
-    "icon": "assets/forage/Holly.png",
+    "icon": "assets/objects/Holly.png",
     "price": 80,
     "edibility": -15,
     "category": -81,
@@ -623,6 +725,38 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "winter"
+      }
     ]
   },
   {
@@ -630,7 +764,7 @@
     "id": "clam",
     "gameId": 372,
     "name": "Clam",
-    "icon": "assets/forage/Clam.png",
+    "icon": "assets/objects/Clam.png",
     "price": 50,
     "edibility": -300,
     "category": -4,
@@ -697,6 +831,22 @@
       "willy",
       "shipping-bin"
     ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "winter"
+      }
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "clam",
@@ -710,7 +860,7 @@
     "id": "nautilus-shell",
     "gameId": 392,
     "name": "Nautilus Shell",
-    "icon": "assets/forage/Nautilus_Shell.png",
+    "icon": "assets/objects/Nautilus_Shell.png",
     "price": 120,
     "edibility": -300,
     "category": -23,
@@ -739,6 +889,13 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "winter"
+      }
     ]
   },
   {
@@ -746,7 +903,7 @@
     "id": "coral",
     "gameId": 393,
     "name": "Coral",
-    "icon": "assets/forage/Coral.png",
+    "icon": "assets/objects/Coral.png",
     "price": 80,
     "edibility": -300,
     "category": -23,
@@ -771,14 +928,15 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   },
   {
     "type": "forage",
     "id": "rainbow-shell",
     "gameId": 394,
     "name": "Rainbow Shell",
-    "icon": "assets/forage/Rainbow_Shell.png",
+    "icon": "assets/objects/Rainbow_Shell.png",
     "price": 300,
     "edibility": -300,
     "category": -23,
@@ -834,6 +992,13 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "summer"
+      }
     ]
   },
   {
@@ -841,7 +1006,7 @@
     "id": "spice-berry",
     "gameId": 396,
     "name": "Spice Berry",
-    "icon": "assets/forage/Spice_Berry.png",
+    "icon": "assets/objects/Spice_Berry.png",
     "price": 80,
     "edibility": 10,
     "category": -79,
@@ -886,6 +1051,33 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
+      }
     ]
   },
   {
@@ -893,7 +1085,7 @@
     "id": "sea-urchin",
     "gameId": 397,
     "name": "Sea Urchin",
-    "icon": "assets/forage/Sea_Urchin.png",
+    "icon": "assets/objects/Sea_Urchin.png",
     "price": 160,
     "edibility": -300,
     "category": -23,
@@ -951,14 +1143,15 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   },
   {
     "type": "forage",
     "id": "grape",
     "gameId": 398,
     "name": "Grape",
-    "icon": "assets/forage/Grape.png",
+    "icon": "assets/objects/Grape.png",
     "price": 80,
     "edibility": 15,
     "category": -79,
@@ -1001,6 +1194,28 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
+      }
     ]
   },
   {
@@ -1008,7 +1223,7 @@
     "id": "spring-onion",
     "gameId": 399,
     "name": "Spring Onion",
-    "icon": "assets/forage/Spring_Onion.png",
+    "icon": "assets/objects/Spring_Onion.png",
     "price": 8,
     "edibility": 5,
     "category": -81,
@@ -1048,14 +1263,15 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   },
   {
     "type": "forage",
     "id": "sweet-pea",
     "gameId": 402,
     "name": "Sweet Pea",
-    "icon": "assets/forage/Sweet_Pea.png",
+    "icon": "assets/objects/Sweet_Pea.png",
     "price": 50,
     "edibility": -300,
     "category": -80,
@@ -1118,6 +1334,28 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      }
     ]
   },
   {
@@ -1125,7 +1363,7 @@
     "id": "common-mushroom",
     "gameId": 404,
     "name": "Common Mushroom",
-    "icon": "assets/forage/Common_Mushroom.png",
+    "icon": "assets/objects/Common_Mushroom.png",
     "price": 40,
     "edibility": 15,
     "category": -81,
@@ -1175,25 +1413,35 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Mountain Lake",
-          "Forest River"
-        ],
-        "seasons": "Fall"
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "fall"
       },
       {
-        "locations": [
-          "Secret Woods"
-        ],
-        "seasons": "Fall, Spring"
+        "type": "forage",
+        "location": "Forest River",
+        "season": "fall"
       },
       {
-        "locations": [
-          "Volcano Dungeon"
-        ],
-        "seasons": "All Seasons"
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Volcano Dungeon"
       }
     ]
   },
@@ -1202,7 +1450,7 @@
     "id": "wild-plum",
     "gameId": 406,
     "name": "Wild Plum",
-    "icon": "assets/forage/Wild_Plum.png",
+    "icon": "assets/objects/Wild_Plum.png",
     "price": 80,
     "edibility": 10,
     "category": -79,
@@ -1244,6 +1492,28 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "fall"
+      }
     ]
   },
   {
@@ -1251,7 +1521,7 @@
     "id": "hazelnut",
     "gameId": 408,
     "name": "Hazelnut",
-    "icon": "assets/forage/Hazelnut.png",
+    "icon": "assets/objects/Hazelnut.png",
     "price": 90,
     "edibility": 12,
     "category": -81,
@@ -1295,6 +1565,28 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "fall"
+      }
     ]
   },
   {
@@ -1302,7 +1594,7 @@
     "id": "blackberry",
     "gameId": 410,
     "name": "Blackberry",
-    "icon": "assets/forage/Blackberry.png",
+    "icon": "assets/objects/Blackberry.png",
     "price": 20,
     "edibility": 10,
     "category": -79,
@@ -1344,6 +1636,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "fall"
+      }
     ]
   },
   {
@@ -1351,7 +1660,7 @@
     "id": "winter-root",
     "gameId": 412,
     "name": "Winter Root",
-    "icon": "assets/forage/Winter_Root.png",
+    "icon": "assets/objects/Winter_Root.png",
     "price": 70,
     "edibility": 10,
     "category": -81,
@@ -1394,6 +1703,13 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "chance": 0.08
+      }
     ]
   },
   {
@@ -1401,7 +1717,7 @@
     "id": "crystal-fruit",
     "gameId": 414,
     "name": "Crystal Fruit",
-    "icon": "assets/forage/Crystal_Fruit.png",
+    "icon": "assets/objects/Crystal_Fruit.png",
     "price": 150,
     "edibility": 25,
     "category": -79,
@@ -1446,6 +1762,43 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "winter"
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Dust Spirit",
+        "chance": 0.02
+      }
     ]
   },
   {
@@ -1453,7 +1806,7 @@
     "id": "snow-yam",
     "gameId": 416,
     "name": "Snow Yam",
-    "icon": "assets/forage/Snow_Yam.png",
+    "icon": "assets/objects/Snow_Yam.png",
     "price": 100,
     "edibility": 12,
     "category": -81,
@@ -1495,14 +1848,15 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   },
   {
     "type": "forage",
     "id": "crocus",
     "gameId": 418,
     "name": "Crocus",
-    "icon": "assets/forage/Crocus.png",
+    "icon": "assets/objects/Crocus.png",
     "price": 60,
     "edibility": -300,
     "category": -80,
@@ -1567,6 +1921,38 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Town River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "winter"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "winter"
+      }
     ]
   },
   {
@@ -1574,7 +1960,7 @@
     "id": "red-mushroom",
     "gameId": 420,
     "name": "Red Mushroom",
-    "icon": "assets/forage/Red_Mushroom.png",
+    "icon": "assets/objects/Red_Mushroom.png",
     "price": 75,
     "edibility": -20,
     "category": -81,
@@ -1641,24 +2027,34 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Secret Woods"
-        ],
-        "seasons": "Fall, Summer"
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "summer"
       },
       {
-        "locations": [
-          "Volcano Dungeon"
-        ],
-        "seasons": "Fall, Spring, Summer, Winter"
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "fall"
       },
       {
-        "locations": [
-          "Mines (Floors 81-119)"
-        ],
-        "seasons": "All Seasons"
+        "type": "forage",
+        "location": "Volcano Dungeon",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Volcano Dungeon",
+        "seasons": [
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Mines (Floors 81-119)"
       }
     ]
   },
@@ -1667,7 +2063,7 @@
     "id": "purple-mushroom",
     "gameId": 422,
     "name": "Purple Mushroom",
-    "icon": "assets/forage/Purple_Mushroom.png",
+    "icon": "assets/objects/Purple_Mushroom.png",
     "price": 250,
     "edibility": 50,
     "category": -81,
@@ -1718,18 +2114,24 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Volcano Dungeon"
-        ],
-        "seasons": "Fall, Spring, Summer, Winter"
+        "type": "forage",
+        "location": "Volcano Dungeon",
+        "season": "spring"
       },
       {
-        "locations": [
-          "Mines (Floors 81-119)"
-        ],
-        "seasons": "All Seasons"
+        "type": "forage",
+        "location": "Volcano Dungeon",
+        "seasons": [
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Mines (Floors 81-119)"
       }
     ]
   },
@@ -1738,7 +2140,7 @@
     "id": "cockle",
     "gameId": 718,
     "name": "Cockle",
-    "icon": "assets/forage/Cockle.png",
+    "icon": "assets/objects/Cockle.png",
     "price": 50,
     "edibility": -300,
     "category": -4,
@@ -1803,6 +2205,22 @@
       "willy",
       "shipping-bin"
     ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "winter"
+      }
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "cockle",
@@ -1816,7 +2234,7 @@
     "id": "mussel",
     "gameId": 719,
     "name": "Mussel",
-    "icon": "assets/forage/Mussel.png",
+    "icon": "assets/objects/Mussel.png",
     "price": 30,
     "edibility": -300,
     "category": -4,
@@ -1881,6 +2299,22 @@
       "willy",
       "shipping-bin"
     ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "winter"
+      }
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "mussel",
@@ -1894,7 +2328,7 @@
     "id": "oyster",
     "gameId": 723,
     "name": "Oyster",
-    "icon": "assets/forage/Oyster.png",
+    "icon": "assets/objects/Oyster.png",
     "price": 40,
     "edibility": -300,
     "category": -4,
@@ -1960,6 +2394,22 @@
       "willy",
       "shipping-bin"
     ],
+    "sources": [
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Ocean",
+        "season": "winter"
+      }
+    ],
     "alsoAvailableAs": {
       "type": "fish",
       "id": "oyster",
@@ -1973,7 +2423,7 @@
     "id": "ginger",
     "gameId": 829,
     "name": "Ginger",
-    "icon": "assets/forage/Ginger.png",
+    "icon": "assets/objects/Ginger.png",
     "price": 60,
     "edibility": 10,
     "category": -81,
@@ -2014,6 +2464,7 @@
     },
     "sellingLocations": [
       "shipping-bin"
-    ]
+    ],
+    "sources": []
   }
 ]

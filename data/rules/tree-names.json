@@ -1,0 +1,17 @@
+{
+  "$schema": "tree-names-schema",
+  "description": "Maps WildTrees.json numeric tree IDs to species names. The game only stores numeric IDs; names are derived from game knowledge and wiki. Used when building tapper acquisition sources.",
+  "trees": {
+    "1":  { "name": "Pine Tree",     "id": "pine-tree" },
+    "2":  { "name": "Maple Tree",    "id": "maple-tree" },
+    "3":  { "name": "Oak Tree",      "id": "oak-tree" },
+    "6":  { "name": "Palm Tree",     "id": "palm-tree" },
+    "7":  { "name": "Mushroom Tree", "id": "mushroom-tree" },
+    "8":  { "name": "Mahogany Tree", "id": "mahogany-tree" },
+    "9":  { "name": "Palm Tree",     "id": "palm-tree" },
+    "10": { "name": "Mossy Tree",    "id": "mossy-tree" },
+    "11": { "name": "Mossy Tree",    "id": "mossy-tree" },
+    "12": { "name": "Green Rain Tree", "id": "green-rain-tree" },
+    "13": { "name": "Mystic Tree",   "id": "mystic-tree" }
+  }
+}

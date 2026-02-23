@@ -1,0 +1,7 @@
+{
+  "_comment": "Maps seasonal wild seed IDs to the full pool of forage items they randomly produce when planted. Crops.json only stores one HarvestItemId (the first item), but the game engine picks randomly from all season-appropriate forage — behavior hardcoded in the C# engine, not in data exports. Source: https://stardewvalleywiki.com/Spring_Seeds etc.",
+  "495": [16, 18, 20, 22],
+  "496": [396, 398, 402],
+  "497": [406, 404, 408, 410],
+  "498": [412, 414, 416, 418]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "smelting-recipes-schema",
+  "description": "Maps metal bar names to their furnace input ore(s). Used to populate producedBy.inputs for metal bar items. Each ore entry has gameId, name, and quantity.",
+  "recipes": {
+    "Copper Bar":    [{ "gameId": 378, "name": "Copper Ore",     "quantity": 5 }],
+    "Iron Bar":      [{ "gameId": 380, "name": "Iron Ore",       "quantity": 5 }],
+    "Gold Bar":      [{ "gameId": 384, "name": "Gold Ore",       "quantity": 5 }],
+    "Iridium Bar":   [{ "gameId": 386, "name": "Iridium Ore",    "quantity": 5 }],
+    "Radioactive Bar": [{ "gameId": 909, "name": "Radioactive Ore", "quantity": 5 }],
+    "Refined Quartz": [
+      { "gameId": 80, "name": "Quartz",      "quantity": 1 },
+      { "gameId": 82, "name": "Fire Quartz", "quantity": 1 }
+    ]
+  }
+}

@@ -111,6 +111,23 @@ function CharacterBar() {
           </div>
 
           <div className="character-section">
+            <h3>Memberships & Affiliations</h3>
+            <div className="professions-grid">
+              <label className="profession-checkbox">
+                <input
+                  type="checkbox"
+                  checked={player.jojaMember}
+                  onChange={() => setPlayer({ jojaMember: !player.jojaMember })}
+                />
+                <div className="profession-info">
+                  <span className="profession-name">Joja Member</span>
+                  <span className="profession-bonus">JojaMart prices are 20% lower</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div className="character-section">
             <h3>Professions (Price Modifiers)</h3>
 
             <div className="profession-category">

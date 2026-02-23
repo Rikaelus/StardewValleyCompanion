@@ -1,0 +1,23 @@
+{
+  "$schema": "furniture-names-schema",
+  "description": "Display name and wiki page overrides for furniture items whose game IDs are camelCase strings rather than readable names. Keys are game IDs from Furniture.json.",
+  "items": {
+    "JojaCatalogue":     { "name": "Joja Catalogue",        "wikiName": "Furniture_Catalogue" },
+    "JunimoCatalogue":   { "name": "Junimo Catalogue",      "wikiName": "Junimo_Catalogue" },
+    "RetroCatalogue":    { "name": "Retro Catalogue",       "wikiName": "Retro_Catalogue" },
+    "WizardCatalogue":   { "name": "Wizard Catalogue",      "wikiName": "Wizard_Catalogue" },
+    "AbigailPortrait":   { "name": "Abigail's Portrait",    "wikiName": "Abigail_Portrait" },
+    "AlexPortrait":      { "name": "Alex's Portrait",       "wikiName": "Alex_Portrait" },
+    "ElliottPortrait":   { "name": "Elliott's Portrait",    "wikiName": "Elliott_Portrait" },
+    "EmilyPortrait":     { "name": "Emily's Portrait",      "wikiName": "Emily_Portrait" },
+    "HaleyPortrait":     { "name": "Haley's Portrait",      "wikiName": "Haley_Portrait" },
+    "HarveyPortrait":    { "name": "Harvey's Portrait",     "wikiName": "Harvey_Portrait" },
+    "KrobusPortrait":    { "name": "Krobus's Portrait",     "wikiName": "Krobus_Portrait" },
+    "LeahPortrait":      { "name": "Leah's Portrait",       "wikiName": "Leah_Portrait" },
+    "MaruPortrait":      { "name": "Maru's Portrait",       "wikiName": "Maru_Portrait" },
+    "PennyPortrait":     { "name": "Penny's Portrait",      "wikiName": "Penny_Portrait" },
+    "SamPortrait":       { "name": "Sam's Portrait",        "wikiName": "Sam_Portrait" },
+    "SebastianPortrait": { "name": "Sebastian's Portrait",  "wikiName": "Sebastian_Portrait" },
+    "ShanePortrait":     { "name": "Shane's Portrait",      "wikiName": "Shane_Portrait" }
+  }
+}

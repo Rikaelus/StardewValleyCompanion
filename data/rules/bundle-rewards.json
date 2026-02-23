@@ -1,0 +1,5 @@
+{
+  "$schema": "bundle-rewards-schema",
+  "description": "BigCraftable game IDs that are awarded as community center bundle rewards. Used to determine which big craftables to include in the processed data.",
+  "gameIds": [9, 10, 12, 13, 15, 16, 20, 21, 25, 104, 114]
+}

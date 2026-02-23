@@ -1,0 +1,12 @@
+{
+  "$schema": "item-roles-schema",
+  "description": "Items that exist in multiple acquisition contexts. Used to add cross-context metadata during processing.",
+  "dualRoleItems": {
+    "description": "Crab pot catches that can also be foraged on the beach (gameIds).",
+    "gameIds": [372, 718, 719, 723]
+  },
+  "skipSeedIds": {
+    "description": "Seed-category item gameIds that are NOT crop seeds and should be excluded from the seeds page (saplings, etc.).",
+    "gameIds": [69, 251]
+  }
+}

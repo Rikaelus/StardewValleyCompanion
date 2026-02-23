@@ -5,11 +5,14 @@ import ArtisanPage from './components/artisan/ArtisanPage'
 import ForagePage from './components/forage/ForagePage'
 import CropsPage from './components/crops/CropsPage'
 import SeedsPage from './components/seeds/SeedsPage'
+import FurniturePage from './components/furniture/FurniturePage'
+import HatsPage from './components/hats/HatsPage'
 import Footer from './components/layout/Footer'
 import CharacterBar from './components/common/CharacterBar'
 import { ModalProvider } from './contexts/ModalContext'
 import { PlayerProvider } from './contexts/PlayerContext'
 import { VillagersProvider } from './contexts/VillagersContext'
+import { ItemsProvider } from './contexts/ItemsContext'
 
 const NAV_ITEMS = [
   {
@@ -31,6 +34,13 @@ const NAV_ITEMS = [
     ]
   },
   { label: 'Foraging', path: '/forage' },
+  {
+    label: 'Clothing & Décor',
+    children: [
+      { label: 'Hats', path: '/hats' },
+      { label: 'Furniture', path: '/furniture' },
+    ]
+  },
   { label: 'Bundles', path: '/bundles' },
   { label: 'Villagers', path: '/villagers' },
 ]
@@ -131,6 +141,8 @@ function MainContent() {
               <Route path="/forage" element={<ForagePage />} />
               <Route path="/crops" element={<CropsPage />} />
               <Route path="/seeds" element={<SeedsPage />} />
+              <Route path="/furniture" element={<FurniturePage />} />
+              <Route path="/hats" element={<HatsPage />} />
             </Routes>
           </main>
         </div>
@@ -143,6 +155,7 @@ function MainContent() {
 function App() {
   return (
     <HashRouter>
+      <ItemsProvider>
       <VillagersProvider>
         <PlayerProvider>
           <ModalProvider>
@@ -154,6 +167,7 @@ function App() {
           </ModalProvider>
         </PlayerProvider>
       </VillagersProvider>
+      </ItemsProvider>
     </HashRouter>
   )
 }

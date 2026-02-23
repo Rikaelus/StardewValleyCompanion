@@ -21,12 +21,12 @@ namespace DataExporter
                 string exportPath = Path.Combine(Helper.DirectoryPath, "exported");
                 Directory.CreateDirectory(exportPath);
 
-                Monitor.Log("Starting data export...", LogLevel.Info);
+                Monitor.Log("Starting full data export...", LogLevel.Info);
 
-                // Export all available game data assets
+                // All non-localized assets from Content/Data/
                 var assetsToExport = new[]
                 {
-                    // Items
+                    // Items & Equipment
                     "Data/Objects",
                     "Data/BigCraftables",
                     "Data/Crops",
@@ -34,7 +34,7 @@ namespace DataExporter
                     "Data/AquariumFish",
                     "Data/Furniture",
                     "Data/Boots",
-                    "Data/Hats",
+                    "Data/hats",
                     "Data/Shirts",
                     "Data/Pants",
                     "Data/Weapons",
@@ -43,22 +43,36 @@ namespace DataExporter
                     "Data/FloorsAndPaths",
                     "Data/AdditionalWallpaperFlooring",
                     "Data/WildTrees",
-                    "Data/fruitTrees",
+                    "Data/FruitTrees",
+                    "Data/GiantCrops",
+                    "Data/Trinkets",
+                    "Data/Buffs",
 
                     // Shops & Economy
                     "Data/Shops",
                     "Data/GarbageCans",
+                    "Data/LostItemsShop",
 
                     // Locations & World
                     "Data/Locations",
                     "Data/LocationContexts",
                     "Data/Minecarts",
                     "Data/WorldMap",
+                    "Data/AdditionalFarms",
 
                     // NPCs & Characters
                     "Data/Characters",
                     "Data/NPCDispositions",
                     "Data/NPCGiftTastes",
+                    "Data/Pets",
+                    "Data/Mannequins",
+                    "Data/HairData",
+                    "Data/MakeoverOutfits",
+                    "Data/PaintData",
+                    "Data/HomeRenovations",
+                    "Data/Weddings",
+                    "Data/EngagementDialogue",
+                    "Data/ExtraDialogue",
 
                     // Production & Processing
                     "Data/Machines",
@@ -69,27 +83,34 @@ namespace DataExporter
 
                     // Quests & Progress
                     "Data/Bundles",
+                    "Data/RandomBundles",
                     "Data/Quests",
                     "Data/SpecialOrders",
+                    "Data/MonsterSlayerQuests",
                     "Data/Achievements",
                     "Data/MuseumRewards",
+                    "Data/Powers",
 
-                    // Other
+                    // Buildings & Animals
                     "Data/Buildings",
                     "Data/FarmAnimals",
+
+                    // Entertainment
                     "Data/Movies",
                     "Data/Concessions",
+                    "Data/ConcessionTastes",
+                    "Data/MoviesReactions",
+                    "Data/JukeboxTracks",
+                    "Data/TV/CookingChannel",
+                    "Data/TV/TipChannel",
+                    "Data/ChairTiles",
+
+                    // Monsters & Combat
                     "Data/Monsters",
+
+                    // Festivals & Events
                     "Data/PassiveFestivals",
-                    "Data/TriggerActions",
-                    "Data/SecretNotes",
-                    "Data/mail",
-
-                    // Events
-                    "Data/Events/Farm",
-                    "Data/Events/Town",
-
-                    // Festivals
+                    "Data/Festivals/FestivalDates",
                     "Data/Festivals/spring13",
                     "Data/Festivals/spring24",
                     "Data/Festivals/summer11",
@@ -97,7 +118,63 @@ namespace DataExporter
                     "Data/Festivals/fall16",
                     "Data/Festivals/fall27",
                     "Data/Festivals/winter8",
-                    "Data/Festivals/winter25"
+                    "Data/Festivals/winter25",
+
+                    // Events (cutscenes by location)
+                    "Data/Events/AbandonedJojaMart",
+                    "Data/Events/AnimalShop",
+                    "Data/Events/ArchaeologyHouse",
+                    "Data/Events/Backwoods",
+                    "Data/Events/BathHouse_Pool",
+                    "Data/Events/Beach",
+                    "Data/Events/BoatTunnel",
+                    "Data/Events/BusStop",
+                    "Data/Events/CommunityCenter",
+                    "Data/Events/DesertFestival",
+                    "Data/Events/ElliottHouse",
+                    "Data/Events/Farm",
+                    "Data/Events/FarmHouse",
+                    "Data/Events/FishShop",
+                    "Data/Events/Forest",
+                    "Data/Events/HaleyHouse",
+                    "Data/Events/HarveyRoom",
+                    "Data/Events/Hospital",
+                    "Data/Events/IslandFarmHouse",
+                    "Data/Events/IslandHut",
+                    "Data/Events/IslandNorth",
+                    "Data/Events/IslandSouth",
+                    "Data/Events/IslandWest",
+                    "Data/Events/JoshHouse",
+                    "Data/Events/LeahHouse",
+                    "Data/Events/ManorHouse",
+                    "Data/Events/Mine",
+                    "Data/Events/Mountain",
+                    "Data/Events/QiNutRoom",
+                    "Data/Events/Railroad",
+                    "Data/Events/Saloon",
+                    "Data/Events/SamHouse",
+                    "Data/Events/SandyHouse",
+                    "Data/Events/ScienceHouse",
+                    "Data/Events/SebastianRoom",
+                    "Data/Events/SeedShop",
+                    "Data/Events/Sewer",
+                    "Data/Events/Sunroom",
+                    "Data/Events/Temp",
+                    "Data/Events/Tent",
+                    "Data/Events/Town",
+                    "Data/Events/Trailer",
+                    "Data/Events/Trailer_Big",
+                    "Data/Events/WizardHouse",
+                    "Data/Events/Woods",
+
+                    // Misc
+                    "Data/TriggerActions",
+                    "Data/SecretNotes",
+                    "Data/mail",
+                    "Data/animationDescriptions",
+                    "Data/AudioChanges",
+                    "Data/AdditionalLanguages",
+                    "Data/IncomingPhoneCalls",
                 };
 
                 int successCount = 0;
@@ -126,7 +203,7 @@ namespace DataExporter
                 // Load the asset using SMAPI's content API
                 var data = Helper.GameContent.Load<object>(assetPath);
 
-                // Generate filename from asset path
+                // Generate filename from asset path (Data/Events/Farm -> Events_Farm.json)
                 string filename = assetPath.Replace("Data/", "").Replace("/", "_") + ".json";
 
                 string json = JsonConvert.SerializeObject(data, Formatting.Indented);

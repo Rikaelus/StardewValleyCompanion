@@ -1,12 +1,13 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useItemData } from '../../hooks/useData'
+import { useItems } from '../../contexts/ItemsContext'
 import PagePanel from '../common/PagePanel'
 import SeedsTable from './SeedsTable'
 
 function SeedsPage() {
   const { data, loading, error } = useItemData('seeds')
-  const { data: cropsData, loading: cropsLoading } = useItemData('crops')
+  const { byType } = useItems()
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [filters, setFilters] = useState({
@@ -74,12 +75,14 @@ function SeedsPage() {
     })
   }, [data.items, filters])
 
-  const cropsById = useMemo(() => {
-    if (!cropsData.items) return new Map()
-    return new Map(cropsData.items.map(c => [c.id, c]))
-  }, [cropsData.items])
+  const produceById = useMemo(() => {
+    const map = new Map()
+    ;(byType['crop'] || []).forEach(c => map.set(c.id, c))
+    ;(byType['forage'] || []).forEach(f => map.set(f.id, f))
+    return map
+  }, [byType])
 
-  if (loading || cropsLoading) {
+  if (loading) {
     return (
       <PagePanel title="Seeds">
         <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>
@@ -161,7 +164,7 @@ function SeedsPage() {
         </PagePanel.Controls>
       </PagePanel>
 
-      <SeedsTable data={filteredData} cropsById={cropsById} />
+      <SeedsTable data={filteredData} cropsById={produceById} />
     </div>
   )
 }

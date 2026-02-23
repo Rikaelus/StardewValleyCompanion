@@ -3,8 +3,7 @@
     "id": "unmilled-rice",
     "gameId": 271,
     "name": "Unmilled Rice",
-    "icon": "assets/crops/Unmilled_Rice.png",
-    "seedId": 273,
+    "icon": "assets/objects/Unmilled_Rice.png",
     "type": "vegetable",
     "category": -75,
     "price": 30,
@@ -56,14 +55,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "rice-shoot",
+        "seedGameId": 273,
+        "seedName": "Rice Shoot",
+        "growthDays": 8,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "amaranth",
     "gameId": 300,
     "name": "Amaranth",
-    "icon": "assets/crops/Amaranth.png",
-    "seedId": 299,
+    "icon": "assets/objects/Amaranth.png",
     "type": "vegetable",
     "category": -75,
     "price": 150,
@@ -115,14 +123,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "amaranth-seeds",
+        "seedGameId": 299,
+        "seedName": "Amaranth Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "grape",
     "gameId": 398,
     "name": "Grape",
-    "icon": "assets/crops/Grape.png",
-    "seedId": 301,
+    "icon": "assets/objects/Grape.png",
     "type": "fruit",
     "category": -79,
     "price": 80,
@@ -158,14 +175,43 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "grape-starter",
+        "seedGameId": 301,
+        "seedName": "Grape Starter",
+        "growthDays": 10,
+        "regrowDays": 3
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
+      }
     ]
   },
   {
     "id": "hops",
     "gameId": 304,
     "name": "Hops",
-    "icon": "assets/crops/Hops.png",
-    "seedId": 302,
+    "icon": "assets/objects/Hops.png",
     "type": "vegetable",
     "category": -75,
     "price": 25,
@@ -217,14 +263,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "hops-starter",
+        "seedGameId": 302,
+        "seedName": "Hops Starter",
+        "growthDays": 11,
+        "regrowDays": 1
+      }
     ]
   },
   {
     "id": "sweet-gem-berry",
     "gameId": 417,
     "name": "Sweet Gem Berry",
-    "icon": "assets/crops/Sweet_Gem_Berry.png",
-    "seedId": 347,
+    "icon": "assets/objects/Sweet_Gem_Berry.png",
     "type": "other",
     "category": -17,
     "price": 3000,
@@ -240,14 +295,23 @@
     "gifts": {},
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "rare-seed",
+        "seedGameId": 347,
+        "seedName": "Rare Seed",
+        "growthDays": 24,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "fairy-rose",
     "gameId": 595,
     "name": "Fairy Rose",
-    "icon": "assets/crops/Fairy_Rose.png",
-    "seedId": 425,
+    "icon": "assets/objects/Fairy_Rose.png",
     "type": "flower",
     "category": -80,
     "price": 290,
@@ -299,14 +363,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "fairy-seeds",
+        "seedGameId": 425,
+        "seedName": "Fairy Seeds",
+        "growthDays": 12,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "tulip",
     "gameId": 591,
     "name": "Tulip",
-    "icon": "assets/crops/Tulip.png",
-    "seedId": 427,
+    "icon": "assets/objects/Tulip.png",
     "type": "flower",
     "category": -80,
     "price": 30,
@@ -358,14 +431,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "tulip-bulb",
+        "seedGameId": 427,
+        "seedName": "Tulip Bulb",
+        "growthDays": 6,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "blue-jazz",
     "gameId": 597,
     "name": "Blue Jazz",
-    "icon": "assets/crops/Blue_Jazz.png",
-    "seedId": 429,
+    "icon": "assets/objects/Blue_Jazz.png",
     "type": "flower",
     "category": -80,
     "price": 50,
@@ -417,14 +499,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "jazz-seeds",
+        "seedGameId": 429,
+        "seedName": "Jazz Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "sunflower",
     "gameId": 421,
     "name": "Sunflower",
-    "icon": "assets/crops/Sunflower.png",
-    "seedId": 431,
+    "icon": "assets/objects/Sunflower.png",
     "type": "flower",
     "category": -80,
     "price": 80,
@@ -479,14 +570,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "sunflower-seeds",
+        "seedGameId": 431,
+        "seedName": "Sunflower Seeds",
+        "growthDays": 8,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "coffee-bean",
     "gameId": 433,
     "name": "Coffee Bean",
-    "icon": "assets/crops/Coffee_Bean.png",
-    "seedId": 433,
+    "icon": "assets/objects/Coffee_Bean.png",
     "type": "other",
     "category": -74,
     "price": 15,
@@ -539,14 +639,36 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "coffee-bean",
+        "seedGameId": 433,
+        "seedName": "Coffee Bean",
+        "growthDays": 10,
+        "regrowDays": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "traveling-merchant",
+        "storeName": "Traveling Merchant",
+        "storeBaseName": "Traveling Merchant",
+        "price": 2500,
+        "seasons": [
+          "fall",
+          "winter"
+        ],
+        "rotating": true,
+        "stock": 1
+      }
     ]
   },
   {
     "id": "poppy",
     "gameId": 376,
     "name": "Poppy",
-    "icon": "assets/crops/Poppy.png",
-    "seedId": 453,
+    "icon": "assets/objects/Poppy.png",
     "type": "flower",
     "category": -80,
     "price": 140,
@@ -600,14 +722,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "poppy-seeds",
+        "seedGameId": 453,
+        "seedName": "Poppy Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "summer-spangle",
     "gameId": 593,
     "name": "Summer Spangle",
-    "icon": "assets/crops/Summer_Spangle.png",
-    "seedId": 455,
+    "icon": "assets/objects/Summer_Spangle.png",
     "type": "flower",
     "category": -80,
     "price": 90,
@@ -659,14 +790,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "spangle-seeds",
+        "seedGameId": 455,
+        "seedName": "Spangle Seeds",
+        "growthDays": 8,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "parsnip",
     "gameId": 24,
     "name": "Parsnip",
-    "icon": "assets/crops/Parsnip.png",
-    "seedId": 472,
+    "icon": "assets/objects/Parsnip.png",
     "type": "vegetable",
     "category": -75,
     "price": 35,
@@ -721,14 +861,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "parsnip-seeds",
+        "seedGameId": 472,
+        "seedName": "Parsnip Seeds",
+        "growthDays": 4,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "green-bean",
     "gameId": 188,
     "name": "Green Bean",
-    "icon": "assets/crops/Green_Bean.png",
-    "seedId": 473,
+    "icon": "assets/objects/Green_Bean.png",
     "type": "vegetable",
     "category": -75,
     "price": 40,
@@ -782,14 +931,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "bean-starter",
+        "seedGameId": 473,
+        "seedName": "Bean Starter",
+        "growthDays": 10,
+        "regrowDays": 3
+      }
     ]
   },
   {
     "id": "cauliflower",
     "gameId": 190,
     "name": "Cauliflower",
-    "icon": "assets/crops/Cauliflower.png",
-    "seedId": 474,
+    "icon": "assets/objects/Cauliflower.png",
     "type": "vegetable",
     "category": -75,
     "price": 175,
@@ -843,14 +1001,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "cauliflower-seeds",
+        "seedGameId": 474,
+        "seedName": "Cauliflower Seeds",
+        "growthDays": 12,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "potato",
     "gameId": 192,
     "name": "Potato",
-    "icon": "assets/crops/Potato.png",
-    "seedId": 475,
+    "icon": "assets/objects/Potato.png",
     "type": "vegetable",
     "category": -75,
     "price": 80,
@@ -904,14 +1071,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "potato-seeds",
+        "seedGameId": 475,
+        "seedName": "Potato Seeds",
+        "growthDays": 6,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "garlic",
     "gameId": 248,
     "name": "Garlic",
-    "icon": "assets/crops/Garlic.png",
-    "seedId": 476,
+    "icon": "assets/objects/Garlic.png",
     "type": "vegetable",
     "category": -75,
     "price": 60,
@@ -963,14 +1139,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "garlic-seeds",
+        "seedGameId": 476,
+        "seedName": "Garlic Seeds",
+        "growthDays": 4,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "kale",
     "gameId": 250,
     "name": "Kale",
-    "icon": "assets/crops/Kale.png",
-    "seedId": 477,
+    "icon": "assets/objects/Kale.png",
     "type": "vegetable",
     "category": -75,
     "price": 110,
@@ -1022,14 +1207,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "kale-seeds",
+        "seedGameId": 477,
+        "seedName": "Kale Seeds",
+        "growthDays": 6,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "rhubarb",
     "gameId": 252,
     "name": "Rhubarb",
-    "icon": "assets/crops/Rhubarb.png",
-    "seedId": 478,
+    "icon": "assets/objects/Rhubarb.png",
     "type": "fruit",
     "category": -79,
     "price": 220,
@@ -1062,14 +1256,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "rhubarb-seeds",
+        "seedGameId": 478,
+        "seedName": "Rhubarb Seeds",
+        "growthDays": 13,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "melon",
     "gameId": 254,
     "name": "Melon",
-    "icon": "assets/crops/Melon.png",
-    "seedId": 479,
+    "icon": "assets/objects/Melon.png",
     "type": "fruit",
     "category": -79,
     "price": 250,
@@ -1106,14 +1309,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "melon-seeds",
+        "seedGameId": 479,
+        "seedName": "Melon Seeds",
+        "growthDays": 12,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "tomato",
     "gameId": 256,
     "name": "Tomato",
-    "icon": "assets/crops/Tomato.png",
-    "seedId": 480,
+    "icon": "assets/objects/Tomato.png",
     "type": "vegetable",
     "category": -75,
     "price": 60,
@@ -1167,14 +1379,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "tomato-seeds",
+        "seedGameId": 480,
+        "seedName": "Tomato Seeds",
+        "growthDays": 11,
+        "regrowDays": 4
+      }
     ]
   },
   {
     "id": "blueberry",
     "gameId": 258,
     "name": "Blueberry",
-    "icon": "assets/crops/Blueberry.png",
-    "seedId": 481,
+    "icon": "assets/objects/Blueberry.png",
     "type": "fruit",
     "category": -79,
     "price": 50,
@@ -1210,14 +1431,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "blueberry-seeds",
+        "seedGameId": 481,
+        "seedName": "Blueberry Seeds",
+        "growthDays": 13,
+        "regrowDays": 4
+      }
     ]
   },
   {
     "id": "hot-pepper",
     "gameId": 260,
     "name": "Hot Pepper",
-    "icon": "assets/crops/Hot_Pepper.png",
-    "seedId": 482,
+    "icon": "assets/objects/Hot_Pepper.png",
     "type": "fruit",
     "category": -79,
     "price": 40,
@@ -1253,14 +1483,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "pepper-seeds",
+        "seedGameId": 482,
+        "seedName": "Pepper Seeds",
+        "growthDays": 5,
+        "regrowDays": 3
+      }
     ]
   },
   {
     "id": "wheat",
     "gameId": 262,
     "name": "Wheat",
-    "icon": "assets/crops/Wheat.png",
-    "seedId": 483,
+    "icon": "assets/objects/Wheat.png",
     "type": "vegetable",
     "category": -75,
     "price": 25,
@@ -1315,14 +1554,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "wheat-seeds",
+        "seedGameId": 483,
+        "seedName": "Wheat Seeds",
+        "growthDays": 4,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "radish",
     "gameId": 264,
     "name": "Radish",
-    "icon": "assets/crops/Radish.png",
-    "seedId": 484,
+    "icon": "assets/objects/Radish.png",
     "type": "vegetable",
     "category": -75,
     "price": 90,
@@ -1374,14 +1622,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "radish-seeds",
+        "seedGameId": 484,
+        "seedName": "Radish Seeds",
+        "growthDays": 6,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "red-cabbage",
     "gameId": 266,
     "name": "Red Cabbage",
-    "icon": "assets/crops/Red_Cabbage.png",
-    "seedId": 485,
+    "icon": "assets/objects/Red_Cabbage.png",
     "type": "vegetable",
     "category": -75,
     "price": 260,
@@ -1435,14 +1692,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "red-cabbage-seeds",
+        "seedGameId": 485,
+        "seedName": "Red Cabbage Seeds",
+        "growthDays": 9,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "starfruit",
     "gameId": 268,
     "name": "Starfruit",
-    "icon": "assets/crops/Starfruit.png",
-    "seedId": 486,
+    "icon": "assets/objects/Starfruit.png",
     "type": "fruit",
     "category": -79,
     "price": 750,
@@ -1475,14 +1741,32 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "starfruit-seeds",
+        "seedGameId": 486,
+        "seedName": "Starfruit Seeds",
+        "growthDays": 13,
+        "regrowDays": null
+      },
+      {
+        "type": "shop",
+        "storeId": "luau",
+        "storeName": "Luau",
+        "storeBaseName": "Luau",
+        "price": 3000,
+        "stock": 1,
+        "stockLimit": 1
+      }
     ]
   },
   {
     "id": "corn",
     "gameId": 270,
     "name": "Corn",
-    "icon": "assets/crops/Corn.png",
-    "seedId": 487,
+    "icon": "assets/objects/Corn.png",
     "type": "vegetable",
     "category": -75,
     "price": 50,
@@ -1538,14 +1822,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "corn-seeds",
+        "seedGameId": 487,
+        "seedName": "Corn Seeds",
+        "growthDays": 14,
+        "regrowDays": 4
+      }
     ]
   },
   {
     "id": "eggplant",
     "gameId": 272,
     "name": "Eggplant",
-    "icon": "assets/crops/Eggplant.png",
-    "seedId": 488,
+    "icon": "assets/objects/Eggplant.png",
     "type": "vegetable",
     "category": -75,
     "price": 60,
@@ -1599,14 +1892,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "eggplant-seeds",
+        "seedGameId": 488,
+        "seedName": "Eggplant Seeds",
+        "growthDays": 5,
+        "regrowDays": 5
+      }
     ]
   },
   {
     "id": "artichoke",
     "gameId": 274,
     "name": "Artichoke",
-    "icon": "assets/crops/Artichoke.png",
-    "seedId": 489,
+    "icon": "assets/objects/Artichoke.png",
     "type": "vegetable",
     "category": -75,
     "price": 160,
@@ -1658,14 +1960,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "artichoke-seeds",
+        "seedGameId": 489,
+        "seedName": "Artichoke Seeds",
+        "growthDays": 8,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "pumpkin",
     "gameId": 276,
     "name": "Pumpkin",
-    "icon": "assets/crops/Pumpkin.png",
-    "seedId": 490,
+    "icon": "assets/objects/Pumpkin.png",
     "type": "vegetable",
     "category": -75,
     "price": 320,
@@ -1720,14 +2031,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "pumpkin-seeds",
+        "seedGameId": 490,
+        "seedName": "Pumpkin Seeds",
+        "growthDays": 13,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "bok-choy",
     "gameId": 278,
     "name": "Bok Choy",
-    "icon": "assets/crops/Bok_Choy.png",
-    "seedId": 491,
+    "icon": "assets/objects/Bok_Choy.png",
     "type": "vegetable",
     "category": -75,
     "price": 80,
@@ -1779,14 +2099,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "bok-choy-seeds",
+        "seedGameId": 491,
+        "seedName": "Bok Choy Seeds",
+        "growthDays": 4,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "yam",
     "gameId": 280,
     "name": "Yam",
-    "icon": "assets/crops/Yam.png",
-    "seedId": 492,
+    "icon": "assets/objects/Yam.png",
     "type": "vegetable",
     "category": -75,
     "price": 160,
@@ -1840,14 +2169,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "yam-seeds",
+        "seedGameId": 492,
+        "seedName": "Yam Seeds",
+        "growthDays": 10,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "cranberries",
     "gameId": 282,
     "name": "Cranberries",
-    "icon": "assets/crops/Cranberries.png",
-    "seedId": 493,
+    "icon": "assets/objects/Cranberries.png",
     "type": "fruit",
     "category": -79,
     "price": 75,
@@ -1880,14 +2218,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "cranberry-seeds",
+        "seedGameId": 493,
+        "seedName": "Cranberry Seeds",
+        "growthDays": 7,
+        "regrowDays": 5
+      }
     ]
   },
   {
     "id": "beet",
     "gameId": 284,
     "name": "Beet",
-    "icon": "assets/crops/Beet.png",
-    "seedId": 494,
+    "icon": "assets/objects/Beet.png",
     "type": "vegetable",
     "category": -75,
     "price": 100,
@@ -1939,14 +2286,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "beet-seeds",
+        "seedGameId": 494,
+        "seedName": "Beet Seeds",
+        "growthDays": 6,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "wild-horseradish",
     "gameId": 16,
     "name": "Wild Horseradish",
-    "icon": "assets/crops/Wild_Horseradish.png",
-    "seedId": 495,
+    "icon": "assets/objects/Wild_Horseradish.png",
     "type": "other",
     "category": -81,
     "price": 50,
@@ -1993,14 +2349,43 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "spring-seeds",
+        "seedGameId": 495,
+        "seedName": "Spring Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "spring"
+      }
     ]
   },
   {
     "id": "spice-berry",
     "gameId": 396,
     "name": "Spice Berry",
-    "icon": "assets/crops/Spice_Berry.png",
-    "seedId": 496,
+    "icon": "assets/objects/Spice_Berry.png",
     "type": "fruit",
     "category": -79,
     "price": 80,
@@ -2037,14 +2422,61 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "summer-seeds",
+        "seedGameId": 496,
+        "seedName": "Summer Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-festival",
+        "storeName": "Desert Festival (Demetrius)",
+        "storeBaseName": "Desert Festival",
+        "price": 160,
+        "quantity": 3,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemAmount": 10
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
+      }
     ]
   },
   {
     "id": "common-mushroom",
     "gameId": 404,
     "name": "Common Mushroom",
-    "icon": "assets/crops/Common_Mushroom.png",
-    "seedId": 497,
+    "icon": "assets/objects/Common_Mushroom.png",
     "type": "other",
     "category": -81,
     "price": 40,
@@ -2082,14 +2514,52 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "fall-seeds",
+        "seedGameId": 497,
+        "seedName": "Fall Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Volcano Dungeon"
+      }
     ]
   },
   {
     "id": "winter-root",
     "gameId": 412,
     "name": "Winter Root",
-    "icon": "assets/crops/Winter_Root.png",
-    "seedId": 498,
+    "icon": "assets/objects/Winter_Root.png",
     "type": "other",
     "category": -81,
     "price": 70,
@@ -2126,14 +2596,23 @@
     },
     "sellingLocations": [
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "winter-seeds",
+        "seedGameId": 498,
+        "seedName": "Winter Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "ancient-fruit",
     "gameId": 454,
     "name": "Ancient Fruit",
-    "icon": "assets/crops/Ancient_Fruit.png",
-    "seedId": 499,
+    "icon": "assets/objects/Ancient_Fruit.png",
     "type": "fruit",
     "category": -79,
     "price": 550,
@@ -2170,14 +2649,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "ancient-seeds",
+        "seedGameId": 499,
+        "seedName": "Ancient Seeds",
+        "growthDays": 28,
+        "regrowDays": 7
+      }
     ]
   },
   {
     "id": "strawberry",
     "gameId": 400,
     "name": "Strawberry",
-    "icon": "assets/crops/Strawberry.png",
-    "seedId": 745,
+    "icon": "assets/objects/Strawberry.png",
     "type": "fruit",
     "category": -79,
     "price": 120,
@@ -2211,14 +2699,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "strawberry-seeds",
+        "seedGameId": 745,
+        "seedName": "Strawberry Seeds",
+        "growthDays": 8,
+        "regrowDays": 4
+      }
     ]
   },
   {
     "id": "cactus-fruit",
     "gameId": 90,
     "name": "Cactus Fruit",
-    "icon": "assets/crops/Cactus_Fruit.png",
-    "seedId": 802,
+    "icon": "assets/objects/Cactus_Fruit.png",
     "type": "fruit",
     "category": -79,
     "price": 75,
@@ -2253,14 +2750,37 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "cactus-seeds",
+        "seedGameId": 802,
+        "seedName": "Cactus Seeds",
+        "growthDays": 12,
+        "regrowDays": 3
+      },
+      {
+        "type": "shop",
+        "storeId": "sandy",
+        "storeName": "Oasis (Sandy)",
+        "storeBaseName": "Oasis (Sandy)",
+        "price": 150,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Desert"
+      }
     ]
   },
   {
     "id": "taro-root",
     "gameId": 830,
     "name": "Taro Root",
-    "icon": "assets/crops/Taro_Root.png",
-    "seedId": 831,
+    "icon": "assets/objects/Taro_Root.png",
     "type": "vegetable",
     "category": -75,
     "price": 100,
@@ -2312,14 +2832,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "taro-tuber",
+        "seedGameId": 831,
+        "seedName": "Taro Tuber",
+        "growthDays": 10,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "pineapple",
     "gameId": 832,
     "name": "Pineapple",
-    "icon": "assets/crops/Pineapple.png",
-    "seedId": 833,
+    "icon": "assets/objects/Pineapple.png",
     "type": "fruit",
     "category": -79,
     "price": 300,
@@ -2352,14 +2881,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "pineapple-seeds",
+        "seedGameId": 833,
+        "seedName": "Pineapple Seeds",
+        "growthDays": 14,
+        "regrowDays": 7
+      }
     ]
   },
   {
     "id": "fiber",
     "gameId": 771,
     "name": "Fiber",
-    "icon": "assets/crops/Fiber.png",
-    "seedId": 885,
+    "icon": "assets/objects/Fiber.png",
     "type": "other",
     "category": -16,
     "price": 1,
@@ -2414,14 +2952,52 @@
     "sellingLocations": [
       "robin",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "fiber-seeds",
+        "seedGameId": 885,
+        "seedName": "Fiber Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-festival",
+        "storeName": "Desert Festival (Vincent)",
+        "storeBaseName": "Desert Festival",
+        "price": 2,
+        "quantity": 10,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemAmount": 1,
+        "stock": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "storeBaseName": "Desert Trade (Sandy)",
+        "price": 2,
+        "tradeItemId": "stone",
+        "tradeItemGameId": 390,
+        "tradeItemName": "Stone",
+        "tradeItemIcon": "assets/objects/Stone.png",
+        "tradeItemAmount": 5,
+        "days": [
+          "Tuesday"
+        ]
+      }
     ]
   },
   {
     "id": "qi-fruit",
     "gameId": 889,
     "name": "Qi Fruit",
-    "icon": "assets/crops/Qi_Fruit.png",
-    "seedId": 890,
+    "icon": "assets/objects/Qi_Fruit.png",
     "type": "fruit",
     "category": -79,
     "price": 1,
@@ -2457,14 +3033,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "qi-bean",
+        "seedGameId": 890,
+        "seedName": "Qi Bean",
+        "growthDays": 4,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "carrot",
-    "gameId": null,
+    "gameId": "Carrot",
     "name": "Carrot",
-    "icon": "assets/crops/Carrot.png",
-    "seedId": null,
+    "icon": "assets/objects/Carrot.png",
     "type": "vegetable",
     "category": -75,
     "price": 35,
@@ -2516,14 +3101,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "carrot-seeds",
+        "seedGameId": "CarrotSeeds",
+        "seedName": "Carrot Seeds",
+        "growthDays": 3,
+        "regrowDays": null
+      }
     ]
   },
   {
     "id": "summer-squash",
-    "gameId": null,
+    "gameId": "SummerSquash",
     "name": "Summer Squash",
-    "icon": "assets/crops/Summer_Squash.png",
-    "seedId": null,
+    "icon": "assets/objects/Summer_Squash.png",
     "type": "vegetable",
     "category": -75,
     "price": 45,
@@ -2575,14 +3169,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "summer-squash-seeds",
+        "seedGameId": "SummerSquashSeeds",
+        "seedName": "Summer Squash Seeds",
+        "growthDays": 6,
+        "regrowDays": 3
+      }
     ]
   },
   {
     "id": "broccoli",
-    "gameId": null,
+    "gameId": "Broccoli",
     "name": "Broccoli",
-    "icon": "assets/crops/Broccoli.png",
-    "seedId": null,
+    "icon": "assets/objects/Broccoli.png",
     "type": "vegetable",
     "category": -75,
     "price": 70,
@@ -2634,14 +3237,23 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "broccoli-seeds",
+        "seedGameId": "BroccoliSeeds",
+        "seedName": "Broccoli Seeds",
+        "growthDays": 8,
+        "regrowDays": 4
+      }
     ]
   },
   {
     "id": "powdermelon",
-    "gameId": null,
+    "gameId": "Powdermelon",
     "name": "Powdermelon",
-    "icon": "assets/crops/Powdermelon.png",
-    "seedId": null,
+    "icon": "assets/objects/Powdermelon.png",
     "type": "fruit",
     "category": -79,
     "price": 60,
@@ -2674,6 +3286,16 @@
     "sellingLocations": [
       "pierre",
       "shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "seed",
+        "seedId": "powdermelon-seeds",
+        "seedGameId": "PowdermelonSeeds",
+        "seedName": "Powdermelon Seeds",
+        "growthDays": 7,
+        "regrowDays": null
+      }
     ]
   }
 ]

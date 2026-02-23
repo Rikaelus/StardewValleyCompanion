@@ -1,0 +1,21 @@
+{
+  "$schema": "machine-names-schema",
+  "description": "Maps qualified machine IDs from Machines.json to friendly display names. Only machines listed here are processed for artisan recipes.",
+  "machines": {
+    "(BC)12":          "Keg",
+    "(BC)15":          "Preserves Jar",
+    "(BC)16":          "Cheese Press",
+    "(BC)17":          "Loom",
+    "(BC)19":          "Oil Maker",
+    "(BC)24":          "Mayonnaise Machine",
+    "(BC)10":          "Bee House",
+    "(BC)101":         "Tapper",
+    "(BC)163":         "Cask",
+    "(BC)265":         "Dehydrator",
+    "(BC)254":         "Fish Smoker",
+    "(BC)Dehydrator":  "Dehydrator",
+    "(BC)FishSmoker":  "Fish Smoker",
+    "(BC)BaitMaker":   "Bait Maker",
+    "(BC)MushroomLog": "Mushroom Log"
+  }
+}

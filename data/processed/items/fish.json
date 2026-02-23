@@ -4,7 +4,7 @@
     "id": "pufferfish",
     "gameId": 128,
     "name": "Pufferfish",
-    "icon": "assets/fish/Pufferfish.png",
+    "icon": "assets/objects/Pufferfish.png",
     "difficulty": 80,
     "behaviorType": "floater",
     "minSize": 1,
@@ -73,12 +73,34 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island Pirate Cove",
-      "Ginger Island South",
-      "Ginger Island Southeast",
-      "Ginger Island West",
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ginger Island Pirate Cove",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island South",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island Southeast",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "summer"
+        ]
+      }
     ]
   },
   {
@@ -86,7 +108,7 @@
     "id": "anchovy",
     "gameId": 129,
     "name": "Anchovy",
-    "icon": "assets/fish/Anchovy.png",
+    "icon": "assets/objects/Anchovy.png",
     "difficulty": 30,
     "behaviorType": "dart",
     "minSize": 1,
@@ -155,8 +177,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "spring"
+        ]
+      }
     ]
   },
   {
@@ -164,7 +193,7 @@
     "id": "tuna",
     "gameId": 130,
     "name": "Tuna",
-    "icon": "assets/fish/Tuna.png",
+    "icon": "assets/objects/Tuna.png",
     "difficulty": 70,
     "behaviorType": "smooth",
     "minSize": 12,
@@ -234,28 +263,34 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island Pirate Cove",
-      "Ginger Island South",
-      "Ginger Island Southeast",
-      "Ginger Island West",
-      "Ocean"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Ocean"
-        ],
-        "seasons": "Summer, Winter"
+        "type": "fish",
+        "location": "Ginger Island Pirate Cove",
+        "seasons": null
       },
       {
-        "locations": [
-          "Ginger Island South",
-          "Ginger Island Southeast",
-          "Ginger Island Pirate Cove",
-          "Ginger Island West"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ginger Island South",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island Southeast",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "summer",
+          "winter"
+        ]
       }
     ]
   },
@@ -264,7 +299,7 @@
     "id": "sardine",
     "gameId": 131,
     "name": "Sardine",
-    "icon": "assets/fish/Sardine.png",
+    "icon": "assets/objects/Sardine.png",
     "difficulty": 30,
     "behaviorType": "dart",
     "minSize": 1,
@@ -338,8 +373,16 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "spring",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -347,7 +390,7 @@
     "id": "bream",
     "gameId": 132,
     "name": "Bream",
-    "icon": "assets/fish/Bream.png",
+    "icon": "assets/objects/Bream.png",
     "difficulty": 35,
     "behaviorType": "smooth",
     "minSize": 12,
@@ -418,9 +461,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": null
+      }
     ]
   },
   {
@@ -428,7 +479,7 @@
     "id": "largemouth-bass",
     "gameId": 136,
     "name": "Largemouth Bass",
-    "icon": "assets/fish/Largemouth_Bass.png",
+    "icon": "assets/objects/Largemouth_Bass.png",
     "difficulty": 50,
     "behaviorType": "mixed",
     "minSize": 11,
@@ -499,8 +550,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": null
+      }
     ]
   },
   {
@@ -508,7 +563,7 @@
     "id": "smallmouth-bass",
     "gameId": 137,
     "name": "Smallmouth Bass",
-    "icon": "assets/fish/Smallmouth_Bass.png",
+    "icon": "assets/objects/Smallmouth_Bass.png",
     "difficulty": 28,
     "behaviorType": "mixed",
     "minSize": 12,
@@ -577,9 +632,23 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "spring"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall",
+          "spring"
+        ]
+      }
     ]
   },
   {
@@ -587,7 +656,7 @@
     "id": "rainbow-trout",
     "gameId": 138,
     "name": "Rainbow Trout",
-    "icon": "assets/fish/Rainbow_Trout.png",
+    "icon": "assets/objects/Rainbow_Trout.png",
     "difficulty": 45,
     "behaviorType": "mixed",
     "minSize": 10,
@@ -653,24 +722,27 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Mountain Lake",
-      "Town River"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Town River",
-          "Mountain Lake"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "summer"
+        ]
       },
       {
-        "locations": [
-          "Forest River"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "summer"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "summer"
+        ]
       }
     ]
   },
@@ -679,7 +751,7 @@
     "id": "salmon",
     "gameId": 139,
     "name": "Salmon",
-    "icon": "assets/fish/Salmon.png",
+    "icon": "assets/objects/Salmon.png",
     "difficulty": 50,
     "behaviorType": "mixed",
     "minSize": 24,
@@ -745,9 +817,21 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall"
+        ]
+      }
     ]
   },
   {
@@ -755,7 +839,7 @@
     "id": "walleye",
     "gameId": 140,
     "name": "Walleye",
-    "icon": "assets/fish/Walleye.png",
+    "icon": "assets/objects/Walleye.png",
     "difficulty": 45,
     "behaviorType": "smooth",
     "minSize": 10,
@@ -827,10 +911,31 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Mountain Lake",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -838,7 +943,7 @@
     "id": "perch",
     "gameId": 141,
     "name": "Perch",
-    "icon": "assets/fish/Perch.png",
+    "icon": "assets/objects/Perch.png",
     "difficulty": 35,
     "behaviorType": "dart",
     "minSize": 10,
@@ -906,10 +1011,28 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Mountain Lake",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -917,7 +1040,7 @@
     "id": "carp",
     "gameId": 142,
     "name": "Carp",
-    "icon": "assets/fish/Carp.png",
+    "icon": "assets/objects/Carp.png",
     "difficulty": 15,
     "behaviorType": "mixed",
     "minSize": 15,
@@ -991,26 +1114,30 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake",
-      "Mutant Bug Lair",
-      "Secret Woods",
-      "Sewers"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Mountain Lake"
-        ],
-        "seasons": "Fall, Spring, Summer"
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "fall",
+          "spring",
+          "summer"
+        ]
       },
       {
-        "locations": [
-          "Sewers",
-          "Mutant Bug Lair",
-          "Secret Woods"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Mutant Bug Lair",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Secret Woods",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Sewers",
+        "seasons": null
       }
     ]
   },
@@ -1019,7 +1146,7 @@
     "id": "catfish",
     "gameId": 143,
     "name": "Catfish",
-    "icon": "assets/fish/Catfish.png",
+    "icon": "assets/objects/Catfish.png",
     "difficulty": 75,
     "behaviorType": "mixed",
     "minSize": 12,
@@ -1093,26 +1220,34 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Secret Woods",
-      "Town River",
-      "Witch's Swamp"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Town River",
-          "Forest River"
-        ],
-        "seasons": "Fall, Spring, Winter"
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "spring",
+          "winter"
+        ]
       },
       {
-        "locations": [
-          "Secret Woods",
-          "Witch's Swamp"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Secret Woods",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall",
+          "spring",
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Witch's Swamp",
+        "seasons": null
       }
     ]
   },
@@ -1121,7 +1256,7 @@
     "id": "pike",
     "gameId": 144,
     "name": "Pike",
-    "icon": "assets/fish/Pike.png",
+    "icon": "assets/objects/Pike.png",
     "difficulty": 60,
     "behaviorType": "dart",
     "minSize": 15,
@@ -1191,9 +1326,23 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "summer",
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "summer",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -1201,7 +1350,7 @@
     "id": "sunfish",
     "gameId": 145,
     "name": "Sunfish",
-    "icon": "assets/fish/Sunfish.png",
+    "icon": "assets/objects/Sunfish.png",
     "difficulty": 30,
     "behaviorType": "mixed",
     "minSize": 5,
@@ -1271,9 +1420,23 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "spring",
+          "summer"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "spring",
+          "summer"
+        ]
+      }
     ]
   },
   {
@@ -1281,7 +1444,7 @@
     "id": "red-mullet",
     "gameId": 146,
     "name": "Red Mullet",
-    "icon": "assets/fish/Red_Mullet.png",
+    "icon": "assets/objects/Red_Mullet.png",
     "difficulty": 55,
     "behaviorType": "smooth",
     "minSize": 8,
@@ -1349,8 +1512,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "summer",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -1358,7 +1528,7 @@
     "id": "herring",
     "gameId": 147,
     "name": "Herring",
-    "icon": "assets/fish/Herring.png",
+    "icon": "assets/objects/Herring.png",
     "difficulty": 25,
     "behaviorType": "dart",
     "minSize": 8,
@@ -1427,8 +1597,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -1436,7 +1613,7 @@
     "id": "eel",
     "gameId": 148,
     "name": "Eel",
-    "icon": "assets/fish/Eel.png",
+    "icon": "assets/objects/Eel.png",
     "difficulty": 70,
     "behaviorType": "smooth",
     "minSize": 12,
@@ -1508,8 +1685,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "spring"
+        ]
+      }
     ]
   },
   {
@@ -1517,7 +1701,7 @@
     "id": "octopus",
     "gameId": 149,
     "name": "Octopus",
-    "icon": "assets/fish/Octopus.png",
+    "icon": "assets/objects/Octopus.png",
     "difficulty": 95,
     "behaviorType": "sinker",
     "minSize": 12,
@@ -1584,10 +1768,24 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island West",
-      "Night Market",
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "summer"
+        ]
+      }
     ]
   },
   {
@@ -1595,7 +1793,7 @@
     "id": "red-snapper",
     "gameId": 150,
     "name": "Red Snapper",
-    "icon": "assets/fish/Red_Snapper.png",
+    "icon": "assets/objects/Red_Snapper.png",
     "difficulty": 40,
     "behaviorType": "mixed",
     "minSize": 8,
@@ -1667,8 +1865,16 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "summer",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -1676,7 +1882,7 @@
     "id": "squid",
     "gameId": 151,
     "name": "Squid",
-    "icon": "assets/fish/Squid.png",
+    "icon": "assets/objects/Squid.png",
     "difficulty": 75,
     "behaviorType": "sinker",
     "minSize": 12,
@@ -1743,8 +1949,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": null
+      }
     ]
   },
   {
@@ -1752,7 +1962,7 @@
     "id": "seaweed",
     "gameId": 152,
     "name": "Seaweed",
-    "icon": "assets/fish/Seaweed.png",
+    "icon": "assets/objects/Seaweed.png",
     "difficulty": 5,
     "behaviorType": "floater",
     "minSize": 5,
@@ -1818,10 +2028,28 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "location": [
-      "Beach Farm",
-      "Night Market",
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.088
+      },
+      {
+        "type": "fish",
+        "location": "Beach Farm",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": null
+      }
     ]
   },
   {
@@ -1829,7 +2057,7 @@
     "id": "green-algae",
     "gameId": 153,
     "name": "Green Algae",
-    "icon": "assets/fish/Green_Algae.png",
+    "icon": "assets/objects/Green_Algae.png",
     "difficulty": 5,
     "behaviorType": "floater",
     "minSize": 5,
@@ -1897,16 +2125,69 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "location": [
-      "Desert",
-      "Forest River",
-      "Mines (F20)",
-      "Mines (F60)",
-      "Mountain Lake",
-      "Mutant Bug Lair",
-      "Sewers",
-      "Town River",
-      "Witch's Swamp"
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Green Slime",
+        "chance": 0.1
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_slimejack",
+        "minPopulation": 3,
+        "chance": 0.1
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish",
+        "location": "Desert",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mutant Bug Lair",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Sewers",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Witch's Swamp",
+        "seasons": null
+      }
     ]
   },
   {
@@ -1914,7 +2195,7 @@
     "id": "sea-cucumber",
     "gameId": 154,
     "name": "Sea Cucumber",
-    "icon": "assets/fish/Sea_Cucumber.png",
+    "icon": "assets/objects/Sea_Cucumber.png",
     "difficulty": 40,
     "behaviorType": "sinker",
     "minSize": 3,
@@ -1983,22 +2264,19 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Night Market",
-      "Ocean"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Ocean"
-        ],
-        "seasons": "Fall, Winter"
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
       },
       {
-        "locations": [
-          "Night Market"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
       }
     ]
   },
@@ -2007,7 +2285,7 @@
     "id": "super-cucumber",
     "gameId": 155,
     "name": "Super Cucumber",
-    "icon": "assets/fish/Super_Cucumber.png",
+    "icon": "assets/objects/Super_Cucumber.png",
     "difficulty": 80,
     "behaviorType": "sinker",
     "minSize": 12,
@@ -2076,30 +2354,39 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island Pirate Cove",
-      "Ginger Island South",
-      "Ginger Island Southeast",
-      "Ginger Island West",
-      "Night Market",
-      "Ocean"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Ocean"
-        ],
-        "seasons": "Fall, Summer"
+        "type": "fish",
+        "location": "Ginger Island Pirate Cove",
+        "seasons": null
       },
       {
-        "locations": [
-          "Night Market",
-          "Ginger Island South",
-          "Ginger Island Southeast",
-          "Ginger Island Pirate Cove",
-          "Ginger Island West"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ginger Island South",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island Southeast",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "summer"
+        ]
       }
     ]
   },
@@ -2108,7 +2395,7 @@
     "id": "ghostfish",
     "gameId": 156,
     "name": "Ghostfish",
-    "icon": "assets/fish/Ghostfish.png",
+    "icon": "assets/objects/Ghostfish.png",
     "difficulty": 50,
     "behaviorType": "mixed",
     "minSize": 10,
@@ -2179,9 +2466,22 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mines (F20)",
-      "Mines (F60)"
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Ghost",
+        "chance": 0.08
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2189,7 +2489,7 @@
     "id": "white-algae",
     "gameId": 157,
     "name": "White Algae",
-    "icon": "assets/fish/White_Algae.png",
+    "icon": "assets/objects/White_Algae.png",
     "difficulty": 5,
     "behaviorType": "floater",
     "minSize": 5,
@@ -2257,12 +2557,63 @@
     "sellingLocations": [
       "shipping-bin"
     ],
-    "location": [
-      "Mines (F20)",
-      "Mines (F60)",
-      "Mutant Bug Lair",
-      "Sewers",
-      "Witch's Swamp"
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Grub",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Fly",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Sludge",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bug",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Tiger Slime",
+        "chance": 0.1
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_ghostfish",
+        "minPopulation": 9,
+        "chance": 0.05
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mutant Bug Lair",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Sewers",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Witch's Swamp",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2270,7 +2621,7 @@
     "id": "stonefish",
     "gameId": 158,
     "name": "Stonefish",
-    "icon": "assets/fish/Stonefish.png",
+    "icon": "assets/objects/Stonefish.png",
     "difficulty": 65,
     "behaviorType": "sinker",
     "minSize": 15,
@@ -2341,8 +2692,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mines (F20)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2350,7 +2705,7 @@
     "id": "crimsonfish",
     "gameId": 159,
     "name": "Crimsonfish",
-    "icon": "assets/fish/Crimsonfish.png",
+    "icon": "assets/objects/Crimsonfish.png",
     "difficulty": 95,
     "behaviorType": "mixed",
     "minSize": 20,
@@ -2415,8 +2770,14 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "summer"
+        ]
+      }
     ],
     "minFishingLevel": 5
   },
@@ -2425,7 +2786,7 @@
     "id": "angler",
     "gameId": 160,
     "name": "Angler",
-    "icon": "assets/fish/Angler.png",
+    "icon": "assets/objects/Angler.png",
     "difficulty": 85,
     "behaviorType": "smooth",
     "minSize": 18,
@@ -2494,8 +2855,14 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall"
+        ]
+      }
     ],
     "minFishingLevel": 3
   },
@@ -2504,7 +2871,7 @@
     "id": "ice-pip",
     "gameId": 161,
     "name": "Ice Pip",
-    "icon": "assets/fish/Ice_Pip.png",
+    "icon": "assets/objects/Ice_Pip.png",
     "difficulty": 85,
     "behaviorType": "dart",
     "minSize": 8,
@@ -2575,8 +2942,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mines (F60)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2584,7 +2955,7 @@
     "id": "lava-eel",
     "gameId": 162,
     "name": "Lava Eel",
-    "icon": "assets/fish/Lava_Eel.png",
+    "icon": "assets/objects/Lava_Eel.png",
     "difficulty": 90,
     "behaviorType": "mixed",
     "minSize": 32,
@@ -2655,9 +3026,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mines (F100)",
-      "Volcano Caldera"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F100)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Volcano Caldera",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2665,7 +3044,7 @@
     "id": "legend",
     "gameId": 163,
     "name": "Legend",
-    "icon": "assets/fish/Legend.png",
+    "icon": "assets/objects/Legend.png",
     "difficulty": 110,
     "behaviorType": "mixed",
     "minSize": 50,
@@ -2733,8 +3112,14 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "spring"
+        ]
+      }
     ],
     "minFishingLevel": 10
   },
@@ -2743,7 +3128,7 @@
     "id": "sandfish",
     "gameId": 164,
     "name": "Sandfish",
-    "icon": "assets/fish/Sandfish.png",
+    "icon": "assets/objects/Sandfish.png",
     "difficulty": 65,
     "behaviorType": "mixed",
     "minSize": 8,
@@ -2814,8 +3199,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Desert"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Desert",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2823,7 +3212,7 @@
     "id": "scorpion-carp",
     "gameId": 165,
     "name": "Scorpion Carp",
-    "icon": "assets/fish/Scorpion_Carp.png",
+    "icon": "assets/objects/Scorpion_Carp.png",
     "difficulty": 90,
     "behaviorType": "dart",
     "minSize": 12,
@@ -2893,8 +3282,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Desert"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Desert",
+        "seasons": null
+      }
     ]
   },
   {
@@ -2902,7 +3295,7 @@
     "id": "flounder",
     "gameId": 267,
     "name": "Flounder",
-    "icon": "assets/fish/Flounder.png",
+    "icon": "assets/objects/Flounder.png",
     "difficulty": 50,
     "behaviorType": "sinker",
     "minSize": 4,
@@ -2970,28 +3363,34 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island Pirate Cove",
-      "Ginger Island South",
-      "Ginger Island Southeast",
-      "Ginger Island West",
-      "Ocean"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Ocean"
-        ],
-        "seasons": "Spring, Summer"
+        "type": "fish",
+        "location": "Ginger Island Pirate Cove",
+        "seasons": null
       },
       {
-        "locations": [
-          "Ginger Island South",
-          "Ginger Island Southeast",
-          "Ginger Island Pirate Cove",
-          "Ginger Island West"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ginger Island South",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island Southeast",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer"
+        ]
       }
     ]
   },
@@ -3000,7 +3399,7 @@
     "id": "midnight-carp",
     "gameId": 269,
     "name": "Midnight Carp",
-    "icon": "assets/fish/Midnight_Carp.png",
+    "icon": "assets/objects/Midnight_Carp.png",
     "difficulty": 55,
     "behaviorType": "mixed",
     "minSize": 12,
@@ -3068,26 +3467,32 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Ginger Island North",
-      "Ginger Island West",
-      "Mountain Lake"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Mountain Lake",
-          "Forest River"
-        ],
-        "seasons": "Fall, Winter"
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
       },
       {
-        "locations": [
-          "Ginger Island West",
-          "Ginger Island North"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ginger Island North",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
       }
     ]
   },
@@ -3096,7 +3501,7 @@
     "id": "clam",
     "gameId": 372,
     "name": "Clam",
-    "icon": "assets/fish/Clam.png",
+    "icon": "assets/objects/Clam.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -3161,8 +3566,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ],
     "alsoAvailableAs": {
       "type": "forage",
@@ -3175,7 +3584,7 @@
     "id": "mutant-carp",
     "gameId": 682,
     "name": "Mutant Carp",
-    "icon": "assets/fish/Mutant_Carp.png",
+    "icon": "assets/objects/Mutant_Carp.png",
     "difficulty": 80,
     "behaviorType": "dart",
     "minSize": 36,
@@ -3243,8 +3652,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Sewers"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Sewers",
+        "seasons": null
+      }
     ]
   },
   {
@@ -3252,7 +3665,7 @@
     "id": "sturgeon",
     "gameId": 698,
     "name": "Sturgeon",
-    "icon": "assets/fish/Sturgeon.png",
+    "icon": "assets/objects/Sturgeon.png",
     "difficulty": 78,
     "behaviorType": "mixed",
     "minSize": 12,
@@ -3322,8 +3735,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "summer",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -3331,7 +3751,7 @@
     "id": "tiger-trout",
     "gameId": 699,
     "name": "Tiger Trout",
-    "icon": "assets/fish/Tiger_Trout.png",
+    "icon": "assets/objects/Tiger_Trout.png",
     "difficulty": 60,
     "behaviorType": "dart",
     "minSize": 10,
@@ -3403,9 +3823,23 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -3413,7 +3847,7 @@
     "id": "bullhead",
     "gameId": 700,
     "name": "Bullhead",
-    "icon": "assets/fish/Bullhead.png",
+    "icon": "assets/objects/Bullhead.png",
     "difficulty": 46,
     "behaviorType": "smooth",
     "minSize": 12,
@@ -3484,8 +3918,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": null
+      }
     ]
   },
   {
@@ -3493,7 +3931,7 @@
     "id": "tilapia",
     "gameId": 701,
     "name": "Tilapia",
-    "icon": "assets/fish/Tilapia.png",
+    "icon": "assets/objects/Tilapia.png",
     "difficulty": 50,
     "behaviorType": "mixed",
     "minSize": 11,
@@ -3563,24 +4001,24 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island North",
-      "Ginger Island West",
-      "Ocean"
-    ],
-    "notes": [
+    "sources": [
       {
-        "locations": [
-          "Ocean"
-        ],
-        "seasons": "Fall, Summer"
+        "type": "fish",
+        "location": "Ginger Island North",
+        "seasons": null
       },
       {
-        "locations": [
-          "Ginger Island West",
-          "Ginger Island North"
-        ],
-        "seasons": "All Seasons"
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "summer"
+        ]
       }
     ]
   },
@@ -3589,7 +4027,7 @@
     "id": "chub",
     "gameId": 702,
     "name": "Chub",
-    "icon": "assets/fish/Chub.png",
+    "icon": "assets/objects/Chub.png",
     "difficulty": 35,
     "behaviorType": "dart",
     "minSize": 12,
@@ -3661,9 +4099,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": null
+      }
     ]
   },
   {
@@ -3671,7 +4117,7 @@
     "id": "dorado",
     "gameId": 704,
     "name": "Dorado",
-    "icon": "assets/fish/Dorado.png",
+    "icon": "assets/objects/Dorado.png",
     "difficulty": 78,
     "behaviorType": "mixed",
     "minSize": 24,
@@ -3738,8 +4184,14 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "summer"
+        ]
+      }
     ]
   },
   {
@@ -3747,7 +4199,7 @@
     "id": "albacore",
     "gameId": 705,
     "name": "Albacore",
-    "icon": "assets/fish/Albacore.png",
+    "icon": "assets/objects/Albacore.png",
     "difficulty": 60,
     "behaviorType": "mixed",
     "minSize": 20,
@@ -3819,8 +4271,15 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "fall",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -3828,7 +4287,7 @@
     "id": "shad",
     "gameId": 706,
     "name": "Shad",
-    "icon": "assets/fish/Shad.png",
+    "icon": "assets/objects/Shad.png",
     "difficulty": 45,
     "behaviorType": "smooth",
     "minSize": 20,
@@ -3900,9 +4359,25 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "fall",
+          "spring",
+          "summer"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "fall",
+          "spring",
+          "summer"
+        ]
+      }
     ]
   },
   {
@@ -3910,7 +4385,7 @@
     "id": "lingcod",
     "gameId": 707,
     "name": "Lingcod",
-    "icon": "assets/fish/Lingcod.png",
+    "icon": "assets/objects/Lingcod.png",
     "difficulty": 85,
     "behaviorType": "mixed",
     "minSize": 30,
@@ -3978,10 +4453,28 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River",
-      "Mountain Lake",
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": [
+          "winter"
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": [
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -3989,7 +4482,7 @@
     "id": "halibut",
     "gameId": 708,
     "name": "Halibut",
-    "icon": "assets/fish/Halibut.png",
+    "icon": "assets/objects/Halibut.png",
     "difficulty": 50,
     "behaviorType": "sinker",
     "minSize": 10,
@@ -4063,8 +4556,16 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "winter"
+        ]
+      }
     ]
   },
   {
@@ -4072,7 +4573,7 @@
     "id": "lobster",
     "gameId": 715,
     "name": "Lobster",
-    "icon": "assets/fish/Lobster.png",
+    "icon": "assets/objects/Lobster.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 2,
@@ -4133,8 +4634,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4142,7 +4647,7 @@
     "id": "crayfish",
     "gameId": 716,
     "name": "Crayfish",
-    "icon": "assets/fish/Crayfish.png",
+    "icon": "assets/objects/Crayfish.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4203,8 +4708,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Freshwater (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4212,7 +4721,7 @@
     "id": "crab",
     "gameId": 717,
     "name": "Crab",
-    "icon": "assets/fish/Crab.png",
+    "icon": "assets/objects/Crab.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4274,8 +4783,27 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Rock Crab",
+        "chance": 0.15
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Truffle Crab",
+        "chance": 0.25
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Crab",
+        "chance": 0.25
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4283,7 +4811,7 @@
     "id": "cockle",
     "gameId": 718,
     "name": "Cockle",
-    "icon": "assets/fish/Cockle.png",
+    "icon": "assets/objects/Cockle.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4346,8 +4874,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ],
     "alsoAvailableAs": {
       "type": "forage",
@@ -4360,7 +4892,7 @@
     "id": "mussel",
     "gameId": 719,
     "name": "Mussel",
-    "icon": "assets/fish/Mussel.png",
+    "icon": "assets/objects/Mussel.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4423,8 +4955,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ],
     "alsoAvailableAs": {
       "type": "forage",
@@ -4437,7 +4973,7 @@
     "id": "shrimp",
     "gameId": 720,
     "name": "Shrimp",
-    "icon": "assets/fish/Shrimp.png",
+    "icon": "assets/objects/Shrimp.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4499,8 +5035,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4508,7 +5048,7 @@
     "id": "snail",
     "gameId": 721,
     "name": "Snail",
-    "icon": "assets/fish/Snail.png",
+    "icon": "assets/objects/Snail.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4570,8 +5110,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Freshwater (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4579,7 +5123,7 @@
     "id": "periwinkle",
     "gameId": 722,
     "name": "Periwinkle",
-    "icon": "assets/fish/Periwinkle.png",
+    "icon": "assets/objects/Periwinkle.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4641,8 +5185,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Freshwater (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4650,7 +5198,7 @@
     "id": "oyster",
     "gameId": 723,
     "name": "Oyster",
-    "icon": "assets/fish/Oyster.png",
+    "icon": "assets/objects/Oyster.png",
     "difficulty": 0,
     "behaviorType": "trap",
     "minSize": 1,
@@ -4714,8 +5262,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ocean (Crab Pot)"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
     ],
     "alsoAvailableAs": {
       "type": "forage",
@@ -4728,7 +5280,7 @@
     "id": "woodskip",
     "gameId": 734,
     "name": "Woodskip",
-    "icon": "assets/fish/Woodskip.png",
+    "icon": "assets/objects/Woodskip.png",
     "difficulty": 50,
     "behaviorType": "mixed",
     "minSize": 11,
@@ -4800,9 +5352,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest Farm",
-      "Secret Woods"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest Farm",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Secret Woods",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4810,7 +5370,7 @@
     "id": "glacierfish",
     "gameId": 775,
     "name": "Glacierfish",
-    "icon": "assets/fish/Glacierfish.png",
+    "icon": "assets/objects/Glacierfish.png",
     "difficulty": 100,
     "behaviorType": "mixed",
     "minSize": 27,
@@ -4876,8 +5436,14 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": [
+          "winter"
+        ]
+      }
     ],
     "minFishingLevel": 6
   },
@@ -4886,7 +5452,7 @@
     "id": "void-salmon",
     "gameId": 795,
     "name": "Void Salmon",
-    "icon": "assets/fish/Void_Salmon.png",
+    "icon": "assets/objects/Void_Salmon.png",
     "difficulty": 80,
     "behaviorType": "mixed",
     "minSize": 24,
@@ -4959,8 +5525,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Witch's Swamp"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Witch's Swamp",
+        "seasons": null
+      }
     ]
   },
   {
@@ -4968,7 +5538,7 @@
     "id": "slimejack",
     "gameId": 796,
     "name": "Slimejack",
-    "icon": "assets/fish/Slimejack.png",
+    "icon": "assets/objects/Slimejack.png",
     "difficulty": 55,
     "behaviorType": "dart",
     "minSize": 8,
@@ -5038,8 +5608,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mutant Bug Lair"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mutant Bug Lair",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5047,7 +5621,7 @@
     "id": "midnight-squid",
     "gameId": 798,
     "name": "Midnight Squid",
-    "icon": "assets/fish/Midnight_Squid.png",
+    "icon": "assets/objects/Midnight_Squid.png",
     "difficulty": 55,
     "behaviorType": "sinker",
     "minSize": 8,
@@ -5118,8 +5692,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Night Market"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5127,7 +5705,7 @@
     "id": "spook-fish",
     "gameId": 799,
     "name": "Spook Fish",
-    "icon": "assets/fish/Spook_Fish.png",
+    "icon": "assets/objects/Spook_Fish.png",
     "difficulty": 60,
     "behaviorType": "dart",
     "minSize": 8,
@@ -5196,8 +5774,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Night Market"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5205,7 +5787,7 @@
     "id": "blobfish",
     "gameId": 800,
     "name": "Blobfish",
-    "icon": "assets/fish/Blobfish.png",
+    "icon": "assets/objects/Blobfish.png",
     "difficulty": 75,
     "behaviorType": "floater",
     "minSize": 8,
@@ -5274,8 +5856,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Night Market"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5283,7 +5869,7 @@
     "id": "stingray",
     "gameId": 836,
     "name": "Stingray",
-    "icon": "assets/fish/Stingray.png",
+    "icon": "assets/objects/Stingray.png",
     "difficulty": 80,
     "behaviorType": "sinker",
     "minSize": 18,
@@ -5353,8 +5939,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island Pirate Cove"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ginger Island Pirate Cove",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5362,7 +5952,7 @@
     "id": "lionfish",
     "gameId": 837,
     "name": "Lionfish",
-    "icon": "assets/fish/Lionfish.png",
+    "icon": "assets/objects/Lionfish.png",
     "difficulty": 50,
     "behaviorType": "smooth",
     "minSize": 3,
@@ -5432,10 +6022,22 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island South",
-      "Ginger Island Southeast",
-      "Ginger Island West"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ginger Island South",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island Southeast",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5443,7 +6045,7 @@
     "id": "blue-discus",
     "gameId": 838,
     "name": "Blue Discus",
-    "icon": "assets/fish/Blue_Discus.png",
+    "icon": "assets/objects/Blue_Discus.png",
     "difficulty": 60,
     "behaviorType": "dart",
     "minSize": 2,
@@ -5512,9 +6114,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Ginger Island North",
-      "Ginger Island West"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ginger Island North",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ginger Island West",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5522,7 +6132,7 @@
     "id": "son-of-crimsonfish",
     "gameId": 898,
     "name": "Son of Crimsonfish",
-    "icon": "assets/fish/Son_of_Crimsonfish.png",
+    "icon": "assets/objects/Son_of_Crimsonfish.png",
     "difficulty": 95,
     "behaviorType": "mixed",
     "minSize": 20,
@@ -5588,9 +6198,17 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Night Market",
-      "Ocean"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Night Market",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Ocean",
+        "seasons": null
+      }
     ],
     "minFishingLevel": 5
   },
@@ -5599,7 +6217,7 @@
     "id": "ms-angler",
     "gameId": 899,
     "name": "Ms. Angler",
-    "icon": "assets/fish/Ms._Angler.png",
+    "icon": "assets/objects/Ms._Angler.png",
     "difficulty": 85,
     "behaviorType": "smooth",
     "minSize": 18,
@@ -5669,8 +6287,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Town River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Town River",
+        "seasons": null
+      }
     ],
     "minFishingLevel": 3
   },
@@ -5679,7 +6301,7 @@
     "id": "legend-ii",
     "gameId": 900,
     "name": "Legend II",
-    "icon": "assets/fish/Legend_II.png",
+    "icon": "assets/objects/Legend_II.png",
     "difficulty": 110,
     "behaviorType": "mixed",
     "minSize": 50,
@@ -5748,8 +6370,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Mountain Lake"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mountain Lake",
+        "seasons": null
+      }
     ],
     "minFishingLevel": 10
   },
@@ -5758,7 +6384,7 @@
     "id": "radioactive-carp",
     "gameId": 901,
     "name": "Radioactive Carp",
-    "icon": "assets/fish/Radioactive_Carp.png",
+    "icon": "assets/objects/Radioactive_Carp.png",
     "difficulty": 80,
     "behaviorType": "dart",
     "minSize": 36,
@@ -5827,8 +6453,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Sewers"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Sewers",
+        "seasons": null
+      }
     ]
   },
   {
@@ -5836,7 +6466,7 @@
     "id": "glacierfish-jr",
     "gameId": 902,
     "name": "Glacierfish Jr.",
-    "icon": "assets/fish/Glacierfish_Jr..png",
+    "icon": "assets/objects/Glacierfish_Jr..png",
     "difficulty": 100,
     "behaviorType": "mixed",
     "minSize": 27,
@@ -5902,8 +6532,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": null
+      }
     ],
     "minFishingLevel": 6
   },
@@ -5912,7 +6546,7 @@
     "id": "goby",
     "gameId": "Goby",
     "name": "Goby",
-    "icon": "assets/fish/Goby.png",
+    "icon": "assets/objects/Goby.png",
     "difficulty": 55,
     "behaviorType": "dart",
     "minSize": 3,
@@ -5982,8 +6616,12 @@
       "willy",
       "shipping-bin"
     ],
-    "location": [
-      "Forest River"
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Forest River",
+        "seasons": null
+      }
     ]
   }
 ]

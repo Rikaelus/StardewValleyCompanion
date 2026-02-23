@@ -38,15 +38,17 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
         createIconColumn(),
         createNameColumn(),
         {
-          accessorKey: 'producedBy.machine',
+          id: 'machine',
+          accessorFn: (row) => row.sources?.find(s => s.type === 'machine')?.machine,
           header: 'Machine',
-          cell: ({ row }) => row.original.producedBy?.machine || '—',
+          cell: ({ row }) => row.original.sources?.find(s => s.type === 'machine')?.machine || '—',
         },
         {
-          accessorKey: 'producedBy.inputType',
+          id: 'inputType',
+          accessorFn: (row) => row.sources?.find(s => s.type === 'machine')?.inputType,
           header: 'Input Type',
           cell: ({ row }) => {
-            const type = row.original.producedBy?.inputType
+            const type = row.original.sources?.find(s => s.type === 'machine')?.inputType
             if (!type) return '—'
             if (type === 'specific') return 'Specific'
             // Check if inputType matches a generic artisan item we can link to
@@ -59,13 +61,10 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
         },
         {
           id: 'processingTime',
-          accessorFn: (row) => {
-            const minutes = row.processingTimeMinutes || row.producedBy?.processingTimeMinutes;
-            return minutes ? minutes / 60 : null;
-          },
+          accessorFn: (row) => row.processingTimeMinutes ? row.processingTimeMinutes / 60 : null,
           header: 'Time',
           cell: ({ row }) => {
-            const minutes = row.original.processingTimeMinutes || row.original.producedBy?.processingTimeMinutes;
+            const minutes = row.original.processingTimeMinutes;
             if (!minutes) return '—';
             const hours = minutes / 60;
             if (hours >= 24) {
@@ -102,23 +101,25 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
       createIconColumn(),
       createNameColumn(),
       {
-        accessorKey: 'source',
+        id: 'source',
+        accessorFn: (row) => {
+          const machineSource = row.sources?.find(s => s.type === 'machine')
+          const tapperSource = row.sources?.find(s => s.type === 'tapper')
+          return machineSource?.machine || tapperSource?.treeName || null
+        },
         header: 'Source',
         cell: ({ row }) => {
-          const source = row.original.source || row.original.producedBy?.machine
-          return source || '—'
+          const machineSource = row.original.sources?.find(s => s.type === 'machine')
+          const tapperSource = row.original.sources?.find(s => s.type === 'tapper')
+          return machineSource?.machine || tapperSource?.treeName || '—'
         },
       },
       {
         id: 'processingTime',
-        accessorFn: (row) => {
-          // Calculate total hours for sorting
-          const minutes = row.processingTimeMinutes || row.producedBy?.processingTimeMinutes;
-          return minutes ? minutes / 60 : null;
-        },
+        accessorFn: (row) => row.processingTimeMinutes ? row.processingTimeMinutes / 60 : null,
         header: 'Time',
         cell: ({ row }) => {
-          const minutes = row.original.processingTimeMinutes || row.original.producedBy?.processingTimeMinutes;
+          const minutes = row.original.processingTimeMinutes;
 
           if (!minutes) return '—';
 

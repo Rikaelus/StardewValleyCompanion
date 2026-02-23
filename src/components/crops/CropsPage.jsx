@@ -7,7 +7,7 @@ import CropsTable from './CropsTable'
 
 function CropsPage() {
   const { data, loading, error } = useItemData('crops')
-  const relationalData = useRelationalData()
+  const { loading: relationalLoading, getBundle } = useRelationalData()
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [filters, setFilters] = useState({
@@ -49,7 +49,7 @@ function CropsPage() {
   }, [filters, setSearchParams, searchParams])
 
   const filterOptions = useMemo(() => {
-    if (!data.items || relationalData.loading) return {}
+    if (!data.items || relationalLoading) return {}
 
     const types = [...new Set(data.items.map(c => c.type).filter(Boolean))].sort()
 
@@ -61,12 +61,12 @@ function CropsPage() {
 
     // Resolve bundle IDs to full bundle objects
     const bundles = Array.from(bundleIds)
-      .map(id => relationalData.getBundle(id))
+      .map(id => getBundle(id))
       .filter(Boolean)
       .sort((a, b) => a.name.localeCompare(b.name))
 
     return { types, bundles }
-  }, [data.items, relationalData])
+  }, [data.items, relationalLoading, getBundle])
 
   const filteredData = useMemo(() => {
     if (!data.items) return []
@@ -99,7 +99,7 @@ function CropsPage() {
     })
   }, [data.items, filters])
 
-  if (loading || relationalData.loading) {
+  if (loading || relationalLoading) {
     return (
       <PagePanel title="Crops">
         <div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>

@@ -64,7 +64,7 @@ function FishPage() {
     if (!data.fish) return {}
 
     // Extract unique locations from fish data
-    const locations = [...new Set(data.fish.flatMap(f => f.location || []))].sort()
+    const locations = [...new Set(data.fish.flatMap(f => f.locations || []))].sort()
 
     // Extract unique bundles from fish bundleDetails
     const bundleMap = new Map()
@@ -108,7 +108,7 @@ function FishPage() {
       }
 
       if (filters.location) {
-        if (!fish.location?.includes(filters.location)) return false
+        if (!fish.locations?.includes(filters.location)) return false
       }
 
       if (filters.bundle) {

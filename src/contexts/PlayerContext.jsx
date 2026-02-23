@@ -7,6 +7,7 @@ const STORAGE_KEY = 'stardew-tracker-player'
 const DEFAULT_PLAYER = {
   name: '',
   farmName: '',
+  jojaMember: false,
   professions: {
     // Farming Level 5 & 10
     tiller: false,     // Crops worth 10% more
@@ -34,7 +35,7 @@ export function PlayerProvider({ children }) {
       if (stored) {
         const parsed = JSON.parse(stored)
         // Merge with defaults to handle new fields
-        return { ...DEFAULT_PLAYER, ...parsed, professions: { ...DEFAULT_PLAYER.professions, ...parsed.professions } }
+        return { ...DEFAULT_PLAYER, ...parsed, professions: { ...DEFAULT_PLAYER.professions, ...parsed.professions }, jojaMember: parsed.jojaMember ?? false }
       }
     } catch (error) {
       console.error('Error loading player data:', error)

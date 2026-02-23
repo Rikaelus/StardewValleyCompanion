@@ -4,7 +4,7 @@
     "id": "wood",
     "gameId": 388,
     "name": "Wood",
-    "icon": "assets/resources/Wood.png",
+    "icon": "assets/objects/Wood.png",
     "price": 2,
     "edibility": -300,
     "category": -16,
@@ -12,6 +12,7 @@
       "color_brown",
       "wood_item"
     ],
+    "canBeGifted": true,
     "bundles": [
       "construction"
     ],
@@ -57,13 +58,14 @@
     "id": "stone",
     "gameId": 390,
     "name": "Stone",
-    "icon": "assets/resources/Stone.png",
+    "icon": "assets/objects/Stone.png",
     "price": 2,
     "edibility": -300,
     "category": -16,
     "contextTags": [
       "color_gray"
     ],
+    "canBeGifted": true,
     "bundles": [
       "construction"
     ],
@@ -109,7 +111,7 @@
     "id": "hardwood",
     "gameId": 709,
     "name": "Hardwood",
-    "icon": "assets/resources/Hardwood.png",
+    "icon": "assets/objects/Hardwood.png",
     "price": 15,
     "edibility": -300,
     "category": -16,
@@ -117,6 +119,7 @@
       "color_brown",
       "wood_item"
     ],
+    "canBeGifted": true,
     "bundles": [
       "construction"
     ],
@@ -162,13 +165,14 @@
     "id": "clay",
     "gameId": 330,
     "name": "Clay",
-    "icon": "assets/resources/Clay.png",
+    "icon": "assets/objects/Clay.png",
     "price": 20,
     "edibility": -300,
     "category": -16,
     "contextTags": [
       "color_brown"
     ],
+    "canBeGifted": true,
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -212,13 +216,14 @@
     "id": "sap",
     "gameId": 92,
     "name": "Sap",
-    "icon": "assets/resources/Sap.png",
+    "icon": "assets/objects/Sap.png",
     "price": 2,
     "edibility": -1,
     "category": -81,
     "contextTags": [
       "color_yellow"
     ],
+    "canBeGifted": true,
     "bundles": [],
     "gifts": {
       "robin": "hate",
@@ -256,5 +261,98 @@
       "krobus": "hate",
       "leo": "hate"
     }
+  },
+  {
+    "type": "resource",
+    "id": "calico-egg",
+    "gameId": "CalicoEgg",
+    "name": "Calico Egg",
+    "icon": "assets/objects/Calico_Egg.png",
+    "price": 0,
+    "edibility": -300,
+    "category": 0,
+    "contextTags": [],
+    "canBeGifted": false,
+    "bundles": [],
+    "gifts": {}
+  },
+  {
+    "type": "resource",
+    "id": "moss",
+    "gameId": "Moss",
+    "name": "Moss",
+    "icon": "assets/objects/Moss.png",
+    "price": 5,
+    "edibility": -300,
+    "category": -16,
+    "contextTags": [
+      "color_green"
+    ],
+    "canBeGifted": true,
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    }
+  },
+  {
+    "type": "resource",
+    "id": "star-token",
+    "gameId": "StarToken",
+    "name": "Star Token",
+    "icon": "assets/objects/Star_Token.png",
+    "price": 0,
+    "edibility": -300,
+    "category": 0,
+    "contextTags": [],
+    "canBeGifted": false,
+    "bundles": [],
+    "gifts": {}
+  },
+  {
+    "type": "resource",
+    "id": "qi-coin",
+    "gameId": "QiCoin",
+    "name": "Qi Coin",
+    "icon": "assets/objects/Qi_Coin.png",
+    "price": 0,
+    "edibility": -300,
+    "category": 0,
+    "contextTags": [],
+    "canBeGifted": false,
+    "bundles": [],
+    "gifts": {}
   }
 ]

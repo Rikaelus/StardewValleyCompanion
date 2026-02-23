@@ -4,7 +4,7 @@ import { usePlayer } from '../../contexts/PlayerContext'
 import { useVillagers } from '../../contexts/VillagersContext'
 import { useRelationalData } from '../../hooks/useRelationalData'
 import UniversalModal from '../common/UniversalModal'
-import SpecialCases from '../common/SpecialCases'
+import { formatTime, getDifficultyColor } from '../../utils/formatters'
 import {
   createIconColumn,
   createNameColumn,
@@ -39,21 +39,21 @@ function FishTable({ fish, allFish }) {
           <strong>
             {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐ </span>}
             {row.original.name}
-            {row.original.notes && <span className="special-indicator" title="See Special Cases below">*</span>}
+            {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
           </strong>
         )
       }),
       {
-        accessorKey: 'location',
+        accessorKey: 'locations',
         header: 'Location',
         cell: ({ getValue }) => {
           const locations = getValue()
           if (!locations || locations.length === 0) return '—'
 
           return (
-            <span style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+            <span className="cell-location-list">
               {locations.map((loc, i) => (
-                <span key={i} style={{ whiteSpace: 'nowrap' }}>
+                <span key={i} className="cell-location-item">
                   {loc}{i < locations.length - 1 ? ',' : ''}
                 </span>
               ))}
@@ -68,22 +68,6 @@ function FishTable({ fish, allFish }) {
         cell: ({ getValue }) => {
           const times = getValue() || []
           if (times.length === 0) return '—'
-
-          // Format military time to 12-hour with am/pm
-          const formatTime = (militaryTime) => {
-            const time = String(militaryTime).padStart(4, '0')
-            let hours = parseInt(time.slice(0, -2))
-
-            // Handle times past midnight (e.g., 2600 = 2:00am next day)
-            if (hours >= 24) {
-              hours -= 24
-            }
-
-            const period = hours >= 12 ? 'pm' : 'am'
-            const displayHours = hours === 0 ? 12 : hours > 12 ? hours - 12 : hours
-
-            return `${displayHours}${period}`
-          }
 
           return times.map(t => `${formatTime(t.start)}-${formatTime(t.end)}`).join(', ')
         },
@@ -116,12 +100,8 @@ function FishTable({ fish, allFish }) {
         header: 'Diff',
         cell: ({ getValue }) => {
           const diff = getValue()
-          const color = diff >= 80 ? '#d32f2f' :
-                       diff >= 60 ? '#f57c00' :
-                       diff >= 40 ? '#fbc02d' :
-                       '#66bb6a'
           return (
-            <span style={{ color, fontWeight: 'bold' }} title={`Difficulty: ${diff}`}>
+            <span className="difficulty" style={{ color: getDifficultyColor(diff) }} title={`Difficulty: ${diff}`}>
               {diff}
             </span>
           )
@@ -133,9 +113,9 @@ function FishTable({ fish, allFish }) {
         header: 'Min Lvl',
         cell: ({ getValue }) => {
           const minLevel = getValue()
-          if (!minLevel) return <span style={{ color: '#999' }}>—</span>
+          if (!minLevel) return <span className="cell-muted">—</span>
           return (
-            <span style={{ color: '#1976d2', fontWeight: 'bold' }} title={`Minimum Fishing Level: ${minLevel}`}>
+            <span className="cell-level" title={`Minimum Fishing Level: ${minLevel}`}>
               {minLevel}
             </span>
           )
@@ -156,22 +136,20 @@ function FishTable({ fish, allFish }) {
     return null
   }
 
+  const nuancedFish = fish.filter(f => f.hasLocationNuance)
+
   return (
     <>
-      <style>{`
-        .special-indicator {
-          color: #5c4a32;
-          margin-left: 4px;
-          font-size: 12px;
-          cursor: help;
-        }
-      `}</style>
       <DataTable
         data={fish}
         columns={columns}
         pinnedColumns={2}
       />
-      <SpecialCases items={allFish || fish} />
+      {nuancedFish.length > 0 && (
+        <div className="nuance-note">
+          * Seasons and locations shown are the full range of possibilities. Click on a fish marked with * to see exact availability per location.
+        </div>
+      )}
       <UniversalModal
         entity={selectedFish}
         isOpen={selectedFish !== null}

@@ -6,7 +6,7 @@ import {
   getPaginationRowModel,
   flexRender,
 } from '@tanstack/react-table'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import './DataTable.css'
 
@@ -110,6 +110,10 @@ function DataTable({
   const headerGroups = table.getHeaderGroups()
   const rows = table.getRowModel().rows
 
+  const handleRowClick = useCallback((row) => {
+    onRowClick?.(row)
+  }, [onRowClick])
+
   // Show empty state message instead of table when no results
   if (rows.length === 0) {
     return (
@@ -157,8 +161,8 @@ function DataTable({
             {rows.map(row => (
               <tr
                 key={row.id}
-                onClick={() => onRowClick?.(row)}
-                style={{ cursor: onRowClick ? 'pointer' : 'default' }}
+                onClick={() => handleRowClick(row)}
+                className={onRowClick ? 'clickable-row' : ''}
               >
                 {row.getVisibleCells().map((cell, index) => (
                   <td
