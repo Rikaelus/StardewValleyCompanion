@@ -12,6 +12,10 @@
       "color_dark_pink"
     ],
     "rarity": "uncommon",
+    "sellingLocations": [
+      "store-marlon",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
@@ -64,6 +68,10 @@
       "slime_item"
     ],
     "rarity": "uncommon",
+    "sellingLocations": [
+      "store-marlon",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "adventurer-s"
     ],
@@ -117,6 +125,10 @@
       "color_black"
     ],
     "rarity": "uncommon",
+    "sellingLocations": [
+      "store-marlon",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "adventurer-s"
     ],
@@ -170,6 +182,10 @@
       "color_yellow"
     ],
     "rarity": "rare",
+    "sellingLocations": [
+      "store-marlon",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "adventurer-s"
     ],
@@ -223,6 +239,10 @@
       "color_purple"
     ],
     "rarity": "rare",
+    "sellingLocations": [
+      "store-marlon",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "adventurer-s"
     ],

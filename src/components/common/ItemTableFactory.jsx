@@ -11,6 +11,7 @@ import BundleList from './BundleList'
 
 /**
  * Creates the icon column (always first column)
+ * @deprecated Use createNameColumn() which now includes the icon
  */
 export function createIconColumn() {
   return {
@@ -29,12 +30,21 @@ export function createIconColumn() {
 }
 
 /**
- * Creates the name column (always second column)
+ * Creates the name column with icon + name as a unified clickable button.
+ * Replaces the separate icon + name column pair.
  * @param {Object} options - Configuration options
- * @param {Function} options.cellRenderer - Optional custom cell renderer
+ * @param {Function} options.cellRenderer - Optional custom cell renderer (overrides default)
  */
 export function createNameColumn(options = {}) {
-  const defaultRenderer = ({ row }) => <strong>{row.original.name}</strong>
+  const defaultRenderer = ({ row }) => (
+    <ModalItemButton
+      item={row.original}
+      showIcon={true}
+      showLabel={true}
+      iconSize={24}
+      stopPropagation={true}
+    />
+  )
 
   return {
     accessorKey: 'name',

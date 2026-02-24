@@ -1,9 +1,26 @@
-/* Wrapper for button + label layout */
-.item-button-with-label {
+/* Unified button + label layout — the whole thing is one clickable button */
+.item-button--with-label {
+  gap: 0.5rem;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.item-button--with-label:hover {
+  background: none;
+  color: #5a3e1b;
+}
+/* Border box wraps only the icon, not the label */
+.item-button-icon-box {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  vertical-align: middle;
+  justify-content: center;
+  border: 1px solid #8b6f47;
+  border-radius: 4px;
+  padding: 2px;
+  flex-shrink: 0;
+}
+.item-button--with-label:hover .item-button-icon-box {
+  background: #e3f2fd;
 }
 
 .item-button {
@@ -22,8 +39,12 @@
   vertical-align: middle; /* Align button with surrounding text */
 }
 
-.item-button:hover {
+.item-button:not(.item-button--with-label):hover {
   background: #e3f2fd;
+}
+
+.item-button--with-label {
+  border: none;
 }
 
 .item-button-icon {

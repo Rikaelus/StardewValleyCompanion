@@ -22,7 +22,7 @@
       },
       {
         "type": "shop",
-        "storeId": "desert-festival",
+        "storeId": "store-desert-festival",
         "storeName": "Desert Festival (Shane)",
         "storeBaseName": "Desert Festival",
         "price": 100,
@@ -218,7 +218,7 @@
       },
       {
         "type": "shop",
-        "storeId": "krobus",
+        "storeId": "store-krobus",
         "storeName": "Krobus's Shop",
         "storeBaseName": "Krobus's Shop",
         "price": 5000
@@ -284,14 +284,14 @@
       },
       {
         "type": "shop",
-        "storeId": "marnie",
+        "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
         "storeBaseName": "Marnie's Ranch",
         "price": 100000
       },
       {
         "type": "shop",
-        "storeId": "qi-gem-shop",
+        "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
         "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
@@ -457,7 +457,7 @@
       },
       {
         "type": "shop",
-        "storeId": "desert-festival",
+        "storeId": "store-desert-festival",
         "storeName": "Desert Festival (Jas)",
         "storeBaseName": "Desert Festival",
         "price": 1130,
@@ -596,7 +596,7 @@
       },
       {
         "type": "shop",
-        "storeId": "desert-festival",
+        "storeId": "store-desert-festival",
         "storeName": "Desert Festival (Alex)",
         "storeBaseName": "Desert Festival",
         "price": 250,

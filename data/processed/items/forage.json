@@ -57,7 +57,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -136,7 +136,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -206,7 +206,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -280,7 +280,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -363,7 +363,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": []
   },
@@ -414,8 +414,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -471,8 +471,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -530,7 +530,7 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -603,8 +603,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -662,7 +662,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -724,7 +724,7 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -828,8 +828,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "willy",
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -838,13 +838,9 @@
         "seasons": [
           "spring",
           "summer",
-          "fall"
+          "fall",
+          "winter"
         ]
-      },
-      {
-        "type": "forage",
-        "location": "Ocean",
-        "season": "winter"
       }
     ],
     "alsoAvailableAs": {
@@ -888,7 +884,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -927,7 +924,8 @@
       "harvey": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": []
   },
@@ -991,7 +989,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1049,8 +1048,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1142,7 +1141,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": []
   },
@@ -1192,8 +1192,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1262,7 +1262,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": []
   },
@@ -1332,8 +1332,7 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1411,7 +1410,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1427,12 +1426,10 @@
       {
         "type": "forage",
         "location": "Secret Woods",
-        "season": "spring"
-      },
-      {
-        "type": "forage",
-        "location": "Secret Woods",
-        "season": "fall"
+        "seasons": [
+          "spring",
+          "fall"
+        ]
       },
       {
         "type": "forage",
@@ -1490,8 +1487,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1564,7 +1561,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1634,8 +1631,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1702,7 +1699,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1760,8 +1757,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -1847,7 +1844,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": []
   },
@@ -1919,8 +1916,7 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -2025,28 +2021,22 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
         "type": "forage",
         "location": "Secret Woods",
-        "season": "summer"
-      },
-      {
-        "type": "forage",
-        "location": "Secret Woods",
-        "season": "fall"
-      },
-      {
-        "type": "forage",
-        "location": "Volcano Dungeon",
-        "season": "spring"
+        "seasons": [
+          "summer",
+          "fall"
+        ]
       },
       {
         "type": "forage",
         "location": "Volcano Dungeon",
         "seasons": [
+          "spring",
           "summer",
           "fall",
           "winter"
@@ -2112,18 +2102,14 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": [
       {
         "type": "forage",
         "location": "Volcano Dungeon",
-        "season": "spring"
-      },
-      {
-        "type": "forage",
-        "location": "Volcano Dungeon",
         "seasons": [
+          "spring",
           "summer",
           "fall",
           "winter"
@@ -2202,8 +2188,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "willy",
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -2212,13 +2198,9 @@
         "seasons": [
           "spring",
           "summer",
-          "fall"
+          "fall",
+          "winter"
         ]
-      },
-      {
-        "type": "forage",
-        "location": "Ocean",
-        "season": "winter"
       }
     ],
     "alsoAvailableAs": {
@@ -2296,8 +2278,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "willy",
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -2306,13 +2288,9 @@
         "seasons": [
           "spring",
           "summer",
-          "fall"
+          "fall",
+          "winter"
         ]
-      },
-      {
-        "type": "forage",
-        "location": "Ocean",
-        "season": "winter"
       }
     ],
     "alsoAvailableAs": {
@@ -2391,8 +2369,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "willy",
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ],
     "sources": [
       {
@@ -2401,13 +2379,9 @@
         "seasons": [
           "spring",
           "summer",
-          "fall"
+          "fall",
+          "winter"
         ]
-      },
-      {
-        "type": "forage",
-        "location": "Ocean",
-        "season": "winter"
       }
     ],
     "alsoAvailableAs": {
@@ -2463,7 +2437,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ],
     "sources": []
   }

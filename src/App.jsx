@@ -9,10 +9,10 @@ import FurniturePage from './components/furniture/FurniturePage'
 import HatsPage from './components/hats/HatsPage'
 import Footer from './components/layout/Footer'
 import CharacterBar from './components/common/CharacterBar'
+import GlobalSearch from './components/common/GlobalSearch'
 import { ModalProvider } from './contexts/ModalContext'
 import { PlayerProvider } from './contexts/PlayerContext'
-import { VillagersProvider } from './contexts/VillagersContext'
-import { ItemsProvider } from './contexts/ItemsContext'
+import { EntityProvider } from './contexts/EntityContext'
 
 const NAV_ITEMS = [
   {
@@ -45,7 +45,7 @@ const NAV_ITEMS = [
   { label: 'Villagers', path: '/villagers' },
 ]
 
-function Navigation() {
+function Navigation({ onSearchOpen }) {
   const location = useLocation()
   const [openDropdown, setOpenDropdown] = useState(null)
   const navRef = useRef(null)
@@ -75,7 +75,7 @@ function Navigation() {
           <img src="/assets/branding/stardew_logo.png" alt="Stardew Valley" className="header-logo" />
           <span className="header-companion">COMPANION</span>
         </div>
-        <nav ref={navRef}>
+        <nav ref={navRef} className="header-nav-wrapper">
           <ul className="header-nav">
             {NAV_ITEMS.map((item) => {
               if (item.children) {
@@ -120,6 +120,14 @@ function Navigation() {
               )
             })}
           </ul>
+          <button
+            className="search-trigger"
+            onClick={onSearchOpen}
+            aria-label="Search items (Ctrl+K)"
+            title="Search items (Ctrl+K)"
+          >
+            &#128269;
+          </button>
         </nav>
       </div>
     </header>
@@ -153,21 +161,33 @@ function MainContent() {
 }
 
 function App() {
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  useEffect(() => {
+    const handler = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen(true)
+      }
+    }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  }, [])
+
   return (
     <HashRouter>
-      <ItemsProvider>
-      <VillagersProvider>
+      <EntityProvider>
         <PlayerProvider>
           <ModalProvider>
             <div className="app">
-              <Navigation />
+              <Navigation onSearchOpen={() => setSearchOpen(true)} />
               <CharacterBar />
               <MainContent />
+              <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
             </div>
           </ModalProvider>
         </PlayerProvider>
-      </VillagersProvider>
-      </ItemsProvider>
+      </EntityProvider>
     </HashRouter>
   )
 }

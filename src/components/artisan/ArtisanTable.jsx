@@ -2,10 +2,8 @@ import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import ModalItemButton from '../common/ModalItemButton'
 import { usePlayer } from '../../contexts/PlayerContext'
-import { useVillagers } from '../../contexts/VillagersContext'
-import { useRelationalData } from '../../hooks/useRelationalData'
+import { useEntities } from '../../contexts/EntityContext'
 import {
-  createIconColumn,
   createNameColumn,
   createPriceColumn,
   createBundleColumn,
@@ -14,8 +12,7 @@ import {
 
 function ArtisanTable({ artisanGoods, allArtisan }) {
   const { player } = usePlayer()
-  const { villagers } = useVillagers()
-  const relationalData = useRelationalData()
+  const { villagers: { all: villagers }, ...relationalData } = useEntities()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -35,7 +32,6 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
     if (isGenerics) {
       // Generic items: show Input Type, # Variations instead of Price
       return [
-        createIconColumn(),
         createNameColumn(),
         {
           id: 'machine',
@@ -98,7 +94,6 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
     }
 
     const baseColumns = [
-      createIconColumn(),
       createNameColumn(),
       {
         id: 'source',

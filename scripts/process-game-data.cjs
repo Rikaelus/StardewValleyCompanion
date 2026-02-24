@@ -57,6 +57,11 @@ function getUniqueItemId(gameId, itemName) {
  * DisplayName format: "[LocalizedText Strings\\Objects:WhiteEgg_Name]"
  * Returns: "WhiteEgg" or null if not a localized string
  */
+/** Convert an item name to a safe icon filename (no apostrophes, spaces → underscores) */
+function toIconFilename(name) {
+  return name.replace(/'/g, '').replace(/\s+/g, '_') + '.png';
+}
+
 function extractSpriteNameFromDisplayName(displayName) {
   if (!displayName || !displayName.includes('[LocalizedText')) {
     return null;
@@ -91,8 +96,8 @@ function getIconFilename(gameId, itemName, objectData = null) {
     return variant.iconFilename;
   }
 
-  // Default: use item name with spaces replaced by underscores
-  return itemName.replace(/\s+/g, '_') + '.png';
+  // Default: use item name with spaces replaced by underscores, strip apostrophes
+  return toIconFilename(itemName);
 }
 
 /**
@@ -177,7 +182,13 @@ function parseShopSellingLocations(shopsData) {
 
 // Helper function to get selling locations for a category
 function getSellingLocations(category, shopSellingLocations) {
-  return shopSellingLocations[String(category)] || ['shipping-bin'];
+  return (shopSellingLocations[String(category)] || ['store-shipping-bin']).map(normalizeStoreId);
+}
+
+// Normalize a store ID to always have the store- prefix
+function normalizeStoreId(id) {
+  if (!id || typeof id !== 'string') return id;
+  return id.startsWith('store-') ? id : `store-${id}`;
 }
 
 // Load game data
@@ -201,9 +212,33 @@ const gameData = {
   wildTrees: loadJson(path.join(GAME_EXPORTS_DIR, 'WildTrees.json')),
 };
 
-// Parse shop selling locations from game data
+// Load string tables for resolving [LocalizedText ...] references
+const stringTables = {};
+for (const tableName of ['Furniture', 'Objects', 'BigCraftables', 'Buildings', 'Tools', 'Weapons', '1_6_Strings', 'UI', 'Locations', 'Characters', 'NPCNames', 'FarmAnimals', 'BundleNames', 'EnchantmentNames', 'Movies', 'Quests', 'SpecialOrderStrings', 'StringsFromCSFiles', 'Notes', 'Shirts', 'Pants']) {
+  const filePath = path.join(GAME_EXPORTS_DIR, `Strings_${tableName}.json`);
+  try { stringTables[tableName] = loadJson(filePath); } catch { /* optional */ }
+}
+
+/**
+ * Resolve a [LocalizedText Strings\TableName:Key] reference to its display string.
+ * Falls back to the raw value if not a LocalizedText reference or key not found.
+ */
+function resolveLocalizedText(value) {
+  if (!value || !value.includes('[LocalizedText')) return value;
+  const match = value.match(/\[LocalizedText\s+Strings\\(\w+):([^\]]+)\]/);
+  if (!match) return value;
+  const [, tableName, key] = match;
+  return stringTables[tableName]?.[key] ?? value;
+}
+
+// Parse shop selling locations from game data, then merge with curated category rules
 console.log('Parsing shop selling locations...');
 const shopSellingLocations = parseShopSellingLocations(gameData.shops);
+// selling-locations.json categorySellingLocations is the authoritative source for
+// sell-to-NPC locations (e.g. Clint buys bars, Robin buys wood) — merge it in,
+// letting the rules file override the shop-parsed entries per category.
+const sellingLocationRules = loadJson(path.join(RULES_DIR, 'selling-locations.json'));
+Object.assign(shopSellingLocations, sellingLocationRules.categorySellingLocations || {});
 console.log(`  ✓ Parsed selling locations for ${Object.keys(shopSellingLocations).length} categories`);
 
 // Load game rules and mechanics
@@ -283,13 +318,14 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
     }
     const gameId = parseGameId(rawId);
 
+    const normalizedStoreId = normalizeStoreId(storeId);
     const storeDetails = rules.shops.storeDetails?.[storeId];
     // Extract NPC vendor name from compound shop IDs like "DesertFestival_Emily"
     const vendorMatch = shopId.match(/^[A-Za-z]+Festival_([A-Z][a-z]+)$/);
     const vendorName = vendorMatch ? vendorMatch[1] : null;
     const baseName = storeDetails?.name ?? storeId;
     const fullName = vendorName ? `${baseName} (${vendorName})` : baseName;
-    const source = { type: 'shop', storeId, storeName: fullName, storeBaseName: baseName };
+    const source = { type: 'shop', storeId: normalizedStoreId, storeName: fullName, storeBaseName: baseName };
 
     // Non-gold shop currency (Currency field: 1=StarTokens, 2=QiCoins, 4=QiGems)
     const SHOP_CURRENCIES = { 1: 'star-tokens', 2: 'qi-coins', 4: 'qi-gems' };
@@ -338,7 +374,7 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
       source.tradeItemGameId = tradeGameId;
       source.tradeItemName = tradeObj?.Name || String(tradeRawId);
       source.tradeItemIcon = tradeObj
-        ? `assets/objects/${tradeObj.Name.replace(/\s+/g, '_')}.png`
+        ? `assets/objects/${toIconFilename(tradeObj.Name)}`
         : null;
       source.tradeItemAmount = item.TradeItemAmount || 1;
     }
@@ -442,7 +478,25 @@ for (const [locId, locData] of Object.entries(gameData.locations)) {
     }
 
     if (!forageSourcesByGameId.has(gameId)) forageSourcesByGameId.set(gameId, []);
-    forageSourcesByGameId.get(gameId).push(source);
+
+    // Merge into existing entry for the same location (avoid duplicate rows per season)
+    const existing = forageSourcesByGameId.get(gameId).find(e => e.location === source.location);
+    if (existing) {
+      const incoming = source.seasons || (source.season ? [source.season] : []);
+      const current = existing.seasons || (existing.season ? [existing.season] : []);
+      const merged = [...new Set([...current, ...incoming])];
+      if (merged.length === 0) {
+        // no season info — keep as-is (all seasons)
+      } else if (merged.length === 1) {
+        existing.season = merged[0];
+        delete existing.seasons;
+      } else {
+        existing.seasons = merged;
+        delete existing.season;
+      }
+    } else {
+      forageSourcesByGameId.get(gameId).push(source);
+    }
   }
 }
 
@@ -563,6 +617,8 @@ const tillingSourcesByGameId = new Map();
 // craftingSourcesByGameId: output gameId -> [{ type:'crafting', recipeName, ingredients: [{gameId, amount}] }]
 // Parses CraftingRecipes.json format: "ingredients/field/outputId count/isBigCraftable/skillReq/displayName"
 const craftingSourcesByGameId = new Map();
+// Set of gameIds whose crafting recipe produces a BigCraftable (parts[3] === 'true')
+const craftingBigCraftableGameIds = new Set();
 
 {
   const craftingRecipes = loadJson(path.join(GAME_EXPORTS_DIR, 'CraftingRecipes.json'));
@@ -575,6 +631,9 @@ const craftingSourcesByGameId = new Map();
     const outputGameId = parseGameId(outputIdStr);
     if (!outputGameId && outputGameId !== 0) continue;
 
+    // Track whether this output is a BigCraftable (parts[3] === 'true')
+    if (parts[3]?.trim() === 'true') craftingBigCraftableGameIds.add(outputGameId);
+
     // Parse ingredients: "id count id count ..."
     const ingredientTokens = parts[0].trim().split(/\s+/);
     const ingredients = [];
@@ -586,11 +645,25 @@ const craftingSourcesByGameId = new Map();
       }
     }
 
+    // Parse unlock condition: 's Skill N' = skill level, 'l N' = player level, 'f NPC N' = friendship
+    const unlockStr = parts[4]?.trim() || 'default';
+    let unlockCondition = null;
+    if (unlockStr.startsWith('s ')) {
+      const tokens = unlockStr.split(' ');
+      unlockCondition = { type: 'skill', skill: tokens[1].toLowerCase(), level: parseInt(tokens[2], 10) };
+    } else if (unlockStr.startsWith('l ') && unlockStr !== 'l 0') {
+      unlockCondition = { type: 'level', level: parseInt(unlockStr.slice(2), 10) };
+    } else if (unlockStr.startsWith('f ')) {
+      const tokens = unlockStr.split(' ');
+      unlockCondition = { type: 'friendship', npc: tokens[1], hearts: parseInt(tokens[2], 10) };
+    }
+
     const source = {
       type: 'crafting',
       recipeName,
       outputCount: parseInt(outputCountStr, 10) || 1,
       ingredients,
+      ...(unlockCondition && { unlockCondition }),
     };
 
     if (!craftingSourcesByGameId.has(outputGameId)) craftingSourcesByGameId.set(outputGameId, []);
@@ -751,7 +824,7 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
     id: toKebabCase(cropName),
     gameId: parseGameId(harvestId),
     name: cropName,
-    icon: `assets/objects/${cropName.replace(/ /g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(cropName)}`,
     type: cropType,
     category: category,
     price: harvestObject.Price || 0,
@@ -894,7 +967,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     id: friendlyId,
     gameId: itemGameId,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
@@ -998,7 +1071,7 @@ for (const [treeId, treeInfo] of Object.entries(fruitTreesData)) {
     name: `${fruitName} Tree`,
     fruitGameId: fruitGameId,
     fruitName: fruitName,
-    icon: `assets/objects/${fruitName.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(fruitName)}`,
     price: fruitObject.Price || 0,
     edibility: fruitObject.Edibility || -300,
     category: fruitObject.Category || 0,
@@ -1035,7 +1108,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     id: friendlyId,
     gameId: itemGameId,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
@@ -1083,12 +1156,13 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     id: friendlyId,
     gameId: itemGameId,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     mineralType: mineralType,
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {}
   });
@@ -1130,12 +1204,13 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     id: friendlyId,
     gameId: itemGameId,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     producedBy: producedBy,
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {}
   });
@@ -1177,12 +1252,13 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     id: friendlyId,
     gameId: itemGameId,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     rarity: rarity,
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {}
   });
@@ -1219,12 +1295,13 @@ for (const id of [...resourceIds, ...stringKeyedResourceIds]) {
     id: friendlyId,
     gameId: id,
     name: objectData.Name,
-    icon: `assets/objects/${objectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     category: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     canBeGifted: objectData.CanBeGivenAsGift !== false,
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {}
   });
@@ -1271,17 +1348,35 @@ console.log(`  Processed ${resourceData.length} resources`);
 console.log('\nProcessing big craftables...');
 const bigCraftableData = [];
 
-// BigCraftables that are bundle rewards (loaded from rules/bundle-rewards.json)
-for (const id of rules.bundleRewards) {
-  const bigCraftable = gameData.bigCraftables[id];
+// Collect all big-craftable gameIds we want to include:
+//   - bundle rewards (from rules/bundle-rewards.json)
+//   - all BigCraftables that have a crafting recipe (from CraftingRecipes.json isBigCraftable=true)
+const bigCraftableIds = new Set([
+  ...rules.bundleRewards.map(id => parseGameId(String(id))),
+  ...craftingBigCraftableGameIds,
+]);
+
+for (const id of bigCraftableIds) {
+  const bigCraftable = gameData.bigCraftables[String(id)];
   if (!bigCraftable) {
+    // String-keyed lookup for numeric IDs
     console.warn(`  Warning: BigCraftable ${id} not found in BigCraftables.json`);
     continue;
   }
 
   const friendlyId = toKebabCase(bigCraftable.Name);
   const spriteName = extractSpriteNameFromDisplayName(bigCraftable.DisplayName);
-  const iconFilename = spriteName ? `${spriteName}.png` : `${bigCraftable.Name.replace(/\s+/g, '_')}.png`;
+  const iconFilename = spriteName ? `${spriteName}.png` : `${toIconFilename(bigCraftable.Name)}`;
+
+  // Attach crafting sources so modal can show "How to obtain"
+  const sources = craftingSourcesByGameId.has(id)
+    ? craftingSourcesByGameId.get(id)
+    : [];
+
+  // Attach shop sources (some big-craftables are sold in shops, e.g. Catalogues)
+  if (shopSourcesByGameId.has(id)) {
+    sources.push(...shopSourcesByGameId.get(id));
+  }
 
   bigCraftableData.push({
     type: 'big-craftable',
@@ -1294,11 +1389,13 @@ for (const id of rules.bundleRewards) {
     category: 'Big Craftable',
     contextTags: bigCraftable.ContextTags || [],
     bundles: [],
-    gifts: {}
+    gifts: {},
+    sources,
   });
 }
 
-console.log(`  Processed ${bigCraftableData.length} big craftables`);
+deduplicateIds(bigCraftableData);
+console.log(`  Processed ${bigCraftableData.length} big craftables (${craftingBigCraftableGameIds.size} craftable, ${rules.bundleRewards.length} bundle rewards)`);
 
 // ============================================================================
 // Machine Recipe Parser
@@ -1455,8 +1552,9 @@ for (const recipe of machineRecipes) {
   // Skip Cask (it's for aging, not production)
   if (recipe.machine === 'Cask') continue;
 
-  // Skip AgedRoe - it's handled manually later with fish-specific pricing
+  // Skip AgedRoe and Caviar - both handled manually later via roe-mechanics.json rules
   if (recipe.outputName === 'AgedRoe') continue;
+  if (recipe.outputItemId === rules.roeMechanics.caviar.gameId) continue;
 
   // Determine the actual item ID
   let outputItemId = recipe.outputItemId;
@@ -1787,7 +1885,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
   const friendlyId = toKebabCase(fishName);
 
   // Generate icon path - replace spaces with underscores to match file naming
-  const iconFileName = fishName.replace(/\s+/g, '_') + '.png';
+  const iconFileName = toIconFilename(fishName);
 
   // Trap fish have a different format than regular fish
   if (isTrapFish) {
@@ -2045,6 +2143,58 @@ const agedRoeItem = {
 
 artisanData.push(agedRoeItem);
 console.log(`  ✅ Added Aged Roe with ${fishWithAgedRoe.length} fish variants (excludes Sturgeon)`);
+
+// ============================================================================
+// Add Caviar (Sturgeon Roe in Preserves Jar) — driven by roe-mechanics.json
+// ============================================================================
+console.log('\nAdding Caviar...');
+
+const caviarRules = rules.roeMechanics.caviar;
+const caviarFishObject = gameData.objects[caviarRules.inputFish];
+const caviarRoePrice = calculateRoePrice(
+  gameData.objects[String(caviarRules.inputFish)]?.Price || 0
+);
+const caviarObjectData = gameData.objects[String(caviarRules.gameId)];
+
+if (caviarObjectData && caviarFishObject) {
+  const caviarItem = {
+    id: 'caviar',
+    gameId: caviarRules.gameId,
+    name: caviarObjectData.Name,
+    type: 'artisan',
+    category: caviarObjectData.Category || -26,
+    price: caviarObjectData.Price || 0,
+    edibility: caviarObjectData.Edibility || -300,
+    icon: `assets/objects/${getIconFilename(caviarRules.gameId, caviarObjectData.Name, caviarObjectData)}`,
+    contextTags: caviarObjectData.ContextTags || [],
+    sources: [{
+      type: 'machine',
+      machine: rules.roeMechanics.agedRoe.producedBy, // same machine: Preserves Jar
+      machineId: 'preserves-jar',
+      inputType: 'specific',
+      processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
+      valueFormula: `${caviarObjectData.Price || 0}`,
+      inputDetails: [{
+        inputId: toKebabCase(caviarFishObject.Name),  // "sturgeon" — navigates to fish
+        inputName: `${caviarFishObject.Name} Roe`,    // display label: "Sturgeon Roe"
+        inputGameId: rules.roeMechanics.roe.gameId,   // 812 (Roe item)
+        inputFishGameId: caviarRules.inputFish,        // 698 (Sturgeon fish)
+        inputBasePrice: caviarRoePrice,
+        inputCategory: -23,
+        inputType: 'specific',
+        outputPrice: caviarObjectData.Price || 0,
+        outputIridiumPrice: Math.floor((caviarObjectData.Price || 0) * rules.qualityMultipliers.artisanProfession)
+      }]
+    }],
+    processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
+    bundles: [],
+    gifts: {}
+  };
+  artisanData.push(caviarItem);
+  console.log(`  ✅ Added Caviar (from ${caviarFishObject.Name} Roe via rules)`);
+} else {
+  console.warn(`  Warning: Could not build Caviar — missing game data for gameId ${caviarRules.gameId} or fish ${caviarRules.inputFish}`);
+}
 
 // Add selling locations to all artisan items
 console.log('\nAdding selling locations to artisan items...');
@@ -2519,7 +2669,7 @@ for (const [seedGameIdStr, cropInfo] of Object.entries(gameData.crops)) {
     id: toKebabCase(seedObjectData.Name),
     gameId: seedGameId,
     name: seedObjectData.Name,
-    icon: `assets/objects/${seedObjectData.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(seedObjectData.Name)}`,
     type: 'seed',
     category: -74,
     price: sellPrice,
@@ -2544,7 +2694,7 @@ if (gameData.objects[String(MIXED_SEEDS_ID)]) {
     id: toKebabCase(obj.Name),
     gameId: MIXED_SEEDS_ID,
     name: obj.Name,
-    icon: `assets/objects/${obj.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(obj.Name)}`,
     type: 'seed',
     category: -74,
     price: sellPrice,
@@ -2571,7 +2721,7 @@ if (MIXED_FLOWER_SEEDS_ID && gameData.objects[String(MIXED_FLOWER_SEEDS_ID)]) {
     id: toKebabCase(obj.Name),
     gameId: MIXED_FLOWER_SEEDS_ID,
     name: obj.Name,
-    icon: `assets/objects/${obj.Name.replace(/\s+/g, '_')}.png`,
+    icon: `assets/objects/${toIconFilename(obj.Name)}`,
     type: 'seed',
     category: -74,
     price: sellPrice,
@@ -2597,6 +2747,16 @@ const furnitureData = [];
 
 // Name and wiki overrides loaded from data/rules/furniture-names.json
 
+// Map context tags to catalogue store IDs and names
+const FURNITURE_CATALOGUE_MAP = {
+  'collection_joja':   { storeId: 'store-joja-furniture-catalogue',   storeName: 'Joja Furniture Catalogue' },
+  'collection_junimo': { storeId: 'store-junimo-furniture-catalogue',  storeName: 'Junimo Furniture Catalogue' },
+  'collection_retro':  { storeId: 'store-retro-furniture-catalogue',   storeName: 'Retro Furniture Catalogue' },
+  'collection_trash':  { storeId: 'store-trash-furniture-catalogue',   storeName: 'Trash Can Furniture Catalogue' },
+  'collection_wizard': { storeId: 'store-wizard-furniture-catalogue',  storeName: 'Wizard Furniture Catalogue' },
+};
+const DEFAULT_CATALOGUE = { storeId: 'store-furniture-catalogue', storeName: 'Furniture Catalogue' };
+
 // Furniture format: name/type/tilesheetSize/boundingBoxSize/rotations/price/placementRestriction/displayName/...
 // Named string IDs (e.g. "JojaCatalogue") and numeric IDs (e.g. "0")
 for (const [rawKey, furnitureStr] of Object.entries(gameData.furniture)) {
@@ -2604,16 +2764,17 @@ for (const [rawKey, furnitureStr] of Object.entries(gameData.furniture)) {
   const rawName = parts[0];
   const furnitureType = parts[1]; // "chair", "bench", "decor", "painting", "lamp", etc.
   const price = parseInt(parts[5], 10) || 0;
+  const contextTag = parts[11] || '';
   const furnitureRule = rules.furnitureNames[rawKey];
 
-  // Use display name override if available, otherwise use the raw name from data
-  const name = furnitureRule?.name || rawName;
+  // Use display name override if available, then string table lookup, then raw name
+  const name = furnitureRule?.name || stringTables['Furniture']?.[rawName] || resolveLocalizedText(rawName);
 
   const gameId = parseGameId(rawKey);
   const id = toKebabCase(name) || toKebabCase(rawKey);
 
   // Wiki name: use override if available, else derive from display name
-  const wikiName = furnitureRule?.wikiName || name.replace(/\s+/g, '_');
+  const wikiName = furnitureRule?.wikiName || name.replace(/'/g, '').replace(/\s+/g, '_');
 
   // Icon: named by wiki page name (same convention as other assets)
   const icon = `assets/objects/${wikiName}.png`;
@@ -2622,6 +2783,10 @@ for (const [rawKey, furnitureStr] of Object.entries(gameData.furniture)) {
   if (furnitureShopSourcesByGameId.has(gameId)) {
     sources.push(...furnitureShopSourcesByGameId.get(gameId));
   }
+
+  // Add catalogue source based on context tag (price 0 = freely available via catalogue)
+  const catalogue = FURNITURE_CATALOGUE_MAP[contextTag] || DEFAULT_CATALOGUE;
+  sources.push({ type: 'shop', storeId: catalogue.storeId, storeName: catalogue.storeName, storeBaseName: catalogue.storeName, price: 0 });
 
   furnitureData.push({
     id,
@@ -2659,7 +2824,7 @@ for (const [rawKey, hatStr] of Object.entries(gameData.hats)) {
   const id = toKebabCase(name) || toKebabCase(rawKey);
 
   // Icon: wiki uses the display name
-  const icon = `assets/objects/${name.replace(/\s+/g, '_')}.png`;
+  const icon = `assets/objects/${toIconFilename(name)}`;
 
   const sources = [];
   if (hatShopSourcesByGameId.has(gameId)) {

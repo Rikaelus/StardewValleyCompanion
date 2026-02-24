@@ -1,12 +1,11 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
-import { useVillagers } from '../../contexts/VillagersContext'
-import { useRelationalData } from '../../hooks/useRelationalData'
+import { useEntities } from '../../contexts/EntityContext'
 import UniversalModal from '../common/UniversalModal'
 import { formatTime, getDifficultyColor } from '../../utils/formatters'
+import ModalItemButton from '../common/ModalItemButton'
 import {
-  createIconColumn,
   createNameColumn,
   createSeasonColumn,
   createPriceColumn,
@@ -16,8 +15,7 @@ import {
 
 function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
-  const { villagers } = useVillagers()
-  const relationalData = useRelationalData()
+  const { villagers: { all: villagers }, ...relationalData } = useEntities()
   const [selectedFish, setSelectedFish] = useState(null)
   const professionsRef = useRef(player.professions)
 
@@ -33,14 +31,13 @@ function FishTable({ fish, allFish }) {
     }
 
     const baseColumns = [
-      createIconColumn(),
       createNameColumn({
         cellRenderer: ({ row }) => (
-          <strong>
-            {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐ </span>}
-            {row.original.name}
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} />
+            {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐</span>}
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
-          </strong>
+          </span>
         )
       }),
       {

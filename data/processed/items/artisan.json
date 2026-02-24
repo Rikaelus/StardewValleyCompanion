@@ -73,8 +73,8 @@
     },
     "processingTimeMinutes": 240,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -150,8 +150,8 @@
     },
     "processingTimeMinutes": 1750,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -230,8 +230,8 @@
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -306,8 +306,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -383,8 +383,8 @@
     },
     "processingTimeMinutes": 120,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -463,8 +463,8 @@
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -540,8 +540,8 @@
     },
     "processingTimeMinutes": 600,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -853,8 +853,8 @@
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1069,86 +1069,8 @@
     "agingDaysToIridium": 56,
     "agingDaysPerTier": 14,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
-    ]
-  },
-  {
-    "type": "artisan",
-    "id": "caviar",
-    "gameId": 445,
-    "name": "Caviar",
-    "category": -26,
-    "price": 500,
-    "edibility": 70,
-    "icon": "assets/objects/Caviar.png",
-    "contextTags": [
-      "color_black"
-    ],
-    "sources": [
-      {
-        "type": "machine",
-        "machine": "Preserves Jar",
-        "machineId": "preserves-jar",
-        "inputType": "specific",
-        "valueFormula": "500",
-        "inputDetails": [
-          {
-            "inputId": "roe",
-            "inputName": "Roe",
-            "inputGameId": 812,
-            "inputBasePrice": 30,
-            "inputCategory": -23,
-            "inputType": "Basic",
-            "outputPrice": 500,
-            "outputIridiumPrice": 700
-          }
-        ]
-      }
-    ],
-    "bundles": [
-      "the-missing"
-    ],
-    "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
-      "sebastian": "hate",
-      "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
-      "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
-      "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
-      "harvey": "like",
-      "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
-      "leo": "like"
-    },
-    "processingTimeMinutes": 6000,
-    "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1455,8 +1377,8 @@
     },
     "processingTimeMinutes": 4000,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1666,8 +1588,8 @@
     },
     "processingTimeMinutes": 4000,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1757,8 +1679,8 @@
     "agingDaysToIridium": 14,
     "agingDaysPerTier": 3.5,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1848,8 +1770,8 @@
     "agingDaysToIridium": 14,
     "agingDaysPerTier": 3.5,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -1935,8 +1857,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2013,8 +1935,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2091,8 +2013,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2172,8 +2094,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2268,8 +2190,8 @@
     },
     "processingTimeMinutes": 1000,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2346,8 +2268,8 @@
     },
     "processingTimeMinutes": 360,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2478,8 +2400,8 @@
     "processingTimeMinutes": 5760,
     "includeWildVariant": true,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2554,8 +2476,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2759,8 +2681,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -2874,8 +2796,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -3649,8 +3571,8 @@
     },
     "processingTimeMinutes": 50,
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -3715,7 +3637,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -3780,7 +3702,7 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -3844,7 +3766,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -3913,7 +3835,7 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -3965,7 +3887,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -4019,7 +3941,7 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -4040,7 +3962,7 @@
       },
       {
         "type": "shop",
-        "storeId": "desert-festival",
+        "storeId": "store-desert-festival",
         "storeName": "Desert Festival (Vincent)",
         "storeBaseName": "Desert Festival",
         "price": 4,
@@ -4093,7 +4015,7 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -4114,7 +4036,7 @@
       },
       {
         "type": "shop",
-        "storeId": "desert-festival",
+        "storeId": "store-desert-festival",
         "storeName": "Desert Festival (Kent)",
         "storeBaseName": "Desert Festival",
         "price": 180,
@@ -4173,8 +4095,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
     ]
   },
   {
@@ -4202,7 +4124,7 @@
       "haley": "dislike"
     },
     "sellingLocations": [
-      "shipping-bin"
+      "store-shipping-bin"
     ]
   },
   {
@@ -4944,7 +4866,8 @@
     "bundles": [],
     "gifts": {},
     "sellingLocations": [
-      "shipping-bin"
+      "store-willy",
+      "store-shipping-bin"
     ]
   },
   {
@@ -5711,8 +5634,88 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "pierre",
-      "shipping-bin"
+      "store-pierre",
+      "store-shipping-bin"
+    ]
+  },
+  {
+    "id": "caviar",
+    "gameId": 445,
+    "name": "Caviar",
+    "type": "artisan",
+    "category": -26,
+    "price": 500,
+    "edibility": 70,
+    "icon": "assets/objects/Caviar.png",
+    "contextTags": [
+      "color_black"
+    ],
+    "sources": [
+      {
+        "type": "machine",
+        "machine": "Preserves Jar",
+        "machineId": "preserves-jar",
+        "inputType": "specific",
+        "processingTimeMinutes": 4000,
+        "valueFormula": "500",
+        "inputDetails": [
+          {
+            "inputId": "sturgeon",
+            "inputName": "Sturgeon Roe",
+            "inputGameId": 812,
+            "inputFishGameId": 698,
+            "inputBasePrice": 130,
+            "inputCategory": -23,
+            "inputType": "specific",
+            "outputPrice": 500,
+            "outputIridiumPrice": 700
+          }
+        ]
+      }
+    ],
+    "processingTimeMinutes": 4000,
+    "bundles": [
+      "the-missing"
+    ],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    },
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
     ]
   }
 ]

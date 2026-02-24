@@ -25,6 +25,7 @@ function ModalItemButton({
   variant = 'default', // 'default' | 'inline' | 'bundle-item'
   onNavigate = null, // Navigation callback from parent modal (breadcrumb navigation)
   plural = false, // Display the item name in plural form (inline variant only)
+  label = null, // Override the displayed name (inline variant only)
   quality = 0, // Quality level: 0=normal, 1=silver, 2=gold, 4=iridium (bundle-item variant only)
   quantity = 1, // Stack quantity (bundle-item variant only)
   showSlotBackground = false // Show bundle slot background (bundle-item variant only)
@@ -172,7 +173,7 @@ function ModalItemButton({
           type="button"
         >
           <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
-          {plural ? pluralize(item.name) : item.name}
+          {label ?? (plural ? pluralize(item.name) : item.name)}
         </button>
 
         {/* Render appropriate modal (only when not using parent navigation) */}

@@ -15,6 +15,7 @@ const {
 
 const SOURCE_DIR = path.join(__dirname, '../data/processed');
 const RULES_DIR = path.join(__dirname, '../data/rules');
+const GAME_EXPORTS_DIR = path.join(__dirname, '../data/game-exports');
 const OUTPUT_DIR = path.join(__dirname, '../public/data');
 
 function loadJson(filepath) {
@@ -49,6 +50,7 @@ const sourceData = {
   hats:           loadJson(path.join(SOURCE_DIR, 'items/hats.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
+  machines:       loadJson(path.join(SOURCE_DIR, 'reference/machines.json')),
 };
 
 for (const [key, val] of Object.entries(sourceData)) {
@@ -147,6 +149,9 @@ sourceData.artisan.forEach(artisan => {
             genericId: artisan.id,
             sources: artisan.sources.map(s => {
               if (s.type !== 'machine') return s;
+              // For roe-input items (Aged Roe), the actual input is a roe variant,
+              // not the fish itself. Remap inputId/inputName to the roe variant.
+              const isRoeInput = s.inputType === 'roe';
               return {
                 type: s.type,
                 machine: s.machine,
@@ -154,8 +159,8 @@ sourceData.artisan.forEach(artisan => {
                 inputType: s.inputType,
                 processingTimeMinutes: s.processingTimeMinutes,
                 valueFormula: s.valueFormula,
-                inputId: inputDetail.inputId,
-                inputName: inputDetail.inputName,
+                inputId: isRoeInput ? `${inputDetail.inputId}-roe` : inputDetail.inputId,
+                inputName: isRoeInput ? `${inputDetail.inputName} Roe` : inputDetail.inputName,
                 inputGameId: inputDetail.inputGameId,
                 inputBasePrice: inputDetail.inputBasePrice,
                 inputCategory: inputDetail.inputCategory,
@@ -434,6 +439,92 @@ allCompiledItems.forEach(item => {
 });
 
 // ---------------------------------------------------------------------------
+// Normalize store IDs: ensure all storeId / sellingLocations values have
+// the store- prefix. Source files may have bare IDs (e.g. "pierre") —
+// this is the canonical enforcement point that makes compiled output correct
+// regardless of source file state.
+// ---------------------------------------------------------------------------
+function normalizeStoreId(id) {
+  if (!id || typeof id !== 'string') return id;
+  return id.startsWith('store-') ? id : `store-${id}`;
+}
+
+console.log('\n🏪 Normalizing store IDs...');
+
+for (const item of allCompiledItems) {
+  // Normalize sellingLocations array
+  if (Array.isArray(item.sellingLocations)) {
+    item.sellingLocations = item.sellingLocations.map(normalizeStoreId);
+  }
+  // Normalize storeId in each shop source
+  if (Array.isArray(item.sources)) {
+    for (const src of item.sources) {
+      if (src.type === 'shop' && src.storeId) {
+        src.storeId = normalizeStoreId(src.storeId);
+      }
+    }
+  }
+}
+
+console.log(`  ✓ Store IDs normalized`);
+
+// ---------------------------------------------------------------------------
+// Resolve crafting ingredient names
+// Add name/icon/id to each ingredient in crafting sources so the modal can
+// render them without a runtime lookup.
+// ---------------------------------------------------------------------------
+console.log('\n🔨 Resolving crafting ingredient names...');
+
+// Build a gameId → item map for ingredient lookups.
+// Crafting recipes reference Object IDs, so prefer non-furniture items on collision
+// (furniture and objects share numeric gameId spaces independently in the game).
+const itemsByGameId = new Map();
+for (const item of allCompiledItems) {
+  if (item.gameId === undefined || item.gameId === null) continue;
+  const existing = itemsByGameId.get(item.gameId);
+  // Only set if slot is empty, or if current entry is furniture (lower priority)
+  if (!existing || existing.itemCategory === 'furniture') {
+    itemsByGameId.set(item.gameId, item);
+  }
+}
+
+// Load raw Objects.json as a fallback for ingredient names not in compiled items
+// (e.g. Coal, which isn't tracked as a standalone item type yet)
+let rawObjectsData = null;
+try {
+  rawObjectsData = loadJson(path.join(GAME_EXPORTS_DIR, 'Objects.json'));
+} catch { /* optional */ }
+
+function resolveIngredientName(gameId) {
+  if (rawObjectsData) {
+    const obj = rawObjectsData[String(gameId)];
+    if (obj?.Name) return obj.Name;
+  }
+  return null;
+}
+
+let resolvedIngredients = 0;
+for (const item of allCompiledItems) {
+  for (const src of (item.sources || [])) {
+    if (src.type !== 'crafting' || !src.ingredients) continue;
+    src.ingredientDetails = src.ingredients.map(ing => {
+      const ingItem = itemsByGameId.get(ing.gameId);
+      const fallbackName = ingItem ? null : resolveIngredientName(ing.gameId);
+      return {
+        gameId: ing.gameId,
+        amount: ing.amount,
+        ...(ingItem
+          ? { id: ingItem.id, name: ingItem.name, icon: ingItem.icon }
+          : fallbackName ? { name: fallbackName } : {}
+        ),
+      };
+    });
+    resolvedIngredients++;
+  }
+}
+console.log(`  ✓ Resolved ingredient details for ${resolvedIngredients} crafting sources`);
+
+// ---------------------------------------------------------------------------
 // Build unified gameIdIndex
 // ---------------------------------------------------------------------------
 const gameIdIndex = {};
@@ -444,63 +535,47 @@ for (const item of allCompiledItems) {
 }
 
 // ---------------------------------------------------------------------------
-// Write unified pages/items.json
+// Load remaining reference data (bundles, villagers, stores, gifts)
 // ---------------------------------------------------------------------------
-console.log('\n📄 Writing unified items.json...');
+console.log('\n📖 Loading reference data...');
 
-const itemsPageData = {
+const sellingLocationsData = loadJson(path.join(RULES_DIR, 'selling-locations.json'));
+
+const giftsPath = path.join(SOURCE_DIR, 'relationships/gifts.json');
+const giftsData = fs.existsSync(giftsPath) ? loadJson(giftsPath) : { relationships: [] };
+
+console.log(`  ✓ Loaded stores (${Object.keys(sellingLocationsData.stores || {}).length} stores)`);
+console.log(`  ✓ Loaded gifts (${giftsData.relationships?.length ?? 0} relationships)`);
+
+// ---------------------------------------------------------------------------
+// Write unified public/data/entities.json
+// ---------------------------------------------------------------------------
+console.log('\n📄 Writing unified entities.json...');
+
+const entitiesData = {
   items: allCompiledItems,
+  bundles: sourceData.bundles,
+  villagers: sourceData.villagers,
+  stores: Object.fromEntries(
+    Object.entries(sellingLocationsData.stores).map(([k, v]) => [k, { ...v, entityType: 'store' }])
+  ),
+  machines: sourceData.machines.map(m => ({ ...m, entityType: 'machine' })),
+  relationships: giftsData.relationships || [],
   gameIdIndex,
   meta: {
     compiled: new Date().toISOString(),
     totalItems: allCompiledItems.length,
+    totalBundles: sourceData.bundles.length,
+    totalVillagers: sourceData.villagers.length,
+    totalStores: Object.keys(sellingLocationsData.stores || {}).length,
+    totalMachines: sourceData.machines.length,
+    totalRelationships: giftsData.relationships?.length ?? 0,
     mergedDuplicates,
   }
 };
 
-writeJson(path.join(OUTPUT_DIR, 'pages/items.json'), itemsPageData);
-console.log(`  ✓ Wrote items.json (${allCompiledItems.length} items, ${mergedDuplicates} merged)`);
-
-// ---------------------------------------------------------------------------
-// Write collections/bundles.json (lean — just item ID references)
-// ---------------------------------------------------------------------------
-console.log('\n📦 Writing collections/bundles.json...');
-
-writeJson(path.join(OUTPUT_DIR, 'collections/bundles.json'), {
-  bundles: sourceData.bundles,
-  meta: {
-    compiled: new Date().toISOString(),
-    totalBundles: sourceData.bundles.length
-  }
-});
-console.log(`  ✓ Wrote bundles.json (${sourceData.bundles.length} bundles)`);
-
-// ---------------------------------------------------------------------------
-// Write reference files
-// ---------------------------------------------------------------------------
-console.log('\n👥 Writing reference data...');
-
-writeJson(path.join(OUTPUT_DIR, 'reference/villagers.json'), {
-  villagers: sourceData.villagers,
-  meta: {
-    compiled: new Date().toISOString(),
-    totalVillagers: sourceData.villagers.length
-  }
-});
-console.log(`  ✓ Wrote villagers.json (${sourceData.villagers.length} villagers)`);
-
-// Copy selling-locations (stores) for frontend lookups
-const sellingLocations = loadJson(path.join(RULES_DIR, 'selling-locations.json'));
-writeJson(path.join(OUTPUT_DIR, 'reference/stores.json'), sellingLocations);
-console.log(`  ✓ Wrote stores.json`);
-
-// Copy relationships (gifts pivot table)
-const giftsPath = path.join(SOURCE_DIR, 'relationships/gifts.json');
-if (fs.existsSync(giftsPath)) {
-  const gifts = loadJson(giftsPath);
-  writeJson(path.join(OUTPUT_DIR, 'relationships/gifts.json'), gifts);
-  console.log(`  ✓ Wrote gifts.json (${gifts.relationships?.length ?? '?'} relationships)`);
-}
+writeJson(path.join(OUTPUT_DIR, 'entities.json'), entitiesData);
+console.log(`  ✓ Wrote entities.json (${allCompiledItems.length} items, ${sourceData.bundles.length} bundles, ${sourceData.villagers.length} villagers, ${sourceData.machines.length} machines)`);
 
 // ---------------------------------------------------------------------------
 // Summary
@@ -519,8 +594,8 @@ for (const [type, count] of Object.entries(typeCounts).sort((a, b) => a[0].local
 console.log(`${'  TOTAL'.padEnd(20)} ${allCompiledItems.length}`);
 console.log(`  artisan source items: ${sourceData.artisan.length} → ${compiledArtisan.length} expanded`);
 
-const outputSize = JSON.stringify(itemsPageData).length;
-console.log(`\n💾 items.json size: ${(outputSize / 1024).toFixed(1)} KB`);
+const outputSize = JSON.stringify(entitiesData).length;
+console.log(`\n💾 entities.json size: ${(outputSize / 1024).toFixed(1)} KB`);
 
 console.log('\n✅ Data compilation complete!');
 console.log(`\nCompiled files written to: ${OUTPUT_DIR}`);

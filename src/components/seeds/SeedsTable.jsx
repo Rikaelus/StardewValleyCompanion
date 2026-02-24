@@ -5,7 +5,6 @@ import ItemSellPrice, { createPriceSortingFn } from '../common/ItemSellPrice'
 import ModalItemButton from '../common/ModalItemButton'
 import ShopSourceList from '../common/ShopSourceList'
 import {
-  createIconColumn,
   createNameColumn,
   createSeasonColumn,
 } from '../common/ItemTableFactory.jsx'
@@ -19,7 +18,6 @@ function SeedsTable({ data, cropsById }) {
   }, [player.professions])
 
   const columns = useMemo(() => [
-    createIconColumn(),
     createNameColumn(),
     {
       accessorKey: 'produces',

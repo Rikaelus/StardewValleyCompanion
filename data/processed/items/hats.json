@@ -14,7 +14,7 @@
     "name": "Abigail's Bow",
     "description": "It's just like Abby's.",
     "isMask": false,
-    "icon": "assets/objects/Abigail's_Bow.png",
+    "icon": "assets/objects/Abigails_Bow.png",
     "sources": []
   },
   {
@@ -32,11 +32,11 @@
     "name": "Archer's Cap",
     "description": "Fashionable whether you're an archer or not.",
     "isMask": true,
-    "icon": "assets/objects/Archer's_Cap.png",
+    "icon": "assets/objects/Archers_Cap.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 4000
@@ -71,7 +71,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -88,7 +88,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-festival-egg-shop",
+        "storeId": "store-desert-festival-egg-shop",
         "storeName": "Desert Festival (Egg Shop)",
         "storeBaseName": "Desert Festival (Egg Shop)",
         "tradeItemId": "calico-egg",
@@ -118,7 +118,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -135,7 +135,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "island-trader",
+        "storeId": "store-island-trader",
         "storeName": "Island Trader",
         "storeBaseName": "Island Trader",
         "price": 50,
@@ -160,7 +160,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 10000
@@ -195,7 +195,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -212,7 +212,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -229,7 +229,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 10000
@@ -246,7 +246,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -263,21 +263,21 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "night-market",
+        "storeId": "store-night-market",
         "storeName": "Night Market",
         "storeBaseName": "Night Market",
         "price": 5000
       },
       {
         "type": "shop",
-        "storeId": "night-market",
+        "storeId": "store-night-market",
         "storeName": "Night Market",
         "storeBaseName": "Night Market",
         "price": 2500
       },
       {
         "type": "shop",
-        "storeId": "night-market",
+        "storeId": "store-night-market",
         "storeName": "Night Market",
         "storeBaseName": "Night Market",
         "price": 10000
@@ -294,7 +294,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -320,7 +320,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 10000
@@ -337,7 +337,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -354,7 +354,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -371,7 +371,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -406,7 +406,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-festival-egg-shop",
+        "storeId": "store-desert-festival-egg-shop",
         "storeName": "Desert Festival (Egg Shop)",
         "storeBaseName": "Desert Festival (Egg Shop)",
         "tradeItemId": "calico-egg",
@@ -427,7 +427,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -444,7 +444,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "island-trader",
+        "storeId": "store-island-trader",
         "storeName": "Island Trader",
         "storeBaseName": "Island Trader",
         "tradeItemId": "taro-root",
@@ -486,7 +486,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 4000
@@ -503,7 +503,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 50000
@@ -516,7 +516,7 @@
     "name": "Emily's Magic Hat",
     "description": "Made with love by Emily. It's 100% organic!",
     "isMask": true,
-    "icon": "assets/objects/Emily's_Magic_Hat.png",
+    "icon": "assets/objects/Emilys_Magic_Hat.png",
     "sources": []
   },
   {
@@ -529,7 +529,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -555,7 +555,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "stardew-valley-fair",
+        "storeId": "store-stardew-valley-fair",
         "storeName": "Stardew Valley Fair",
         "storeBaseName": "Stardew Valley Fair",
         "shopCurrency": "star-tokens",
@@ -599,7 +599,7 @@
     "name": "Forager's Hat",
     "description": "It's a forager's delight.",
     "isMask": true,
-    "icon": "assets/objects/Forager's_Hat.png",
+    "icon": "assets/objects/Foragers_Hat.png",
     "sources": []
   },
   {
@@ -626,7 +626,7 @@
     "name": "Gil's Hat",
     "description": "It's the same hat that Gil wears.",
     "isMask": true,
-    "icon": "assets/objects/Gil's_Hat.png",
+    "icon": "assets/objects/Gils_Hat.png",
     "sources": []
   },
   {
@@ -635,11 +635,11 @@
     "name": "Gnome's Cap",
     "description": "This gnome had a very large head.",
     "isMask": true,
-    "icon": "assets/objects/Gnome's_Cap.png",
+    "icon": "assets/objects/Gnomes_Cap.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -656,7 +656,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 10000
@@ -705,11 +705,11 @@
     "name": "Good Ol' Cap",
     "description": "A floppy old topper with a creased bill. Looks like it's been through a lot.",
     "isMask": true,
-    "icon": "assets/objects/Good_Ol'_Cap.png",
+    "icon": "assets/objects/Good_Ol_Cap.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -722,11 +722,11 @@
     "name": "Governor's Hat",
     "description": "A replica of the Governor's iconic hat.",
     "isMask": true,
-    "icon": "assets/objects/Governor's_Hat.png",
+    "icon": "assets/objects/Governors_Hat.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -743,7 +743,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-trade",
+        "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
         "storeBaseName": "Desert Trade (Sandy)",
         "price": 1500,
@@ -779,11 +779,11 @@
     "name": "Hunter's Cap",
     "description": "The wool lining should stay warm deep into the forest.",
     "isMask": true,
-    "icon": "assets/objects/Hunter's_Cap.png",
+    "icon": "assets/objects/Hunters_Cap.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -800,7 +800,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 20000
@@ -826,7 +826,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 25000
@@ -852,7 +852,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 25000
@@ -865,7 +865,7 @@
     "name": "Knight's Helmet",
     "description": "It looks just like the real thing!",
     "isMask": true,
-    "icon": "assets/objects/Knight's_Helmet.png",
+    "icon": "assets/objects/Knights_Helmet.png",
     "sources": []
   },
   {
@@ -914,7 +914,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -931,7 +931,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-trade",
+        "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
         "storeBaseName": "Desert Trade (Sandy)",
         "price": 500,
@@ -953,7 +953,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-trade",
+        "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
         "storeBaseName": "Desert Trade (Sandy)",
         "price": 4000,
@@ -975,7 +975,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -988,11 +988,11 @@
     "name": "Mr. Qi's Hat",
     "description": "A replica of Mr. Qi's iconic hat.",
     "isMask": true,
-    "icon": "assets/objects/Mr._Qi's_Hat.png",
+    "icon": "assets/objects/Mr._Qis_Hat.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "qi-gem-shop",
+        "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
         "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
@@ -1016,7 +1016,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "desert-festival-egg-shop",
+        "storeId": "store-desert-festival-egg-shop",
         "storeName": "Desert Festival (Egg Shop)",
         "storeBaseName": "Desert Festival (Egg Shop)",
         "tradeItemId": "calico-egg",
@@ -1055,7 +1055,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -1072,7 +1072,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000
@@ -1098,7 +1098,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 10000
@@ -1142,7 +1142,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "volcano-shop",
+        "storeId": "store-volcano-shop",
         "storeName": "Volcano Forge Shop",
         "storeBaseName": "Volcano Forge Shop",
         "price": 10000
@@ -1168,7 +1168,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -1185,7 +1185,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1229,7 +1229,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "raccoon",
+        "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
         "storeBaseName": "Raccoon Shop",
         "tradeItemId": "mixed-seeds",
@@ -1268,7 +1268,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "traveling-merchant",
+        "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
         "storeBaseName": "Traveling Merchant",
         "price": 8000,
@@ -1283,11 +1283,11 @@
     "name": "Sailor's Cap",
     "description": "It's fresh and starchy.",
     "isMask": true,
-    "icon": "assets/objects/Sailor's_Cap.png",
+    "icon": "assets/objects/Sailors_Cap.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1304,7 +1304,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -1330,7 +1330,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "island-trader",
+        "storeId": "store-island-trader",
         "storeName": "Island Trader",
         "storeBaseName": "Island Trader",
         "price": 2,
@@ -1355,7 +1355,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 25000
@@ -1368,11 +1368,11 @@
     "name": "Sou'wester",
     "description": "The shape helps to keep sailors dry during storms.",
     "isMask": true,
-    "icon": "assets/objects/Sou'wester.png",
+    "icon": "assets/objects/Souwester.png",
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1389,7 +1389,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 20000
@@ -1406,7 +1406,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1437,7 +1437,7 @@
     "name": "Squire's Helmet",
     "description": "The face is exposed to increase air flow.",
     "isMask": true,
-    "icon": "assets/objects/Squire's_Helmet.png",
+    "icon": "assets/objects/Squires_Helmet.png",
     "sources": []
   },
   {
@@ -1468,7 +1468,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1503,7 +1503,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -1556,7 +1556,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1573,7 +1573,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 2000
@@ -1599,7 +1599,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 1000
@@ -1625,7 +1625,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "hat-mouse",
+        "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
         "storeBaseName": "Hat Mouse",
         "price": 5000

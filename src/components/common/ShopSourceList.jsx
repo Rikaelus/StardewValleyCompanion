@@ -14,7 +14,7 @@ import { usePlayer } from '../../contexts/PlayerContext'
  *   findEntity     {Function} (full mode) gameId → item object for currency lookups
  *   onNavigate     {Function} (full mode) modal navigation callback
  */
-function ShopSourceList({ sources, compact = false, findEntity, findEntityById, onNavigate }) {
+function ShopSourceList({ sources, compact = false, findEntity, findEntityById, getStore, onNavigate }) {
   const { player } = usePlayer()
   const shopSources = (sources || []).filter(s => s.type === 'shop')
   if (shopSources.length === 0) return <span style={{ color: '#999' }}>—</span>
@@ -44,7 +44,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         const storeName = src.storeName ?? src.storeId
         const isBarter = src.tradeItemId !== undefined || src.tradeItemGameId !== undefined
         // Joja members pay base × 2 instead of base × 2.5, so member price = non-member × 0.8
-        const price = src.price != null && src.storeId === 'joja' && player.jojaMember
+        const price = src.price != null && src.storeId === 'store-joja' && player.jojaMember
           ? Math.floor(src.price * 0.8)
           : src.price
         const currencyItem = isBarter && findEntity
@@ -73,9 +73,17 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         if (src.stock && src.stock !== -1)
           qualifiers.push(`Stock: ${src.stock}`)
 
+        const storeEntity = getStore ? getStore(src.storeId) : null
+
         return (
           <span key={i} className="source-entry">
-            <span className="source-name">{storeName}</span>
+            <span className="source-name">
+              {storeEntity && onNavigate ? (
+                <ModalItemButton item={storeEntity} variant="inline" onNavigate={onNavigate} />
+              ) : (
+                storeName
+              )}
+            </span>
             {qualifiers.length > 0 ? (
               <span className="source-qualifiers">
                 {qualifiers.map((q, qi) => <span key={qi} className="source-qualifier">{q}</span>)}

@@ -14,8 +14,7 @@ import ModalItemButton from './ModalItemButton'
 import ShopSourceList from './ShopSourceList'
 import BundleBadge from './BundleBadge'
 import InfoTooltip from './InfoTooltip'
-import { useRelationalData } from '../../hooks/useRelationalData'
-import { useItems } from '../../contexts/ItemsContext'
+import { useEntities } from '../../contexts/EntityContext'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { formatLocationNames, formatTime, formatSeasons, formatProcessingTime, getDifficultyColor, formatPrice, getCategoryName, getTrashCanRefund, getProfitColor } from '../../utils/formatters'
 import { calculateProfessionMultiplier } from './ItemSellPrice'
@@ -31,14 +30,17 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const entityRef = useRef(entity)
   const { player } = usePlayer()
 
-  // Navigation history for breadcrumb trail
-  const [history, setHistory] = useState([])
+  // Navigation history for breadcrumb trail — initialize with entity so the
+  // first render already has currentEntity set (no empty-history flash).
+  const [history, setHistory] = useState(() => entity ? [entity] : [])
 
-  // When entity prop changes (modal opens with new item), reset history
+  // When entity prop changes to a *different* entity, reset history.
+  // Skip on initial mount (entityRef already equals entity from useRef(entity)).
   useEffect(() => {
-    if (entity) {
+    if (entity && entity !== entityRef.current) {
       setHistory([entity])
     }
+    entityRef.current = entity
   }, [entity])
 
   // The currently displayed entity is the last item in history
@@ -63,8 +65,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
   // Detect entity type
   const entityType = useMemo(() => {
     if (!currentEntity) return null
+    if (currentEntity.entityType) return currentEntity.entityType  // store, machine
     if (currentEntity.items && currentEntity.reward !== undefined) return 'bundle'
-    if (currentEntity.type) return currentEntity.type // items have a type field
+    if (currentEntity.type) return currentEntity.type  // items have a type field
     return 'unknown'
   }, [currentEntity])
 
@@ -87,8 +90,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const [inputQuality, setInputQuality] = useState('regular') // regular, silver, gold, iridium
   const [outputInputQuality, setOutputInputQuality] = useState('regular') // quality of THIS item when used as input
 
-  // Load unified items data (fetched once for the whole app via ItemsContext)
-  const { byType: itemsByType, findById, findByGameId, error: itemsError } = useItems()
+  // Load unified entity data (fetched once for the whole app via EntityContext)
+  const entityData = useEntities()
+  const { byType: itemsByType, items: allItems, findById, findByGameId, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
   const fishItems = useMemo(() => itemsByType['fish'] || [], [itemsByType])
@@ -99,11 +103,11 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Log any errors
   useEffect(() => {
-    if (itemsError) console.error('Failed to load items data:', itemsError)
+    if (itemsError) console.error('Failed to load entity data:', itemsError)
   }, [itemsError])
 
-  // Load relational data for lookups
-  const relationalData = useRelationalData()
+  // relationalData alias for backwards compatibility with existing render functions
+  const relationalData = entityData
 
   // Keep the last entity data during closing animation
   useEffect(() => {
@@ -243,14 +247,14 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
     const isSeed = displayEntity.type === 'seed'
     const allSources = displayEntity.sources || []
-    const shopSources = allSources.filter(s => s.type === 'shop')
+    const shopSources = allSources.filter(s => s.type === 'shop').sort((a, b) => (a.storeName ?? '').localeCompare(b.storeName ?? ''))
     const monsterDropSources = allSources.filter(s => s.type === 'monster-drop')
     const fishPondSources = allSources.filter(s => s.type === 'fish-pond')
     const tillingSources = allSources.filter(s => s.type === 'tilling')
     const craftingSources = allSources.filter(s => s.type === 'crafting')
     const animalSources = allSources.filter(s => s.type === 'animal')
     const tapperSources = allSources.filter(s => s.type === 'tapper')
-    const machineSources = allSources.filter(s => s.type === 'machine')
+    const machineSources = allSources.filter(s => s.type === 'machine').sort((a, b) => (a.machine ?? '').localeCompare(b.machine ?? ''))
     const seedSources = allSources.filter(s => s.type === 'seed')
     const fishSources = allSources.filter(s => s.type === 'fish')
     const forageSources = allSources.filter(s => s.type === 'forage')
@@ -304,6 +308,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
               sources={displayEntity.sources}
               findEntity={findEntityByGameId}
               findEntityById={findById}
+              getStore={relationalData.getStore}
               onNavigate={handleNavigate}
             />
           </div>
@@ -357,16 +362,46 @@ function UniversalModal({ entity, isOpen, onClose }) {
         {craftingSources.length > 0 && (
           <div className="source-group">
             <span className="modal-label">Crafting:</span>
-            <div className="source-list">
+            <div className="source-list crafting-source-list">
               {craftingSources.map((src, i) => (
-                <span key={i} className="source-entry">
-                  <span className="source-name">{src.recipeName}</span>
-                  <span />
-                  {src.outputCount > 1
-                    ? <span className="source-detail">×{src.outputCount}</span>
-                    : <span />
-                  }
-                </span>
+                <div key={i} className="crafting-source-entry">
+                  <div className="crafting-source-header">
+                    <span className="source-name">{src.recipeName}</span>
+                    {src.outputCount > 1 && (
+                      <span className="source-detail">×{src.outputCount}</span>
+                    )}
+                    {src.unlockCondition && (
+                      <span className="source-qualifier crafting-unlock">
+                        {src.unlockCondition.type === 'skill' && (
+                          `${src.unlockCondition.skill[0].toUpperCase()}${src.unlockCondition.skill.slice(1)} ${src.unlockCondition.level}+`
+                        )}
+                        {src.unlockCondition.type === 'friendship' && (
+                          `${src.unlockCondition.hearts}♥ ${src.unlockCondition.npc}`
+                        )}
+                        {src.unlockCondition.type === 'level' && (
+                          `Level ${src.unlockCondition.level}+`
+                        )}
+                      </span>
+                    )}
+                  </div>
+                  {src.ingredientDetails?.length > 0 && (
+                    <div className="crafting-ingredients">
+                      {src.ingredientDetails.map((ing, j) => {
+                        const ingItem = ing.id ? findById(ing.id) : null
+                        return (
+                          <span key={j} className="crafting-ingredient">
+                            {ingItem ? (
+                              <ModalItemButton item={ingItem} variant="inline" onNavigate={handleNavigate} />
+                            ) : (
+                              <span className="source-name">{ing.name || `Item #${ing.gameId}`}</span>
+                            )}
+                            <span className="crafting-ingredient-amount">×{ing.amount}</span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -378,9 +413,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
             <div className="source-list">
               {animalSources.map((src, i) => (
                 <span key={i} className="source-entry">
-                  <span className="source-name">{src.animal}</span>
-                  <span />
-                  <span />
+                  <span className="source-name">{src.animal || src.animalName}</span>
                 </span>
               ))}
             </div>
@@ -407,19 +440,31 @@ function UniversalModal({ entity, isOpen, onClose }) {
             <span className="modal-label">Produced By:</span>
             <div className="source-list">
               {machineSources.map((src, i) => {
-                const inputItem = src.inputId ? findInputItem(src.inputId) : null
+                const inputDetail = src.inputDetails?.[0]
+                const inputItemId = src.inputId || inputDetail?.inputId
+                const inputItem = inputItemId ? findInputItem(inputItemId) : null
+                // Use inputName as label override when it differs from the linked item's name
+                // (e.g. "Sturgeon Roe" links to the Sturgeon fish item)
+                const inputLabel = inputDetail?.inputName && inputItem && inputDetail.inputName !== inputItem.name
+                  ? inputDetail.inputName : null
                 const inputDisplay = inputItem
-                  ? <ModalItemButton item={inputItem} variant="inline" onNavigate={handleNavigate} />
-                  : src.inputName || (src.inputType && src.inputType !== 'specific'
+                  ? <ModalItemButton item={inputItem} variant="inline" label={inputLabel} onNavigate={handleNavigate} />
+                  : src.inputName || inputDetail?.inputName || (src.inputType && src.inputType !== 'specific'
                     ? src.inputType.charAt(0).toUpperCase() + src.inputType.slice(1)
                     : null)
+                const machineEntity = src.machineId ? relationalData.getMachine(src.machineId) : null
                 return (
                   <span key={i} className="source-entry">
-                    <span className="source-name">{src.machine}</span>
+                    <span className="source-name">
+                      {machineEntity ? (
+                        <ModalItemButton item={machineEntity} variant="inline" onNavigate={handleNavigate} />
+                      ) : (
+                        src.machine
+                      )}
+                    </span>
                     {inputDisplay && <span className="source-qualifiers"><span className="source-qualifier">{inputDisplay}</span></span>}
-                    {displayEntity.processingTimeMinutes
-                      ? <span className="source-detail">{formatProcessingTime(displayEntity.processingTimeMinutes)}</span>
-                      : <span />
+                    {displayEntity.processingTimeMinutes &&
+                      <span className="source-detail">{formatProcessingTime(displayEntity.processingTimeMinutes)}</span>
                     }
                   </span>
                 )
@@ -971,6 +1016,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
     // Generic artisan items have no fixed price
     if (displayEntity.isGeneric) return null
 
+    // Furniture can't be sold — price field is buy price, not sell price
+    if (displayEntity.itemCategory === 'furniture') return null
+
     // Skip if entity has no price (unsellable items)
     const basePrice = displayEntity.prices?.regular || displayEntity.price || 0
     if (basePrice === 0) return null
@@ -1212,21 +1260,8 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         </span>
                       </div>
                     </>
-                  ) : displayEntity.type === 'seed' || (displayEntity.type === 'forage' && displayEntity.displayCategory === -81) ? (
-                    // Seeds and beach forage: no quality tiers
-                    <span className={`sell-price-value${trashCanUpgrade !== null ? ' sell-price-value--trash' : ''}`} style={{ color: trashCanUpgrade !== null ? undefined : '#666' }}>
-                      {Math.floor(basePrice * multiplier * priceMultiplier)}g
-                    </span>
-                  ) : displayEntity.maxQuality === 0 ? (
-                    // Normal quality only (e.g. Fiber, Qi Fruit)
-                    <div>
-                      <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
-                      <span className={`sell-price-value${trashCanUpgrade !== null ? ' sell-price-value--trash' : ''}`} style={{ color: trashCanUpgrade !== null ? undefined : 'inherit' }}>
-                        {Math.floor(basePrice * multiplier * priceMultiplier)}g
-                      </span>
-                    </div>
-                  ) : (
-                    // All other items: full quality range
+                  ) : itemHasQuality && displayEntity.maxQuality !== 0 ? (
+                    // Quality items (fish, crops, forage, etc.) with full range
                     <>
                       <div>
                         <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
@@ -1253,6 +1288,14 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         </span>
                       </div>
                     </>
+                  ) : (
+                    // No quality tiers (resources, metal bars, artisan goods, seeds, etc.)
+                    <div>
+                      <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
+                      <span className={`sell-price-value${trashCanUpgrade !== null ? ' sell-price-value--trash' : ''}`} style={{ color: trashCanUpgrade !== null ? undefined : 'inherit' }}>
+                        {Math.floor(basePrice * multiplier * priceMultiplier)}g
+                      </span>
+                    </div>
                   )}
                 </div>
 
@@ -1263,7 +1306,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       Base: {basePrice}g
                       {multiplier > 1 && <> × {multiplier} (profession)</>}
                       {trashCanUpgrade !== null && <> × {trashCanRefund * 100}% (trash refund)</>}
-                      {' (per quality tier)'}
+                      {(itemHasQuality && displayEntity.maxQuality !== 0) && ' (per quality tier)'}
                     </>
                   ) : (
                     <>Base: {basePrice}g</>
@@ -1524,6 +1567,165 @@ function UniversalModal({ entity, isOpen, onClose }) {
   }
 
   // ============================================================================
+  // Store Modal Rendering
+  // ============================================================================
+
+  const renderStoreContents = () => {
+    if (entityType !== 'store') return null
+    const storeId = displayEntity.id
+    const storeItems = allItems.filter(item =>
+      item.sources?.some(s => s.type === 'shop' && s.storeId === storeId)
+    ).sort((a, b) => a.name.localeCompare(b.name))
+    if (storeItems.length === 0) return null
+
+    // Group by itemCategory for readability
+    const grouped = {}
+    for (const item of storeItems) {
+      const cat = item.itemCategory || item.type || 'other'
+      if (!grouped[cat]) grouped[cat] = []
+      grouped[cat].push(item)
+    }
+    const categoryOrder = ['furniture', 'hat', 'fish', 'crop', 'seed', 'artisan', 'animal-product', 'forage', 'tree-fruit', 'mineral', 'metal-bar', 'resource', 'big-craftable', 'monster-loot', 'other']
+    const sortedGroups = Object.entries(grouped).sort(([a], [b]) => {
+      const ai = categoryOrder.indexOf(a); const bi = categoryOrder.indexOf(b)
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+    })
+
+    const CATEGORY_LABELS = {
+      furniture: 'Furniture', hat: 'Hats', fish: 'Fish', crop: 'Crops', seed: 'Seeds',
+      artisan: 'Artisan Goods', 'animal-product': 'Animal Products', forage: 'Forage',
+      'tree-fruit': 'Tree Fruits', mineral: 'Minerals', 'metal-bar': 'Metal Bars',
+      resource: 'Resources', 'big-craftable': 'Big Craftables', 'monster-loot': 'Monster Loot',
+    }
+
+    return (
+      <ModalSection id="section-store-items" title={`Available Items (${storeItems.length})`}>
+        {sortedGroups.map(([cat, items]) => (
+          <div key={cat} className="store-category-group">
+            {sortedGroups.length > 1 && (
+              <div className="modal-label" style={{ marginBottom: '0.25rem' }}>
+                {CATEGORY_LABELS[cat] || cat}
+              </div>
+            )}
+            <div className="store-items-grid">
+              {items.map(item => {
+                const src = item.sources?.find(s => s.type === 'shop' && s.storeId === storeId)
+                return (
+                  <span key={item.id} className="source-entry">
+                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                    <span className="source-detail">
+                      {src?.price != null ? `${src.price}g` : '—'}
+                    </span>
+                  </span>
+                )
+              })}
+            </div>
+          </div>
+        ))}
+      </ModalSection>
+    )
+  }
+
+  // ============================================================================
+  // Machine Modal Rendering
+  // ============================================================================
+
+  const renderMachineOutputs = () => {
+    if (entityType !== 'machine') return null
+    const machineId = displayEntity.id
+    const outputItems = allItems.filter(item =>
+      !item.isGeneric && item.sources?.some(s => s.type === 'machine' && s.machineId === machineId)
+    ).sort((a, b) => a.name.localeCompare(b.name))
+
+    // Find the compiled big-craftable item that matches this machine (by id)
+    const machineItem = allItems.find(i => i.id === displayEntity.id)
+    const craftingSources = machineItem?.sources?.filter(s => s.type === 'crafting') || []
+
+    return (
+      <>
+        {outputItems.length > 0 && (
+          <ModalSection id="section-machine-outputs" title={`Produces (${outputItems.length})`}>
+            <div className="source-list">
+              {outputItems.map(item => {
+                const src = item.sources?.find(s => s.type === 'machine' && s.machineId === machineId)
+                const inputDetail = src?.inputDetails?.[0]
+                const inputItemId = src?.inputId || inputDetail?.inputId
+                const inputItem = inputItemId ? findById(inputItemId) : null
+                // Use inputName as label override when it differs from the linked item's name
+                const inputLabel = inputDetail?.inputName && inputItem && inputDetail.inputName !== inputItem.name
+                  ? inputDetail.inputName : null
+                return (
+                  <span key={item.id} className="source-entry">
+                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                    {inputItem && (
+                      <span className="source-qualifiers">
+                        <span className="source-qualifier">
+                          from <ModalItemButton item={inputItem} variant="inline" label={inputLabel} onNavigate={handleNavigate} />
+                        </span>
+                      </span>
+                    )}
+                    {!inputItem && src?.inputType && src.inputType !== 'specific' && (
+                      <span className="source-qualifiers">
+                        <span className="source-qualifier">from {src.inputType}</span>
+                      </span>
+                    )}
+                    {(src?.processingTimeMinutes || item.processingTimeMinutes) && (
+                      <span className="source-detail">{formatProcessingTime(src?.processingTimeMinutes || item.processingTimeMinutes)}</span>
+                    )}
+                  </span>
+                )
+              })}
+            </div>
+          </ModalSection>
+        )}
+
+        {craftingSources.length > 0 && (
+          <ModalSection id="section-machine-crafting" title="How to Craft">
+            <div className="source-list crafting-source-list">
+              {craftingSources.map((src, i) => (
+                <div key={i} className="crafting-source-entry">
+                  <div className="crafting-source-header">
+                    {src.unlockCondition && (
+                      <span className="source-qualifier crafting-unlock">
+                        {src.unlockCondition.type === 'skill' && (
+                          `${src.unlockCondition.skill[0].toUpperCase()}${src.unlockCondition.skill.slice(1)} ${src.unlockCondition.level}+`
+                        )}
+                        {src.unlockCondition.type === 'friendship' && (
+                          `${src.unlockCondition.hearts}♥ ${src.unlockCondition.npc}`
+                        )}
+                        {src.unlockCondition.type === 'level' && (
+                          `Level ${src.unlockCondition.level}+`
+                        )}
+                      </span>
+                    )}
+                  </div>
+                  {src.ingredientDetails?.length > 0 && (
+                    <div className="crafting-ingredients">
+                      {src.ingredientDetails.map((ing, j) => {
+                        const ingItem = ing.id ? findById(ing.id) : null
+                        return (
+                          <span key={j} className="crafting-ingredient">
+                            {ingItem ? (
+                              <ModalItemButton item={ingItem} variant="inline" onNavigate={handleNavigate} />
+                            ) : (
+                              <span className="source-name">{ing.name || `Item #${ing.gameId}`}</span>
+                            )}
+                            <span className="crafting-ingredient-amount">×{ing.amount}</span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </ModalSection>
+        )}
+      </>
+    )
+  }
+
+  // ============================================================================
   // Breadcrumb Rendering
   // ============================================================================
 
@@ -1563,11 +1765,21 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Determine the type and build subtitle
   const type = displayEntity.type || 'unknown'
+  const itemHasQuality = displayEntity.hasQuality !== false &&
+    ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product'].includes(type)
   let subtitle = 'Item'
   let modalTitle = displayEntity.name
   let headerName = displayEntity.name
 
-  if (entityType === 'bundle') {
+  if (entityType === 'store') {
+    subtitle = 'Shop'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'machine') {
+    subtitle = 'Machine'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'bundle') {
     // Bundle-specific subtitle
     subtitle = 'Community Center Bundle'
     modalTitle = displayEntity.name
@@ -1610,6 +1822,26 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Compute which sections are visible for the section nav
   const visibleSections = (() => {
+    if (entityType === 'store') {
+      const storeItems = allItems.filter(item =>
+        item.sources?.some(s => s.type === 'shop' && s.storeId === displayEntity.id)
+      )
+      return storeItems.length > 0 ? [{ id: 'section-store-items', label: 'Items' }] : []
+    }
+
+    if (entityType === 'machine') {
+      const sections = []
+      const outputItems = allItems.filter(item =>
+        !item.isGeneric && item.sources?.some(s => s.type === 'machine' && s.machineId === displayEntity.id)
+      )
+      if (outputItems.length > 0) sections.push({ id: 'section-machine-outputs', label: 'Produces' })
+      const machineItem = allItems.find(i => i.id === displayEntity.id)
+      if (machineItem?.sources?.some(s => s.type === 'crafting')) {
+        sections.push({ id: 'section-machine-crafting', label: 'How to Craft' })
+      }
+      return sections
+    }
+
     if (entityType === 'bundle') {
       return [
         { id: 'section-required', label: 'Required Items' },
@@ -1632,7 +1864,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
     const hasProduces = isSeed && displayEntity.produces?.length > 0
     const hasAging = !!displayEntity.canBeAged
     const basePrice = displayEntity.prices?.regular || displayEntity.price || 0
-    const hasCalculator = !displayEntity.isGeneric && basePrice > 0
+    const hasCalculator = !displayEntity.isGeneric && basePrice > 0 && displayEntity.itemCategory !== 'furniture'
     const hasBundles = displayEntity.bundles?.length > 0
     const hasGifts = displayEntity.canBeGifted !== false && relationalData.getGiftPreferences(displayEntity.id)?.length > 0
 
@@ -1653,38 +1885,44 @@ function UniversalModal({ entity, isOpen, onClose }) {
       <div className="modal-item-wrapper">
 
         {/* Context tabs for dual-role items (items only) */}
-        {entityType !== 'bundle' && renderContextTabs()}
+        {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderContextTabs()}
 
         <div className="modal-item-content">
           <ModalHeader icon={iconPath} name={headerName} subtitle={subtitle}>
-            {/* Price display for items only */}
-            {entityType !== 'bundle' && (displayEntity.price || displayEntity.prices) && (
+            {/* Price display for items only (not bundles, stores, machines, or furniture) */}
+            {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && displayEntity.itemCategory !== 'furniture' && (displayEntity.price || displayEntity.prices) && (
               <div className="modal-price">
                 <ItemSellPrice
                   item={displayEntity}
-                  showQualities={displayEntity.type !== 'seed'}
+                  showQualities={itemHasQuality}
                   showProfession={true}
                 />
               </div>
             )}
           </ModalHeader>
 
+          {/* Store-Specific Sections */}
+          {entityType === 'store' && renderStoreContents()}
+
+          {/* Machine-Specific Sections */}
+          {entityType === 'machine' && renderMachineOutputs()}
+
           {/* Bundle-Specific Sections */}
           {entityType === 'bundle' && renderBundleRequirements()}
           {entityType === 'bundle' && renderBundleReward()}
 
           {/* Item-Specific Sections */}
-          {entityType !== 'bundle' && type === 'fish' && renderFishingInfo()}
-          {entityType !== 'bundle' && type === 'artisan' && renderVariationsList()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && type === 'fish' && renderFishingInfo()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && type === 'artisan' && renderVariationsList()}
 
           {/* Universal Item Sections (items only) */}
-          {entityType !== 'bundle' && renderLocationAvailability()}
-          {entityType !== 'bundle' && renderSeedProduces()}
-          {entityType !== 'bundle' && renderAgingInfo()}
-          {entityType !== 'bundle' && renderSellingInfo()}
-          {entityType !== 'bundle' && renderBundles()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderLocationAvailability()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderSeedProduces()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderAgingInfo()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderSellingInfo()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderBundles()}
 
-          {entityType !== 'bundle' && (
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && (
             <ModalGiftPreferences
               id="section-gifts"
               giftDetails={relationalData.getGiftPreferences(displayEntity.id)}
@@ -1693,7 +1931,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
             />
           )}
 
-          {entityType !== 'bundle' && renderContextTags()}
+          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderContextTags()}
         </div>
       </div>
     </Modal>

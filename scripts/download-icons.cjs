@@ -62,7 +62,7 @@ async function downloadIcons(label, items) {
 
   for (const item of items) {
     const wikiName = item.wikiName || item.fruitName || item.name;
-    const fileName = `${wikiName.replace(/\s+/g, '_')}.png`;
+    const fileName = `${wikiName.replace(/'/g, '').replace(/\s+/g, '_')}.png`;
     const outputPath = path.join(OBJECTS_DIR, fileName);
 
     if (fs.existsSync(outputPath)) {

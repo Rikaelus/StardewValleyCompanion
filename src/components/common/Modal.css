@@ -10,7 +10,7 @@
   justify-content: center;
   z-index: 1000;
   padding: 1rem;
-  animation: fadeIn 0.2s ease-out;
+  animation: fadeIn 0.3s ease-out backwards;
 }
 
 /* fadeIn defined in index.css */
@@ -28,9 +28,6 @@
   animation: fadeOut 0.3s ease-out forwards;
 }
 
-.modal-content.closing {
-  animation: slideDown 0.3s ease-out forwards !important;
-}
 
 .modal-content {
   background: #fdfbf7;
@@ -47,30 +44,12 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 5px;
-  animation: slideUp 0.3s ease-out;
+  position: relative;
+  top: var(--stack-top, 0px);
+  transform: scale(var(--stack-scale, 1));
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(20px) scale(var(--stack-scale, 1));
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(var(--stack-scale, 1));
-    opacity: 1;
-  }
-}
 
-@keyframes slideDown {
-  from {
-    transform: translateY(0) scale(var(--stack-scale, 1));
-    opacity: 1;
-  }
-  to {
-    transform: translateY(20px) scale(var(--stack-scale, 1));
-    opacity: 0;
-  }
-}
 
 .modal-header {
   display: flex;

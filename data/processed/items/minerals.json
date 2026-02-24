@@ -12,6 +12,10 @@
       "color_green"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -63,6 +67,10 @@
       "color_aquamarine"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "dye"
     ],
@@ -116,6 +124,10 @@
       "color_red"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -167,6 +179,10 @@
       "color_purple"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -218,6 +234,10 @@
       "color_gold"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -269,6 +289,10 @@
       "color_jade"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -320,6 +344,10 @@
       "color_white"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -372,6 +400,10 @@
       "crystalarium_banned"
     ],
     "mineralType": "gem",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "the-missing"
     ],
@@ -425,6 +457,10 @@
       "color_white"
     ],
     "mineralType": "mineral",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "geologist-s"
     ],
@@ -478,6 +514,10 @@
       "color_red"
     ],
     "mineralType": "crystal",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "geologist-s"
     ],
@@ -531,6 +571,10 @@
       "color_cyan"
     ],
     "mineralType": "crystal",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "geologist-s"
     ],
@@ -584,6 +628,10 @@
       "color_copper"
     ],
     "mineralType": "crystal",
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "geologist-s"
     ],

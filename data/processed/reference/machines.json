@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bee-house",
+    "name": "Bee House",
+    "gameId": 10,
+    "icon": "assets/objects/Bee_House.png",
+    "wikiName": "Bee_House"
+  },
+  {
+    "id": "cheese-press",
+    "name": "Cheese Press",
+    "gameId": 16,
+    "icon": "assets/objects/Cheese_Press.png",
+    "wikiName": "Cheese_Press"
+  },
+  {
+    "id": "dehydrator",
+    "name": "Dehydrator",
+    "gameId": null,
+    "icon": "assets/objects/Dehydrator.png",
+    "wikiName": "Dehydrator"
+  },
+  {
+    "id": "fish-pond",
+    "name": "Fish Pond",
+    "gameId": null,
+    "icon": "assets/objects/Fish_Pond.png",
+    "wikiName": "Fish_Pond"
+  },
+  {
+    "id": "fish-smoker",
+    "name": "Fish Smoker",
+    "gameId": null,
+    "icon": "assets/objects/Fish_Smoker.png",
+    "wikiName": "Fish_Smoker"
+  },
+  {
+    "id": "keg",
+    "name": "Keg",
+    "gameId": 12,
+    "icon": "assets/objects/Keg.png",
+    "wikiName": "Keg"
+  },
+  {
+    "id": "loom",
+    "name": "Loom",
+    "gameId": 17,
+    "icon": "assets/objects/Loom.png",
+    "wikiName": "Loom"
+  },
+  {
+    "id": "mayonnaise-machine",
+    "name": "Mayonnaise Machine",
+    "gameId": 24,
+    "icon": "assets/objects/Mayonnaise_Machine.png",
+    "wikiName": "Mayonnaise_Machine"
+  },
+  {
+    "id": "oil-maker",
+    "name": "Oil Maker",
+    "gameId": 19,
+    "icon": "assets/objects/Oil_Maker.png",
+    "wikiName": "Oil_Maker"
+  },
+  {
+    "id": "preserves-jar",
+    "name": "Preserves Jar",
+    "gameId": 15,
+    "icon": "assets/objects/Preserves_Jar.png",
+    "wikiName": "Preserves_Jar"
+  }
+]

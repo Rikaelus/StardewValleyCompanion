@@ -61,20 +61,19 @@ function ItemButton({
     return <span className="item-button-label">{item.name}</span>
   }
 
-  // If showing both icon and label, wrap in a container
+  // If showing both icon and label, render as a single unified button
+  // The border box wraps only the icon; the label sits outside it.
   if (showIcon && showLabel) {
     return (
-      <span className="item-button-with-label">
-        <button
-          className={`item-button ${className}`}
-          onClick={handleClick}
-          title={item.name}
-          type="button"
-        >
-          {renderIcon()}
-        </button>
+      <button
+        className={`item-button item-button--with-label ${className}`}
+        onClick={handleClick}
+        title={item.name}
+        type="button"
+      >
+        <span className="item-button-icon-box">{renderIcon()}</span>
         {renderLabel()}
-      </span>
+      </button>
     )
   }
 

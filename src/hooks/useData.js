@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useItems } from '../contexts/ItemsContext'
+import { useEntities } from '../contexts/EntityContext'
 
 export function useData(files) {
   const [data, setData] = useState({})
@@ -74,7 +74,7 @@ const ITEMS_KEY_MAP = {
  * @returns {Object} { data, loading, error }
  */
 export function useItemData(itemType) {
-  const { byType, gameIdIndex, loading, error } = useItems()
+  const { byType, gameIdIndex, loading, error } = useEntities()
 
   const typeKey = TYPE_MAP[itemType]
   if (!typeKey && !loading) {

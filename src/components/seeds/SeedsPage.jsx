@@ -1,13 +1,13 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useItemData } from '../../hooks/useData'
-import { useItems } from '../../contexts/ItemsContext'
+import { useEntities } from '../../contexts/EntityContext'
 import PagePanel from '../common/PagePanel'
 import SeedsTable from './SeedsTable'
 
 function SeedsPage() {
   const { data, loading, error } = useItemData('seeds')
-  const { byType } = useItems()
+  const { byType } = useEntities()
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [filters, setFilters] = useState({

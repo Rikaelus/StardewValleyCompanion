@@ -3,7 +3,6 @@ import DataTable from '../common/DataTable'
 import UniversalModal from '../common/UniversalModal'
 import ShopSourceList from '../common/ShopSourceList'
 import {
-  createIconColumn,
   createNameColumn,
 } from '../common/ItemTableFactory.jsx'
 
@@ -11,7 +10,6 @@ function HatsTable({ data }) {
   const [selectedItem, setSelectedItem] = useState(null)
 
   const columns = useMemo(() => [
-    createIconColumn(),
     createNameColumn(),
     {
       accessorKey: 'description',

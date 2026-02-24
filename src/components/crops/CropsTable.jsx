@@ -1,11 +1,9 @@
 import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
-import { useVillagers } from '../../contexts/VillagersContext'
-import { useRelationalData } from '../../hooks/useRelationalData'
+import { useEntities } from '../../contexts/EntityContext'
 import ItemSellPrice, { createPriceSortingFn } from '../common/ItemSellPrice'
 import {
-  createIconColumn,
   createNameColumn,
   createSeasonColumn,
   createBundleColumn,
@@ -14,8 +12,7 @@ import {
 
 function CropsTable({ data }) {
   const { player } = usePlayer()
-  const { villagers } = useVillagers()
-  const relationalData = useRelationalData()
+  const { villagers: { all: villagers }, ...relationalData } = useEntities()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -30,7 +27,6 @@ function CropsTable({ data }) {
     }
 
     const baseColumns = [
-      createIconColumn(),
       createNameColumn(),
       createSeasonColumn(),
       {

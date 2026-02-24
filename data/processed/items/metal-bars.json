@@ -24,6 +24,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "blacksmith-s"
     ],
@@ -89,6 +93,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "blacksmith-s"
     ],
@@ -154,6 +162,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "blacksmith-s"
     ],
@@ -219,6 +231,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -286,6 +302,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
@@ -349,6 +369,10 @@
         }
       ]
     },
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "hate",

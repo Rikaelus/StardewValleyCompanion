@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, useRef, useCallback } from 'react'
+import { useEffect, useId, useLayoutEffect, useState, useRef, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useModalStack } from '../../contexts/ModalContext'
 import './Modal.css'
@@ -7,7 +7,7 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
   const modalId = useId()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
   const [isClosing, setIsClosing] = useState(false)
-  const [shouldRender, setShouldRender] = useState(false)
+  const [shouldRender, setShouldRender] = useState(isOpen)
   const bodyRef = useRef(null)
 
   const scrollToSection = useCallback((sectionId) => {
@@ -19,32 +19,30 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
     }
   }, [])
 
-  // Handle opening/closing with animation
-  useEffect(() => {
-    if (isOpen) {
-      // Opening
-      setShouldRender(true)
-      setIsClosing(false)
-    } else if (shouldRender) {
-      // Closing - start animation
-      setIsClosing(true)
-      const timer = setTimeout(() => {
-        setShouldRender(false)
-        setIsClosing(false)
-      }, 300) // Match fadeOut animation duration
-      return () => clearTimeout(timer)
-    }
-  }, [isOpen, shouldRender])
-
-  // Manage modal stack
-  useEffect(() => {
+  // Open: push to stack and show in a single layout pass so the first painted
+  // frame already has the correct stackIndex (no animation-restarting re-render).
+  useLayoutEffect(() => {
     if (isOpen) {
       pushModal(modalId)
+      setShouldRender(true)
+      setIsClosing(false)
       return () => {
         popModal(modalId)
       }
     }
   }, [isOpen, modalId, pushModal, popModal])
+
+  // Close: trigger closing animation then unmount
+  useEffect(() => {
+    if (!isOpen && shouldRender) {
+      setIsClosing(true)
+      const timer = setTimeout(() => {
+        setShouldRender(false)
+        setIsClosing(false)
+      }, 300)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen, shouldRender])
 
   // Close on Escape key (only if this is the top modal)
   useEffect(() => {
@@ -80,7 +78,8 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
 
   if (!shouldRender) return null
 
-  const stackIndex = getModalIndex(modalId)
+  const rawStackIndex = getModalIndex(modalId)
+  const stackIndex = Math.max(rawStackIndex, 0)
   const zIndex = 1000 + stackIndex * 10
   const isTop = isTopModal(modalId)
 
@@ -101,8 +100,7 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
         onClick={(e) => e.stopPropagation()}
         style={{
           '--stack-scale': 1 - stackIndex * 0.02,
-          transform: `scale(${1 - stackIndex * 0.02})`,
-          top: `${stackIndex * 20}px`,
+          '--stack-top': `${stackIndex * 20}px`,
         }}
       >
         <div className="modal-header">

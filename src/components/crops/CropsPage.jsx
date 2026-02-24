@@ -1,13 +1,13 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useItemData } from '../../hooks/useData'
-import { useRelationalData } from '../../hooks/useRelationalData'
+import { useEntities } from '../../contexts/EntityContext'
 import PagePanel from '../common/PagePanel'
 import CropsTable from './CropsTable'
 
 function CropsPage() {
   const { data, loading, error } = useItemData('crops')
-  const { loading: relationalLoading, getBundle } = useRelationalData()
+  const { loading: relationalLoading, getBundle } = useEntities()
   const [searchParams, setSearchParams] = useSearchParams()
 
   const [filters, setFilters] = useState({

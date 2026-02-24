@@ -1,11 +1,10 @@
 import { useState, useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import UniversalModal from '../common/UniversalModal'
-import { useVillagers } from '../../contexts/VillagersContext'
-import { useRelationalData } from '../../hooks/useRelationalData'
+import { useEntities } from '../../contexts/EntityContext'
 import { formatLocationNames } from '../../utils/formatters'
+import ModalItemButton from '../common/ModalItemButton'
 import {
-  createIconColumn,
   createNameColumn,
   createSeasonColumn,
   createPriceColumn,
@@ -14,8 +13,7 @@ import {
 } from '../common/ItemTableFactory.jsx'
 
 function ForageTable({ data, allData }) {
-  const { villagers } = useVillagers()
-  const relationalData = useRelationalData()
+  const { villagers: { all: villagers }, ...relationalData } = useEntities()
   const [selectedForage, setSelectedForage] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -31,14 +29,12 @@ function ForageTable({ data, allData }) {
     }
 
     const baseColumns = [
-      createIconColumn({ onClick: handleRowClick }),
       createNameColumn({
-        onClick: handleRowClick,
         cellRenderer: ({ row }) => (
-          <strong>
-            {row.original.name}
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} />
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
-          </strong>
+          </span>
         )
       }),
       {
