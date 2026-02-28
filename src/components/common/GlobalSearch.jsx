@@ -108,7 +108,7 @@ function GlobalSearch({ isOpen, onClose }) {
       return aName.localeCompare(bName)
     })
 
-    return filtered.slice(0, 8)
+    return filtered
   }, [debouncedQuery, items])
 
   // Reset highlighted index when results change

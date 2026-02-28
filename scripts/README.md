@@ -11,11 +11,11 @@ Game Files (XNB)
     ↓
 Raw Game Exports (JSON)
     ↓
-[process-game-data.cjs]
+[ProcessGameData.cjs]
     ↓
 Source Data (Structured)
     ↓
-[compileData.cjs] ← Runs automatically on build
+[CompileData.cjs] ← Runs automatically on build
     ↓
 Compiled Page Data (Optimized)
 ```
@@ -49,7 +49,7 @@ bash scripts/build-data-exporter.sh
 - `NPCGiftTastes.json` - Villager gift preferences
 - `Crops.json`, `Weapons.json`, etc.
 
-### 2. process-game-data.cjs
+### 2. ProcessGameData.cjs
 
 **Purpose**: Converts raw game exports into structured source files
 
@@ -59,7 +59,7 @@ bash scripts/build-data-exporter.sh
 **Usage**:
 ```bash
 # After exporting game data
-node scripts/process-game-data.cjs
+node scripts/ProcessGameData.cjs
 ```
 
 **What it does**:
@@ -74,7 +74,7 @@ node scripts/process-game-data.cjs
 - `data/processed/collections/bundles.json` - 31 bundles with item refs
 - `data/processed/reference/villagers.json` - 34 villagers
 
-### 3. compileData.cjs
+### 3. CompileData.cjs
 
 **Purpose**: Compiles source files into optimized page-specific JSON
 
@@ -84,7 +84,7 @@ node scripts/process-game-data.cjs
 **Usage**:
 ```bash
 # Manual run
-node scripts/compileData.cjs
+node scripts/CompileData.cjs
 
 # Automatic (runs on every build via Vite plugin)
 npm run dev
@@ -163,7 +163,7 @@ npm run build
 cp "/path/to/Stardew Valley/Mods/DataExporter/exported/"*.json data/game-exports/
 
 # 4. Process into source files
-node scripts/process-game-data.cjs
+node scripts/ProcessGameData.cjs
 
 # 5. Build will auto-compile
 npm run build
@@ -171,14 +171,14 @@ npm run build
 
 ### Add New Item Type (e.g., Crops)
 
-1. **Update process-game-data.cjs**:
+1. **Update ProcessGameData.cjs**:
    ```javascript
    // Add crop processing
    const crops = processCrops(gameData.crops, gameData.objects);
    writeJson('data/processed/items/crops.json', crops);
    ```
 
-2. **Update compileData.cjs**:
+2. **Update CompileData.cjs**:
    ```javascript
    // Add crop compilation
    const compiledCrops = compileCropsPage(sourceData.crops);
@@ -196,7 +196,7 @@ npm run build
 
 These are normal! Bundles contain many non-fish items (crops, artisan goods, minerals). The compiler only has fish data currently.
 
-**Solution**: Expand `process-game-data.cjs` to handle more item types.
+**Solution**: Expand `ProcessGameData.cjs` to handle more item types.
 
 ### SMAPI mod not exporting data
 
@@ -209,7 +209,7 @@ These are normal! Bundles contain many non-fish items (crops, artisan goods, min
 
 ```bash
 # Test compilation manually
-node scripts/compileData.cjs
+node scripts/CompileData.cjs
 
 # Check for missing source files
 ls -la data/processed/items/
@@ -219,8 +219,8 @@ ls -la data/processed/reference/
 
 ## Performance Notes
 
-- **process-game-data.cjs**: Runs once per game update (~1-2 seconds)
-- **compileData.cjs**: Runs on every build (~300ms)
+- **ProcessGameData.cjs**: Runs once per game update (~1-2 seconds)
+- **CompileData.cjs**: Runs on every build (~300ms)
 - **Compiled file sizes**: fish.json (~52KB), bundles.json (~32KB)
 - **Build time impact**: Adds ~500ms to total build time
 

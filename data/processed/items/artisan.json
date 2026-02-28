@@ -3969,7 +3969,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 1,
         "stock": 1
       }
@@ -4044,7 +4044,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10
       }
     ],

@@ -9,7 +9,7 @@ function compileGameData() {
     buildStart() {
       console.log('\n🔨 Compiling game data...');
       try {
-        execSync('node scripts/compileData.cjs', {
+        execSync('node scripts/CompileData.cjs', {
           stdio: 'inherit',
           cwd: process.cwd()
         });
@@ -28,7 +28,7 @@ function compileGameData() {
         if (path.includes('data/processed/')) {
           console.log('\n🔄 Source data changed, recompiling...');
           try {
-            execSync('node scripts/compileData.cjs', {
+            execSync('node scripts/CompileData.cjs', {
               stdio: 'inherit',
               cwd: process.cwd()
             });

@@ -607,7 +607,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 2
       },
       {
@@ -1891,7 +1891,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10
       }
     ]
@@ -2041,7 +2041,7 @@
         "tradeItemId": "jack-be-nimble-jack-be-thick",
         "tradeItemGameId": "Book_Defense",
         "tradeItemName": "Jack Be Nimble, Jack Be Thick",
-        "tradeItemIcon": "assets/objects/Jack_Be_Nimble,_Jack_Be_Thick.png",
+        "tradeItemIcon": "assets/objects/JackBeNimbleJackBeThick.png",
         "tradeItemAmount": 1
       },
       {
@@ -2165,7 +2165,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 30
       }
     ]
@@ -2288,7 +2288,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10
       },
       {
@@ -2299,7 +2299,7 @@
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
         "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/Omni_Geode.png",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
         "tradeItemAmount": 5
       }
     ]

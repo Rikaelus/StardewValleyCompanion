@@ -5,7 +5,7 @@
     "name": "???",
     "description": "???",
     "isMask": true,
-    "icon": "assets/objects/???.png",
+    "icon": null,
     "sources": []
   },
   {
@@ -14,7 +14,7 @@
     "name": "Abigail's Bow",
     "description": "It's just like Abby's.",
     "isMask": false,
-    "icon": "assets/objects/Abigails_Bow.png",
+    "icon": "assets/objects/AbigailsBow.png",
     "sources": []
   },
   {
@@ -23,7 +23,7 @@
     "name": "Arcane Hat",
     "description": "The type of cowboy hat worn by a wizard.",
     "isMask": true,
-    "icon": "assets/objects/Arcane_Hat.png",
+    "icon": "assets/objects/ArcaneHat.png",
     "sources": []
   },
   {
@@ -32,7 +32,7 @@
     "name": "Archer's Cap",
     "description": "Fashionable whether you're an archer or not.",
     "isMask": true,
-    "icon": "assets/objects/Archers_Cap.png",
+    "icon": "assets/objects/ArchersCap.png",
     "sources": [
       {
         "type": "shop",
@@ -58,7 +58,7 @@
     "name": "Blobfish Mask",
     "description": "Just as spongy as the real thing!",
     "isMask": true,
-    "icon": "assets/objects/Blobfish_Mask.png",
+    "icon": "assets/objects/BlobfishMask.png",
     "sources": []
   },
   {
@@ -67,7 +67,7 @@
     "name": "Blue Bonnet",
     "description": "Harken back to simpler times with this prairie bonnet.",
     "isMask": true,
-    "icon": "assets/objects/Blue_Bonnet.png",
+    "icon": "assets/objects/BlueBonnet.png",
     "sources": [
       {
         "type": "shop",
@@ -84,7 +84,7 @@
     "name": "Blue Bow",
     "description": "This huge bow makes quite a statement!",
     "isMask": false,
-    "icon": "assets/objects/Blue_Bow.png",
+    "icon": "assets/objects/BlueBow.png",
     "sources": [
       {
         "type": "shop",
@@ -94,7 +94,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 50
       }
     ]
@@ -105,7 +105,7 @@
     "name": "Blue Cowboy Hat",
     "description": "A denim cowboy hat in cool blue.",
     "isMask": true,
-    "icon": "assets/objects/Blue_Cowboy_Hat.png",
+    "icon": "assets/objects/BlueCowboyHat.png",
     "sources": []
   },
   {
@@ -114,7 +114,7 @@
     "name": "Blue Ribbon",
     "description": "A lovely ribbon that sits behind the head.",
     "isMask": false,
-    "icon": "assets/objects/Blue_Ribbon.png",
+    "icon": "assets/objects/BlueRibbon.png",
     "sources": [
       {
         "type": "shop",
@@ -131,7 +131,7 @@
     "name": "Bluebird Mask",
     "description": "Wear this to look just like your favorite island trader.",
     "isMask": true,
-    "icon": "assets/objects/Bluebird_Mask.png",
+    "icon": "assets/objects/BluebirdMask.png",
     "sources": [
       {
         "type": "shop",
@@ -142,7 +142,7 @@
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
         "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/Taro_Root.png",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
         "tradeItemAmount": 30,
         "days": [
           "Wednesday"
@@ -156,7 +156,7 @@
     "name": "Bowler Hat",
     "description": "Made from smooth felt.",
     "isMask": true,
-    "icon": "assets/objects/Bowler_Hat.png",
+    "icon": "assets/objects/BowlerHat.png",
     "sources": [
       {
         "type": "shop",
@@ -173,7 +173,7 @@
     "name": "Bridal Veil",
     "description": "The traditional headwear for a bride.",
     "isMask": true,
-    "icon": "assets/objects/Bridal_Veil.png",
+    "icon": "assets/objects/BridalVeil.png",
     "sources": []
   },
   {
@@ -182,7 +182,7 @@
     "name": "Bucket Hat",
     "description": "A simple hat with a short brim.",
     "isMask": true,
-    "icon": "assets/objects/Bucket_Hat.png",
+    "icon": "assets/objects/BucketHat.png",
     "sources": []
   },
   {
@@ -191,7 +191,7 @@
     "name": "Butterfly Bow",
     "description": "This one is very soft.",
     "isMask": false,
-    "icon": "assets/objects/Butterfly_Bow.png",
+    "icon": "assets/objects/ButterflyBow.png",
     "sources": [
       {
         "type": "shop",
@@ -208,7 +208,7 @@
     "name": "Cat Ears",
     "description": "Whiskers included.",
     "isMask": true,
-    "icon": "assets/objects/Cat_Ears.png",
+    "icon": "assets/objects/CatEars.png",
     "sources": [
       {
         "type": "shop",
@@ -225,7 +225,7 @@
     "name": "Chef Hat",
     "description": "The traditional hat worn by a head chef.",
     "isMask": true,
-    "icon": "assets/objects/Chef_Hat.png",
+    "icon": "assets/objects/ChefHat.png",
     "sources": [
       {
         "type": "shop",
@@ -242,7 +242,7 @@
     "name": "Chicken Mask",
     "description": "You'll be sure to get them grinning with this one.",
     "isMask": true,
-    "icon": "assets/objects/Chicken_Mask.png",
+    "icon": "assets/objects/ChickenMask.png",
     "sources": [
       {
         "type": "shop",
@@ -259,7 +259,7 @@
     "name": "Cone Hat",
     "description": "A curiosity from a distant land.",
     "isMask": true,
-    "icon": "assets/objects/Cone_Hat.png",
+    "icon": "assets/objects/ConeHat.png",
     "sources": [
       {
         "type": "shop",
@@ -290,7 +290,7 @@
     "name": "Cool Cap",
     "description": "It looks really faded, but it used to be a vibrant blue.",
     "isMask": true,
-    "icon": "assets/objects/Cool_Cap.png",
+    "icon": "assets/objects/CoolCap.png",
     "sources": [
       {
         "type": "shop",
@@ -307,7 +307,7 @@
     "name": "Copper Pan",
     "description": "You place the copper pan on your head...",
     "isMask": true,
-    "icon": "assets/objects/Copper_Pan.png",
+    "icon": "assets/objects/CopperPan.png",
     "sources": []
   },
   {
@@ -316,7 +316,7 @@
     "name": "Cowboy Hat",
     "description": "The leather is old and cracked, but surprisingly supple. It smells musty.",
     "isMask": true,
-    "icon": "assets/objects/Cowboy_Hat.png",
+    "icon": "assets/objects/CowboyHat.png",
     "sources": [
       {
         "type": "shop",
@@ -333,7 +333,7 @@
     "name": "Cowgal Hat",
     "description": "The band is studded with fake diamonds.",
     "isMask": true,
-    "icon": "assets/objects/Cowgal_Hat.png",
+    "icon": "assets/objects/CowgalHat.png",
     "sources": [
       {
         "type": "shop",
@@ -350,7 +350,7 @@
     "name": "Cowpoke Hat",
     "description": "For dairy experts.",
     "isMask": true,
-    "icon": "assets/objects/Cowpoke_Hat.png",
+    "icon": "assets/objects/CowpokeHat.png",
     "sources": [
       {
         "type": "shop",
@@ -384,7 +384,7 @@
     "name": "Dark Ballcap",
     "description": "It fits perfectly on your head.",
     "isMask": true,
-    "icon": "assets/objects/Dark_Ballcap.png",
+    "icon": "assets/objects/DarkBallcap.png",
     "sources": []
   },
   {
@@ -393,7 +393,7 @@
     "name": "Dark Cowboy Hat",
     "description": "A cowboy hat in fashionable black.",
     "isMask": true,
-    "icon": "assets/objects/Dark_Cowboy_Hat.png",
+    "icon": "assets/objects/DarkCowboyHat.png",
     "sources": []
   },
   {
@@ -402,7 +402,7 @@
     "name": "Dark Velvet Bow",
     "description": "A big, floppy bow made of dark velvet.",
     "isMask": false,
-    "icon": "assets/objects/Dark_Velvet_Bow.png",
+    "icon": "assets/objects/DarkVelvetBow.png",
     "sources": [
       {
         "type": "shop",
@@ -412,7 +412,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 75
       }
     ]
@@ -423,7 +423,7 @@
     "name": "Delicate Bow",
     "description": "Little pink jewels glisten as you examine it.",
     "isMask": false,
-    "icon": "assets/objects/Delicate_Bow.png",
+    "icon": "assets/objects/DelicateBow.png",
     "sources": [
       {
         "type": "shop",
@@ -440,7 +440,7 @@
     "name": "Deluxe Cowboy Hat",
     "description": "A cowboy hat with a more extreme shape.",
     "isMask": true,
-    "icon": "assets/objects/Deluxe_Cowboy_Hat.png",
+    "icon": "assets/objects/DeluxeCowboyHat.png",
     "sources": [
       {
         "type": "shop",
@@ -450,7 +450,7 @@
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
         "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/Taro_Root.png",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
         "tradeItemAmount": 30,
         "days": [
           "Friday"
@@ -464,7 +464,7 @@
     "name": "Deluxe Pirate Hat",
     "description": "Only the most infamous pirate could pull off this look.",
     "isMask": true,
-    "icon": "assets/objects/Deluxe_Pirate_Hat.png",
+    "icon": "assets/objects/DeluxePirateHat.png",
     "sources": []
   },
   {
@@ -473,7 +473,7 @@
     "name": "Dinosaur Hat",
     "description": "A hat fashioned to look like a small dinosaur.",
     "isMask": true,
-    "icon": "assets/objects/Dinosaur_Hat.png",
+    "icon": "assets/objects/DinosaurHat.png",
     "sources": []
   },
   {
@@ -499,7 +499,7 @@
     "name": "Elegant Turban",
     "description": "A fine black silk turban with gold trim.",
     "isMask": true,
-    "icon": "assets/objects/Elegant_Turban.png",
+    "icon": "assets/objects/ElegantTurban.png",
     "sources": [
       {
         "type": "shop",
@@ -516,7 +516,7 @@
     "name": "Emily's Magic Hat",
     "description": "Made with love by Emily. It's 100% organic!",
     "isMask": true,
-    "icon": "assets/objects/Emilys_Magic_Hat.png",
+    "icon": "assets/objects/EmilysMagicHat.png",
     "sources": []
   },
   {
@@ -525,7 +525,7 @@
     "name": "Eye Patch",
     "description": "You can't tell if it's real or just from a costume shop.",
     "isMask": true,
-    "icon": "assets/objects/Eye_Patch.png",
+    "icon": "assets/objects/EyePatch.png",
     "sources": [
       {
         "type": "shop",
@@ -542,7 +542,7 @@
     "name": "Fashion Hat",
     "description": "A fashionable hat with a feather in the brim.",
     "isMask": true,
-    "icon": "assets/objects/Fashion_Hat.png",
+    "icon": "assets/objects/FashionHat.png",
     "sources": []
   },
   {
@@ -572,7 +572,7 @@
     "name": "Fishing Hat",
     "description": "The wide brim keeps you shaded when you're fishing on the riverbank.",
     "isMask": true,
-    "icon": "assets/objects/Fishing_Hat.png",
+    "icon": "assets/objects/FishingHat.png",
     "sources": []
   },
   {
@@ -581,7 +581,7 @@
     "name": "Flat Topped Hat",
     "description": "An old style of hat once considered very fashionable.",
     "isMask": true,
-    "icon": "assets/objects/Flat_Topped_Hat.png",
+    "icon": "assets/objects/FlatToppedHat.png",
     "sources": []
   },
   {
@@ -590,7 +590,7 @@
     "name": "Floppy Beanie",
     "description": "A warm hat with a looser fit.",
     "isMask": true,
-    "icon": "assets/objects/Floppy_Beanie.png",
+    "icon": "assets/objects/FloppyBeanie.png",
     "sources": []
   },
   {
@@ -599,7 +599,7 @@
     "name": "Forager's Hat",
     "description": "It's a forager's delight.",
     "isMask": true,
-    "icon": "assets/objects/Foragers_Hat.png",
+    "icon": "assets/objects/ForagersHat.png",
     "sources": []
   },
   {
@@ -608,7 +608,7 @@
     "name": "Frog Hat",
     "description": "A slimy friend that lives on your dome.",
     "isMask": true,
-    "icon": "assets/objects/Frog_Hat.png",
+    "icon": "assets/objects/FrogHat.png",
     "sources": []
   },
   {
@@ -617,7 +617,7 @@
     "name": "Garbage Hat",
     "description": "It's a garbage can lid 'upcycled' into a hat...",
     "isMask": true,
-    "icon": "assets/objects/Garbage_Hat.png",
+    "icon": "assets/objects/GarbageHat.png",
     "sources": []
   },
   {
@@ -626,7 +626,7 @@
     "name": "Gil's Hat",
     "description": "It's the same hat that Gil wears.",
     "isMask": true,
-    "icon": "assets/objects/Gils_Hat.png",
+    "icon": "assets/objects/GilsHat.png",
     "sources": []
   },
   {
@@ -635,7 +635,7 @@
     "name": "Gnome's Cap",
     "description": "This gnome had a very large head.",
     "isMask": true,
-    "icon": "assets/objects/Gnomes_Cap.png",
+    "icon": "assets/objects/GnomesCap.png",
     "sources": [
       {
         "type": "shop",
@@ -652,7 +652,7 @@
     "name": "Goblin Mask",
     "description": "Freak out the neighborhood with this creepy mask. Rubber ear joints for effect.",
     "isMask": true,
-    "icon": "assets/objects/Goblin_Mask.png",
+    "icon": "assets/objects/GoblinMask.png",
     "sources": [
       {
         "type": "shop",
@@ -678,7 +678,7 @@
     "name": "Gold Pan",
     "description": "You place the gold pan on your head...",
     "isMask": true,
-    "icon": "assets/objects/Gold_Pan.png",
+    "icon": "assets/objects/GoldPan.png",
     "sources": []
   },
   {
@@ -687,7 +687,7 @@
     "name": "Golden Helmet",
     "description": "It's half of a golden coconut.",
     "isMask": true,
-    "icon": "assets/objects/Golden_Helmet.png",
+    "icon": "assets/objects/GoldenHelmet.png",
     "sources": []
   },
   {
@@ -696,7 +696,7 @@
     "name": "Golden Mask",
     "description": "A faithful recreation of the Calico Desert relic!",
     "isMask": true,
-    "icon": "assets/objects/Golden_Mask.png",
+    "icon": "assets/objects/GoldenMask.png",
     "sources": []
   },
   {
@@ -705,7 +705,7 @@
     "name": "Good Ol' Cap",
     "description": "A floppy old topper with a creased bill. Looks like it's been through a lot.",
     "isMask": true,
-    "icon": "assets/objects/Good_Ol_Cap.png",
+    "icon": "assets/objects/GoodOlCap.png",
     "sources": [
       {
         "type": "shop",
@@ -722,7 +722,7 @@
     "name": "Governor's Hat",
     "description": "A replica of the Governor's iconic hat.",
     "isMask": true,
-    "icon": "assets/objects/Governors_Hat.png",
+    "icon": "assets/objects/GovernorsHat.png",
     "sources": [
       {
         "type": "shop",
@@ -739,7 +739,7 @@
     "name": "Green Turban",
     "description": "A green silk turban with a gold ornament on the front.",
     "isMask": true,
-    "icon": "assets/objects/Green_Turban.png",
+    "icon": "assets/objects/GreenTurban.png",
     "sources": [
       {
         "type": "shop",
@@ -750,7 +750,7 @@
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
         "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/Omni_Geode.png",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
         "tradeItemAmount": 50
       }
     ]
@@ -761,7 +761,7 @@
     "name": "Hair Bone",
     "description": "A prehistoric version of the hair bow.",
     "isMask": false,
-    "icon": "assets/objects/Hair_Bone.png",
+    "icon": "assets/objects/HairBone.png",
     "sources": []
   },
   {
@@ -770,7 +770,7 @@
     "name": "Hard Hat",
     "description": "Keep your dome in one piece.",
     "isMask": true,
-    "icon": "assets/objects/Hard_Hat.png",
+    "icon": "assets/objects/HardHat.png",
     "sources": []
   },
   {
@@ -779,7 +779,7 @@
     "name": "Hunter's Cap",
     "description": "The wool lining should stay warm deep into the forest.",
     "isMask": true,
-    "icon": "assets/objects/Hunters_Cap.png",
+    "icon": "assets/objects/HuntersCap.png",
     "sources": [
       {
         "type": "shop",
@@ -796,7 +796,7 @@
     "name": "Infinity Crown",
     "description": "It's made from an exotic metal you've never seen before.",
     "isMask": true,
-    "icon": "assets/objects/Infinity_Crown.png",
+    "icon": "assets/objects/InfinityCrown.png",
     "sources": [
       {
         "type": "shop",
@@ -813,7 +813,7 @@
     "name": "Iridium Pan",
     "description": "You place the iridium pan on your head...",
     "isMask": true,
-    "icon": "assets/objects/Iridium_Pan.png",
+    "icon": "assets/objects/IridiumPan.png",
     "sources": []
   },
   {
@@ -822,7 +822,7 @@
     "name": "Jester Hat",
     "description": "Put your inner clown on display.",
     "isMask": true,
-    "icon": "assets/objects/Jester_Hat.png",
+    "icon": "assets/objects/JesterHat.png",
     "sources": [
       {
         "type": "shop",
@@ -839,7 +839,7 @@
     "name": "Joja Cap",
     "description": "An official Joja Cap. Made from 100% polyester.",
     "isMask": true,
-    "icon": "assets/objects/Joja_Cap.png",
+    "icon": "assets/objects/JojaCap.png",
     "sources": []
   },
   {
@@ -848,7 +848,7 @@
     "name": "Junimo Hat",
     "description": "To honor our little buddies...",
     "isMask": true,
-    "icon": "assets/objects/Junimo_Hat.png",
+    "icon": "assets/objects/JunimoHat.png",
     "sources": [
       {
         "type": "shop",
@@ -865,7 +865,7 @@
     "name": "Knight's Helmet",
     "description": "It looks just like the real thing!",
     "isMask": true,
-    "icon": "assets/objects/Knights_Helmet.png",
+    "icon": "assets/objects/KnightsHelmet.png",
     "sources": []
   },
   {
@@ -874,7 +874,7 @@
     "name": "Laurel Wreath Crown",
     "description": "A garland of leaves shaped into a lovely crown.",
     "isMask": true,
-    "icon": "assets/objects/Laurel_Wreath_Crown.png",
+    "icon": "assets/objects/LaurelWreathCrown.png",
     "sources": []
   },
   {
@@ -883,7 +883,7 @@
     "name": "Leprechaun Hat",
     "description": "The previous owner must've had a big head for a Leprechaun.",
     "isMask": true,
-    "icon": "assets/objects/Leprechaun_Hat.png",
+    "icon": "assets/objects/LeprechaunHat.png",
     "sources": []
   },
   {
@@ -892,7 +892,7 @@
     "name": "Living Hat",
     "description": "It absorbs moisture from your scalp. No watering needed!",
     "isMask": true,
-    "icon": "assets/objects/Living_Hat.png",
+    "icon": "assets/objects/LivingHat.png",
     "sources": []
   },
   {
@@ -901,7 +901,7 @@
     "name": "Logo Cap",
     "description": "A pink cap with a sleek profile.",
     "isMask": true,
-    "icon": "assets/objects/Logo_Cap.png",
+    "icon": "assets/objects/LogoCap.png",
     "sources": []
   },
   {
@@ -910,7 +910,7 @@
     "name": "Lucky Bow",
     "description": "The middle is made of solid gold.",
     "isMask": false,
-    "icon": "assets/objects/Lucky_Bow.png",
+    "icon": "assets/objects/LuckyBow.png",
     "sources": [
       {
         "type": "shop",
@@ -927,7 +927,7 @@
     "name": "Magic Cowboy Hat",
     "description": "It's shimmering with prismatic energy",
     "isMask": true,
-    "icon": "assets/objects/Magic_Cowboy_Hat.png",
+    "icon": "assets/objects/MagicCowboyHat.png",
     "sources": [
       {
         "type": "shop",
@@ -938,7 +938,7 @@
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
         "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/Omni_Geode.png",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
         "tradeItemAmount": 333
       }
     ]
@@ -949,7 +949,7 @@
     "name": "Magic Turban",
     "description": "It's shimmering with prismatic energy",
     "isMask": true,
-    "icon": "assets/objects/Magic_Turban.png",
+    "icon": "assets/objects/MagicTurban.png",
     "sources": [
       {
         "type": "shop",
@@ -960,7 +960,7 @@
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
         "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/Omni_Geode.png",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
         "tradeItemAmount": 333
       }
     ]
@@ -971,7 +971,7 @@
     "name": "Mouse Ears",
     "description": "Made from synthetic fibers.",
     "isMask": true,
-    "icon": "assets/objects/Mouse_Ears.png",
+    "icon": "assets/objects/MouseEars.png",
     "sources": [
       {
         "type": "shop",
@@ -988,7 +988,7 @@
     "name": "Mr. Qi's Hat",
     "description": "A replica of Mr. Qi's iconic hat.",
     "isMask": true,
-    "icon": "assets/objects/Mr._Qis_Hat.png",
+    "icon": "assets/objects/MrQisHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1001,7 +1001,7 @@
         "tradeItemId": "qi-gem",
         "tradeItemGameId": 858,
         "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/Qi_Gem.png",
+        "tradeItemIcon": "assets/objects/QiGem.png",
         "tradeItemAmount": 5
       }
     ]
@@ -1012,7 +1012,7 @@
     "name": "Mummy Mask",
     "description": "A large mummy mask... frightening!",
     "isMask": true,
-    "icon": "assets/objects/Mummy_Mask.png",
+    "icon": "assets/objects/MummyMask.png",
     "sources": [
       {
         "type": "shop",
@@ -1022,7 +1022,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 120
       }
     ]
@@ -1033,7 +1033,7 @@
     "name": "Mushroom Cap",
     "description": "It smells earthy.",
     "isMask": true,
-    "icon": "assets/objects/Mushroom_Cap.png",
+    "icon": "assets/objects/MushroomCap.png",
     "sources": []
   },
   {
@@ -1042,7 +1042,7 @@
     "name": "Mystery Hat",
     "description": "Made from the leftovers of a Mystery Box.",
     "isMask": true,
-    "icon": "assets/objects/Mystery_Hat.png",
+    "icon": "assets/objects/MysteryHat.png",
     "sources": []
   },
   {
@@ -1051,7 +1051,7 @@
     "name": "Official Cap",
     "description": "Looks like it belonged to a postman or policeman. Either way, it's still very soft and smells okay.",
     "isMask": true,
-    "icon": "assets/objects/Official_Cap.png",
+    "icon": "assets/objects/OfficialCap.png",
     "sources": [
       {
         "type": "shop",
@@ -1068,7 +1068,7 @@
     "name": "Pageboy Cap",
     "description": "For some reason, it makes you want to sell newspapers.",
     "isMask": true,
-    "icon": "assets/objects/Pageboy_Cap.png",
+    "icon": "assets/objects/PageboyCap.png",
     "sources": [
       {
         "type": "shop",
@@ -1085,7 +1085,7 @@
     "name": "Panda Hat",
     "description": "A lovely panda hat.",
     "isMask": true,
-    "icon": "assets/objects/Panda_Hat.png",
+    "icon": "assets/objects/PandaHat.png",
     "sources": []
   },
   {
@@ -1094,7 +1094,7 @@
     "name": "Paper Hat",
     "description": "It's made out of special paper that won't disintegrate in the rain.",
     "isMask": true,
-    "icon": "assets/objects/Paper_Hat.png",
+    "icon": "assets/objects/PaperHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1111,7 +1111,7 @@
     "name": "Party Hat",
     "description": "A goofy red hat that makes any celebration more fun.",
     "isMask": true,
-    "icon": "assets/objects/Party_Hat.png",
+    "icon": "assets/objects/PartyHatRed.png",
     "sources": []
   },
   {
@@ -1120,7 +1120,7 @@
     "name": "Party Hat",
     "description": "A goofy blue hat that makes any celebration more fun.",
     "isMask": true,
-    "icon": "assets/objects/Party_Hat.png",
+    "icon": "assets/objects/PartyHatBlue.png",
     "sources": []
   },
   {
@@ -1129,7 +1129,7 @@
     "name": "Party Hat",
     "description": "A goofy green hat that makes any celebration more fun.",
     "isMask": true,
-    "icon": "assets/objects/Party_Hat.png",
+    "icon": "assets/objects/PartyHatGreen.png",
     "sources": []
   },
   {
@@ -1138,7 +1138,7 @@
     "name": "Pink Bow",
     "description": "This huge bow makes quite a statement!",
     "isMask": false,
-    "icon": "assets/objects/Pink_Bow.png",
+    "icon": "assets/objects/PinkBow.png",
     "sources": [
       {
         "type": "shop",
@@ -1155,7 +1155,7 @@
     "name": "Pirate Hat",
     "description": "A captain's hat with a horrible skull on the front.",
     "isMask": true,
-    "icon": "assets/objects/Pirate_Hat.png",
+    "icon": "assets/objects/PirateHat.png",
     "sources": []
   },
   {
@@ -1164,7 +1164,7 @@
     "name": "Plum Chapeau",
     "description": "Looks alright.",
     "isMask": true,
-    "icon": "assets/objects/Plum_Chapeau.png",
+    "icon": "assets/objects/PlumChapeau.png",
     "sources": [
       {
         "type": "shop",
@@ -1181,7 +1181,7 @@
     "name": "Polka Bow",
     "description": "This one's sure to be turn heads.",
     "isMask": false,
-    "icon": "assets/objects/Polka_Bow.png",
+    "icon": "assets/objects/PolkaBow.png",
     "sources": [
       {
         "type": "shop",
@@ -1198,7 +1198,7 @@
     "name": "Propeller Hat",
     "description": "A goofy hat with a propeller on top.",
     "isMask": true,
-    "icon": "assets/objects/Propeller_Hat.png",
+    "icon": "assets/objects/PropellerHat.png",
     "sources": []
   },
   {
@@ -1207,7 +1207,7 @@
     "name": "Pumpkin Mask",
     "description": "This must have been a pretty big pumpkin once...",
     "isMask": true,
-    "icon": "assets/objects/Pumpkin_Mask.png",
+    "icon": "assets/objects/PumpkinMask.png",
     "sources": []
   },
   {
@@ -1216,7 +1216,7 @@
     "name": "Qi Mask",
     "description": "???",
     "isMask": true,
-    "icon": "assets/objects/Qi_Mask.png",
+    "icon": "assets/objects/QiMask.png",
     "sources": []
   },
   {
@@ -1225,7 +1225,7 @@
     "name": "Raccoon Hat",
     "description": "A classic hat from the old frontier days.",
     "isMask": true,
-    "icon": "assets/objects/Raccoon_Hat.png",
+    "icon": "assets/objects/RaccoonHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1235,7 +1235,7 @@
         "tradeItemId": "mixed-seeds",
         "tradeItemGameId": 770,
         "tradeItemName": "Mixed Seeds",
-        "tradeItemIcon": "assets/objects/Mixed_Seeds.png",
+        "tradeItemIcon": "assets/objects/MixedSeeds.png",
         "tradeItemAmount": 10
       }
     ]
@@ -1246,7 +1246,7 @@
     "name": "Radioactive Goggles",
     "description": "Doesn't actually provide any protection from radiation.",
     "isMask": true,
-    "icon": "assets/objects/Radioactive_Goggles.png",
+    "icon": "assets/objects/RadioactiveGoggles.png",
     "sources": []
   },
   {
@@ -1255,7 +1255,7 @@
     "name": "Red Cowboy Hat",
     "description": "An eye-catching cowboy hat in red suede.",
     "isMask": true,
-    "icon": "assets/objects/Red_Cowboy_Hat.png",
+    "icon": "assets/objects/RedCowboyHat.png",
     "sources": []
   },
   {
@@ -1264,7 +1264,7 @@
     "name": "Red Fez",
     "description": "A unique hat made popular by the famous merchant pig.",
     "isMask": true,
-    "icon": "assets/objects/Red_Fez.png",
+    "icon": "assets/objects/RedFez.png",
     "sources": [
       {
         "type": "shop",
@@ -1283,7 +1283,7 @@
     "name": "Sailor's Cap",
     "description": "It's fresh and starchy.",
     "isMask": true,
-    "icon": "assets/objects/Sailors_Cap.png",
+    "icon": "assets/objects/SailorsCap.png",
     "sources": [
       {
         "type": "shop",
@@ -1300,7 +1300,7 @@
     "name": "Santa Hat",
     "description": "Celebrate the magical season.",
     "isMask": true,
-    "icon": "assets/objects/Santa_Hat.png",
+    "icon": "assets/objects/SantaHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1317,7 +1317,7 @@
     "name": "Skeleton Mask",
     "description": "The red eyes are glowing mysteriously.",
     "isMask": true,
-    "icon": "assets/objects/Skeleton_Mask.png",
+    "icon": "assets/objects/SkeletonMask.png",
     "sources": []
   },
   {
@@ -1326,7 +1326,7 @@
     "name": "Small Cap",
     "description": "It's a more aerodynamic style of cap.",
     "isMask": true,
-    "icon": "assets/objects/Small_Cap.png",
+    "icon": "assets/objects/SmallCap.png",
     "sources": [
       {
         "type": "shop",
@@ -1337,7 +1337,7 @@
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
         "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/Taro_Root.png",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
         "tradeItemAmount": 30,
         "days": [
           "Monday"
@@ -1385,7 +1385,7 @@
     "name": "Space Helmet",
     "description": "Warning: This helmet has not actually been tested in outer space.",
     "isMask": true,
-    "icon": "assets/objects/Space_Helmet.png",
+    "icon": "assets/objects/SpaceHelmet.png",
     "sources": [
       {
         "type": "shop",
@@ -1402,7 +1402,7 @@
     "name": "Sports Cap",
     "description": "The cap has a vintage team logo on it.",
     "isMask": true,
-    "icon": "assets/objects/Sports_Cap.png",
+    "icon": "assets/objects/SportsCap.png",
     "sources": [
       {
         "type": "shop",
@@ -1419,7 +1419,7 @@
     "name": "Spotted Headscarf",
     "description": "A red polka-dot scarf tied around the head.",
     "isMask": true,
-    "icon": "assets/objects/Spotted_Headscarf.png",
+    "icon": "assets/objects/SpottedHeadscarf.png",
     "sources": []
   },
   {
@@ -1428,7 +1428,7 @@
     "name": "Squid Hat",
     "description": "It's your chance to wear a squid on the head.",
     "isMask": true,
-    "icon": "assets/objects/Squid_Hat.png",
+    "icon": "assets/objects/SquidHat.png",
     "sources": []
   },
   {
@@ -1437,7 +1437,7 @@
     "name": "Squire's Helmet",
     "description": "The face is exposed to increase air flow.",
     "isMask": true,
-    "icon": "assets/objects/Squires_Helmet.png",
+    "icon": "assets/objects/SquiresHelmet.png",
     "sources": []
   },
   {
@@ -1446,7 +1446,7 @@
     "name": "Star Helmet",
     "description": "A red hat with stars on it.",
     "isMask": true,
-    "icon": "assets/objects/Star_Helmet.png",
+    "icon": "assets/objects/StarHelmet.png",
     "sources": []
   },
   {
@@ -1455,7 +1455,7 @@
     "name": "Steel Pan",
     "description": "You place the steel pan on your head...",
     "isMask": true,
-    "icon": "assets/objects/Steel_Pan.png",
+    "icon": "assets/objects/SteelPan.png",
     "sources": []
   },
   {
@@ -1464,7 +1464,7 @@
     "name": "Straw Hat",
     "description": "Light and cool, it's a farmer's delight.",
     "isMask": true,
-    "icon": "assets/objects/Straw_Hat.png",
+    "icon": "assets/objects/StrawHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1490,7 +1490,7 @@
     "name": "Swashbuckler Hat",
     "description": "The classic swashbuckler look.",
     "isMask": true,
-    "icon": "assets/objects/Swashbuckler_Hat.png",
+    "icon": "assets/objects/SwashbucklerHat.png",
     "sources": []
   },
   {
@@ -1516,7 +1516,7 @@
     "name": "Tiger Hat",
     "description": "Makes you look like a beautiful tiger.",
     "isMask": true,
-    "icon": "assets/objects/Tiger_Hat.png",
+    "icon": "assets/objects/TigerHat.png",
     "sources": []
   },
   {
@@ -1525,7 +1525,7 @@
     "name": "Top Hat",
     "description": "A gentleman's classic.",
     "isMask": true,
-    "icon": "assets/objects/Top_Hat.png",
+    "icon": "assets/objects/TopHat.png",
     "sources": []
   },
   {
@@ -1534,7 +1534,7 @@
     "name": "Totem Mask",
     "description": "Don't worry, it won't warp your face...",
     "isMask": true,
-    "icon": "assets/objects/Totem_Mask.png",
+    "icon": "assets/objects/TotemMask.png",
     "sources": []
   },
   {
@@ -1543,7 +1543,7 @@
     "name": "Tricorn Hat",
     "description": "It's a traditional hat for naval officers.",
     "isMask": true,
-    "icon": "assets/objects/Tricorn_Hat.png",
+    "icon": "assets/objects/TricornHat.png",
     "sources": []
   },
   {
@@ -1569,7 +1569,7 @@
     "name": "Trucker Hat",
     "description": "Mesh in the back to keep your head cool.",
     "isMask": true,
-    "icon": "assets/objects/Trucker_Hat.png",
+    "icon": "assets/objects/TruckerHat.png",
     "sources": [
       {
         "type": "shop",
@@ -1586,7 +1586,7 @@
     "name": "Warrior Helmet",
     "description": "An Ostrich eggshell repurposed into a helmet.",
     "isMask": true,
-    "icon": "assets/objects/Warrior_Helmet.png",
+    "icon": "assets/objects/WarriorHelmet.png",
     "sources": []
   },
   {
@@ -1595,7 +1595,7 @@
     "name": "Watermelon Band",
     "description": "The color scheme was inspired by the beloved summer melon.",
     "isMask": false,
-    "icon": "assets/objects/Watermelon_Band.png",
+    "icon": "assets/objects/WatermelonBand.png",
     "sources": [
       {
         "type": "shop",
@@ -1612,7 +1612,7 @@
     "name": "Wearable Dwarf Helm",
     "description": "A slightly larger, human sized version of the helmets worn by dwarves.",
     "isMask": true,
-    "icon": "assets/objects/Wearable_Dwarf_Helm.png",
+    "icon": "assets/objects/WearableDwarfHelm.png",
     "sources": []
   },
   {
@@ -1621,7 +1621,7 @@
     "name": "White Bow",
     "description": "A bow as white as snow.",
     "isMask": false,
-    "icon": "assets/objects/White_Bow.png",
+    "icon": "assets/objects/WhiteBow.png",
     "sources": [
       {
         "type": "shop",
@@ -1638,7 +1638,7 @@
     "name": "White Turban",
     "description": "A fine white silk turban with blue trim.",
     "isMask": true,
-    "icon": "assets/objects/White_Turban.png",
+    "icon": "assets/objects/WhiteTurban.png",
     "sources": []
   },
   {
@@ -1647,7 +1647,7 @@
     "name": "Witch Hat",
     "description": "A pointy hat popular with witches.",
     "isMask": true,
-    "icon": "assets/objects/Witch_Hat.png",
+    "icon": "assets/objects/WitchHat.png",
     "sources": []
   }
 ]

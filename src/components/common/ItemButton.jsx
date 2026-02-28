@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './item-button.css'
+import './ItemButton.css'
 
 /**
  * Generic button component for displaying items (fish, crops, villagers, etc.)

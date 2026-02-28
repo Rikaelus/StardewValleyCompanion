@@ -5,7 +5,7 @@
     "name": "'1000 Years From Now'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/1000_Years_From_Now.png",
+    "icon": "assets/objects/1000YearsFromNow.png",
     "wikiName": "1000_Years_From_Now",
     "sources": [
       {
@@ -23,7 +23,7 @@
     "name": "'A Night On Eco-Hill'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/A_Night_On_Eco-Hill.png",
+    "icon": "assets/objects/ANightOnEcoHill.png",
     "wikiName": "A_Night_On_Eco-Hill",
     "sources": [
       {
@@ -77,7 +77,7 @@
     "name": "'Blue City'",
     "type": "painting",
     "price": 250,
-    "icon": "assets/objects/Blue_City.png",
+    "icon": "assets/objects/BlueCity.png",
     "wikiName": "Blue_City",
     "sources": [
       {
@@ -131,7 +131,7 @@
     "name": "'Burnt Offering'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Burnt_Offering.png",
+    "icon": "assets/objects/BurntOffering.png",
     "wikiName": "Burnt_Offering",
     "sources": [
       {
@@ -185,7 +185,7 @@
     "name": "'Community Center'",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Community_Center.png",
+    "icon": "assets/objects/CommunityCenter.png",
     "wikiName": "Community_Center",
     "sources": [
       {
@@ -203,7 +203,7 @@
     "name": "'Dancing Grass'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Dancing_Grass.png",
+    "icon": "assets/objects/DancingGrass.png",
     "wikiName": "Dancing_Grass",
     "sources": [
       {
@@ -221,7 +221,7 @@
     "name": "'Frozen Dreams'",
     "type": "painting",
     "price": 6750,
-    "icon": "assets/objects/Frozen_Dreams.png",
+    "icon": "assets/objects/FrozenDreams.png",
     "wikiName": "Frozen_Dreams",
     "sources": [
       {
@@ -264,7 +264,7 @@
     "name": "'Highway 89'",
     "type": "painting",
     "price": 800,
-    "icon": "assets/objects/Highway_89.png",
+    "icon": "assets/objects/Highway89.png",
     "wikiName": "Highway_89",
     "sources": [
       {
@@ -300,7 +300,7 @@
     "name": "'It Howls In The Rain'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/It_Howls_In_The_Rain.png",
+    "icon": "assets/objects/ItHowlsInTheRain.png",
     "wikiName": "It_Howls_In_The_Rain",
     "sources": [
       {
@@ -318,7 +318,7 @@
     "name": "'Jade Hills Extended'",
     "type": "painting",
     "price": 6750,
-    "icon": "assets/objects/Jade_Hills_Extended.png",
+    "icon": "assets/objects/JadeHillsExtended.png",
     "wikiName": "Jade_Hills_Extended",
     "sources": [
       {
@@ -346,7 +346,7 @@
     "name": "'Jade Hills'",
     "type": "painting",
     "price": 1750,
-    "icon": "assets/objects/Jade_Hills.png",
+    "icon": "assets/objects/JadeHills.png",
     "wikiName": "Jade_Hills",
     "sources": [
       {
@@ -364,7 +364,7 @@
     "name": "'Journey Of The Prairie King: The Motion Picture'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Journey_Of_The_Prairie_King:_The_Motion_Picture.png",
+    "icon": "assets/objects/JourneyOfThePrairieKingTheMotionPicture.png",
     "wikiName": "Journey_Of_The_Prairie_King:_The_Motion_Picture",
     "sources": [
       {
@@ -382,7 +382,7 @@
     "name": "'Kitemaster '95'",
     "type": "painting",
     "price": 600,
-    "icon": "assets/objects/Kitemaster_95.png",
+    "icon": "assets/objects/Kitemaster95.png",
     "wikiName": "Kitemaster_95",
     "sources": [
       {
@@ -400,7 +400,7 @@
     "name": "'Land Of Clay'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Land_Of_Clay.png",
+    "icon": "assets/objects/LandOfClay.png",
     "wikiName": "Land_Of_Clay",
     "sources": [
       {
@@ -418,7 +418,7 @@
     "name": "'Little Buddies'",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Little_Buddies.png",
+    "icon": "assets/objects/LittleBuddies.png",
     "wikiName": "Little_Buddies",
     "sources": [
       {
@@ -436,7 +436,7 @@
     "name": "'Little Tree'",
     "type": "painting",
     "price": 350,
-    "icon": "assets/objects/Little_Tree.png",
+    "icon": "assets/objects/LittleTree.png",
     "wikiName": "Little_Tree",
     "sources": [
       {
@@ -472,7 +472,7 @@
     "name": "'Natural Wonders: Exploring Our Vibrant World'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Natural_Wonders:_Exploring_Our_Vibrant_World.png",
+    "icon": "assets/objects/NaturalWondersExploringOurVibrantWorld.png",
     "wikiName": "Natural_Wonders:_Exploring_Our_Vibrant_World",
     "sources": [
       {
@@ -508,7 +508,7 @@
     "name": "'Physics 101'",
     "type": "painting",
     "price": 6750,
-    "icon": "assets/objects/Physics_101.png",
+    "icon": "assets/objects/Physics101.png",
     "wikiName": "Physics_101",
     "sources": [
       {
@@ -526,7 +526,7 @@
     "name": "'Portrait Of A Mermaid'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Portrait_Of_A_Mermaid.png",
+    "icon": "assets/objects/PortraitOfAMermaid.png",
     "wikiName": "Portrait_Of_A_Mermaid",
     "sources": [
       {
@@ -544,7 +544,7 @@
     "name": "'Primal Motion'",
     "type": "painting",
     "price": 1500,
-    "icon": "assets/objects/Primal_Motion.png",
+    "icon": "assets/objects/PrimalMotion.png",
     "wikiName": "Primal_Motion",
     "sources": [
       {
@@ -562,7 +562,7 @@
     "name": "'Queen of the Gem Sea'",
     "type": "painting",
     "price": 1200,
-    "icon": "assets/objects/Queen_of_the_Gem_Sea.png",
+    "icon": "assets/objects/QueenOfTheGemSea.png",
     "wikiName": "Queen_of_the_Gem_Sea",
     "sources": [
       {
@@ -580,7 +580,7 @@
     "name": "'Red Eagle'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Red_Eagle.png",
+    "icon": "assets/objects/RedEagle.png",
     "wikiName": "Red_Eagle",
     "sources": [
       {
@@ -616,7 +616,7 @@
     "name": "'Solar Kingdom'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Solar_Kingdom.png",
+    "icon": "assets/objects/SolarKingdom.png",
     "wikiName": "Solar_Kingdom",
     "sources": [
       {
@@ -652,7 +652,7 @@
     "name": "'Squid Kid'",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Squid_Kid.png",
+    "icon": "assets/objects/SquidKid.png",
     "wikiName": "Squid_Kid",
     "sources": [
       {
@@ -706,7 +706,7 @@
     "name": "'Sun #44'",
     "type": "painting",
     "price": 800,
-    "icon": "assets/objects/Sun_#44.png",
+    "icon": "assets/objects/Sun44.png",
     "wikiName": "Sun_#44",
     "sources": [
       {
@@ -724,7 +724,7 @@
     "name": "'Sun #45'",
     "type": "painting",
     "price": 350,
-    "icon": "assets/objects/Sun_#45.png",
+    "icon": "assets/objects/Sun45.png",
     "wikiName": "Sun_#45",
     "sources": [
       {
@@ -742,7 +742,7 @@
     "name": "'The Brave Little Sapling'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/The_Brave_Little_Sapling.png",
+    "icon": "assets/objects/TheBraveLittleSapling.png",
     "wikiName": "The_Brave_Little_Sapling",
     "sources": [
       {
@@ -760,7 +760,7 @@
     "name": "'The Miracle At Coldstar Ranch'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/The_Miracle_At_Coldstar_Ranch.png",
+    "icon": "assets/objects/TheMiracleAtColdstarRanch.png",
     "wikiName": "The_Miracle_At_Coldstar_Ranch",
     "sources": [
       {
@@ -778,7 +778,7 @@
     "name": "'The Muzzamaroo'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/The_Muzzamaroo.png",
+    "icon": "assets/objects/TheMuzzamaroo.png",
     "wikiName": "The_Muzzamaroo",
     "sources": [
       {
@@ -796,7 +796,7 @@
     "name": "'The Serpent'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/The_Serpent.png",
+    "icon": "assets/objects/TheSerpent.png",
     "wikiName": "The_Serpent",
     "sources": [
       {
@@ -814,7 +814,7 @@
     "name": "'The Zuzu City Express'",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/The_Zuzu_City_Express.png",
+    "icon": "assets/objects/TheZuzuCityExpress.png",
     "wikiName": "The_Zuzu_City_Express",
     "sources": [
       {
@@ -832,7 +832,7 @@
     "name": "'Three Trees'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Three_Trees.png",
+    "icon": "assets/objects/ThreeTrees.png",
     "wikiName": "Three_Trees",
     "sources": [
       {
@@ -850,7 +850,7 @@
     "name": "'Tropical Fish #173'",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Tropical_Fish_#173.png",
+    "icon": "assets/objects/TropicalFish173.png",
     "wikiName": "Tropical_Fish_#173",
     "sources": [
       {
@@ -886,7 +886,7 @@
     "name": "'Vanilla Villa'",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Vanilla_Villa.png",
+    "icon": "assets/objects/VanillaVilla.png",
     "wikiName": "Vanilla_Villa",
     "sources": [
       {
@@ -904,7 +904,7 @@
     "name": "'VGA Paradise'",
     "type": "painting",
     "price": 1200,
-    "icon": "assets/objects/VGA_Paradise.png",
+    "icon": "assets/objects/VGAParadise.png",
     "wikiName": "VGA_Paradise",
     "sources": [
       {
@@ -940,7 +940,7 @@
     "name": "'Void Swirls'",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Void_Swirls.png",
+    "icon": "assets/objects/VoidSwirls.png",
     "wikiName": "Void_Swirls",
     "sources": [
       {
@@ -958,7 +958,7 @@
     "name": "'Volcano' Photo",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Volcano_Photo.png",
+    "icon": "assets/objects/VolcanoPhoto.png",
     "wikiName": "Volcano_Photo",
     "sources": [
       {
@@ -991,7 +991,7 @@
     "name": "'Wizard's Tower'",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Wizards_Tower.png",
+    "icon": "assets/objects/WizardsTower.png",
     "wikiName": "Wizards_Tower",
     "sources": [
       {
@@ -1027,7 +1027,7 @@
     "name": "Abigail's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Abigail_Portrait.png",
+    "icon": "assets/objects/AbigailPortrait.png",
     "wikiName": "Abigail_Portrait",
     "sources": [
       {
@@ -1058,7 +1058,7 @@
     "name": "Alex's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Alex_Portrait.png",
+    "icon": "assets/objects/AlexPortrait.png",
     "wikiName": "Alex_Portrait",
     "sources": [
       {
@@ -1089,7 +1089,7 @@
     "name": "Aluminum Can",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Aluminum_Can.png",
+    "icon": "assets/objects/AluminumCan.png",
     "wikiName": "Aluminum_Can",
     "sources": [
       {
@@ -1107,7 +1107,7 @@
     "name": "Amethyst Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Amethyst_Crystal_Ball.png",
+    "icon": "assets/objects/AmethystCrystalBall.png",
     "wikiName": "Amethyst_Crystal_Ball",
     "sources": [
       {
@@ -1143,7 +1143,7 @@
     "name": "Aquamarine Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Aquamarine_Crystal_Ball.png",
+    "icon": "assets/objects/AquamarineCrystalBall.png",
     "wikiName": "Aquamarine_Crystal_Ball",
     "sources": [
       {
@@ -1161,7 +1161,7 @@
     "name": "Aquatic Sanctuary",
     "type": "fishtank",
     "price": 10000,
-    "icon": "assets/objects/Aquatic_Sanctuary.png",
+    "icon": "assets/objects/AquaticSanctuary.png",
     "wikiName": "Aquatic_Sanctuary",
     "sources": [
       {
@@ -1175,7 +1175,7 @@
         "tradeItemId": "qi-gem",
         "tradeItemGameId": 858,
         "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/Qi_Gem.png",
+        "tradeItemIcon": "assets/objects/QiGem.png",
         "tradeItemAmount": 20
       },
       {
@@ -1193,7 +1193,7 @@
     "name": "Art Photo",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Art_Photo.png",
+    "icon": "assets/objects/ArtPhoto.png",
     "wikiName": "Art_Photo",
     "sources": [
       {
@@ -1211,7 +1211,7 @@
     "name": "Art Photo 2",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Art_Photo_2.png",
+    "icon": "assets/objects/ArtPhoto2.png",
     "wikiName": "Art_Photo_2",
     "sources": [
       {
@@ -1229,7 +1229,7 @@
     "name": "Artist Bookcase",
     "type": "bookcase",
     "price": 1200,
-    "icon": "assets/objects/Artist_Bookcase.png",
+    "icon": "assets/objects/ArtistBookcase.png",
     "wikiName": "Artist_Bookcase",
     "sources": [
       {
@@ -1247,7 +1247,7 @@
     "name": "Bamboo Mat",
     "type": "rug",
     "price": 250,
-    "icon": "assets/objects/Bamboo_Mat.png",
+    "icon": "assets/objects/BambooMat.png",
     "wikiName": "Bamboo_Mat",
     "sources": [
       {
@@ -1265,7 +1265,7 @@
     "name": "Basic Window",
     "type": "window",
     "price": 300,
-    "icon": "assets/objects/Basic_Window.png",
+    "icon": "assets/objects/BasicWindow.png",
     "wikiName": "Basic_Window",
     "sources": [
       {
@@ -1290,7 +1290,7 @@
     "name": "Bear Statue",
     "type": "decor",
     "price": 4000,
-    "icon": "assets/objects/Bear_Statue.png",
+    "icon": "assets/objects/BearStatue.png",
     "wikiName": "Bear_Statue",
     "sources": [
       {
@@ -1333,7 +1333,7 @@
     "name": "Birch Bench",
     "type": "bench",
     "price": 750,
-    "icon": "assets/objects/Birch_Bench.png",
+    "icon": "assets/objects/BirchBench.png",
     "wikiName": "Birch_Bench",
     "sources": [
       {
@@ -1361,7 +1361,7 @@
     "name": "Birch Chair",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Birch_Chair.png",
+    "icon": "assets/objects/BirchChair.png",
     "wikiName": "Birch_Chair",
     "sources": [
       {
@@ -1388,7 +1388,7 @@
     "name": "Birch Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Birch_Double_Bed.png",
+    "icon": "assets/objects/BirchDoubleBed.png",
     "wikiName": "Birch_Double_Bed",
     "sources": [
       {
@@ -1418,7 +1418,7 @@
     "name": "Birch Dresser",
     "type": "dresser",
     "price": 5000,
-    "icon": "assets/objects/Birch_Dresser.png",
+    "icon": "assets/objects/BirchDresser.png",
     "wikiName": "Birch_Dresser",
     "sources": [
       {
@@ -1446,7 +1446,7 @@
     "name": "Birch End Table",
     "type": "table",
     "price": 500,
-    "icon": "assets/objects/Birch_End_Table.png",
+    "icon": "assets/objects/BirchEndTable.png",
     "wikiName": "Birch_End_Table",
     "sources": [
       {
@@ -1474,7 +1474,7 @@
     "name": "Birch Lamp End Table",
     "type": "lamp",
     "price": 2000,
-    "icon": "assets/objects/Birch_Lamp_End_Table.png",
+    "icon": "assets/objects/BirchLampEndTable.png",
     "wikiName": "Birch_Lamp_End_Table",
     "sources": [
       {
@@ -1492,7 +1492,7 @@
     "name": "Birch Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Birch_Table.png",
+    "icon": "assets/objects/BirchTable.png",
     "wikiName": "Birch_Table",
     "sources": [
       {
@@ -1520,7 +1520,7 @@
     "name": "Birch Tea-Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Birch_Tea-Table.png",
+    "icon": "assets/objects/BirchTeaTable.png",
     "wikiName": "Birch_Tea-Table",
     "sources": [
       {
@@ -1548,7 +1548,7 @@
     "name": "Bird House",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Bird_House.png",
+    "icon": "assets/objects/BirdHouse.png",
     "wikiName": "Bird_House",
     "sources": [
       {
@@ -1573,7 +1573,7 @@
     "name": "Black Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Black_Cushion.png",
+    "icon": "assets/objects/BlackCushion.png",
     "wikiName": "Black_Cushion",
     "sources": [
       {
@@ -1591,7 +1591,7 @@
     "name": "Blossom Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Blossom_Rug.png",
+    "icon": "assets/objects/BlossomRug.png",
     "wikiName": "Blossom_Rug",
     "sources": [
       {
@@ -1609,7 +1609,7 @@
     "name": "Blue Armchair",
     "type": "armchair",
     "price": 1000,
-    "icon": "assets/objects/Blue_Armchair.png",
+    "icon": "assets/objects/BlueArmchair.png",
     "wikiName": "Blue_Armchair",
     "sources": [
       {
@@ -1627,7 +1627,7 @@
     "name": "Blue Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Blue_Book.png",
+    "icon": "assets/objects/BlueBook.png",
     "wikiName": "Blue_Book",
     "sources": [
       {
@@ -1645,7 +1645,7 @@
     "name": "Blue Bottle",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Blue_Bottle.png",
+    "icon": "assets/objects/BlueBottle.png",
     "wikiName": "Blue_Bottle",
     "sources": [
       {
@@ -1663,7 +1663,7 @@
     "name": "Blue Couch",
     "type": "couch",
     "price": 1750,
-    "icon": "assets/objects/Blue_Couch.png",
+    "icon": "assets/objects/BlueCouch.png",
     "wikiName": "Blue_Couch",
     "sources": [
       {
@@ -1681,7 +1681,7 @@
     "name": "Blue Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Blue_Cushion.png",
+    "icon": "assets/objects/BlueCushion.png",
     "wikiName": "Blue_Cushion",
     "sources": [
       {
@@ -1699,7 +1699,7 @@
     "name": "Blue Diner Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Blue_Diner_Chair.png",
+    "icon": "assets/objects/BlueDinerChair.png",
     "wikiName": "Blue_Diner_Chair",
     "sources": [
       {
@@ -1717,7 +1717,7 @@
     "name": "Blue Pinstripe Bed",
     "type": "bed",
     "price": 500,
-    "icon": "assets/objects/Blue_Pinstripe_Bed.png",
+    "icon": "assets/objects/BluePinstripeBed.png",
     "wikiName": "Blue_Pinstripe_Bed",
     "sources": [
       {
@@ -1742,7 +1742,7 @@
     "name": "Blue Pinstripe Double Bed",
     "type": "bed double",
     "price": 500,
-    "icon": "assets/objects/Blue_Pinstripe_Double_Bed.png",
+    "icon": "assets/objects/BluePinstripeDoubleBed.png",
     "wikiName": "Blue_Pinstripe_Double_Bed",
     "sources": [
       {
@@ -1767,7 +1767,7 @@
     "name": "Blue Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Blue_Sleeping_Junimo.png",
+    "icon": "assets/objects/BlueSleepingJunimo.png",
     "wikiName": "Blue_Sleeping_Junimo",
     "sources": [
       {
@@ -1785,7 +1785,7 @@
     "name": "Blue Stool",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Blue_Stool.png",
+    "icon": "assets/objects/BlueStool.png",
     "wikiName": "Blue_Stool",
     "sources": [
       {
@@ -1803,7 +1803,7 @@
     "name": "Boarded Window",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Boarded_Window.png",
+    "icon": "assets/objects/BoardedWindow.png",
     "wikiName": "Boarded_Window",
     "sources": [
       {
@@ -1821,7 +1821,7 @@
     "name": "Bobo Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Bobo_Statue.png",
+    "icon": "assets/objects/BoboStatue.png",
     "wikiName": "Bobo_Statue",
     "sources": [
       {
@@ -1839,7 +1839,7 @@
     "name": "Bone Rug",
     "type": "rug",
     "price": 1000,
-    "icon": "assets/objects/Bone_Rug.png",
+    "icon": "assets/objects/BoneRug.png",
     "wikiName": "Bone_Rug",
     "sources": [
       {
@@ -1857,7 +1857,7 @@
     "name": "Bonsai Tree",
     "type": "decor",
     "price": 800,
-    "icon": "assets/objects/Bonsai_Tree.png",
+    "icon": "assets/objects/BonsaiTree.png",
     "wikiName": "Bonsai_Tree",
     "sources": [
       {
@@ -1875,7 +1875,7 @@
     "name": "Book Pile",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Book_Pile.png",
+    "icon": "assets/objects/BookPile.png",
     "wikiName": "Book_Pile",
     "sources": [
       {
@@ -1893,7 +1893,7 @@
     "name": "Book Stack",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Book_Stack.png",
+    "icon": "assets/objects/BookStack.png",
     "wikiName": "Book_Stack",
     "sources": [
       {
@@ -1911,7 +1911,7 @@
     "name": "Bountiful Dining Table",
     "type": "long table",
     "price": 10000,
-    "icon": "assets/objects/Bountiful_Dining_Table.png",
+    "icon": "assets/objects/BountifulDiningTable.png",
     "wikiName": "Bountiful_Dining_Table",
     "sources": [
       {
@@ -1929,7 +1929,7 @@
     "name": "Box Lamp",
     "type": "lamp",
     "price": 750,
-    "icon": "assets/objects/Box_Lamp.png",
+    "icon": "assets/objects/BoxLamp.png",
     "wikiName": "Box_Lamp",
     "sources": [
       {
@@ -1947,7 +1947,7 @@
     "name": "Breakfast Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Breakfast_Chair.png",
+    "icon": "assets/objects/BreakfastChair.png",
     "wikiName": "Breakfast_Chair",
     "sources": [
       {
@@ -1965,7 +1965,7 @@
     "name": "Brick Fireplace",
     "type": "fireplace",
     "price": 1000,
-    "icon": "assets/objects/Brick_Fireplace.png",
+    "icon": "assets/objects/BrickFireplace.png",
     "wikiName": "Brick_Fireplace",
     "sources": [
       {
@@ -1990,7 +1990,7 @@
     "name": "Brochure Cabinet",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Brochure_Cabinet.png",
+    "icon": "assets/objects/BrochureCabinet.png",
     "wikiName": "Brochure_Cabinet",
     "sources": [
       {
@@ -2008,7 +2008,7 @@
     "name": "Broken Television",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Broken_Television.png",
+    "icon": "assets/objects/BrokenTelevision.png",
     "wikiName": "Broken_Television",
     "sources": [
       {
@@ -2026,7 +2026,7 @@
     "name": "Brown Armchair",
     "type": "armchair",
     "price": 1000,
-    "icon": "assets/objects/Brown_Armchair.png",
+    "icon": "assets/objects/BrownArmchair.png",
     "wikiName": "Brown_Armchair",
     "sources": [
       {
@@ -2044,7 +2044,7 @@
     "name": "Brown Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Brown_Book.png",
+    "icon": "assets/objects/BrownBook.png",
     "wikiName": "Brown_Book",
     "sources": [
       {
@@ -2062,7 +2062,7 @@
     "name": "Brown Couch",
     "type": "couch",
     "price": 1750,
-    "icon": "assets/objects/Brown_Couch.png",
+    "icon": "assets/objects/BrownCouch.png",
     "wikiName": "Brown_Couch",
     "sources": [
       {
@@ -2080,7 +2080,7 @@
     "name": "Brown Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Brown_Cushion.png",
+    "icon": "assets/objects/BrownCushion.png",
     "wikiName": "Brown_Cushion",
     "sources": [
       {
@@ -2098,7 +2098,7 @@
     "name": "Budget TV",
     "type": "decor",
     "price": 750,
-    "icon": "assets/objects/Budget_TV.png",
+    "icon": "assets/objects/BudgetTV.png",
     "wikiName": "Budget_TV",
     "sources": [
       {
@@ -2123,7 +2123,7 @@
     "name": "Bulletin Board",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Bulletin_Board.png",
+    "icon": "assets/objects/BulletinBoard.png",
     "wikiName": "Bulletin_Board",
     "sources": [
       {
@@ -2141,7 +2141,7 @@
     "name": "Buried Tire",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Buried_Tire.png",
+    "icon": "assets/objects/BuriedTire.png",
     "wikiName": "Buried_Tire",
     "sources": [
       {
@@ -2159,7 +2159,7 @@
     "name": "Burlap Rug",
     "type": "rug",
     "price": 350,
-    "icon": "assets/objects/Burlap_Rug.png",
+    "icon": "assets/objects/BurlapRug.png",
     "wikiName": "Burlap_Rug",
     "sources": [
       {
@@ -2177,7 +2177,7 @@
     "name": "Butterfly Hutch",
     "type": "decor",
     "price": 50000,
-    "icon": "assets/objects/Butterfly_Hutch.png",
+    "icon": "assets/objects/ButterflyHutch.png",
     "wikiName": "Butterfly_Hutch",
     "sources": [
       {
@@ -2189,7 +2189,7 @@
         "tradeItemId": "bat-wing",
         "tradeItemGameId": 767,
         "tradeItemName": "Bat Wing",
-        "tradeItemIcon": "assets/objects/Bat_Wing.png",
+        "tradeItemIcon": "assets/objects/BatWing.png",
         "tradeItemAmount": 200
       },
       {
@@ -2250,7 +2250,7 @@
     "name": "Calico Falls",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Calico_Falls.png",
+    "icon": "assets/objects/CalicoFalls.png",
     "wikiName": "Calico_Falls",
     "sources": [
       {
@@ -2268,7 +2268,7 @@
     "name": "Calico Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Calico_Statue.png",
+    "icon": "assets/objects/CalicoStatue.png",
     "wikiName": "Calico_Statue",
     "sources": [
       {
@@ -2280,7 +2280,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 25,
         "days": [
           "Monday"
@@ -2295,7 +2295,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 35,
         "days": [
           "Wednesday"
@@ -2316,7 +2316,7 @@
     "name": "Candle Lamp",
     "type": "lamp",
     "price": 1000,
-    "icon": "assets/objects/Candle_Lamp.png",
+    "icon": "assets/objects/CandleLamp.png",
     "wikiName": "Candle_Lamp",
     "sources": [
       {
@@ -2334,7 +2334,7 @@
     "name": "Candy Table",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Candy_Table.png",
+    "icon": "assets/objects/CandyTable.png",
     "wikiName": "Candy_Table",
     "sources": [
       {
@@ -2352,7 +2352,7 @@
     "name": "Carved Window",
     "type": "window",
     "price": 900,
-    "icon": "assets/objects/Carved_Window.png",
+    "icon": "assets/objects/CarvedWindow.png",
     "wikiName": "Carved_Window",
     "sources": [
       {
@@ -2370,7 +2370,7 @@
     "name": "Cash Register",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Cash_Register.png",
+    "icon": "assets/objects/CashRegister.png",
     "wikiName": "Cash_Register",
     "sources": [
       {
@@ -2388,7 +2388,7 @@
     "name": "Cat Tree",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Cat_Tree.png",
+    "icon": "assets/objects/CatTree.png",
     "wikiName": "Cat_Tree",
     "sources": [
       {
@@ -2474,7 +2474,7 @@
     "name": "Ceiling Flags",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Flags.png",
+    "icon": "assets/objects/CeilingFlags.png",
     "wikiName": "Ceiling_Flags",
     "sources": [
       {
@@ -2492,7 +2492,7 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Leaves.png",
+    "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
       {
@@ -2517,7 +2517,7 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Leaves.png",
+    "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
       {
@@ -2542,7 +2542,7 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Leaves.png",
+    "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
       {
@@ -2567,7 +2567,7 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Leaves.png",
+    "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
       {
@@ -2592,7 +2592,7 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/Ceiling_Leaves.png",
+    "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
       {
@@ -2617,7 +2617,7 @@
     "name": "Ceramic Pillar",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/Ceramic_Pillar.png",
+    "icon": "assets/objects/CeramicPillar.png",
     "wikiName": "Ceramic_Pillar",
     "sources": [
       {
@@ -2635,7 +2635,7 @@
     "name": "Chicken Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Chicken_Decal.png",
+    "icon": "assets/objects/ChickenDecal.png",
     "wikiName": "Chicken_Decal",
     "sources": [
       {
@@ -2653,7 +2653,7 @@
     "name": "Chicken Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Chicken_Statue.png",
+    "icon": "assets/objects/ChickenStatue.png",
     "wikiName": "Chicken_Statue",
     "sources": [
       {
@@ -2671,7 +2671,7 @@
     "name": "Child Bed",
     "type": "bed child",
     "price": 5000,
-    "icon": "assets/objects/Child_Bed.png",
+    "icon": "assets/objects/ChildBed.png",
     "wikiName": "Child_Bed",
     "sources": [
       {
@@ -2696,7 +2696,7 @@
     "name": "China Cabinet",
     "type": "other",
     "price": 6000,
-    "icon": "assets/objects/China_Cabinet.png",
+    "icon": "assets/objects/ChinaCabinet.png",
     "wikiName": "China_Cabinet",
     "sources": [
       {
@@ -2714,7 +2714,7 @@
     "name": "Circular Junimo Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Circular_Junimo_Rug.png",
+    "icon": "assets/objects/CircularJunimoRug.png",
     "wikiName": "Circular_Junimo_Rug",
     "sources": [
       {
@@ -2732,7 +2732,7 @@
     "name": "Classic Lamp",
     "type": "lamp",
     "price": 1000,
-    "icon": "assets/objects/Classic_Lamp.png",
+    "icon": "assets/objects/ClassicLamp.png",
     "wikiName": "Classic_Lamp",
     "sources": [
       {
@@ -2744,7 +2744,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 40
       },
       {
@@ -2787,7 +2787,7 @@
     "name": "Cloud Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Cloud_Decal.png",
+    "icon": "assets/objects/CloudDecal.png",
     "wikiName": "Cloud_Decal",
     "sources": [
       {
@@ -2812,7 +2812,7 @@
     "name": "Cloud Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Cloud_Decal.png",
+    "icon": "assets/objects/CloudDecal.png",
     "wikiName": "Cloud_Decal",
     "sources": [
       {
@@ -2837,7 +2837,7 @@
     "name": "Clouds Banner",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Clouds_Banner.png",
+    "icon": "assets/objects/CloudsBanner.png",
     "wikiName": "Clouds_Banner",
     "sources": [
       {
@@ -2862,7 +2862,7 @@
     "name": "Coat Stand",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Coat_Stand.png",
+    "icon": "assets/objects/CoatStand.png",
     "wikiName": "Coat_Stand",
     "sources": [
       {
@@ -2887,7 +2887,7 @@
     "name": "Coffee Table",
     "type": "table",
     "price": 1250,
-    "icon": "assets/objects/Coffee_Table.png",
+    "icon": "assets/objects/CoffeeTable.png",
     "wikiName": "Coffee_Table",
     "sources": [
       {
@@ -2905,7 +2905,7 @@
     "name": "Colorful Set",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Colorful_Set.png",
+    "icon": "assets/objects/ColorfulSet.png",
     "wikiName": "Colorful_Set",
     "sources": [
       {
@@ -2930,7 +2930,7 @@
     "name": "Corn Plant",
     "type": "decor",
     "price": 1000,
-    "icon": "assets/objects/Corn_Plant.png",
+    "icon": "assets/objects/CornPlant.png",
     "wikiName": "Corn_Plant",
     "sources": [
       {
@@ -2948,7 +2948,7 @@
     "name": "Country Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Country_Chair.png",
+    "icon": "assets/objects/CountryChair.png",
     "wikiName": "Country_Chair",
     "sources": [
       {
@@ -2966,7 +2966,7 @@
     "name": "Country Lamp",
     "type": "lamp",
     "price": 500,
-    "icon": "assets/objects/Country_Lamp.png",
+    "icon": "assets/objects/CountryLamp.png",
     "wikiName": "Country_Lamp",
     "sources": [
       {
@@ -2984,7 +2984,7 @@
     "name": "Cow Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Cow_Decal.png",
+    "icon": "assets/objects/CowDecal.png",
     "wikiName": "Cow_Decal",
     "sources": [
       {
@@ -3009,7 +3009,7 @@
     "name": "Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Crystal_Ball.png",
+    "icon": "assets/objects/CrystalBall.png",
     "wikiName": "Crystal_Ball",
     "sources": [
       {
@@ -3027,7 +3027,7 @@
     "name": "Crystal Chair",
     "type": "chair",
     "price": 3000,
-    "icon": "assets/objects/Crystal_Chair.png",
+    "icon": "assets/objects/CrystalChair.png",
     "wikiName": "Crystal_Chair",
     "sources": [
       {
@@ -3066,7 +3066,7 @@
     "name": "Curly Tree",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Curly_Tree.png",
+    "icon": "assets/objects/CurlyTree.png",
     "wikiName": "Curly_Tree",
     "sources": [
       {
@@ -3084,7 +3084,7 @@
     "name": "Cute Chair",
     "type": "chair",
     "price": 1200,
-    "icon": "assets/objects/Cute_Chair.png",
+    "icon": "assets/objects/CuteChair.png",
     "wikiName": "Cute_Chair",
     "sources": [
       {
@@ -3102,7 +3102,7 @@
     "name": "Dark Bookcase",
     "type": "bookcase",
     "price": 2000,
-    "icon": "assets/objects/Dark_Bookcase.png",
+    "icon": "assets/objects/DarkBookcase.png",
     "wikiName": "Dark_Bookcase",
     "sources": [
       {
@@ -3120,7 +3120,7 @@
     "name": "Dark Cat Tree",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Dark_Cat_Tree.png",
+    "icon": "assets/objects/DarkCatTree.png",
     "wikiName": "Dark_Cat_Tree",
     "sources": [
       {
@@ -3145,7 +3145,7 @@
     "name": "Dark Couch",
     "type": "couch",
     "price": 2500,
-    "icon": "assets/objects/Dark_Couch.png",
+    "icon": "assets/objects/DarkCouch.png",
     "wikiName": "Dark_Couch",
     "sources": [
       {
@@ -3163,7 +3163,7 @@
     "name": "Dark Doghouse",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Dark_Doghouse.png",
+    "icon": "assets/objects/DarkDoghouse.png",
     "wikiName": "Dark_Doghouse",
     "sources": [
       {
@@ -3188,7 +3188,7 @@
     "name": "Dark Junimo Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Dark_Junimo_Cushion.png",
+    "icon": "assets/objects/DarkJunimoCushion.png",
     "wikiName": "Dark_Junimo_Cushion",
     "sources": [
       {
@@ -3206,7 +3206,7 @@
     "name": "Dark Leafy Wall Panel",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Dark_Leafy_Wall_Panel.png",
+    "icon": "assets/objects/DarkLeafyWallPanel.png",
     "wikiName": "Dark_Leafy_Wall_Panel",
     "sources": [
       {
@@ -3224,7 +3224,7 @@
     "name": "Dark Piano",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Dark_Piano.png",
+    "icon": "assets/objects/DarkPiano.png",
     "wikiName": "Dark_Piano",
     "sources": [
       {
@@ -3254,7 +3254,7 @@
     "name": "Dark Retro Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Dark_Retro_Cushion.png",
+    "icon": "assets/objects/DarkRetroCushion.png",
     "wikiName": "Dark_Retro_Cushion",
     "sources": [
       {
@@ -3272,7 +3272,7 @@
     "name": "Dark Rug",
     "type": "rug",
     "price": 2000,
-    "icon": "assets/objects/Dark_Rug.png",
+    "icon": "assets/objects/DarkRug.png",
     "wikiName": "Dark_Rug",
     "sources": [
       {
@@ -3290,7 +3290,7 @@
     "name": "Dark Table",
     "type": "table",
     "price": 2000,
-    "icon": "assets/objects/Dark_Table.png",
+    "icon": "assets/objects/DarkTable.png",
     "wikiName": "Dark_Table",
     "sources": [
       {
@@ -3308,7 +3308,7 @@
     "name": "Dark Throne",
     "type": "chair",
     "price": 2000,
-    "icon": "assets/objects/Dark_Throne.png",
+    "icon": "assets/objects/DarkThrone.png",
     "wikiName": "Dark_Throne",
     "sources": [
       {
@@ -3326,7 +3326,7 @@
     "name": "Dark Wizard Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Dark_Wizard_Cushion.png",
+    "icon": "assets/objects/DarkWizardCushion.png",
     "wikiName": "Dark_Wizard_Cushion",
     "sources": [
       {
@@ -3344,7 +3344,7 @@
     "name": "Decorative Axe",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Decorative_Axe.png",
+    "icon": "assets/objects/DecorativeAxe.png",
     "wikiName": "Decorative_Axe",
     "sources": [
       {
@@ -3369,7 +3369,7 @@
     "name": "Decorative Barrel",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Decorative_Barrel.png",
+    "icon": "assets/objects/DecorativeBarrel.png",
     "wikiName": "Decorative_Barrel",
     "sources": [
       {
@@ -3381,7 +3381,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10,
         "days": [
           "Tuesday"
@@ -3402,7 +3402,7 @@
     "name": "Decorative Bowl",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/Decorative_Bowl.png",
+    "icon": "assets/objects/DecorativeBowl.png",
     "wikiName": "Decorative_Bowl",
     "sources": [
       {
@@ -3420,7 +3420,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3438,7 +3438,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3456,7 +3456,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3474,7 +3474,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3492,7 +3492,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3510,7 +3510,7 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Decorative_Door.png",
+    "icon": "assets/objects/DecorativeDoor.png",
     "wikiName": "Decorative_Door",
     "sources": [
       {
@@ -3528,7 +3528,7 @@
     "name": "Decorative Hatch",
     "type": "decor",
     "price": 1000,
-    "icon": "assets/objects/Decorative_Hatch.png",
+    "icon": "assets/objects/DecorativeHatch.png",
     "wikiName": "Decorative_Hatch",
     "sources": [
       {
@@ -3546,7 +3546,7 @@
     "name": "Decorative Joja Door",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Decorative_Joja_Door.png",
+    "icon": "assets/objects/DecorativeJojaDoor.png",
     "wikiName": "Decorative_Joja_Door",
     "sources": [
       {
@@ -3564,7 +3564,7 @@
     "name": "Decorative Junimo Door",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Decorative_Junimo_Door.png",
+    "icon": "assets/objects/DecorativeJunimoDoor.png",
     "wikiName": "Decorative_Junimo_Door",
     "sources": [
       {
@@ -3582,7 +3582,7 @@
     "name": "Decorative Lantern",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Decorative_Lantern.png",
+    "icon": "assets/objects/DecorativeLantern.png",
     "wikiName": "Decorative_Lantern",
     "sources": [
       {
@@ -3600,7 +3600,7 @@
     "name": "Decorative Oak Ladder",
     "type": "painting",
     "price": 2500,
-    "icon": "assets/objects/Decorative_Oak_Ladder.png",
+    "icon": "assets/objects/DecorativeOakLadder.png",
     "wikiName": "Decorative_Oak_Ladder",
     "sources": [
       {
@@ -3618,7 +3618,7 @@
     "name": "Decorative Pitchfork",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Decorative_Pitchfork.png",
+    "icon": "assets/objects/DecorativePitchfork.png",
     "wikiName": "Decorative_Pitchfork",
     "sources": [
       {
@@ -3643,7 +3643,7 @@
     "name": "Decorative Retro Door",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Decorative_Retro_Door.png",
+    "icon": "assets/objects/DecorativeRetroDoor.png",
     "wikiName": "Decorative_Retro_Door",
     "sources": [
       {
@@ -3661,7 +3661,7 @@
     "name": "Decorative Shovel",
     "type": "painting",
     "price": 2000,
-    "icon": "assets/objects/Decorative_Shovel.png",
+    "icon": "assets/objects/DecorativeShovel.png",
     "wikiName": "Decorative_Shovel",
     "sources": [
       {
@@ -3679,7 +3679,7 @@
     "name": "Decorative Sword",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Decorative_Sword.png",
+    "icon": "assets/objects/DecorativeSword.png",
     "wikiName": "Decorative_Sword",
     "sources": [
       {
@@ -3704,7 +3704,7 @@
     "name": "Decorative Trash Can",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Decorative_Trash_Can.png",
+    "icon": "assets/objects/DecorativeTrashCan.png",
     "wikiName": "Decorative_Trash_Can",
     "sources": [
       {
@@ -3722,7 +3722,7 @@
     "name": "Decorative Walnut Ladder",
     "type": "painting",
     "price": 2500,
-    "icon": "assets/objects/Decorative_Walnut_Ladder.png",
+    "icon": "assets/objects/DecorativeWalnutLadder.png",
     "wikiName": "Decorative_Walnut_Ladder",
     "sources": [
       {
@@ -3740,7 +3740,7 @@
     "name": "Decorative Wizard Door",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Decorative_Wizard_Door.png",
+    "icon": "assets/objects/DecorativeWizardDoor.png",
     "wikiName": "Decorative_Wizard_Door",
     "sources": [
       {
@@ -3758,7 +3758,7 @@
     "name": "Deluxe Fish Tank",
     "type": "fishtank",
     "price": 10000,
-    "icon": "assets/objects/Deluxe_Fish_Tank.png",
+    "icon": "assets/objects/DeluxeFishTank.png",
     "wikiName": "Deluxe_Fish_Tank",
     "sources": [
       {
@@ -3783,7 +3783,7 @@
     "name": "Deluxe Red Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Deluxe_Red_Double_Bed.png",
+    "icon": "assets/objects/DeluxeRedDoubleBed.png",
     "wikiName": "Deluxe_Red_Double_Bed",
     "sources": [
       {
@@ -3808,7 +3808,7 @@
     "name": "Deluxe Tree",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Deluxe_Tree.png",
+    "icon": "assets/objects/DeluxeTree.png",
     "wikiName": "Deluxe_Tree",
     "sources": [
       {
@@ -3826,7 +3826,7 @@
     "name": "Desert Chair",
     "type": "chair",
     "price": 500,
-    "icon": "assets/objects/Desert_Chair.png",
+    "icon": "assets/objects/DesertChair.png",
     "wikiName": "Desert_Chair",
     "sources": [
       {
@@ -3838,7 +3838,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 20,
         "days": [
           "Tuesday"
@@ -3859,7 +3859,7 @@
     "name": "Desert End Table",
     "type": "table",
     "price": 500,
-    "icon": "assets/objects/Desert_End_Table.png",
+    "icon": "assets/objects/DesertEndTable.png",
     "wikiName": "Desert_End_Table",
     "sources": [
       {
@@ -3871,7 +3871,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 20,
         "days": [
           "Monday"
@@ -3892,7 +3892,7 @@
     "name": "Desert Fireplace",
     "type": "fireplace",
     "price": 500,
-    "icon": "assets/objects/Desert_Fireplace.png",
+    "icon": "assets/objects/DesertFireplace.png",
     "wikiName": "Desert_Fireplace",
     "sources": [
       {
@@ -3904,7 +3904,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 20,
         "days": [
           "Wednesday"
@@ -3925,7 +3925,7 @@
     "name": "Desert Flags",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Desert_Flags.png",
+    "icon": "assets/objects/DesertFlags.png",
     "wikiName": "Desert_Flags",
     "sources": [
       {
@@ -3937,7 +3937,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10,
         "days": [
           "Wednesday"
@@ -3958,7 +3958,7 @@
     "name": "Desert Rug",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Desert_Rug.png",
+    "icon": "assets/objects/DesertRug.png",
     "wikiName": "Desert_Rug",
     "sources": [
       {
@@ -3970,7 +3970,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 25,
         "days": [
           "Wednesday"
@@ -3991,7 +3991,7 @@
     "name": "Desert Table",
     "type": "table",
     "price": 500,
-    "icon": "assets/objects/Desert_Table.png",
+    "icon": "assets/objects/DesertTable.png",
     "wikiName": "Desert_Table",
     "sources": [
       {
@@ -4003,7 +4003,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 25,
         "days": [
           "Tuesday"
@@ -4024,7 +4024,7 @@
     "name": "Dining Chair",
     "type": "chair",
     "price": 1200,
-    "icon": "assets/objects/Dining_Chair.png",
+    "icon": "assets/objects/DiningChair.png",
     "wikiName": "Dining_Chair",
     "sources": [
       {
@@ -4042,7 +4042,7 @@
     "name": "Dining Chair",
     "type": "chair",
     "price": 1200,
-    "icon": "assets/objects/Dining_Chair.png",
+    "icon": "assets/objects/DiningChair.png",
     "wikiName": "Dining_Chair",
     "sources": [
       {
@@ -4060,7 +4060,7 @@
     "name": "Diviner Table",
     "type": "table",
     "price": 2250,
-    "icon": "assets/objects/Diviner_Table.png",
+    "icon": "assets/objects/DivinerTable.png",
     "wikiName": "Diviner_Table",
     "sources": [
       {
@@ -4103,7 +4103,7 @@
     "name": "Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Double_Bed.png",
+    "icon": "assets/objects/DoubleBed.png",
     "wikiName": "Double_Bed",
     "sources": [
       {
@@ -4128,7 +4128,7 @@
     "name": "Dried Sunflowers",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Dried_Sunflowers.png",
+    "icon": "assets/objects/DriedSunflowers.png",
     "wikiName": "Dried_Sunflowers",
     "sources": [
       {
@@ -4157,7 +4157,7 @@
     "name": "Dusty Skull",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Dusty_Skull.png",
+    "icon": "assets/objects/DustySkull.png",
     "wikiName": "Dusty_Skull",
     "sources": [
       {
@@ -4175,7 +4175,7 @@
     "name": "Elegant Fireplace",
     "type": "fireplace",
     "price": 4000,
-    "icon": "assets/objects/Elegant_Fireplace.png",
+    "icon": "assets/objects/ElegantFireplace.png",
     "wikiName": "Elegant_Fireplace",
     "sources": [
       {
@@ -4193,7 +4193,7 @@
     "name": "Elegant Vase",
     "type": "decor",
     "price": 5000,
-    "icon": "assets/objects/Elegant_Vase.png",
+    "icon": "assets/objects/ElegantVase.png",
     "wikiName": "Elegant_Vase",
     "sources": [
       {
@@ -4211,7 +4211,7 @@
     "name": "Elixir Bundle",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Elixir_Bundle.png",
+    "icon": "assets/objects/ElixirBundle.png",
     "wikiName": "Elixir_Bundle",
     "sources": [
       {
@@ -4229,7 +4229,7 @@
     "name": "Elixir Shelf",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Elixir_Shelf.png",
+    "icon": "assets/objects/ElixirShelf.png",
     "wikiName": "Elixir_Shelf",
     "sources": [
       {
@@ -4247,7 +4247,7 @@
     "name": "Elixir Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Elixir_Table.png",
+    "icon": "assets/objects/ElixirTable.png",
     "wikiName": "Elixir_Table",
     "sources": [
       {
@@ -4265,7 +4265,7 @@
     "name": "Elliott's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Elliott_Portrait.png",
+    "icon": "assets/objects/ElliottPortrait.png",
     "wikiName": "Elliott_Portrait",
     "sources": [
       {
@@ -4296,7 +4296,7 @@
     "name": "Emerald Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Emerald_Crystal_Ball.png",
+    "icon": "assets/objects/EmeraldCrystalBall.png",
     "wikiName": "Emerald_Crystal_Ball",
     "sources": [
       {
@@ -4314,7 +4314,7 @@
     "name": "Emily's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Emily_Portrait.png",
+    "icon": "assets/objects/EmilyPortrait.png",
     "wikiName": "Emily_Portrait",
     "sources": [
       {
@@ -4345,7 +4345,7 @@
     "name": "Exotic Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Exotic_Double_Bed.png",
+    "icon": "assets/objects/ExoticDoubleBed.png",
     "wikiName": "Exotic_Double_Bed",
     "sources": [
       {
@@ -4359,7 +4359,7 @@
         "tradeItemId": "qi-gem",
         "tradeItemGameId": 858,
         "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/Qi_Gem.png",
+        "tradeItemIcon": "assets/objects/QiGem.png",
         "tradeItemAmount": 50
       },
       {
@@ -4377,7 +4377,7 @@
     "name": "Exotic Palace",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/Exotic_Palace.png",
+    "icon": "assets/objects/ExoticPalace.png",
     "wikiName": "Exotic_Palace",
     "sources": [
       {
@@ -4395,7 +4395,7 @@
     "name": "Exotic Tree",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Exotic_Tree.png",
+    "icon": "assets/objects/ExoticTree.png",
     "wikiName": "Exotic_Tree",
     "sources": [
       {
@@ -4413,7 +4413,7 @@
     "name": "Fallen Blue Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Blue_Book.png",
+    "icon": "assets/objects/FallenBlueBook.png",
     "wikiName": "Fallen_Blue_Book",
     "sources": [
       {
@@ -4431,7 +4431,7 @@
     "name": "Fallen Brown Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Brown_Book.png",
+    "icon": "assets/objects/FallenBrownBook.png",
     "wikiName": "Fallen_Brown_Book",
     "sources": [
       {
@@ -4449,7 +4449,7 @@
     "name": "Fallen Green Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Green_Book.png",
+    "icon": "assets/objects/FallenGreenBook.png",
     "wikiName": "Fallen_Green_Book",
     "sources": [
       {
@@ -4467,7 +4467,7 @@
     "name": "Fallen Purple Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Purple_Book.png",
+    "icon": "assets/objects/FallenPurpleBook.png",
     "wikiName": "Fallen_Purple_Book",
     "sources": [
       {
@@ -4485,7 +4485,7 @@
     "name": "Fallen Red Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Red_Book.png",
+    "icon": "assets/objects/FallenRedBook.png",
     "wikiName": "Fallen_Red_Book",
     "sources": [
       {
@@ -4503,7 +4503,7 @@
     "name": "Fallen Yellow Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Fallen_Yellow_Book.png",
+    "icon": "assets/objects/FallenYellowBook.png",
     "wikiName": "Fallen_Yellow_Book",
     "sources": [
       {
@@ -4521,7 +4521,7 @@
     "name": "Fancy House Plant",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Fancy_House_Plant.png",
+    "icon": "assets/objects/FancyHousePlant.png",
     "wikiName": "Fancy_House_Plant",
     "sources": [
       {
@@ -4539,7 +4539,7 @@
     "name": "Fancy House Plant",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Fancy_House_Plant.png",
+    "icon": "assets/objects/FancyHousePlant.png",
     "wikiName": "Fancy_House_Plant",
     "sources": [
       {
@@ -4557,7 +4557,7 @@
     "name": "Fancy House Plant",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Fancy_House_Plant.png",
+    "icon": "assets/objects/FancyHousePlant.png",
     "wikiName": "Fancy_House_Plant",
     "sources": [
       {
@@ -4575,7 +4575,7 @@
     "name": "Festive Dining Table",
     "type": "long table",
     "price": 3500,
-    "icon": "assets/objects/Festive_Dining_Table.png",
+    "icon": "assets/objects/FestiveDiningTable.png",
     "wikiName": "Festive_Dining_Table",
     "sources": [
       {
@@ -4600,7 +4600,7 @@
     "name": "Fisher Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Fisher_Double_Bed.png",
+    "icon": "assets/objects/FisherDoubleBed.png",
     "wikiName": "Fisher_Double_Bed",
     "sources": [
       {
@@ -4625,7 +4625,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4643,7 +4643,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4661,7 +4661,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4679,7 +4679,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4697,7 +4697,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4715,7 +4715,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4733,7 +4733,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4751,7 +4751,7 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_L.png",
+    "icon": "assets/objects/FloorDividerL.png",
     "wikiName": "Floor_Divider_L",
     "sources": [
       {
@@ -4769,7 +4769,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4787,7 +4787,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4805,7 +4805,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4823,7 +4823,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4841,7 +4841,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4859,7 +4859,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4877,7 +4877,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4895,7 +4895,7 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/Floor_Divider_R.png",
+    "icon": "assets/objects/FloorDividerR.png",
     "wikiName": "Floor_Divider_R",
     "sources": [
       {
@@ -4913,7 +4913,7 @@
     "name": "Floor TV",
     "type": "decor",
     "price": 700,
-    "icon": "assets/objects/Floor_TV.png",
+    "icon": "assets/objects/FloorTV.png",
     "wikiName": "Floor_TV",
     "sources": [
       {
@@ -4938,7 +4938,7 @@
     "name": "Foliage Print",
     "type": "painting",
     "price": 10000,
-    "icon": "assets/objects/Foliage_Print.png",
+    "icon": "assets/objects/FoliagePrint.png",
     "wikiName": "Foliage_Print",
     "sources": [
       {
@@ -4956,7 +4956,7 @@
     "name": "Food Pet Bowl",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Food_Pet_Bowl.png",
+    "icon": "assets/objects/FoodPetBowl.png",
     "wikiName": "Food_Pet_Bowl",
     "sources": [
       {
@@ -4974,7 +4974,7 @@
     "name": "Fruit Salad Rug",
     "type": "rug",
     "price": 4000,
-    "icon": "assets/objects/Fruit_Salad_Rug.png",
+    "icon": "assets/objects/FruitSaladRug.png",
     "wikiName": "Fruit_Salad_Rug",
     "sources": [
       {
@@ -4992,7 +4992,7 @@
     "name": "Funky Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Funky_Rug.png",
+    "icon": "assets/objects/FunkyRug.png",
     "wikiName": "Funky_Rug",
     "sources": [
       {
@@ -5017,7 +5017,7 @@
     "name": "Furniture Catalogue",
     "type": "table",
     "price": 200000,
-    "icon": "assets/objects/Furniture_Catalogue.png",
+    "icon": "assets/objects/FurnitureCatalogue.png",
     "wikiName": "Furniture_Catalogue",
     "sources": [
       {
@@ -5036,7 +5036,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 1000,
         "stock": 1
       },
@@ -5055,7 +5055,7 @@
     "name": "Futan Bear",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Futan_Bear.png",
+    "icon": "assets/objects/FutanBear.png",
     "wikiName": "Futan_Bear",
     "sources": [
       {
@@ -5073,7 +5073,7 @@
     "name": "Futan Rabbit",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Futan_Rabbit.png",
+    "icon": "assets/objects/FutanRabbit.png",
     "wikiName": "Futan_Rabbit",
     "sources": [
       {
@@ -5127,7 +5127,7 @@
     "name": "Gold Pillar",
     "type": "decor",
     "price": 450,
-    "icon": "assets/objects/Gold_Pillar.png",
+    "icon": "assets/objects/GoldPillar.png",
     "wikiName": "Gold_Pillar",
     "sources": [
       {
@@ -5145,7 +5145,7 @@
     "name": "Gourmand Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Gourmand_Statue.png",
+    "icon": "assets/objects/GourmandStatue.png",
     "wikiName": "Gourmand_Statue",
     "sources": [
       {
@@ -5163,7 +5163,7 @@
     "name": "Grandmother End Table",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Grandmother_End_Table.png",
+    "icon": "assets/objects/GrandmotherEndTable.png",
     "wikiName": "Grandmother_End_Table",
     "sources": [
       {
@@ -5181,7 +5181,7 @@
     "name": "Gray Joja Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Gray_Joja_Bookcase.png",
+    "icon": "assets/objects/GrayJojaBookcase.png",
     "wikiName": "Gray_Joja_Bookcase",
     "sources": [
       {
@@ -5199,7 +5199,7 @@
     "name": "Gray Joja Coffee Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Gray_Joja_Coffee_Table.png",
+    "icon": "assets/objects/GrayJojaCoffeeTable.png",
     "wikiName": "Gray_Joja_Coffee_Table",
     "sources": [
       {
@@ -5217,7 +5217,7 @@
     "name": "Gray Joja Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Gray_Joja_Cushion.png",
+    "icon": "assets/objects/GrayJojaCushion.png",
     "wikiName": "Gray_Joja_Cushion",
     "sources": [
       {
@@ -5235,7 +5235,7 @@
     "name": "Gray Joja Dresser",
     "type": "dresser",
     "price": 999,
-    "icon": "assets/objects/Gray_Joja_Dresser.png",
+    "icon": "assets/objects/GrayJojaDresser.png",
     "wikiName": "Gray_Joja_Dresser",
     "sources": [
       {
@@ -5253,7 +5253,7 @@
     "name": "Gray Joja End Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Gray_Joja_End_Table.png",
+    "icon": "assets/objects/GrayJojaEndTable.png",
     "wikiName": "Gray_Joja_End_Table",
     "sources": [
       {
@@ -5271,7 +5271,7 @@
     "name": "Gray Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Gray_Sleeping_Junimo.png",
+    "icon": "assets/objects/GraySleepingJunimo.png",
     "wikiName": "Gray_Sleeping_Junimo",
     "sources": [
       {
@@ -5289,7 +5289,7 @@
     "name": "Green Armchair",
     "type": "armchair",
     "price": 1000,
-    "icon": "assets/objects/Green_Armchair.png",
+    "icon": "assets/objects/GreenArmchair.png",
     "wikiName": "Green_Armchair",
     "sources": [
       {
@@ -5307,7 +5307,7 @@
     "name": "Green Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Green_Book.png",
+    "icon": "assets/objects/GreenBook.png",
     "wikiName": "Green_Book",
     "sources": [
       {
@@ -5325,7 +5325,7 @@
     "name": "Green Bottle",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Green_Bottle.png",
+    "icon": "assets/objects/GreenBottle.png",
     "wikiName": "Green_Bottle",
     "sources": [
       {
@@ -5343,7 +5343,7 @@
     "name": "Green Cottage Rug",
     "type": "rug",
     "price": 750,
-    "icon": "assets/objects/Green_Cottage_Rug.png",
+    "icon": "assets/objects/GreenCottageRug.png",
     "wikiName": "Green_Cottage_Rug",
     "sources": [
       {
@@ -5361,7 +5361,7 @@
     "name": "Green Couch",
     "type": "couch",
     "price": 1750,
-    "icon": "assets/objects/Green_Couch.png",
+    "icon": "assets/objects/GreenCouch.png",
     "wikiName": "Green_Couch",
     "sources": [
       {
@@ -5379,7 +5379,7 @@
     "name": "Green Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Green_Cushion.png",
+    "icon": "assets/objects/GreenCushion.png",
     "wikiName": "Green_Cushion",
     "sources": [
       {
@@ -5397,7 +5397,7 @@
     "name": "Green Office Stool",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Green_Office_Stool.png",
+    "icon": "assets/objects/GreenOfficeStool.png",
     "wikiName": "Green_Office_Stool",
     "sources": [
       {
@@ -5415,7 +5415,7 @@
     "name": "Green Plush Seat",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Green_Plush_Seat.png",
+    "icon": "assets/objects/GreenPlushSeat.png",
     "wikiName": "Green_Plush_Seat",
     "sources": [
       {
@@ -5433,7 +5433,7 @@
     "name": "Green Serpent Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Green_Serpent_Statue.png",
+    "icon": "assets/objects/GreenSerpentStatue.png",
     "wikiName": "Green_Serpent_Statue",
     "sources": [
       {
@@ -5451,7 +5451,7 @@
     "name": "Green Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Green_Sleeping_Junimo.png",
+    "icon": "assets/objects/GreenSleepingJunimo.png",
     "wikiName": "Green_Sleeping_Junimo",
     "sources": [
       {
@@ -5469,7 +5469,7 @@
     "name": "Green Stool",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Green_Stool.png",
+    "icon": "assets/objects/GreenStool.png",
     "wikiName": "Green_Stool",
     "sources": [
       {
@@ -5487,7 +5487,7 @@
     "name": "Groovy Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Groovy_Chair.png",
+    "icon": "assets/objects/GroovyChair.png",
     "wikiName": "Groovy_Chair",
     "sources": [
       {
@@ -5505,7 +5505,7 @@
     "name": "Haley's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Haley_Portrait.png",
+    "icon": "assets/objects/HaleyPortrait.png",
     "wikiName": "Haley_Portrait",
     "sources": [
       {
@@ -5536,7 +5536,7 @@
     "name": "Hanging Fish",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Hanging_Fish.png",
+    "icon": "assets/objects/HangingFish.png",
     "wikiName": "Hanging_Fish",
     "sources": [
       {
@@ -5561,7 +5561,7 @@
     "name": "Hanging Shield",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Hanging_Shield.png",
+    "icon": "assets/objects/HangingShield.png",
     "wikiName": "Hanging_Shield",
     "sources": [
       {
@@ -5579,7 +5579,7 @@
     "name": "Harvey's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Harvey_Portrait.png",
+    "icon": "assets/objects/HarveyPortrait.png",
     "wikiName": "Harvey_Portrait",
     "sources": [
       {
@@ -5610,7 +5610,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5628,7 +5628,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5646,7 +5646,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5664,7 +5664,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5682,7 +5682,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5700,7 +5700,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5718,7 +5718,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5736,7 +5736,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5754,7 +5754,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5772,7 +5772,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5790,7 +5790,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5808,7 +5808,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5826,7 +5826,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5844,7 +5844,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5862,7 +5862,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5887,7 +5887,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5905,7 +5905,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5923,7 +5923,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5941,7 +5941,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5959,7 +5959,7 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/House_Plant.png",
+    "icon": "assets/objects/HousePlant.png",
     "wikiName": "House_Plant",
     "sources": [
       {
@@ -5977,7 +5977,7 @@
     "name": "Icy Banner",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Icy_Banner.png",
+    "icon": "assets/objects/IcyBanner.png",
     "wikiName": "Icy_Banner",
     "sources": [
       {
@@ -6002,7 +6002,7 @@
     "name": "Icy Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Icy_Rug.png",
+    "icon": "assets/objects/IcyRug.png",
     "wikiName": "Icy_Rug",
     "sources": [
       {
@@ -6027,7 +6027,7 @@
     "name": "Indoor Hanging Basket",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Indoor_Hanging_Basket.png",
+    "icon": "assets/objects/IndoorHangingBasket.png",
     "wikiName": "Indoor_Hanging_Basket",
     "sources": [
       {
@@ -6045,7 +6045,7 @@
     "name": "Indoor Palm",
     "type": "decor",
     "price": 600,
-    "icon": "assets/objects/Indoor_Palm.png",
+    "icon": "assets/objects/IndoorPalm.png",
     "wikiName": "Indoor_Palm",
     "sources": [
       {
@@ -6063,7 +6063,7 @@
     "name": "Industrial Pipe",
     "type": "decor",
     "price": 300,
-    "icon": "assets/objects/Industrial_Pipe.png",
+    "icon": "assets/objects/IndustrialPipe.png",
     "wikiName": "Industrial_Pipe",
     "sources": [
       {
@@ -6081,7 +6081,7 @@
     "name": "Iridium Fireplace",
     "type": "fireplace",
     "price": 15000,
-    "icon": "assets/objects/Iridium_Fireplace.png",
+    "icon": "assets/objects/IridiumFireplace.png",
     "wikiName": "Iridium_Fireplace",
     "sources": [
       {
@@ -6120,7 +6120,7 @@
     "name": "Iridium Krobus",
     "type": "decor",
     "price": 5000,
-    "icon": "assets/objects/Iridium_Krobus.png",
+    "icon": "assets/objects/IridiumKrobus.png",
     "wikiName": "Iridium_Krobus",
     "sources": [
       {
@@ -6156,7 +6156,7 @@
     "name": "J. Cola Light",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/J._Cola_Light.png",
+    "icon": "assets/objects/JColaLight.png",
     "wikiName": "J._Cola_Light",
     "sources": [
       {
@@ -6181,7 +6181,7 @@
     "name": "J. Light",
     "type": "sconce",
     "price": 999,
-    "icon": "assets/objects/J._Light.png",
+    "icon": "assets/objects/JLight.png",
     "wikiName": "J._Light",
     "sources": [
       {
@@ -6199,7 +6199,7 @@
     "name": "J. Painting",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/J._Painting.png",
+    "icon": "assets/objects/JPainting.png",
     "wikiName": "J._Painting",
     "sources": [
       {
@@ -6217,7 +6217,7 @@
     "name": "Joja Bed",
     "type": "bed double",
     "price": 999,
-    "icon": "assets/objects/Joja_Bed.png",
+    "icon": "assets/objects/JojaBed.png",
     "wikiName": "Joja_Bed",
     "sources": [
       {
@@ -6235,7 +6235,7 @@
     "name": "Joja Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Joja_Bookcase.png",
+    "icon": "assets/objects/JojaBookcase.png",
     "wikiName": "Joja_Bookcase",
     "sources": [
       {
@@ -6253,7 +6253,7 @@
     "name": "Joja Catalogue",
     "type": "decor",
     "price": 25000,
-    "icon": "assets/objects/Furniture_Catalogue.png",
+    "icon": "assets/objects/FurnitureCatalogue.png",
     "wikiName": "Furniture_Catalogue",
     "sources": [
       {
@@ -6287,7 +6287,7 @@
     "name": "Joja Chair",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Joja_Chair.png",
+    "icon": "assets/objects/JojaChair.png",
     "wikiName": "Joja_Chair",
     "sources": [
       {
@@ -6305,7 +6305,7 @@
     "name": "Joja Coffee Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Joja_Coffee_Table.png",
+    "icon": "assets/objects/JojaCoffeeTable.png",
     "wikiName": "Joja_Coffee_Table",
     "sources": [
       {
@@ -6323,7 +6323,7 @@
     "name": "Joja Cola Cans",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Cola_Cans.png",
+    "icon": "assets/objects/JojaColaCans.png",
     "wikiName": "Joja_Cola_Cans",
     "sources": [
       {
@@ -6341,7 +6341,7 @@
     "name": "Joja Cola Fridge",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Cola_Fridge.png",
+    "icon": "assets/objects/JojaColaFridge.png",
     "wikiName": "Joja_Cola_Fridge",
     "sources": [
       {
@@ -6359,7 +6359,7 @@
     "name": "Joja Cola Ornament",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Joja_Cola_Ornament.png",
+    "icon": "assets/objects/JojaColaOrnament.png",
     "wikiName": "Joja_Cola_Ornament",
     "sources": [
       {
@@ -6377,7 +6377,7 @@
     "name": "Joja Cola Painting",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Joja_Cola_Painting.png",
+    "icon": "assets/objects/JojaColaPainting.png",
     "wikiName": "Joja_Cola_Painting",
     "sources": [
       {
@@ -6395,7 +6395,7 @@
     "name": "Joja Cola Tea Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Cola_Tea_Table.png",
+    "icon": "assets/objects/JojaColaTeaTable.png",
     "wikiName": "Joja_Cola_Tea_Table",
     "sources": [
       {
@@ -6413,7 +6413,7 @@
     "name": "Joja Couch",
     "type": "couch",
     "price": 999,
-    "icon": "assets/objects/Joja_Couch.png",
+    "icon": "assets/objects/JojaCouch.png",
     "wikiName": "Joja_Couch",
     "sources": [
       {
@@ -6431,7 +6431,7 @@
     "name": "Joja Crate",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Crate.png",
+    "icon": "assets/objects/JojaCrate.png",
     "wikiName": "Joja_Crate",
     "sources": [
       {
@@ -6449,7 +6449,7 @@
     "name": "Joja Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Joja_Cushion.png",
+    "icon": "assets/objects/JojaCushion.png",
     "wikiName": "Joja_Cushion",
     "sources": [
       {
@@ -6467,7 +6467,7 @@
     "name": "Joja Dresser",
     "type": "dresser",
     "price": 999,
-    "icon": "assets/objects/Joja_Dresser.png",
+    "icon": "assets/objects/JojaDresser.png",
     "wikiName": "Joja_Dresser",
     "sources": [
       {
@@ -6485,7 +6485,7 @@
     "name": "Joja End Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Joja_End_Table.png",
+    "icon": "assets/objects/JojaEndTable.png",
     "wikiName": "Joja_End_Table",
     "sources": [
       {
@@ -6503,7 +6503,7 @@
     "name": "Joja Fireplace",
     "type": "fireplace",
     "price": 999,
-    "icon": "assets/objects/Joja_Fireplace.png",
+    "icon": "assets/objects/JojaFireplace.png",
     "wikiName": "Joja_Fireplace",
     "sources": [
       {
@@ -6521,7 +6521,7 @@
     "name": "Joja HQ Painting",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Joja_HQ_Painting.png",
+    "icon": "assets/objects/JojaHQPainting.png",
     "wikiName": "Joja_HQ_Painting",
     "sources": [
       {
@@ -6539,7 +6539,7 @@
     "name": "Joja Lamp",
     "type": "lamp",
     "price": 999,
-    "icon": "assets/objects/Joja_Lamp.png",
+    "icon": "assets/objects/JojaLamp.png",
     "wikiName": "Joja_Lamp",
     "sources": [
       {
@@ -6557,7 +6557,7 @@
     "name": "Joja Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Joja_Rug.png",
+    "icon": "assets/objects/JojaRug.png",
     "wikiName": "Joja_Rug",
     "sources": [
       {
@@ -6575,7 +6575,7 @@
     "name": "Joja Shopping Cart",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Shopping_Cart.png",
+    "icon": "assets/objects/JojaShoppingCart.png",
     "wikiName": "Joja_Shopping_Cart",
     "sources": [
       {
@@ -6593,7 +6593,7 @@
     "name": "Joja Stool",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Joja_Stool.png",
+    "icon": "assets/objects/JojaStool.png",
     "wikiName": "Joja_Stool",
     "sources": [
       {
@@ -6611,7 +6611,7 @@
     "name": "Joja Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Joja_Table.png",
+    "icon": "assets/objects/JojaTable.png",
     "wikiName": "Joja_Table",
     "sources": [
       {
@@ -6629,7 +6629,7 @@
     "name": "Joja Vault",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Joja_Vault.png",
+    "icon": "assets/objects/JojaVault.png",
     "wikiName": "Joja_Vault",
     "sources": [
       {
@@ -6647,7 +6647,7 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Jungle_Decal.png",
+    "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
       {
@@ -6672,7 +6672,7 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Jungle_Decal.png",
+    "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
       {
@@ -6697,7 +6697,7 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Jungle_Decal.png",
+    "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
       {
@@ -6722,7 +6722,7 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Jungle_Decal.png",
+    "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
       {
@@ -6747,7 +6747,7 @@
     "name": "Jungle Tank",
     "type": "fishtank",
     "price": 5000,
-    "icon": "assets/objects/Jungle_Tank.png",
+    "icon": "assets/objects/JungleTank.png",
     "wikiName": "Jungle_Tank",
     "sources": [
       {
@@ -6759,7 +6759,7 @@
         "tradeItemId": "broken-glasses",
         "tradeItemGameId": 170,
         "tradeItemName": "Broken Glasses",
-        "tradeItemIcon": "assets/objects/Broken_Glasses.png",
+        "tradeItemIcon": "assets/objects/BrokenGlasses.png",
         "tradeItemAmount": 5
       },
       {
@@ -6777,7 +6777,7 @@
     "name": "Jungle Torch",
     "type": "torch",
     "price": 500,
-    "icon": "assets/objects/Jungle_Torch.png",
+    "icon": "assets/objects/JungleTorch.png",
     "wikiName": "Jungle_Torch",
     "sources": [
       {
@@ -6789,7 +6789,7 @@
         "tradeItemId": "cinder-shard",
         "tradeItemGameId": 848,
         "tradeItemName": "Cinder Shard",
-        "tradeItemIcon": "assets/objects/Cinder_Shard.png",
+        "tradeItemIcon": "assets/objects/CinderShard.png",
         "tradeItemAmount": 5
       },
       {
@@ -6807,7 +6807,7 @@
     "name": "Junimo Bag",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Bag.png",
+    "icon": "assets/objects/JunimoBag.png",
     "wikiName": "Junimo_Bag",
     "sources": [
       {
@@ -6825,7 +6825,7 @@
     "name": "Junimo Bed",
     "type": "bed double",
     "price": 999,
-    "icon": "assets/objects/Junimo_Bed.png",
+    "icon": "assets/objects/JunimoBed.png",
     "wikiName": "Junimo_Bed",
     "sources": [
       {
@@ -6843,7 +6843,7 @@
     "name": "Junimo Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Junimo_Bookcase.png",
+    "icon": "assets/objects/JunimoBookcase.png",
     "wikiName": "Junimo_Bookcase",
     "sources": [
       {
@@ -6861,7 +6861,7 @@
     "name": "Junimo Bundle",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Bundle.png",
+    "icon": "assets/objects/JunimoBundle.png",
     "wikiName": "Junimo_Bundle",
     "sources": [
       {
@@ -6879,7 +6879,7 @@
     "name": "Junimo Catalogue",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Catalogue.png",
+    "icon": "assets/objects/JunimoCatalogue.png",
     "wikiName": "Junimo_Catalogue",
     "sources": [
       {
@@ -6906,7 +6906,7 @@
     "name": "Junimo Chair",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Junimo_Chair.png",
+    "icon": "assets/objects/JunimoChair.png",
     "wikiName": "Junimo_Chair",
     "sources": [
       {
@@ -6924,7 +6924,7 @@
     "name": "Junimo Couch",
     "type": "couch",
     "price": 999,
-    "icon": "assets/objects/Junimo_Couch.png",
+    "icon": "assets/objects/JunimoCouch.png",
     "wikiName": "Junimo_Couch",
     "sources": [
       {
@@ -6942,7 +6942,7 @@
     "name": "Junimo Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Junimo_Cushion.png",
+    "icon": "assets/objects/JunimoCushion.png",
     "wikiName": "Junimo_Cushion",
     "sources": [
       {
@@ -6960,7 +6960,7 @@
     "name": "Junimo Dresser",
     "type": "dresser",
     "price": 999,
-    "icon": "assets/objects/Junimo_Dresser.png",
+    "icon": "assets/objects/JunimoDresser.png",
     "wikiName": "Junimo_Dresser",
     "sources": [
       {
@@ -6978,7 +6978,7 @@
     "name": "Junimo End Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Junimo_End_Table.png",
+    "icon": "assets/objects/JunimoEndTable.png",
     "wikiName": "Junimo_End_Table",
     "sources": [
       {
@@ -6996,7 +6996,7 @@
     "name": "Junimo Fireplace",
     "type": "fireplace",
     "price": 999,
-    "icon": "assets/objects/Junimo_Fireplace.png",
+    "icon": "assets/objects/JunimoFireplace.png",
     "wikiName": "Junimo_Fireplace",
     "sources": [
       {
@@ -7014,7 +7014,7 @@
     "name": "Junimo Flower",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Flower.png",
+    "icon": "assets/objects/JunimoFlower.png",
     "wikiName": "Junimo_Flower",
     "sources": [
       {
@@ -7032,7 +7032,7 @@
     "name": "Junimo Hut",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Hut.png",
+    "icon": "assets/objects/JunimoHut.png",
     "wikiName": "Junimo_Hut",
     "sources": [
       {
@@ -7050,7 +7050,7 @@
     "name": "Junimo Lamp",
     "type": "lamp",
     "price": 999,
-    "icon": "assets/objects/Junimo_Lamp.png",
+    "icon": "assets/objects/JunimoLamp.png",
     "wikiName": "Junimo_Lamp",
     "sources": [
       {
@@ -7068,7 +7068,7 @@
     "name": "Junimo Mat",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Junimo_Mat.png",
+    "icon": "assets/objects/JunimoMat.png",
     "wikiName": "Junimo_Mat",
     "sources": [
       {
@@ -7086,7 +7086,7 @@
     "name": "Junimo Plant",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Plant.png",
+    "icon": "assets/objects/JunimoPlant.png",
     "wikiName": "Junimo_Plant",
     "sources": [
       {
@@ -7104,7 +7104,7 @@
     "name": "Junimo Plaque",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Plaque.png",
+    "icon": "assets/objects/JunimoPlaque.png",
     "wikiName": "Junimo_Plaque",
     "sources": [
       {
@@ -7122,7 +7122,7 @@
     "name": "Junimo Plush",
     "type": "decor",
     "price": 4000,
-    "icon": "assets/objects/Junimo_Plush.png",
+    "icon": "assets/objects/JunimoPlush.png",
     "wikiName": "Junimo_Plush",
     "sources": [
       {
@@ -7140,7 +7140,7 @@
     "name": "Junimo Pot",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Pot.png",
+    "icon": "assets/objects/JunimoPot.png",
     "wikiName": "Junimo_Pot",
     "sources": [
       {
@@ -7158,7 +7158,7 @@
     "name": "Junimo Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Junimo_Rug.png",
+    "icon": "assets/objects/JunimoRug.png",
     "wikiName": "Junimo_Rug",
     "sources": [
       {
@@ -7176,7 +7176,7 @@
     "name": "Junimo Star",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Junimo_Star.png",
+    "icon": "assets/objects/JunimoStar.png",
     "wikiName": "Junimo_Star",
     "sources": [
       {
@@ -7194,7 +7194,7 @@
     "name": "Junimo Stool",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Junimo_Stool.png",
+    "icon": "assets/objects/JunimoStool.png",
     "wikiName": "Junimo_Stool",
     "sources": [
       {
@@ -7212,7 +7212,7 @@
     "name": "Junimo Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Junimo_Table.png",
+    "icon": "assets/objects/JunimoTable.png",
     "wikiName": "Junimo_Table",
     "sources": [
       {
@@ -7230,7 +7230,7 @@
     "name": "Junimo Tea Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Tea_Table.png",
+    "icon": "assets/objects/JunimoTeaTable.png",
     "wikiName": "Junimo_Tea_Table",
     "sources": [
       {
@@ -7248,7 +7248,7 @@
     "name": "Junimo Tree",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Junimo_Tree.png",
+    "icon": "assets/objects/JunimoTree.png",
     "wikiName": "Junimo_Tree",
     "sources": [
       {
@@ -7266,7 +7266,7 @@
     "name": "Junimo Wall Plaque",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Junimo_Wall_Plaque.png",
+    "icon": "assets/objects/JunimoWallPlaque.png",
     "wikiName": "Junimo_Wall_Plaque",
     "sources": [
       {
@@ -7284,7 +7284,7 @@
     "name": "King Chair",
     "type": "chair",
     "price": 3000,
-    "icon": "assets/objects/King_Chair.png",
+    "icon": "assets/objects/KingChair.png",
     "wikiName": "King_Chair",
     "sources": [
       {
@@ -7302,7 +7302,7 @@
     "name": "Krobus's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Krobus_Portrait.png",
+    "icon": "assets/objects/KrobusPortrait.png",
     "wikiName": "Krobus_Portrait",
     "sources": [
       {
@@ -7333,7 +7333,7 @@
     "name": "L. Light String",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/L._Light_String.png",
+    "icon": "assets/objects/LLightString.png",
     "wikiName": "L._Light_String",
     "sources": [
       {
@@ -7358,7 +7358,7 @@
     "name": "Large Book Pile",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Large_Book_Pile.png",
+    "icon": "assets/objects/LargeBookPile.png",
     "wikiName": "Large_Book_Pile",
     "sources": [
       {
@@ -7376,7 +7376,7 @@
     "name": "Large Book Stack",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Large_Book_Stack.png",
+    "icon": "assets/objects/LargeBookStack.png",
     "wikiName": "Large_Book_Stack",
     "sources": [
       {
@@ -7394,7 +7394,7 @@
     "name": "Large Brown Couch",
     "type": "couch",
     "price": 5750,
-    "icon": "assets/objects/Large_Brown_Couch.png",
+    "icon": "assets/objects/LargeBrownCouch.png",
     "wikiName": "Large_Brown_Couch",
     "sources": [
       {
@@ -7422,7 +7422,7 @@
     "name": "Large Cottage Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Large_Cottage_Rug.png",
+    "icon": "assets/objects/LargeCottageRug.png",
     "wikiName": "Large_Cottage_Rug",
     "sources": [
       {
@@ -7450,7 +7450,7 @@
     "name": "Large Fish Tank",
     "type": "fishtank",
     "price": 5000,
-    "icon": "assets/objects/Large_Fish_Tank.png",
+    "icon": "assets/objects/LargeFishTank.png",
     "wikiName": "Large_Fish_Tank",
     "sources": [
       {
@@ -7475,7 +7475,7 @@
     "name": "Large Green Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Large_Green_Rug.png",
+    "icon": "assets/objects/LargeGreenRug.png",
     "wikiName": "Large_Green_Rug",
     "sources": [
       {
@@ -7503,7 +7503,7 @@
     "name": "Large Joja Crate",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Large_Joja_Crate.png",
+    "icon": "assets/objects/LargeJojaCrate.png",
     "wikiName": "Large_Joja_Crate",
     "sources": [
       {
@@ -7521,7 +7521,7 @@
     "name": "Large Joja Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Large_Joja_Rug.png",
+    "icon": "assets/objects/LargeJojaRug.png",
     "wikiName": "Large_Joja_Rug",
     "sources": [
       {
@@ -7539,7 +7539,7 @@
     "name": "Large Junimo Hut",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Large_Junimo_Hut.png",
+    "icon": "assets/objects/LargeJunimoHut.png",
     "wikiName": "Large_Junimo_Hut",
     "sources": [
       {
@@ -7557,7 +7557,7 @@
     "name": "Large Red Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Large_Red_Rug.png",
+    "icon": "assets/objects/LargeRedRug.png",
     "wikiName": "Large_Red_Rug",
     "sources": [
       {
@@ -7582,7 +7582,7 @@
     "name": "Large Retro Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Large_Retro_Rug.png",
+    "icon": "assets/objects/LargeRetroRug.png",
     "wikiName": "Large_Retro_Rug",
     "sources": [
       {
@@ -7600,7 +7600,7 @@
     "name": "Large Wizard Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Large_Wizard_Bookcase.png",
+    "icon": "assets/objects/LargeWizardBookcase.png",
     "wikiName": "Large_Wizard_Bookcase",
     "sources": [
       {
@@ -7618,7 +7618,7 @@
     "name": "Leafy Wall Panel",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Leafy_Wall_Panel.png",
+    "icon": "assets/objects/LeafyWallPanel.png",
     "wikiName": "Leafy_Wall_Panel",
     "sources": [
       {
@@ -7636,7 +7636,7 @@
     "name": "Leah's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Leah_Portrait.png",
+    "icon": "assets/objects/LeahPortrait.png",
     "wikiName": "Leah_Portrait",
     "sources": [
       {
@@ -7667,7 +7667,7 @@
     "name": "Leah's Sculpture",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Leahs_Sculpture.png",
+    "icon": "assets/objects/LeahsSculpture.png",
     "wikiName": "Leahs_Sculpture",
     "sources": [
       {
@@ -7685,7 +7685,7 @@
     "name": "Lg. Futan Bear",
     "type": "decor",
     "price": 4000,
-    "icon": "assets/objects/Lg._Futan_Bear.png",
+    "icon": "assets/objects/LgFutanBear.png",
     "wikiName": "Lg._Futan_Bear",
     "sources": [
       {
@@ -7721,7 +7721,7 @@
     "name": "Light Green Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Light_Green_Rug.png",
+    "icon": "assets/objects/LightGreenRug.png",
     "wikiName": "Light_Green_Rug",
     "sources": [
       {
@@ -7750,7 +7750,7 @@
     "name": "Light Leafy Wall Panel",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Light_Leafy_Wall_Panel.png",
+    "icon": "assets/objects/LightLeafyWallPanel.png",
     "wikiName": "Light_Leafy_Wall_Panel",
     "sources": [
       {
@@ -7768,7 +7768,7 @@
     "name": "Light Switch",
     "type": "painting",
     "price": 600,
-    "icon": "assets/objects/Light_Switch.png",
+    "icon": "assets/objects/LightSwitch.png",
     "wikiName": "Light_Switch",
     "sources": [
       {
@@ -7786,7 +7786,7 @@
     "name": "Little Photos",
     "type": "painting",
     "price": 250,
-    "icon": "assets/objects/Little_Photos.png",
+    "icon": "assets/objects/LittlePhotos.png",
     "wikiName": "Little_Photos",
     "sources": [
       {
@@ -7804,7 +7804,7 @@
     "name": "Log Panel",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Log_Panel.png",
+    "icon": "assets/objects/LogPanel.png",
     "wikiName": "Log_Panel",
     "sources": [
       {
@@ -7829,7 +7829,7 @@
     "name": "Log Panel",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Log_Panel.png",
+    "icon": "assets/objects/LogPanel.png",
     "wikiName": "Log_Panel",
     "sources": [
       {
@@ -7854,7 +7854,7 @@
     "name": "Long Cactus",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Long_Cactus.png",
+    "icon": "assets/objects/LongCactus.png",
     "wikiName": "Long_Cactus",
     "sources": [
       {
@@ -7872,7 +7872,7 @@
     "name": "Long Elixir Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Long_Elixir_Table.png",
+    "icon": "assets/objects/LongElixirTable.png",
     "wikiName": "Long_Elixir_Table",
     "sources": [
       {
@@ -7890,7 +7890,7 @@
     "name": "Long Palm",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Long_Palm.png",
+    "icon": "assets/objects/LongPalm.png",
     "wikiName": "Long_Palm",
     "sources": [
       {
@@ -7908,7 +7908,7 @@
     "name": "Luau Table",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Luau_Table.png",
+    "icon": "assets/objects/LuauTable.png",
     "wikiName": "Luau_Table",
     "sources": [
       {
@@ -7926,7 +7926,7 @@
     "name": "Luxury Bookcase",
     "type": "bookcase",
     "price": 2000,
-    "icon": "assets/objects/Luxury_Bookcase.png",
+    "icon": "assets/objects/LuxuryBookcase.png",
     "wikiName": "Luxury_Bookcase",
     "sources": [
       {
@@ -7944,7 +7944,7 @@
     "name": "Luxury Table",
     "type": "table",
     "price": 2000,
-    "icon": "assets/objects/Luxury_Table.png",
+    "icon": "assets/objects/LuxuryTable.png",
     "wikiName": "Luxury_Table",
     "sources": [
       {
@@ -7962,7 +7962,7 @@
     "name": "Mahogany Bench",
     "type": "bench",
     "price": 2000,
-    "icon": "assets/objects/Mahogany_Bench.png",
+    "icon": "assets/objects/MahoganyBench.png",
     "wikiName": "Mahogany_Bench",
     "sources": [
       {
@@ -7980,7 +7980,7 @@
     "name": "Mahogany Chair",
     "type": "chair",
     "price": 1000,
-    "icon": "assets/objects/Mahogany_Chair.png",
+    "icon": "assets/objects/MahoganyChair.png",
     "wikiName": "Mahogany_Chair",
     "sources": [
       {
@@ -7998,7 +7998,7 @@
     "name": "Mahogany Dining Table",
     "type": "long table",
     "price": 3000,
-    "icon": "assets/objects/Mahogany_Dining_Table.png",
+    "icon": "assets/objects/MahoganyDiningTable.png",
     "wikiName": "Mahogany_Dining_Table",
     "sources": [
       {
@@ -8016,7 +8016,7 @@
     "name": "Mahogany Dresser",
     "type": "dresser",
     "price": 7500,
-    "icon": "assets/objects/Mahogany_Dresser.png",
+    "icon": "assets/objects/MahoganyDresser.png",
     "wikiName": "Mahogany_Dresser",
     "sources": [
       {
@@ -8034,7 +8034,7 @@
     "name": "Mahogany End Table",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Mahogany_End_Table.png",
+    "icon": "assets/objects/MahoganyEndTable.png",
     "wikiName": "Mahogany_End_Table",
     "sources": [
       {
@@ -8052,7 +8052,7 @@
     "name": "Mahogany Lamp End Table",
     "type": "lamp",
     "price": 3000,
-    "icon": "assets/objects/Mahogany_Lamp_End_Table.png",
+    "icon": "assets/objects/MahoganyLampEndTable.png",
     "wikiName": "Mahogany_Lamp_End_Table",
     "sources": [
       {
@@ -8070,7 +8070,7 @@
     "name": "Mahogany Table",
     "type": "table",
     "price": 1500,
-    "icon": "assets/objects/Mahogany_Table.png",
+    "icon": "assets/objects/MahoganyTable.png",
     "wikiName": "Mahogany_Table",
     "sources": [
       {
@@ -8088,7 +8088,7 @@
     "name": "Mahogany Tea-Table",
     "type": "table",
     "price": 1500,
-    "icon": "assets/objects/Mahogany_Tea-Table.png",
+    "icon": "assets/objects/MahoganyTeaTable.png",
     "wikiName": "Mahogany_Tea-Table",
     "sources": [
       {
@@ -8106,7 +8106,7 @@
     "name": "Manager of the Year",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Manager_of_the_Year.png",
+    "icon": "assets/objects/ManagerOfTheYear.png",
     "wikiName": "Manager_of_the_Year",
     "sources": [
       {
@@ -8124,7 +8124,7 @@
     "name": "Manicured Pine",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Manicured_Pine.png",
+    "icon": "assets/objects/ManicuredPine.png",
     "wikiName": "Manicured_Pine",
     "sources": [
       {
@@ -8149,7 +8149,7 @@
     "name": "Maru's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Maru_Portrait.png",
+    "icon": "assets/objects/MaruPortrait.png",
     "wikiName": "Maru_Portrait",
     "sources": [
       {
@@ -8180,7 +8180,7 @@
     "name": "Messy Shirt",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Messy_Shirt.png",
+    "icon": "assets/objects/MessyShirt.png",
     "wikiName": "Messy_Shirt",
     "sources": [
       {
@@ -8198,7 +8198,7 @@
     "name": "Messy Shorts",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Messy_Shorts.png",
+    "icon": "assets/objects/MessyShorts.png",
     "wikiName": "Messy_Shorts",
     "sources": [
       {
@@ -8216,7 +8216,7 @@
     "name": "Metal Chair",
     "type": "chair",
     "price": 800,
-    "icon": "assets/objects/Metal_Chair.png",
+    "icon": "assets/objects/MetalChair.png",
     "wikiName": "Metal_Chair",
     "sources": [
       {
@@ -8234,7 +8234,7 @@
     "name": "Metal Window",
     "type": "window",
     "price": 800,
-    "icon": "assets/objects/Metal_Window.png",
+    "icon": "assets/objects/MetalWindow.png",
     "wikiName": "Metal_Window",
     "sources": [
       {
@@ -8252,7 +8252,7 @@
     "name": "Midnight Beach Bed",
     "type": "bed",
     "price": 5000,
-    "icon": "assets/objects/Midnight_Beach_Bed.png",
+    "icon": "assets/objects/MidnightBeachBed.png",
     "wikiName": "Midnight_Beach_Bed",
     "sources": [
       {
@@ -8264,7 +8264,7 @@
         "tradeItemId": "iridium-bar",
         "tradeItemGameId": 337,
         "tradeItemName": "Iridium Bar",
-        "tradeItemIcon": "assets/objects/Iridium_Bar.png",
+        "tradeItemIcon": "assets/objects/IridiumBar.png",
         "tradeItemAmount": 15
       },
       {
@@ -8282,7 +8282,7 @@
     "name": "Midnight Beach Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Midnight_Beach_Double_Bed.png",
+    "icon": "assets/objects/MidnightBeachDoubleBed.png",
     "wikiName": "Midnight_Beach_Double_Bed",
     "sources": [
       {
@@ -8294,7 +8294,7 @@
         "tradeItemId": "iridium-bar",
         "tradeItemGameId": 337,
         "tradeItemName": "Iridium Bar",
-        "tradeItemIcon": "assets/objects/Iridium_Bar.png",
+        "tradeItemIcon": "assets/objects/IridiumBar.png",
         "tradeItemAmount": 30
       },
       {
@@ -8312,7 +8312,7 @@
     "name": "Miner's Crest",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Miners_Crest.png",
+    "icon": "assets/objects/MinersCrest.png",
     "wikiName": "Miners_Crest",
     "sources": [
       {
@@ -8330,7 +8330,7 @@
     "name": "Model Planes",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Model_Planes.png",
+    "icon": "assets/objects/ModelPlanes.png",
     "wikiName": "Model_Planes",
     "sources": [
       {
@@ -8348,7 +8348,7 @@
     "name": "Model Ship",
     "type": "decor",
     "price": 750,
-    "icon": "assets/objects/Model_Ship.png",
+    "icon": "assets/objects/ModelShip.png",
     "wikiName": "Model_Ship",
     "sources": [
       {
@@ -8366,7 +8366,7 @@
     "name": "Modern Bench",
     "type": "bench",
     "price": 2000,
-    "icon": "assets/objects/Modern_Bench.png",
+    "icon": "assets/objects/ModernBench.png",
     "wikiName": "Modern_Bench",
     "sources": [
       {
@@ -8384,7 +8384,7 @@
     "name": "Modern Bookcase",
     "type": "bookcase",
     "price": 1600,
-    "icon": "assets/objects/Modern_Bookcase.png",
+    "icon": "assets/objects/ModernBookcase.png",
     "wikiName": "Modern_Bookcase",
     "sources": [
       {
@@ -8402,7 +8402,7 @@
     "name": "Modern Dining Table",
     "type": "long table",
     "price": 2700,
-    "icon": "assets/objects/Modern_Dining_Table.png",
+    "icon": "assets/objects/ModernDiningTable.png",
     "wikiName": "Modern_Dining_Table",
     "sources": [
       {
@@ -8420,7 +8420,7 @@
     "name": "Modern Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Modern_Double_Bed.png",
+    "icon": "assets/objects/ModernDoubleBed.png",
     "wikiName": "Modern_Double_Bed",
     "sources": [
       {
@@ -8438,7 +8438,7 @@
     "name": "Modern End Table",
     "type": "table",
     "price": 800,
-    "icon": "assets/objects/Modern_End_Table.png",
+    "icon": "assets/objects/ModernEndTable.png",
     "wikiName": "Modern_End_Table",
     "sources": [
       {
@@ -8456,7 +8456,7 @@
     "name": "Modern Fish Tank",
     "type": "fishtank",
     "price": 10000,
-    "icon": "assets/objects/Modern_Fish_Tank.png",
+    "icon": "assets/objects/ModernFishTank.png",
     "wikiName": "Modern_Fish_Tank",
     "sources": [
       {
@@ -8474,7 +8474,7 @@
     "name": "Modern Lamp",
     "type": "lamp",
     "price": 750,
-    "icon": "assets/objects/Modern_Lamp.png",
+    "icon": "assets/objects/ModernLamp.png",
     "wikiName": "Modern_Lamp",
     "sources": [
       {
@@ -8492,7 +8492,7 @@
     "name": "Modern Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Modern_Rug.png",
+    "icon": "assets/objects/ModernRug.png",
     "wikiName": "Modern_Rug",
     "sources": [
       {
@@ -8517,7 +8517,7 @@
     "name": "Modern Table",
     "type": "table",
     "price": 1250,
-    "icon": "assets/objects/Modern_Table.png",
+    "icon": "assets/objects/ModernTable.png",
     "wikiName": "Modern_Table",
     "sources": [
       {
@@ -8535,7 +8535,7 @@
     "name": "Modern Tea-Table",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Modern_Tea-Table.png",
+    "icon": "assets/objects/ModernTeaTable.png",
     "wikiName": "Modern_Tea-Table",
     "sources": [
       {
@@ -8553,7 +8553,7 @@
     "name": "Moldy Couch",
     "type": "couch",
     "price": 999,
-    "icon": "assets/objects/Moldy_Couch.png",
+    "icon": "assets/objects/MoldyCouch.png",
     "wikiName": "Moldy_Couch",
     "sources": [
       {
@@ -8571,7 +8571,7 @@
     "name": "Monster Danglers",
     "type": "painting",
     "price": 1000,
-    "icon": "assets/objects/Monster_Danglers.png",
+    "icon": "assets/objects/MonsterDanglers.png",
     "wikiName": "Monster_Danglers",
     "sources": [
       {
@@ -8589,7 +8589,7 @@
     "name": "Monster Fireplace",
     "type": "fireplace",
     "price": 25000,
-    "icon": "assets/objects/Monster_Fireplace.png",
+    "icon": "assets/objects/MonsterFireplace.png",
     "wikiName": "Monster_Fireplace",
     "sources": [
       {
@@ -8614,7 +8614,7 @@
     "name": "Monster Rug",
     "type": "rug",
     "price": 1250,
-    "icon": "assets/objects/Monster_Rug.png",
+    "icon": "assets/objects/MonsterRug.png",
     "wikiName": "Monster_Rug",
     "sources": [
       {
@@ -8632,7 +8632,7 @@
     "name": "Moon Table",
     "type": "table",
     "price": 2500,
-    "icon": "assets/objects/Moon_Table.png",
+    "icon": "assets/objects/MoonTable.png",
     "wikiName": "Moon_Table",
     "sources": [
       {
@@ -8650,7 +8650,7 @@
     "name": "Moonlight Jellies Banner",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Moonlight_Jellies_Banner.png",
+    "icon": "assets/objects/MoonlightJelliesBanner.png",
     "wikiName": "Moonlight_Jellies_Banner",
     "sources": [
       {
@@ -8675,7 +8675,7 @@
     "name": "Mounted Trout",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Mounted_Trout.png",
+    "icon": "assets/objects/MountedTrout.png",
     "wikiName": "Mounted_Trout",
     "sources": [
       {
@@ -8693,7 +8693,7 @@
     "name": "My First Painting",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/My_First_Painting.png",
+    "icon": "assets/objects/MyFirstPainting.png",
     "wikiName": "My_First_Painting",
     "sources": [
       {
@@ -8711,7 +8711,7 @@
     "name": "Mystic Rug",
     "type": "rug",
     "price": 1250,
-    "icon": "assets/objects/Mystic_Rug.png",
+    "icon": "assets/objects/MysticRug.png",
     "wikiName": "Mystic_Rug",
     "sources": [
       {
@@ -8729,7 +8729,7 @@
     "name": "Nautical Rug",
     "type": "rug",
     "price": 1250,
-    "icon": "assets/objects/Nautical_Rug.png",
+    "icon": "assets/objects/NauticalRug.png",
     "wikiName": "Nautical_Rug",
     "sources": [
       {
@@ -8747,7 +8747,7 @@
     "name": "Needlepoint Flower",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Needlepoint_Flower.png",
+    "icon": "assets/objects/NeedlepointFlower.png",
     "wikiName": "Needlepoint_Flower",
     "sources": [
       {
@@ -8765,7 +8765,7 @@
     "name": "Neolithic Table",
     "type": "table",
     "price": 1800,
-    "icon": "assets/objects/Neolithic_Table.png",
+    "icon": "assets/objects/NeolithicTable.png",
     "wikiName": "Neolithic_Table",
     "sources": [
       {
@@ -8783,7 +8783,7 @@
     "name": "Night Sky Decal #1",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Night_Sky_Decal_#1.png",
+    "icon": "assets/objects/NightSkyDecal1.png",
     "wikiName": "Night_Sky_Decal_#1",
     "sources": [
       {
@@ -8795,7 +8795,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 30
       },
       {
@@ -8813,7 +8813,7 @@
     "name": "Night Sky Decal #2",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Night_Sky_Decal_#2.png",
+    "icon": "assets/objects/NightSkyDecal2.png",
     "wikiName": "Night_Sky_Decal_#2",
     "sources": [
       {
@@ -8825,7 +8825,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 30
       },
       {
@@ -8843,7 +8843,7 @@
     "name": "Night Sky Decal #3",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Night_Sky_Decal_#3.png",
+    "icon": "assets/objects/NightSkyDecal3.png",
     "wikiName": "Night_Sky_Decal_#3",
     "sources": [
       {
@@ -8855,7 +8855,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 30
       },
       {
@@ -8873,7 +8873,7 @@
     "name": "Oak Bench",
     "type": "bench",
     "price": 750,
-    "icon": "assets/objects/Oak_Bench.png",
+    "icon": "assets/objects/OakBench.png",
     "wikiName": "Oak_Bench",
     "sources": [
       {
@@ -8901,7 +8901,7 @@
     "name": "Oak Chair",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Oak_Chair.png",
+    "icon": "assets/objects/OakChair.png",
     "wikiName": "Oak_Chair",
     "sources": [
       {
@@ -8928,7 +8928,7 @@
     "name": "Oak Dresser",
     "type": "dresser",
     "price": 5000,
-    "icon": "assets/objects/Oak_Dresser.png",
+    "icon": "assets/objects/OakDresser.png",
     "wikiName": "Oak_Dresser",
     "sources": [
       {
@@ -8956,7 +8956,7 @@
     "name": "Oak End Table",
     "type": "table",
     "price": 500,
-    "icon": "assets/objects/Oak_End_Table.png",
+    "icon": "assets/objects/OakEndTable.png",
     "wikiName": "Oak_End_Table",
     "sources": [
       {
@@ -8984,7 +8984,7 @@
     "name": "Oak Lamp End Table",
     "type": "lamp",
     "price": 2000,
-    "icon": "assets/objects/Oak_Lamp_End_Table.png",
+    "icon": "assets/objects/OakLampEndTable.png",
     "wikiName": "Oak_Lamp_End_Table",
     "sources": [
       {
@@ -9002,7 +9002,7 @@
     "name": "Oak Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Oak_Table.png",
+    "icon": "assets/objects/OakTable.png",
     "wikiName": "Oak_Table",
     "sources": [
       {
@@ -9030,7 +9030,7 @@
     "name": "Oak Tea-Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Oak_Tea-Table.png",
+    "icon": "assets/objects/OakTeaTable.png",
     "wikiName": "Oak_Tea-Table",
     "sources": [
       {
@@ -9058,7 +9058,7 @@
     "name": "Obsidian Vase",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Obsidian_Vase.png",
+    "icon": "assets/objects/ObsidianVase.png",
     "wikiName": "Obsidian_Vase",
     "sources": [
       {
@@ -9076,7 +9076,7 @@
     "name": "Oceanic Rug",
     "type": "rug",
     "price": 1250,
-    "icon": "assets/objects/Oceanic_Rug.png",
+    "icon": "assets/objects/OceanicRug.png",
     "wikiName": "Oceanic_Rug",
     "sources": [
       {
@@ -9088,7 +9088,7 @@
         "tradeItemId": "blue-discus",
         "tradeItemGameId": 838,
         "tradeItemName": "Blue Discus",
-        "tradeItemIcon": "assets/objects/Blue_Discus.png",
+        "tradeItemIcon": "assets/objects/BlueDiscus.png",
         "tradeItemAmount": 3,
         "days": [
           "Saturday"
@@ -9109,7 +9109,7 @@
     "name": "Old World Rug",
     "type": "rug",
     "price": 10000,
-    "icon": "assets/objects/Old_World_Rug.png",
+    "icon": "assets/objects/OldWorldRug.png",
     "wikiName": "Old_World_Rug",
     "sources": [
       {
@@ -9137,7 +9137,7 @@
     "name": "Orange Office Stool",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Orange_Office_Stool.png",
+    "icon": "assets/objects/OrangeOfficeStool.png",
     "wikiName": "Orange_Office_Stool",
     "sources": [
       {
@@ -9155,7 +9155,7 @@
     "name": "Orange Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Orange_Sleeping_Junimo.png",
+    "icon": "assets/objects/OrangeSleepingJunimo.png",
     "wikiName": "Orange_Sleeping_Junimo",
     "sources": [
       {
@@ -9173,7 +9173,7 @@
     "name": "Ornate Lamp",
     "type": "lamp",
     "price": 1050,
-    "icon": "assets/objects/Ornate_Lamp.png",
+    "icon": "assets/objects/OrnateLamp.png",
     "wikiName": "Ornate_Lamp",
     "sources": [
       {
@@ -9191,7 +9191,7 @@
     "name": "Ornate Window",
     "type": "window",
     "price": 900,
-    "icon": "assets/objects/Ornate_Window.png",
+    "icon": "assets/objects/OrnateWindow.png",
     "wikiName": "Ornate_Window",
     "sources": [
       {
@@ -9234,7 +9234,7 @@
     "name": "Palm Wall Ornament",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Palm_Wall_Ornament.png",
+    "icon": "assets/objects/PalmWallOrnament.png",
     "wikiName": "Palm_Wall_Ornament",
     "sources": [
       {
@@ -9267,7 +9267,7 @@
     "name": "Pastel Banner",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Pastel_Banner.png",
+    "icon": "assets/objects/PastelBanner.png",
     "wikiName": "Pastel_Banner",
     "sources": [
       {
@@ -9292,7 +9292,7 @@
     "name": "Patchwork Rug",
     "type": "rug",
     "price": 800,
-    "icon": "assets/objects/Patchwork_Rug.png",
+    "icon": "assets/objects/PatchworkRug.png",
     "wikiName": "Patchwork_Rug",
     "sources": [
       {
@@ -9310,7 +9310,7 @@
     "name": "Penny's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Penny_Portrait.png",
+    "icon": "assets/objects/PennyPortrait.png",
     "wikiName": "Penny_Portrait",
     "sources": [
       {
@@ -9341,7 +9341,7 @@
     "name": "Periodic Table",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Periodic_Table.png",
+    "icon": "assets/objects/PeriodicTable.png",
     "wikiName": "Periodic_Table",
     "sources": [
       {
@@ -9359,7 +9359,7 @@
     "name": "Pierre's Sign",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Pierres_Sign.png",
+    "icon": "assets/objects/PierresSign.png",
     "wikiName": "Pierres_Sign",
     "sources": [
       {
@@ -9377,7 +9377,7 @@
     "name": "Pig Painting",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Pig_Painting.png",
+    "icon": "assets/objects/PigPainting.png",
     "wikiName": "Pig_Painting",
     "sources": [
       {
@@ -9395,7 +9395,7 @@
     "name": "Pink Office Chair",
     "type": "chair",
     "price": 500,
-    "icon": "assets/objects/Pink_Office_Chair.png",
+    "icon": "assets/objects/PinkOfficeChair.png",
     "wikiName": "Pink_Office_Chair",
     "sources": [
       {
@@ -9413,7 +9413,7 @@
     "name": "Pink Plush Seat",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Pink_Plush_Seat.png",
+    "icon": "assets/objects/PinkPlushSeat.png",
     "wikiName": "Pink_Plush_Seat",
     "sources": [
       {
@@ -9431,7 +9431,7 @@
     "name": "Pirate Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Pirate_Double_Bed.png",
+    "icon": "assets/objects/PirateDoubleBed.png",
     "wikiName": "Pirate_Double_Bed",
     "sources": [
       {
@@ -9449,7 +9449,7 @@
     "name": "Pirate Flag",
     "type": "painting",
     "price": 4000,
-    "icon": "assets/objects/Pirate_Flag.png",
+    "icon": "assets/objects/PirateFlag.png",
     "wikiName": "Pirate_Flag",
     "sources": [
       {
@@ -9461,7 +9461,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 100
       },
       {
@@ -9479,7 +9479,7 @@
     "name": "Pirate Rug",
     "type": "rug",
     "price": 4000,
-    "icon": "assets/objects/Pirate_Rug.png",
+    "icon": "assets/objects/PirateRug.png",
     "wikiName": "Pirate_Rug",
     "sources": [
       {
@@ -9497,7 +9497,7 @@
     "name": "Plain Torch",
     "type": "torch",
     "price": 500,
-    "icon": "assets/objects/Plain_Torch.png",
+    "icon": "assets/objects/PlainTorch.png",
     "wikiName": "Plain_Torch",
     "sources": [
       {
@@ -9529,7 +9529,7 @@
     "name": "Plasma TV",
     "type": "decor",
     "price": 4500,
-    "icon": "assets/objects/Plasma_TV.png",
+    "icon": "assets/objects/PlasmaTV.png",
     "wikiName": "Plasma_TV",
     "sources": [
       {
@@ -9554,7 +9554,7 @@
     "name": "Plastic Bag",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Plastic_Bag.png",
+    "icon": "assets/objects/PlasticBag.png",
     "wikiName": "Plastic_Bag",
     "sources": [
       {
@@ -9572,7 +9572,7 @@
     "name": "Plastic Lawn Chair",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Plastic_Lawn_Chair.png",
+    "icon": "assets/objects/PlasticLawnChair.png",
     "wikiName": "Plastic_Lawn_Chair",
     "sources": [
       {
@@ -9590,7 +9590,7 @@
     "name": "Plastic Lawn End Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Plastic_Lawn_End_Table.png",
+    "icon": "assets/objects/PlasticLawnEndTable.png",
     "wikiName": "Plastic_Lawn_End_Table",
     "sources": [
       {
@@ -9608,7 +9608,7 @@
     "name": "Plastic Plant",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Plastic_Plant.png",
+    "icon": "assets/objects/PlasticPlant.png",
     "wikiName": "Plastic_Plant",
     "sources": [
       {
@@ -9626,7 +9626,7 @@
     "name": "Plastic Sapling",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Plastic_Sapling.png",
+    "icon": "assets/objects/PlasticSapling.png",
     "wikiName": "Plastic_Sapling",
     "sources": [
       {
@@ -9662,7 +9662,7 @@
     "name": "Potted Red Mushroom",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Potted_Red_Mushroom.png",
+    "icon": "assets/objects/PottedRedMushroom.png",
     "wikiName": "Potted_Red_Mushroom",
     "sources": [
       {
@@ -9680,7 +9680,7 @@
     "name": "Pub Table",
     "type": "table",
     "price": 800,
-    "icon": "assets/objects/Pub_Table.png",
+    "icon": "assets/objects/PubTable.png",
     "wikiName": "Pub_Table",
     "sources": [
       {
@@ -9698,7 +9698,7 @@
     "name": "Purple Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Purple_Book.png",
+    "icon": "assets/objects/PurpleBook.png",
     "wikiName": "Purple_Book",
     "sources": [
       {
@@ -9716,7 +9716,7 @@
     "name": "Purple Office Chair",
     "type": "chair",
     "price": 500,
-    "icon": "assets/objects/Purple_Office_Chair.png",
+    "icon": "assets/objects/PurpleOfficeChair.png",
     "wikiName": "Purple_Office_Chair",
     "sources": [
       {
@@ -9734,7 +9734,7 @@
     "name": "Purple Serpent Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Purple_Serpent_Statue.png",
+    "icon": "assets/objects/PurpleSerpentStatue.png",
     "wikiName": "Purple_Serpent_Statue",
     "sources": [
       {
@@ -9752,7 +9752,7 @@
     "name": "Purple Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Purple_Sleeping_Junimo.png",
+    "icon": "assets/objects/PurpleSleepingJunimo.png",
     "wikiName": "Purple_Sleeping_Junimo",
     "sources": [
       {
@@ -9770,7 +9770,7 @@
     "name": "Puzzle Table",
     "type": "table",
     "price": 1500,
-    "icon": "assets/objects/Puzzle_Table.png",
+    "icon": "assets/objects/PuzzleTable.png",
     "wikiName": "Puzzle_Table",
     "sources": [
       {
@@ -9788,7 +9788,7 @@
     "name": "Pyramid Decal",
     "type": "painting",
     "price": 10000,
-    "icon": "assets/objects/Pyramid_Decal.png",
+    "icon": "assets/objects/PyramidDecal.png",
     "wikiName": "Pyramid_Decal",
     "sources": [
       {
@@ -9806,7 +9806,7 @@
     "name": "Radio Desk",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Radio_Desk.png",
+    "icon": "assets/objects/RadioDesk.png",
     "wikiName": "Radio_Desk",
     "sources": [
       {
@@ -9824,7 +9824,7 @@
     "name": "Red Armchair",
     "type": "armchair",
     "price": 1000,
-    "icon": "assets/objects/Red_Armchair.png",
+    "icon": "assets/objects/RedArmchair.png",
     "wikiName": "Red_Armchair",
     "sources": [
       {
@@ -9842,7 +9842,7 @@
     "name": "Red Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Red_Book.png",
+    "icon": "assets/objects/RedBook.png",
     "wikiName": "Red_Book",
     "sources": [
       {
@@ -9860,7 +9860,7 @@
     "name": "Red Cottage Rug",
     "type": "rug",
     "price": 750,
-    "icon": "assets/objects/Red_Cottage_Rug.png",
+    "icon": "assets/objects/RedCottageRug.png",
     "wikiName": "Red_Cottage_Rug",
     "sources": [
       {
@@ -9878,7 +9878,7 @@
     "name": "Red Couch",
     "type": "couch",
     "price": 1750,
-    "icon": "assets/objects/Red_Couch.png",
+    "icon": "assets/objects/RedCouch.png",
     "wikiName": "Red_Couch",
     "sources": [
       {
@@ -9896,7 +9896,7 @@
     "name": "Red Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Red_Cushion.png",
+    "icon": "assets/objects/RedCushion.png",
     "wikiName": "Red_Cushion",
     "sources": [
       {
@@ -9914,7 +9914,7 @@
     "name": "Red Diner Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Red_Diner_Chair.png",
+    "icon": "assets/objects/RedDinerChair.png",
     "wikiName": "Red_Diner_Chair",
     "sources": [
       {
@@ -9932,7 +9932,7 @@
     "name": "Red Rug",
     "type": "rug",
     "price": 1000,
-    "icon": "assets/objects/Red_Rug.png",
+    "icon": "assets/objects/RedRug.png",
     "wikiName": "Red_Rug",
     "sources": [
       {
@@ -9950,7 +9950,7 @@
     "name": "Red Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Red_Sleeping_Junimo.png",
+    "icon": "assets/objects/RedSleepingJunimo.png",
     "wikiName": "Red_Sleeping_Junimo",
     "sources": [
       {
@@ -9968,7 +9968,7 @@
     "name": "Retro Banner",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Retro_Banner.png",
+    "icon": "assets/objects/RetroBanner.png",
     "wikiName": "Retro_Banner",
     "sources": [
       {
@@ -9986,7 +9986,7 @@
     "name": "Retro Bed",
     "type": "bed double",
     "price": 999,
-    "icon": "assets/objects/Retro_Bed.png",
+    "icon": "assets/objects/RetroBed.png",
     "wikiName": "Retro_Bed",
     "sources": [
       {
@@ -10004,7 +10004,7 @@
     "name": "Retro Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Retro_Bookcase.png",
+    "icon": "assets/objects/RetroBookcase.png",
     "wikiName": "Retro_Bookcase",
     "sources": [
       {
@@ -10022,7 +10022,7 @@
     "name": "Retro Cabinet",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Cabinet.png",
+    "icon": "assets/objects/RetroCabinet.png",
     "wikiName": "Retro_Cabinet",
     "sources": [
       {
@@ -10040,7 +10040,7 @@
     "name": "Retro Catalogue",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Catalogue.png",
+    "icon": "assets/objects/RetroCatalogue.png",
     "wikiName": "Retro_Catalogue",
     "sources": [
       {
@@ -10067,7 +10067,7 @@
     "name": "Retro Chair",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Retro_Chair.png",
+    "icon": "assets/objects/RetroChair.png",
     "wikiName": "Retro_Chair",
     "sources": [
       {
@@ -10085,7 +10085,7 @@
     "name": "Retro Couch",
     "type": "couch",
     "price": 999,
-    "icon": "assets/objects/Retro_Couch.png",
+    "icon": "assets/objects/RetroCouch.png",
     "wikiName": "Retro_Couch",
     "sources": [
       {
@@ -10103,7 +10103,7 @@
     "name": "Retro Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Retro_Cushion.png",
+    "icon": "assets/objects/RetroCushion.png",
     "wikiName": "Retro_Cushion",
     "sources": [
       {
@@ -10121,7 +10121,7 @@
     "name": "Retro Dresser",
     "type": "dresser",
     "price": 999,
-    "icon": "assets/objects/Retro_Dresser.png",
+    "icon": "assets/objects/RetroDresser.png",
     "wikiName": "Retro_Dresser",
     "sources": [
       {
@@ -10139,7 +10139,7 @@
     "name": "Retro End Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Retro_End_Table.png",
+    "icon": "assets/objects/RetroEndTable.png",
     "wikiName": "Retro_End_Table",
     "sources": [
       {
@@ -10157,7 +10157,7 @@
     "name": "Retro Fireplace",
     "type": "fireplace",
     "price": 999,
-    "icon": "assets/objects/Retro_Fireplace.png",
+    "icon": "assets/objects/RetroFireplace.png",
     "wikiName": "Retro_Fireplace",
     "sources": [
       {
@@ -10175,7 +10175,7 @@
     "name": "Retro Flower",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Flower.png",
+    "icon": "assets/objects/RetroFlower.png",
     "wikiName": "Retro_Flower",
     "sources": [
       {
@@ -10193,7 +10193,7 @@
     "name": "Retro Lamp",
     "type": "lamp",
     "price": 999,
-    "icon": "assets/objects/Retro_Lamp.png",
+    "icon": "assets/objects/RetroLamp.png",
     "wikiName": "Retro_Lamp",
     "sources": [
       {
@@ -10211,7 +10211,7 @@
     "name": "Retro Mat",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Retro_Mat.png",
+    "icon": "assets/objects/RetroMat.png",
     "wikiName": "Retro_Mat",
     "sources": [
       {
@@ -10229,7 +10229,7 @@
     "name": "Retro Plant",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Plant.png",
+    "icon": "assets/objects/RetroPlant.png",
     "wikiName": "Retro_Plant",
     "sources": [
       {
@@ -10247,7 +10247,7 @@
     "name": "Retro Radio",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Radio.png",
+    "icon": "assets/objects/RetroRadio.png",
     "wikiName": "Retro_Radio",
     "sources": [
       {
@@ -10265,7 +10265,7 @@
     "name": "Retro Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Retro_Rug.png",
+    "icon": "assets/objects/RetroRug.png",
     "wikiName": "Retro_Rug",
     "sources": [
       {
@@ -10283,7 +10283,7 @@
     "name": "Retro Square Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Retro_Square_Rug.png",
+    "icon": "assets/objects/RetroSquareRug.png",
     "wikiName": "Retro_Square_Rug",
     "sources": [
       {
@@ -10301,7 +10301,7 @@
     "name": "Retro Stool",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Retro_Stool.png",
+    "icon": "assets/objects/RetroStool.png",
     "wikiName": "Retro_Stool",
     "sources": [
       {
@@ -10319,7 +10319,7 @@
     "name": "Retro Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Retro_Table.png",
+    "icon": "assets/objects/RetroTable.png",
     "wikiName": "Retro_Table",
     "sources": [
       {
@@ -10337,7 +10337,7 @@
     "name": "Retro Tea Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Retro_Tea_Table.png",
+    "icon": "assets/objects/RetroTeaTable.png",
     "wikiName": "Retro_Tea_Table",
     "sources": [
       {
@@ -10355,7 +10355,7 @@
     "name": "Retro TV",
     "type": "decor",
     "price": 5000,
-    "icon": "assets/objects/Retro_TV.png",
+    "icon": "assets/objects/RetroTV.png",
     "wikiName": "Retro_TV",
     "sources": [
       {
@@ -10373,7 +10373,7 @@
     "name": "Ruby Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Ruby_Crystal_Ball.png",
+    "icon": "assets/objects/RubyCrystalBall.png",
     "wikiName": "Ruby_Crystal_Ball",
     "sources": [
       {
@@ -10391,7 +10391,7 @@
     "name": "Rune Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Rune_Rug.png",
+    "icon": "assets/objects/RuneRug.png",
     "wikiName": "Rune_Rug",
     "sources": [
       {
@@ -10409,7 +10409,7 @@
     "name": "S. Pine",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/S._Pine.png",
+    "icon": "assets/objects/SPine.png",
     "wikiName": "S._Pine",
     "sources": [
       {
@@ -10434,7 +10434,7 @@
     "name": "S. Wall Flower",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/S._Wall_Flower.png",
+    "icon": "assets/objects/SWallFlower.png",
     "wikiName": "S._Wall_Flower",
     "sources": [
       {
@@ -10459,7 +10459,7 @@
     "name": "Sam's Boombox",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Sams_Boombox.png",
+    "icon": "assets/objects/SamsBoombox.png",
     "wikiName": "Sams_Boombox",
     "sources": [
       {
@@ -10477,7 +10477,7 @@
     "name": "Sam's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Sam_Portrait.png",
+    "icon": "assets/objects/SamPortrait.png",
     "wikiName": "Sam_Portrait",
     "sources": [
       {
@@ -10508,7 +10508,7 @@
     "name": "Sam's Skateboard",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Sams_Skateboard.png",
+    "icon": "assets/objects/SamsSkateboard.png",
     "wikiName": "Sams_Skateboard",
     "sources": [
       {
@@ -10526,7 +10526,7 @@
     "name": "Sandy Rug",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Sandy_Rug.png",
+    "icon": "assets/objects/SandyRug.png",
     "wikiName": "Sandy_Rug",
     "sources": [
       {
@@ -10538,7 +10538,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 20,
         "days": [
           "Monday"
@@ -10559,7 +10559,7 @@
     "name": "Sebastian's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Sebastian_Portrait.png",
+    "icon": "assets/objects/SebastianPortrait.png",
     "wikiName": "Sebastian_Portrait",
     "sources": [
       {
@@ -10590,7 +10590,7 @@
     "name": "Shane's Portrait",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Shane_Portrait.png",
+    "icon": "assets/objects/ShanePortrait.png",
     "wikiName": "Shane_Portrait",
     "sources": [
       {
@@ -10621,7 +10621,7 @@
     "name": "Short Bookcase",
     "type": "bookcase",
     "price": 1000,
-    "icon": "assets/objects/Short_Bookcase.png",
+    "icon": "assets/objects/ShortBookcase.png",
     "wikiName": "Short_Bookcase",
     "sources": [
       {
@@ -10639,7 +10639,7 @@
     "name": "Short Wizard Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Short_Wizard_Bookcase.png",
+    "icon": "assets/objects/ShortWizardBookcase.png",
     "wikiName": "Short_Wizard_Bookcase",
     "sources": [
       {
@@ -10657,7 +10657,7 @@
     "name": "Singing Stone",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Singing_Stone.png",
+    "icon": "assets/objects/SingingStone.png",
     "wikiName": "Singing_Stone",
     "sources": [
       {
@@ -10675,7 +10675,7 @@
     "name": "Six-Pack Rings",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Six-Pack_Rings.png",
+    "icon": "assets/objects/SixPackRings.png",
     "wikiName": "Six-Pack_Rings",
     "sources": [
       {
@@ -10711,7 +10711,7 @@
     "name": "Skull Poster",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Skull_Poster.png",
+    "icon": "assets/objects/SkullPoster.png",
     "wikiName": "Skull_Poster",
     "sources": [
       {
@@ -10729,7 +10729,7 @@
     "name": "Sloth Skeleton L",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Sloth_Skeleton_L.png",
+    "icon": "assets/objects/SlothSkeletonL.png",
     "wikiName": "Sloth_Skeleton_L",
     "sources": [
       {
@@ -10747,7 +10747,7 @@
     "name": "Sloth Skeleton M",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Sloth_Skeleton_M.png",
+    "icon": "assets/objects/SlothSkeletonM.png",
     "wikiName": "Sloth_Skeleton_M",
     "sources": [
       {
@@ -10765,7 +10765,7 @@
     "name": "Sloth Skeleton R",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Sloth_Skeleton_R.png",
+    "icon": "assets/objects/SlothSkeletonR.png",
     "wikiName": "Sloth_Skeleton_R",
     "sources": [
       {
@@ -10783,7 +10783,7 @@
     "name": "Small Book Pile",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Small_Book_Pile.png",
+    "icon": "assets/objects/SmallBookPile.png",
     "wikiName": "Small_Book_Pile",
     "sources": [
       {
@@ -10801,7 +10801,7 @@
     "name": "Small Book Stack",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Small_Book_Stack.png",
+    "icon": "assets/objects/SmallBookStack.png",
     "wikiName": "Small_Book_Stack",
     "sources": [
       {
@@ -10819,7 +10819,7 @@
     "name": "Small Crystal",
     "type": "decor",
     "price": 750,
-    "icon": "assets/objects/Small_Crystal.png",
+    "icon": "assets/objects/SmallCrystal.png",
     "wikiName": "Small_Crystal",
     "sources": [
       {
@@ -10837,7 +10837,7 @@
     "name": "Small Elixir Shelf",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Small_Elixir_Shelf.png",
+    "icon": "assets/objects/SmallElixirShelf.png",
     "wikiName": "Small_Elixir_Shelf",
     "sources": [
       {
@@ -10855,7 +10855,7 @@
     "name": "Small Fish Tank",
     "type": "fishtank",
     "price": 1000,
-    "icon": "assets/objects/Small_Fish_Tank.png",
+    "icon": "assets/objects/SmallFishTank.png",
     "wikiName": "Small_Fish_Tank",
     "sources": [
       {
@@ -10880,7 +10880,7 @@
     "name": "Small Joja Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Small_Joja_Rug.png",
+    "icon": "assets/objects/SmallJojaRug.png",
     "wikiName": "Small_Joja_Rug",
     "sources": [
       {
@@ -10898,7 +10898,7 @@
     "name": "Small Junimo Hut",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Small_Junimo_Hut.png",
+    "icon": "assets/objects/SmallJunimoHut.png",
     "wikiName": "Small_Junimo_Hut",
     "sources": [
       {
@@ -10916,7 +10916,7 @@
     "name": "Small Junimo Mat",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Small_Junimo_Mat.png",
+    "icon": "assets/objects/SmallJunimoMat.png",
     "wikiName": "Small_Junimo_Mat",
     "sources": [
       {
@@ -10934,7 +10934,7 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Small_Junimo_Plush.png",
+    "icon": "assets/objects/SmallJunimoPlush.png",
     "wikiName": "Small_Junimo_Plush",
     "sources": [
       {
@@ -10952,7 +10952,7 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Small_Junimo_Plush.png",
+    "icon": "assets/objects/SmallJunimoPlush.png",
     "wikiName": "Small_Junimo_Plush",
     "sources": [
       {
@@ -10970,7 +10970,7 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Small_Junimo_Plush.png",
+    "icon": "assets/objects/SmallJunimoPlush.png",
     "wikiName": "Small_Junimo_Plush",
     "sources": [
       {
@@ -10988,7 +10988,7 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/Small_Junimo_Plush.png",
+    "icon": "assets/objects/SmallJunimoPlush.png",
     "wikiName": "Small_Junimo_Plush",
     "sources": [
       {
@@ -11006,7 +11006,7 @@
     "name": "Small Junimo Pot",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Small_Junimo_Pot.png",
+    "icon": "assets/objects/SmallJunimoPot.png",
     "wikiName": "Small_Junimo_Pot",
     "sources": [
       {
@@ -11024,7 +11024,7 @@
     "name": "Small Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/Small_Plant.png",
+    "icon": "assets/objects/SmallPlant.png",
     "wikiName": "Small_Plant",
     "sources": [
       {
@@ -11042,7 +11042,7 @@
     "name": "Small Stacked Elixir Shelf",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Small_Stacked_Elixir_Shelf.png",
+    "icon": "assets/objects/SmallStackedElixirShelf.png",
     "wikiName": "Small_Stacked_Elixir_Shelf",
     "sources": [
       {
@@ -11060,7 +11060,7 @@
     "name": "Small Wall Pumpkin",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Small_Wall_Pumpkin.png",
+    "icon": "assets/objects/SmallWallPumpkin.png",
     "wikiName": "Small_Wall_Pumpkin",
     "sources": [
       {
@@ -11078,7 +11078,7 @@
     "name": "Small Window",
     "type": "window",
     "price": 300,
-    "icon": "assets/objects/Small_Window.png",
+    "icon": "assets/objects/SmallWindow.png",
     "wikiName": "Small_Window",
     "sources": [
       {
@@ -11103,7 +11103,7 @@
     "name": "Small Wizard Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Small_Wizard_Bookcase.png",
+    "icon": "assets/objects/SmallWizardBookcase.png",
     "wikiName": "Small_Wizard_Bookcase",
     "sources": [
       {
@@ -11121,7 +11121,7 @@
     "name": "Snowy Rug",
     "type": "rug",
     "price": 1000,
-    "icon": "assets/objects/Snowy_Rug.png",
+    "icon": "assets/objects/SnowyRug.png",
     "wikiName": "Snowy_Rug",
     "sources": [
       {
@@ -11139,7 +11139,7 @@
     "name": "Spilled Beverage",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Spilled_Beverage.png",
+    "icon": "assets/objects/SpilledBeverage.png",
     "wikiName": "Spilled_Beverage",
     "sources": [
       {
@@ -11157,7 +11157,7 @@
     "name": "Spirits Table",
     "type": "decor",
     "price": 4000,
-    "icon": "assets/objects/Spirits_Table.png",
+    "icon": "assets/objects/SpiritsTable.png",
     "wikiName": "Spirits_Table",
     "sources": [
       {
@@ -11175,7 +11175,7 @@
     "name": "Square Joja Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Square_Joja_Rug.png",
+    "icon": "assets/objects/SquareJojaRug.png",
     "wikiName": "Square_Joja_Rug",
     "sources": [
       {
@@ -11193,7 +11193,7 @@
     "name": "Square Junimo Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Square_Junimo_Rug.png",
+    "icon": "assets/objects/SquareJunimoRug.png",
     "wikiName": "Square_Junimo_Rug",
     "sources": [
       {
@@ -11211,7 +11211,7 @@
     "name": "Squirrel Figurine",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Squirrel_Figurine.png",
+    "icon": "assets/objects/SquirrelFigurine.png",
     "wikiName": "Squirrel_Figurine",
     "sources": [
       {
@@ -11229,7 +11229,7 @@
     "name": "Stacked Elixir Shelf",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Stacked_Elixir_Shelf.png",
+    "icon": "assets/objects/StackedElixirShelf.png",
     "wikiName": "Stacked_Elixir_Shelf",
     "sources": [
       {
@@ -11247,7 +11247,7 @@
     "name": "Stacked Joja Boxes",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Stacked_Joja_Boxes.png",
+    "icon": "assets/objects/StackedJojaBoxes.png",
     "wikiName": "Stacked_Joja_Boxes",
     "sources": [
       {
@@ -11265,7 +11265,7 @@
     "name": "Standing Geode",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Standing_Geode.png",
+    "icon": "assets/objects/StandingGeode.png",
     "wikiName": "Standing_Geode",
     "sources": [
       {
@@ -11283,7 +11283,7 @@
     "name": "Starport Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Starport_Decal.png",
+    "icon": "assets/objects/StarportDecal.png",
     "wikiName": "Starport_Decal",
     "sources": [
       {
@@ -11308,7 +11308,7 @@
     "name": "Starry Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Starry_Double_Bed.png",
+    "icon": "assets/objects/StarryDoubleBed.png",
     "wikiName": "Starry_Double_Bed",
     "sources": [
       {
@@ -11326,7 +11326,7 @@
     "name": "Starry Moon Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Starry_Moon_Rug.png",
+    "icon": "assets/objects/StarryMoonRug.png",
     "wikiName": "Starry_Moon_Rug",
     "sources": [
       {
@@ -11344,7 +11344,7 @@
     "name": "Stone Fireplace",
     "type": "fireplace",
     "price": 1500,
-    "icon": "assets/objects/Stone_Fireplace.png",
+    "icon": "assets/objects/StoneFireplace.png",
     "wikiName": "Stone_Fireplace",
     "sources": [
       {
@@ -11369,7 +11369,7 @@
     "name": "Stone Flooring",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Stone_Flooring.png",
+    "icon": "assets/objects/StoneFlooring.png",
     "wikiName": "Stone_Flooring",
     "sources": [
       {
@@ -11387,7 +11387,7 @@
     "name": "Stone Slab",
     "type": "table",
     "price": 1000,
-    "icon": "assets/objects/Stone_Slab.png",
+    "icon": "assets/objects/StoneSlab.png",
     "wikiName": "Stone_Slab",
     "sources": [
       {
@@ -11405,7 +11405,7 @@
     "name": "Stove Fireplace",
     "type": "fireplace",
     "price": 3000,
-    "icon": "assets/objects/Stove_Fireplace.png",
+    "icon": "assets/objects/StoveFireplace.png",
     "wikiName": "Stove_Fireplace",
     "sources": [
       {
@@ -11430,7 +11430,7 @@
     "name": "Strawberry Decal",
     "type": "painting",
     "price": 2500,
-    "icon": "assets/objects/Strawberry_Decal.png",
+    "icon": "assets/objects/StrawberryDecal.png",
     "wikiName": "Strawberry_Decal",
     "sources": [
       {
@@ -11442,7 +11442,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 100
       },
       {
@@ -11460,7 +11460,7 @@
     "name": "Strawberry Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Strawberry_Double_Bed.png",
+    "icon": "assets/objects/StrawberryDoubleBed.png",
     "wikiName": "Strawberry_Double_Bed",
     "sources": [
       {
@@ -11478,7 +11478,7 @@
     "name": "Stump Seat",
     "type": "chair",
     "price": 2000,
-    "icon": "assets/objects/Stump_Seat.png",
+    "icon": "assets/objects/StumpSeat.png",
     "wikiName": "Stump_Seat",
     "sources": [
       {
@@ -11496,7 +11496,7 @@
     "name": "Stump Torch",
     "type": "torch",
     "price": 500,
-    "icon": "assets/objects/Stump_Torch.png",
+    "icon": "assets/objects/StumpTorch.png",
     "wikiName": "Stump_Torch",
     "sources": [
       {
@@ -11521,7 +11521,7 @@
     "name": "Sun Dunes",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Sun_Dunes.png",
+    "icon": "assets/objects/SunDunes.png",
     "wikiName": "Sun_Dunes",
     "sources": [
       {
@@ -11533,7 +11533,7 @@
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/Calico_Egg.png",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 30,
         "days": [
           "Monday"
@@ -11554,7 +11554,7 @@
     "name": "Sun Table",
     "type": "table",
     "price": 2500,
-    "icon": "assets/objects/Sun_Table.png",
+    "icon": "assets/objects/SunTable.png",
     "wikiName": "Sun_Table",
     "sources": [
       {
@@ -11572,7 +11572,7 @@
     "name": "Swamp Plant",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Swamp_Plant.png",
+    "icon": "assets/objects/SwampPlant.png",
     "wikiName": "Swamp_Plant",
     "sources": [
       {
@@ -11590,7 +11590,7 @@
     "name": "Swirl Rug",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Swirl_Rug.png",
+    "icon": "assets/objects/SwirlRug.png",
     "wikiName": "Swirl_Rug",
     "sources": [
       {
@@ -11608,7 +11608,7 @@
     "name": "Table Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/Table_Plant.png",
+    "icon": "assets/objects/TablePlant.png",
     "wikiName": "Table_Plant",
     "sources": [
       {
@@ -11626,7 +11626,7 @@
     "name": "Tall House Plant",
     "type": "decor",
     "price": 1000,
-    "icon": "assets/objects/Tall_House_Plant.png",
+    "icon": "assets/objects/TallHousePlant.png",
     "wikiName": "Tall_House_Plant",
     "sources": [
       {
@@ -11662,7 +11662,7 @@
     "name": "Topaz Crystal Ball",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Topaz_Crystal_Ball.png",
+    "icon": "assets/objects/TopazCrystalBall.png",
     "wikiName": "Topaz_Crystal_Ball",
     "sources": [
       {
@@ -11680,7 +11680,7 @@
     "name": "Topiary Tree",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Topiary_Tree.png",
+    "icon": "assets/objects/TopiaryTree.png",
     "wikiName": "Topiary_Tree",
     "sources": [
       {
@@ -11698,7 +11698,7 @@
     "name": "Totem Pole",
     "type": "decor",
     "price": 750,
-    "icon": "assets/objects/Totem_Pole.png",
+    "icon": "assets/objects/TotemPole.png",
     "wikiName": "Totem_Pole",
     "sources": [
       {
@@ -11723,7 +11723,7 @@
     "name": "Trash Catalogue",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Trash_Catalogue.png",
+    "icon": "assets/objects/TrashCatalogue.png",
     "wikiName": "Trash_Catalogue",
     "sources": [
       {
@@ -11741,7 +11741,7 @@
     "name": "Tree Column",
     "type": "decor",
     "price": 1000,
-    "icon": "assets/objects/Tree_Column.png",
+    "icon": "assets/objects/TreeColumn.png",
     "wikiName": "Tree_Column",
     "sources": [
       {
@@ -11759,7 +11759,7 @@
     "name": "Tree of the Winter Star",
     "type": "decor",
     "price": 5000,
-    "icon": "assets/objects/Tree_of_the_Winter_Star.png",
+    "icon": "assets/objects/TreeOfTheWinterStar.png",
     "wikiName": "Tree_of_the_Winter_Star",
     "sources": [
       {
@@ -11791,7 +11791,7 @@
     "name": "Triangle Window",
     "type": "window",
     "price": 800,
-    "icon": "assets/objects/Triangle_Window.png",
+    "icon": "assets/objects/TriangleWindow.png",
     "wikiName": "Triangle_Window",
     "sources": [
       {
@@ -11809,7 +11809,7 @@
     "name": "Tropical Bed",
     "type": "bed",
     "price": 5000,
-    "icon": "assets/objects/Tropical_Bed.png",
+    "icon": "assets/objects/TropicalBed.png",
     "wikiName": "Tropical_Bed",
     "sources": [
       {
@@ -11839,7 +11839,7 @@
     "name": "Tropical Chair",
     "type": "chair",
     "price": 3000,
-    "icon": "assets/objects/Tropical_Chair.png",
+    "icon": "assets/objects/TropicalChair.png",
     "wikiName": "Tropical_Chair",
     "sources": [
       {
@@ -11869,7 +11869,7 @@
     "name": "Tropical Double Bed",
     "type": "bed double",
     "price": 5000,
-    "icon": "assets/objects/Tropical_Double_Bed.png",
+    "icon": "assets/objects/TropicalDoubleBed.png",
     "wikiName": "Tropical_Double_Bed",
     "sources": [
       {
@@ -11902,7 +11902,7 @@
     "name": "Tropical TV",
     "type": "decor",
     "price": 4500,
-    "icon": "assets/objects/Tropical_TV.png",
+    "icon": "assets/objects/TropicalTV.png",
     "wikiName": "Tropical_TV",
     "sources": [
       {
@@ -11914,7 +11914,7 @@
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
         "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/Taro_Root.png",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
         "tradeItemAmount": 30
       },
       {
@@ -11932,7 +11932,7 @@
     "name": "Two Elixirs",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Two_Elixirs.png",
+    "icon": "assets/objects/TwoElixirs.png",
     "wikiName": "Two_Elixirs",
     "sources": [
       {
@@ -11950,7 +11950,7 @@
     "name": "Upright Piano",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Upright_Piano.png",
+    "icon": "assets/objects/UprightPiano.png",
     "wikiName": "Upright_Piano",
     "sources": [
       {
@@ -11989,7 +11989,7 @@
     "name": "Wall Basket",
     "type": "painting",
     "price": 10000,
-    "icon": "assets/objects/Wall_Basket.png",
+    "icon": "assets/objects/WallBasket.png",
     "wikiName": "Wall_Basket",
     "sources": [
       {
@@ -12007,7 +12007,7 @@
     "name": "Wall Cactus",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Wall_Cactus.png",
+    "icon": "assets/objects/WallCactus.png",
     "wikiName": "Wall_Cactus",
     "sources": [
       {
@@ -12032,7 +12032,7 @@
     "name": "Wall Clock",
     "type": "painting",
     "price": 2500,
-    "icon": "assets/objects/Wall_Clock.png",
+    "icon": "assets/objects/WallClock.png",
     "wikiName": "Wall_Clock",
     "sources": [
       {
@@ -12050,7 +12050,7 @@
     "name": "Wall Flower",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Wall_Flower.png",
+    "icon": "assets/objects/WallFlower.png",
     "wikiName": "Wall_Flower",
     "sources": [
       {
@@ -12075,7 +12075,7 @@
     "name": "Wall Palm",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Wall_Palm.png",
+    "icon": "assets/objects/WallPalm.png",
     "wikiName": "Wall_Palm",
     "sources": [
       {
@@ -12100,7 +12100,7 @@
     "name": "Wall Pumpkin",
     "type": "painting",
     "price": 750,
-    "icon": "assets/objects/Wall_Pumpkin.png",
+    "icon": "assets/objects/WallPumpkin.png",
     "wikiName": "Wall_Pumpkin",
     "sources": [
       {
@@ -12118,7 +12118,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12136,7 +12136,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12154,7 +12154,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 1000,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12172,7 +12172,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12190,7 +12190,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12218,7 +12218,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12243,7 +12243,7 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/Wall_Sconce.png",
+    "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
       {
@@ -12271,7 +12271,7 @@
     "name": "Wall Sword",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Wall_Sword.png",
+    "icon": "assets/objects/WallSword.png",
     "wikiName": "Wall_Sword",
     "sources": [
       {
@@ -12296,7 +12296,7 @@
     "name": "Wallflower Pal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Wallflower_Pal.png",
+    "icon": "assets/objects/WallflowerPal.png",
     "wikiName": "Wallflower_Pal",
     "sources": [
       {
@@ -12314,7 +12314,7 @@
     "name": "Walnut Bench",
     "type": "bench",
     "price": 750,
-    "icon": "assets/objects/Walnut_Bench.png",
+    "icon": "assets/objects/WalnutBench.png",
     "wikiName": "Walnut_Bench",
     "sources": [
       {
@@ -12342,7 +12342,7 @@
     "name": "Walnut Chair",
     "type": "chair",
     "price": 350,
-    "icon": "assets/objects/Walnut_Chair.png",
+    "icon": "assets/objects/WalnutChair.png",
     "wikiName": "Walnut_Chair",
     "sources": [
       {
@@ -12370,7 +12370,7 @@
     "name": "Walnut Dresser",
     "type": "dresser",
     "price": 5000,
-    "icon": "assets/objects/Walnut_Dresser.png",
+    "icon": "assets/objects/WalnutDresser.png",
     "wikiName": "Walnut_Dresser",
     "sources": [
       {
@@ -12398,7 +12398,7 @@
     "name": "Walnut End Table",
     "type": "table",
     "price": 500,
-    "icon": "assets/objects/Walnut_End_Table.png",
+    "icon": "assets/objects/WalnutEndTable.png",
     "wikiName": "Walnut_End_Table",
     "sources": [
       {
@@ -12426,7 +12426,7 @@
     "name": "Walnut Lamp End Table",
     "type": "lamp",
     "price": 2000,
-    "icon": "assets/objects/Walnut_Lamp_End_Table.png",
+    "icon": "assets/objects/WalnutLampEndTable.png",
     "wikiName": "Walnut_Lamp_End_Table",
     "sources": [
       {
@@ -12444,7 +12444,7 @@
     "name": "Walnut Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Walnut_Table.png",
+    "icon": "assets/objects/WalnutTable.png",
     "wikiName": "Walnut_Table",
     "sources": [
       {
@@ -12472,7 +12472,7 @@
     "name": "Walnut Tea-Table",
     "type": "table",
     "price": 750,
-    "icon": "assets/objects/Walnut_Tea-Table.png",
+    "icon": "assets/objects/WalnutTeaTable.png",
     "wikiName": "Walnut_Tea-Table",
     "sources": [
       {
@@ -12500,7 +12500,7 @@
     "name": "Water Pet Bowl",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Water_Pet_Bowl.png",
+    "icon": "assets/objects/WaterPetBowl.png",
     "wikiName": "Water_Pet_Bowl",
     "sources": [
       {
@@ -12518,7 +12518,7 @@
     "name": "Wild Double Bed",
     "type": "bed double",
     "price": 6000,
-    "icon": "assets/objects/Wild_Double_Bed.png",
+    "icon": "assets/objects/WildDoubleBed.png",
     "wikiName": "Wild_Double_Bed",
     "sources": [
       {
@@ -12530,7 +12530,7 @@
         "tradeItemId": "cinder-shard",
         "tradeItemGameId": 848,
         "tradeItemName": "Cinder Shard",
-        "tradeItemIcon": "assets/objects/Cinder_Shard.png",
+        "tradeItemIcon": "assets/objects/CinderShard.png",
         "tradeItemAmount": 100
       },
       {
@@ -12548,7 +12548,7 @@
     "name": "Wine Table",
     "type": "decor",
     "price": 4000,
-    "icon": "assets/objects/Wine_Table.png",
+    "icon": "assets/objects/WineTable.png",
     "wikiName": "Wine_Table",
     "sources": [
       {
@@ -12566,7 +12566,7 @@
     "name": "Winter Banner",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Winter_Banner.png",
+    "icon": "assets/objects/WinterBanner.png",
     "wikiName": "Winter_Banner",
     "sources": [
       {
@@ -12591,7 +12591,7 @@
     "name": "Winter Chair",
     "type": "chair",
     "price": 750,
-    "icon": "assets/objects/Winter_Chair.png",
+    "icon": "assets/objects/WinterChair.png",
     "wikiName": "Winter_Chair",
     "sources": [
       {
@@ -12609,7 +12609,7 @@
     "name": "Winter Dining Table",
     "type": "long table",
     "price": 3500,
-    "icon": "assets/objects/Winter_Dining_Table.png",
+    "icon": "assets/objects/WinterDiningTable.png",
     "wikiName": "Winter_Dining_Table",
     "sources": [
       {
@@ -12634,7 +12634,7 @@
     "name": "Winter End Table",
     "type": "table",
     "price": 800,
-    "icon": "assets/objects/Winter_End_Table.png",
+    "icon": "assets/objects/WinterEndTable.png",
     "wikiName": "Winter_End_Table",
     "sources": [
       {
@@ -12659,7 +12659,7 @@
     "name": "Winter Table",
     "type": "table",
     "price": 1250,
-    "icon": "assets/objects/Winter_Table.png",
+    "icon": "assets/objects/WinterTable.png",
     "wikiName": "Winter_Table",
     "sources": [
       {
@@ -12677,7 +12677,7 @@
     "name": "Winter Tree Decal",
     "type": "painting",
     "price": 400,
-    "icon": "assets/objects/Winter_Tree_Decal.png",
+    "icon": "assets/objects/WinterTreeDecal.png",
     "wikiName": "Winter_Tree_Decal",
     "sources": [
       {
@@ -12695,7 +12695,7 @@
     "name": "Witch's Broom",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Witchs_Broom.png",
+    "icon": "assets/objects/WitchsBroom.png",
     "wikiName": "Witchs_Broom",
     "sources": [
       {
@@ -12713,7 +12713,7 @@
     "name": "Wizard Bed",
     "type": "bed double",
     "price": 999,
-    "icon": "assets/objects/Wizard_Bed.png",
+    "icon": "assets/objects/WizardBed.png",
     "wikiName": "Wizard_Bed",
     "sources": [
       {
@@ -12731,7 +12731,7 @@
     "name": "Wizard Bookcase",
     "type": "bookcase",
     "price": 999,
-    "icon": "assets/objects/Wizard_Bookcase.png",
+    "icon": "assets/objects/WizardBookcase.png",
     "wikiName": "Wizard_Bookcase",
     "sources": [
       {
@@ -12749,7 +12749,7 @@
     "name": "Wizard Bookshelf",
     "type": "painting",
     "price": 999,
-    "icon": "assets/objects/Wizard_Bookshelf.png",
+    "icon": "assets/objects/WizardBookshelf.png",
     "wikiName": "Wizard_Bookshelf",
     "sources": [
       {
@@ -12767,7 +12767,7 @@
     "name": "Wizard Catalogue",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Wizard_Catalogue.png",
+    "icon": "assets/objects/WizardCatalogue.png",
     "wikiName": "Wizard_Catalogue",
     "sources": [
       {
@@ -12792,7 +12792,7 @@
     "name": "Wizard Chair",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Wizard_Chair.png",
+    "icon": "assets/objects/WizardChair.png",
     "wikiName": "Wizard_Chair",
     "sources": [
       {
@@ -12810,7 +12810,7 @@
     "name": "Wizard Couch",
     "type": "couch",
     "price": 4000,
-    "icon": "assets/objects/Wizard_Couch.png",
+    "icon": "assets/objects/WizardCouch.png",
     "wikiName": "Wizard_Couch",
     "sources": [
       {
@@ -12828,7 +12828,7 @@
     "name": "Wizard Cushion",
     "type": "rug",
     "price": 999,
-    "icon": "assets/objects/Wizard_Cushion.png",
+    "icon": "assets/objects/WizardCushion.png",
     "wikiName": "Wizard_Cushion",
     "sources": [
       {
@@ -12846,7 +12846,7 @@
     "name": "Wizard Dresser",
     "type": "dresser",
     "price": 999,
-    "icon": "assets/objects/Wizard_Dresser.png",
+    "icon": "assets/objects/WizardDresser.png",
     "wikiName": "Wizard_Dresser",
     "sources": [
       {
@@ -12864,7 +12864,7 @@
     "name": "Wizard End Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Wizard_End_Table.png",
+    "icon": "assets/objects/WizardEndTable.png",
     "wikiName": "Wizard_End_Table",
     "sources": [
       {
@@ -12882,7 +12882,7 @@
     "name": "Wizard Fireplace",
     "type": "fireplace",
     "price": 999,
-    "icon": "assets/objects/Wizard_Fireplace.png",
+    "icon": "assets/objects/WizardFireplace.png",
     "wikiName": "Wizard_Fireplace",
     "sources": [
       {
@@ -12900,7 +12900,7 @@
     "name": "Wizard Lamp",
     "type": "lamp",
     "price": 999,
-    "icon": "assets/objects/Wizard_Lamp.png",
+    "icon": "assets/objects/WizardLamp.png",
     "wikiName": "Wizard_Lamp",
     "sources": [
       {
@@ -12918,7 +12918,7 @@
     "name": "Wizard Stool",
     "type": "chair",
     "price": 999,
-    "icon": "assets/objects/Wizard_Stool.png",
+    "icon": "assets/objects/WizardStool.png",
     "wikiName": "Wizard_Stool",
     "sources": [
       {
@@ -12936,7 +12936,7 @@
     "name": "Wizard Study",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Wizard_Study.png",
+    "icon": "assets/objects/WizardStudy.png",
     "wikiName": "Wizard_Study",
     "sources": [
       {
@@ -12954,7 +12954,7 @@
     "name": "Wizard Table",
     "type": "table",
     "price": 999,
-    "icon": "assets/objects/Wizard_Table.png",
+    "icon": "assets/objects/WizardTable.png",
     "wikiName": "Wizard_Table",
     "sources": [
       {
@@ -12972,7 +12972,7 @@
     "name": "Wizard Tea Table",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Wizard_Tea_Table.png",
+    "icon": "assets/objects/WizardTeaTable.png",
     "wikiName": "Wizard_Tea_Table",
     "sources": [
       {
@@ -12990,7 +12990,7 @@
     "name": "Wood Panel",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/Wood_Panel.png",
+    "icon": "assets/objects/WoodPanel.png",
     "wikiName": "Wood_Panel",
     "sources": [
       {
@@ -13015,7 +13015,7 @@
     "name": "Woodcut Rug",
     "type": "rug",
     "price": 800,
-    "icon": "assets/objects/Woodcut_Rug.png",
+    "icon": "assets/objects/WoodcutRug.png",
     "wikiName": "Woodcut_Rug",
     "sources": [
       {
@@ -13033,7 +13033,7 @@
     "name": "Woodsy Couch",
     "type": "couch",
     "price": 3000,
-    "icon": "assets/objects/Woodsy_Couch.png",
+    "icon": "assets/objects/WoodsyCouch.png",
     "wikiName": "Woodsy_Couch",
     "sources": [
       {
@@ -13051,7 +13051,7 @@
     "name": "World Map",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/World_Map.png",
+    "icon": "assets/objects/WorldMap.png",
     "wikiName": "World_Map",
     "sources": [
       {
@@ -13087,7 +13087,7 @@
     "name": "Wumbus Statue",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/Wumbus_Statue.png",
+    "icon": "assets/objects/WumbusStatue.png",
     "wikiName": "Wumbus_Statue",
     "sources": [
       {
@@ -13105,7 +13105,7 @@
     "name": "Yellow Armchair",
     "type": "armchair",
     "price": 1000,
-    "icon": "assets/objects/Yellow_Armchair.png",
+    "icon": "assets/objects/YellowArmchair.png",
     "wikiName": "Yellow_Armchair",
     "sources": [
       {
@@ -13123,7 +13123,7 @@
     "name": "Yellow Book",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Yellow_Book.png",
+    "icon": "assets/objects/YellowBook.png",
     "wikiName": "Yellow_Book",
     "sources": [
       {
@@ -13141,7 +13141,7 @@
     "name": "Yellow Couch",
     "type": "couch",
     "price": 1750,
-    "icon": "assets/objects/Yellow_Couch.png",
+    "icon": "assets/objects/YellowCouch.png",
     "wikiName": "Yellow_Couch",
     "sources": [
       {
@@ -13159,7 +13159,7 @@
     "name": "Yellow Cushion",
     "type": "rug",
     "price": 500,
-    "icon": "assets/objects/Yellow_Cushion.png",
+    "icon": "assets/objects/YellowCushion.png",
     "wikiName": "Yellow_Cushion",
     "sources": [
       {
@@ -13177,7 +13177,7 @@
     "name": "Yellow Sleeping Junimo",
     "type": "decor",
     "price": 999,
-    "icon": "assets/objects/Yellow_Sleeping_Junimo.png",
+    "icon": "assets/objects/YellowSleepingJunimo.png",
     "wikiName": "Yellow_Sleeping_Junimo",
     "sources": [
       {

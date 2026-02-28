@@ -98,9 +98,9 @@ fishData.items.forEach(fish => {
       └── villagers.json   # Copied from processed/
 
 /scripts/
-  ├── process-game-data.cjs     # game-exports + rules → processed
-  ├── extract-fish-locations.cjs # Helper for fish location extraction
-  └── compileData.cjs           # processed → public/data (runs at build)
+  ├── ProcessGameData.cjs     # game-exports + rules → processed
+  ├── ExtractFishLocations.cjs # Helper for fish location extraction
+  └── CompileData.cjs           # processed → public/data (runs at build)
 ```
 
 ### Build Process
@@ -108,7 +108,7 @@ fishData.items.forEach(fish => {
 **Flow**:
 1. Developer edits files in `data/processed/`
 2. Run `npm run dev` or `npm run build`
-3. Vite plugin triggers `compileData.js` before build
+3. Vite plugin triggers `CompileData.cjs` before build
 4. Script reads source files and generates optimized page files
 5. App loads pre-joined data from `public/data/pages/`
 
@@ -179,7 +179,7 @@ const { data } = useData(['pages/fish.json'])
 
 ### Multiple Item Types
 - Add new source files (crops.json, artisan.json, etc.)
-- Update compileData.js to include them
+- Update CompileData.cjs to include them
 - Automatically compiled into relevant pages
 - No component changes needed
 
@@ -209,7 +209,7 @@ Official item IDs can be found at:
 
 When adding or modifying data:
 1. **First**: Check if the data exists in game export files (`data/game-exports/`)
-2. **Parse it**: Write parsing logic in `process-game-data.cjs` to extract the data
+2. **Parse it**: Write parsing logic in `ProcessGameData.cjs` to extract the data
 3. **Only hardcode**: Game mechanics/formulas that aren't in export files (e.g., quality multipliers, specific floor mappings)
 
 **Examples of proper data sourcing:**
@@ -228,10 +228,10 @@ When adding or modifying data:
 ### Adding New Data
 
 1. **Check game exports first** in `data/game-exports/`
-2. **Add parsing logic** to `process-game-data.cjs` to extract from exports
+2. **Add parsing logic** to `ProcessGameData.cjs` to extract from exports
 3. **Include both IDs**: `id` (friendly) and `gameId` (numeric)
 4. **Use ID references**: Don't embed full objects in source
-5. **Update compileData.js**: Add compilation logic for new data type
+5. **Update CompileData.cjs**: Add compilation logic for new data type
 6. **Test**: Run build and verify compiled output
 
 ### Editing Existing Data
@@ -312,7 +312,7 @@ The build script should fail loudly if:
 
 3. **Process into source files**:
    ```bash
-   node scripts/process-game-data.cjs
+   node scripts/ProcessGameData.cjs
    ```
    This automatically:
    - Parses fish data from `Fish.json`
@@ -328,7 +328,7 @@ The build script should fail loudly if:
 
 4. **Compilation happens automatically**:
    - Run `npm run dev` or `npm run build`
-   - Vite plugin runs `compileData.cjs` before build
+   - Vite plugin runs `CompileData.cjs` before build
    - Compiled files generated in `public/data/pages/`
 
 ### Location Data Extraction
@@ -366,8 +366,8 @@ The build script should fail loudly if:
   - "Ocean: Summer, Winter. Ginger Island South, Ginger Island Southeast, Ginger Island Pirate Cove, Ginger Island West: all seasons."
   - "Mountain Lake: Fall, Spring, Summer. Sewers, Mutant Bug Lair, Secret Woods: all seasons."
   - "Ocean: Fall, Winter. Night Market: all seasons."
-- Implemented in `scripts/generate-special-cases.cjs`
-- Integrated into `process-game-data.cjs` pipeline
+- Implemented in `scripts/GenerateSpecialCases.cjs`
+- Integrated into `ProcessGameData.cjs` pipeline
 - No manual curation needed
 
 ### Adding New Item Types
@@ -380,13 +380,13 @@ The build script should fail loudly if:
    - For items: Use `Objects.json`, `BigCraftables.json`
    - For crops: Use `Crops.json`
 
-2. **Update process-game-data.cjs**:
+2. **Update ProcessGameData.cjs**:
    - Add parsing logic to extract from game exports
    - Avoid hardcoding item lists, recipes, or formulas that exist in exports
    - Only hardcode game mechanics not present in exports
    - Create source file in `data/processed/items/`
 
-3. **Update compileData.cjs**:
+3. **Update CompileData.cjs**:
    - Add compilation logic for new item type
    - Generate page-specific file in `public/data/pages/`
 
@@ -438,10 +438,10 @@ for (const [machineId, machineData] of Object.entries(machines)) {
       └── villagers.json   # Copied from source
 
 /scripts/
-  ├── process-game-data.cjs      # Converts game exports → source files
-  ├── extract-fish-locations.cjs # Extracts locations from Locations.json
-  ├── generate-special-cases.cjs # Auto-generates special case notes
-  └── compileData.cjs            # Converts source files → compiled pages
+  ├── ProcessGameData.cjs      # Converts game exports → source files
+  ├── ExtractFishLocations.cjs # Extracts locations from Locations.json
+  ├── GenerateSpecialCases.cjs # Auto-generates special case notes
+  └── CompileData.cjs            # Converts source files → compiled pages
 ```
 
 ## Version History
@@ -456,8 +456,8 @@ for (const [machineId, machineData] of Object.entries(machines)) {
 
 ## Related Documentation
 
-- `/scripts/process-game-data.cjs` - Game export processing
-- `/scripts/compileData.cjs` - Build-time compilation
+- `/scripts/ProcessGameData.cjs` - Game export processing
+- `/scripts/CompileData.cjs` - Build-time compilation
 - `/vite.config.js` - Build configuration with data plugin
 - `/src/hooks/useData.js` - Data loading hook
 - `/Mods/DataExporter/` - SMAPI mod for game data export (in game install)
