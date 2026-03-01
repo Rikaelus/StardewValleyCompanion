@@ -11,8 +11,8 @@ import './ItemSellPrice.css'
 export function calculateProfessionMultiplier(item, professions) {
   if (!item || !professions) return 1.0
 
-  // Get actual category (some items have originalCategory set)
-  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+  // Get actual game category (some items have originalGameCategory set)
+  const actualCategory = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory
 
   // Farming professions (crops)
   if (actualCategory === -75 || actualCategory === -79) {
@@ -43,10 +43,10 @@ export function calculateProfessionMultiplier(item, professions) {
   }
 
   // Mining professions
-  if (item.category === 'Bars' && professions.blacksmith) {
+  if (item.gameCategory === 'Bars' && professions.blacksmith) {
     return 1.5  // Blacksmith +50%
   }
-  if (item.category === 'Gems' && professions.gemologist) {
+  if (item.gameCategory === 'Gems' && professions.gemologist) {
     return 1.3  // Gemologist +30%
   }
 
@@ -88,7 +88,7 @@ function getAppliedProfession(item, professions) {
   if (!item || !professions) return null
 
   // Check both type and category - items can be forage type but Fish category
-  const actualCategory = item.originalCategory !== undefined ? item.originalCategory : item.category
+  const actualCategory = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory
 
   // Crops
   if (actualCategory === -75 || actualCategory === -79) {
@@ -108,8 +108,8 @@ function getAppliedProfession(item, professions) {
     if (professions.rancher && isAnimalProduct) return 'Rancher'
   }
 
-  if (item.category === 'Bars' && professions.blacksmith) return 'Blacksmith'
-  if (item.category === 'Gems' && professions.gemologist) return 'Gemologist'
+  if (item.gameCategory === 'Bars' && professions.blacksmith) return 'Blacksmith'
+  if (item.gameCategory === 'Gems' && professions.gemologist) return 'Gemologist'
 
   return null
 }

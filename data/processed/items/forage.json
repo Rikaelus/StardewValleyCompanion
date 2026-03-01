@@ -7,7 +7,7 @@
     "icon": "assets/objects/WildHorseradish.png",
     "price": 50,
     "edibility": 5,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_brown",
       "forage_item",
@@ -79,6 +79,34 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "spring"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Cheese Press",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 45
+          },
+          {
+            "gameId": 390,
+            "amount": 45
+          },
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": 334,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 6
+        }
       }
     ]
   },
@@ -90,7 +118,7 @@
     "icon": "assets/objects/Daffodil.png",
     "price": 30,
     "edibility": -300,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_yellow",
       "forage_item",
@@ -140,6 +168,26 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-evelyn",
+        "storeName": "Desert Festival Stall (Evelyn)",
+        "price": 60,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 15
+      },
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 50,
+        "quantity": 10,
+        "stockLimit": 1
+      },
+      {
         "type": "forage",
         "location": "Town River",
         "season": "spring"
@@ -164,7 +212,7 @@
     "icon": "assets/objects/Leek.png",
     "price": 60,
     "edibility": 16,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_white",
       "forage_item",
@@ -228,6 +276,30 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "spring"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Recycling Machine",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 25
+          },
+          {
+            "gameId": 390,
+            "amount": 25
+          },
+          {
+            "gameId": 335,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 4
+        }
       }
     ]
   },
@@ -239,7 +311,7 @@
     "icon": "assets/objects/Dandelion.png",
     "price": 40,
     "edibility": 10,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_yellow",
       "forage_item",
@@ -284,6 +356,26 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-caroline",
+        "storeName": "Desert Festival Stall (Caroline)",
+        "price": 80,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 50,
+        "quantity": 10,
+        "stockLimit": 1
+      },
+      {
         "type": "forage",
         "location": "Forest River",
         "season": "spring"
@@ -308,7 +400,7 @@
     "icon": "assets/objects/CaveCarrot.png",
     "price": 25,
     "edibility": 12,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_brown",
       "forage_item",
@@ -365,7 +457,20 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-vincent",
+        "storeName": "Desert Festival Stall (Vincent)",
+        "price": 50,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2,
+        "stock": 1
+      }
+    ]
   },
   {
     "type": "forage",
@@ -375,7 +480,7 @@
     "icon": "assets/objects/Coconut.png",
     "price": 100,
     "edibility": -300,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_brown",
       "forage_item",
@@ -419,8 +524,23 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 200,
+        "quantity": 10,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
         "type": "forage",
         "location": "Desert"
+      },
+      {
+        "type": "mail",
+        "mailKey": "Sandy",
+        "sender": "Sandy"
       }
     ]
   },
@@ -432,7 +552,7 @@
     "icon": "assets/objects/CactusFruit.png",
     "price": 75,
     "edibility": 30,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_green",
       "forage_item",
@@ -476,8 +596,41 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 150,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
         "type": "forage",
         "location": "Desert"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Bone Mill",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 10
+          },
+          {
+            "gameId": 330,
+            "amount": 3
+          },
+          {
+            "gameId": 390,
+            "amount": 20
+          }
+        ]
+      },
+      {
+        "type": "mail",
+        "mailKey": "Sandy",
+        "sender": "Sandy"
       }
     ]
   },
@@ -489,7 +642,7 @@
     "icon": "assets/objects/Morel.png",
     "price": 150,
     "edibility": 8,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_brown",
       "edible_mushroom",
@@ -534,6 +687,18 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-george",
+        "storeName": "Desert Festival Stall (George)",
+        "price": 300,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30,
+        "stock": 1
+      },
+      {
         "type": "forage",
         "location": "Secret Woods",
         "season": "spring"
@@ -548,7 +713,7 @@
     "icon": "assets/objects/FiddleheadFern.png",
     "price": 90,
     "edibility": 10,
-    "category": -75,
+    "gameCategory": -75,
     "contextTags": [
       "color_green",
       "dye_strong",
@@ -608,9 +773,27 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-kent",
+        "storeName": "Desert Festival Stall (Kent)",
+        "price": 180,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
         "type": "forage",
         "location": "Secret Woods",
         "season": "summer"
+      },
+      {
+        "type": "tapper",
+        "treeName": "Green Rain Tree",
+        "treeId": "green-rain-tree",
+        "daysToHarvest": 2
       }
     ]
   },
@@ -622,7 +805,7 @@
     "icon": "assets/objects/Chanterelle.png",
     "price": 160,
     "edibility": 30,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_orange",
       "edible_mushroom",
@@ -684,7 +867,7 @@
     "icon": "assets/objects/Holly.png",
     "price": 80,
     "edibility": -15,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_red",
       "forage_item",
@@ -767,7 +950,7 @@
     "icon": "assets/objects/Clam.png",
     "price": 50,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "beach_item",
       "color_light_cyan",
@@ -848,8 +1031,8 @@
       "id": "clam",
       "context": "Crab pot fishing"
     },
-    "originalCategory": -4,
-    "displayCategory": -81
+    "originalGameCategory": -4,
+    "displayGameCategory": -81
   },
   {
     "type": "forage",
@@ -859,7 +1042,7 @@
     "icon": "assets/objects/NautilusShell.png",
     "price": 120,
     "edibility": -300,
-    "category": -23,
+    "gameCategory": -23,
     "contextTags": [
       "color_orange",
       "forage_item",
@@ -889,9 +1072,32 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-demetrius",
+        "storeName": "Desert Festival Stall (Demetrius)",
+        "price": 240,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 50,
+        "stock": 1
+      },
+      {
         "type": "forage",
         "location": "Ocean",
         "season": "winter"
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 9,
+        "chance": 0.02
+      },
+      {
+        "type": "mail",
+        "mailKey": "Demetrius",
+        "sender": "Demetrius"
       }
     ]
   },
@@ -903,7 +1109,7 @@
     "icon": "assets/objects/Coral.png",
     "price": 80,
     "edibility": -300,
-    "category": -23,
+    "gameCategory": -23,
     "contextTags": [
       "color_red",
       "forage_item",
@@ -927,7 +1133,14 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 5,
+        "chance": 0.075
+      }
+    ]
   },
   {
     "type": "forage",
@@ -937,7 +1150,7 @@
     "icon": "assets/objects/RainbowShell.png",
     "price": 300,
     "edibility": -300,
-    "category": -23,
+    "gameCategory": -23,
     "contextTags": [
       "color_prismatic",
       "forage_item",
@@ -997,6 +1210,17 @@
         "type": "forage",
         "location": "Ocean",
         "season": "summer"
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_rainbow_trout",
+        "minPopulation": 9,
+        "chance": 0.02
+      },
+      {
+        "type": "mail",
+        "mailKey": "Demetrius",
+        "sender": "Demetrius"
       }
     ]
   },
@@ -1008,7 +1232,7 @@
     "icon": "assets/objects/SpiceBerry.png",
     "price": 80,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "forage_item",
@@ -1053,6 +1277,18 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-demetrius",
+        "storeName": "Desert Festival Stall (Demetrius)",
+        "price": 160,
+        "quantity": 3,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
         "type": "forage",
         "location": "Mountain Lake",
         "season": "summer"
@@ -1087,7 +1323,7 @@
     "icon": "assets/objects/SeaUrchin.png",
     "price": 160,
     "edibility": -300,
-    "category": -23,
+    "gameCategory": -23,
     "contextTags": [
       "color_purple",
       "forage_item",
@@ -1144,7 +1380,31 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-emily",
+        "storeName": "Desert Festival Stall (Emily)",
+        "price": 320,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 5,
+        "chance": 0.05
+      },
+      {
+        "type": "mail",
+        "mailKey": "Emily",
+        "sender": "Emily"
+      }
+    ]
   },
   {
     "type": "forage",
@@ -1154,7 +1414,7 @@
     "icon": "assets/objects/Grape.png",
     "price": 80,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_purple",
       "forage_item",
@@ -1226,7 +1486,7 @@
     "icon": "assets/objects/SpringOnion.png",
     "price": 8,
     "edibility": 5,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_white",
       "forage_item",
@@ -1274,7 +1534,7 @@
     "icon": "assets/objects/SweetPea.png",
     "price": 50,
     "edibility": -300,
-    "category": -80,
+    "gameCategory": -80,
     "contextTags": [
       "color_purple",
       "dye_medium",
@@ -1365,7 +1625,7 @@
     "icon": "assets/objects/CommonMushroom.png",
     "price": 40,
     "edibility": 15,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_dark_brown",
       "edible_mushroom",
@@ -1439,6 +1699,12 @@
       {
         "type": "forage",
         "location": "Volcano Dungeon"
+      },
+      {
+        "type": "tapper",
+        "treeName": "Mushroom Tree",
+        "treeId": "mushroom-tree",
+        "daysToHarvest": 2
       }
     ]
   },
@@ -1450,7 +1716,7 @@
     "icon": "assets/objects/WildPlum.png",
     "price": 80,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_purple",
       "forage_item",
@@ -1521,7 +1787,7 @@
     "icon": "assets/objects/Hazelnut.png",
     "price": 90,
     "edibility": 12,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_brown",
       "forage_item",
@@ -1565,6 +1831,18 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-kent",
+        "storeName": "Desert Festival Stall (Kent)",
+        "price": 180,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
         "type": "forage",
         "location": "Mountain Lake",
         "season": "fall"
@@ -1594,7 +1872,7 @@
     "icon": "assets/objects/Blackberry.png",
     "price": 20,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_blue",
       "forage_item",
@@ -1660,7 +1938,7 @@
     "icon": "assets/objects/WinterRoot.png",
     "price": 70,
     "edibility": 10,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_orange",
       "forage_item",
@@ -1706,6 +1984,11 @@
         "type": "monster-drop",
         "monster": "Frost Jelly",
         "chance": 0.08
+      },
+      {
+        "type": "tilling",
+        "location": "All outdoor areas",
+        "chance": 0.5
       }
     ]
   },
@@ -1717,7 +2000,7 @@
     "icon": "assets/objects/CrystalFruit.png",
     "price": 150,
     "edibility": 25,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_blue",
       "forage_item",
@@ -1806,7 +2089,7 @@
     "icon": "assets/objects/SnowYam.png",
     "price": 100,
     "edibility": 12,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_white"
     ],
@@ -1846,7 +2129,13 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "All outdoor areas",
+        "chance": 0.5
+      }
+    ]
   },
   {
     "type": "forage",
@@ -1856,7 +2145,7 @@
     "icon": "assets/objects/Crocus.png",
     "price": 60,
     "edibility": -300,
-    "category": -80,
+    "gameCategory": -80,
     "contextTags": [
       "color_purple",
       "dye_medium",
@@ -1959,7 +2248,7 @@
     "icon": "assets/objects/RedMushroom.png",
     "price": 75,
     "edibility": -20,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_red",
       "forage_item",
@@ -2045,6 +2334,12 @@
       {
         "type": "forage",
         "location": "Mines (Floors 81-119)"
+      },
+      {
+        "type": "tapper",
+        "treeName": "Mushroom Tree",
+        "treeId": "mushroom-tree",
+        "daysToHarvest": 1
       }
     ]
   },
@@ -2056,7 +2351,7 @@
     "icon": "assets/objects/PurpleMushroom.png",
     "price": 250,
     "edibility": 50,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_purple",
       "edible_mushroom",
@@ -2118,6 +2413,16 @@
       {
         "type": "forage",
         "location": "Mines (Floors 81-119)"
+      },
+      {
+        "type": "tapper",
+        "treeName": "Mushroom Tree",
+        "treeId": "mushroom-tree",
+        "daysToHarvest": 2
+      },
+      {
+        "type": "mail",
+        "mailKey": "Wizard"
       }
     ]
   },
@@ -2129,7 +2434,7 @@
     "icon": "assets/objects/Cockle.png",
     "price": 50,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_dark_gray",
       "fish_crab_pot",
@@ -2208,8 +2513,8 @@
       "id": "cockle",
       "context": "Crab pot fishing"
     },
-    "originalCategory": -4,
-    "displayCategory": -81
+    "originalGameCategory": -4,
+    "displayGameCategory": -81
   },
   {
     "type": "forage",
@@ -2219,7 +2524,7 @@
     "icon": "assets/objects/Mussel.png",
     "price": 30,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_crab_pot",
@@ -2298,8 +2603,8 @@
       "id": "mussel",
       "context": "Crab pot fishing"
     },
-    "originalCategory": -4,
-    "displayCategory": -81
+    "originalGameCategory": -4,
+    "displayGameCategory": -81
   },
   {
     "type": "forage",
@@ -2309,7 +2614,7 @@
     "icon": "assets/objects/Oyster.png",
     "price": 40,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_crab_pot",
@@ -2389,8 +2694,8 @@
       "id": "oyster",
       "context": "Crab pot fishing"
     },
-    "originalCategory": -4,
-    "displayCategory": -81
+    "originalGameCategory": -4,
+    "displayGameCategory": -81
   },
   {
     "type": "forage",
@@ -2400,7 +2705,7 @@
     "icon": "assets/objects/Ginger.png",
     "price": 60,
     "edibility": 10,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_yellow",
       "forage_item",

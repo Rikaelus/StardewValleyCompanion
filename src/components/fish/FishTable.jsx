@@ -3,7 +3,7 @@ import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
 import UniversalModal from '../common/UniversalModal'
-import { formatTime, getDifficultyColor } from '../../utils/formatters'
+import { formatTime, getDifficultyColor } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
   createNameColumn,
@@ -140,7 +140,7 @@ function FishTable({ fish, allFish }) {
       <DataTable
         data={fish}
         columns={columns}
-        pinnedColumns={2}
+        pinnedColumns={1}
       />
       {nuancedFish.length > 0 && (
         <div className="nuance-note">

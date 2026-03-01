@@ -151,9 +151,9 @@ function SeedsTable({ data, cropsById }) {
       <DataTable
         data={data}
         columns={columns}
+        pinnedColumns={1}
         initialSortBy={[{ id: 'name', desc: false }]}
         itemsPerPage={25}
-        syncUrlState={true}
       />
       <div className="crops-season-note">
         <strong>Note:</strong> Seasons listed above apply to mainland farming only. All crops can be planted year-round in the Greenhouse, in Garden Pots, and on Ginger Island.

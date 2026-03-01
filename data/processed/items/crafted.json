@@ -1,0 +1,1378 @@
+[
+  {
+    "type": "crafted",
+    "id": "bomb",
+    "gameId": 287,
+    "name": "Bomb",
+    "icon": "assets/objects/Bomb.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "bomb_item",
+      "color_black"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "price": 100,
+        "tradeItemId": "quartz",
+        "tradeItemGameId": 80,
+        "tradeItemName": "Quartz",
+        "tradeItemIcon": "assets/objects/Quartz.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "shop",
+        "storeId": "store-dwarf",
+        "storeName": "Dwarf Shop",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "storeId": "store-volcano-shop",
+        "storeName": "Volcano Forge Shop",
+        "price": 1000
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bat",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Bat",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Bat",
+        "chance": 0.02
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Crab",
+        "chance": 0.4
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Serpent",
+        "chance": 0.15
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Royal Serpent",
+        "chance": 0.15
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "chance": 0.1
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Bomb",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 380,
+            "amount": 4
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "mining",
+          "level": 6
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Kent",
+        "sender": "Kent"
+      },
+      {
+        "type": "mail",
+        "mailKey": "ClintReward2",
+        "sender": "Clint"
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "cherry-bomb",
+    "gameId": 286,
+    "name": "Cherry Bomb",
+    "icon": "assets/objects/CherryBomb.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "bomb_item",
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-dwarf",
+        "storeName": "Dwarf Shop",
+        "price": 450
+      },
+      {
+        "type": "shop",
+        "storeId": "store-volcano-shop",
+        "storeName": "Volcano Forge Shop",
+        "price": 450
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "chance": 0.25
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Rock Crab",
+        "chance": 0.4
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Cherry Bomb",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 378,
+            "amount": 4
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "mining",
+          "level": 1
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Kent",
+        "sender": "Kent"
+      },
+      {
+        "type": "mail",
+        "mailKey": "ClintReward2",
+        "sender": "Clint"
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "dwarvish-translation-guide",
+    "gameId": 326,
+    "name": "Dwarvish Translation Guide",
+    "icon": "assets/objects/DwarvishTranslationGuide.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": []
+  },
+  {
+    "type": "crafted",
+    "id": "fireworks-green",
+    "gameId": 895,
+    "name": "Fireworks (Green)",
+    "icon": "assets/objects/FireworksGreen.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "color_green"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 100,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 1
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "fireworks-purple",
+    "gameId": 894,
+    "name": "Fireworks (Purple)",
+    "icon": "assets/objects/FireworksPurple.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "color_purple"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 100,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 1
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "fireworks-red",
+    "gameId": 893,
+    "name": "Fireworks (Red)",
+    "icon": "assets/objects/FireworksRed.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 100,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 1
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "gate",
+    "gameId": 325,
+    "name": "Gate",
+    "icon": "assets/objects/Gate.png",
+    "price": 4,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Gate",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "hardwood-fence",
+    "gameId": 298,
+    "name": "Hardwood Fence",
+    "icon": "assets/objects/HardwoodFence.png",
+    "price": 10,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Hardwood Fence",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 6
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "hedge",
+    "gameId": 929,
+    "name": "Hedge",
+    "icon": "assets/objects/Hedge.png",
+    "price": 10,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": []
+  },
+  {
+    "type": "crafted",
+    "id": "iridium-sprinkler",
+    "gameId": 645,
+    "name": "Iridium Sprinkler",
+    "icon": "assets/objects/IridiumSprinkler.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-krobus",
+        "storeName": "Krobus's Shop",
+        "price": 10000,
+        "days": [
+          "Friday"
+        ],
+        "stock": 1
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Iridium Sprinkler",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 336,
+            "amount": 1
+          },
+          {
+            "gameId": 337,
+            "amount": 1
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 9
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "iron-fence",
+    "gameId": 324,
+    "name": "Iron Fence",
+    "icon": "assets/objects/IronFence.png",
+    "price": 6,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Iron Fence",
+        "outputCount": 10,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 4
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "jack-o-lantern",
+    "gameId": 746,
+    "name": "Jack-O-Lantern",
+    "icon": "assets/objects/JackOLantern.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "color_orange"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-spirits-eve",
+        "storeName": "Spirit's Eve",
+        "price": 750,
+        "quantity": 5,
+        "stockLimit": 1
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Jack-O-Lantern",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 276,
+            "amount": 1
+          },
+          {
+            "gameId": 93,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "mega-bomb",
+    "gameId": 288,
+    "name": "Mega Bomb",
+    "icon": "assets/objects/MegaBomb.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [
+      "bomb_item",
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-egg-shop",
+        "storeName": "Desert Festival Egg Shop",
+        "price": 100,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 15
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "price": 100,
+        "tradeItemId": "iridium-ore",
+        "tradeItemGameId": 386,
+        "tradeItemName": "Iridium Ore",
+        "tradeItemIcon": "assets/objects/IridiumOre.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "shop",
+        "storeId": "store-dwarf",
+        "storeName": "Dwarf Shop",
+        "price": 1600
+      },
+      {
+        "type": "shop",
+        "storeId": "store-volcano-shop",
+        "storeName": "Volcano Forge Shop",
+        "price": 1600
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Bat",
+        "chance": 0.05
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "chance": 0.05
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Magma Duggy",
+        "chance": 0.4
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "chance": 0.05
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Mega Bomb",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 384,
+            "amount": 4
+          },
+          {
+            "gameId": 768,
+            "amount": 1
+          },
+          {
+            "gameId": 769,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "mining",
+          "level": 8
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Kent",
+        "sender": "Kent"
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "quality-sprinkler",
+    "gameId": 621,
+    "name": "Quality Sprinkler",
+    "icon": "assets/objects/QualitySprinkler.png",
+    "price": 450,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Quality Sprinkler",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 336,
+            "amount": 1
+          },
+          {
+            "gameId": 338,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 6
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "sprinkler",
+    "gameId": 599,
+    "name": "Sprinkler",
+    "icon": "assets/objects/Sprinkler.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Sprinkler",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 334,
+            "amount": 1
+          },
+          {
+            "gameId": 335,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "stone-fence",
+    "gameId": 323,
+    "name": "Stone Fence",
+    "icon": "assets/objects/StoneFence.png",
+    "price": 2,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Stone Fence",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "crafted",
+    "id": "wood-fence",
+    "gameId": 322,
+    "name": "Wood Fence",
+    "icon": "assets/objects/WoodFence.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -8,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Wood Fence",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "$schema": "hat-overrides-schema",
+  "description": "Per-hat overrides keyed by Hats.json gameId. Used when the hat's internal name ('???') differs from its display identity, or when its source cannot be parsed from game exports.",
+  "overrides": {
+    "92": {
+      "id":          "concerned-ape-mask-hat",
+      "icon":        "ConcernedApeHat.png",
+      "notes":       "Internal name is '???'. Icon is ConcernedApe_Hat.png on the wiki.",
+      "sources": [
+        {
+          "description": "Interact with a monkey in the Volcano Caldera",
+          "condition": { "in": ["Farm_Eternal", { "var": "player.mail" }] }
+        }
+      ]
+    }
+  },
+  "iconOverrides": {
+    "57": "PartyHatRed.png",
+    "58": "PartyHatBlue.png",
+    "59": "PartyHatGreen.png"
+  }
+}

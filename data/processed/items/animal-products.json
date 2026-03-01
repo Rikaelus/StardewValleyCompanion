@@ -4,7 +4,7 @@
     "id": "egg-white",
     "gameId": 176,
     "name": "Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 50,
     "edibility": 10,
     "icon": "assets/objects/WhiteEgg.png",
@@ -22,9 +22,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Shane)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-shane",
+        "storeName": "Desert Festival Stall (Shane)",
         "price": 100,
         "quantity": 12,
         "tradeItemId": "calico-egg",
@@ -37,6 +36,9 @@
     "contextTags": [
       "color_white",
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -65,7 +67,7 @@
     "id": "large-egg-white",
     "gameId": 174,
     "name": "Large Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/objects/LargeWhiteEgg.png",
@@ -86,6 +88,9 @@
       "color_white",
       "egg_item",
       "large_egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -116,7 +121,7 @@
     "id": "egg-brown",
     "gameId": 180,
     "name": "Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 50,
     "edibility": 10,
     "icon": "assets/objects/BrownEgg.png",
@@ -131,6 +136,9 @@
     "contextTags": [
       "color_white",
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -159,7 +167,7 @@
     "id": "large-egg-brown",
     "gameId": 182,
     "name": "Large Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/objects/LargeBrownEgg.png",
@@ -169,12 +177,34 @@
         "type": "animal",
         "animalName": "Brown Chicken",
         "animalId": "brown-chicken"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Geode Crusher",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 336,
+            "amount": 2
+          },
+          {
+            "gameId": 390,
+            "amount": 50
+          },
+          {
+            "gameId": 72,
+            "amount": 1
+          }
+        ]
       }
     ],
     "contextTags": [
       "color_white",
       "egg_item",
       "large_egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -205,7 +235,7 @@
     "id": "void-egg",
     "gameId": 305,
     "name": "Void Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 65,
     "edibility": -15,
     "icon": "assets/objects/VoidEgg.png",
@@ -220,13 +250,21 @@
         "type": "shop",
         "storeId": "store-krobus",
         "storeName": "Krobus's Shop",
-        "storeBaseName": "Krobus's Shop",
         "price": 5000
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_void_salmon",
+        "minPopulation": 9,
+        "chance": 0.05
       }
     ],
     "contextTags": [
       "color_black",
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -271,7 +309,7 @@
     "id": "golden-egg",
     "gameId": 928,
     "name": "Golden Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 500,
     "edibility": 10,
     "icon": "assets/objects/GoldenEgg.png",
@@ -286,14 +324,20 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
-        "price": 100000
+        "price": 100000,
+        "condition": {
+          "in": [
+            "Farm_Eternal",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
-        "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 1000,
@@ -301,11 +345,22 @@
         "tradeItemGameId": 858,
         "tradeItemName": "Qi Gem",
         "tradeItemIcon": "assets/objects/QiGem.png",
-        "tradeItemAmount": 100
+        "tradeItemAmount": 100,
+        "condition": {
+          "in": [
+            "Farm_Eternal",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
       }
     ],
     "contextTags": [
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -334,7 +389,7 @@
     "id": "duck-egg",
     "gameId": 442,
     "name": "Duck Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 95,
     "edibility": 15,
     "icon": "assets/objects/DuckEgg.png",
@@ -349,6 +404,9 @@
     "contextTags": [
       "color_white",
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -380,7 +438,7 @@
     "id": "duck-feather",
     "gameId": 444,
     "name": "Duck Feather",
-    "category": -18,
+    "gameCategory": -18,
     "price": 250,
     "edibility": -300,
     "icon": "assets/objects/DuckFeather.png",
@@ -394,6 +452,11 @@
     ],
     "contextTags": [
       "color_green"
+    ],
+    "sellingLocations": [
+      "store-pierre",
+      "store-marnie",
+      "store-shipping-bin"
     ],
     "bundles": [
       "dye"
@@ -410,7 +473,7 @@
     "id": "wool",
     "gameId": 440,
     "name": "Wool",
-    "category": -18,
+    "gameCategory": -18,
     "price": 340,
     "edibility": -300,
     "icon": "assets/objects/Wool.png",
@@ -425,10 +488,20 @@
         "type": "animal",
         "animalName": "Sheep",
         "animalId": "sheep"
+      },
+      {
+        "type": "mail",
+        "mailKey": "Emily",
+        "sender": "Emily"
       }
     ],
     "contextTags": [
       "color_white"
+    ],
+    "sellingLocations": [
+      "store-pierre",
+      "store-marnie",
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -444,7 +517,7 @@
     "id": "rabbit-s-foot",
     "gameId": 446,
     "name": "Rabbit's Foot",
-    "category": -18,
+    "gameCategory": -18,
     "price": 565,
     "edibility": -300,
     "icon": "assets/objects/RabbitsFoot.png",
@@ -457,9 +530,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Jas)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-jas",
+        "storeName": "Desert Festival Stall (Jas)",
         "price": 1130,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -467,10 +539,25 @@
         "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 100,
         "stock": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Serpent",
+        "chance": 0.008
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Royal Serpent",
+        "chance": 0.008
       }
     ],
     "contextTags": [
       "color_yellow"
+    ],
+    "sellingLocations": [
+      "store-pierre",
+      "store-marnie",
+      "store-shipping-bin"
     ],
     "bundles": [
       "enchanter-s"
@@ -517,7 +604,7 @@
     "id": "dinosaur-egg",
     "gameId": 107,
     "name": "Dinosaur Egg",
-    "category": 0,
+    "gameCategory": 0,
     "price": 350,
     "edibility": -300,
     "icon": "assets/objects/DinosaurEgg.png",
@@ -534,6 +621,9 @@
       "dinosaur_item",
       "dye_strong",
       "egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -578,7 +668,7 @@
     "id": "milk",
     "gameId": 184,
     "name": "Milk",
-    "category": -6,
+    "gameCategory": -6,
     "price": 125,
     "edibility": 15,
     "icon": "assets/objects/Milk.png",
@@ -596,9 +686,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Alex)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-alex",
+        "storeName": "Desert Festival Stall (Alex)",
         "price": 250,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -613,6 +702,9 @@
       "cow_milk_item",
       "drink_item",
       "milk_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -640,7 +732,7 @@
     "id": "large-milk",
     "gameId": 186,
     "name": "Large Milk",
-    "category": -6,
+    "gameCategory": -6,
     "price": 190,
     "edibility": 20,
     "icon": "assets/objects/LargeMilk.png",
@@ -663,6 +755,9 @@
       "drink_item",
       "large_milk_item",
       "milk_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -692,7 +787,7 @@
     "id": "goat-milk",
     "gameId": 436,
     "name": "Goat Milk",
-    "category": -6,
+    "gameCategory": -6,
     "price": 225,
     "edibility": 25,
     "icon": "assets/objects/GoatMilk.png",
@@ -708,6 +803,9 @@
       "color_white",
       "goat_milk_item",
       "milk_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -737,7 +835,7 @@
     "id": "l-goat-milk",
     "gameId": 438,
     "name": "L. Goat Milk",
-    "category": -6,
+    "gameCategory": -6,
     "price": 345,
     "edibility": 35,
     "icon": "assets/objects/LGoatMilk.png",
@@ -754,6 +852,9 @@
       "goat_milk_item",
       "large_milk_item",
       "milk_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [
       "animal"
@@ -785,7 +886,7 @@
     "id": "truffle",
     "gameId": 430,
     "name": "Truffle",
-    "category": -17,
+    "gameCategory": -17,
     "price": 625,
     "edibility": 5,
     "icon": "assets/objects/Truffle.png",
@@ -795,10 +896,19 @@
         "type": "animal",
         "animalName": "Pig",
         "animalId": "pig"
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Truffle Crab",
+        "chance": 1
       }
     ],
     "contextTags": [
       "color_brown"
+    ],
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
     ],
     "bundles": [
       "chef-s"
@@ -814,7 +924,7 @@
     "id": "ostrich-egg",
     "gameId": 289,
     "name": "Ostrich Egg",
-    "category": -5,
+    "gameCategory": -5,
     "price": 600,
     "edibility": 15,
     "icon": "assets/objects/OstrichEgg.png",
@@ -830,6 +940,9 @@
       "color_white",
       "egg_item",
       "large_egg_item"
+    ],
+    "sellingLocations": [
+      "store-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

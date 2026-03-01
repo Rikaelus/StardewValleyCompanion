@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 import ItemButton from './ItemButton'
 import UniversalModal from './UniversalModal'
-import VillagerModal from '../villagers/VillagerModal'
-import { pluralize } from '../../utils/pluralize'
+import { pluralize } from '../../utils/Pluralize'
 import 'react-tooltip/dist/react-tooltip.css'
+// TODO: rename ModalItemButton → ModalEntityButton and item prop → entity (high churn, cosmetic)
 
 /**
  * Item button that automatically opens the appropriate modal based on item type
@@ -130,19 +130,11 @@ function ModalItemButton({
 
         {/* Render appropriate modal (only when not using parent navigation) */}
         {shouldRenderModal && (
-          type === 'villager' ? (
-            <VillagerModal
-              villager={selectedItem}
-              isOpen={selectedItem !== null}
-              onClose={handleClose}
-            />
-          ) : (
-            <UniversalModal
-              entity={selectedItem}
-              isOpen={selectedItem !== null}
-              onClose={handleClose}
-            />
-          )
+          <UniversalModal
+            entity={selectedItem}
+            isOpen={selectedItem !== null}
+            onClose={handleClose}
+          />
         )}
       </>
     )
@@ -178,19 +170,11 @@ function ModalItemButton({
 
         {/* Render appropriate modal (only when not using parent navigation) */}
         {shouldRenderModal && (
-          type === 'villager' ? (
-            <VillagerModal
-              villager={selectedItem}
-              isOpen={selectedItem !== null}
-              onClose={handleClose}
-            />
-          ) : (
-            <UniversalModal
-              entity={selectedItem}
-              isOpen={selectedItem !== null}
-              onClose={handleClose}
-            />
-          )
+          <UniversalModal
+            entity={selectedItem}
+            isOpen={selectedItem !== null}
+            onClose={handleClose}
+          />
         )}
       </>
     )
@@ -201,7 +185,7 @@ function ModalItemButton({
     <>
       <ItemButton
         item={item}
-        onItemClick={handleItemClick}
+        onItemClick={onNavigate ?? handleItemClick}
         showIcon={showIcon}
         showLabel={showLabel}
         iconSize={iconSize}
@@ -211,19 +195,11 @@ function ModalItemButton({
 
       {/* Render appropriate modal (only when not using parent navigation) */}
       {shouldRenderModal && (
-        type === 'villager' ? (
-          <VillagerModal
-            villager={selectedItem}
-            isOpen={selectedItem !== null}
-            onClose={handleClose}
-          />
-        ) : (
-          <UniversalModal
-            entity={selectedItem}
-            isOpen={selectedItem !== null}
-            onClose={handleClose}
-          />
-        )
+        <UniversalModal
+          entity={selectedItem}
+          isOpen={selectedItem !== null}
+          onClose={handleClose}
+        />
       )}
     </>
   )

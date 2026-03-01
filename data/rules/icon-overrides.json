@@ -1,0 +1,23 @@
+{
+  "$schema": "icon-overrides-schema",
+  "description": "Maps friendly item IDs to the wiki image name to use when downloading icons. Used when the wiki image filename differs from what can be derived from item.name.",
+  "overrides": {
+    "pi-a-colada":                    "Piña Colada",
+    "trash":                          "Trash (item)",
+    "fireworks-green":                "Fireworks (Green)",
+    "fireworks-purple":               "Fireworks (Purple)",
+    "fireworks-red":                  "Fireworks (Red)",
+    "warp-totem-desert":              "Warp Totem Desert",
+    "warp-totem-island":              "Warp Totem Island",
+    "concerned-ape-mask-hat":         "ConcernedApe Hat",
+    "warp-totem-qi-s-arena":          "Warp Totem Qi's Arena",
+    "supplycrate-922":                "Supply Crate 1",
+    "supplycrate-923":                "Supply Crate 2",
+    "supplycrate-924":                "Supply Crate 3",
+    "strange-doll-126":               "Strange Doll (green)",
+    "strange-doll-127":               "Strange Doll (yellow)",
+    "jack-be-nimble-jack-be-thick":   "Jack Be Nimble, Jack Be Thick",
+    "ways-of-the-wild":               "Ways Of The Wild",
+    "book-horse":                     "Horse The Book"
+  }
+}

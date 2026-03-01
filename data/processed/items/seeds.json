@@ -5,7 +5,7 @@
     "name": "Amaranth Seeds",
     "icon": "assets/objects/AmaranthSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 35,
     "buyPrice": 70,
     "seasons": [
@@ -33,14 +33,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 70
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 87,
         "seasons": [
           "fall"
@@ -50,7 +48,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 70,
         "seasons": [
           "fall"
@@ -68,7 +65,7 @@
     "name": "Ancient Seeds",
     "icon": "assets/objects/AncientSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -113,7 +110,7 @@
     "name": "Artichoke Seeds",
     "icon": "assets/objects/ArtichokeSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 15,
     "buyPrice": 30,
     "seasons": [
@@ -140,7 +137,6 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 30,
         "yearUnlock": 2
       },
@@ -148,7 +144,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 30,
         "seasons": [
           "fall"
@@ -167,7 +162,7 @@
     "name": "Bean Starter",
     "icon": "assets/objects/BeanStarter.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -195,14 +190,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 60
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 75,
         "seasons": [
           "spring"
@@ -212,7 +205,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 60,
         "seasons": [
           "spring"
@@ -230,7 +222,7 @@
     "name": "Beet Seeds",
     "icon": "assets/objects/BeetSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 10,
     "buyPrice": 20,
     "seasons": [
@@ -256,7 +248,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 20
       }
     ],
@@ -271,7 +262,7 @@
     "name": "Blueberry Seeds",
     "icon": "assets/objects/BlueberrySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 40,
     "buyPrice": 80,
     "seasons": [
@@ -298,14 +289,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 80
       },
       {
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 80,
         "seasons": [
           "summer"
@@ -323,7 +312,7 @@
     "name": "Bok Choy Seeds",
     "icon": "assets/objects/BokChoySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 25,
     "buyPrice": 50,
     "seasons": [
@@ -351,14 +340,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 50
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 62,
         "seasons": [
           "fall"
@@ -368,7 +355,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 50,
         "seasons": [
           "fall"
@@ -386,7 +372,7 @@
     "name": "Broccoli Seeds",
     "icon": "assets/objects/BroccoliSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 40,
     "buyPrice": 80,
     "seasons": [
@@ -410,7 +396,6 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "price": 80,
         "tradeItemId": "moss",
         "tradeItemGameId": "Moss",
@@ -430,7 +415,7 @@
     "name": "Cactus Seeds",
     "icon": "assets/objects/CactusSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 0,
     "buyPrice": 0,
     "seasons": [],
@@ -454,7 +439,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 150
       },
       {
@@ -475,7 +459,7 @@
     "name": "Carrot Seeds",
     "icon": "assets/objects/CarrotSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 15,
     "buyPrice": 30,
     "seasons": [
@@ -499,7 +483,6 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "price": 30,
         "tradeItemId": "maple-seed",
         "tradeItemGameId": 310,
@@ -519,7 +502,7 @@
     "name": "Cauliflower Seeds",
     "icon": "assets/objects/CauliflowerSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 40,
     "buyPrice": 80,
     "seasons": [
@@ -547,14 +530,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 80
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 100,
         "seasons": [
           "spring"
@@ -564,7 +545,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 80,
         "seasons": [
           "spring"
@@ -582,7 +562,7 @@
     "name": "Coffee Bean",
     "icon": "assets/objects/CoffeeBean.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 15,
     "buyPrice": 30,
     "seasons": [
@@ -609,7 +589,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -635,7 +614,7 @@
     "name": "Corn Seeds",
     "icon": "assets/objects/CornSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 75,
     "buyPrice": 150,
     "seasons": [
@@ -664,21 +643,18 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 150
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 150
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 187,
         "seasons": [
           "fall"
@@ -688,7 +664,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 150,
         "seasons": [
           "summer"
@@ -698,7 +673,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 150,
         "seasons": [
           "fall"
@@ -716,7 +690,7 @@
     "name": "Cranberry Seeds",
     "icon": "assets/objects/CranberrySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 120,
     "buyPrice": 240,
     "seasons": [
@@ -744,14 +718,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 240
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 300,
         "seasons": [
           "fall"
@@ -761,7 +733,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 240,
         "seasons": [
           "fall"
@@ -779,7 +750,7 @@
     "name": "Eggplant Seeds",
     "icon": "assets/objects/EggplantSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 10,
     "buyPrice": 20,
     "seasons": [
@@ -807,14 +778,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 20
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 25,
         "seasons": [
           "fall"
@@ -824,7 +793,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 20,
         "seasons": [
           "fall"
@@ -842,7 +810,7 @@
     "name": "Fairy Seeds",
     "icon": "assets/objects/FairySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 100,
     "buyPrice": 200,
     "seasons": [
@@ -861,7 +829,7 @@
       }
     ],
     "sellers": [
-      "desert-festival",
+      "desert-festival-jas",
       "joja",
       "night-market",
       "pierre"
@@ -869,9 +837,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Jas)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-jas",
+        "storeName": "Desert Festival Stall (Jas)",
         "price": 200,
         "quantity": 25,
         "tradeItemId": "calico-egg",
@@ -884,14 +851,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 200
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 250,
         "seasons": [
           "fall"
@@ -901,7 +866,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 200,
         "seasons": [
           "fall"
@@ -919,7 +883,7 @@
     "name": "Fall Seeds",
     "icon": "assets/objects/FallSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 45,
     "buyPrice": 90,
     "seasons": [
@@ -975,7 +939,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 90,
         "tradeItemId": "winter-seeds",
         "tradeItemGameId": 498,
@@ -1026,7 +989,7 @@
     "name": "Fiber Seeds",
     "icon": "assets/objects/FiberSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 5,
     "buyPrice": 10,
     "seasons": [
@@ -1080,7 +1043,7 @@
     "name": "Garlic Seeds",
     "icon": "assets/objects/GarlicSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -1107,7 +1070,6 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 40,
         "yearUnlock": 2
       },
@@ -1115,7 +1077,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 40,
         "seasons": [
           "spring"
@@ -1134,7 +1095,7 @@
     "name": "Grape Starter",
     "icon": "assets/objects/GrapeStarter.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -1162,14 +1123,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 60
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 75,
         "seasons": [
           "fall"
@@ -1179,7 +1138,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 60,
         "seasons": [
           "fall"
@@ -1197,7 +1155,7 @@
     "name": "Hops Starter",
     "icon": "assets/objects/HopsStarter.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -1225,14 +1183,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 60
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 75,
         "seasons": [
           "summer"
@@ -1242,7 +1198,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 60,
         "seasons": [
           "summer"
@@ -1260,7 +1215,7 @@
     "name": "Jazz Seeds",
     "icon": "assets/objects/JazzSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 15,
     "buyPrice": 30,
     "seasons": [
@@ -1288,14 +1243,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 30
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 37,
         "seasons": [
           "spring"
@@ -1305,7 +1258,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 30,
         "seasons": [
           "spring"
@@ -1323,7 +1275,7 @@
     "name": "Kale Seeds",
     "icon": "assets/objects/KaleSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 35,
     "buyPrice": 70,
     "seasons": [
@@ -1351,14 +1303,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 70
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 87,
         "seasons": [
           "spring"
@@ -1368,7 +1318,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 70,
         "seasons": [
           "spring"
@@ -1386,7 +1335,7 @@
     "name": "Melon Seeds",
     "icon": "assets/objects/MelonSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 40,
     "buyPrice": 80,
     "seasons": [
@@ -1414,14 +1363,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 80
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 100,
         "seasons": [
           "summer"
@@ -1431,7 +1378,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 80,
         "seasons": [
           "summer"
@@ -1449,7 +1395,7 @@
     "name": "Mixed Flower Seeds",
     "icon": "assets/objects/MixedFlowerSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 0,
     "buyPrice": 0,
     "seasons": [
@@ -1523,9 +1469,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Emily)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-emily",
+        "storeName": "Desert Festival Stall (Emily)",
         "quantity": 5,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1536,9 +1481,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Evelyn)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-evelyn",
+        "storeName": "Desert Festival Stall (Evelyn)",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1548,9 +1492,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Jodi)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-jodi",
+        "storeName": "Desert Festival Stall (Jodi)",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1570,7 +1513,7 @@
     "name": "Mixed Seeds",
     "icon": "assets/objects/MixedSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 0,
     "buyPrice": 0,
     "seasons": [
@@ -1622,8 +1565,9 @@
       }
     ],
     "sellers": [
-      "desert-festival",
       "desert-festival-egg-shop",
+      "desert-festival-evelyn",
+      "desert-festival-jodi",
       "krobus",
       "raccoon",
       "stardew-valley-fair"
@@ -1632,8 +1576,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "quantity": 3,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1648,9 +1591,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Evelyn)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-evelyn",
+        "storeName": "Desert Festival Stall (Evelyn)",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1660,9 +1602,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Jodi)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-jodi",
+        "storeName": "Desert Festival Stall (Jodi)",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1674,7 +1615,6 @@
         "type": "shop",
         "storeId": "store-stardew-valley-fair",
         "storeName": "Stardew Valley Fair",
-        "storeBaseName": "Stardew Valley Fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 1000,
@@ -1687,18 +1627,24 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "tradeItemId": "cave-carrot",
         "tradeItemGameId": 78,
         "tradeItemName": "Cave Carrot",
         "tradeItemIcon": "assets/objects/CaveCarrot.png",
-        "tradeItemAmount": 1
+        "tradeItemAmount": 1,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            4
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-krobus",
         "storeName": "Krobus's Shop",
-        "storeBaseName": "Krobus's Shop",
         "price": 30,
         "quantity": 10,
         "days": [
@@ -1778,7 +1724,7 @@
     "name": "Parsnip Seeds",
     "icon": "assets/objects/ParsnipSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 10,
     "buyPrice": 20,
     "seasons": [
@@ -1806,14 +1752,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 20
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 25,
         "seasons": [
           "spring"
@@ -1823,7 +1767,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 20,
         "seasons": [
           "spring"
@@ -1841,7 +1784,7 @@
     "name": "Pepper Seeds",
     "icon": "assets/objects/PepperSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -1869,14 +1812,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 40
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 50,
         "seasons": [
           "summer"
@@ -1886,7 +1827,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 40,
         "seasons": [
           "summer"
@@ -1904,7 +1844,7 @@
     "name": "Pineapple Seeds",
     "icon": "assets/objects/PineappleSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 240,
     "buyPrice": 480,
     "seasons": [
@@ -1930,7 +1870,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 480,
         "tradeItemId": "magma-cap",
         "tradeItemGameId": 851,
@@ -1955,7 +1894,7 @@
     "name": "Poppy Seeds",
     "icon": "assets/objects/PoppySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 50,
     "buyPrice": 100,
     "seasons": [
@@ -1983,14 +1922,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 125,
         "seasons": [
           "summer"
@@ -2000,7 +1937,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 100,
         "seasons": [
           "summer"
@@ -2018,7 +1954,7 @@
     "name": "Potato Seeds",
     "icon": "assets/objects/PotatoSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 25,
     "buyPrice": 50,
     "seasons": [
@@ -2046,14 +1982,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 50
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 62,
         "seasons": [
           "spring"
@@ -2063,7 +1997,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 50,
         "seasons": [
           "spring"
@@ -2081,7 +2014,7 @@
     "name": "Powdermelon Seeds",
     "icon": "assets/objects/PowdermelonSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -2105,7 +2038,6 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "price": 40,
         "tradeItemId": "pine-cone",
         "tradeItemGameId": 311,
@@ -2125,7 +2057,7 @@
     "name": "Pumpkin Seeds",
     "icon": "assets/objects/PumpkinSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 50,
     "buyPrice": 100,
     "seasons": [
@@ -2153,14 +2085,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 125,
         "seasons": [
           "fall"
@@ -2170,7 +2100,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 100,
         "seasons": [
           "fall"
@@ -2188,7 +2117,7 @@
     "name": "Qi Bean",
     "icon": "assets/objects/QiBean.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 1,
     "buyPrice": 2,
     "seasons": [
@@ -2228,7 +2157,7 @@
     "name": "Radish Seeds",
     "icon": "assets/objects/RadishSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -2256,14 +2185,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 40
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 50,
         "seasons": [
           "summer"
@@ -2273,7 +2200,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 40,
         "seasons": [
           "summer"
@@ -2291,7 +2217,7 @@
     "name": "Rare Seed",
     "icon": "assets/objects/RareSeed.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 200,
     "buyPrice": 400,
     "seasons": [
@@ -2317,7 +2243,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 1000,
         "seasons": [
           "spring",
@@ -2337,7 +2262,7 @@
     "name": "Red Cabbage Seeds",
     "icon": "assets/objects/RedCabbageSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 50,
     "buyPrice": 100,
     "seasons": [
@@ -2365,7 +2290,6 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100,
         "yearUnlock": 2
       },
@@ -2373,7 +2297,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 100,
         "seasons": [
           "summer"
@@ -2384,7 +2307,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 100,
         "stock": 1
       }
@@ -2400,7 +2322,7 @@
     "name": "Rhubarb Seeds",
     "icon": "assets/objects/RhubarbSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 50,
     "buyPrice": 100,
     "seasons": [
@@ -2426,7 +2348,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 100
       }
     ],
@@ -2441,7 +2362,7 @@
     "name": "Rice Shoot",
     "icon": "assets/objects/RiceShoot.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -2467,7 +2388,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 40,
         "seasons": [
           "spring"
@@ -2496,7 +2416,7 @@
     "name": "Spangle Seeds",
     "icon": "assets/objects/SpangleSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 25,
     "buyPrice": 50,
     "seasons": [
@@ -2524,14 +2444,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 50
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 62,
         "seasons": [
           "summer"
@@ -2541,7 +2459,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 50,
         "seasons": [
           "summer"
@@ -2559,7 +2476,7 @@
     "name": "Spring Seeds",
     "icon": "assets/objects/SpringSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 35,
     "buyPrice": 70,
     "seasons": [
@@ -2615,7 +2532,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 70,
         "tradeItemId": "summer-seeds",
         "tradeItemGameId": 496,
@@ -2666,7 +2582,7 @@
     "name": "Starfruit Seeds",
     "icon": "assets/objects/StarfruitSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 200,
     "buyPrice": 400,
     "seasons": [
@@ -2692,7 +2608,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 400
       }
     ],
@@ -2707,7 +2622,7 @@
     "name": "Strawberry Seeds",
     "icon": "assets/objects/StrawberrySeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 0,
     "buyPrice": 0,
     "seasons": [
@@ -2726,16 +2641,15 @@
       }
     ],
     "sellers": [
-      "desert-festival",
       "desert-festival-egg-shop",
+      "desert-festival-maru",
       "egg-festival"
     ],
     "sources": [
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -2748,8 +2662,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -2761,9 +2674,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Maru)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-maru",
+        "storeName": "Desert Festival Stall (Maru)",
         "quantity": 20,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2775,7 +2687,6 @@
         "type": "shop",
         "storeId": "store-egg-festival",
         "storeName": "Egg Festival",
-        "storeBaseName": "Egg Festival",
         "price": 100
       }
     ],
@@ -2790,7 +2701,7 @@
     "name": "Summer Seeds",
     "icon": "assets/objects/SummerSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 55,
     "buyPrice": 110,
     "seasons": [
@@ -2836,7 +2747,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 110,
         "tradeItemId": "fall-seeds",
         "tradeItemGameId": 497,
@@ -2883,7 +2793,7 @@
     "name": "Summer Squash Seeds",
     "icon": "assets/objects/SummerSquashSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -2907,7 +2817,6 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "price": 40,
         "tradeItemId": "sap",
         "tradeItemGameId": 92,
@@ -2927,7 +2836,7 @@
     "name": "Sunflower Seeds",
     "icon": "assets/objects/SunflowerSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -2956,21 +2865,18 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 200
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 200
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 100,
         "seasons": [
           "summer"
@@ -2980,7 +2886,6 @@
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 100,
         "seasons": [
           "fall"
@@ -2990,7 +2895,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 100,
         "seasons": [
           "summer"
@@ -3000,7 +2904,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 100,
         "seasons": [
           "fall"
@@ -3018,7 +2921,7 @@
     "name": "Taro Tuber",
     "icon": "assets/objects/TaroTuber.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 20,
     "buyPrice": 40,
     "seasons": [
@@ -3044,7 +2947,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 40,
         "tradeItemId": "bone-fragment",
         "tradeItemGameId": 881,
@@ -3081,7 +2983,7 @@
     "name": "Tomato Seeds",
     "icon": "assets/objects/TomatoSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 25,
     "buyPrice": 50,
     "seasons": [
@@ -3109,14 +3011,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 50
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 62,
         "seasons": [
           "summer"
@@ -3126,7 +3026,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 50,
         "seasons": [
           "summer"
@@ -3144,7 +3043,7 @@
     "name": "Tulip Bulb",
     "icon": "assets/objects/TulipBulb.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 10,
     "buyPrice": 20,
     "seasons": [
@@ -3172,14 +3071,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 20
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 25,
         "seasons": [
           "spring"
@@ -3189,7 +3086,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 20,
         "seasons": [
           "spring"
@@ -3207,7 +3103,7 @@
     "name": "Wheat Seeds",
     "icon": "assets/objects/WheatSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 5,
     "buyPrice": 10,
     "seasons": [
@@ -3236,21 +3132,18 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 10
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 10
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 12,
         "seasons": [
           "summer"
@@ -3260,7 +3153,6 @@
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 12,
         "seasons": [
           "fall"
@@ -3270,7 +3162,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 10,
         "seasons": [
           "summer"
@@ -3280,7 +3171,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 10,
         "seasons": [
           "fall"
@@ -3298,7 +3188,7 @@
     "name": "Winter Seeds",
     "icon": "assets/objects/WinterSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -3354,7 +3244,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 60,
         "tradeItemId": "spring-seeds",
         "tradeItemGameId": 495,
@@ -3405,7 +3294,7 @@
     "name": "Yam Seeds",
     "icon": "assets/objects/YamSeeds.png",
     "type": "seed",
-    "category": -74,
+    "gameCategory": -74,
     "price": 30,
     "buyPrice": 60,
     "seasons": [
@@ -3433,14 +3322,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 60
       },
       {
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 75,
         "seasons": [
           "fall"
@@ -3450,7 +3337,6 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 60,
         "seasons": [
           "fall"

@@ -1,0 +1,590 @@
+[
+  {
+    "type": "tree-seed",
+    "id": "acorn",
+    "gameId": 309,
+    "name": "Acorn",
+    "icon": "assets/objects/Acorn.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [
+      "color_brown",
+      "tree_seed_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_woodskip",
+        "minPopulation": 9,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "mahogany-seed",
+    "gameId": 292,
+    "name": "Mahogany Seed",
+    "icon": "assets/objects/MahoganySeed.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [
+      "color_brown",
+      "tree_seed_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-island-trader",
+        "storeName": "Island Trader",
+        "price": 200,
+        "tradeItemId": "stingray",
+        "tradeItemGameId": 836,
+        "tradeItemName": "Stingray",
+        "tradeItemIcon": "assets/objects/Stingray.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-raccoon",
+        "storeName": "Raccoon Shop",
+        "price": 200,
+        "tradeItemId": "coal",
+        "tradeItemGameId": 382,
+        "tradeItemName": "Coal",
+        "tradeItemIcon": "assets/objects/Coal.png",
+        "tradeItemAmount": 20,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            4
+          ]
+        }
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island South",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island Southeast",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "maple-seed",
+    "gameId": 310,
+    "name": "Maple Seed",
+    "icon": "assets/objects/MapleSeed.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [
+      "color_brown",
+      "tree_seed_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_woodskip",
+        "minPopulation": 9,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "mossy-seed",
+    "gameId": "MossySeed",
+    "name": "Mossy Seed",
+    "icon": "assets/objects/MossySeed.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": []
+  },
+  {
+    "type": "tree-seed",
+    "id": "mushroom-tree-seed",
+    "gameId": 891,
+    "name": "Mushroom Tree Seed",
+    "icon": "assets/objects/MushroomTreeSeed.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 200,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 5
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "mystic-tree-seed",
+    "gameId": "MysticTreeSeed",
+    "name": "Mystic Tree Seed",
+    "icon": "assets/objects/MysticTreeSeed.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Mystic Tree Seed",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 309,
+            "amount": 5
+          },
+          {
+            "gameId": 310,
+            "amount": 5
+          },
+          {
+            "gameId": 311,
+            "amount": 5
+          },
+          {
+            "gameId": 292,
+            "amount": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "pine-cone",
+    "gameId": 311,
+    "name": "Pine Cone",
+    "icon": "assets/objects/PineCone.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [
+      "color_brown",
+      "tree_seed_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_woodskip",
+        "minPopulation": 9,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "tree-seed",
+    "id": "tea-sapling",
+    "gameId": 251,
+    "name": "Tea Sapling",
+    "icon": "assets/objects/TeaSapling.png",
+    "price": 250,
+    "edibility": -300,
+    "gameCategory": -74,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-caroline",
+        "storeName": "Desert Festival Stall (Caroline)",
+        "price": 500,
+        "quantity": 10,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Tea Sapling",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": -777,
+            "amount": 2
+          },
+          {
+            "gameId": 771,
+            "amount": 5
+          },
+          {
+            "gameId": 388,
+            "amount": 5
+          }
+        ]
+      }
+    ]
+  }
+]

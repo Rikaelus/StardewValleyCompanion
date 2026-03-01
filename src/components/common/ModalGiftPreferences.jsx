@@ -1,6 +1,6 @@
 import ModalItemButton from './ModalItemButton'
 
-function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id }) {
+function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id, onNavigate }) {
   if (!giftDetails || giftDetails.length === 0) {
     return null
   }
@@ -26,6 +26,7 @@ function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id }) {
             <ModalItemButton
               item={gift.villager}
               iconSize={32}
+              onNavigate={onNavigate}
             />
             <div className="gift-info">
               <div className="gift-name">{gift.villager.name}</div>

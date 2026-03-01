@@ -1,12 +1,24 @@
 [
   {
-    "id": "92",
+    "id": "concerned-ape-mask-hat",
     "gameId": 92,
     "name": "???",
     "description": "???",
     "isMask": true,
-    "icon": null,
-    "sources": []
+    "icon": "assets/objects/ConcernedApeHat.png",
+    "sources": [
+      {
+        "description": "Interact with a monkey in the Volcano Caldera",
+        "condition": {
+          "in": [
+            "Farm_Eternal",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "id": "abigail-s-bow",
@@ -38,8 +50,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 4000
+        "price": 4000,
+        "condition": {
+          "in": [
+            17,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -73,8 +92,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            28,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -89,8 +115,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -120,8 +145,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            37,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -137,7 +169,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 50,
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
@@ -162,8 +193,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          "in": [
+            3,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -197,8 +235,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            6,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -214,8 +259,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            9,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -231,8 +283,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          "in": [
+            17,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -248,8 +307,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            30,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -265,21 +331,18 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 5000
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 2500
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 10000
       }
     ]
@@ -296,8 +359,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            2,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -322,8 +392,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          "in": [
+            5,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -339,8 +416,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            32,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -356,8 +440,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            31,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -373,8 +464,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            20,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -407,8 +505,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -429,8 +526,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            15,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -446,7 +550,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
         "tradeItemName": "Taro Root",
@@ -488,8 +591,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 4000
+        "price": 4000,
+        "condition": {
+          "in": [
+            13,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -505,8 +615,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 50000
+        "price": 50000,
+        "condition": {
+          "==": [
+            {
+              "var": "player.allAchievements"
+            },
+            true
+          ]
+        }
       }
     ]
   },
@@ -531,8 +648,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            26,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -557,7 +681,6 @@
         "type": "shop",
         "storeId": "store-stardew-valley-fair",
         "storeName": "Stardew Valley Fair",
-        "storeBaseName": "Stardew Valley Fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 500,
@@ -641,8 +764,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            22,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -658,8 +788,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          "in": [
+            34,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -711,8 +848,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            0,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -728,8 +872,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            38,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -745,7 +896,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 1500,
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
@@ -785,8 +935,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            19,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -802,8 +959,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 20000
+        "price": 20000,
+        "condition": {
+          "in": [
+            42,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -828,8 +992,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 25000
+        "price": 25000,
+        "condition": {
+          "in": [
+            36,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -854,8 +1025,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 25000
+        "price": 25000,
+        "condition": {
+          "in": [
+            44,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -916,8 +1094,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            1,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -933,7 +1118,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 500,
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
@@ -955,7 +1139,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 4000,
         "tradeItemId": "omni-geode",
         "tradeItemGameId": 749,
@@ -977,8 +1160,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            7,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -994,7 +1184,6 @@
         "type": "shop",
         "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
-        "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 200,
@@ -1017,8 +1206,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -1057,8 +1245,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            25,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1074,8 +1269,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            35,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1100,8 +1302,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          "in": [
+            40,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1144,7 +1353,6 @@
         "type": "shop",
         "storeId": "store-volcano-shop",
         "storeName": "Volcano Forge Shop",
-        "storeBaseName": "Volcano Forge Shop",
         "price": 10000
       }
     ]
@@ -1170,8 +1378,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            16,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1187,8 +1402,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            29,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1231,12 +1453,19 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "tradeItemId": "mixed-seeds",
         "tradeItemGameId": 770,
         "tradeItemName": "Mixed Seeds",
         "tradeItemIcon": "assets/objects/MixedSeeds.png",
-        "tradeItemAmount": 10
+        "tradeItemAmount": 10,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            3
+          ]
+        }
       }
     ]
   },
@@ -1270,7 +1499,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 8000,
         "rotating": true,
         "stock": 1
@@ -1289,8 +1517,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            "Ice Festival",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1306,8 +1541,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            12,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1332,7 +1574,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 2,
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
@@ -1357,8 +1598,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 25000
+        "price": 25000,
+        "condition": {
+          "in": [
+            4,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1374,8 +1622,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            24,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1391,8 +1646,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 20000
+        "price": 20000,
+        "condition": {
+          "in": [
+            41,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1408,8 +1670,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.ticketPrizesClaimed"
+            },
+            11
+          ]
+        }
       }
     ]
   },
@@ -1470,8 +1739,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            "Egg Festival",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1505,8 +1781,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            11,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1558,8 +1841,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            18,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1575,8 +1865,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          "in": [
+            21,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1601,8 +1898,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "in": [
+            27,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },
@@ -1627,8 +1931,15 @@
         "type": "shop",
         "storeId": "store-hat-mouse",
         "storeName": "Hat Mouse",
-        "storeBaseName": "Hat Mouse",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            39,
+            {
+              "var": "player.achievements"
+            }
+          ]
+        }
       }
     ]
   },

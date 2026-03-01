@@ -1,0 +1,789 @@
+[
+  {
+    "type": "ore",
+    "id": "bone-fragment",
+    "gameId": 881,
+    "name": "Bone Fragment",
+    "icon": "assets/objects/BoneFragment.png",
+    "price": 12,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton",
+        "chance": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Lurk",
+        "chance": 1
+      },
+      {
+        "type": "tilling",
+        "location": "All outdoor areas",
+        "chance": 0.2
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "cinder-shard",
+    "gameId": 848,
+    "name": "Cinder Shard",
+    "icon": "assets/objects/CinderShard.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_orange"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Magma Sprite",
+        "chance": 0.7
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Magma Duggy",
+        "chance": 0.55
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Magma Sparker",
+        "chance": 0.7
+      },
+      {
+        "type": "monster-drop",
+        "monster": "False Magma Cap",
+        "chance": 0.7
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stingray",
+        "minPopulation": 7,
+        "chance": 0.1
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "coal",
+    "gameId": 382,
+    "name": "Coal",
+    "icon": "assets/objects/Coal.png",
+    "price": 15,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_black"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 150,
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 250,
+        "yearUnlock": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-bookseller",
+        "storeName": "Bookseller",
+        "price": 30,
+        "quantity": 20,
+        "tradeItemId": "mining-monthly",
+        "tradeItemGameId": "SkillBook_3",
+        "tradeItemName": "Mining Monthly",
+        "tradeItemIcon": "assets/objects/MiningMonthly.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-clint",
+        "storeName": "Desert Festival Stall (Clint)",
+        "price": 30,
+        "quantity": 50,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Dust Spirit",
+        "chance": 0.5
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Stone Golem",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Wilderness Golem",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Golem",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spiker",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "chance": 0.1
+      },
+      {
+        "type": "garbage-can",
+        "location": "Blacksmith"
+      },
+      {
+        "type": "tilling",
+        "location": "Farm",
+        "chance": 0.5
+      },
+      {
+        "type": "tilling",
+        "location": "Mountain Lake",
+        "chance": 0.6
+      },
+      {
+        "type": "tilling",
+        "location": "Backwoods",
+        "chance": 0.6
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "copper-ore",
+    "gameId": 378,
+    "name": "Copper Ore",
+    "icon": "assets/objects/CopperOre.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_copper",
+      "ore_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "neutral",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 75,
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 150,
+        "yearUnlock": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-clint",
+        "storeName": "Desert Festival Stall (Clint)",
+        "price": 10,
+        "quantity": 100,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "chance": 0.2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spiker",
+        "chance": 0.2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "chance": 0.2
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stonefish",
+        "minPopulation": 3,
+        "chance": 0.1
+      },
+      {
+        "type": "garbage-can",
+        "location": "Blacksmith"
+      },
+      {
+        "type": "tilling",
+        "location": "Town River",
+        "chance": 0.2
+      },
+      {
+        "type": "tilling",
+        "location": "Mountain Lake",
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Forest River",
+        "chance": 0.08
+      },
+      {
+        "type": "tilling",
+        "location": "BusStop",
+        "chance": 0.15
+      },
+      {
+        "type": "tilling",
+        "location": "Railroad",
+        "chance": 0.15
+      },
+      {
+        "type": "tilling",
+        "location": "Backwoods",
+        "chance": 0.1
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "gold-ore",
+    "gameId": 384,
+    "name": "Gold Ore",
+    "icon": "assets/objects/GoldOre.png",
+    "price": 25,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_gold",
+      "ore_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 400,
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 750,
+        "yearUnlock": 2
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lava_eel",
+        "minPopulation": 3,
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Ocean",
+        "chance": 0.08
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "iridium-ore",
+    "gameId": 386,
+    "name": "Iridium Ore",
+    "icon": "assets/objects/IridiumOre.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_iridium",
+      "ore_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "neutral",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "hate",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Bat",
+        "chance": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Crab",
+        "chance": 1
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_super_cucumber",
+        "minPopulation": 9,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "iron-ore",
+    "gameId": 380,
+    "name": "Iron Ore",
+    "icon": "assets/objects/IronOre.png",
+    "price": 10,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_iron",
+      "ore_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "neutral",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 150,
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "storeId": "store-clint",
+        "storeName": "Blacksmith (Clint)",
+        "price": 250,
+        "yearUnlock": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-clint",
+        "storeName": "Desert Festival Stall (Clint)",
+        "price": 20,
+        "quantity": 100,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 4
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Stone Golem",
+        "chance": 0.1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "chance": 0.2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spiker",
+        "chance": 0.2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "chance": 0.2
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_ice_pip",
+        "minPopulation": 3,
+        "chance": 0.1
+      },
+      {
+        "type": "garbage-can",
+        "location": "Blacksmith"
+      }
+    ]
+  },
+  {
+    "type": "ore",
+    "id": "radioactive-ore",
+    "gameId": 909,
+    "name": "Radioactive Ore",
+    "icon": "assets/objects/RadioactiveOre.png",
+    "price": 300,
+    "edibility": -300,
+    "gameCategory": -15,
+    "contextTags": [
+      "color_lime",
+      "ore_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-clint",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "like",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "neutral",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  }
+]

@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import UniversalModal from '../common/UniversalModal'
 import { useEntities } from '../../contexts/EntityContext'
-import { formatLocationNames } from '../../utils/formatters'
+import { formatLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
   createNameColumn,
@@ -69,6 +69,7 @@ function ForageTable({ data, allData }) {
       <DataTable
         data={data}
         columns={columns}
+        pinnedColumns={1}
         initialSortBy={[{ id: 'name', desc: false }]}
         itemsPerPage={25}
       />

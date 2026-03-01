@@ -7,7 +7,7 @@
     "icon": "assets/objects/Coconut.png",
     "price": 100,
     "edibility": -300,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_brown",
       "forage_item",
@@ -16,6 +16,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "exotic-foraging"
     ],
@@ -46,7 +50,7 @@
     "icon": "assets/objects/CactusFruit.png",
     "price": 75,
     "edibility": 30,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_green",
       "forage_item",
@@ -54,6 +58,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "exotic-foraging"
     ],
@@ -85,7 +93,7 @@
     "icon": "assets/objects/Banana.png",
     "price": 150,
     "edibility": 30,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow",
       "fruit_item",
@@ -95,6 +103,10 @@
       "summer"
     ],
     "treeId": "banana",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -122,7 +134,7 @@
     "icon": "assets/objects/Rhubarb.png",
     "price": 220,
     "edibility": -300,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "dye_medium",
@@ -130,6 +142,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -157,7 +173,7 @@
     "icon": "assets/objects/Melon.png",
     "price": 250,
     "edibility": 45,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_pink",
       "dye_medium",
@@ -165,6 +181,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "summer-crops",
       "quality-crops"
@@ -196,7 +216,7 @@
     "icon": "assets/objects/Blueberry.png",
     "price": 50,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_blue",
       "dye_strong",
@@ -204,6 +224,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "summer-crops"
     ],
@@ -234,7 +258,7 @@
     "icon": "assets/objects/HotPepper.png",
     "price": 40,
     "edibility": 5,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "dye_medium",
@@ -242,6 +266,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "summer-crops"
     ],
@@ -272,12 +300,16 @@
     "icon": "assets/objects/Starfruit.png",
     "price": 750,
     "edibility": 50,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow"
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -305,7 +337,7 @@
     "icon": "assets/objects/Cranberries.png",
     "price": 75,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "dye_strong",
@@ -313,6 +345,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -340,12 +376,16 @@
     "icon": "assets/objects/Salmonberry.png",
     "price": 5,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red"
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -375,7 +415,7 @@
     "icon": "assets/objects/SpiceBerry.png",
     "price": 80,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "forage_item",
@@ -383,6 +423,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "summer-foraging"
     ],
@@ -414,7 +458,7 @@
     "icon": "assets/objects/Grape.png",
     "price": 80,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_purple",
       "forage_item",
@@ -422,6 +466,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "summer-foraging"
     ],
@@ -452,7 +500,7 @@
     "icon": "assets/objects/Strawberry.png",
     "price": 120,
     "edibility": 20,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "dye_medium",
@@ -460,6 +508,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -488,7 +540,7 @@
     "icon": "assets/objects/WildPlum.png",
     "price": 80,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_purple",
       "forage_item",
@@ -496,6 +548,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "fall-foraging"
     ],
@@ -525,7 +581,7 @@
     "icon": "assets/objects/Blackberry.png",
     "price": 20,
     "edibility": 10,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_blue",
       "forage_item",
@@ -533,6 +589,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "fall-foraging"
     ],
@@ -563,7 +623,7 @@
     "icon": "assets/objects/CrystalFruit.png",
     "price": 150,
     "edibility": 25,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_blue",
       "forage_item",
@@ -571,6 +631,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "winter-foraging"
     ],
@@ -601,12 +665,16 @@
     "icon": "assets/objects/AncientFruit.png",
     "price": 550,
     "edibility": -300,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_cyan"
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "the-missing"
     ],
@@ -636,7 +704,7 @@
     "icon": "assets/objects/Apple.png",
     "price": 100,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "fruit_item",
@@ -646,6 +714,10 @@
       "fall"
     ],
     "treeId": "apple",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan",
       "fodder"
@@ -695,7 +767,7 @@
     "icon": "assets/objects/Apricot.png",
     "price": 50,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "fruit_item",
@@ -706,6 +778,10 @@
       "spring"
     ],
     "treeId": "apricot",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan"
     ],
@@ -754,7 +830,7 @@
     "icon": "assets/objects/Orange.png",
     "price": 100,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "fruit_item",
@@ -765,6 +841,10 @@
       "summer"
     ],
     "treeId": "orange",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan"
     ],
@@ -813,7 +893,7 @@
     "icon": "assets/objects/Peach.png",
     "price": 140,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_pink",
       "fruit_item",
@@ -824,6 +904,10 @@
       "summer"
     ],
     "treeId": "peach",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan"
     ],
@@ -872,7 +956,7 @@
     "icon": "assets/objects/Pomegranate.png",
     "price": 140,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_pink",
       "fruit_item",
@@ -883,6 +967,10 @@
       "fall"
     ],
     "treeId": "pomegranate",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan",
       "enchanter-s"
@@ -932,7 +1020,7 @@
     "icon": "assets/objects/Cherry.png",
     "price": 80,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "fruit_item",
@@ -943,6 +1031,10 @@
       "spring"
     ],
     "treeId": "cherry",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [
       "artisan"
     ],
@@ -991,13 +1083,17 @@
     "icon": "assets/objects/Pineapple.png",
     "price": 300,
     "edibility": 55,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow",
       "fruit_item"
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -1025,7 +1121,7 @@
     "icon": "assets/objects/Mango.png",
     "price": 130,
     "edibility": 40,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow",
       "fruit_item",
@@ -1035,6 +1131,10 @@
       "summer"
     ],
     "treeId": "mango",
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -1063,12 +1163,16 @@
     "icon": "assets/objects/QiFruit.png",
     "price": 1,
     "edibility": 1,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_blue"
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",
@@ -1096,7 +1200,7 @@
     "icon": "assets/objects/Powdermelon.png",
     "price": 60,
     "edibility": 25,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_white",
       "dye_medium",
@@ -1104,6 +1208,10 @@
     ],
     "seasons": [],
     "treeId": null,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
     "bundles": [],
     "gifts": {
       "robin": "like",

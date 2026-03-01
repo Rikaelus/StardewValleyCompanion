@@ -22,11 +22,15 @@ const TYPE_LABELS = {
   'animal-product': 'Animal Product',
   'tree-fruit': 'Tree Fruit',
   'hat': 'Hat',
+  'store': 'Shop',
+  'buff': 'Buff',
+  'event': 'Event',
+  'villager': 'Villager',
 }
 
 function GlobalSearch({ isOpen, onClose }) {
   const searchId = useId()
-  const { items } = useEntities()
+  const { items, stores } = useEntities()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
 
   const [query, setQuery] = useState('')
@@ -92,19 +96,27 @@ function GlobalSearch({ isOpen, onClose }) {
     const q = debouncedQuery.trim().toLowerCase()
     if (!q) return []
 
-    const filtered = items.filter(item => {
-      if (item.isGeneric) return false
-      return item.name?.toLowerCase().includes(q)
+    const storeList = Object.values(stores || {})
+    const searchable = [...items, ...storeList]
+
+    const filtered = searchable.filter(item => {
+      if (item.isGeneric || item.isHidden) return false
+      if (item.name?.toLowerCase().includes(q)) return true
+      const label = TYPE_LABELS[item.type || item.entityType]
+      return label?.toLowerCase().includes(q)
     })
 
-    // Sort: prefix matches first, then substring, then alphabetically
+    // Sort: name prefix > name substring > category match, then alphabetically within each tier
     filtered.sort((a, b) => {
       const aName = a.name.toLowerCase()
       const bName = b.name.toLowerCase()
+      const aNameMatch = aName.includes(q)
+      const bNameMatch = bName.includes(q)
       const aPrefix = aName.startsWith(q)
       const bPrefix = bName.startsWith(q)
-      if (aPrefix && !bPrefix) return -1
-      if (!aPrefix && bPrefix) return 1
+      const aTier = aPrefix ? 0 : aNameMatch ? 1 : 2
+      const bTier = bPrefix ? 0 : bNameMatch ? 1 : 2
+      if (aTier !== bTier) return aTier - bTier
       return aName.localeCompare(bName)
     })
 
@@ -191,7 +203,7 @@ function GlobalSearch({ isOpen, onClose }) {
                   const iconPath = item.icon
                     ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
                     : null
-                  const categoryLabel = TYPE_LABELS[item.type] || ''
+                  const categoryLabel = TYPE_LABELS[item.type || item.entityType] || ''
 
                   return (
                     <li

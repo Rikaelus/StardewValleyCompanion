@@ -40,6 +40,8 @@ export function EntityProvider({ children }) {
         villagers: { all: [], byId: new Map() },
         stores: {},
         machines: { all: [], byId: new Map() },
+        buffs: { all: [], byId: new Map() },
+        events: { all: [], byId: new Map() },
         findById: () => null,
         findByGameId: () => null,
         findEntity: () => null,
@@ -47,47 +49,58 @@ export function EntityProvider({ children }) {
         getVillager: () => null,
         getStore: () => null,
         getMachine: () => null,
+        getBuff: () => null,
+        getEvent: () => null,
         getGiftPreferences: () => [],
         getVillagerGifts: () => [],
         getGiftPreference: () => null,
+        eventNames: {},
       }
     }
 
-    const allItems = rawData.items || []
+    const allEntities = rawData.items || []
     const gameIdIndex = rawData.gameIdIndex || {}
     const allBundles = rawData.bundles || []
     const allVillagers = rawData.villagers || []
     const storesMap = rawData.stores || {}
     const allMachines = rawData.machines || []
+    const allBuffs = rawData.buffs || []
     const relationships = rawData.relationships || []
 
-    // ── Item collections ─────────────────────────────────────────────────────
+    // ── Entity collections ───────────────────────────────────────────────────
     const collectionPredicates = {
-      'fish':           item => item.sources?.some(s => s.type === 'fish'),
-      'artisan':        item => item.itemCategory === 'artisan',
-      'crop':           item => item.sources?.some(s => s.type === 'seed'),
-      'forage':         item => item.sources?.some(s => s.type === 'forage') || (item.itemCategory === 'forage' && !item.sources?.some(s => s.type === 'seed')),
-      'tree-fruit':     item => item.itemCategory === 'tree-fruit',
-      'mineral':        item => item.itemCategory === 'mineral',
-      'metal-bar':      item => item.itemCategory === 'metal-bar',
-      'monster-loot':   item => item.itemCategory === 'monster-loot',
-      'resource':       item => item.itemCategory === 'resource',
-      'seed':           item => item.itemCategory === 'seed' || item.id === 'coffee-bean',
-      'big-craftable':  item => item.itemCategory === 'big-craftable',
-      'animal-product': item => item.itemCategory === 'animal-product',
-      'furniture':      item => item.itemCategory === 'furniture',
-      'hat':            item => item.itemCategory === 'hat',
+      'fish':           entity => entity.sources?.some(s => s.type === 'fish'),
+      'artisan':        entity => entity.category === 'artisan',
+      'crop':           entity => entity.sources?.some(s => s.type === 'seed'),
+      'forage':         entity => entity.sources?.some(s => s.type === 'forage') || (entity.category === 'forage' && !entity.sources?.some(s => s.type === 'seed')),
+      'tree-fruit':     entity => entity.category === 'tree-fruit',
+      'mineral':        entity => entity.category === 'mineral',
+      'metal-bar':      entity => entity.category === 'metal-bar',
+      'monster-loot':   entity => entity.category === 'monster-loot',
+      'resource':       entity => entity.category === 'resource',
+      'seed':           entity => entity.category === 'seed' || entity.id === 'coffee-bean',
+      'big-craftable':  entity => entity.category === 'big-craftable',
+      'animal-product': entity => entity.category === 'animal-product',
+      'furniture':      entity => entity.category === 'furniture',
+      'hat':            entity => entity.category === 'hat',
     }
 
     const byType = {}
     for (const [collection, predicate] of Object.entries(collectionPredicates)) {
-      byType[collection] = allItems.filter(predicate)
+      byType[collection] = allEntities.filter(predicate)
     }
 
     // ── Relational indexes ───────────────────────────────────────────────────
     const bundlesById = new Map(allBundles.map(b => [b.id, b]))
     const villagersById = new Map(allVillagers.map(v => [v.id, v]))
     const machinesById = new Map(allMachines.map(m => [m.id, m]))
+    const buffsById = new Map(allBuffs.map(b => [b.id, b]))
+
+    // Events live in allEntities (category: 'event'); build a secondary index by eventKey
+    const allEvents = allEntities.filter(i => i.category === 'event')
+    const eventsByKey = new Map(allEvents.map(e => [e.eventKey, e]))
+    // eventNames map for condition formatter: { eventKey → name }
+    const eventNames = Object.fromEntries(allEvents.map(e => [e.eventKey, e.name]))
 
     // Gift indexes
     const giftsByItem = new Map()
@@ -104,12 +117,12 @@ export function EntityProvider({ children }) {
     }
 
     // ── Lookup helpers ───────────────────────────────────────────────────────
-    const findById = (id) => allItems.find(item => item.id === id) ?? null
-    const findByGameId = (gameId) => allItems.find(item => item.gameId === gameId) ?? null
+    const findById = (id) => allEntities.find(entity => entity.id === id) ?? null
+    const findByGameId = (gameId) => allEntities.find(entity => entity.gameId === gameId) ?? null
 
     const findEntity = (id) => {
-      const item = allItems.find(i => i.id === id)
-      if (item) return item
+      const entity = allEntities.find(e => e.id === id)
+      if (entity) return entity
       const bundle = bundlesById.get(id)
       if (bundle) return bundle
       const villager = villagersById.get(id)
@@ -118,6 +131,8 @@ export function EntityProvider({ children }) {
       if (store) return store
       const machine = machinesById.get(id)
       if (machine) return machine
+      const buff = buffsById.get(id)
+      if (buff) return buff
       return null
     }
 
@@ -125,6 +140,8 @@ export function EntityProvider({ children }) {
     const getVillager = (villagerId) => villagersById.get(villagerId) ?? null
     const getStore = (storeId) => storesMap[storeId] ?? null
     const getMachine = (machineId) => machinesById.get(machineId) ?? null
+    const getBuff = (buffId) => buffsById.get(buffId) ?? null
+    const getEvent = (eventKey) => eventsByKey.get(String(eventKey)) ?? null
 
     const getGiftPreferences = (itemId) => {
       const preferences = giftsByItem.get(itemId) || []
@@ -147,8 +164,8 @@ export function EntityProvider({ children }) {
     return {
       loading: false,
       error: null,
-      // Items
-      items: allItems,
+      // Entities (public API key stays as 'items' for backwards compat with rawData.items)
+      items: allEntities,
       gameIdIndex,
       byType,
       findById,
@@ -159,14 +176,19 @@ export function EntityProvider({ children }) {
       villagers: { all: allVillagers, byId: villagersById },
       stores: storesMap,
       machines: { all: allMachines, byId: machinesById },
+      buffs: { all: allBuffs, byId: buffsById },
+      events: { all: allEvents, byKey: eventsByKey },
       // Relational helpers
       getBundle,
       getVillager,
       getStore,
       getMachine,
+      getBuff,
+      getEvent,
       getGiftPreferences,
       getVillagerGifts,
       getGiftPreference,
+      eventNames,
     }
   }, [rawData, loading, error])
 
@@ -187,10 +209,10 @@ export function useEntities() {
 }
 
 /**
- * Returns items of a specific type, plus loading/error state.
- * @param {string} type - item type: 'fish', 'artisan', 'crop', 'forage', 'seed', etc.
+ * Returns entities of a specific type, plus loading/error state.
+ * @param {string} type - entity type: 'fish', 'artisan', 'crop', 'forage', 'seed', etc.
  */
-export function useItemsByType(type) {
+export function useEntitiesByType(type) {
   const ctx = useEntities()
   const items = useMemo(() => ctx.byType[type] || [], [ctx.byType, type])
   return { items, loading: ctx.loading, error: ctx.error }

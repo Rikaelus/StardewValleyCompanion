@@ -21,6 +21,10 @@
       "name": "Large Egg",
       "uniqueId": "large-egg-brown",
       "notes": "Large brown chicken egg - uniqueId needed because multiple items share 'Large Egg' name"
+    },
+    "930": {
+      "skip": true,
+      "notes": "Intermediate object used internally when granting the ??? hat (gameId 92). Has no price, no acquisition source, and no wiki page — the hat entry is the player-facing item."
     }
   }
 }

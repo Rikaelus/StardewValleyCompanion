@@ -1,0 +1,6893 @@
+[
+  {
+    "type": "misc",
+    "id": "advanced-tv-remote",
+    "gameId": 867,
+    "name": "Advanced TV Remote",
+    "icon": "assets/objects/AdvancedTVRemote.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "arctic-shard",
+    "gameId": 868,
+    "name": "Arctic Shard",
+    "icon": "assets/objects/ArcticShard.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "battery-pack",
+    "gameId": 787,
+    "name": "Battery Pack",
+    "icon": "assets/objects/BatteryPack.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": -16,
+    "contextTags": [
+      "color_cyan"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-robin",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "love",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Bat",
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stingray",
+        "minPopulation": 9,
+        "chance": 0.1
+      },
+      {
+        "type": "mail",
+        "mailKey": "Pam",
+        "sender": "Pam"
+      },
+      {
+        "type": "mail",
+        "mailKey": "Kent",
+        "sender": "Kent"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "berry-basket",
+    "gameId": 790,
+    "name": "Berry Basket",
+    "icon": "assets/objects/BerryBasket.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "blue-grass-starter",
+    "gameId": "BlueGrassStarter",
+    "name": "Blue Grass Starter",
+    "icon": "assets/objects/BlueGrassStarter.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_blue",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Blue Grass Starter",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 771,
+            "amount": 25
+          },
+          {
+            "gameId": "Moss",
+            "amount": 10
+          },
+          {
+            "gameId": "MysticSyrup",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "blue-slime-egg",
+    "gameId": 413,
+    "name": "Blue Slime Egg",
+    "icon": "assets/objects/BlueSlimeEgg.png",
+    "price": 1750,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_blue",
+      "slime_egg_item",
+      "slime_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "bouquet",
+    "gameId": 458,
+    "name": "Bouquet",
+    "icon": "assets/objects/Bouquet.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_pink"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 200,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.anyDateable"
+            },
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "bug-steak",
+    "gameId": 874,
+    "name": "Bug Steak",
+    "icon": "assets/objects/BugSteak.png",
+    "price": 50,
+    "edibility": 18,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_pink"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Bug Steak",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 684,
+            "amount": 10
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "butterfly-powder",
+    "gameId": "ButterflyPowder",
+    "name": "Butterfly Powder",
+    "icon": "assets/objects/ButterflyPowder.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_blue"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-krobus",
+        "storeName": "Krobus's Shop",
+        "price": 20000
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "camping-stove",
+    "gameId": 927,
+    "name": "Camping Stove",
+    "icon": "assets/objects/CampingStove.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "cave-jelly",
+    "gameId": "CaveJelly",
+    "name": "Cave Jelly",
+    "icon": "assets/objects/CaveJelly.png",
+    "price": 180,
+    "edibility": 30,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red",
+      "fish_nonfish",
+      "counts_as_fish_catch",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "buffs": [
+      {
+        "duration": 600,
+        "isDebuff": false,
+        "effects": {
+          "LuckLevel": 1
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lava_eel",
+        "minPopulation": 10,
+        "chance": 0.04
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lava_eel",
+        "minPopulation": 8,
+        "chance": 0.04
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "cookout-kit",
+    "gameId": 926,
+    "name": "Cookout Kit",
+    "icon": "assets/objects/CookoutKit.png",
+    "price": 80,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Cookout Kit",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 15
+          },
+          {
+            "gameId": 771,
+            "amount": 10
+          },
+          {
+            "gameId": 382,
+            "amount": 3
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "crab-pot",
+    "gameId": 710,
+    "name": "Crab Pot",
+    "icon": "assets/objects/CrabPot.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-willy",
+        "storeName": "Willy's Fish Shop",
+        "price": 1500,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.fishing"
+            },
+            3
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Crab Pot",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 40
+          },
+          {
+            "gameId": 335,
+            "amount": 3
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "decorative-pot",
+    "gameId": 461,
+    "name": "Decorative Pot",
+    "icon": "assets/objects/DecorativePot.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "dragon-tooth",
+    "gameId": 852,
+    "name": "Dragon Tooth",
+    "icon": "assets/objects/DragonTooth.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_orange"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "like"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Lava Lurk",
+        "chance": 0.15
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stingray",
+        "minPopulation": 9,
+        "chance": 0.06
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "drum-block",
+    "gameId": 463,
+    "name": "Drum Block",
+    "icon": "assets/objects/DrumBlock.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Drum Block",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 10
+          },
+          {
+            "gameId": 378,
+            "amount": 2
+          },
+          {
+            "gameId": 771,
+            "amount": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "ectoplasm",
+    "gameId": 875,
+    "name": "Ectoplasm",
+    "icon": "assets/objects/Ectoplasm.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "energy-tonic",
+    "gameId": 349,
+    "name": "Energy Tonic",
+    "icon": "assets/objects/EnergyTonic.png",
+    "price": 500,
+    "edibility": 200,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red",
+      "medicine_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-sebastian",
+        "storeName": "Desert Festival Stall (Sebastian)",
+        "price": 1000,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Bat",
+        "chance": 0.05
+      },
+      {
+        "type": "mail",
+        "mailKey": "Pam",
+        "sender": "Pam"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "enricher",
+    "gameId": 913,
+    "name": "Enricher",
+    "icon": "assets/objects/Enricher.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 400,
+        "quantity": 4,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 20
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "explosive-ammo",
+    "gameId": 441,
+    "name": "Explosive Ammo",
+    "icon": "assets/objects/ExplosiveAmmo.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marlon",
+        "storeName": "Adventurer's Guild (Marlon)",
+        "price": 300,
+        "condition": {
+          "in": [
+            "Explosive Ammo",
+            {
+              "var": "player.craftingRecipes"
+            }
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Explosive Ammo",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 382,
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "fairy-dust",
+    "gameId": 872,
+    "name": "Fairy Dust",
+    "icon": "assets/objects/FairyDust.png",
+    "price": 300,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-bookseller",
+        "storeName": "Bookseller",
+        "price": 600,
+        "quantity": 8,
+        "tradeItemId": "book-of-stars",
+        "tradeItemGameId": "PurpleBook",
+        "tradeItemName": "Book Of Stars",
+        "tradeItemIcon": "assets/objects/BookOfStars.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-raccoon",
+        "storeName": "Raccoon Shop",
+        "price": 600,
+        "tradeItemId": "mystic-syrup",
+        "tradeItemGameId": "MysticSyrup",
+        "tradeItemName": "Mystic Syrup",
+        "tradeItemIcon": "assets/objects/MysticSyrup.png",
+        "tradeItemAmount": 1,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            6
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Fairy Dust",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 72,
+            "amount": 1
+          },
+          {
+            "gameId": 595,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "far-away-stone",
+    "gameId": "FarAwayStone",
+    "name": "Far Away Stone",
+    "icon": "assets/objects/FarAwayStone.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "field-snack",
+    "gameId": 403,
+    "name": "Field Snack",
+    "icon": "assets/objects/FieldSnack.png",
+    "price": 20,
+    "edibility": 18,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "like",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Field Snack",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 309,
+            "amount": 1
+          },
+          {
+            "gameId": 310,
+            "amount": 1
+          },
+          {
+            "gameId": 311,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "flute-block",
+    "gameId": 464,
+    "name": "Flute Block",
+    "icon": "assets/objects/FluteBlock.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Flute Block",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 10
+          },
+          {
+            "gameId": 378,
+            "amount": 2
+          },
+          {
+            "gameId": 771,
+            "amount": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "fossilized-leg",
+    "gameId": 823,
+    "name": "Fossilized Leg",
+    "icon": "assets/objects/FossilizedLeg.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "fossilized-ribs",
+    "gameId": 824,
+    "name": "Fossilized Ribs",
+    "icon": "assets/objects/FossilizedRibs.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "Ginger Island South",
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "fossilized-skull",
+    "gameId": 820,
+    "name": "Fossilized Skull",
+    "icon": "assets/objects/FossilizedSkull.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "fossilized-spine",
+    "gameId": 821,
+    "name": "Fossilized Spine",
+    "icon": "assets/objects/FossilizedSpine.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "fossilized-tail",
+    "gameId": 822,
+    "name": "Fossilized Tail",
+    "icon": "assets/objects/FossilizedTail.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "frozen-geode",
+    "gameId": 536,
+    "name": "Frozen Geode",
+    "icon": "assets/objects/FrozenGeode.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_cyan"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [
+      "field-research"
+    ],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-sebastian",
+        "storeName": "Desert Festival Stall (Sebastian)",
+        "price": 200,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_ice_pip",
+        "minPopulation": 9,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_ice_pip",
+        "minPopulation": 9,
+        "chance": 0.12
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "galaxy-soul",
+    "gameId": 896,
+    "name": "Galaxy Soul",
+    "icon": "assets/objects/GalaxySoul.png",
+    "price": 5000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "not_placeable"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-island-trader",
+        "storeName": "Island Trader",
+        "price": 10000,
+        "tradeItemId": "radioactive-bar",
+        "tradeItemGameId": 910,
+        "tradeItemName": "Radioactive Bar",
+        "tradeItemIcon": "assets/objects/RadioactiveBar.png",
+        "tradeItemAmount": 10,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.hardModeMonstersKilled"
+            },
+            51
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 10000,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 40
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "geode",
+    "gameId": 535,
+    "name": "Geode",
+    "icon": "assets/objects/Geode.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "chance": 0.25
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stonefish",
+        "minPopulation": 9,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stonefish",
+        "minPopulation": 9,
+        "chance": 0.12
+      },
+      {
+        "type": "garbage-can",
+        "location": "Museum"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "gold-coin",
+    "gameId": "GoldCoin",
+    "name": "Gold Coin",
+    "icon": "assets/objects/GoldCoin.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "golden-bobber",
+    "gameId": "GoldenBobber",
+    "name": "Golden Bobber",
+    "icon": "assets/objects/GoldenBobber.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "golden-coconut",
+    "gameId": 791,
+    "name": "Golden Coconut",
+    "icon": "assets/objects/GoldenCoconut.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow",
+      "geode_crusher_ignored"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-island-trader",
+        "storeName": "Island Trader",
+        "tradeItemId": "coconut",
+        "tradeItemGameId": 88,
+        "tradeItemName": "Coconut",
+        "tradeItemIcon": "assets/objects/Coconut.png",
+        "tradeItemAmount": 10,
+        "condition": {
+          "==": [
+            {
+              "var": "world.GoldenCoconutCracked"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_blue_discus",
+        "minPopulation": 9,
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island South",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island Southeast",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 0.05
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "golden-mystery-box",
+    "gameId": "GoldenMysteryBox",
+    "name": "Golden Mystery Box",
+    "icon": "assets/objects/GoldenMysteryBox.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "geode",
+      "geode_crusher_ignored",
+      "color_gold",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-raccoon",
+        "storeName": "Raccoon Shop",
+        "tradeItemId": "mystery-box",
+        "tradeItemGameId": "MysteryBox",
+        "tradeItemName": "Mystery Box",
+        "tradeItemIcon": "assets/objects/MysteryBox.png",
+        "tradeItemAmount": 3,
+        "condition": {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "world.TimesFedRaccoons"
+                },
+                6
+              ]
+            },
+            {
+              ">=": [
+                {
+                  "var": "player.mastery.foraging"
+                },
+                1
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "golden-pumpkin",
+    "gameId": 373,
+    "name": "Golden Pumpkin",
+    "icon": "assets/objects/GoldenPumpkin.png",
+    "price": 2500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gold"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "love",
+      "demetrius": "love",
+      "maru": "love",
+      "sebastian": "love",
+      "linus": "love",
+      "pierre": "love",
+      "caroline": "love",
+      "abigail": "love",
+      "alex": "love",
+      "george": "love",
+      "evelyn": "love",
+      "lewis": "love",
+      "clint": "love",
+      "penny": "love",
+      "pam": "love",
+      "emily": "love",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
+      "jodi": "love",
+      "kent": "love",
+      "sam": "love",
+      "leah": "love",
+      "shane": "love",
+      "marnie": "love",
+      "elliott": "love",
+      "gus": "love",
+      "dwarf": "love",
+      "wizard": "love",
+      "harvey": "love",
+      "sandy": "love",
+      "willy": "love",
+      "krobus": "love",
+      "leo": "love"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "golden-tag",
+    "gameId": "TroutDerbyTag",
+    "name": "Golden Tag",
+    "icon": "assets/objects/TroutDerbyTag.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "gourmet-tomato-salt",
+    "gameId": 865,
+    "name": "Gourmet Tomato Salt",
+    "icon": "assets/objects/GourmetTomatoSalt.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "grass-starter",
+    "gameId": 297,
+    "name": "Grass Starter",
+    "icon": "assets/objects/GrassStarter.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-marnie",
+        "storeName": "Desert Festival Stall (Marnie)",
+        "price": 100,
+        "quantity": 100,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-joja",
+        "storeName": "JojaMart",
+        "price": 125
+      },
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 100
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Grass Starter",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 771,
+            "amount": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "green-slime-egg",
+    "gameId": 680,
+    "name": "Green Slime Egg",
+    "icon": "assets/objects/GreenSlimeEgg.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_green",
+      "slime_egg_item",
+      "slime_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_slimejack",
+        "minPopulation": 9,
+        "chance": 0.02
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "haley-s-lost-bracelet",
+    "gameId": 742,
+    "name": "Haley's Lost Bracelet",
+    "icon": "assets/objects/HaleysLostBracelet.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "hay",
+    "gameId": 178,
+    "name": "Hay",
+    "icon": "assets/objects/Hay.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [
+      "fodder"
+    ],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie",
+        "storeName": "Marnie's Ranch",
+        "price": 50
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-marnie",
+        "storeName": "Desert Festival Stall (Marnie)",
+        "quantity": 150,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "quantity": 3,
+        "tradeItemId": "omni-geode",
+        "tradeItemGameId": 749,
+        "tradeItemName": "Omni Geode",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
+        "tradeItemAmount": 1,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "storeId": "store-stardew-valley-fair",
+        "storeName": "Stardew Valley Fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 500,
+        "quantity": 100,
+        "rotating": true,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "mail",
+        "mailKey": "Marnie",
+        "sender": "Marnie"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "horse-flute",
+    "gameId": 911,
+    "name": "Horse Flute",
+    "icon": "assets/objects/HorseFlute.png",
+    "price": 3000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "not_placeable"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 6000,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 50
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "iridium-milk",
+    "gameId": 803,
+    "name": "Iridium Milk",
+    "icon": "assets/objects/IridiumMilk.png",
+    "price": 0,
+    "edibility": -2,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_iridium"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "lost-axe",
+    "gameId": 788,
+    "name": "Lost Axe",
+    "icon": "assets/objects/LostAxe.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "lucky-purple-shorts",
+    "gameId": 789,
+    "name": "Lucky Purple Shorts",
+    "icon": "assets/objects/LuckyPurpleShorts.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "lumber",
+    "gameId": 30,
+    "name": "Lumber",
+    "icon": "assets/objects/Lumber.png",
+    "price": 2,
+    "edibility": 10,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "wood_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "magma-cap",
+    "gameId": 851,
+    "name": "Magma Cap",
+    "icon": "assets/objects/MagmaCap.png",
+    "price": 400,
+    "edibility": 70,
+    "gameCategory": -81,
+    "contextTags": [
+      "color_dark_pink",
+      "edible_mushroom"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "False Magma Cap",
+        "chance": 0.99
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_stingray",
+        "minPopulation": 4,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "magma-geode",
+    "gameId": 537,
+    "name": "Magma Geode",
+    "icon": "assets/objects/MagmaGeode.png",
+    "price": 150,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lava_eel",
+        "minPopulation": 10,
+        "chance": 0.033
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lava_eel",
+        "minPopulation": 9,
+        "chance": 0.02
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "mermaid-s-pendant",
+    "gameId": 460,
+    "name": "Mermaid's Pendant",
+    "icon": "assets/objects/MermaidsPendant.png",
+    "price": 2500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "monster-musk",
+    "gameId": 879,
+    "name": "Monster Musk",
+    "icon": "assets/objects/MonsterMusk.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_purple",
+      "not_placeable",
+      "potion_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "love",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-bookseller",
+        "storeName": "Bookseller",
+        "price": 100,
+        "tradeItemId": "combat-quarterly",
+        "tradeItemGameId": "SkillBook_4",
+        "tradeItemName": "Combat Quarterly",
+        "tradeItemIcon": "assets/objects/CombatQuarterly.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Monster Musk",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 767,
+            "amount": 30
+          },
+          {
+            "gameId": 766,
+            "amount": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "movie-ticket",
+    "gameId": 809,
+    "name": "Movie Ticket",
+    "icon": "assets/objects/MovieTicket.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "garbage-can",
+        "location": "JojaMart"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "mummified-bat",
+    "gameId": 827,
+    "name": "Mummified Bat",
+    "icon": "assets/objects/MummifiedBat.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "mummified-frog",
+    "gameId": 828,
+    "name": "Mummified Frog",
+    "icon": "assets/objects/MummifiedFrog.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "muscle-remedy",
+    "gameId": 351,
+    "name": "Muscle Remedy",
+    "icon": "assets/objects/MuscleRemedy.png",
+    "price": 500,
+    "edibility": 20,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_dark_yellow",
+      "medicine_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-alex",
+        "storeName": "Desert Festival Stall (Alex)",
+        "price": 1000,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "mystery-box",
+    "gameId": "MysteryBox",
+    "name": "Mystery Box",
+    "icon": "assets/objects/MysteryBox.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "geode",
+      "geode_crusher_ignored",
+      "color_dark_cyan",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-bookseller",
+        "storeName": "Bookseller",
+        "quantity": 7,
+        "tradeItemId": "book-of-mysteries",
+        "tradeItemGameId": "Book_Mystery",
+        "tradeItemName": "Book of Mysteries",
+        "tradeItemIcon": "assets/objects/BookOfMysteries.png",
+        "tradeItemAmount": 1,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.Book_Mystery"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-egg-shop",
+        "storeName": "Desert Festival Egg Shop",
+        "quantity": 10,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20,
+        "stockLimit": 1
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "omni-geode",
+    "gameId": 749,
+    "name": "Omni Geode",
+    "icon": "assets/objects/OmniGeode.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "love",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "love",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 500,
+        "quantity": 3,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "storeId": "store-krobus",
+        "storeName": "Krobus's Shop",
+        "price": 300,
+        "days": [
+          "Tuesday"
+        ],
+        "stock": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Carbon Ghost",
+        "chance": 0.99
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Putrid Ghost",
+        "chance": 0.99
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_octopus",
+        "minPopulation": 9,
+        "chance": 0.066
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_octopus",
+        "minPopulation": 9,
+        "chance": 0.01
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_octopus",
+        "minPopulation": 9,
+        "chance": 0.1
+      },
+      {
+        "type": "garbage-can",
+        "location": "Museum"
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island South",
+        "chance": 1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island Southeast",
+        "chance": 1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 1
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "ornate-necklace",
+    "gameId": 191,
+    "name": "Ornate Necklace",
+    "icon": "assets/objects/OrnateNecklace.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "pearl",
+    "gameId": 797,
+    "name": "Pearl",
+    "icon": "assets/objects/Pearl.png",
+    "price": 2500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_white"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "love",
+      "demetrius": "love",
+      "maru": "love",
+      "sebastian": "love",
+      "linus": "love",
+      "pierre": "love",
+      "caroline": "love",
+      "abigail": "love",
+      "alex": "love",
+      "george": "love",
+      "evelyn": "love",
+      "lewis": "love",
+      "clint": "love",
+      "penny": "love",
+      "pam": "love",
+      "emily": "love",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
+      "jodi": "love",
+      "kent": "love",
+      "sam": "love",
+      "leah": "love",
+      "shane": "love",
+      "marnie": "love",
+      "elliott": "love",
+      "gus": "love",
+      "dwarf": "love",
+      "wizard": "love",
+      "harvey": "love",
+      "sandy": "love",
+      "willy": "love",
+      "krobus": "love",
+      "leo": "love"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_blobfish",
+        "minPopulation": 9,
+        "chance": 0.02
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "pet-license",
+    "gameId": "PetLicense",
+    "name": "Pet License",
+    "icon": "assets/objects/PetLicense.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "pierre-s-missing-stocklist",
+    "gameId": 897,
+    "name": "Pierre's Missing Stocklist",
+    "icon": "assets/objects/PierresMissingStocklist.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 50,
+        "condition": {
+          "!": {
+            "in": [
+              "gotMissingStocklist",
+              {
+                "var": "player.mail"
+              }
+            ]
+          }
+        },
+        "stock": 1,
+        "stockLimit": 2
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "pirate-s-locket",
+    "gameId": 870,
+    "name": "Pirate's Locket",
+    "icon": "assets/objects/PiratesLocket.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "pressure-nozzle",
+    "gameId": 915,
+    "name": "Pressure Nozzle",
+    "icon": "assets/objects/PressureNozzle.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 400,
+        "quantity": 4,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 20
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "prismatic-jelly",
+    "gameId": 876,
+    "name": "Prismatic Jelly",
+    "icon": "assets/objects/PrismaticJelly.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "prize-ticket",
+    "gameId": "PrizeTicket",
+    "name": "Prize Ticket",
+    "icon": "assets/objects/PrizeTicket.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-stardew-valley-fair",
+        "storeName": "Stardew Valley Fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 1000,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "purple-slime-egg",
+    "gameId": 439,
+    "name": "Purple Slime Egg",
+    "icon": "assets/objects/PurpleSlimeEgg.png",
+    "price": 5000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_purple",
+      "slime_egg_item",
+      "slime_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "qi-gem",
+    "gameId": 858,
+    "name": "Qi Gem",
+    "icon": "assets/objects/QiGem.png",
+    "price": 250,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 500,
+        "quantity": 2,
+        "tradeItemId": "golden-walnut",
+        "tradeItemGameId": 73,
+        "tradeItemName": "Golden Walnut",
+        "tradeItemIcon": "assets/objects/GoldenWalnut.png",
+        "tradeItemAmount": 1,
+        "condition": {
+          "and": [
+            {
+              "in": [
+                "73",
+                {
+                  "var": "player.items"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_FirstParrot",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_Turtle",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_UpgradeBridge",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_UpgradeHouse",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_UpgradeParrotPlatform",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_Resort",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_UpgradeTrader",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_W_Obelisk",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_UpgradeHouse_Mailbox",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_VolcanoBridge",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            },
+            {
+              "in": [
+                "Island_VolcanoShortcutOut",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            }
+          ]
+        },
+        "conditionItemNames": {
+          "73": "Golden Walnut"
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "qi-seasoning",
+    "gameId": 917,
+    "name": "Qi Seasoning",
+    "icon": "assets/objects/QiSeasoning.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 400,
+        "quantity": 10,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 10
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "rain-totem",
+    "gameId": 681,
+    "name": "Rain Totem",
+    "icon": "assets/objects/RainTotem.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Rain Totem",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 1
+          },
+          {
+            "gameId": 432,
+            "amount": 1
+          },
+          {
+            "gameId": 726,
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 9
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "red-slime-egg",
+    "gameId": 437,
+    "name": "Red Slime Egg",
+    "icon": "assets/objects/RedSlimeEgg.png",
+    "price": 2500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red",
+      "slime_egg_item",
+      "slime_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "rice",
+    "gameId": 423,
+    "name": "Rice",
+    "icon": "assets/objects/Rice.png",
+    "price": 100,
+    "edibility": 5,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_white"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-joja",
+        "storeName": "JojaMart",
+        "price": 250
+      },
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "river-jelly",
+    "gameId": "RiverJelly",
+    "name": "River Jelly",
+    "icon": "assets/objects/RiverJelly.png",
+    "price": 125,
+    "edibility": 30,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_green",
+      "fish_nonfish",
+      "counts_as_fish_catch",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "buffs": [
+      {
+        "duration": 600,
+        "isDebuff": false,
+        "effects": {
+          "MaxStamina": 30
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_carp",
+        "minPopulation": 9,
+        "chance": 0.03
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_carp",
+        "minPopulation": 7,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "sea-jelly",
+    "gameId": "SeaJelly",
+    "name": "Sea Jelly",
+    "icon": "assets/objects/SeaJelly.png",
+    "price": 200,
+    "edibility": 35,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_cyan",
+      "fish_nonfish",
+      "counts_as_fish_catch",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "buffs": [
+      {
+        "duration": 600,
+        "isDebuff": false,
+        "effects": {
+          "FishingLevel": 1
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_flounder",
+        "minPopulation": 9,
+        "chance": 0.03
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_flounder",
+        "minPopulation": 7,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "slime-crate",
+    "gameId": 925,
+    "name": "Slime Crate",
+    "icon": "assets/objects/SlimeCrate.png",
+    "price": 3000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "snake-skull",
+    "gameId": 825,
+    "name": "Snake Skull",
+    "icon": "assets/objects/SnakeSkull.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 0.1
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "snake-vertebrae",
+    "gameId": 826,
+    "name": "Snake Vertebrae",
+    "icon": "assets/objects/SnakeVertebrae.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "squid-ink",
+    "gameId": 814,
+    "name": "Squid Ink",
+    "icon": "assets/objects/SquidInk.png",
+    "price": 110,
+    "edibility": -300,
+    "gameCategory": -23,
+    "contextTags": [
+      "color_black"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "elliott": "love"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-elliott",
+        "storeName": "Desert Festival Stall (Elliott)",
+        "price": 220,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "chance": 0.2
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "chance": 0.2
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_squid",
+        "minPopulation": 7,
+        "chance": 1
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_squid",
+        "minPopulation": 5,
+        "chance": 0.6
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_squid",
+        "minPopulation": 3,
+        "chance": 0.45
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_squid",
+        "minPopulation": 1,
+        "chance": 0.25
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_squid",
+        "minPopulation": 10,
+        "chance": 0.25
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_squid",
+        "minPopulation": 7,
+        "chance": 0.8
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_squid",
+        "minPopulation": 5,
+        "chance": 0.6
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_squid",
+        "minPopulation": 3,
+        "chance": 0.45
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_midnight_squid",
+        "minPopulation": 1,
+        "chance": 0.2
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "stardew-valley-rose",
+    "gameId": 866,
+    "name": "Stardew Valley Rose",
+    "icon": "assets/objects/StardewValleyRose.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "stardrop",
+    "gameId": 434,
+    "name": "Stardrop",
+    "icon": "assets/objects/Stardrop.png",
+    "price": 7777,
+    "edibility": 100,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-stardew-valley-fair",
+        "storeName": "Stardew Valley Fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 2000,
+        "condition": {
+          "!": {
+            "in": [
+              "CF_Fair",
+              {
+                "var": "player.mail"
+              }
+            ]
+          }
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-krobus",
+        "storeName": "Krobus's Shop",
+        "price": 20000,
+        "condition": {
+          "!": {
+            "in": [
+              "CF_Sewer",
+              {
+                "var": "player.mail"
+              }
+            ]
+          }
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "mail",
+        "mailKey": "CF_Fish",
+        "sender": "Willy",
+        "condition": "Complete the Fish Tank bundles in the Community Center"
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "stardrop-tea",
+    "gameId": "StardropTea",
+    "name": "Stardrop Tea",
+    "icon": "assets/objects/StardropTea.png",
+    "price": 77,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_iridium"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "sugar",
+    "gameId": 245,
+    "name": "Sugar",
+    "icon": "assets/objects/Sugar.png",
+    "price": 50,
+    "edibility": 10,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_white",
+      "food_sweet"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "dislike",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-joja",
+        "storeName": "JojaMart",
+        "price": 125
+      },
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 100
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "supplycrate-922",
+    "gameId": 922,
+    "name": "SupplyCrate",
+    "icon": "assets/objects/SupplyCrate.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "supplycrate-923",
+    "gameId": 923,
+    "name": "SupplyCrate",
+    "icon": "assets/objects/SupplyCrate.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "supplycrate-924",
+    "gameId": 924,
+    "name": "SupplyCrate",
+    "icon": "assets/objects/SupplyCrate.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "tea-leaves",
+    "gameId": 815,
+    "name": "Tea Leaves",
+    "icon": "assets/objects/TeaLeaves.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": -75,
+    "contextTags": [
+      "color_green"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "dislike",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "dislike",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "tent-kit",
+    "gameId": "TentKit",
+    "name": "Tent Kit",
+    "icon": "assets/objects/TentKit.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Tent Kit",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": 771,
+            "amount": 25
+          },
+          {
+            "gameId": 428,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "tiger-slime-egg",
+    "gameId": 857,
+    "name": "Tiger Slime Egg",
+    "icon": "assets/objects/TigerSlimeEgg.png",
+    "price": 8000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_orange",
+      "slime_egg_item",
+      "slime_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "item_lionfish",
+        "minPopulation": 9,
+        "chance": 0.02
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "torch",
+    "gameId": 93,
+    "name": "Torch",
+    "icon": "assets/objects/Torch.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow",
+      "light_source",
+      "torch_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Torch",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          },
+          {
+            "gameId": 92,
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "treasure-chest",
+    "gameId": 166,
+    "name": "Treasure Chest",
+    "icon": "assets/objects/TreasureChest.png",
+    "price": 5000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "dislike",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "chance": 0.001
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_semi_rare",
+        "minPopulation": 9,
+        "chance": 0.003
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "treasure-totem",
+    "gameId": "TreasureTotem",
+    "name": "Treasure Totem",
+    "icon": "assets/objects/TreasureTotem.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Treasure Totem",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 5
+          },
+          {
+            "gameId": "MysticSyrup",
+            "amount": 1
+          },
+          {
+            "gameId": "Moss",
+            "amount": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "void-ghost-pendant",
+    "gameId": 808,
+    "name": "Void Ghost Pendant",
+    "icon": "assets/objects/VoidGhostPendant.png",
+    "price": 4500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "propose_roommate_krobus"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "price": 9000,
+        "tradeItemId": "void-essence",
+        "tradeItemGameId": 769,
+        "tradeItemName": "Void Essence",
+        "tradeItemIcon": "assets/objects/VoidEssence.png",
+        "tradeItemAmount": 200,
+        "condition": {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "player.hearts.krobus"
+                },
+                10
+              ]
+            },
+            {
+              ">=": [
+                {
+                  "var": "player.houseUpgrade"
+                },
+                1
+              ]
+            },
+            {
+              "!": {
+                "in": [
+                  "engaged",
+                  {
+                    "var": "player.relationships"
+                  }
+                ]
+              }
+            },
+            {
+              "!": {
+                "in": [
+                  "808",
+                  {
+                    "var": "player.items"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "conditionItemNames": {
+          "808": "Void Ghost Pendant"
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "war-memento",
+    "gameId": 864,
+    "name": "War Memento",
+    "icon": "assets/objects/WarMemento.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-beach",
+    "gameId": 690,
+    "name": "Warp Totem: Beach",
+    "icon": "assets/objects/WarpTotemBeach.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 9,
+        "chance": 0.075
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Warp Totem: Beach",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 1
+          },
+          {
+            "gameId": 393,
+            "amount": 2
+          },
+          {
+            "gameId": 771,
+            "amount": 10
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 6
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-desert",
+    "gameId": 261,
+    "name": "Warp Totem: Desert",
+    "icon": "assets/objects/WarpTotemDesert.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "price": 40,
+        "tradeItemId": "omni-geode",
+        "tradeItemGameId": 749,
+        "tradeItemName": "Omni Geode",
+        "tradeItemIcon": "assets/objects/OmniGeode.png",
+        "tradeItemAmount": 3
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Warp Totem: Desert",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 2
+          },
+          {
+            "gameId": 88,
+            "amount": 1
+          },
+          {
+            "gameId": 386,
+            "amount": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-farm",
+    "gameId": 688,
+    "name": "Warp Totem: Farm",
+    "icon": "assets/objects/WarpTotemFarm.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-island-trader",
+        "storeName": "Island Trader",
+        "price": 40,
+        "tradeItemId": "taro-root",
+        "tradeItemGameId": 830,
+        "tradeItemName": "Taro Root",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_blobfish",
+        "minPopulation": 9,
+        "chance": 0.02
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Warp Totem: Farm",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 1
+          },
+          {
+            "gameId": 340,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 20
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-island",
+    "gameId": 886,
+    "name": "Warp Totem: Island",
+    "icon": "assets/objects/WarpTotemIsland.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Warp Totem: Island",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 5
+          },
+          {
+            "gameId": 852,
+            "amount": 1
+          },
+          {
+            "gameId": 829,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-mountains",
+    "gameId": 689,
+    "name": "Warp Totem: Mountains",
+    "icon": "assets/objects/WarpTotemMountains.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 9,
+        "chance": 0.075
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Warp Totem: Mountains",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 1
+          },
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 390,
+            "amount": 25
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 7
+        }
+      }
+    ]
+  },
+  {
+    "type": "misc",
+    "id": "warp-totem-qi-s-arena",
+    "gameId": 892,
+    "name": "Warp Totem: Qi's Arena",
+    "icon": "assets/objects/WarpTotemQisArena.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "not_placeable",
+      "totem_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "wilted-bouquet",
+    "gameId": 277,
+    "name": "Wilted Bouquet",
+    "icon": "assets/objects/WiltedBouquet.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "misc",
+    "id": "wriggling-worm",
+    "gameId": 869,
+    "name": "Wriggling Worm",
+    "icon": "assets/objects/WrigglingWorm.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  }
+]

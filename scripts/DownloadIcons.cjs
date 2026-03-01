@@ -1,18 +1,20 @@
 #!/usr/bin/env node
 
 /**
- * Download item icons from Stardew Valley Wiki
- * All icons go into public/assets/objects/
+ * Download item icons from Stardew Valley Wiki.
+ *
+ * Source of truth: public/data/entities.json
+ * Every item with an `icon` field that is missing from disk gets downloaded.
+ * No hardcoded item lists — adding new entity types automatically picks them up.
  */
 
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const OBJECTS_DIR = path.join(__dirname, '../public/assets/objects');
-const PROCESSED_DIR = path.join(__dirname, '../data/processed/items');
-
-fs.mkdirSync(OBJECTS_DIR, { recursive: true });
+const PUBLIC_DIR = path.join(__dirname, '../public');
+const ENTITIES_PATH = path.join(PUBLIC_DIR, 'data/entities.json');
+const OVERRIDES_PATH = path.join(__dirname, '../data/rules/icon-overrides.json');
 
 function downloadFile(url, outputPath) {
   return new Promise((resolve, reject) => {
@@ -30,125 +32,147 @@ function downloadFile(url, outputPath) {
   });
 }
 
-function getWikiImageUrl(wikiName) {
+// Encode a wiki name to a URL-safe page/file name.
+// Spaces → underscores; special chars percent-encoded except for chars wiki allows unencoded.
+function toWikiPath(name) {
+  return name.split('').map(c => {
+    if (/[A-Za-z0-9_.\-]/.test(c)) return c;
+    if (c === ' ') return '_';
+    if (c === "'") return '%27';
+    if (c === '(') return '%28';
+    if (c === ')') return '%29';
+    if (c === ',') return '%2C';
+    return encodeURIComponent(c);
+  }).join('');
+}
+
+// Fetch the direct image URL by hitting the File: page, which redirects to the actual image.
+// This works for any image name regardless of which article it appears on.
+function getWikiImageUrlDirect(imageName) {
   return new Promise((resolve, reject) => {
-    const url = `https://stardewvalleywiki.com/${wikiName.replace(/\s+/g, '_').replace(/'/g, '%27')}`;
+    const filePath = toWikiPath(imageName);
+    const url = `https://stardewvalleywiki.com/File:${filePath}.png`;
     https.get(url, (response) => {
       if (response.statusCode !== 200) {
-        reject(new Error(`Wiki page not found: ${response.statusCode}`));
+        reject(new Error(`File page not found: ${response.statusCode}`));
         return;
       }
       let data = '';
       response.on('data', (chunk) => { data += chunk; });
       response.on('end', () => {
-        const safeName = wikiName.replace(/\s+/g, '_').replace(/'/g, '%27');
-        // Escape special regex characters in the item name before building pattern
-        const escapedName = safeName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const imgPattern = new RegExp(`/mediawiki/images/[0-9a-f]/[0-9a-f]{2}/${escapedName}\\.png`, 'i');
+        // The File: page contains a link to the actual image in /mediawiki/images/
+        // The image URL may percent-encode special chars (e.g. ( → %28), so match loosely.
+        const imgPattern = /\/mediawiki\/images\/[0-9a-f]\/[0-9a-f]{2}\/[^\s"]+\.png/i;
         const match = data.match(imgPattern);
         if (match) {
           resolve(`https://stardewvalleywiki.com${match[0]}`);
         } else {
-          reject(new Error('Image URL not found in wiki page'));
+          reject(new Error('Image URL not found on File page'));
         }
       });
     }).on('error', reject);
   });
 }
 
-async function downloadIcons(label, items) {
-  console.log(`\nDownloading ${label} (${items.length} items)...`);
-  let success = 0, skipped = 0, failed = 0;
-
-  for (const item of items) {
-    const wikiName = item.wikiName || item.fruitName || item.name;
-    const fileName = wikiName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, ' ').trim()
-      .split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('') + '.png';
-    const outputPath = path.join(OBJECTS_DIR, fileName);
-
-    if (fs.existsSync(outputPath)) {
-      skipped++;
-      continue;
-    }
-
-    try {
-      const imageUrl = await getWikiImageUrl(wikiName);
-      await downloadFile(imageUrl, outputPath);
-      success++;
-      process.stdout.write('.');
-    } catch (error) {
-      failed++;
-      process.stdout.write('x');
-      console.error(`\n  Failed: ${wikiName} — ${error.message}`);
-    }
-
-    await new Promise(resolve => setTimeout(resolve, 200));
-  }
-
-  console.log(`\n  ✓ Downloaded: ${success}  ⊘ Skipped: ${skipped}${failed ? `  ✗ Failed: ${failed}` : ''}`);
+function getWikiImageUrl(wikiName) {
+  return getWikiImageUrlDirect(wikiName);
 }
 
-function loadItems(file) {
-  const p = path.join(PROCESSED_DIR, file);
-  if (!fs.existsSync(p)) return [];
-  return JSON.parse(fs.readFileSync(p, 'utf8'));
+// Derive the wiki image name for an item.
+// Priority: icon-overrides.json > item.name > PascalCase-split of icon filename.
+function wikiNameForItem(item, overrides) {
+  if (overrides[item.id]) return overrides[item.id];
+  if (item.name) return item.name;
+  // Fallback: split PascalCase icon filename
+  const filename = path.basename(item.icon, '.png');
+  return filename.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
 }
 
 async function main() {
-  console.log('📥 Downloading icons to assets/objects/ ...');
-
-  // Items loaded from processed data files
-  const processedTypes = [
-    { label: 'seeds',        file: 'seeds.json' },
-    { label: 'forage',       file: 'forage.json' },
-    { label: 'crops',        file: 'crops.json' },
-    { label: 'fish',         file: 'fish.json' },
-    { label: 'fruit-trees',  file: 'fruit-trees.json', nameKey: 'fruitName' },
-    { label: 'tree-fruits',  file: 'tree-fruits.json' },
-    { label: 'minerals',     file: 'minerals.json' },
-    { label: 'metal-bars',   file: 'metal-bars.json' },
-    { label: 'monster-loot', file: 'monster-loot.json' },
-    { label: 'resources',    file: 'resources.json' },
-    { label: 'artisan',      file: 'artisan.json' },
-    { label: 'big-craftables', file: 'big-craftables.json' },
-    { label: 'furniture',    file: 'furniture.json' },
-    { label: 'hats',         file: 'hats.json' },
-  ];
-
-  for (const { label, file, nameKey } of processedTypes) {
-    const items = loadItems(file);
-    if (!items.length) { console.log(`⊘ Skipping ${label}: not found`); continue; }
-    // Some types use a different field for the wiki name
-    const mapped = nameKey ? items.map(i => ({ ...i, wikiName: i[nameKey] || i.name })) : items;
-    await downloadIcons(label, mapped);
+  if (!fs.existsSync(ENTITIES_PATH)) {
+    console.error('entities.json not found — run CompileData.cjs first');
+    process.exit(1);
   }
 
-  // Currency/trade items not covered by any processed type
-  const currencyItems = [
-    { name: 'Calico Egg' },
-    { name: 'Qi Gem' },
-    { name: 'Cinder Shard' },
-    { name: 'Omni Geode' },
-    { name: 'Coal' },
-    { name: 'Bone Fragment' },
-    { name: 'Moss' },
-    { name: 'Void Essence' },
-    { name: 'Bat Wing' },
-    { name: 'Mixed Seeds' },
-    { name: 'Fiber' },
-    { name: 'Sap' },
-    { name: 'Cave Carrot' },
-    { name: 'Maple Seed' },
-    { name: 'Pine Cone' },
-    { name: 'Pearl' },
-    { name: 'Golden Walnut' },
-    { name: 'Mystery Box' },
-    { name: 'Golden Mystery Box' },
-    { name: 'Mystic Syrup' },
-  ];
-  await downloadIcons('currencies', currencyItems);
+  const entities = JSON.parse(fs.readFileSync(ENTITIES_PATH, 'utf8'));
+  const allItems = entities.items || [];
+  const overrides = fs.existsSync(OVERRIDES_PATH)
+    ? JSON.parse(fs.readFileSync(OVERRIDES_PATH, 'utf8')).overrides || {}
+    : {};
 
-  console.log('\n✅ Icon download complete!');
+  // Collect items that need icons downloaded
+  const toDownload = [];
+  let alreadyPresent = 0;
+  let noIconField = 0;
+
+  for (const item of allItems) {
+    if (!item.icon) {
+      noIconField++;
+      continue;
+    }
+    const fullPath = path.join(PUBLIC_DIR, item.icon);
+    if (fs.existsSync(fullPath)) {
+      alreadyPresent++;
+    } else {
+      toDownload.push(item);
+    }
+  }
+
+  console.log(`📦 entities.json: ${allItems.length} items`);
+  console.log(`  ✓ Already on disk: ${alreadyPresent}`);
+  console.log(`  ⊘ No icon field:   ${noIconField}`);
+  console.log(`  ↓ Need download:   ${toDownload.length}\n`);
+
+  if (toDownload.length === 0) {
+    console.log('✅ All icons already downloaded.');
+    return;
+  }
+
+  // Group by output directory so we can log progress per directory
+  const byDir = {};
+  for (const item of toDownload) {
+    const dir = path.dirname(item.icon); // e.g. "assets/objects" or "assets/buffs"
+    if (!byDir[dir]) byDir[dir] = [];
+    byDir[dir].push(item);
+  }
+
+  let totalSuccess = 0, totalFailed = 0;
+  const failed = [];
+
+  for (const [dir, items] of Object.entries(byDir)) {
+    console.log(`📥 ${dir}/ (${items.length} missing)...`);
+    fs.mkdirSync(path.join(PUBLIC_DIR, dir), { recursive: true });
+
+    let success = 0;
+    for (const item of items) {
+      const wikiName = wikiNameForItem(item, overrides);
+      const outputPath = path.join(PUBLIC_DIR, item.icon);
+
+      try {
+        const imageUrl = await getWikiImageUrl(wikiName);
+        await downloadFile(imageUrl, outputPath);
+        success++;
+        totalSuccess++;
+        process.stdout.write('.');
+      } catch (err) {
+        totalFailed++;
+        failed.push({ item: item.id, wikiName, error: err.message });
+        process.stdout.write('x');
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 200));
+    }
+    console.log(`\n  ✓ ${success}/${items.length}`);
+  }
+
+  console.log(`\n✅ Done. Downloaded: ${totalSuccess}  Failed: ${totalFailed}`);
+
+  if (failed.length > 0) {
+    console.log('\n⚠️  Failed items (may need manual download or wiki name override):');
+    for (const { item, wikiName, error } of failed) {
+      console.log(`  ${item} (wiki: "${wikiName}") — ${error}`);
+    }
+  }
 }
 
 main().catch(console.error);

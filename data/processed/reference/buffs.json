@@ -1,0 +1,383 @@
+[
+  {
+    "id": "buff-full",
+    "gameId": "6",
+    "name": "Full",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 180,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-quenched",
+    "gameId": "7",
+    "name": "Quenched",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 60,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-burnt",
+    "gameId": "12",
+    "name": "Burnt",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 6,
+    "icon": "assets/buffs/Burnt.png",
+    "effects": {
+      "Speed": -2,
+      "Defense": -3,
+      "Attack": -3
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-slimed",
+    "gameId": "13",
+    "name": "Slimed",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 3,
+    "icon": "assets/buffs/Slimed.png",
+    "effects": {
+      "Speed": -4
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-jinxed",
+    "gameId": "14",
+    "name": "Jinxed",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 8,
+    "icon": "assets/buffs/Jinxed.png",
+    "effects": {
+      "Defense": -8
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-tipsy",
+    "gameId": "17",
+    "name": "Tipsy",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 30,
+    "icon": "assets/buffs/Tipsy.png",
+    "effects": {
+      "Speed": -1
+    },
+    "grantedBy": [
+      "beer",
+      "pale-ale",
+      "mead",
+      "wine"
+    ]
+  },
+  {
+    "id": "buff-spooked",
+    "gameId": "18",
+    "name": "Spooked",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 8,
+    "icon": "assets/buffs/Attack.png",
+    "effects": {
+      "Attack": -8
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-frozen",
+    "gameId": "19",
+    "name": "Frozen",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 2,
+    "icon": "assets/buffs/Frozen.png",
+    "effects": {
+      "Speed": -8
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-warrior-energy",
+    "gameId": "20",
+    "name": "Warrior Energy",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 5,
+    "icon": "assets/buffs/WarriorEnergy.png",
+    "effects": {
+      "Attack": 10
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-yoba-s-blessing",
+    "gameId": "21",
+    "name": "Yoba's Blessing",
+    "description": "Invincible",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 5,
+    "icon": "assets/buffs/YobasBlessing.png",
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-adrenaline-rush",
+    "gameId": "22",
+    "name": "Adrenaline Rush",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 3,
+    "icon": "assets/buffs/AdrenalineRush.png",
+    "effects": {
+      "Speed": 2
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-oil-of-garlic",
+    "gameId": "23",
+    "name": "Oil of Garlic",
+    "description": "Your skin exudes a pungent aroma",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 600,
+    "icon": "assets/buffs/OilOfGarlic.png",
+    "effects": null,
+    "grantedBy": [
+      "oil-of-garlic"
+    ]
+  },
+  {
+    "id": "buff-monster-musk",
+    "gameId": "24",
+    "name": "Monster Musk",
+    "description": "Your scent makes you irresistible to monsters",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 600,
+    "icon": "assets/buffs/MonsterMusk.png",
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-nauseated",
+    "gameId": "25",
+    "name": "Nauseated",
+    "description": "Urgh... You're too sick to eat anything",
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 120,
+    "icon": "assets/buffs/Nauseated.png",
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-darkness",
+    "gameId": "26",
+    "name": "Darkness",
+    "description": "Darkness clouds your vision, making it difficult to see",
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 5,
+    "icon": "assets/buffs/Darkness.png",
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-weakness",
+    "gameId": "27",
+    "name": "Weakness",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": true,
+    "duration": 10,
+    "icon": "assets/buffs/Weakness.png",
+    "effects": {
+      "Attack": -20
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-squid-ink-ravioli",
+    "gameId": "28",
+    "name": "Squid Ink Ravioli",
+    "description": "You are immune to debuffs.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 180,
+    "icon": "assets/buffs/SquidInkRavioli.png",
+    "effects": null,
+    "grantedBy": [
+      "squid-ink-ravioli"
+    ]
+  },
+  {
+    "id": "buff-statue-of-the-dwarf-king-0",
+    "gameId": "dwarfStatue_0",
+    "name": "Statue Of The Dwarf King",
+    "description": "+1 ore from ore nodes.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-statue-of-the-dwarf-king-1",
+    "gameId": "dwarfStatue_1",
+    "name": "Statue Of The Dwarf King",
+    "description": "Greater chance to find ladders and shafts.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-statue-of-the-dwarf-king-2",
+    "gameId": "dwarfStatue_2",
+    "name": "Statue Of The Dwarf King",
+    "description": "Greater chance to find coal.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-statue-of-the-dwarf-king-3",
+    "gameId": "dwarfStatue_3",
+    "name": "Statue Of The Dwarf King",
+    "description": "Bombs cannot damage you.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-statue-of-the-dwarf-king-4",
+    "gameId": "dwarfStatue_4",
+    "name": "Statue Of The Dwarf King",
+    "description": "Greater chance to find geodes.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-speed",
+    "gameId": "statue_of_blessings_0",
+    "name": "Blessing Of Speed",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": {
+      "Speed": 0.5
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-luck",
+    "gameId": "statue_of_blessings_1",
+    "name": "Blessing Of Luck",
+    "description": null,
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": {
+      "LuckLevel": 1
+    },
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-energy",
+    "gameId": "statue_of_blessings_2",
+    "name": "Blessing Of Energy",
+    "description": "You have infinite energy.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-waters",
+    "gameId": "statue_of_blessings_3",
+    "name": "Blessing Of Waters",
+    "description": "The first three fish you hook today will be much easier. ({0} left)",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-friendship",
+    "gameId": "statue_of_blessings_4",
+    "name": "Blessing Of Friendship",
+    "description": "You gain extra friendship from speaking to people.",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-fangs",
+    "gameId": "statue_of_blessings_5",
+    "name": "Blessing Of Fangs",
+    "description": "+10% critical strike chance",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  },
+  {
+    "id": "buff-blessing-of-the-butterfly",
+    "gameId": "statue_of_blessings_6",
+    "name": "Blessing Of The Butterfly",
+    "description": "A prismatic butterfly is waiting for you somewhere in the valley...",
+    "entityType": "buff",
+    "isDebuff": false,
+    "duration": 0,
+    "icon": null,
+    "effects": null,
+    "grantedBy": []
+  }
+]

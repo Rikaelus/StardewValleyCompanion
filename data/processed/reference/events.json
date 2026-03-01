@@ -1,0 +1,5376 @@
+[
+  {
+    "id": "event-0",
+    "gameId": 0,
+    "eventKey": "0",
+    "name": "After Donating an Artifact, Gunther Asks the Farmer to Donate Any Others They Fi",
+    "description": "After donating an artifact, Gunther asks the farmer to donate any others they find.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "blockingMail": [
+      "somethingWasDonated"
+    ],
+    "locations": [
+      "Museum"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-1",
+    "gameId": 1,
+    "eventKey": "1",
+    "name": "Abigail's 2 Heart Event",
+    "description": "Abigail's 2 heart event: she asks the farmer to play Journey of the Prairie King with her.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Sat"
+    ],
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2",
+    "gameId": 2,
+    "eventKey": "2",
+    "name": "Abigail's 4 Heart Event",
+    "description": "Abigail's 4 heart event: she plays her flute in the rain.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "rainy"
+    ],
+    "timeWindows": [
+      {
+        "start": 1200,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3",
+    "gameId": 3,
+    "eventKey": "3",
+    "name": "Abigail's 8 Heart Event",
+    "description": "Abigail's 8 heart event: she brings out a spirit board, which starts to spell something.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2200
+      }
+    ],
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-4",
+    "gameId": 4,
+    "eventKey": "4",
+    "name": "Abigail's 6 Heart Event",
+    "description": "Abigail's 6 heart event: she argues with Pierre about wanting to be an adventurer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2100,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-5",
+    "gameId": 5,
+    "eventKey": "5",
+    "name": "Follow-up to Abigail's 8 Heart Event",
+    "description": "Follow-up to Abigail's 8 heart event: she apologises for what happened during her 8 heart event.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": null,
+    "heartLevel": 8,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 800
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-6",
+    "gameId": 6,
+    "eventKey": "6",
+    "name": "Maru's 2 Heart Event",
+    "description": "Maru's 2 heart event: she helps Demetrius with testing some samples.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-7",
+    "gameId": 7,
+    "eventKey": "7",
+    "name": "Maru's 4 Heart Event",
+    "description": "Maru's 4 heart event: she accidentally breaks a medical sample.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Clinic"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-8",
+    "gameId": 8,
+    "eventKey": "8",
+    "name": "Maru's 6 Heart Event",
+    "description": "Maru's 6 heart event: she goes stargazing with her telescope.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2100,
+        "end": 2340
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-9",
+    "gameId": 9,
+    "eventKey": "9",
+    "name": "Maru's 8 Heart Event",
+    "description": "Maru's 8 heart event: she demonstrates her latest project and accidentally zaps the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-10",
+    "gameId": 10,
+    "eventKey": "10",
+    "name": "Maru's 10 Heart Event",
+    "description": "Maru's 10 heart event: she finishes her work on MarILDA, who leaves for space.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-11",
+    "gameId": 11,
+    "eventKey": "11",
+    "name": "Haley's 2 Heart Event",
+    "description": "Haley's 2 heart event: she and Emily argue over cleaning under the couch cushions.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Emily",
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-12",
+    "gameId": 12,
+    "eventKey": "12",
+    "name": "Haley's 4 Heart Event",
+    "description": "Haley's 4 heart event: she has trouble opening a jar of pickles.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-13",
+    "gameId": 13,
+    "eventKey": "13",
+    "name": "Haley's 6 Heart Event",
+    "description": "Haley's 6 heart event: the farmerhelps her find a lost bracelet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "timeWindows": [
+      {
+        "start": 1000,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-14",
+    "gameId": 14,
+    "eventKey": "14",
+    "name": "Haley's 8 Heart Event",
+    "description": "Haley's 8 heart event: she visits Marnie's ranch and takes photos of the cows.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1000,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-15",
+    "gameId": 15,
+    "eventKey": "15",
+    "name": "Haley's 10 Heart Event",
+    "description": "Haley's 10 heart event: she invites the farmer to see her dark room.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-16",
+    "gameId": 16,
+    "eventKey": "16",
+    "name": "Pierre's 6 Heart Event",
+    "description": "Pierre's 6 heart event: the farmer discovers Pierre's secret stash.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Pierre",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Pierre"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Pierre",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": "assets/villagers/Pierre.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-17",
+    "gameId": 17,
+    "eventKey": "17",
+    "name": "Caroline's 6 Heart Event",
+    "description": "Caroline's 6 heart event: she argues with Abigail about expectations.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Caroline",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Abigail",
+      "Caroline"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Caroline",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": "assets/villagers/Caroline.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-18",
+    "gameId": 18,
+    "eventKey": "18",
+    "name": "George's 6 Heart Event",
+    "description": "George's 6 heart event: he tells the farmer about his accident in the mines.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "George",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "George"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "George",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": "assets/villagers/George.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-19",
+    "gameId": 19,
+    "eventKey": "19",
+    "name": "Evelyn's 4 Heart Event",
+    "description": "Evelyn's 4 heart event: she bakes cookies for the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Evelyn",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Evelyn"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Evelyn",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": "assets/villagers/Evelyn.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-20",
+    "gameId": 20,
+    "eventKey": "20",
+    "name": "Alex's 2 Heart Event",
+    "description": "Alex's 2 heart event: he throws a gridball around with the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-21",
+    "gameId": 21,
+    "eventKey": "21",
+    "name": "Alex's 5 Heart Event",
+    "description": "Alex's 5 heart event: he discusses books and his worries.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 5,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 1250
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-25",
+    "gameId": 25,
+    "eventKey": "25",
+    "name": "Demetrius's 6 Heart Event",
+    "description": "Demetrius's 6 heart event: he brings back tomatoes as fruit from the store.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Demetrius",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Demetrius",
+      "Robin"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Demetrius",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": "assets/villagers/Demetrius.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-26",
+    "gameId": 26,
+    "eventKey": "26",
+    "name": "Linus's 4 Heart Event",
+    "description": "Linus's 4 heart event: he teaches the farmer to make wild bait.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Linus",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Linus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Linus",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Linus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-27",
+    "gameId": 27,
+    "eventKey": "27",
+    "name": "Sebastian's 6 Heart Event",
+    "description": "Sebastian's 6 heart event: he and Sam invite the farmer to play Solarion Chronicles with them.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Sebastian's Room"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-29",
+    "gameId": 29,
+    "eventKey": "29",
+    "name": "Sebastian's 8 Heart Event",
+    "description": "Sebastian's 8 heart event: he invites the farmer to stand under his umbrella on the dock.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "rainy"
+    ],
+    "timeWindows": [
+      {
+        "start": 1200,
+        "end": 2300
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-33",
+    "gameId": 33,
+    "eventKey": "33",
+    "name": "Robin's 6 Heart Event",
+    "description": "Robin's 6 heart event: she teaches the farmer how to make a flute block and drum block.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Robin",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Robin"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Robin",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": "assets/villagers/Robin.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-34",
+    "gameId": 34,
+    "eventKey": "34",
+    "name": "Penny's 2 Heart Event",
+    "description": "Penny's 2 heart event: she tries to help George reach the mail by getting it for him.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1400
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-35",
+    "gameId": 35,
+    "eventKey": "35",
+    "name": "Penny's 4 Heart Event",
+    "description": "Penny's 4 heart event: she and the farmer clean the trailer and Pam argues with her about it.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Pam & Penny's Trailer"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-36",
+    "gameId": 36,
+    "eventKey": "36",
+    "name": "Penny's 6 Heart Event",
+    "description": "Penny's 6 heart event: she tries cooking for the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Pam & Penny's Trailer"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-38",
+    "gameId": 38,
+    "eventKey": "38",
+    "name": "Penny's 10 Heart Event",
+    "description": "Penny's 10 heart event: she asks the farmer to come swimming with her in the spa pool at night.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1900,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Spa Pool"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-39",
+    "gameId": 39,
+    "eventKey": "39",
+    "name": "Elliott's 2 Heart Event",
+    "description": "Elliott's 2 heart event: he talks about wanting to become an author and ask the farmer what books they like.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Elliott's House"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-40",
+    "gameId": 40,
+    "eventKey": "40",
+    "name": "Elliott's 4 Heart Event",
+    "description": "Elliott's 4 heart event: he buys the farmer a drink and proposes a toast.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Elliott",
+      "Gus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1500,
+        "end": 2200
+      }
+    ],
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-43",
+    "gameId": 43,
+    "eventKey": "43",
+    "name": "Elliott's 10 Heart Event",
+    "description": "Elliott's 10 heart event: after finishing his book, he invites the farmer to come rowing with him.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 700,
+        "end": 1300
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-44",
+    "gameId": 44,
+    "eventKey": "44",
+    "name": "Sam's 2 Heart Event",
+    "description": "Sam's 2 heart event: he plays music with the band and asks the farmer what sort of music they like.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Sam's House"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-45",
+    "gameId": 45,
+    "eventKey": "45",
+    "name": "Sam's 6 Heart Event",
+    "description": "Sam's 6 heart event: he skateboards outside Emily and Haley's house and argues with Lewis about it.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1200,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-46",
+    "gameId": 46,
+    "eventKey": "46",
+    "name": "Sam's 4 Heart Event",
+    "description": "Sam's 4 heart event: he drops an egg in the process of making a snack.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Sam's House"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-47",
+    "gameId": 47,
+    "eventKey": "47",
+    "name": "Set-up for Sam's 8 Heart Event",
+    "description": "Set-up for Sam's 8 heart event: he tells the farmer about the gig and when & where to meet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [
+      "44"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 800
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-50",
+    "gameId": 50,
+    "eventKey": "50",
+    "name": "Leah's 2 Heart Event",
+    "description": "Leah's 2 heart event: she shows the farmer her sculptures.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Leah's House"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-51",
+    "gameId": 51,
+    "eventKey": "51",
+    "name": "Leah's 4 Heart Event",
+    "description": "Leah's 4 heart event: she tells the farmer about Kel and asks whether she should have an art show or an internet shop.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Leah's House"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-52",
+    "gameId": 52,
+    "eventKey": "52",
+    "name": "Leah's 6 Heart Event",
+    "description": "Leah's 6 heart event: the farmer catches her falling from a tree.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-53",
+    "gameId": 53,
+    "eventKey": "53",
+    "name": "Leah's 8 Heart Event (art Show)",
+    "description": "Leah's 8 heart event (art show): she hosts her art show in the town square.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 8,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "55"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1500,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-54",
+    "gameId": 54,
+    "eventKey": "54",
+    "name": "Leah's 10 Heart Event",
+    "description": "Leah's 10 heart event: she and the farmer have a picnic which is interrupted by Kel.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1100,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-55",
+    "gameId": 55,
+    "eventKey": "55",
+    "name": "Set-up for Leah's 8 Heart Event (art Show)",
+    "description": "Set-up for Leah's 8 heart event (art show): she tells the farmer about the art show and when & where to meet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 800
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-56",
+    "gameId": 56,
+    "eventKey": "56",
+    "name": "Harvey's 2 Heart Event",
+    "description": "Harvey's 2 heart event: he advises George on his health.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "George",
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-57",
+    "gameId": 57,
+    "eventKey": "57",
+    "name": "Harvey's 4 Heart Event",
+    "description": "Harvey's 4 heart event: he gives the farmer a medical examination and takes their pulse.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Clinic"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-58",
+    "gameId": 58,
+    "eventKey": "58",
+    "name": "Harvey's 6 Heart Event",
+    "description": "Harvey's 6 heart event: he joins the aerobics club for exercise.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1100,
+        "end": 1500
+      }
+    ],
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-63",
+    "gameId": 63,
+    "eventKey": "63",
+    "name": "Kent Returns to the Valley and Introduces Himself to the Farmer",
+    "description": "Kent returns to the valley and introduces himself to the farmer.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Kent",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "year": 2,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1800
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Kent.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-65",
+    "gameId": 65,
+    "eventKey": "65",
+    "name": "Demetrius Asks the Farmer Whether They'd Like a Mushroom Cave or a Fruit Bat Cav",
+    "description": "Demetrius asks the farmer whether they'd like a mushroom cave or a fruit bat cave.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Demetrius",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1200
+      }
+    ],
+    "minMoney": 25000,
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Demetrius.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-67",
+    "gameId": 67,
+    "eventKey": "67",
+    "name": "Sandy Welcomes the Farmer and Celebrates the Bus Line Running Again",
+    "description": "Sandy welcomes the farmer and celebrates the bus line running again.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Sandy",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "minMoney": 10,
+    "locations": [
+      "Oasis"
+    ],
+    "icon": "assets/villagers/Sandy.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-91",
+    "gameId": 91,
+    "eventKey": "91",
+    "name": "Marnie Asks the Farmer to Bring a Cave Carrot for Her Goats",
+    "description": "Marnie asks the farmer to bring a cave carrot for her goats.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Marnie",
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Marnie"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Marnie",
+        "points": 750
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 930
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Marnie.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-92",
+    "gameId": 92,
+    "eventKey": "92",
+    "name": "Completion of Marnie's Cave Carrot Quest",
+    "description": "Completion of Marnie's cave carrot quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "91"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1700
+      }
+    ],
+    "requiredItems": [
+      "78"
+    ],
+    "locations": [
+      "Marnie's Ranch"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-93",
+    "gameId": 93,
+    "eventKey": "93",
+    "name": "Jodi Asks the Farmer to Bring a Largemouth Bass for Dinner",
+    "description": "Jodi asks the farmer to bring a largemouth bass for dinner.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Jodi",
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Jodi"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Jodi",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 930
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Jodi.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-94",
+    "gameId": 94,
+    "eventKey": "94",
+    "name": "Completion of Jodi's Largemouth Bass Quest",
+    "description": "Completion of Jodi's largemouth bass quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "93"
+    ],
+    "mutuallyExclusive": [
+      "95"
+    ],
+    "marriageVariant": false,
+    "year": 1,
+    "timeWindows": [
+      {
+        "start": 1800,
+        "end": 1950
+      }
+    ],
+    "requiredItems": [
+      "136"
+    ],
+    "locations": [
+      "Sam's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-95",
+    "gameId": 95,
+    "eventKey": "95",
+    "name": "Completion of Jodi's Largemouth Bass Quest",
+    "description": "Completion of Jodi's largemouth bass quest. Variation if Kent has returned.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "93"
+    ],
+    "mutuallyExclusive": [
+      "94"
+    ],
+    "marriageVariant": false,
+    "year": 2,
+    "timeWindows": [
+      {
+        "start": 1800,
+        "end": 1950
+      }
+    ],
+    "requiredItems": [
+      "136"
+    ],
+    "locations": [
+      "Sam's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-96",
+    "gameId": 96,
+    "eventKey": "96",
+    "name": "Gus's 4 Heart Event",
+    "description": "Gus's 4 heart event: he asks for help with getting Pam to pay her tab.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Gus",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Gus",
+      "Pam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Gus",
+        "points": 1000
+      },
+      {
+        "npc": "Pam",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": "assets/villagers/Gus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-97",
+    "gameId": 97,
+    "eventKey": "97",
+    "name": "Clint's 3 Heart Event",
+    "description": "Clint's 3 heart event: he asks the farmer for advice about talking to Emily.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Clint",
+    "heartLevel": 3,
+    "villagersInvolved": [
+      "Clint"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Clint",
+        "points": 750
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 1900,
+        "end": 2300
+      }
+    ],
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": "assets/villagers/Clint.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-100",
+    "gameId": 100,
+    "eventKey": "100",
+    "name": "Kent's 3 Heart Event",
+    "description": "Kent's 3 heart event: he has a flashback to Gotoro when Jodi makes popcorn.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Kent",
+    "heartLevel": 3,
+    "villagersInvolved": [
+      "Jodi",
+      "Kent"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Kent",
+        "points": 750
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Sam's House"
+    ],
+    "icon": "assets/villagers/Kent.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-101",
+    "gameId": 101,
+    "eventKey": "101",
+    "name": "Clint's 6 Heart Event",
+    "description": "Clint's 6 heart event: he asks Emily out on a date.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Clint",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Clint",
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Clint",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [
+      "97"
+    ],
+    "mutuallyExclusive": [
+      "2123243",
+      "2123343"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1830
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Clint.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-102",
+    "gameId": 102,
+    "eventKey": "102",
+    "name": "Pierre Tells the Farmer He'll Be Selling New Seeds in Year 2",
+    "description": "Pierre tells the farmer he'll be selling new seeds in Year 2.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Pierre",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "year": 1,
+    "seasons": [
+      "fall",
+      "spring",
+      "summer"
+    ],
+    "daysOfWeek": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Pierre.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-112",
+    "gameId": 112,
+    "eventKey": "112",
+    "name": "The Wizard Teaches the Farmer About Junimos and Gives Them the Forest Potion",
+    "description": "The Wizard teaches the farmer about junimos and gives them the forest potion.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Wizard's Tower"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-60367",
+    "gameId": 60367,
+    "eventKey": "60367",
+    "name": "Part of the Introduction Event",
+    "description": "Part of the introduction event. After the farmer arrives in Pelican Town, Robin and Lewis show them to their new farmhouse.",
+    "entityType": "event",
+    "eventType": "introduction",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Bus Stop"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-100162",
+    "gameId": 100162,
+    "eventKey": "100162",
+    "name": "Marlon Introduces Himself and Gives the Farmer a Sword",
+    "description": "Marlon introduces himself and gives the farmer a sword.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 2600
+      }
+    ],
+    "locations": [
+      "Mines"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-150938",
+    "gameId": 150938,
+    "eventKey": "150938",
+    "name": "Completion of Emily's Gemstone Quest",
+    "description": "Completion of Emily's gemstone quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-181928",
+    "gameId": 181928,
+    "eventKey": "181928",
+    "name": "Penny's 8 Heart Event",
+    "description": "Penny's 8 heart event: she asks the farmer to be a guest speaker for the children's field trip.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-191393",
+    "gameId": 191393,
+    "eventKey": "191393",
+    "name": "Pierre Rallies the Town to Drive Out Morris and JojaMart",
+    "description": "Pierre rallies the town to drive out Morris and JojaMart.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Pierre",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "weather": [
+      "sunny"
+    ],
+    "requiresMail": [
+      "JojaMember",
+      "jojaBoilerRoom",
+      "jojaCraftsRoom",
+      "jojaFishTank",
+      "jojaPantry",
+      "jojaVault"
+    ],
+    "blockingMail": [
+      "ccBoilerRoom",
+      "ccBulletin",
+      "ccCraftsRoom",
+      "ccFishTank",
+      "ccPantry",
+      "ccVault"
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Pierre.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-195012",
+    "gameId": 195012,
+    "eventKey": "195012",
+    "name": "The Bachelorettes Confront the Farmer About Dating All of the Girls",
+    "description": "The bachelorettes confront the farmer about dating all of the girls.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Abigail",
+      "Alex",
+      "Elliott",
+      "Emily",
+      "Haley",
+      "Harvey",
+      "Leah",
+      "Maru",
+      "Penny",
+      "Sam",
+      "Sebastian",
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 2500
+      },
+      {
+        "npc": "Emily",
+        "points": 2500
+      },
+      {
+        "npc": "Penny",
+        "points": 2500
+      },
+      {
+        "npc": "Abigail",
+        "points": 2500
+      },
+      {
+        "npc": "Leah",
+        "points": 2500
+      },
+      {
+        "npc": "Maru",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [
+      "10",
+      "15",
+      "2123343",
+      "38",
+      "54",
+      "901756"
+    ],
+    "mutuallyExclusive": [
+      "195019"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-195013",
+    "gameId": 195013,
+    "eventKey": "195013",
+    "name": "The Bachelors Confront the Farmer About Dating All of the Boys",
+    "description": "The bachelors confront the farmer about dating all of the boys.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Abigail",
+      "Alex",
+      "Elliott",
+      "Emily",
+      "Haley",
+      "Harvey",
+      "Leah",
+      "Maru",
+      "Penny",
+      "Sam",
+      "Sebastian",
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 2500
+      },
+      {
+        "npc": "Sebastian",
+        "points": 2500
+      },
+      {
+        "npc": "Sam",
+        "points": 2500
+      },
+      {
+        "npc": "Harvey",
+        "points": 2500
+      },
+      {
+        "npc": "Alex",
+        "points": 2500
+      },
+      {
+        "npc": "Elliott",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [
+      "233104",
+      "384882",
+      "43",
+      "528052",
+      "911526",
+      "9581348"
+    ],
+    "mutuallyExclusive": [
+      "195099"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-195019",
+    "gameId": 195019,
+    "eventKey": "195019",
+    "name": "With a Rabbit's Foot in Hand, the Bachelorettes Gossip About Lewis and Marnie",
+    "description": "With a rabbit's foot in hand, the bachelorettes gossip about Lewis and Marnie.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Abigail",
+      "Alex",
+      "Elliott",
+      "Emily",
+      "Haley",
+      "Harvey",
+      "Leah",
+      "Maru",
+      "Penny",
+      "Sam",
+      "Sebastian",
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 2500
+      },
+      {
+        "npc": "Emily",
+        "points": 2500
+      },
+      {
+        "npc": "Penny",
+        "points": 2500
+      },
+      {
+        "npc": "Abigail",
+        "points": 2500
+      },
+      {
+        "npc": "Leah",
+        "points": 2500
+      },
+      {
+        "npc": "Maru",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [
+      "10",
+      "15",
+      "2123343",
+      "38",
+      "54",
+      "901756"
+    ],
+    "mutuallyExclusive": [
+      "195012"
+    ],
+    "marriageVariant": false,
+    "requiredItems": [
+      "446"
+    ],
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-195099",
+    "gameId": 195099,
+    "eventKey": "195099",
+    "name": "With a Rabbit's Foot in Hand, the Bachelors Have a Pool Tournament",
+    "description": "With a rabbit's foot in hand, the bachelors have a pool tournament.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Abigail",
+      "Alex",
+      "Elliott",
+      "Emily",
+      "Haley",
+      "Harvey",
+      "Leah",
+      "Maru",
+      "Penny",
+      "Sam",
+      "Sebastian",
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 2500
+      },
+      {
+        "npc": "Sebastian",
+        "points": 2500
+      },
+      {
+        "npc": "Sam",
+        "points": 2500
+      },
+      {
+        "npc": "Harvey",
+        "points": 2500
+      },
+      {
+        "npc": "Alex",
+        "points": 2500
+      },
+      {
+        "npc": "Elliott",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [
+      "233104",
+      "384882",
+      "43",
+      "528052",
+      "911526",
+      "9581348"
+    ],
+    "mutuallyExclusive": [
+      "195013"
+    ],
+    "marriageVariant": false,
+    "requiredItems": [
+      "446"
+    ],
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-233104",
+    "gameId": 233104,
+    "eventKey": "233104",
+    "name": "Sam's 10 Heart Event",
+    "description": "Sam's 10 heart event: he and the farmer sneak into his room.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-288847",
+    "gameId": 288847,
+    "eventKey": "288847",
+    "name": "Alex's 8 Heart Event",
+    "description": "Alex's 8 heart event: the farmer finds him with a music box and he tells them about his mother.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-318560",
+    "gameId": 318560,
+    "eventKey": "318560",
+    "name": "Jas and Vincent Explore the Sewer Entrance",
+    "description": "Jas and Vincent explore the sewer entrance.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Jas",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Tue",
+      "Wed",
+      "Fri",
+      "Sat"
+    ],
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1600
+      }
+    ],
+    "mineLevel": 10,
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Jas.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-371652",
+    "gameId": 371652,
+    "eventKey": "371652",
+    "name": "Linus's 8 Heart Event",
+    "description": "Linus's 8 heart event: Robin offers to build him a house and he explains his philosophy on life.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Linus",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Linus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Linus",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Linus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-384882",
+    "gameId": 384882,
+    "eventKey": "384882",
+    "name": "Sebastian's 10 Heart Event",
+    "description": "Sebastian's 10 heart event: he takes the farmer on his motorbike to see Zuzu City in the distance.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-384883",
+    "gameId": 384883,
+    "eventKey": "384883",
+    "name": "Sebastian's 4 Heart Event",
+    "description": "Sebastian's 4 heart event: he works on his motorbike in the garage.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1100,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-404798",
+    "gameId": 404798,
+    "eventKey": "404798",
+    "name": "Willy Gives the Farmer the Copper Pan",
+    "description": "Willy gives the farmer the copper pan.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Willy",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "blockingMail": [
+      "ccFishTank"
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Willy.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-418172",
+    "gameId": 418172,
+    "eventKey": "418172",
+    "name": "Completion of the Wizard's Magic Ink Quest",
+    "description": "Completion of the Wizard's magic ink quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Wizard's Tower"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-423502",
+    "gameId": 423502,
+    "eventKey": "423502",
+    "name": "Elliott's 6 Heart Event",
+    "description": "Elliott's 6 heart event: he plays the piano for the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Elliott's House"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-463391",
+    "gameId": 463391,
+    "eventKey": "463391",
+    "name": "Emily's 4 Heart Event",
+    "description": "Emily's 4 heart event: she finds an injured parrot and decides to care for it.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Emily",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [
+      "471942"
+    ],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-471942",
+    "gameId": 471942,
+    "eventKey": "471942",
+    "name": "Emily's 2 Heart Event",
+    "description": "Emily's 2 heart event: she has a dream vision about the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Emily",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-502261",
+    "gameId": 502261,
+    "eventKey": "502261",
+    "name": "Morris Gives a Speech About How Joja Has Revitalised the Town",
+    "description": "Morris gives a speech about how Joja has revitalised the town.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "weather": [
+      "sunny"
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": null,
+    "grantedBy": [
+      "auto-petter"
+    ]
+  },
+  {
+    "id": "event-502969",
+    "gameId": 502969,
+    "eventKey": "502969",
+    "name": "Linus's 1 Heart Event",
+    "description": "Linus's 1 heart event: he goes looking for food in George's trash can and asks the farmer if it's wrong.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Linus",
+    "heartLevel": 1,
+    "villagersInvolved": [
+      "Linus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Linus",
+        "points": 50
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "mineLevel": 7,
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Linus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-503180",
+    "gameId": 503180,
+    "eventKey": "503180",
+    "name": "Pam's 9 Heart Event",
+    "description": "Pam's 9 heart event: she shows the farmer her Sign of the Vessel statue and talks about happiness.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Pam",
+    "heartLevel": 9,
+    "villagersInvolved": [
+      "Pam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Pam",
+        "points": 2250
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "blockingMail": [
+      "pamHouseUpgrade"
+    ],
+    "locations": [
+      "Pam & Penny's House"
+    ],
+    "icon": "assets/villagers/Pam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-528052",
+    "gameId": 528052,
+    "eventKey": "528052",
+    "name": "Harvey's 10 Heart Event",
+    "description": "Harvey's 10 heart event: he faces his fear and takes the farmer on a hot air balloon.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Railroad"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-529952",
+    "gameId": 529952,
+    "eventKey": "529952",
+    "name": "The Wizard Tells the Farmer About His Ex-wife and Asks Them to Get Magic Ink for",
+    "description": "The Wizard tells the farmer about his ex-wife and asks them to get magic ink for him.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Railroad"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-558291",
+    "gameId": 558291,
+    "eventKey": "558291",
+    "name": "Grandpa Returns and Evaluates the Farmer's Progress",
+    "description": "Grandpa returns and evaluates the farmer's progress.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "year": 3,
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-558292",
+    "gameId": 558292,
+    "eventKey": "558292",
+    "name": "After the Farmer Summons Him, Grandpa Returns and Re-evaluates the Farmer's Prog",
+    "description": "After the farmer summons him, Grandpa returns and re-evaluates the farmer's progress.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "321777"
+    ],
+    "marriageVariant": true,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 620
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-571102",
+    "gameId": 571102,
+    "eventKey": "571102",
+    "name": "Harvey's 8 Heart Event",
+    "description": "Harvey's 8 heart event: he contacts a pilot on his radio.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Clinic"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-584059",
+    "gameId": 584059,
+    "eventKey": "584059",
+    "name": "Leah's 8 Heart Event (internet Shop)",
+    "description": "Leah's 8 heart event (internet shop): the internet shop is a big success thanks to 'Mr K'.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Leah's House"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-611173",
+    "gameId": 611173,
+    "eventKey": "611173",
+    "name": "Completion of Pam and Penny's House Upgrade",
+    "description": "Completion of Pam and Penny's house upgrade.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "blockingMail": [
+      "pamHouseUpgrade"
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-611944",
+    "gameId": 611944,
+    "eventKey": "611944",
+    "name": "Shane's 2 Heart Event",
+    "description": "Shane's 2 heart event: he offers the farmer a drink while sitting on the lake dock.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-639373",
+    "gameId": 639373,
+    "eventKey": "639373",
+    "name": "Lewis and Marnie's 6 Heart Event",
+    "description": "Lewis and Marnie's 6 heart event: the farmer finds out about their secret relationship.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Lewis",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Lewis",
+      "Marnie"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Lewis",
+        "points": 1500
+      },
+      {
+        "npc": "Marnie",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1900,
+        "end": 2300
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Lewis.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-690006",
+    "gameId": 690006,
+    "eventKey": "690006",
+    "name": "Marlon Gives the Farmer a Slime Egg and Tells Them About Slime Breeding",
+    "description": "Marlon gives the farmer a slime egg and tells them about slime breeding.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "locations": [
+      "Farm"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-691039",
+    "gameId": 691039,
+    "eventKey": "691039",
+    "name": "Dwarf's 1 Heart Event",
+    "description": "Dwarf's 1 heart event: they and Krobus fight over their history with the Elemental Wars until the Wizard interrupts.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Dwarf",
+    "heartLevel": 1,
+    "villagersInvolved": [
+      "Dwarf"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Dwarf",
+        "points": 50
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Fri"
+    ],
+    "locations": [
+      "Sewers",
+      "Wizard's Tower"
+    ],
+    "icon": "assets/villagers/Dwarf.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-711130",
+    "gameId": 711130,
+    "eventKey": "711130",
+    "name": "Willy's 6 Heart Event",
+    "description": "Willy's 6 heart event: his shop is overrun by crabs and Gus purchases them.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Willy",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Willy"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Willy",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1710
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Willy.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-719926",
+    "gameId": 719926,
+    "eventKey": "719926",
+    "name": "Caroline's 2 Heart Event",
+    "description": "Caroline's 2 heart event: she relaxes and makes a cup of tea for the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Caroline",
+    "heartLevel": 2,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Caroline's Sunroom"
+    ],
+    "icon": "assets/villagers/Caroline.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-733330",
+    "gameId": 733330,
+    "eventKey": "733330",
+    "name": "Sam's 3 Heart Event",
+    "description": "Sam's 3 heart event: in Year 1, he and Vincent discuss Kent's return and the situation in Gotoro.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 3,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 750
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "year": 1,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 700,
+        "end": 1500
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-739330",
+    "gameId": 739330,
+    "eventKey": "739330",
+    "name": "Willy's Introduction Event Where He Gives the Farmer a Fishing Rod",
+    "description": "Willy's introduction event where he gives the farmer a fishing rod.",
+    "entityType": "event",
+    "eventType": "introduction",
+    "npc": "Willy",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1710
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Willy.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-831125",
+    "gameId": 831125,
+    "eventKey": "831125",
+    "name": "Shane's 7 Heart Event",
+    "description": "Shane's 7 heart event: with Emily and Clint's help, he films an ad for Joja Bluu.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 7,
+    "villagersInvolved": [
+      "Clint",
+      "Emily",
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 1750
+      },
+      {
+        "npc": "Clint",
+        "points": 500
+      },
+      {
+        "npc": "Emily",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1000,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-897405",
+    "gameId": 897405,
+    "eventKey": "897405",
+    "name": "Marnie Asks the Farmer If They'd Like to Adopt a Dog",
+    "description": "Marnie asks the farmer if they'd like to adopt a dog.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Marnie",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "weather": [
+      "sunny"
+    ],
+    "daysOfWeek": [
+      "Mon",
+      "Tue",
+      "Thu",
+      "Sat",
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 930
+      }
+    ],
+    "minMoney": 1000,
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Marnie.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-900553",
+    "gameId": 900553,
+    "eventKey": "900553",
+    "name": "Evelyn Gives the Farmer a Garden Pot and the Crafting Recipe for it",
+    "description": "Evelyn gives the farmer a garden pot and the crafting recipe for it.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Evelyn",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1130
+      }
+    ],
+    "blockingMail": [
+      "ccPantry"
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Evelyn.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-901756",
+    "gameId": 901756,
+    "eventKey": "901756",
+    "name": "Abigail's 10 Heart Event",
+    "description": "Abigail's 10 heart event: she tries to explore the mines, but gets scared.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1700,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Mines"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-911526",
+    "gameId": 911526,
+    "eventKey": "911526",
+    "name": "Alex's 10 Heart Event",
+    "description": "Alex's 10 heart event: he takes the farmer on a dinner date.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1900,
+        "end": 2200
+      }
+    ],
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-917409",
+    "gameId": 917409,
+    "eventKey": "917409",
+    "name": "Emily's 6 Heart Event",
+    "description": "Emily's 6 heart event: she shows the farmer her dancing.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Emily",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [
+      "463391"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Haley & Emily's House"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-963113",
+    "gameId": 963113,
+    "eventKey": "963113",
+    "name": "Completion of Pierre's Gold-quality Vegetables Quest",
+    "description": "Completion of Pierre's gold-quality vegetables quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-963313",
+    "gameId": 963313,
+    "eventKey": "963313",
+    "name": "Pam Potato Juice",
+    "description": null,
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Trailer"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-980558",
+    "gameId": 980558,
+    "eventKey": "980558",
+    "name": "Gus's 5 Heart Event",
+    "description": "Gus's 5 heart event: he gives the farmer a Mini-Jukebox and the crafting recipe for it.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Gus",
+    "heartLevel": 5,
+    "villagersInvolved": [
+      "Gus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Gus",
+        "points": 1250
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1130
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Gus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-992253",
+    "gameId": 992253,
+    "eventKey": "992253",
+    "name": "Leah's 6 Heart Event",
+    "description": "Leah's 6 heart event: she gives the farmer a sculpture she made for them.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1130
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-992553",
+    "gameId": 992553,
+    "eventKey": "992553",
+    "name": "Clint Gives the Farmer Blueprints for a Furnace",
+    "description": "Clint gives the farmer blueprints for a furnace.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Clint",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1130
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Clint.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-992559",
+    "gameId": 992559,
+    "eventKey": "992559",
+    "name": "Emily Gives the Farmer Access to Her Sewing Machine for Tailoring",
+    "description": "Emily gives the farmer access to her sewing machine for tailoring. A variation with the same ID plays when the farmer is married to Emily.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Emily",
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1130
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": [
+      "sewing-machine"
+    ]
+  },
+  {
+    "id": "event-1039573",
+    "gameId": 1039573,
+    "eventKey": "1039573",
+    "name": "Leo's Introduction Event",
+    "description": "Leo's introduction event.",
+    "entityType": "event",
+    "eventType": "introduction",
+    "npc": "Leo",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "requiresMail": [
+      "addedParrotBoy"
+    ],
+    "locations": [
+      "Island Hut"
+    ],
+    "icon": "assets/villagers/Leo.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-1053978",
+    "gameId": 1053978,
+    "eventKey": "1053978",
+    "name": "Completion of Robin's Hardwood Quest",
+    "description": "Completion of Robin's hardwood quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Robin's Carpenter Shop"
+    ],
+    "icon": null,
+    "grantedBy": [
+      "deluxe-red-double-bed"
+    ]
+  },
+  {
+    "id": "event-1590166",
+    "gameId": 1590166,
+    "eventKey": "1590166",
+    "name": "Marnie Asks the Farmer If They'd Like to Adopt a Cat",
+    "description": "Marnie asks the farmer if they'd like to adopt a cat.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Marnie",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "weather": [
+      "sunny"
+    ],
+    "daysOfWeek": [
+      "Mon",
+      "Tue",
+      "Thu",
+      "Sat",
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 930
+      }
+    ],
+    "minMoney": 1000,
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Marnie.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-1848481",
+    "gameId": 1848481,
+    "eventKey": "1848481",
+    "name": "Elliott's 8 Heart Event",
+    "description": "Elliott's 8 heart event: he performs a reading of his new novel.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1300,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Museum"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2118991",
+    "gameId": 2118991,
+    "eventKey": "2118991",
+    "name": "Follow-up to Shane's 6 Heart Event",
+    "description": "Follow-up to Shane's 6 heart event: he apologises for what happened and tells the farmer he's started therapy.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": null,
+    "heartLevel": 6,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3910975"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 800
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-2119820",
+    "gameId": 2119820,
+    "eventKey": "2119820",
+    "name": "Alex's 6 Heart Event",
+    "description": "Alex's 6 heart event: he reflects and apologises to the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2120303",
+    "gameId": 2120303,
+    "eventKey": "2120303",
+    "name": "The Bear Teaches the Farmer Special Knowledge About the Forest",
+    "description": "The bear teaches the farmer special knowledge about the forest.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1900
+      }
+    ],
+    "requiredItems": [
+      "724"
+    ],
+    "locations": [
+      "Secret Woods"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-2123243",
+    "gameId": 2123243,
+    "eventKey": "2123243",
+    "name": "Emily's 8 Heart Event",
+    "description": "Emily's 8 heart event: she runs a Clothing Therapy session.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 8,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "2111194"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Lewis's House"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2123343",
+    "gameId": 2123343,
+    "eventKey": "2123343",
+    "name": "Emily's 10 Heart Event",
+    "description": "Emily's 10 heart event: she and the farmer go camping and are surprised by a bear.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 10,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "2111294"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2200,
+        "end": 2540
+      }
+    ],
+    "locations": [
+      "Secret Woods"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2128292",
+    "gameId": 2128292,
+    "eventKey": "2128292",
+    "name": "Set-up for Shane's 10 Heart Event",
+    "description": "Set-up for Shane's 10 heart event: he tells the farmer about the gridball game and when & where to meet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 10,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 2500
+      }
+    ],
+    "requiredEvents": [
+      "3900074"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 630
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2146991",
+    "gameId": 2146991,
+    "eventKey": "2146991",
+    "name": "The Candles on Grandpa's Shrine Light up",
+    "description": "The candles on Grandpa's shrine light up.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "year": 3,
+    "locations": [
+      "Farm"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-2481135",
+    "gameId": 2481135,
+    "eventKey": "2481135",
+    "name": "Alex's 4 Heart Event",
+    "description": "Alex's 4 heart event: he tells the farmer about his father and shows them his dog Dusty.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 1600
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-2794460",
+    "gameId": 2794460,
+    "eventKey": "2794460",
+    "name": "Sebastian's 2 Heart Event",
+    "description": "Sebastian's 2 heart event: Robin interrupts him while he's programming.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Sebastian's Room"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3091462",
+    "gameId": 3091462,
+    "eventKey": "3091462",
+    "name": "Leah's 14 Heart Event",
+    "description": "Leah's 14 heart event: she and the farmer paint Marnie's portrait.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3911124"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 1130,
+        "end": 1400
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3102768",
+    "gameId": 3102768,
+    "eventKey": "3102768",
+    "name": "Morris Offers 50% Off Coupons to Steal Pierre's Customers",
+    "description": "Morris offers 50% off coupons to steal Pierre's customers.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": true,
+    "mineLevel": 15,
+    "locations": [
+      "Pierre's General Store"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-3131209",
+    "gameId": 3131209,
+    "eventKey": "3131209",
+    "name": "Completion of Willy's Bug Meat Quest",
+    "description": "Completion of Willy's bug meat quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Beach"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-3206194",
+    "gameId": 3206194,
+    "eventKey": "3206194",
+    "name": "Completion of Gus's Egg Quest",
+    "description": "Completion of Gus's egg quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-3900074",
+    "gameId": 3900074,
+    "eventKey": "3900074",
+    "name": "Shane's 8 Heart Event",
+    "description": "Shane's 8 heart event: he shows the farmer his blue chickens.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 8,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [
+      "2118991"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Marnie's Ranch"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3910674",
+    "gameId": 3910674,
+    "eventKey": "3910674",
+    "name": "Shane's 4 Heart Event",
+    "description": "Shane's 4 heart event: he's passed out in his room and is found by Marnie and the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Marnie's Ranch"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3910974",
+    "gameId": 3910974,
+    "eventKey": "3910974",
+    "name": "Shane's 7 Heart Event",
+    "description": "Shane's 7 heart event: he's cut back on beer and buys Jas the bunny-jewel slippers.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 7,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 1700
+      }
+    ],
+    "requiredEvents": [
+      "3910975"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Marnie's Ranch"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3910975",
+    "gameId": 3910975,
+    "eventKey": "3910975",
+    "name": "Shane's 6 Heart Event",
+    "description": "Shane's 6 heart event: he has a breakdown on the cliff's edge.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [
+      "3910674"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "rainy"
+    ],
+    "timeWindows": [
+      {
+        "start": 900,
+        "end": 2000
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3910979",
+    "gameId": 3910979,
+    "eventKey": "3910979",
+    "name": "Jas and Vincent Pick Spring Onions",
+    "description": "Jas and Vincent pick spring onions.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Jas",
+    "heartLevel": null,
+    "villagersInvolved": [
+      "Jas",
+      "Vincent"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Vincent",
+        "points": 2000
+      },
+      {
+        "npc": "Jas",
+        "points": 2000
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "fall",
+      "summer",
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Cindersap Forest"
+    ],
+    "icon": "assets/villagers/Jas.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3911124",
+    "gameId": 3911124,
+    "eventKey": "3911124",
+    "name": "Set-up for Leah's 14 Heart Event",
+    "description": "Set-up for Leah's 14 heart event: she tells the farmer about the painting session and when & where to meet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leah",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Leah"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leah",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "weather": [
+      "sunny"
+    ],
+    "daysOfWeek": [
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 500,
+        "end": 820
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Leah.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3912125",
+    "gameId": 3912125,
+    "eventKey": "3912125",
+    "name": "Elliott's 14 Heart Event",
+    "description": "Elliott's 14 heart event: he tells the farmer about his upcoming book tour.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Elliott",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Elliott",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 500,
+        "end": 1500
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Elliott.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3912132",
+    "gameId": 3912132,
+    "eventKey": "3912132",
+    "name": "Follow-up to Elliott's 14 Heart Event",
+    "description": "Follow-up to Elliott's 14 heart event: he returns back home.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": null,
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Elliott"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3912126"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917584",
+    "gameId": 3917584,
+    "eventKey": "3917584",
+    "name": "Shane's 14 Heart Event (part 1)",
+    "description": "Shane's 14 heart event (part 1): he comes out of the saloon and Marnie and Jas are suspicious of his behaviour.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Shane",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Fri"
+    ],
+    "timeWindows": [
+      {
+        "start": 800,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917585",
+    "gameId": 3917585,
+    "eventKey": "3917585",
+    "name": "Shane's 14 Heart Event (part 2)",
+    "description": "Shane's 14 heart event (part 2): he comes out of the saloon again and the farmer asks him if he's been drinking.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3917584"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917586",
+    "gameId": 3917586,
+    "eventKey": "3917586",
+    "name": "Shane's 14 Heart Event (part 3)",
+    "description": "Shane's 14 heart event (part 3): he reveals that he's been playing at the arcade frequently and drinking Joja Cola.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Shane"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3917585"
+    ],
+    "marriageVariant": false,
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917587",
+    "gameId": 3917587,
+    "eventKey": "3917587",
+    "name": "Set-up for Alex's 14 Heart Event (part 1)",
+    "description": "Set-up for Alex's 14 heart event (part 1): he asks the farmer for 5,000g for a secret project.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Alex",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "year": 2,
+    "daysOfWeek": [
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 500,
+        "end": 820
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917589",
+    "gameId": 3917589,
+    "eventKey": "3917589",
+    "name": "Set-up for Alex's 14 Heart Event (part 2)",
+    "description": "Set-up for Alex's 14 heart event (part 2): the farmer is reminded to visit the saloon.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": null,
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "daysOfWeek": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917590",
+    "gameId": 3917590,
+    "eventKey": "3917590",
+    "name": "Alex's 14 Heart Event",
+    "description": "Alex's 14 heart event: he sets up the saloon's backroom as a TV den for watching gridball",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Alex",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Alex"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Stardrop Saloon"
+    ],
+    "icon": "assets/villagers/Alex.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917600",
+    "gameId": 3917600,
+    "eventKey": "3917600",
+    "name": "Set-up for Emily's 14 Heart Event",
+    "description": "Set-up for Emily's 14 heart event: she asks the farmer to bring her 200 pieces of fiber for a secret project.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Emily",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 500,
+        "end": 820
+      }
+    ],
+    "locations": [
+      "Farm"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917601",
+    "gameId": 3917601,
+    "eventKey": "3917601",
+    "name": "Emily's 14 Heart Event",
+    "description": "Emily's 14 heart event: she gives the farmer a custom set of clothing that she's made for them.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Emily",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Emily"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Emily",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Emily.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917626",
+    "gameId": 3917626,
+    "eventKey": "3917626",
+    "name": "Harvey's 14 Heart Event",
+    "description": "Harvey's 14 heart event: he prepares a home-cooked dinner for the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Harvey",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Harvey"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Harvey",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2400
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Harvey.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3917666",
+    "gameId": 3917666,
+    "eventKey": "3917666",
+    "name": "Set-up for Maru's 14 Heart Event",
+    "description": "Set-up for Maru's 14 heart event: she tells the farmer about the comet and when & where to meet.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Maru",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "seasons": [
+      "winter"
+    ],
+    "daysOfWeek": [
+      "Sun"
+    ],
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3918600",
+    "gameId": 3918600,
+    "eventKey": "3918600",
+    "name": "Sam's 14 Heart Event (part 1)",
+    "description": "Sam's 14 heart event (part 1): he tells the farmer he's going to look for a job with music.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sam",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3918601",
+    "gameId": 3918601,
+    "eventKey": "3918601",
+    "name": "Sam's 14 Heart Event (part 2)",
+    "description": "Sam's 14 heart event (part 2): he receives a job offer for a children's TV show composer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3918600"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3918602",
+    "gameId": 3918602,
+    "eventKey": "3918602",
+    "name": "Sam's 14 Heart Event (part 3)",
+    "description": "Sam's 14 heart event (part 3): he comes around to the idea of doing kids' music.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3918601"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-3918603",
+    "gameId": 3918603,
+    "eventKey": "3918603",
+    "name": "Sam's 14 Heart Event (part 4)",
+    "description": "Sam's 14 heart event (part 4): he, Jas, and Vincent watch the show with his music.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sam"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3918602"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-4081148",
+    "gameId": 4081148,
+    "eventKey": "4081148",
+    "name": "Sam's 8 Heart Event",
+    "description": "Sam's 8 heart event: he, Abigail, Sebastian, and the farmer head into Zuzu City to play a gig.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sam",
+    "heartLevel": 8,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "47"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1600,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Bus Stop"
+    ],
+    "icon": "assets/villagers/Sam.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-4324303",
+    "gameId": 4324303,
+    "eventKey": "4324303",
+    "name": "Penny's 14 Heart Event",
+    "description": "Penny's 14 heart event: she remodels the farmhouse's bedroom.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "4325434"
+    ],
+    "marriageVariant": false,
+    "blockingMail": [
+      "noQuilt"
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-4325434",
+    "gameId": 4325434,
+    "eventKey": "4325434",
+    "name": "Set-up for Penny's 14 Heart Event",
+    "description": "Set-up for Penny's 14 heart event: she tells the farmer about her plans to remodel the bedroom and asks what style they like.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Penny",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Penny"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Penny",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1500,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Penny.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-5183338",
+    "gameId": 5183338,
+    "eventKey": "5183338",
+    "name": "Maru's 14 Heart Event",
+    "description": "Maru's 14 heart event: she watches the comet with the farmer.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Maru",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Maru"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "3917666"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2200,
+        "end": 2500
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Maru.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-5837189",
+    "gameId": 5837189,
+    "eventKey": "5837189",
+    "name": "Completion of Evelyn's Leek Quest",
+    "description": "Completion of Evelyn's leek quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Alex's House"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-6184643",
+    "gameId": 6184643,
+    "eventKey": "6184643",
+    "name": "Set-up for Haley's 14 Heart Event (part 1)",
+    "description": "Set-up for Haley's 14 heart event (part 1): she overhears Jas, Vincent, and Penny talking about how their old schoolbooks are falling apart.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Haley",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 800,
+        "end": 1500
+      }
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-6184644",
+    "gameId": 6184644,
+    "eventKey": "6184644",
+    "name": "Haley's 14 Heart Event",
+    "description": "Haley's 14 heart event: she successfully hosts a cakewalk to raise money for Penny and the children.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Haley",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "8675611"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1500
+      }
+    ],
+    "requiredItems": [
+      "220"
+    ],
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Haley.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-6497421",
+    "gameId": 6497421,
+    "eventKey": "6497421",
+    "name": "Leo's 4 Heart Event",
+    "description": "Leo's 4 heart event: he contemplates what 'normal' is.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leo",
+    "heartLevel": 4,
+    "villagersInvolved": [
+      "Leo"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leo",
+        "points": 1000
+      }
+    ],
+    "requiredEvents": [
+      "6497423"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1800
+      }
+    ],
+    "requiresMail": [
+      "leoMoved"
+    ],
+    "locations": [
+      "Island North"
+    ],
+    "icon": "assets/villagers/Leo.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-6497423",
+    "gameId": 6497423,
+    "eventKey": "6497423",
+    "name": "Leo's 2 Heart Event",
+    "description": "Leo's 2 heart event: he discusses his life in comparison with the farmer's.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leo",
+    "heartLevel": 2,
+    "villagersInvolved": [
+      "Leo"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leo",
+        "points": 500
+      }
+    ],
+    "requiredEvents": [
+      "1039573"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1800
+      }
+    ],
+    "requiresMail": [
+      "leoMoved"
+    ],
+    "locations": [
+      "Island West"
+    ],
+    "icon": "assets/villagers/Leo.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-6497428",
+    "gameId": 6497428,
+    "eventKey": "6497428",
+    "name": "Leo's 6 Heart Event",
+    "description": "Leo's 6 heart event: Linus invites him to come live in Pelican Town with him.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leo",
+    "heartLevel": 6,
+    "villagersInvolved": [
+      "Leo"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leo",
+        "points": 1500
+      }
+    ],
+    "requiredEvents": [
+      "6497423"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1800
+      }
+    ],
+    "requiresMail": [
+      "leoMoved"
+    ],
+    "locations": [
+      "Island South"
+    ],
+    "icon": "assets/villagers/Leo.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-6963327",
+    "gameId": 6963327,
+    "eventKey": "6963327",
+    "name": "Abigail's 14 Heart Event",
+    "description": "Abigail's 14 heart event: she saves the farmer from a wilderness golem.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Abigail",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Abigail"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Abigail",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 610,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Backwoods"
+    ],
+    "icon": "assets/villagers/Abigail.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-7771191",
+    "gameId": 7771191,
+    "eventKey": "7771191",
+    "name": "Krobus's 14 Heart Event",
+    "description": "Krobus's 14 heart event: he goes for a ride with a sea monster.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Krobus",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Krobus"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Krobus",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 2000,
+        "end": 2500
+      }
+    ],
+    "locations": [
+      "Beach"
+    ],
+    "icon": "assets/villagers/Krobus.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-8357109",
+    "gameId": 8357109,
+    "eventKey": "8357109",
+    "name": "Completion of Linus's Trash Quest",
+    "description": "Completion of Linus's trash quest.",
+    "entityType": "event",
+    "eventType": "quest",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Mountain",
+      "Wizard's Tower"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-8675611",
+    "gameId": 8675611,
+    "eventKey": "8675611",
+    "name": "Set-up for Haley's 14 Heart Event (part 2)",
+    "description": "Set-up for Haley's 14 heart event (part 2): she tells the farmer about the cakewalk, when & where to meet, and to bring a cake.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": null,
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Haley"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "6184643"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 620,
+        "end": 1700
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-8959199",
+    "gameId": 8959199,
+    "eventKey": "8959199",
+    "name": "Leo's 9 Heart Event",
+    "description": "Leo's 9 heart event: a montage of him settling into life in the Valley.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Leo",
+    "heartLevel": 9,
+    "villagersInvolved": [
+      "Leo"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Leo",
+        "points": 2250
+      }
+    ],
+    "requiredEvents": [
+      "6497428"
+    ],
+    "marriageVariant": false,
+    "weather": [
+      "sunny"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Leo.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-9333219",
+    "gameId": 9333219,
+    "eventKey": "9333219",
+    "name": "Sebastian's 14 Heart Event (part 1)",
+    "description": "Sebastian's 14 heart event (part 1): he catches an injured frog with the farmer's help.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [
+      {
+        "npc": "Sebastian",
+        "points": 3500
+      }
+    ],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "weather": [
+      "rainy"
+    ],
+    "timeWindows": [
+      {
+        "start": 600,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Mountain"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-9333220",
+    "gameId": 9333220,
+    "eventKey": "9333220",
+    "name": "Sebastian's 14 Heart Event (part 2)",
+    "description": "Sebastian's 14 heart event (part 2): he shows the farmer the frog terrarium he set up.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Sebastian",
+    "heartLevel": 14,
+    "villagersInvolved": [
+      "Sebastian"
+    ],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "9333219"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 620,
+        "end": 1900
+      }
+    ],
+    "locations": [
+      "Farmhouse"
+    ],
+    "icon": "assets/villagers/Sebastian.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-9348571",
+    "gameId": 9348571,
+    "eventKey": "9348571",
+    "name": "Willy Shows the Farmer His Broken Boat and Asks If They'd Like to Help Repair it",
+    "description": "Willy shows the farmer his broken boat and asks if they'd like to help repair it.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Willy",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "requiresMail": [
+      "willyBoatFixed"
+    ],
+    "locations": [
+      "Willy's Boat"
+    ],
+    "icon": "assets/villagers/Willy.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-9581348",
+    "gameId": 9581348,
+    "eventKey": "9581348",
+    "name": "Shane's 10 Heart Event",
+    "description": "Shane's 10 heart event: he invites the farmer to come watch a gridball game with him.",
+    "entityType": "event",
+    "eventType": "heart",
+    "npc": "Shane",
+    "heartLevel": 10,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [
+      "2128292"
+    ],
+    "marriageVariant": false,
+    "timeWindows": [
+      {
+        "start": 1600,
+        "end": 1800
+      }
+    ],
+    "locations": [
+      "Bus Stop"
+    ],
+    "icon": "assets/villagers/Shane.png",
+    "grantedBy": []
+  },
+  {
+    "id": "event-10040609",
+    "gameId": 10040609,
+    "eventKey": "10040609",
+    "name": "Qi Congratulates the Farmer on Finding All the Golden Walnuts and Discovering Th",
+    "description": "Qi congratulates the farmer on finding all the golden walnuts and discovering the hidden room.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": null,
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "locations": [
+      "Qi's Nut Room"
+    ],
+    "icon": null,
+    "grantedBy": []
+  },
+  {
+    "id": "event-15389722",
+    "gameId": 15389722,
+    "eventKey": "15389722",
+    "name": "Lewis and Robin Reveal the Special Orders Board",
+    "description": "Lewis and Robin reveal the special orders board.",
+    "entityType": "event",
+    "eventType": "story",
+    "npc": "Lewis",
+    "heartLevel": null,
+    "villagersInvolved": [],
+    "requiredFriendship": [],
+    "requiredEvents": [],
+    "marriageVariant": false,
+    "mineLevel": 57,
+    "locations": [
+      "Town"
+    ],
+    "icon": "assets/villagers/Lewis.png",
+    "grantedBy": []
+  }
+]

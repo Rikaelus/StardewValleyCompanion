@@ -1,0 +1,232 @@
+[
+  {
+    "type": "trash",
+    "id": "broken-cd",
+    "gameId": 171,
+    "name": "Broken CD",
+    "icon": "assets/objects/BrokenCD.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_cyan",
+      "trash_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "trash",
+    "id": "broken-glasses",
+    "gameId": 170,
+    "name": "Broken Glasses",
+    "icon": "assets/objects/BrokenGlasses.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_cyan",
+      "trash_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "trash",
+    "id": "driftwood",
+    "gameId": 169,
+    "name": "Driftwood",
+    "icon": "assets/objects/Driftwood.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_brown",
+      "trash_item",
+      "wood_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "trash",
+    "id": "rotten-plant-747",
+    "gameId": 747,
+    "name": "Rotten Plant",
+    "icon": "assets/objects/RottenPlant.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_copper"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "trash",
+    "id": "rotten-plant-748",
+    "gameId": 748,
+    "name": "Rotten Plant",
+    "icon": "assets/objects/RottenPlant.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_copper"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "trash",
+    "id": "soggy-newspaper",
+    "gameId": 172,
+    "name": "Soggy Newspaper",
+    "icon": "assets/objects/SoggyNewspaper.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_gray",
+      "trash_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      }
+    ]
+  },
+  {
+    "type": "trash",
+    "id": "trash",
+    "gameId": 168,
+    "name": "Trash",
+    "icon": "assets/objects/Trash.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_black",
+      "trash_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "store-trash-can",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_freshwater",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_ocean",
+        "minPopulation": 1,
+        "chance": 0.05
+      }
+    ]
+  }
+]

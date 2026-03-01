@@ -7,7 +7,7 @@
     "icon": "assets/objects/CopperBar.png",
     "price": 60,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_copper",
       "furnace_item",
@@ -76,7 +76,7 @@
     "icon": "assets/objects/IronBar.png",
     "price": 120,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_iron",
       "furnace_item",
@@ -145,7 +145,7 @@
     "icon": "assets/objects/GoldBar.png",
     "price": 250,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_gold",
       "furnace_item",
@@ -214,7 +214,7 @@
     "icon": "assets/objects/IridiumBar.png",
     "price": 1000,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_iridium",
       "furnace_item",
@@ -281,7 +281,7 @@
     "icon": "assets/objects/RefinedQuartz.png",
     "price": 50,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_iridium",
       "furnace_item"
@@ -352,7 +352,7 @@
     "icon": "assets/objects/RadioactiveBar.png",
     "price": 3000,
     "edibility": -300,
-    "category": -15,
+    "gameCategory": -15,
     "contextTags": [
       "color_lime",
       "furnace_item",

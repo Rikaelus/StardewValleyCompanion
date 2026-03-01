@@ -1,0 +1,1196 @@
+{
+  "events": [
+    {
+      "id": "0",
+      "description": "After donating an artifact, Gunther asks the farmer to donate any others they find.",
+      "locations": [
+        "Museum"
+      ]
+    },
+    {
+      "id": "1",
+      "description": "Abigail's 2 heart event: she asks the farmer to play Journey of the Prairie King with her.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "2",
+      "description": "Abigail's 4 heart event: she plays her flute in the rain.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "3",
+      "description": "Abigail's 8 heart event: she brings out a spirit board, which starts to spell something.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "4",
+      "description": "Abigail's 6 heart event: she argues with Pierre about wanting to be an adventurer.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "5",
+      "description": "Follow-up to Abigail's 8 heart event: she apologises for what happened during her 8 heart event.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "6",
+      "description": "Maru's 2 heart event: she helps Demetrius with testing some samples.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "7",
+      "description": "Maru's 4 heart event: she accidentally breaks a medical sample.",
+      "locations": [
+        "Clinic"
+      ]
+    },
+    {
+      "id": "8",
+      "description": "Maru's 6 heart event: she goes stargazing with her telescope.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "9",
+      "description": "Maru's 8 heart event: she demonstrates her latest project and accidentally zaps the farmer.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "10",
+      "description": "Maru's 10 heart event: she finishes her work on MarILDA, who leaves for space.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "11",
+      "description": "Haley's 2 heart event: she and Emily argue over cleaning under the couch cushions.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "12",
+      "description": "Haley's 4 heart event: she has trouble opening a jar of pickles.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "13",
+      "description": "Haley's 6 heart event: the farmerhelps her find a lost bracelet.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "14",
+      "description": "Haley's 8 heart event: she visits Marnie's ranch and takes photos of the cows.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "15",
+      "description": "Haley's 10 heart event: she invites the farmer to see her dark room.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "16",
+      "description": "Pierre's 6 heart event: the farmer discovers Pierre's secret stash.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "17",
+      "description": "Caroline's 6 heart event: she argues with Abigail about expectations.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "18",
+      "description": "George's 6 heart event: he tells the farmer about his accident in the mines.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "19",
+      "description": "Evelyn's 4 heart event: she bakes cookies for the farmer.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "20",
+      "description": "Alex's 2 heart event: he throws a gridball around with the farmer.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "21",
+      "description": "Alex's 5 heart event: he discusses books and his worries.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "25",
+      "description": "Demetrius's 6 heart event: he brings back tomatoes as fruit from the store.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "26",
+      "description": "Linus's 4 heart event: he teaches the farmer to make wild bait.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "27",
+      "description": "Sebastian's 6 heart event: he and Sam invite the farmer to play Solarion Chronicles with them.",
+      "locations": [
+        "Sebastian's Room"
+      ]
+    },
+    {
+      "id": "29",
+      "description": "Sebastian's 8 heart event: he invites the farmer to stand under his umbrella on the dock.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "33",
+      "description": "Robin's 6 heart event: she teaches the farmer how to make a flute block and drum block.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "34",
+      "description": "Penny's 2 heart event: she tries to help George reach the mail by getting it for him.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "35",
+      "description": "Penny's 4 heart event: she and the farmer clean the trailer and Pam argues with her about it.",
+      "locations": [
+        "Pam & Penny's Trailer"
+      ]
+    },
+    {
+      "id": "36",
+      "description": "Penny's 6 heart event: she tries cooking for the farmer.",
+      "locations": [
+        "Pam & Penny's Trailer"
+      ]
+    },
+    {
+      "id": "38",
+      "description": "Penny's 10 heart event: she asks the farmer to come swimming with her in the spa pool at night.",
+      "locations": [
+        "Spa Pool"
+      ]
+    },
+    {
+      "id": "39",
+      "description": "Elliott's 2 heart event: he talks about wanting to become an author and ask the farmer what books they like.",
+      "locations": [
+        "Elliott's House"
+      ]
+    },
+    {
+      "id": "40",
+      "description": "Elliott's 4 heart event: he buys the farmer a drink and proposes a toast.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "43",
+      "description": "Elliott's 10 heart event: after finishing his book, he invites the farmer to come rowing with him.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "44",
+      "description": "Sam's 2 heart event: he plays music with the band and asks the farmer what sort of music they like.",
+      "locations": [
+        "Sam's House"
+      ]
+    },
+    {
+      "id": "45",
+      "description": "Sam's 6 heart event: he skateboards outside Emily and Haley's house and argues with Lewis about it.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "46",
+      "description": "Sam's 4 heart event: he drops an egg in the process of making a snack.",
+      "locations": [
+        "Sam's House"
+      ]
+    },
+    {
+      "id": "47",
+      "description": "Set-up for Sam's 8 heart event: he tells the farmer about the gig and when & where to meet.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "50",
+      "description": "Leah's 2 heart event: she shows the farmer her sculptures.",
+      "locations": [
+        "Leah's House"
+      ]
+    },
+    {
+      "id": "51",
+      "description": "Leah's 4 heart event: she tells the farmer about Kel and asks whether she should have an art show or an internet shop.",
+      "locations": [
+        "Leah's House"
+      ]
+    },
+    {
+      "id": "52",
+      "description": "Leah's 6 heart event: the farmer catches her falling from a tree.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "53",
+      "description": "Leah's 8 heart event (art show): she hosts her art show in the town square.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "54",
+      "description": "Leah's 10 heart event: she and the farmer have a picnic which is interrupted by Kel.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "55",
+      "description": "Set-up for Leah's 8 heart event (art show): she tells the farmer about the art show and when & where to meet.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "56",
+      "description": "Harvey's 2 heart event: he advises George on his health.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "57",
+      "description": "Harvey's 4 heart event: he gives the farmer a medical examination and takes their pulse.",
+      "locations": [
+        "Clinic"
+      ]
+    },
+    {
+      "id": "58",
+      "description": "Harvey's 6 heart event: he joins the aerobics club for exercise.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "63",
+      "description": "Kent returns to the valley and introduces himself to the farmer.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "65",
+      "description": "Demetrius asks the farmer whether they'd like a mushroom cave or a fruit bat cave.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "67",
+      "description": "Sandy welcomes the farmer and celebrates the bus line running again.",
+      "locations": [
+        "Oasis"
+      ]
+    },
+    {
+      "id": "91",
+      "description": "Marnie asks the farmer to bring a cave carrot for her goats.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "92",
+      "description": "Completion of Marnie's cave carrot quest.",
+      "locations": [
+        "Marnie's Ranch"
+      ]
+    },
+    {
+      "id": "93",
+      "description": "Jodi asks the farmer to bring a largemouth bass for dinner.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "94",
+      "description": "Completion of Jodi's largemouth bass quest.",
+      "locations": [
+        "Sam's House"
+      ]
+    },
+    {
+      "id": "95",
+      "description": "Completion of Jodi's largemouth bass quest. Variation if Kent has returned.",
+      "locations": [
+        "Sam's House"
+      ]
+    },
+    {
+      "id": "96",
+      "description": "Gus's 4 heart event: he asks for help with getting Pam to pay her tab.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "97",
+      "description": "Clint's 3 heart event: he asks the farmer for advice about talking to Emily.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "100",
+      "description": "Kent's 3 heart event: he has a flashback to Gotoro when Jodi makes popcorn.",
+      "locations": [
+        "Sam's House"
+      ]
+    },
+    {
+      "id": "101",
+      "description": "Clint's 6 heart event: he asks Emily out on a date.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "102",
+      "description": "Pierre tells the farmer he'll be selling new seeds in Year 2.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "112",
+      "description": "The Wizard teaches the farmer about junimos and gives them the forest potion.",
+      "locations": [
+        "Wizard's Tower"
+      ]
+    },
+    {
+      "id": "60367",
+      "description": "Part of the introduction event. After the farmer arrives in Pelican Town, Robin and Lewis show them to their new farmhouse.",
+      "locations": [
+        "Bus Stop"
+      ]
+    },
+    {
+      "id": "100162",
+      "description": "Marlon introduces himself and gives the farmer a sword.",
+      "locations": [
+        "Mines"
+      ]
+    },
+    {
+      "id": "150938",
+      "description": "Completion of Emily's gemstone quest.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "181928",
+      "description": "Penny's 8 heart event: she asks the farmer to be a guest speaker for the children's field trip.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "191393",
+      "description": "Pierre rallies the town to drive out Morris and JojaMart.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "195012",
+      "description": "The bachelorettes confront the farmer about dating all of the girls.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "195013",
+      "description": "The bachelors confront the farmer about dating all of the boys.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "195019",
+      "description": "With a rabbit's foot in hand, the bachelorettes gossip about Lewis and Marnie.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "195099",
+      "description": "With a rabbit's foot in hand, the bachelors have a pool tournament.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "233104",
+      "description": "Sam's 10 heart event: he and the farmer sneak into his room.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "288847",
+      "description": "Alex's 8 heart event: the farmer finds him with a music box and he tells them about his mother.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "318560",
+      "description": "Jas and Vincent explore the sewer entrance.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "371652",
+      "description": "Linus's 8 heart event: Robin offers to build him a house and he explains his philosophy on life.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "384882",
+      "description": "Sebastian's 10 heart event: he takes the farmer on his motorbike to see Zuzu City in the distance.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "384883",
+      "description": "Sebastian's 4 heart event: he works on his motorbike in the garage.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "404798",
+      "description": "Willy gives the farmer the copper pan.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "418172",
+      "description": "Completion of the Wizard's magic ink quest.",
+      "locations": [
+        "Wizard's Tower"
+      ]
+    },
+    {
+      "id": "423502",
+      "description": "Elliott's 6 heart event: he plays the piano for the farmer.",
+      "locations": [
+        "Elliott's House"
+      ]
+    },
+    {
+      "id": "463391",
+      "description": "Emily's 4 heart event: she finds an injured parrot and decides to care for it.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "471942",
+      "description": "Emily's 2 heart event: she has a dream vision about the farmer.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "502261",
+      "description": "Morris gives a speech about how Joja has revitalised the town.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "502969",
+      "description": "Linus's 1 heart event: he goes looking for food in George's trash can and asks the farmer if it's wrong.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "503180",
+      "description": "Pam's 9 heart event: she shows the farmer her Sign of the Vessel statue and talks about happiness.",
+      "locations": [
+        "Pam & Penny's House"
+      ]
+    },
+    {
+      "id": "528052",
+      "description": "Harvey's 10 heart event: he faces his fear and takes the farmer on a hot air balloon.",
+      "locations": [
+        "Railroad"
+      ]
+    },
+    {
+      "id": "529952",
+      "description": "The Wizard tells the farmer about his ex-wife and asks them to get magic ink for him.",
+      "locations": [
+        "Railroad"
+      ]
+    },
+    {
+      "id": "558291",
+      "description": "Grandpa returns and evaluates the farmer's progress.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "558292",
+      "description": "After the farmer summons him, Grandpa returns and re-evaluates the farmer's progress.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "571102",
+      "description": "Harvey's 8 heart event: he contacts a pilot on his radio.",
+      "locations": [
+        "Clinic"
+      ]
+    },
+    {
+      "id": "584059",
+      "description": "Leah's 8 heart event (internet shop): the internet shop is a big success thanks to 'Mr K'.",
+      "locations": [
+        "Leah's House"
+      ]
+    },
+    {
+      "id": "611173",
+      "description": "Completion of Pam and Penny's house upgrade.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "611944",
+      "description": "Shane's 2 heart event: he offers the farmer a drink while sitting on the lake dock.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "639373",
+      "description": "Lewis and Marnie's 6 heart event: the farmer finds out about their secret relationship.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "690006",
+      "description": "Marlon gives the farmer a slime egg and tells them about slime breeding.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "691039",
+      "description": "Dwarf's 1 heart event: they and Krobus fight over their history with the Elemental Wars until the Wizard interrupts.",
+      "locations": [
+        "Sewers",
+        "Wizard's Tower"
+      ]
+    },
+    {
+      "id": "711130",
+      "description": "Willy's 6 heart event: his shop is overrun by crabs and Gus purchases them.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "719926",
+      "description": "Caroline's 2 heart event: she relaxes and makes a cup of tea for the farmer.",
+      "locations": [
+        "Caroline's Sunroom"
+      ]
+    },
+    {
+      "id": "733330",
+      "description": "Sam's 3 heart event: in Year 1, he and Vincent discuss Kent's return and the situation in Gotoro.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "739330",
+      "description": "Willy's introduction event where he gives the farmer a fishing rod.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "831125",
+      "description": "Shane's 7 heart event: with Emily and Clint's help, he films an ad for Joja Bluu.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "897405",
+      "description": "Marnie asks the farmer if they'd like to adopt a dog.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "900553",
+      "description": "Evelyn gives the farmer a garden pot and the crafting recipe for it.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "901756",
+      "description": "Abigail's 10 heart event: she tries to explore the mines, but gets scared.",
+      "locations": [
+        "Mines"
+      ]
+    },
+    {
+      "id": "911526",
+      "description": "Alex's 10 heart event: he takes the farmer on a dinner date.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "917409",
+      "description": "Emily's 6 heart event: she shows the farmer her dancing.",
+      "locations": [
+        "Haley & Emily's House"
+      ]
+    },
+    {
+      "id": "963113",
+      "description": "Completion of Pierre's gold-quality vegetables quest.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "980558",
+      "description": "Gus's 5 heart event: he gives the farmer a Mini-Jukebox and the crafting recipe for it.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "992253",
+      "description": "Leah's 6 heart event: she gives the farmer a sculpture she made for them.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "992553",
+      "description": "Clint gives the farmer blueprints for a furnace.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "992559",
+      "description": "Emily gives the farmer access to her sewing machine for tailoring. A variation with the same ID plays when the farmer is married to Emily.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "1039573",
+      "description": "Leo's introduction event.",
+      "locations": [
+        "Island Hut"
+      ]
+    },
+    {
+      "id": "1053978",
+      "description": "Completion of Robin's hardwood quest.",
+      "locations": [
+        "Robin's Carpenter Shop"
+      ]
+    },
+    {
+      "id": "1590166",
+      "description": "Marnie asks the farmer if they'd like to adopt a cat.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "1848481",
+      "description": "Elliott's 8 heart event: he performs a reading of his new novel.",
+      "locations": [
+        "Museum"
+      ]
+    },
+    {
+      "id": "2118991",
+      "description": "Follow-up to Shane's 6 heart event: he apologises for what happened and tells the farmer he's started therapy.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "2119820",
+      "description": "Alex's 6 heart event: he reflects and apologises to the farmer.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "2120303",
+      "description": "The bear teaches the farmer special knowledge about the forest.",
+      "locations": [
+        "Secret Woods"
+      ]
+    },
+    {
+      "id": "2123243",
+      "description": "Emily's 8 heart event: she runs a Clothing Therapy session.",
+      "locations": [
+        "Lewis's House"
+      ]
+    },
+    {
+      "id": "2123343",
+      "description": "Emily's 10 heart event: she and the farmer go camping and are surprised by a bear.",
+      "locations": [
+        "Secret Woods"
+      ]
+    },
+    {
+      "id": "2128292",
+      "description": "Set-up for Shane's 10 heart event: he tells the farmer about the gridball game and when & where to meet.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "2146991",
+      "description": "The candles on Grandpa's shrine light up.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "2481135",
+      "description": "Alex's 4 heart event: he tells the farmer about his father and shows them his dog Dusty.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "2794460",
+      "description": "Sebastian's 2 heart event: Robin interrupts him while he's programming.",
+      "locations": [
+        "Sebastian's Room"
+      ]
+    },
+    {
+      "id": "3091462",
+      "description": "Leah's 14 heart event: she and the farmer paint Marnie's portrait.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "3102768",
+      "description": "Morris offers 50% off coupons to steal Pierre's customers.",
+      "locations": [
+        "Pierre's General Store"
+      ]
+    },
+    {
+      "id": "3131209",
+      "description": "Completion of Willy's bug meat quest.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "3206194",
+      "description": "Completion of Gus's egg quest.",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "3900074",
+      "description": "Shane's 8 heart event: he shows the farmer his blue chickens.",
+      "locations": [
+        "Marnie's Ranch"
+      ]
+    },
+    {
+      "id": "3910674",
+      "description": "Shane's 4 heart event: he's passed out in his room and is found by Marnie and the farmer.",
+      "locations": [
+        "Marnie's Ranch"
+      ]
+    },
+    {
+      "id": "3910974",
+      "description": "Shane's 7 heart event: he's cut back on beer and buys Jas the bunny-jewel slippers.",
+      "locations": [
+        "Marnie's Ranch"
+      ]
+    },
+    {
+      "id": "3910975",
+      "description": "Shane's 6 heart event: he has a breakdown on the cliff's edge.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "3910979",
+      "description": "Jas and Vincent pick spring onions.",
+      "locations": [
+        "Cindersap Forest"
+      ]
+    },
+    {
+      "id": "3911124",
+      "description": "Set-up for Leah's 14 heart event: she tells the farmer about the painting session and when & where to meet.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "3912125",
+      "description": "Elliott's 14 heart event: he tells the farmer about his upcoming book tour.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "3912132",
+      "description": "Follow-up to Elliott's 14 heart event: he returns back home.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3917584",
+      "description": "Shane's 14 heart event (part 1): he comes out of the saloon and Marnie and Jas are suspicious of his behaviour.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "3917585",
+      "description": "Shane's 14 heart event (part 2): he comes out of the saloon again and the farmer asks him if he's been drinking.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "3917586",
+      "description": "Shane's 14 heart event (part 3): he reveals that he's been playing at the arcade frequently and drinking Joja Cola.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "3917587",
+      "description": "Set-up for Alex's 14 heart event (part 1): he asks the farmer for 5,000g for a secret project.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "3917589",
+      "description": "Set-up for Alex's 14 heart event (part 2): the farmer is reminded to visit the saloon.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "3917590",
+      "description": "Alex's 14 heart event: he sets up the saloon's backroom as a TV den for watching gridball",
+      "locations": [
+        "Stardrop Saloon"
+      ]
+    },
+    {
+      "id": "3917600",
+      "description": "Set-up for Emily's 14 heart event: she asks the farmer to bring her 200 pieces of fiber for a secret project.",
+      "locations": [
+        "Farm"
+      ]
+    },
+    {
+      "id": "3917601",
+      "description": "Emily's 14 heart event: she gives the farmer a custom set of clothing that she's made for them.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3917626",
+      "description": "Harvey's 14 heart event: he prepares a home-cooked dinner for the farmer.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3917666",
+      "description": "Set-up for Maru's 14 heart event: she tells the farmer about the comet and when & where to meet.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3918600",
+      "description": "Sam's 14 heart event (part 1): he tells the farmer he's going to look for a job with music.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3918601",
+      "description": "Sam's 14 heart event (part 2): he receives a job offer for a children's TV show composer.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3918602",
+      "description": "Sam's 14 heart event (part 3): he comes around to the idea of doing kids' music.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "3918603",
+      "description": "Sam's 14 heart event (part 4): he, Jas, and Vincent watch the show with his music.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "4081148",
+      "description": "Sam's 8 heart event: he, Abigail, Sebastian, and the farmer head into Zuzu City to play a gig.",
+      "locations": [
+        "Bus Stop"
+      ]
+    },
+    {
+      "id": "4324303",
+      "description": "Penny's 14 heart event: she remodels the farmhouse's bedroom.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "4325434",
+      "description": "Set-up for Penny's 14 heart event: she tells the farmer about her plans to remodel the bedroom and asks what style they like.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "5183338",
+      "description": "Maru's 14 heart event: she watches the comet with the farmer.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "5837189",
+      "description": "Completion of Evelyn's leek quest.",
+      "locations": [
+        "Alex's House"
+      ]
+    },
+    {
+      "id": "6184643",
+      "description": "Set-up for Haley's 14 heart event (part 1): she overhears Jas, Vincent, and Penny talking about how their old schoolbooks are falling apart.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "6184644",
+      "description": "Haley's 14 heart event: she successfully hosts a cakewalk to raise money for Penny and the children.",
+      "locations": [
+        "Town"
+      ]
+    },
+    {
+      "id": "6497421",
+      "description": "Leo's 4 heart event: he contemplates what 'normal' is.",
+      "locations": [
+        "Island North"
+      ]
+    },
+    {
+      "id": "6497423",
+      "description": "Leo's 2 heart event: he discusses his life in comparison with the farmer's.",
+      "locations": [
+        "Island West"
+      ]
+    },
+    {
+      "id": "6497428",
+      "description": "Leo's 6 heart event: Linus invites him to come live in Pelican Town with him.",
+      "locations": [
+        "Island South"
+      ]
+    },
+    {
+      "id": "6963327",
+      "description": "Abigail's 14 heart event: she saves the farmer from a wilderness golem.",
+      "locations": [
+        "Backwoods"
+      ]
+    },
+    {
+      "id": "7771191",
+      "description": "Krobus's 14 heart event: he goes for a ride with a sea monster.",
+      "locations": [
+        "Beach"
+      ]
+    },
+    {
+      "id": "8357109",
+      "description": "Completion of Linus's trash quest.",
+      "locations": [
+        "Mountain",
+        "Wizard's Tower"
+      ]
+    },
+    {
+      "id": "8675611",
+      "description": "Set-up for Haley's 14 heart event (part 2): she tells the farmer about the cakewalk, when & where to meet, and to bring a cake.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "8959199",
+      "description": "Leo's 9 heart event: a montage of him settling into life in the Valley.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "9333219",
+      "description": "Sebastian's 14 heart event (part 1): he catches an injured frog with the farmer's help.",
+      "locations": [
+        "Mountain"
+      ]
+    },
+    {
+      "id": "9333220",
+      "description": "Sebastian's 14 heart event (part 2): he shows the farmer the frog terrarium he set up.",
+      "locations": [
+        "Farmhouse"
+      ]
+    },
+    {
+      "id": "9348571",
+      "description": "Willy shows the farmer his broken boat and asks if they'd like to help repair it.",
+      "locations": [
+        "Willy's Boat"
+      ]
+    },
+    {
+      "id": "9581348",
+      "description": "Shane's 10 heart event: he invites the farmer to come watch a gridball game with him.",
+      "locations": [
+        "Bus Stop"
+      ]
+    },
+    {
+      "id": "10040609",
+      "description": "Qi congratulates the farmer on finding all the golden walnuts and discovering the hidden room.",
+      "locations": [
+        "Qi's Nut Room"
+      ]
+    },
+    {
+      "id": "15389722",
+      "description": "Lewis and Robin reveal the special orders board.",
+      "locations": [
+        "Town"
+      ]
+    }
+  ]
+}

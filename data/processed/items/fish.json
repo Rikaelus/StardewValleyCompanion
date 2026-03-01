@@ -22,7 +22,7 @@
     "isTrapFish": false,
     "price": 200,
     "edibility": -40,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -127,7 +127,7 @@
     "isTrapFish": false,
     "price": 30,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -212,7 +212,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -264,6 +264,17 @@
       "store-shipping-bin"
     ],
     "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Chest",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          }
+        ]
+      },
       {
         "type": "fish",
         "location": "Ginger Island Pirate Cove",
@@ -320,7 +331,7 @@
     "isTrapFish": false,
     "price": 40,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -411,7 +422,7 @@
     "isTrapFish": false,
     "price": 45,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -463,6 +474,11 @@
     ],
     "sources": [
       {
+        "type": "mail",
+        "mailKey": "Demetrius",
+        "sender": "Demetrius"
+      },
+      {
         "type": "fish",
         "location": "Forest River",
         "seasons": null
@@ -500,7 +516,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -552,6 +568,11 @@
     ],
     "sources": [
       {
+        "type": "mail",
+        "mailKey": "Linus",
+        "sender": "Linus"
+      },
+      {
         "type": "fish",
         "location": "Mountain Lake",
         "seasons": null
@@ -582,7 +603,7 @@
     "isTrapFish": false,
     "price": 50,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -674,7 +695,7 @@
     "isTrapFish": false,
     "price": 65,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_has_roe",
@@ -769,7 +790,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_salmon",
       "fish_has_roe",
@@ -858,7 +879,7 @@
     "isTrapFish": false,
     "price": 105,
     "edibility": 12,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -961,7 +982,7 @@
     "isTrapFish": false,
     "price": 55,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -1060,7 +1081,7 @@
     "isTrapFish": false,
     "price": 30,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -1166,7 +1187,7 @@
     "isTrapFish": false,
     "price": 200,
     "edibility": 20,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_has_roe",
@@ -1222,6 +1243,30 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Wooden Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 10
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 5
+          }
+        ]
+      },
+      {
+        "type": "mail",
+        "mailKey": "Linus",
+        "sender": "Linus"
+      },
+      {
         "type": "fish",
         "location": "Forest River",
         "seasons": [
@@ -1275,7 +1320,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_carnivorous",
@@ -1328,6 +1373,25 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Stone Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 10
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 5
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Forest River",
         "seasons": [
@@ -1369,7 +1433,7 @@
     "isTrapFish": false,
     "price": 30,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_has_roe",
@@ -1422,6 +1486,25 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Gold Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 336,
+            "amount": 1
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 5
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Forest River",
         "seasons": [
@@ -1463,7 +1546,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_has_roe",
@@ -1514,6 +1597,25 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Campfire",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 10
+          },
+          {
+            "gameId": 388,
+            "amount": 10
+          },
+          {
+            "gameId": 771,
+            "amount": 10
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean",
         "seasons": [
@@ -1547,7 +1649,7 @@
     "isTrapFish": false,
     "price": 30,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -1599,6 +1701,21 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Stump Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 5
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean",
         "seasons": [
@@ -1632,7 +1749,7 @@
     "isTrapFish": false,
     "price": 85,
     "edibility": 12,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_copper",
       "fish_has_roe",
@@ -1687,6 +1804,21 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Carved Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean",
         "seasons": [
@@ -1719,7 +1851,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_has_roe",
@@ -1770,6 +1902,17 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Skull Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 10
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ginger Island West",
         "seasons": null
@@ -1813,7 +1956,7 @@
     "isTrapFish": false,
     "price": 50,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_has_roe",
@@ -1867,6 +2010,25 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Barrel Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          },
+          {
+            "gameId": 768,
+            "amount": 1
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean",
         "seasons": [
@@ -1900,7 +2062,7 @@
     "isTrapFish": false,
     "price": 80,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_white",
       "fish_has_roe",
@@ -1951,6 +2113,37 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-pierre",
+        "storeName": "Desert Festival Stall (Pierre)",
+        "price": 160,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Marble Brazier",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 567,
+            "amount": 1
+          },
+          {
+            "gameId": 62,
+            "amount": 1
+          },
+          {
+            "gameId": 390,
+            "amount": 100
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean",
         "seasons": null
@@ -1983,7 +2176,7 @@
     "isTrapFish": false,
     "price": 20,
     "edibility": 5,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [
       "color_green",
       "fish_nonfish"
@@ -2036,6 +2229,21 @@
         "chance": 0.088
       },
       {
+        "type": "crafting",
+        "recipeName": "Wood Lamp-post",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Beach Farm",
         "seasons": null
@@ -2078,7 +2286,7 @@
     "isTrapFish": false,
     "price": 15,
     "edibility": 5,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [
       "algae_item",
       "color_dark_green",
@@ -2142,6 +2350,21 @@
         "fishTag": "fish_freshwater",
         "minPopulation": 1,
         "chance": 0.05
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Iron Lamp-post",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          }
+        ]
       },
       {
         "type": "fish",
@@ -2214,7 +2437,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": -10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -2266,6 +2489,34 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Worm Bin",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 15
+          },
+          {
+            "gameId": 336,
+            "amount": 1
+          },
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 50
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 4
+        }
+      },
+      {
         "type": "fish",
         "location": "Night Market",
         "seasons": null
@@ -2304,7 +2555,7 @@
     "isTrapFish": false,
     "price": 250,
     "edibility": 50,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_purple",
       "fish_has_roe",
@@ -2416,7 +2667,7 @@
     "isTrapFish": false,
     "price": 45,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_white",
       "fish_has_roe",
@@ -2473,6 +2724,26 @@
         "chance": 0.08
       },
       {
+        "type": "crafting",
+        "recipeName": "Slime Incubator",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 337,
+            "amount": 2
+          },
+          {
+            "gameId": 766,
+            "amount": 100
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 8
+        }
+      },
+      {
         "type": "fish",
         "location": "Mines (F20)",
         "seasons": null
@@ -2510,7 +2781,7 @@
     "isTrapFish": false,
     "price": 25,
     "edibility": 8,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [
       "algae_item",
       "color_white",
@@ -2642,7 +2913,7 @@
     "isTrapFish": false,
     "price": 300,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -2694,6 +2965,30 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Slime Egg-Press",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 382,
+            "amount": 25
+          },
+          {
+            "gameId": 82,
+            "amount": 1
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 6
+        }
+      },
+      {
         "type": "fish",
         "location": "Mines (F20)",
         "seasons": null
@@ -2723,7 +3018,7 @@
     "isTrapFish": false,
     "price": 1500,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_has_roe",
@@ -2807,7 +3102,7 @@
     "isTrapFish": false,
     "price": 900,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_has_roe",
@@ -2892,7 +3187,7 @@
     "isTrapFish": false,
     "price": 500,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -2976,7 +3271,7 @@
     "isTrapFish": false,
     "price": 700,
     "edibility": 20,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_has_roe",
@@ -3065,7 +3360,7 @@
     "isTrapFish": false,
     "price": 5000,
     "edibility": 200,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -3114,6 +3409,21 @@
     ],
     "sources": [
       {
+        "type": "crafting",
+        "recipeName": "Cask",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 20
+          },
+          {
+            "gameId": 709,
+            "amount": 1
+          }
+        ]
+      },
+      {
         "type": "fish",
         "location": "Mountain Lake",
         "seasons": [
@@ -3149,7 +3459,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 5,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_desert",
@@ -3233,7 +3543,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": -50,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_desert",
@@ -3314,7 +3624,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -3418,7 +3728,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": 20,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_iridium",
       "fish_has_roe",
@@ -3512,7 +3822,7 @@
     "isTrapFish": true,
     "price": 50,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "beach_item",
       "color_light_cyan",
@@ -3568,6 +3878,16 @@
     ],
     "sources": [
       {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean (Crab Pot)",
         "seasons": null
@@ -3605,7 +3925,7 @@
     "isTrapFish": false,
     "price": 1000,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -3684,7 +4004,7 @@
     "isTrapFish": false,
     "price": 200,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_cyan",
       "fish_has_roe",
@@ -3772,7 +4092,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -3868,7 +4188,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -3950,7 +4270,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_has_roe",
@@ -4048,7 +4368,7 @@
     "isTrapFish": false,
     "price": 50,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_has_roe",
@@ -4135,7 +4455,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_carnivorous",
@@ -4222,7 +4542,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -4307,7 +4627,7 @@
     "isTrapFish": false,
     "price": 60,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -4403,7 +4723,7 @@
     "isTrapFish": false,
     "price": 120,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_carnivorous",
@@ -4506,7 +4826,7 @@
     "isTrapFish": false,
     "price": 80,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_dark_gray",
       "fish_has_roe",
@@ -4584,7 +4904,7 @@
     "isTrapFish": true,
     "price": 120,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_crab_pot",
@@ -4658,7 +4978,7 @@
     "isTrapFish": true,
     "price": 75,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_dark_gray",
       "fish_crab_pot",
@@ -4732,7 +5052,7 @@
     "isTrapFish": true,
     "price": 100,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_crab_pot",
@@ -4785,6 +5105,18 @@
     ],
     "sources": [
       {
+        "type": "shop",
+        "storeId": "store-desert-festival-elliott",
+        "storeName": "Desert Festival Stall (Elliott)",
+        "price": 200,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
         "type": "monster-drop",
         "monster": "Rock Crab",
         "chance": 0.15
@@ -4822,7 +5154,7 @@
     "isTrapFish": true,
     "price": 50,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_dark_gray",
       "fish_crab_pot",
@@ -4876,6 +5208,16 @@
     ],
     "sources": [
       {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean (Crab Pot)",
         "seasons": null
@@ -4903,7 +5245,7 @@
     "isTrapFish": true,
     "price": 30,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_crab_pot",
@@ -4957,6 +5299,16 @@
     ],
     "sources": [
       {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean (Crab Pot)",
         "seasons": null
@@ -4984,7 +5336,7 @@
     "isTrapFish": true,
     "price": 60,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_pink",
       "fish_crab_pot",
@@ -5059,7 +5411,7 @@
     "isTrapFish": true,
     "price": 65,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_yellow",
       "fish_crab_pot",
@@ -5134,7 +5486,7 @@
     "isTrapFish": true,
     "price": 20,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_cyan",
       "fish_crab_pot",
@@ -5209,7 +5561,7 @@
     "isTrapFish": true,
     "price": 40,
     "edibility": -300,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_gray",
       "fish_crab_pot",
@@ -5264,6 +5616,16 @@
     ],
     "sources": [
       {
+        "type": "forage",
+        "location": "Ocean",
+        "seasons": [
+          "spring",
+          "summer",
+          "fall",
+          "winter"
+        ]
+      },
+      {
         "type": "fish",
         "location": "Ocean (Crab Pot)",
         "seasons": null
@@ -5301,7 +5663,7 @@
     "isTrapFish": false,
     "price": 75,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_has_roe",
@@ -5388,7 +5750,7 @@
     "isTrapFish": false,
     "price": 1000,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -5473,7 +5835,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": 25,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_dark_purple",
       "fish_has_roe",
@@ -5559,7 +5921,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_bug_lair",
@@ -5642,7 +6004,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -5726,7 +6088,7 @@
     "isTrapFish": false,
     "price": 220,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -5808,7 +6170,7 @@
     "isTrapFish": false,
     "price": 500,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_sand",
       "fish_has_roe",
@@ -5890,7 +6252,7 @@
     "isTrapFish": false,
     "price": 180,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",
@@ -5973,7 +6335,7 @@
     "isTrapFish": false,
     "price": 100,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_orange",
       "fish_has_roe",
@@ -6066,7 +6428,7 @@
     "isTrapFish": false,
     "price": 120,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_cyan",
       "fish_has_roe",
@@ -6150,7 +6512,7 @@
     "isTrapFish": false,
     "price": 1500,
     "edibility": 15,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_red",
       "fish_has_roe",
@@ -6238,7 +6600,7 @@
     "isTrapFish": false,
     "price": 900,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_pink",
       "fish_has_roe",
@@ -6322,7 +6684,7 @@
     "isTrapFish": false,
     "price": 5000,
     "edibility": 200,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -6405,7 +6767,7 @@
     "isTrapFish": false,
     "price": 1000,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_green",
       "fish_has_roe",
@@ -6484,7 +6846,7 @@
     "isTrapFish": false,
     "price": 1000,
     "edibility": 10,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_blue",
       "fish_has_roe",
@@ -6566,7 +6928,7 @@
     "isTrapFish": false,
     "price": 150,
     "edibility": -25,
-    "category": -4,
+    "gameCategory": -4,
     "contextTags": [
       "color_brown",
       "fish_has_roe",

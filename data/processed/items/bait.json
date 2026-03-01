@@ -1,0 +1,579 @@
+[
+  {
+    "type": "bait",
+    "id": "bait-685",
+    "gameId": 685,
+    "name": "Bait",
+    "icon": "assets/objects/Bait.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [
+      "color_pink"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-willy",
+        "storeName": "Willy's Fish Shop",
+        "price": 5,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.fishing"
+            },
+            2
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Bait",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 684,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "bait",
+    "id": "bait-SpecificBait",
+    "gameId": "SpecificBait",
+    "name": "Bait",
+    "icon": "assets/objects/SpecificBait.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "bait",
+    "id": "challenge-bait",
+    "gameId": "ChallengeBait",
+    "name": "Challenge Bait",
+    "icon": "assets/objects/ChallengeBait.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Challenge Bait",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 5
+          },
+          {
+            "gameId": "Moss",
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "bait",
+    "id": "deluxe-bait",
+    "gameId": "DeluxeBait",
+    "name": "Deluxe Bait",
+    "icon": "assets/objects/DeluxeBait.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-bookseller",
+        "storeName": "Bookseller",
+        "price": 2,
+        "quantity": 30,
+        "tradeItemId": "bait-and-bobber",
+        "tradeItemGameId": "SkillBook_1",
+        "tradeItemName": "Bait And Bobber",
+        "tradeItemIcon": "assets/objects/BaitAndBobber.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-willy",
+        "storeName": "Willy's Fish Shop",
+        "price": 100,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.fishing"
+            },
+            4
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Bait",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 685,
+            "amount": 5
+          },
+          {
+            "gameId": "Moss",
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 4
+        }
+      }
+    ]
+  },
+  {
+    "type": "bait",
+    "id": "magic-bait",
+    "gameId": 908,
+    "name": "Magic Bait",
+    "icon": "assets/objects/MagicBait.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 2,
+        "quantity": 20,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Magic Bait",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 909,
+            "amount": 1
+          },
+          {
+            "gameId": 684,
+            "amount": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "bait",
+    "id": "magnet",
+    "gameId": 703,
+    "name": "Magnet",
+    "icon": "assets/objects/Magnet.png",
+    "price": 15,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-willy",
+        "storeName": "Willy's Fish Shop",
+        "price": 1000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.fishing"
+            },
+            9
+          ]
+        }
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Magnet",
+        "outputCount": 3,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 9
+        }
+      }
+    ]
+  },
+  {
+    "type": "bait",
+    "id": "wild-bait",
+    "gameId": 774,
+    "name": "Wild Bait",
+    "icon": "assets/objects/WildBait.png",
+    "price": 15,
+    "edibility": -300,
+    "gameCategory": -21,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "Ginger Island South",
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island Southeast",
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island West",
+        "chance": 0.1
+      },
+      {
+        "type": "tilling",
+        "location": "Ginger Island North",
+        "chance": 0.1
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Wild Bait",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 771,
+            "amount": 10
+          },
+          {
+            "gameId": 684,
+            "amount": 5
+          },
+          {
+            "gameId": 766,
+            "amount": 5
+          }
+        ]
+      }
+    ]
+  }
+]

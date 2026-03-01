@@ -72,11 +72,6 @@
   left: 0;
 }
 
-.data-table th.pinned[data-pinned-index="1"],
-.data-table td.pinned[data-pinned-index="1"] {
-  left: 48px;
-}
-
 .data-table th.pinned::after,
 .data-table td.pinned::after {
   content: '';

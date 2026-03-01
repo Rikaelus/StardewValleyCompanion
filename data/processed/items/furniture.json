@@ -12,7 +12,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -30,7 +29,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -48,7 +46,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -66,7 +63,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -84,7 +80,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -102,7 +97,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -120,7 +114,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -138,7 +131,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -156,7 +148,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -174,7 +165,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -192,7 +182,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -210,7 +199,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -228,14 +216,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 2000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -253,7 +239,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -271,7 +256,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -289,7 +273,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -307,7 +290,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -325,7 +307,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 5000,
         "days": [
           "Wednesday"
@@ -335,7 +316,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -353,7 +333,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -371,7 +350,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -389,7 +367,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -407,7 +384,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -425,7 +401,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -443,7 +418,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -461,7 +435,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -479,7 +452,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -497,7 +469,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -515,7 +486,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -533,7 +503,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -551,7 +520,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -569,7 +537,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -587,7 +554,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -605,7 +571,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -623,7 +588,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -641,7 +605,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -659,13 +622,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "stardrop",
+    "id": "stardrop-stardrop",
     "gameId": "Stardrop",
     "name": "'Stardrop'",
     "type": "painting",
@@ -677,7 +639,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -695,7 +656,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -713,7 +673,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -731,7 +690,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -749,7 +707,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -767,7 +724,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -785,7 +741,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -803,7 +758,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -821,7 +775,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -839,7 +792,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -857,7 +809,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -875,7 +826,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -893,7 +843,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -911,7 +860,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -929,7 +877,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -947,7 +894,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -965,7 +911,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 1000,
         "tradeItemId": "mango",
         "tradeItemGameId": 834,
@@ -980,7 +925,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -998,7 +942,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1016,7 +959,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1034,11 +976,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Abigail",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.abigail"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -1047,7 +992,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1065,11 +1009,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Alex",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.alex"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -1078,7 +1025,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1096,7 +1042,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1114,7 +1059,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1132,7 +1076,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1150,7 +1093,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1168,7 +1110,6 @@
         "type": "shop",
         "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
-        "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 20000,
@@ -1182,7 +1123,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1200,7 +1140,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1218,7 +1157,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1236,7 +1174,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1254,7 +1191,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1272,14 +1208,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 600
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1297,7 +1231,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1315,14 +1248,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1340,7 +1271,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 300,
         "days": [
           "Wednesday"
@@ -1350,7 +1280,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1368,7 +1297,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "days": [
           "Wednesday"
         ]
@@ -1377,7 +1305,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1395,7 +1322,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 12000,
         "tradeItemId": "pearl",
         "tradeItemGameId": 797,
@@ -1407,7 +1333,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1425,7 +1350,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 10000,
         "days": [
           "Wednesday"
@@ -1435,7 +1359,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1453,7 +1376,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1000,
         "days": [
           "Wednesday"
@@ -1463,7 +1385,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1481,7 +1402,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1499,7 +1419,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Wednesday"
@@ -1509,7 +1428,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1527,7 +1445,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Wednesday"
@@ -1537,7 +1454,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1555,14 +1471,12 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
         "price": 5000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1580,7 +1494,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1598,7 +1511,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1616,7 +1528,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1634,7 +1545,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1652,7 +1562,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1670,7 +1579,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1688,7 +1596,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1706,7 +1613,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1724,14 +1630,20 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.ticketPrizesClaimed"
+            },
+            6
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1749,14 +1661,32 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 1000
+        "price": 1000,
+        "condition": {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "player.stats.ticketPrizesClaimed"
+                },
+                6
+              ]
+            },
+            {
+              ">=": [
+                {
+                  "var": "player.houseUpgrade"
+                },
+                1
+              ]
+            }
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1774,7 +1704,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1792,7 +1721,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1810,7 +1738,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1828,7 +1755,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1846,7 +1772,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1864,7 +1789,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1882,7 +1806,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1900,7 +1823,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1918,7 +1840,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1936,7 +1857,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1954,7 +1874,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1972,14 +1891,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 2000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -1997,7 +1914,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2015,7 +1931,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2033,7 +1948,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2051,7 +1965,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2069,7 +1982,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2087,7 +1999,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2105,14 +2016,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2130,7 +2039,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2148,7 +2056,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2166,7 +2073,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2184,7 +2090,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 100000,
         "tradeItemId": "bat-wing",
         "tradeItemGameId": 767,
@@ -2196,7 +2101,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2214,7 +2118,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2232,14 +2135,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 4000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2257,7 +2158,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2274,8 +2174,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2289,8 +2188,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2305,7 +2203,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2323,7 +2220,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2341,7 +2237,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2359,7 +2254,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2377,7 +2271,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2395,14 +2288,12 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
         "price": 10000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2420,14 +2311,12 @@
         "type": "shop",
         "storeId": "store-pierre",
         "storeName": "Pierre's General Store",
-        "storeBaseName": "Pierre's General Store",
         "price": 60000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2445,7 +2334,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2463,7 +2351,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2481,7 +2368,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2499,14 +2385,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2524,14 +2408,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2549,14 +2431,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2574,14 +2454,12 @@
         "type": "shop",
         "storeId": "store-flower-dance",
         "storeName": "Flower Dance",
-        "storeBaseName": "Flower Dance",
         "price": 400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2599,14 +2477,12 @@
         "type": "shop",
         "storeId": "store-flower-dance",
         "storeName": "Flower Dance",
-        "storeBaseName": "Flower Dance",
         "price": 400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2624,7 +2500,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2642,13 +2517,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "chicken-statue",
+    "id": "chicken-statue-1305",
     "gameId": 1305,
     "name": "Chicken Statue",
     "type": "decor",
@@ -2660,7 +2534,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2678,14 +2551,20 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            2
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2703,7 +2582,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2721,7 +2599,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2737,9 +2614,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Caroline)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-caroline",
+        "storeName": "Desert Festival Stall (Caroline)",
         "price": 2000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2751,7 +2627,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2769,14 +2644,12 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 5000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2794,14 +2667,12 @@
         "type": "shop",
         "storeId": "store-moonlight-jellies",
         "storeName": "Dance of the Moonlight Jellies",
-        "storeBaseName": "Dance of the Moonlight Jellies",
         "price": 1200
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2819,14 +2690,12 @@
         "type": "shop",
         "storeId": "store-moonlight-jellies",
         "storeName": "Dance of the Moonlight Jellies",
-        "storeBaseName": "Dance of the Moonlight Jellies",
         "price": 1200
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2844,14 +2713,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2869,14 +2736,12 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 2000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2894,7 +2759,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2912,14 +2776,12 @@
         "type": "shop",
         "storeId": "store-egg-festival",
         "storeName": "Egg Festival",
-        "storeBaseName": "Egg Festival",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2937,7 +2799,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2955,7 +2816,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2973,7 +2833,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -2991,14 +2850,20 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
-        "price": 10000
+        "price": 10000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.ticketPrizesClaimed"
+            },
+            17
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3016,7 +2881,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3034,28 +2898,48 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
-        "price": 2500
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
-        "price": 2500
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
-        "price": 2500
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3073,7 +2957,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3091,7 +2974,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3109,7 +2991,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3127,14 +3008,12 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
         "price": 10000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3152,7 +3031,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3170,14 +3048,12 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
         "price": 10000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3195,7 +3071,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3213,7 +3088,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3231,7 +3105,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 1998,
         "tradeItemId": "coal",
         "tradeItemGameId": 382,
@@ -3243,7 +3116,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3261,7 +3133,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3279,7 +3150,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3297,7 +3167,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3315,7 +3184,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3333,7 +3201,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3351,14 +3218,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3375,8 +3240,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3391,7 +3255,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3409,7 +3272,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3427,7 +3289,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3445,7 +3306,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3463,7 +3323,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3481,7 +3340,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3499,7 +3357,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3517,7 +3374,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3535,7 +3391,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3553,7 +3408,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3571,7 +3425,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3589,7 +3442,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3607,7 +3459,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3625,14 +3476,12 @@
         "type": "shop",
         "storeId": "store-egg-festival",
         "storeName": "Egg Festival",
-        "storeBaseName": "Egg Festival",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3650,7 +3499,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3668,7 +3516,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3686,14 +3533,12 @@
         "type": "shop",
         "storeId": "store-marlon",
         "storeName": "Adventurer's Guild (Marlon)",
-        "storeBaseName": "Adventurer's Guild (Marlon)",
         "price": 10000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3711,7 +3556,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3729,7 +3573,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3747,7 +3590,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3765,14 +3607,46 @@
         "type": "shop",
         "storeId": "store-willy",
         "storeName": "Willy's Fish Shop",
-        "storeBaseName": "Willy's Fish Shop",
-        "price": 5000
+        "price": 5000,
+        "condition": {
+          "in": [
+            "WillyTropicalFish",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "WillyTropicalFish",
+        "sender": "Willy",
+        "isSpecialOrder": true,
+        "condition": {
+          "and": [
+            {
+              "==": [
+                {
+                  "var": "world.islandUnlocked"
+                },
+                true
+              ]
+            },
+            {
+              "in": [
+                "Island_Resort",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3790,14 +3664,20 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 12000
+        "price": 12000,
+        "condition": {
+          "in": [
+            1053978,
+            {
+              "var": "player.events"
+            }
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3815,7 +3695,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3832,8 +3711,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3848,7 +3726,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3865,8 +3742,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3881,7 +3757,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3898,8 +3773,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3914,7 +3788,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3931,8 +3804,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3947,7 +3819,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3964,8 +3835,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3980,7 +3850,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -3997,8 +3866,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -4013,7 +3881,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4031,7 +3898,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4049,7 +3915,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4067,7 +3932,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4085,14 +3949,12 @@
         "type": "shop",
         "storeId": "store-marnie",
         "storeName": "Marnie's Ranch",
-        "storeBaseName": "Marnie's Ranch",
         "price": 10000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4110,20 +3972,26 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 2000
+        "price": 2000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "dried-sunflowers",
+    "id": "dried-sunflowers-1307",
     "gameId": 1307,
     "name": "Dried Sunflowers",
     "type": "decor",
@@ -4135,7 +4003,6 @@
         "type": "shop",
         "storeId": "store-stardew-valley-fair",
         "storeName": "Stardew Valley Fair",
-        "storeBaseName": "Stardew Valley Fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 100,
@@ -4146,7 +4013,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4164,7 +4030,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4182,7 +4047,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4200,7 +4064,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4218,7 +4081,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4236,7 +4098,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4254,7 +4115,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4272,11 +4132,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Elliott",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.elliott"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -4285,7 +4148,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4303,7 +4165,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4321,11 +4182,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Emily",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.emily"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -4334,7 +4198,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4352,7 +4215,6 @@
         "type": "shop",
         "storeId": "store-qi-gem-shop",
         "storeName": "Qi's Walnut Room",
-        "storeBaseName": "Qi's Walnut Room",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 12000,
@@ -4366,7 +4228,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4384,7 +4245,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4402,7 +4262,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4420,7 +4279,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4438,7 +4296,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4456,7 +4313,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4474,7 +4330,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4492,7 +4347,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4510,7 +4364,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4528,7 +4381,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4546,7 +4398,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4564,7 +4415,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4582,14 +4432,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 3000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4607,14 +4455,12 @@
         "type": "shop",
         "storeId": "store-willy",
         "storeName": "Willy's Fish Shop",
-        "storeBaseName": "Willy's Fish Shop",
         "price": 25000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4632,7 +4478,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4650,7 +4495,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4668,7 +4512,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4686,7 +4529,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4704,7 +4546,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4722,7 +4563,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4740,7 +4580,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4758,7 +4597,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4776,7 +4614,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4794,7 +4631,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4812,7 +4648,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4830,7 +4665,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4848,7 +4682,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4866,7 +4699,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4884,7 +4716,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4902,7 +4733,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4920,14 +4750,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1400
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4945,7 +4773,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4963,7 +4790,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4981,7 +4807,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -4999,14 +4824,12 @@
         "type": "shop",
         "storeId": "store-spirits-eve",
         "storeName": "Spirit's Eve",
-        "storeBaseName": "Spirit's Eve",
         "price": 4000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5024,14 +4847,20 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 400000
+        "price": 400000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Robin)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-robin",
+        "storeName": "Desert Festival Stall (Robin)",
         "price": 400000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -5044,7 +4873,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5062,7 +4890,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5080,7 +4907,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5098,7 +4924,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5116,7 +4941,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5134,7 +4958,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5152,7 +4975,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5170,7 +4992,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5188,7 +5009,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5206,7 +5026,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5224,7 +5043,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5242,7 +5060,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5260,7 +5077,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5278,7 +5094,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5296,7 +5111,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5314,7 +5128,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5332,7 +5145,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5350,7 +5162,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5368,7 +5179,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5386,7 +5196,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5404,7 +5213,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5422,7 +5230,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5440,7 +5247,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5458,7 +5264,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5476,7 +5281,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5494,7 +5298,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5512,11 +5315,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Haley",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.haley"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -5525,7 +5331,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5543,14 +5348,12 @@
         "type": "shop",
         "storeId": "store-willy",
         "storeName": "Willy's Fish Shop",
-        "storeBaseName": "Willy's Fish Shop",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5568,7 +5371,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5586,11 +5388,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Harvey",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.harvey"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -5599,7 +5404,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5617,7 +5421,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5635,7 +5438,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5653,7 +5455,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5671,7 +5472,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5689,7 +5489,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5707,7 +5506,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5725,7 +5523,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5743,7 +5540,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5761,7 +5557,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5779,7 +5574,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5797,7 +5591,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5815,7 +5608,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5833,7 +5625,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5851,7 +5642,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5869,14 +5659,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 700
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5894,7 +5682,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5912,7 +5699,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5930,7 +5716,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5948,7 +5733,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5966,7 +5750,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -5984,14 +5767,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6009,14 +5790,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 4000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6034,7 +5813,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6052,7 +5830,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6070,7 +5847,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6088,28 +5864,24 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 15000
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 15000
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 15000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6127,7 +5899,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6145,7 +5916,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6163,14 +5933,12 @@
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6188,7 +5956,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6206,7 +5973,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6224,7 +5990,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6242,7 +6007,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6260,23 +6024,28 @@
         "type": "shop",
         "storeId": "store-joja",
         "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
         "price": 25000
       },
       {
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
         "rotating": true,
+        "condition": {
+          "==": [
+            {
+              "var": "world.communityCenter"
+            },
+            true
+          ]
+        },
         "stock": 1
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6294,7 +6063,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6312,7 +6080,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6330,7 +6097,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6348,7 +6114,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6366,7 +6131,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6384,7 +6148,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6402,7 +6165,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6420,7 +6182,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6438,7 +6199,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6456,7 +6216,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6474,7 +6233,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6492,7 +6250,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6510,7 +6267,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6528,7 +6284,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6546,7 +6301,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6564,7 +6318,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6582,7 +6335,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6600,7 +6352,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6618,7 +6369,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6636,7 +6386,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6654,14 +6403,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6679,14 +6426,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6704,14 +6449,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6729,14 +6472,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6754,19 +6495,25 @@
         "type": "shop",
         "storeId": "store-raccoon",
         "storeName": "Raccoon Shop",
-        "storeBaseName": "Raccoon Shop",
         "price": 10000,
         "tradeItemId": "broken-glasses",
         "tradeItemGameId": 170,
         "tradeItemName": "Broken Glasses",
         "tradeItemIcon": "assets/objects/BrokenGlasses.png",
-        "tradeItemAmount": 5
+        "tradeItemAmount": 5,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            5
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6784,7 +6531,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 1000,
         "tradeItemId": "cinder-shard",
         "tradeItemGameId": 848,
@@ -6796,7 +6542,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6814,7 +6559,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6832,7 +6576,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6850,7 +6593,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6868,7 +6610,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6886,16 +6627,22 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 70000,
         "rotating": true,
+        "condition": {
+          "==": [
+            {
+              "var": "world.communityCenter"
+            },
+            true
+          ]
+        },
         "stock": 1
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6913,7 +6660,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6931,7 +6677,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6949,7 +6694,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6967,7 +6711,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -6985,7 +6728,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7003,7 +6745,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7021,7 +6762,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7039,7 +6779,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7057,7 +6796,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7075,7 +6813,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7093,7 +6830,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7111,7 +6847,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7129,7 +6864,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7147,7 +6881,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7165,7 +6898,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7183,7 +6915,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7201,7 +6932,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7219,7 +6949,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7237,7 +6966,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7255,7 +6983,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7273,7 +7000,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7291,7 +7017,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7309,11 +7034,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Krobus",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.krobus"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -7322,7 +7050,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7340,14 +7067,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7365,7 +7090,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7383,7 +7107,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7401,7 +7124,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 3000,
         "days": [
           "Sunday"
@@ -7411,7 +7133,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7429,7 +7150,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 2000,
         "days": [
           "Monday"
@@ -7439,7 +7159,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7457,14 +7176,12 @@
         "type": "shop",
         "storeId": "store-willy",
         "storeName": "Willy's Fish Shop",
-        "storeBaseName": "Willy's Fish Shop",
         "price": 2000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7482,7 +7199,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 2500,
         "days": [
           "Friday"
@@ -7492,7 +7208,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7510,7 +7225,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7528,7 +7242,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7546,7 +7259,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7564,14 +7276,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7589,7 +7299,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7607,7 +7316,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7625,7 +7333,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7643,11 +7350,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Leah",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.leah"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -7656,7 +7366,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7674,7 +7383,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7692,7 +7400,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7710,7 +7417,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7728,7 +7434,6 @@
         "type": "shop",
         "storeId": "store-stardew-valley-fair",
         "storeName": "Stardew Valley Fair",
-        "storeBaseName": "Stardew Valley Fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 500,
@@ -7739,7 +7444,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7757,7 +7461,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7775,7 +7478,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7793,7 +7495,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7811,14 +7512,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7836,14 +7535,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 700
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7861,7 +7558,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7879,7 +7575,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7897,7 +7592,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7915,7 +7609,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7933,7 +7626,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7951,7 +7643,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7969,7 +7660,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -7987,7 +7677,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8005,7 +7694,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8023,7 +7711,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8041,7 +7728,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8059,7 +7745,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8077,7 +7762,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8095,7 +7779,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8113,7 +7796,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8131,14 +7813,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8156,11 +7836,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Maru",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.maru"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -8169,7 +7852,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8187,7 +7869,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8205,7 +7886,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8223,7 +7903,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8241,7 +7920,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8259,7 +7937,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 10000,
         "tradeItemId": "iridium-bar",
         "tradeItemGameId": 337,
@@ -8271,7 +7948,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8289,7 +7965,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 10000,
         "tradeItemId": "iridium-bar",
         "tradeItemGameId": 337,
@@ -8301,7 +7976,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8319,7 +7993,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8337,7 +8010,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8355,7 +8027,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8373,7 +8044,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8391,7 +8061,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8409,7 +8078,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8427,7 +8095,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8445,7 +8112,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8463,7 +8129,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8481,7 +8146,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8499,14 +8163,12 @@
         "type": "shop",
         "storeId": "store-moonlight-jellies",
         "storeName": "Dance of the Moonlight Jellies",
-        "storeBaseName": "Dance of the Moonlight Jellies",
         "price": 4000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8524,7 +8186,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8542,7 +8203,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8560,7 +8220,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8578,7 +8237,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8596,14 +8254,12 @@
         "type": "shop",
         "storeId": "store-krobus",
         "storeName": "Krobus's Shop",
-        "storeBaseName": "Krobus's Shop",
         "price": 20000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8621,7 +8277,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8639,7 +8294,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8657,14 +8311,12 @@
         "type": "shop",
         "storeId": "store-moonlight-jellies",
         "storeName": "Dance of the Moonlight Jellies",
-        "storeBaseName": "Dance of the Moonlight Jellies",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8682,7 +8334,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8700,7 +8351,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8718,7 +8368,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8736,7 +8385,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8754,7 +8402,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8772,7 +8419,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8788,9 +8434,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Penny)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-penny",
+        "storeName": "Desert Festival Stall (Penny)",
         "price": 1500,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -8802,7 +8447,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8818,9 +8462,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Penny)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-penny",
+        "storeName": "Desert Festival Stall (Penny)",
         "price": 1500,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -8832,7 +8475,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8848,9 +8490,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Penny)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-penny",
+        "storeName": "Desert Festival Stall (Penny)",
         "price": 1500,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -8862,7 +8503,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8880,7 +8520,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 160,
         "days": [
           "Monday"
@@ -8890,7 +8529,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8908,7 +8546,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "days": [
           "Monday"
         ]
@@ -8917,7 +8554,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8935,7 +8571,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 200,
         "days": [
           "Monday"
@@ -8945,7 +8580,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8963,7 +8597,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1000,
         "days": [
           "Monday"
@@ -8973,7 +8606,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -8991,7 +8623,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9009,7 +8640,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Monday"
@@ -9019,7 +8649,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9037,7 +8666,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Monday"
@@ -9047,13 +8675,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "obsidian-vase",
+    "id": "obsidian-vase-1299",
     "gameId": 1299,
     "name": "Obsidian Vase",
     "type": "decor",
@@ -9065,7 +8692,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9083,7 +8709,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 2500,
         "tradeItemId": "blue-discus",
         "tradeItemGameId": 838,
@@ -9098,7 +8723,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9116,7 +8740,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 2500,
         "days": [
           "Thursday"
@@ -9126,7 +8749,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9144,7 +8766,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9162,7 +8783,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9180,7 +8800,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9198,14 +8817,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9223,7 +8840,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9241,7 +8857,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 1000,
         "tradeItemId": "pineapple",
         "tradeItemGameId": 832,
@@ -9256,7 +8871,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9274,14 +8888,12 @@
         "type": "shop",
         "storeId": "store-egg-festival",
         "storeName": "Egg Festival",
-        "storeBaseName": "Egg Festival",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9299,7 +8911,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9317,11 +8928,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Penny",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.penny"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -9330,7 +8944,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9348,7 +8961,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9366,7 +8978,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9384,7 +8995,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9402,7 +9012,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9420,7 +9029,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9438,7 +9046,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9454,9 +9061,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Penny)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-penny",
+        "storeName": "Desert Festival Stall (Penny)",
         "price": 8000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -9468,7 +9074,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9486,7 +9091,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9504,21 +9108,18 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 700
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9536,14 +9137,20 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
-        "price": 9000
+        "price": 9000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9561,7 +9168,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9579,7 +9185,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9597,7 +9202,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9615,7 +9219,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9633,7 +9236,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9651,7 +9253,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9669,7 +9270,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9687,7 +9287,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9705,7 +9304,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9723,7 +9321,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9741,7 +9338,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9759,7 +9355,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9777,7 +9372,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9795,7 +9389,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9813,7 +9406,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9831,7 +9423,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9849,7 +9440,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9867,7 +9457,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9885,7 +9474,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9903,7 +9491,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9921,7 +9508,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9939,7 +9525,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9957,7 +9542,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9975,7 +9559,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -9993,7 +9576,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10011,7 +9593,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10029,7 +9610,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10047,7 +9627,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 110000,
         "rotating": true,
         "stock": 1
@@ -10056,7 +9635,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10074,7 +9652,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10092,7 +9669,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10110,7 +9686,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10128,7 +9703,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10146,7 +9720,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10164,7 +9737,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10182,7 +9754,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10200,7 +9771,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10218,7 +9788,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10236,7 +9805,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10254,7 +9822,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10272,7 +9839,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10290,7 +9856,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10308,7 +9873,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10326,7 +9890,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10344,7 +9907,6 @@
         "type": "shop",
         "storeId": "store-retro-furniture-catalogue",
         "storeName": "Retro Furniture Catalogue",
-        "storeBaseName": "Retro Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10362,7 +9924,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10380,7 +9941,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10398,7 +9958,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10416,14 +9975,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10441,14 +9998,12 @@
         "type": "shop",
         "storeId": "store-flower-dance",
         "storeName": "Flower Dance",
-        "storeBaseName": "Flower Dance",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10466,7 +10021,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10484,11 +10038,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Sam",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.sam"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -10497,7 +10054,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10515,7 +10071,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10532,8 +10087,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -10548,7 +10102,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10566,11 +10119,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Sebastian",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.sebastian"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -10579,7 +10135,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10597,11 +10152,14 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 30000,
-        "heartsRequired": {
-          "npc": "Shane",
-          "count": 14
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.shane"
+            },
+            14
+          ]
         },
         "stock": 1,
         "stockLimit": 1
@@ -10610,7 +10168,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10628,7 +10185,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10646,13 +10202,12 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "singing-stone",
+    "id": "singing-stone-1300",
     "gameId": 1300,
     "name": "Singing Stone",
     "type": "decor",
@@ -10664,7 +10219,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10682,7 +10236,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10700,7 +10253,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10718,13 +10270,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "sloth-skeleton-l",
+    "id": "sloth-skeleton-l-1301",
     "gameId": 1301,
     "name": "Sloth Skeleton L",
     "type": "decor",
@@ -10736,13 +10287,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "sloth-skeleton-m",
+    "id": "sloth-skeleton-m-1302",
     "gameId": 1302,
     "name": "Sloth Skeleton M",
     "type": "decor",
@@ -10754,13 +10304,12 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "sloth-skeleton-r",
+    "id": "sloth-skeleton-r-1303",
     "gameId": 1303,
     "name": "Sloth Skeleton R",
     "type": "decor",
@@ -10772,7 +10321,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10790,7 +10338,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10808,7 +10355,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10826,7 +10372,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10844,7 +10389,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10862,14 +10406,12 @@
         "type": "shop",
         "storeId": "store-willy",
         "storeName": "Willy's Fish Shop",
-        "storeBaseName": "Willy's Fish Shop",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10887,7 +10429,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10905,7 +10446,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10923,7 +10463,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10941,7 +10480,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10959,7 +10497,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10977,7 +10514,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -10995,7 +10531,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11013,7 +10548,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11031,7 +10565,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11049,7 +10582,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11067,7 +10599,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11085,14 +10616,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 600
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11110,7 +10639,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11128,7 +10656,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11146,7 +10673,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11164,7 +10690,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11182,7 +10707,6 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11200,7 +10724,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11218,7 +10741,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11236,7 +10758,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11254,13 +10775,12 @@
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
         "storeName": "Joja Furniture Catalogue",
-        "storeBaseName": "Joja Furniture Catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "standing-geode",
+    "id": "standing-geode-1298",
     "gameId": 1298,
     "name": "Standing Geode",
     "type": "decor",
@@ -11272,7 +10792,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11290,14 +10809,12 @@
         "type": "shop",
         "storeId": "store-moonlight-jellies",
         "storeName": "Dance of the Moonlight Jellies",
-        "storeBaseName": "Dance of the Moonlight Jellies",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11315,7 +10832,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11333,7 +10849,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11351,14 +10866,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 3000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11376,7 +10889,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11394,7 +10906,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11412,14 +10923,12 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 6000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11435,9 +10944,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Penny)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-penny",
+        "storeName": "Desert Festival Stall (Penny)",
         "price": 5000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -11449,7 +10957,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11467,7 +10974,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11485,7 +10991,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11503,14 +11008,12 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11527,8 +11030,7 @@
       {
         "type": "shop",
         "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival (Egg Shop)",
-        "storeBaseName": "Desert Festival (Egg Shop)",
+        "storeName": "Desert Festival Egg Shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -11543,7 +11045,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11561,7 +11062,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11579,7 +11079,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11597,7 +11096,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11615,7 +11113,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11633,7 +11130,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11651,7 +11147,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11669,7 +11164,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11687,7 +11181,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11705,14 +11198,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11730,7 +11221,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11748,7 +11238,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11766,21 +11255,18 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 5000
       },
       {
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 5000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11798,7 +11284,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11816,7 +11301,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 10000,
         "tradeItemId": "ginger",
         "tradeItemGameId": 829,
@@ -11828,7 +11312,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11846,7 +11329,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 6000,
         "tradeItemId": "lionfish",
         "tradeItemGameId": 837,
@@ -11858,7 +11340,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11876,7 +11357,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 10000,
         "tradeItemId": "banana",
         "tradeItemGameId": 91,
@@ -11891,7 +11371,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11909,7 +11388,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 9000,
         "tradeItemId": "taro-root",
         "tradeItemGameId": 830,
@@ -11921,7 +11399,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11939,7 +11416,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11957,28 +11433,24 @@
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100000
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100000
       },
       {
         "type": "shop",
         "storeId": "store-night-market",
         "storeName": "Night Market",
-        "storeBaseName": "Night Market",
         "price": 100000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -11996,7 +11468,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12014,14 +11485,12 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 700
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12039,7 +11508,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12057,14 +11525,12 @@
         "type": "shop",
         "storeId": "store-flower-dance",
         "storeName": "Flower Dance",
-        "storeBaseName": "Flower Dance",
         "price": 800
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12082,14 +11548,12 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12107,7 +11571,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12125,7 +11588,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12143,7 +11605,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12161,7 +11622,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12179,7 +11639,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12197,7 +11656,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 500,
         "days": [
           "Saturday"
@@ -12207,7 +11665,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12225,14 +11682,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12250,7 +11705,6 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 500,
         "days": [
           "Saturday"
@@ -12260,7 +11714,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12278,14 +11731,12 @@
         "type": "shop",
         "storeId": "store-marlon",
         "storeName": "Adventurer's Guild (Marlon)",
-        "storeBaseName": "Adventurer's Guild (Marlon)",
         "price": 2000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12303,7 +11754,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12321,7 +11771,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 600,
         "days": [
           "Tuesday"
@@ -12331,7 +11780,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12349,7 +11797,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 700,
         "days": [
           "Tuesday"
@@ -12359,7 +11806,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12377,7 +11823,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 30,
         "days": [
           "Tuesday"
@@ -12387,7 +11832,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12405,7 +11849,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1000,
         "days": [
           "Tuesday"
@@ -12415,7 +11858,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12433,7 +11875,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12451,7 +11892,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Tuesday"
@@ -12461,7 +11901,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12479,7 +11918,6 @@
         "type": "shop",
         "storeId": "store-robin",
         "storeName": "Carpenter's Shop (Robin)",
-        "storeBaseName": "Carpenter's Shop (Robin)",
         "price": 1500,
         "days": [
           "Tuesday"
@@ -12489,7 +11927,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12507,7 +11944,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12525,7 +11961,6 @@
         "type": "shop",
         "storeId": "store-island-trader",
         "storeName": "Island Trader",
-        "storeBaseName": "Island Trader",
         "price": 12000,
         "tradeItemId": "cinder-shard",
         "tradeItemGameId": 848,
@@ -12537,7 +11972,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12555,7 +11989,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12573,14 +12006,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12598,7 +12029,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12616,14 +12046,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 3000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12641,14 +12069,12 @@
         "type": "shop",
         "storeId": "store-festival-of-ice",
         "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
         "price": 1000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12666,7 +12092,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12684,7 +12109,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12702,7 +12126,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12720,7 +12143,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12738,7 +12160,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12756,7 +12177,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12774,14 +12194,12 @@
         "type": "shop",
         "storeId": "store-krobus",
         "storeName": "Krobus's Shop",
-        "storeBaseName": "Krobus's Shop",
         "price": 150000
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12799,7 +12217,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12817,7 +12234,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12835,7 +12251,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12853,7 +12268,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12871,7 +12285,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12889,7 +12302,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12907,7 +12319,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12925,7 +12336,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12943,7 +12353,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12961,7 +12370,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12979,7 +12387,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -12997,14 +12404,12 @@
         "type": "shop",
         "storeId": "store-winter-star",
         "storeName": "Feast of the Winter Star",
-        "storeBaseName": "Feast of the Winter Star",
         "price": 500
       },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13022,7 +12427,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13040,7 +12444,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13058,7 +12461,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13076,7 +12478,6 @@
         "type": "shop",
         "storeId": "store-trash-furniture-catalogue",
         "storeName": "Trash Can Furniture Catalogue",
-        "storeBaseName": "Trash Can Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13094,7 +12495,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13112,7 +12512,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13130,7 +12529,6 @@
         "type": "shop",
         "storeId": "store-wizard-furniture-catalogue",
         "storeName": "Wizard Furniture Catalogue",
-        "storeBaseName": "Wizard Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13148,7 +12546,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13166,7 +12563,6 @@
         "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
-        "storeBaseName": "Furniture Catalogue",
         "price": 0
       }
     ]
@@ -13184,7 +12580,6 @@
         "type": "shop",
         "storeId": "store-junimo-furniture-catalogue",
         "storeName": "Junimo Furniture Catalogue",
-        "storeBaseName": "Junimo Furniture Catalogue",
         "price": 0
       }
     ]

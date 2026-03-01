@@ -7,7 +7,7 @@
     "icon": "assets/objects/Wood.png",
     "price": 2,
     "edibility": -300,
-    "category": -16,
+    "gameCategory": -16,
     "contextTags": [
       "color_brown",
       "wood_item"
@@ -65,7 +65,7 @@
     "icon": "assets/objects/Stone.png",
     "price": 2,
     "edibility": -300,
-    "category": -16,
+    "gameCategory": -16,
     "contextTags": [
       "color_gray"
     ],
@@ -122,7 +122,7 @@
     "icon": "assets/objects/Hardwood.png",
     "price": 15,
     "edibility": -300,
-    "category": -16,
+    "gameCategory": -16,
     "contextTags": [
       "color_brown",
       "wood_item"
@@ -180,7 +180,7 @@
     "icon": "assets/objects/Clay.png",
     "price": 20,
     "edibility": -300,
-    "category": -16,
+    "gameCategory": -16,
     "contextTags": [
       "color_brown"
     ],
@@ -235,7 +235,7 @@
     "icon": "assets/objects/Sap.png",
     "price": 2,
     "edibility": -1,
-    "category": -81,
+    "gameCategory": -81,
     "contextTags": [
       "color_yellow"
     ],
@@ -289,7 +289,7 @@
     "icon": "assets/objects/CalicoEgg.png",
     "price": 0,
     "edibility": -300,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [],
     "canBeGifted": false,
     "sellingLocations": [
@@ -306,7 +306,7 @@
     "icon": "assets/objects/Moss.png",
     "price": 5,
     "edibility": -300,
-    "category": -16,
+    "gameCategory": -16,
     "contextTags": [
       "color_green"
     ],
@@ -361,7 +361,7 @@
     "icon": "assets/objects/StarToken.png",
     "price": 0,
     "edibility": -300,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [],
     "canBeGifted": false,
     "bundles": [],
@@ -375,7 +375,7 @@
     "icon": "assets/objects/QiCoin.png",
     "price": 0,
     "edibility": -300,
-    "category": 0,
+    "gameCategory": 0,
     "contextTags": [],
     "canBeGifted": false,
     "bundles": [],

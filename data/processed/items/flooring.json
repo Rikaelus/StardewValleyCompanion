@@ -1,0 +1,927 @@
+[
+  {
+    "type": "flooring",
+    "id": "brick-floor",
+    "gameId": 293,
+    "name": "Brick Floor",
+    "icon": "assets/objects/BrickFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "chance": 0.03
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Brick Floor",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 330,
+            "amount": 2
+          },
+          {
+            "gameId": 390,
+            "amount": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "cobblestone-path",
+    "gameId": 411,
+    "name": "Cobblestone Path",
+    "icon": "assets/objects/CobblestonePath.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Cobblestone Path",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "crystal-floor",
+    "gameId": 333,
+    "name": "Crystal Floor",
+    "icon": "assets/objects/CrystalFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Crystal Floor",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 338,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "crystal-path",
+    "gameId": 409,
+    "name": "Crystal Path",
+    "icon": "assets/objects/CrystalPath.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Crystal Path",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 338,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "gravel-path",
+    "gameId": 407,
+    "name": "Gravel Path",
+    "icon": "assets/objects/GravelPath.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Gravel Path",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "rustic-plank-floor",
+    "gameId": 840,
+    "name": "Rustic Plank Floor",
+    "icon": "assets/objects/RusticPlankFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Rustic Plank Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "stepping-stone-path",
+    "gameId": 415,
+    "name": "Stepping Stone Path",
+    "icon": "assets/objects/SteppingStonePath.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Stepping Stone Path",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "stone-floor",
+    "gameId": 329,
+    "name": "Stone Floor",
+    "icon": "assets/objects/StoneFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "chance": 0.02
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Stone Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "stone-walkway-floor",
+    "gameId": 841,
+    "name": "Stone Walkway Floor",
+    "icon": "assets/objects/StoneWalkwayFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Stone Walkway Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "straw-floor",
+    "gameId": 401,
+    "name": "Straw Floor",
+    "icon": "assets/objects/StrawFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Straw Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "tea-set",
+    "gameId": 341,
+    "name": "Tea Set",
+    "icon": "assets/objects/TeaSet.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-traveling-merchant",
+        "storeName": "Traveling Merchant",
+        "price": 1000000,
+        "yearUnlock": 25,
+        "rotating": true
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "weathered-floor",
+    "gameId": 331,
+    "name": "Weathered Floor",
+    "icon": "assets/objects/WeatheredFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Weathered Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "wood-floor",
+    "gameId": 328,
+    "name": "Wood Floor",
+    "icon": "assets/objects/WoodFloor.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Wood Floor",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "flooring",
+    "id": "wood-path",
+    "gameId": 405,
+    "name": "Wood Path",
+    "icon": "assets/objects/WoodPath.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": -24,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Wood Path",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  }
+]

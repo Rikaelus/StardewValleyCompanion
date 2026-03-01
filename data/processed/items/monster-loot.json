@@ -7,7 +7,7 @@
     "icon": "assets/objects/BugMeat.png",
     "price": 8,
     "edibility": -300,
-    "category": -28,
+    "gameCategory": -28,
     "contextTags": [
       "color_dark_pink"
     ],
@@ -62,7 +62,7 @@
     "icon": "assets/objects/Slime.png",
     "price": 5,
     "edibility": -300,
-    "category": -28,
+    "gameCategory": -28,
     "contextTags": [
       "color_gray",
       "slime_item"
@@ -120,7 +120,7 @@
     "icon": "assets/objects/BatWing.png",
     "price": 15,
     "edibility": -300,
-    "category": -28,
+    "gameCategory": -28,
     "contextTags": [
       "color_black"
     ],
@@ -177,7 +177,7 @@
     "icon": "assets/objects/SolarEssence.png",
     "price": 40,
     "edibility": -300,
-    "category": -28,
+    "gameCategory": -28,
     "contextTags": [
       "color_yellow"
     ],
@@ -234,7 +234,7 @@
     "icon": "assets/objects/VoidEssence.png",
     "price": 50,
     "edibility": -300,
-    "category": -28,
+    "gameCategory": -28,
     "contextTags": [
       "color_purple"
     ],

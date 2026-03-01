@@ -5,7 +5,7 @@
     "name": "Unmilled Rice",
     "icon": "assets/objects/UnmilledRice.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 30,
     "edibility": 1,
     "seasons": [
@@ -73,7 +73,7 @@
     "name": "Amaranth",
     "icon": "assets/objects/Amaranth.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 150,
     "edibility": 20,
     "seasons": [
@@ -141,7 +141,7 @@
     "name": "Grape",
     "icon": "assets/objects/Grape.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 80,
     "edibility": 15,
     "seasons": [
@@ -204,6 +204,26 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
       }
     ]
   },
@@ -213,7 +233,7 @@
     "name": "Hops",
     "icon": "assets/objects/Hops.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 25,
     "edibility": 18,
     "seasons": [
@@ -281,7 +301,7 @@
     "name": "Sweet Gem Berry",
     "icon": "assets/objects/SweetGemBerry.png",
     "type": "other",
-    "category": -17,
+    "gameCategory": -17,
     "price": 3000,
     "edibility": -300,
     "seasons": [
@@ -314,7 +334,7 @@
     "name": "Fairy Rose",
     "icon": "assets/objects/FairyRose.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 290,
     "edibility": 18,
     "seasons": [
@@ -381,7 +401,7 @@
     "name": "Tulip",
     "icon": "assets/objects/Tulip.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 30,
     "edibility": 18,
     "seasons": [
@@ -448,7 +468,7 @@
     "name": "Blue Jazz",
     "icon": "assets/objects/BlueJazz.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 50,
     "edibility": 18,
     "seasons": [
@@ -515,7 +535,7 @@
     "name": "Sunflower",
     "icon": "assets/objects/Sunflower.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 80,
     "edibility": 18,
     "seasons": [
@@ -585,7 +605,7 @@
     "name": "Coffee Bean",
     "icon": "assets/objects/CoffeeBean.png",
     "type": "other",
-    "category": -74,
+    "gameCategory": -74,
     "price": 15,
     "edibility": -300,
     "seasons": [
@@ -650,7 +670,6 @@
         "type": "shop",
         "storeId": "store-traveling-merchant",
         "storeName": "Traveling Merchant",
-        "storeBaseName": "Traveling Merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -658,6 +677,11 @@
         ],
         "rotating": true,
         "stock": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Dust Spirit",
+        "chance": 0.01
       }
     ]
   },
@@ -667,7 +691,7 @@
     "name": "Poppy",
     "icon": "assets/objects/Poppy.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 140,
     "edibility": 18,
     "seasons": [
@@ -736,7 +760,7 @@
     "name": "Summer Spangle",
     "icon": "assets/objects/SummerSpangle.png",
     "type": "flower",
-    "category": -80,
+    "gameCategory": -80,
     "price": 90,
     "edibility": 18,
     "seasons": [
@@ -803,7 +827,7 @@
     "name": "Parsnip",
     "icon": "assets/objects/Parsnip.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 35,
     "edibility": 10,
     "seasons": [
@@ -865,6 +889,39 @@
         "seedName": "Parsnip Seeds",
         "growthDays": 4,
         "regrowDays": null
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Mayonnaise Machine",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 15
+          },
+          {
+            "gameId": 390,
+            "amount": 15
+          },
+          {
+            "gameId": 86,
+            "amount": 1
+          },
+          {
+            "gameId": 334,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 2
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Caroline",
+        "sender": "Caroline"
       }
     ]
   },
@@ -874,7 +931,7 @@
     "name": "Green Bean",
     "icon": "assets/objects/GreenBean.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 40,
     "edibility": 10,
     "seasons": [
@@ -944,7 +1001,7 @@
     "name": "Cauliflower",
     "icon": "assets/objects/Cauliflower.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 175,
     "edibility": 30,
     "seasons": [
@@ -1005,6 +1062,11 @@
         "seedName": "Cauliflower Seeds",
         "growthDays": 12,
         "regrowDays": null
+      },
+      {
+        "type": "mail",
+        "mailKey": "Caroline",
+        "sender": "Caroline"
       }
     ]
   },
@@ -1014,7 +1076,7 @@
     "name": "Potato",
     "icon": "assets/objects/Potato.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 80,
     "edibility": 10,
     "seasons": [
@@ -1075,6 +1137,11 @@
         "seedName": "Potato Seeds",
         "growthDays": 6,
         "regrowDays": null
+      },
+      {
+        "type": "mail",
+        "mailKey": "Caroline",
+        "sender": "Caroline"
       }
     ]
   },
@@ -1084,7 +1151,7 @@
     "name": "Garlic",
     "icon": "assets/objects/Garlic.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 60,
     "edibility": 8,
     "seasons": [
@@ -1152,7 +1219,7 @@
     "name": "Kale",
     "icon": "assets/objects/Kale.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 110,
     "edibility": 20,
     "seasons": [
@@ -1220,7 +1287,7 @@
     "name": "Rhubarb",
     "icon": "assets/objects/Rhubarb.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 220,
     "edibility": -300,
     "seasons": [
@@ -1269,7 +1336,7 @@
     "name": "Melon",
     "icon": "assets/objects/Melon.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 250,
     "edibility": 45,
     "seasons": [
@@ -1313,6 +1380,25 @@
         "seedName": "Melon Seeds",
         "growthDays": 12,
         "regrowDays": null
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Ostrich Incubator",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 50
+          },
+          {
+            "gameId": 709,
+            "amount": 50
+          },
+          {
+            "gameId": 848,
+            "amount": 20
+          }
+        ]
       }
     ]
   },
@@ -1322,7 +1408,7 @@
     "name": "Tomato",
     "icon": "assets/objects/Tomato.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 60,
     "edibility": 8,
     "seasons": [
@@ -1392,7 +1478,7 @@
     "name": "Blueberry",
     "icon": "assets/objects/Blueberry.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 50,
     "edibility": 10,
     "seasons": [
@@ -1444,7 +1530,7 @@
     "name": "Hot Pepper",
     "icon": "assets/objects/HotPepper.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 40,
     "edibility": 5,
     "seasons": [
@@ -1496,7 +1582,7 @@
     "name": "Wheat",
     "icon": "assets/objects/Wheat.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 25,
     "edibility": -300,
     "seasons": [
@@ -1567,7 +1653,7 @@
     "name": "Radish",
     "icon": "assets/objects/Radish.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 90,
     "edibility": 18,
     "seasons": [
@@ -1626,6 +1712,21 @@
         "seedName": "Radish Seeds",
         "growthDays": 6,
         "regrowDays": null
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Heavy Tapper",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 30
+          },
+          {
+            "gameId": 910,
+            "amount": 1
+          }
+        ]
       }
     ]
   },
@@ -1635,7 +1736,7 @@
     "name": "Red Cabbage",
     "icon": "assets/objects/RedCabbage.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 260,
     "edibility": 30,
     "seasons": [
@@ -1705,7 +1806,7 @@
     "name": "Starfruit",
     "icon": "assets/objects/Starfruit.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 750,
     "edibility": 50,
     "seasons": [
@@ -1750,7 +1851,6 @@
         "type": "shop",
         "storeId": "store-luau",
         "storeName": "Luau",
-        "storeBaseName": "Luau",
         "price": 3000,
         "stock": 1,
         "stockLimit": 1
@@ -1763,7 +1863,7 @@
     "name": "Corn",
     "icon": "assets/objects/Corn.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 50,
     "edibility": 10,
     "seasons": [
@@ -1826,6 +1926,10 @@
         "seedName": "Corn Seeds",
         "growthDays": 14,
         "regrowDays": 4
+      },
+      {
+        "type": "garbage-can",
+        "location": "JojaMart"
       }
     ]
   },
@@ -1835,7 +1939,7 @@
     "name": "Eggplant",
     "icon": "assets/objects/Eggplant.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 60,
     "edibility": 8,
     "seasons": [
@@ -1905,7 +2009,7 @@
     "name": "Artichoke",
     "icon": "assets/objects/Artichoke.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 160,
     "edibility": 12,
     "seasons": [
@@ -1973,7 +2077,7 @@
     "name": "Pumpkin",
     "icon": "assets/objects/Pumpkin.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 320,
     "edibility": -300,
     "seasons": [
@@ -2044,7 +2148,7 @@
     "name": "Bok Choy",
     "icon": "assets/objects/BokChoy.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 80,
     "edibility": 10,
     "seasons": [
@@ -2112,7 +2216,7 @@
     "name": "Yam",
     "icon": "assets/objects/Yam.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 160,
     "edibility": 18,
     "seasons": [
@@ -2173,6 +2277,11 @@
         "seedName": "Yam Seeds",
         "growthDays": 10,
         "regrowDays": null
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "chance": 0.03
       }
     ]
   },
@@ -2182,7 +2291,7 @@
     "name": "Cranberries",
     "icon": "assets/objects/Cranberries.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 75,
     "edibility": 15,
     "seasons": [
@@ -2231,7 +2340,7 @@
     "name": "Beet",
     "icon": "assets/objects/Beet.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 100,
     "edibility": 12,
     "seasons": [
@@ -2299,7 +2408,7 @@
     "name": "Wild Horseradish",
     "icon": "assets/objects/WildHorseradish.png",
     "type": "other",
-    "category": -81,
+    "gameCategory": -81,
     "price": 50,
     "edibility": 5,
     "seasons": [
@@ -2373,6 +2482,54 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "spring"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Cheese Press",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 45
+          },
+          {
+            "gameId": 390,
+            "amount": 45
+          },
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": 334,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 6
+        }
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "season": "spring"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "spring"
       }
     ]
   },
@@ -2382,7 +2539,7 @@
     "name": "Spice Berry",
     "icon": "assets/objects/SpiceBerry.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 80,
     "edibility": 10,
     "seasons": [
@@ -2429,9 +2586,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Demetrius)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-demetrius",
+        "storeName": "Desert Festival Stall (Demetrius)",
         "price": 160,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -2439,6 +2595,31 @@
         "tradeItemName": "Calico Egg",
         "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "BusStop",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Railroad",
+        "season": "summer"
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "summer"
       },
       {
         "type": "forage",
@@ -2473,7 +2654,7 @@
     "name": "Common Mushroom",
     "icon": "assets/objects/CommonMushroom.png",
     "type": "other",
-    "category": -81,
+    "gameCategory": -81,
     "price": 40,
     "edibility": 15,
     "seasons": [
@@ -2545,6 +2726,39 @@
       {
         "type": "forage",
         "location": "Volcano Dungeon"
+      },
+      {
+        "type": "tapper",
+        "treeName": "Mushroom Tree",
+        "treeId": "mushroom-tree",
+        "daysToHarvest": 2
+      },
+      {
+        "type": "forage",
+        "location": "Mountain Lake",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Forest River",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Secret Woods",
+        "seasons": [
+          "spring",
+          "fall"
+        ]
+      },
+      {
+        "type": "forage",
+        "location": "Backwoods",
+        "season": "fall"
+      },
+      {
+        "type": "forage",
+        "location": "Volcano Dungeon"
       }
     ]
   },
@@ -2554,7 +2768,7 @@
     "name": "Winter Root",
     "icon": "assets/objects/WinterRoot.png",
     "type": "other",
-    "category": -81,
+    "gameCategory": -81,
     "price": 70,
     "edibility": 10,
     "seasons": [
@@ -2598,6 +2812,16 @@
         "seedName": "Winter Seeds",
         "growthDays": 7,
         "regrowDays": null
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "chance": 0.08
+      },
+      {
+        "type": "tilling",
+        "location": "All outdoor areas",
+        "chance": 0.5
       }
     ]
   },
@@ -2607,7 +2831,7 @@
     "name": "Ancient Fruit",
     "icon": "assets/objects/AncientFruit.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 550,
     "edibility": -300,
     "seasons": [
@@ -2660,7 +2884,7 @@
     "name": "Strawberry",
     "icon": "assets/objects/Strawberry.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 120,
     "edibility": 20,
     "seasons": [
@@ -2710,7 +2934,7 @@
     "name": "Cactus Fruit",
     "icon": "assets/objects/CactusFruit.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 75,
     "edibility": 30,
     "seasons": [],
@@ -2757,11 +2981,38 @@
         "type": "shop",
         "storeId": "store-sandy",
         "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
         "price": 150,
         "days": [
           "Tuesday"
         ]
+      },
+      {
+        "type": "forage",
+        "location": "Desert"
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Bone Mill",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 10
+          },
+          {
+            "gameId": 330,
+            "amount": 3
+          },
+          {
+            "gameId": 390,
+            "amount": 20
+          }
+        ]
+      },
+      {
+        "type": "mail",
+        "mailKey": "Sandy",
+        "sender": "Sandy"
       },
       {
         "type": "forage",
@@ -2775,7 +3026,7 @@
     "name": "Taro Root",
     "icon": "assets/objects/TaroRoot.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 100,
     "edibility": 15,
     "seasons": [
@@ -2843,7 +3094,7 @@
     "name": "Pineapple",
     "icon": "assets/objects/Pineapple.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 300,
     "edibility": 55,
     "seasons": [
@@ -2892,7 +3143,7 @@
     "name": "Fiber",
     "icon": "assets/objects/Fiber.png",
     "type": "other",
-    "category": -16,
+    "gameCategory": -16,
     "price": 1,
     "edibility": -300,
     "seasons": [
@@ -2957,9 +3208,8 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Vincent)",
-        "storeBaseName": "Desert Festival",
+        "storeId": "store-desert-festival-vincent",
+        "storeName": "Desert Festival Stall (Vincent)",
         "price": 2,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -2973,7 +3223,6 @@
         "type": "shop",
         "storeId": "store-desert-trade",
         "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
         "price": 2,
         "tradeItemId": "stone",
         "tradeItemGameId": 390,
@@ -2983,6 +3232,16 @@
         "days": [
           "Tuesday"
         ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Wilderness Golem",
+        "chance": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Golem",
+        "chance": 1
       }
     ]
   },
@@ -2992,7 +3251,7 @@
     "name": "Qi Fruit",
     "icon": "assets/objects/QiFruit.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 1,
     "edibility": 1,
     "seasons": [
@@ -3044,7 +3303,7 @@
     "name": "Carrot",
     "icon": "assets/objects/Carrot.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 35,
     "edibility": 30,
     "seasons": [
@@ -3112,7 +3371,7 @@
     "name": "Summer Squash",
     "icon": "assets/objects/SummerSquash.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 45,
     "edibility": 25,
     "seasons": [
@@ -3180,7 +3439,7 @@
     "name": "Broccoli",
     "icon": "assets/objects/Broccoli.png",
     "type": "vegetable",
-    "category": -75,
+    "gameCategory": -75,
     "price": 70,
     "edibility": 25,
     "seasons": [
@@ -3248,7 +3507,7 @@
     "name": "Powdermelon",
     "icon": "assets/objects/Powdermelon.png",
     "type": "fruit",
-    "category": -79,
+    "gameCategory": -79,
     "price": 60,
     "edibility": 25,
     "seasons": [

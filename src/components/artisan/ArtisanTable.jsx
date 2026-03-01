@@ -159,7 +159,7 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
     <DataTable
       data={artisanGoods}
       columns={columns}
-      pinnedColumns={2}
+      pinnedColumns={1}
     />
   )
 }

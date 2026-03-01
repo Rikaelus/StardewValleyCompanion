@@ -8,6 +8,199 @@
 const fs = require('fs');
 const path = require('path');
 
+// ---------------------------------------------------------------------------
+// Condition parsing: converts Stardew game condition strings to JSON Logic
+// ---------------------------------------------------------------------------
+
+// Mastery stat suffixes → skill names
+const MASTERY_SKILL_MAP = {
+  mastery_0: 'farming',
+  mastery_1: 'fishing',
+  mastery_2: 'foraging',
+  mastery_3: 'mining',
+  mastery_4: 'combat',
+};
+
+/**
+ * Parse a single game condition token (no commas) into a JSON Logic rule.
+ * Returns null for conditions we don't model (time-based, random, etc.).
+ */
+function parseSingleCondition(token) {
+  token = token.trim();
+  const negated = token.startsWith('!');
+  if (negated) token = token.slice(1).trim();
+
+  const wrap = (rule) => negated ? { '!': rule } : rule;
+
+  // MINE_LOWEST_LEVEL_REACHED N
+  let m = token.match(/^MINE_LOWEST_LEVEL_REACHED\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.mineDepth' }, parseInt(m[1])] });
+
+  // PLAYER_BASE_FISHING_LEVEL Current N
+  m = token.match(/^PLAYER_BASE_FISHING_LEVEL\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.skills.fishing' }, parseInt(m[1])] });
+
+  // PLAYER_BASE_FARMING_LEVEL Current N
+  m = token.match(/^PLAYER_BASE_FARMING_LEVEL\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.skills.farming' }, parseInt(m[1])] });
+
+  // PLAYER_HEARTS Current AnyDateable N
+  m = token.match(/^PLAYER_HEARTS\s+\w+\s+AnyDateable\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.hearts.anyDateable' }, parseInt(m[1])] });
+
+  // PLAYER_HEARTS Current NpcName N
+  m = token.match(/^PLAYER_HEARTS\s+\w+\s+(\w+)\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: `player.hearts.${m[1].toLowerCase()}` }, parseInt(m[2])] });
+
+  // PLAYER_FARMHOUSE_UPGRADE Current N
+  m = token.match(/^PLAYER_FARMHOUSE_UPGRADE\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.houseUpgrade' }, parseInt(m[1])] });
+
+  // PLAYER_HAS_ACHIEVEMENT Current N
+  m = token.match(/^PLAYER_HAS_ACHIEVEMENT\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ in: [parseInt(m[1]), { var: 'player.achievements' }] });
+
+  // PLAYER_HAS_ALL_ACHIEVEMENTS Current
+  m = token.match(/^PLAYER_HAS_ALL_ACHIEVEMENTS/i);
+  if (m) return wrap({ '==': [{ var: 'player.allAchievements' }, true] });
+
+  // PLAYER_HAS_MAIL Current|Host flagName
+  m = token.match(/^PLAYER_HAS_MAIL\s+\w+\s+"?([^"]+)"?$/i);
+  if (m) return wrap({ in: [m[1].trim(), { var: 'player.mail' }] });
+
+  // PLAYER_HAS_SEEN_EVENT Current|Host N
+  m = token.match(/^PLAYER_HAS_SEEN_EVENT\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ in: [parseInt(m[1]), { var: 'player.events' }] });
+
+  // PLAYER_HAS_CONVERSATION_TOPIC Current topicId
+  m = token.match(/^PLAYER_HAS_CONVERSATION_TOPIC\s+\w+\s+(\w+)$/i);
+  if (m) return wrap({ in: [m[1], { var: 'player.conversationTopics' }] });
+
+  // PLAYER_HAS_CRAFTING_RECIPE Current recipeName
+  m = token.match(/^PLAYER_HAS_CRAFTING_RECIPE\s+\w+\s+(.+)$/i);
+  if (m) return wrap({ in: [m[1].trim(), { var: 'player.craftingRecipes' }] });
+
+  // PLAYER_HAS_ITEM Current itemId (bare number or qualified like (T)MilkPail)
+  m = token.match(/^PLAYER_HAS_ITEM\s+\w+\s+(.+)$/i);
+  if (m) return wrap({ in: [m[1].trim(), { var: 'player.items' }] });
+
+  // PLAYER_NPC_RELATIONSHIP Current Any Engaged Married
+  m = token.match(/^PLAYER_NPC_RELATIONSHIP\s+\w+\s+\w+\s+(Engaged|Married)/i);
+  if (m) return wrap({ in: [m[1].toLowerCase(), { var: 'player.relationships' }] });
+
+  // PLAYER_MONEY_EARNED Current N
+  m = token.match(/^PLAYER_MONEY_EARNED\s+\w+\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'player.moneyEarned' }, parseInt(m[1])] });
+
+  // PLAYER_FRIENDSHIP_POINTS Current NpcName N
+  m = token.match(/^PLAYER_FRIENDSHIP_POINTS\s+\w+\s+(\w+)\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: `player.friendship.${m[1].toLowerCase()}` }, parseInt(m[2])] });
+
+  // PLAYER_GENDER Current Male|Female
+  m = token.match(/^PLAYER_GENDER\s+\w+\s+(Male|Female)$/i);
+  if (m) return wrap({ '==': [{ var: 'player.gender' }, m[1].toLowerCase()] });
+
+  // PLAYER_STAT Current mastery_N 1
+  m = token.match(/^PLAYER_STAT\s+\w+\s+(mastery_\d+)\s+(\d+)$/i);
+  if (m) {
+    const skill = MASTERY_SKILL_MAP[m[1].toLowerCase()];
+    if (skill) return wrap({ '>=': [{ var: `player.mastery.${skill}` }, parseInt(m[2])] });
+  }
+
+  // PLAYER_STAT Current Book_X 1
+  m = token.match(/^PLAYER_STAT\s+\w+\s+(Book_\w+)\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: `player.stats.${m[1]}` }, parseInt(m[2])] });
+
+  // PLAYER_STAT Current ticketPrizesClaimed N
+  m = token.match(/^PLAYER_STAT\s+\w+\s+(\w+)\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: `player.stats.${m[1]}` }, parseInt(m[2])] });
+
+  // MUSEUM_DONATIONS N Arch (artifacts)
+  m = token.match(/^MUSEUM_DONATIONS\s+(\d+)\s+Arch(?:\s+Minerals)?$/i);
+  if (m) return wrap({ '>=': [{ var: 'museum.artifacts' }, parseInt(m[1])] });
+
+  // MUSEUM_DONATIONS N Minerals
+  m = token.match(/^MUSEUM_DONATIONS\s+(\d+)\s+Minerals$/i);
+  if (m) return wrap({ '>=': [{ var: 'museum.minerals' }, parseInt(m[1])] });
+
+  // WORLD_STATE_FIELD GoldenWalnutsFound N
+  m = token.match(/^WORLD_STATE_FIELD\s+GoldenWalnutsFound\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'world.GoldenWalnutsFound' }, parseInt(m[1])] });
+
+  // WORLD_STATE_FIELD TimesFedRaccoons N
+  m = token.match(/^WORLD_STATE_FIELD\s+TimesFedRaccoons\s+(\d+)$/i);
+  if (m) return wrap({ '>=': [{ var: 'world.TimesFedRaccoons' }, parseInt(m[1])] });
+
+  // WORLD_STATE_FIELD GoldenCoconutCracked true
+  m = token.match(/^WORLD_STATE_FIELD\s+GoldenCoconutCracked\s+true$/i);
+  if (m) return wrap({ '==': [{ var: 'world.GoldenCoconutCracked' }, true] });
+
+  // IS_COMMUNITY_CENTER_COMPLETE
+  m = token.match(/^IS_COMMUNITY_CENTER_COMPLETE$/i);
+  if (m) return wrap({ '==': [{ var: 'world.communityCenter' }, true] });
+
+  // ANY "COND_A" "COND_B" — OR of quoted sub-conditions
+  m = token.match(/^ANY\s+(.+)$/i);
+  if (m) {
+    const parts = [...m[1].matchAll(/"([^"]+)"/g)].map(x => parseSingleCondition(x[1])).filter(Boolean);
+    if (parts.length > 0) return wrap(parts.length === 1 ? parts[0] : { or: parts });
+  }
+
+  return null; // time/season/random/unknown — not modeled
+}
+
+/**
+ * Parse a full game condition string (comma-separated AND of tokens) into JSON Logic.
+ * Returns null if no progression-relevant conditions are found.
+ */
+function parseCondition(conditionStr) {
+  if (!conditionStr) return null;
+
+  // Split on commas, but not commas inside quoted strings
+  const tokens = [];
+  let current = '';
+  let depth = 0;
+  for (const ch of conditionStr) {
+    if (ch === '"') depth = depth ? 0 : 1;
+    if (ch === ',' && depth === 0) { tokens.push(current.trim()); current = ''; }
+    else current += ch;
+  }
+  if (current.trim()) tokens.push(current.trim());
+
+  const rules = tokens.map(parseSingleCondition).filter(Boolean);
+  if (rules.length === 0) return null;
+  if (rules.length === 1) return rules[0];
+  return { and: rules };
+}
+
+/**
+ * Walk a JSON Logic condition and collect all player.items game ID references.
+ * Returns an object mapping gameId string → item name, or null if none found.
+ * Resolved against Objects.json at call time (gameData not yet loaded here —
+ * call this after gameData is available).
+ */
+function collectItemConditionNames(condition, objectsData) {
+  const found = {};
+  function walk(node) {
+    if (!node || typeof node !== 'object') return;
+    if (node.in) {
+      const [value, collection] = node.in;
+      if (collection?.var === 'player.items') {
+        const id = String(value);
+        const obj = objectsData[id];
+        if (obj?.Name) found[id] = obj.Name;
+      }
+      return;
+    }
+    for (const v of Object.values(node)) {
+      if (Array.isArray(v)) v.forEach(walk);
+      else if (v && typeof v === 'object') walk(v);
+    }
+  }
+  walk(condition);
+  return Object.keys(found).length > 0 ? found : null;
+}
+
 const GAME_EXPORTS_DIR = path.join(__dirname, '../data/game-exports');
 const RULES_DIR = path.join(__dirname, '../data/rules');
 const PROCESSED_DIR = path.join(__dirname, '../data/processed');
@@ -83,18 +276,18 @@ function extractSpriteNameFromDisplayName(displayName) {
  * Attempts to extract from DisplayName first, falls back to rules, then item name
  */
 function getIconFilename(gameId, itemName, objectData = null) {
-  // First try: extract from DisplayName in object data
-  if (objectData && objectData.DisplayName) {
-    const spriteName = extractSpriteNameFromDisplayName(objectData.DisplayName);
-    if (spriteName) {
-      return spriteName + '.png';
-    }
-  }
-
-  // Second try: check if this gameId has a variant defined in rules
+  // First try: explicit iconFilename override in item-variants rules
   const variant = rules.itemVariants[String(gameId)];
   if (variant && variant.iconFilename) {
     return variant.iconFilename;
+  }
+
+  // Second try: extract from DisplayName in object data
+  if (objectData && objectData.DisplayName) {
+    const spriteName = extractSpriteNameFromDisplayName(objectData.DisplayName);
+    if (spriteName) {
+      return toIconFilename(spriteName);
+    }
   }
 
   // Default: use item name with spaces replaced by underscores, strip apostrophes
@@ -211,6 +404,11 @@ const gameData = {
   furniture: loadJson(path.join(GAME_EXPORTS_DIR, 'Furniture.json')),
   hats: loadJson(path.join(GAME_EXPORTS_DIR, 'Hats.json')),
   wildTrees: loadJson(path.join(GAME_EXPORTS_DIR, 'WildTrees.json')),
+  buffs: loadJson(path.join(GAME_EXPORTS_DIR, 'Buffs.json')),
+  mail: loadJson(path.join(GAME_EXPORTS_DIR, 'mail.json')),
+  specialOrders: loadJson(path.join(GAME_EXPORTS_DIR, 'SpecialOrders.json')),
+  triggerActions: loadJson(path.join(GAME_EXPORTS_DIR, 'TriggerActions.json')),
+  characters: loadJson(path.join(GAME_EXPORTS_DIR, 'Characters.json')),
 };
 
 // Load string tables for resolving [LocalizedText ...] references
@@ -230,6 +428,54 @@ function resolveLocalizedText(value) {
   if (!match) return value;
   const [, tableName, key] = match;
   return stringTables[tableName]?.[key] ?? value;
+}
+
+/**
+ * Parse the Buffs array from an Objects.json entry into our simplified format.
+ * Resolves BuffId references to Buffs.json for named buffs (Tipsy, Oil of Garlic, etc.).
+ * Returns null if the item has no meaningful buffs.
+ */
+function parseItemBuffs(objectData) {
+  if (!objectData.Buffs || objectData.Buffs.length === 0) return null;
+
+  const result = [];
+  for (const buff of objectData.Buffs) {
+    // Named buff: look up from Buffs.json
+    if (buff.BuffId !== null && buff.BuffId !== undefined) {
+      const namedBuff = gameData.buffs[String(buff.BuffId)];
+      if (!namedBuff) continue;
+      const name = resolveLocalizedText(namedBuff.DisplayName);
+      const effects = {};
+      if (namedBuff.Effects) {
+        for (const [k, v] of Object.entries(namedBuff.Effects)) {
+          if (v !== 0) effects[k] = v;
+        }
+      }
+      result.push({
+        buffId: `buff-${toKebabCase(name)}`,
+        name,
+        duration: Math.round(namedBuff.Duration / 1000), // Buffs.json Duration is in milliseconds
+        isDebuff: namedBuff.IsDebuff,
+        effects: Object.keys(effects).length > 0 ? effects : null,
+      });
+      continue;
+    }
+
+    // Inline buff: attributes from CustomAttributes
+    if (!buff.CustomAttributes) continue;
+    const effects = {};
+    for (const [k, v] of Object.entries(buff.CustomAttributes)) {
+      if (v !== 0) effects[k] = v;
+    }
+    if (Object.keys(effects).length === 0 && !buff.IsDebuff) continue; // skip empty non-debuff entries
+    result.push({
+      duration: buff.Duration, // in seconds
+      isDebuff: buff.IsDebuff || false,
+      effects: Object.keys(effects).length > 0 ? effects : null,
+    });
+  }
+
+  return result.length > 0 ? result : null;
 }
 
 // Parse shop selling locations from game data, then merge with curated category rules
@@ -261,6 +507,7 @@ const rules = {
   bundleRewards: loadJson(path.join(RULES_DIR, 'bundle-rewards.json')).gameIds,
   itemRoles: loadJson(path.join(RULES_DIR, 'item-roles.json')),
   treeNames: loadJson(path.join(RULES_DIR, 'tree-names.json')).trees,
+  hatOverrides: loadJson(path.join(RULES_DIR, 'hat-overrides.json')),
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
@@ -287,6 +534,9 @@ const furnitureShopSourcesByGameId = new Map();
 // hatShopSourcesByGameId: gameId (number|string) -> [shop source]
 const hatShopSourcesByGameId = new Map();
 
+// bigCraftableShopSourcesByGameId: gameId (number) -> [shop source]
+const bigCraftableShopSourcesByGameId = new Map();
+
 for (const [shopId, shopData] of Object.entries(gameData.shops)) {
   const storeId = shopMap[shopId];
   if (!storeId) continue;
@@ -294,6 +544,7 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
   for (const item of (shopData.Items || [])) {
     const itemId = item.ItemId;
     if (!itemId) continue;
+    if (item.IsRecipe) continue;
 
     // Determine item type prefix and which source map to use
     let rawId;
@@ -302,6 +553,7 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
     const furnitureMatch = itemId.match(/^\(F\)(.+)$/);
     const hatMatch = itemId.match(/^\(H\)(.+)$/);
     const objectMatch = itemId.match(/^\(O\)(.+)$/);
+    const bigCraftableMatch = itemId.match(/^\(BC\)(.+)$/);
 
     if (furnitureMatch) {
       rawId = furnitureMatch[1];
@@ -309,6 +561,9 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
     } else if (hatMatch) {
       rawId = hatMatch[1];
       sourceMap = hatShopSourcesByGameId;
+    } else if (bigCraftableMatch) {
+      rawId = bigCraftableMatch[1];
+      sourceMap = bigCraftableShopSourcesByGameId;
     } else if (objectMatch) {
       rawId = objectMatch[1];
     } else if (gameData.objects[itemId] !== undefined) {
@@ -321,12 +576,8 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
 
     const normalizedStoreId = normalizeStoreId(storeId);
     const storeDetails = rules.shops.storeDetails?.[storeId];
-    // Extract NPC vendor name from compound shop IDs like "DesertFestival_Emily"
-    const vendorMatch = shopId.match(/^[A-Za-z]+Festival_([A-Z][a-z]+)$/);
-    const vendorName = vendorMatch ? vendorMatch[1] : null;
-    const baseName = storeDetails?.name ?? storeId;
-    const fullName = vendorName ? `${baseName} (${vendorName})` : baseName;
-    const source = { type: 'shop', storeId: normalizedStoreId, storeName: fullName, storeBaseName: baseName };
+    const storeName = storeDetails?.name ?? storeId;
+    const source = { type: 'shop', storeId: normalizedStoreId, storeName };
 
     // Non-gold shop currency (Currency field: 1=StarTokens, 2=QiCoins, 4=QiGems)
     const SHOP_CURRENCIES = { 1: 'star-tokens', 2: 'qi-coins', 4: 'qi-gems' };
@@ -384,52 +635,33 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
     if (item.Condition) {
       const cond = item.Condition;
 
-      // SEASON spring summer fall winter
+      // Display-only fields: season, day-of-week, year, rotating
       const seasonMatch = cond.match(/\bSEASON\s+([\w\s]+?)(?:\s*,|$)/i);
       if (seasonMatch) {
         source.seasons = seasonMatch[1].trim().split(/\s+/).map(s => s.toLowerCase());
       }
 
-      // DAY_OF_WEEK Monday Tuesday ...
       const dowMatch = cond.match(/\bDAY_OF_WEEK\s+([\w\s]+?)(?:\s*,|$)/i);
       if (dowMatch) {
         source.days = dowMatch[1].trim().split(/\s+/);
       }
 
-      // YEAR 2  (or !YEAR 2 — negation means only available before that year)
       const yearMatch = cond.match(/(!?)YEAR\s+(\d+)/i);
       if (yearMatch) {
         source.yearUnlock = parseInt(yearMatch[2], 10);
         if (yearMatch[1] === '!') source.yearUnlockBefore = true;
       }
 
-      // DAYS_PLAYED N
-      const daysPlayedMatch = cond.match(/\bDAYS_PLAYED\s+(\d+)/i);
-      if (daysPlayedMatch) {
-        source.daysPlayed = parseInt(daysPlayedMatch[1], 10);
-      }
-
-      // PLAYER_HEARTS Current <NpcName> <count>
-      const heartsMatch = cond.match(/\bPLAYER_HEARTS\s+Current\s+(\w+)\s+(\d+)/i);
-      if (heartsMatch) {
-        source.heartsRequired = { npc: heartsMatch[1], count: parseInt(heartsMatch[2], 10) };
-      }
-
-      // PLAYER_BASE_FISHING_LEVEL Current N
-      const fishingMatch = cond.match(/\bPLAYER_BASE_FISHING_LEVEL\s+Current\s+(\d+)/i);
-      if (fishingMatch) {
-        source.skillRequired = { skill: 'fishing', level: parseInt(fishingMatch[1], 10) };
-      }
-
-      // MINE_LOWEST_LEVEL_REACHED N
-      const mineMatch = cond.match(/\bMINE_LOWEST_LEVEL_REACHED\s+(\d+)/i);
-      if (mineMatch) {
-        source.mineLevel = parseInt(mineMatch[1], 10);
-      }
-
-      // SYNCED_RANDOM or SYNCED_CHOICE → rotating stock
       if (/\bSYNCED_(?:RANDOM|CHOICE)\b/i.test(cond)) {
         source.rotating = true;
+      }
+
+      // Progression conditions → JSON Logic
+      const condition = parseCondition(cond);
+      if (condition) {
+        source.condition = condition;
+        const itemNames = collectItemConditionNames(condition, gameData.objects);
+        if (itemNames) source.conditionItemNames = itemNames;
       }
     }
 
@@ -672,7 +904,55 @@ const craftingBigCraftableGameIds = new Set();
   }
 }
 
-console.log(`  ✓ Shop sources: ${shopSourcesByGameId.size} object items`);
+// cookingSourcesByGameId: output gameId -> [{ type:'cooking', recipeName, ingredients: [{gameId, amount}] }]
+// CookingRecipes.json format: "ingredients/unused/outputId/unlock/displayName"
+const cookingSourcesByGameId = new Map();
+
+{
+  const cookingRecipes = loadJson(path.join(GAME_EXPORTS_DIR, 'CookingRecipes.json'));
+  for (const [recipeName, val] of Object.entries(cookingRecipes)) {
+    const parts = val.split('/');
+    if (parts.length < 3) continue;
+    const outputGameId = parseGameId(parts[2].trim());
+    if (outputGameId === null || outputGameId === undefined) continue;
+
+    // Parse ingredients: "id count id count ..."
+    const ingredientTokens = parts[0].trim().split(/\s+/);
+    const ingredients = [];
+    for (let i = 0; i < ingredientTokens.length - 1; i += 2) {
+      const ingId = parseGameId(ingredientTokens[i]);
+      const ingAmount = parseInt(ingredientTokens[i + 1], 10) || 1;
+      if (ingId !== null && ingId !== undefined) {
+        ingredients.push({ gameId: ingId, amount: ingAmount });
+      }
+    }
+
+    // Parse unlock: 'default'=always known, 'l N'=player level, 'f NPC N'=friendship, 's Skill N'=skill
+    const unlockStr = parts[3]?.trim() || 'default';
+    let unlockCondition = null;
+    if (unlockStr.startsWith('s ')) {
+      const tokens = unlockStr.split(' ');
+      unlockCondition = { type: 'skill', skill: tokens[1].toLowerCase(), level: parseInt(tokens[2], 10) };
+    } else if (unlockStr.startsWith('l ') && unlockStr !== 'l 0') {
+      unlockCondition = { type: 'level', level: parseInt(unlockStr.slice(2), 10) };
+    } else if (unlockStr.startsWith('f ')) {
+      const tokens = unlockStr.split(' ');
+      unlockCondition = { type: 'friendship', npc: tokens[1], hearts: parseInt(tokens[2], 10) };
+    }
+
+    const source = {
+      type: 'cooking',
+      recipeName,
+      ingredients,
+      ...(unlockCondition && { unlockCondition }),
+    };
+
+    if (!cookingSourcesByGameId.has(outputGameId)) cookingSourcesByGameId.set(outputGameId, []);
+    cookingSourcesByGameId.get(outputGameId).push(source);
+  }
+}
+
+console.log(`  ✓ Shop sources: ${shopSourcesByGameId.size} object items, ${bigCraftableShopSourcesByGameId.size} big craftable items`);
 console.log(`  ✓ Furniture shop sources: ${furnitureShopSourcesByGameId.size} furniture items`);
 console.log(`  ✓ Hat shop sources: ${hatShopSourcesByGameId.size} hat items`);
 console.log(`  ✓ Forage sources: ${forageSourcesByGameId.size} items`);
@@ -711,6 +991,152 @@ for (const [treeNumId, treeData] of Object.entries(gameData.wildTrees)) {
 
 console.log(`  ✓ Tapper sources: ${tapperSourcesByGameId.size} items`);
 
+// mailSourcesByGameId: gameId (number) -> [{ type:'mail', mailKey, sender? }]
+// bigCraftableMailSourcesByGameId: gameId (number) -> [{ type:'mail', mailKey, sender? }]
+// furnitureMailSourcesByGameId: gameId (number) -> [{ type:'mail', mailKey, sender? }]
+const mailSourcesByGameId = new Map();
+const bigCraftableMailSourcesByGameId = new Map();
+const furnitureMailSourcesByGameId = new Map();
+
+// Parse a special order's RequiredTags string into JSON Logic conditions.
+// Tags are comma-separated; prefix ! = negated.
+function parseSpecialOrderTags(tagsStr) {
+  if (!tagsStr) return null;
+  const rules = [];
+  for (const rawTag of tagsStr.split(',').map(t => t.trim()).filter(Boolean)) {
+    const negated = rawTag.startsWith('!');
+    const tag = negated ? rawTag.slice(1) : rawTag;
+    const wrap = rule => negated ? { '!': rule } : rule;
+
+    const eventMatch = tag.match(/^event_(\d+)$/);
+    if (eventMatch) { rules.push(wrap({ in: [parseInt(eventMatch[1]), { var: 'player.events' }] })); continue; }
+
+    const mailMatch = tag.match(/^mail_(.+)$/);
+    if (mailMatch) { rules.push(wrap({ in: [mailMatch[1], { var: 'player.mail' }] })); continue; }
+
+    const seasonMatch = tag.match(/^season_(spring|summer|fall|winter)$/);
+    if (seasonMatch) { rules.push(wrap({ '==': [{ var: 'world.season' }, seasonMatch[1]] })); continue; }
+
+    if (tag === 'island') { rules.push(wrap({ '==': [{ var: 'world.islandUnlocked' }, true] })); continue; }
+    // Unknown/unmodeled tags (NOT_IMPLEMENTED, rule_*, etc.) — skip
+  }
+  if (rules.length === 0) return null;
+  if (rules.length === 1) return rules[0];
+  return { and: rules };
+}
+
+// Build a map of mailKey -> { isSpecialOrder, condition } from game data
+// Special Orders: mail sent as reward for completing a named order from an NPC
+// TriggerActions: mail sent when a game condition is met
+const mailContextByKey = new Map();
+
+for (const [orderId, order] of Object.entries(gameData.specialOrders)) {
+  for (const reward of (order.Rewards || [])) {
+    if (reward.Type === 'Mail' && reward.Data?.MailReceived) {
+      const tagCondition = parseSpecialOrderTags(order.RequiredTags);
+      mailContextByKey.set(reward.Data.MailReceived, {
+        isSpecialOrder: true,
+        requester: order.Requester || null,
+        ...(tagCondition && { condition: tagCondition }),
+      });
+    }
+  }
+}
+
+for (const [, action] of Object.entries(gameData.triggerActions)) {
+  const allActions = [action.Action, ...(action.Actions || [])].filter(Boolean);
+  for (const a of allActions) {
+    const m = a.match(/^AddMail\s+\S+\s+(\S+)/);
+    if (m && action.Condition) {
+      const key = m[1];
+      if (!mailContextByKey.has(key)) {
+        mailContextByKey.set(key, { triggerCondition: action.Condition });
+      }
+    }
+  }
+}
+
+// Hardcoded conditions for mails sent by core game logic (not data-driven)
+const MAIL_HARDCODED_CONDITIONS = {
+  'CF_Fish':    { condition: 'Complete the Fish Tank bundles in the Community Center' },
+  'Beat_PK':    { condition: 'Beat Journey of the Prairie King' },
+  'JunimoKart': { condition: 'Beat all levels of Junimo Kart' },
+  'MSB_Pierre': { condition: "Pierre's friendship event (3+ hearts)" },
+};
+
+// Sender overrides for mail keys whose signatures don't follow the `-Name` pattern
+const MAIL_SENDER_OVERRIDES = {
+  'mom1': 'Mom', 'mom2': 'Mom', 'mom3': 'Mom', 'mom4': 'Mom', 'mom5': 'Mom',
+  'dad1': 'Dad', 'dad2': 'Dad', 'dad3': 'Dad', 'dad4': 'Dad', 'dad5': 'Dad',
+};
+
+for (const [mailKey, mailText] of Object.entries(gameData.mail)) {
+  if (typeof mailText !== 'string') continue;
+
+  // Extract sender from signature: `-Name` immediately before %item or a caret/line separator.
+  // The name is 1-4 capitalized words; optional trailing punctuation/words are ignored.
+  // We use the LAST such match to skip any hyphens in the body.
+  const senderMatches = [...mailText.matchAll(/[-–]\s*([A-Z][A-Za-z]+(?: [A-Z][A-Za-z]+){0,3})\s*(?:[^A-Za-z\s%^].*?)?(?:%item|%%|\^|$)/g)];
+  const senderMatch = senderMatches.length > 0 ? senderMatches[senderMatches.length - 1] : null;
+  const sender = MAIL_SENDER_OVERRIDES[mailKey] ?? (senderMatch ? senderMatch[1].trim() : null);
+
+  // Parse all %item id ... %% blocks
+  const itemBlockMatches = [...mailText.matchAll(/%item\s+id\s+((?:(?:\([A-Z]+\)\S+|\d+)(?:\s+\d+)?\s*)+)%%/g)];
+  for (const blockMatch of itemBlockMatches) {
+    const tokens = blockMatch[1].trim().split(/\s+/);
+    let i = 0;
+    while (i < tokens.length) {
+      const idToken = tokens[i++];
+      // Skip quantity tokens
+      if (/^\d+$/.test(idToken)) continue;
+
+      const bcMatch = idToken.match(/^\(BC\)(\S+)$/);
+      const furnitureMatch = idToken.match(/^\(F\)(\S+)$/);
+      const objectMatch = idToken.match(/^\(O\)(\S+)$/);
+
+      let targetMap, rawId;
+      if (bcMatch) {
+        targetMap = bigCraftableMailSourcesByGameId;
+        rawId = bcMatch[1];
+      } else if (furnitureMatch) {
+        targetMap = furnitureMailSourcesByGameId;
+        rawId = furnitureMatch[1];
+      } else if (objectMatch) {
+        targetMap = mailSourcesByGameId;
+        rawId = objectMatch[1];
+      } else if (gameData.objects[idToken] !== undefined) {
+        targetMap = mailSourcesByGameId;
+        rawId = idToken;
+      } else {
+        continue;
+      }
+
+      const gameId = parseGameId(rawId);
+      const source = { type: 'mail', mailKey };
+      if (sender) source.sender = sender;
+      const ctx = mailContextByKey.get(mailKey) || MAIL_HARDCODED_CONDITIONS[mailKey];
+      if (ctx) {
+        if (ctx.isSpecialOrder) source.isSpecialOrder = true;
+        // condition: JSON Logic from special order tags or trigger actions, or plain string for hardcoded
+        if (ctx.condition) {
+          source.condition = ctx.condition; // already parsed (from parseSpecialOrderTags)
+        } else if (ctx.triggerCondition) {
+          const parsed = parseCondition(ctx.triggerCondition);
+          if (parsed) source.condition = parsed;
+        }
+      }
+
+      if (!targetMap.has(gameId)) targetMap.set(gameId, []);
+      targetMap.get(gameId).push(source);
+
+      // Skip quantity if present
+      if (i < tokens.length && /^\d+$/.test(tokens[i])) i++;
+    }
+  }
+}
+
+console.log(`  ✓ Mail sources: ${mailSourcesByGameId.size} object items, ${bigCraftableMailSourcesByGameId.size} big craftable items, ${furnitureMailSourcesByGameId.size} furniture items`);
+
 /**
  * Build the unified acquisition sources array for an item.
  * @param {number|string} gameId - The item's numeric or string game ID
@@ -724,42 +1150,15 @@ console.log(`  ✓ Tapper sources: ${tapperSourcesByGameId.size} items`);
  * @param {boolean} [opts.includeCrafting=false]     - off by default
  * @param {boolean} [opts.includeTapper=false]       - off by default
  */
-function buildAcquisitionSources(gameId, opts = {}) {
-  const {
-    includeShop = true,
-    includeForage = true,
-    includeMonsterDrop = true,
-    includeFishPond = true,
-    includeGarbageCan = false,
-    includeTilling = false,
-    includeCrafting = false,
-    includeTapper = false,
-  } = opts;
-
+function buildAcquisitionSources(gameId) {
   const sources = [];
-  if (includeShop && shopSourcesByGameId.has(gameId)) {
-    sources.push(...shopSourcesByGameId.get(gameId));
-  }
-  if (includeForage && forageSourcesByGameId.has(gameId)) {
-    sources.push(...forageSourcesByGameId.get(gameId));
-  }
-  if (includeMonsterDrop && monsterDropsByGameId.has(gameId)) {
-    sources.push(...monsterDropsByGameId.get(gameId));
-  }
-  if (includeFishPond && fishPondSourcesByGameId.has(gameId)) {
-    sources.push(...fishPondSourcesByGameId.get(gameId));
-  }
-  if (includeGarbageCan && garbageCanSourcesByGameId.has(gameId)) {
-    sources.push(...garbageCanSourcesByGameId.get(gameId));
-  }
-  if (includeTilling && tillingSourcesByGameId.has(gameId)) {
-    sources.push(...tillingSourcesByGameId.get(gameId));
-  }
-  if (includeCrafting && craftingSourcesByGameId.has(gameId)) {
-    sources.push(...craftingSourcesByGameId.get(gameId));
-  }
-  if (includeTapper && tapperSourcesByGameId.has(gameId)) {
-    sources.push(...tapperSourcesByGameId.get(gameId));
+  for (const map of [
+    shopSourcesByGameId, forageSourcesByGameId, monsterDropsByGameId,
+    fishPondSourcesByGameId, garbageCanSourcesByGameId, tillingSourcesByGameId,
+    craftingSourcesByGameId, cookingSourcesByGameId, tapperSourcesByGameId,
+    mailSourcesByGameId,
+  ]) {
+    if (map.has(gameId)) sources.push(...map.get(gameId));
   }
   return sources;
 }
@@ -827,7 +1226,7 @@ for (const [seedId, cropInfo] of Object.entries(gameData.crops)) {
     name: cropName,
     icon: `assets/objects/${toIconFilename(cropName)}`,
     type: cropType,
-    category: category,
+    gameCategory: category,
     price: harvestObject.Price || 0,
     edibility: harvestObject.Edibility || -300,
     seasons: isSeasonIndependent ? [] : seasons,  // Clear seasons if only growable in season-independent locations
@@ -858,12 +1257,12 @@ console.log(`    Flowers: ${cropData.filter(c => c.type === 'flower').length}`);
 
 // Add selling locations and acquisition sources to crops
 cropData.forEach(item => {
-  item.sellingLocations = getSellingLocations(item.category, shopSellingLocations);
+  item.sellingLocations = getSellingLocations(item.gameCategory, shopSellingLocations);
   const seedSource = item.seedSource;
   delete item.seedSource;
   item.sources = [
     seedSource,
-    ...buildAcquisitionSources(item.gameId, { includeForage: false, includeMonsterDrop: false, includeFishPond: false }),
+    ...buildAcquisitionSources(item.gameId),
   ];
 });
 
@@ -971,7 +1370,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     seasons: seasons.length > 0 ? seasons : ['spring', 'summer', 'fall', 'winter'],
     locations: locations,
@@ -986,9 +1385,9 @@ console.log(`    Flowers: ${forageData.filter(f => f.isFlower).length}`);
 
 // Add selling locations and acquisition sources to forage
 forageData.forEach(item => {
-  const category = item.originalCategory !== undefined ? item.originalCategory : item.category;
+  const category = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory;
   item.sellingLocations = getSellingLocations(category, shopSellingLocations);
-  item.sources = buildAcquisitionSources(item.gameId, { includeShop: false, includeFishPond: false });
+  item.sources = buildAcquisitionSources(item.gameId);
 });
 
 
@@ -1017,8 +1416,8 @@ forageData.forEach(item => {
 
     // Preserve original category for game mechanics (selling, professions)
     // But set a display category for the modal subtitle
-    item.originalCategory = item.category; // -4 (Fish) - used for professions/selling
-    item.displayCategory = -81; // Forage - used for modal subtitle
+    item.originalGameCategory = item.gameCategory; // -4 (Fish) - used for professions/selling
+    item.displayGameCategory = -81; // Forage - used for modal subtitle
 
     // Note: Quality detection is now handled automatically in ItemSellPrice component
     // Foraged items (type='forage') automatically show no quality
@@ -1075,7 +1474,7 @@ for (const [treeId, treeInfo] of Object.entries(fruitTreesData)) {
     icon: `assets/objects/${toIconFilename(fruitName)}`,
     price: fruitObject.Price || 0,
     edibility: fruitObject.Edibility || -300,
-    category: fruitObject.Category || 0,
+    gameCategory: fruitObject.Category || 0,
     contextTags: fruitObject.ContextTags || [],
     seasons: seasons,
     daysToMature: daysToMature,
@@ -1112,10 +1511,11 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     seasons: seasons,
     treeId: sourceTree ? sourceTree.id : null,
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {}
   });
@@ -1160,7 +1560,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     mineralType: mineralType,
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
@@ -1208,7 +1608,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     producedBy: producedBy,
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
@@ -1256,7 +1656,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     rarity: rarity,
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
@@ -1299,7 +1699,7 @@ for (const id of [...resourceIds, ...stringKeyedResourceIds]) {
     icon: `assets/objects/${toIconFilename(objectData.Name)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     canBeGifted: objectData.CanBeGivenAsGift !== false,
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
@@ -1318,7 +1718,7 @@ const syntheticCurrencies = [
     icon: 'assets/objects/StarToken.png',
     price: 0,
     edibility: -300,
-    category: 0,
+    gameCategory: 0,
     contextTags: [],
     canBeGifted: false,
     bundles: [],
@@ -1332,7 +1732,7 @@ const syntheticCurrencies = [
     icon: 'assets/objects/QiCoin.png',
     price: 0,
     edibility: -300,
-    category: 0,
+    gameCategory: 0,
     contextTags: [],
     canBeGifted: false,
     bundles: [],
@@ -1349,21 +1749,10 @@ console.log(`  Processed ${resourceData.length} resources`);
 console.log('\nProcessing big craftables...');
 const bigCraftableData = [];
 
-// Collect all big-craftable gameIds we want to include:
-//   - bundle rewards (from rules/bundle-rewards.json)
-//   - all BigCraftables that have a crafting recipe (from CraftingRecipes.json isBigCraftable=true)
-const bigCraftableIds = new Set([
-  ...rules.bundleRewards.map(id => parseGameId(String(id))),
-  ...craftingBigCraftableGameIds,
-]);
-
-for (const id of bigCraftableIds) {
-  const bigCraftable = gameData.bigCraftables[String(id)];
-  if (!bigCraftable) {
-    // String-keyed lookup for numeric IDs
-    console.warn(`  Warning: BigCraftable ${id} not found in BigCraftables.json`);
-    continue;
-  }
+for (const [rawId, bigCraftable] of Object.entries(gameData.bigCraftables)) {
+  const id = parseGameId(rawId);
+  // Skip internal placeholder entries
+  if (!bigCraftable.Name || bigCraftable.Name.includes('??')) continue;
 
   const friendlyId = toKebabCase(bigCraftable.Name);
   const spriteName = extractSpriteNameFromDisplayName(bigCraftable.DisplayName);
@@ -1375,8 +1764,13 @@ for (const id of bigCraftableIds) {
     : [];
 
   // Attach shop sources (some big-craftables are sold in shops, e.g. Catalogues)
-  if (shopSourcesByGameId.has(id)) {
-    sources.push(...shopSourcesByGameId.get(id));
+  if (bigCraftableShopSourcesByGameId.has(id)) {
+    sources.push(...bigCraftableShopSourcesByGameId.get(id));
+  }
+
+  // Attach mail sources (some big-craftables are received via mail, e.g. Sewing Machine)
+  if (bigCraftableMailSourcesByGameId.has(id)) {
+    sources.push(...bigCraftableMailSourcesByGameId.get(id));
   }
 
   bigCraftableData.push({
@@ -1387,7 +1781,7 @@ for (const id of bigCraftableIds) {
     icon: `assets/objects/${iconFilename}`,
     price: bigCraftable.Price || 0,
     edibility: -300, // BigCraftables are not edible
-    category: 'Big Craftable',
+    gameCategory: 'Big Craftable',
     contextTags: bigCraftable.ContextTags || [],
     bundles: [],
     gifts: {},
@@ -1396,7 +1790,7 @@ for (const id of bigCraftableIds) {
 }
 
 deduplicateIds(bigCraftableData);
-console.log(`  Processed ${bigCraftableData.length} big craftables (${craftingBigCraftableGameIds.size} craftable, ${rules.bundleRewards.length} bundle rewards)`);
+console.log(`  ✓ Processed ${bigCraftableData.length} big craftables`);
 
 // ============================================================================
 // Machine Recipe Parser
@@ -1599,7 +1993,7 @@ for (const recipe of machineRecipes) {
           gameId: parseGameId(id),
           name: obj.Name,
           type: 'mushroom',
-          category: obj.Category || -81,
+          gameCategory: obj.Category || -81,
           price: obj.Price || 0
         }));
     } else if (recipe.requiredTags.includes('category_fish')) {
@@ -1611,7 +2005,7 @@ for (const recipe of machineRecipes) {
           gameId: parseGameId(id),
           name: obj.Name,
           type: 'fish',
-          category: -4,
+          gameCategory: -4,
           price: obj.Price || 0
         }));
     }
@@ -1621,35 +2015,38 @@ for (const recipe of machineRecipes) {
       inputName: item.name,
       inputGameId: item.gameId,
       inputBasePrice: item.price,
-      inputCategory: item.category,
+      inputGameCategory: item.gameCategory,
       inputType: item.type,
       outputPrice: Math.floor(item.price * formula.multiplier + formula.addition),
       outputIridiumPrice: Math.floor((item.price * formula.multiplier + formula.addition) * rules.qualityMultipliers.artisanProfession)
     })).sort((a, b) => b.outputPrice - a.outputPrice);
+
+    const machineSource = {
+      type: 'machine',
+      machine: recipe.machine,
+      machineId: recipe.machineId,
+      inputType: recipe.requiredTags.includes('category_fruits') || recipe.requiredTags.includes('keg_wine') || recipe.requiredTags.includes('preserves_jelly') ? 'fruit'
+               : recipe.requiredTags.includes('category_flowers') || recipe.outputName === 'Honey' ? 'flower'
+               : recipe.requiredTags.includes('category_fish') ? 'fish'
+               : recipe.requiredTags.includes('edible_mushroom') ? 'mushroom'
+               : 'vegetable',
+      processingTimeMinutes: recipe.processingMinutes,
+      valueFormula: `baseValue * ${formula.multiplier}${formula.addition > 0 ? ` + ${formula.addition}` : ''}`,
+      inputDetails
+    };
 
     const artisanItem = {
       type: 'artisan',
       id: toKebabCase(recipe.outputName),
       gameId: outputItemId,
       name: displayName,
-      category: objectData.Category || -26,
+      gameCategory: objectData.Category || -26,
       price: objectData.Price || 0,
       edibility: objectData.Edibility || -300,
       icon: `assets/objects/${getIconFilename(outputItemId, recipe.outputName, objectData)}`,
       contextTags: objectData.ContextTags || [],
-      sources: [{
-        type: 'machine',
-        machine: recipe.machine,
-        machineId: recipe.machineId,
-        inputType: recipe.requiredTags.includes('category_fruits') || recipe.requiredTags.includes('keg_wine') || recipe.requiredTags.includes('preserves_jelly') ? 'fruit'
-                 : recipe.requiredTags.includes('category_flowers') || recipe.outputName === 'Honey' ? 'flower'
-                 : recipe.requiredTags.includes('category_fish') ? 'fish'
-                 : recipe.requiredTags.includes('edible_mushroom') ? 'mushroom'
-                 : 'vegetable',
-        processingTimeMinutes: recipe.processingMinutes,
-        valueFormula: `baseValue * ${formula.multiplier}${formula.addition > 0 ? ` + ${formula.addition}` : ''}`,
-        inputDetails
-      }],
+      ...(parseItemBuffs(objectData) && { buffs: parseItemBuffs(objectData) }),
+      sources: [machineSource, ...buildAcquisitionSources(outputItemId)],
       bundles: [],
       gifts: {}
     };
@@ -1687,31 +2084,34 @@ for (const recipe of machineRecipes) {
         inputName: inputObject.Name,
         inputGameId: inputId,
         inputBasePrice: inputObject.Price || 0,
-        inputCategory: inputObject.Category,
+        inputGameCategory: inputObject.Category,
         inputType: inputObject.Type,
         outputPrice: objectData.Price || 0,
         outputIridiumPrice: Math.floor((objectData.Price || 0) * 1.4)
       };
     }).filter(Boolean);
 
+    const machineSource = {
+      type: 'machine',
+      machine: recipe.machine,
+      machineId: recipe.machineId,
+      inputType: 'specific',
+      valueFormula: `${objectData.Price || 0}`,
+      inputDetails
+    };
+
     const artisanItem = {
       type: 'artisan',
       id: toKebabCase(objectData.Name),
       gameId: outputItemId,
       name: objectData.Name,
-      category: objectData.Category || -26,
+      gameCategory: objectData.Category || -26,
       price: objectData.Price || 0,
       edibility: objectData.Edibility || -300,
       icon: `assets/objects/${getIconFilename(outputItemId, objectData.Name, objectData)}`,
       contextTags: objectData.ContextTags || [],
-      sources: [{
-        type: 'machine',
-        machine: recipe.machine,
-        machineId: recipe.machineId,
-        inputType: 'specific',
-        valueFormula: `${objectData.Price || 0}`,
-        inputDetails
-      }],
+      ...(parseItemBuffs(objectData) && { buffs: parseItemBuffs(objectData) }),
+      sources: [machineSource, ...buildAcquisitionSources(outputItemId)],
       bundles: [],
       gifts: {}
     };
@@ -1793,22 +2193,19 @@ for (const [gameId, animalSources] of animalProductSources.entries()) {
     id: getUniqueItemId(gameId, objectData.Name),
     gameId,
     name: objectData.Name,
-    category: objectData.Category || 0,
+    gameCategory: objectData.Category || 0,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
     hasQuality: true,
     sources: animalSources.map(a => ({ type: 'animal', animalName: a.animalName, animalId: a.animalId })),
     contextTags: objectData.ContextTags || [],
+    sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
     gifts: {},
   };
 
-  // Also include any shop sources for this item
-  const shopSrcs = buildAcquisitionSources(gameId, {
-    includeForage: false, includeMonsterDrop: false, includeFishPond: false,
-  });
-  item.sources.push(...shopSrcs);
+  item.sources.push(...buildAcquisitionSources(gameId));
 
   animalProductData.push(item);
   processedGameIds.add(gameId);
@@ -1835,13 +2232,13 @@ for (const [gameId, tapSources] of tapperSourcesByGameId.entries()) {
     id: toKebabCase(objectData.Name),
     gameId,
     name: objectData.Name,
-    category: objectData.Category || -27,
+    gameCategory: objectData.Category || -27,
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
     sources: [
       ...tapSources,
-      ...buildAcquisitionSources(gameId, { includeForage: false, includeMonsterDrop: false, includeFishPond: false }),
+      ...buildAcquisitionSources(gameId),
     ],
     contextTags: objectData.ContextTags || [],
     bundles: [],
@@ -1908,7 +2305,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
       isTrapFish: true,
       price: objectData.Price || 0,
       edibility: objectData.Edibility || -300,
-      category: objectData.Category || 0,
+      gameCategory: objectData.Category || 0,
       contextTags: objectData.ContextTags || [],
       bundles: [],
       gifts: {}
@@ -1945,7 +2342,7 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
       isTrapFish: false,
       price: objectData.Price || 0,
       edibility: objectData.Edibility || -300,
-      category: objectData.Category || 0,
+      gameCategory: objectData.Category || 0,
       contextTags: objectData.ContextTags || [],
       bundles: [],
       gifts: {}
@@ -1957,9 +2354,9 @@ console.log(`  Processed ${fishData.length} fish`);
 
 // Add selling locations and acquisition sources to fish
 fishData.forEach(item => {
-  const category = item.originalCategory !== undefined ? item.originalCategory : item.category;
+  const category = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory;
   item.sellingLocations = getSellingLocations(category, shopSellingLocations);
-  item.sources = buildAcquisitionSources(item.gameId, { includeShop: false, includeForage: false });
+  item.sources = buildAcquisitionSources(item.gameId);
 });
 
 // Extract and merge location data
@@ -2054,7 +2451,7 @@ const roeInputDetails = fishWithRoe.map(fish => {
     inputName: fish.name,
     inputGameId: fish.gameId,
     inputBasePrice: fish.price,
-    inputCategory: -4, // Fish category
+    inputGameCategory: -4, // Fish category
     inputType: 'fish',
     outputPrice: roePrice,
     outputIridiumPrice: Math.floor(roePrice * rules.qualityMultipliers.artisanProfession)
@@ -2068,20 +2465,23 @@ const roeItem = {
   gameId: 812,
   name: 'Roe',
   type: 'artisan',
-  category: roeObjectData?.Category || -26,
+  gameCategory: roeObjectData?.Category || -26,
   price: roeObjectData?.Price || 30,
   edibility: roeObjectData?.Edibility || 20,
   icon: 'assets/objects/Roe.png',
   contextTags: roeObjectData?.ContextTags || [],
-  sources: [{
-    type: 'machine',
-    machine: 'Fish Pond',
-    machineId: 'fish-pond',
-    inputType: 'fish',
-    processingTimeMinutes: rules.roeMechanics.roe.processingTimeMinutes,
-    valueFormula: rules.roeMechanics.roe.formula,
-    inputDetails: roeInputDetails
-  }],
+  sources: [
+    {
+      type: 'machine',
+      machine: 'Fish Pond',
+      machineId: 'fish-pond',
+      inputType: 'fish',
+      processingTimeMinutes: rules.roeMechanics.roe.processingTimeMinutes,
+      valueFormula: rules.roeMechanics.roe.formula,
+      inputDetails: roeInputDetails
+    },
+    ...buildAcquisitionSources(812),
+  ],
   processingTimeMinutes: rules.roeMechanics.roe.processingTimeMinutes,
   bundles: [],
   gifts: {}
@@ -2109,7 +2509,7 @@ const agedRoeInputDetails = fishWithAgedRoe.map(fish => {
     inputName: fish.name,
     inputGameId: fish.gameId,
     inputBasePrice: roePrice, // Input is the roe price
-    inputCategory: -4, // Fish category (actual input is roe, but source is fish)
+    inputGameCategory: -4, // Fish category (actual input is roe, but source is fish)
     inputType: 'fish',
     outputPrice: agedRoePrice,
     outputIridiumPrice: Math.floor(agedRoePrice * rules.qualityMultipliers.artisanProfession)
@@ -2123,20 +2523,23 @@ const agedRoeItem = {
   gameId: 447,
   name: 'Aged Roe',
   type: 'artisan',
-  category: agedRoeObjectData?.Category || -26,
+  gameCategory: agedRoeObjectData?.Category || -26,
   price: agedRoeObjectData?.Price || 100,
   edibility: agedRoeObjectData?.Edibility || 40,
   icon: 'assets/objects/AgedRoe.png',
   contextTags: agedRoeObjectData?.ContextTags || [],
-  sources: [{
-    type: 'machine',
-    machine: rules.roeMechanics.agedRoe.producedBy,
-    machineId: 'preserves-jar',
-    inputType: rules.roeMechanics.agedRoe.inputType,
-    processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
-    valueFormula: rules.roeMechanics.agedRoe.formula,
-    inputDetails: agedRoeInputDetails
-  }],
+  sources: [
+    {
+      type: 'machine',
+      machine: rules.roeMechanics.agedRoe.producedBy,
+      machineId: 'preserves-jar',
+      inputType: rules.roeMechanics.agedRoe.inputType,
+      processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
+      valueFormula: rules.roeMechanics.agedRoe.formula,
+      inputDetails: agedRoeInputDetails
+    },
+    ...buildAcquisitionSources(447),
+  ],
   processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
   bundles: [],
   gifts: {}
@@ -2163,30 +2566,33 @@ if (caviarObjectData && caviarFishObject) {
     gameId: caviarRules.gameId,
     name: caviarObjectData.Name,
     type: 'artisan',
-    category: caviarObjectData.Category || -26,
+    gameCategory: caviarObjectData.Category || -26,
     price: caviarObjectData.Price || 0,
     edibility: caviarObjectData.Edibility || -300,
     icon: `assets/objects/${getIconFilename(caviarRules.gameId, caviarObjectData.Name, caviarObjectData)}`,
     contextTags: caviarObjectData.ContextTags || [],
-    sources: [{
-      type: 'machine',
-      machine: rules.roeMechanics.agedRoe.producedBy, // same machine: Preserves Jar
-      machineId: 'preserves-jar',
-      inputType: 'specific',
-      processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
-      valueFormula: `${caviarObjectData.Price || 0}`,
-      inputDetails: [{
-        inputId: toKebabCase(caviarFishObject.Name),  // "sturgeon" — navigates to fish
-        inputName: `${caviarFishObject.Name} Roe`,    // display label: "Sturgeon Roe"
-        inputGameId: rules.roeMechanics.roe.gameId,   // 812 (Roe item)
-        inputFishGameId: caviarRules.inputFish,        // 698 (Sturgeon fish)
-        inputBasePrice: caviarRoePrice,
-        inputCategory: -23,
+    sources: [
+      {
+        type: 'machine',
+        machine: rules.roeMechanics.agedRoe.producedBy, // same machine: Preserves Jar
+        machineId: 'preserves-jar',
         inputType: 'specific',
-        outputPrice: caviarObjectData.Price || 0,
-        outputIridiumPrice: Math.floor((caviarObjectData.Price || 0) * rules.qualityMultipliers.artisanProfession)
-      }]
-    }],
+        processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
+        valueFormula: `${caviarObjectData.Price || 0}`,
+        inputDetails: [{
+          inputId: toKebabCase(caviarFishObject.Name),  // "sturgeon" — navigates to fish
+          inputName: `${caviarFishObject.Name} Roe`,    // display label: "Sturgeon Roe"
+          inputGameId: rules.roeMechanics.roe.gameId,   // 812 (Roe item)
+          inputFishGameId: caviarRules.inputFish,        // 698 (Sturgeon fish)
+          inputBasePrice: caviarRoePrice,
+          inputGameCategory: -23,
+          inputType: 'specific',
+          outputPrice: caviarObjectData.Price || 0,
+          outputIridiumPrice: Math.floor((caviarObjectData.Price || 0) * rules.qualityMultipliers.artisanProfession)
+        }]
+      },
+      ...buildAcquisitionSources(caviarRules.gameId),
+    ],
     processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
     bundles: [],
     gifts: {}
@@ -2200,7 +2606,7 @@ if (caviarObjectData && caviarFishObject) {
 // Add selling locations to all artisan items
 console.log('\nAdding selling locations to artisan items...');
 artisanData.forEach(item => {
-  item.sellingLocations = getSellingLocations(item.category, shopSellingLocations);
+  item.sellingLocations = getSellingLocations(item.gameCategory, shopSellingLocations);
 });
 console.log(`  ✅ Added selling locations to ${artisanData.length} artisan items`);
 
@@ -2208,8 +2614,8 @@ console.log(`  ✅ Added selling locations to ${artisanData.length} artisan item
 console.log('\nProcessing villagers...');
 const villagerData = [];
 
-// Common villagers (from existing data or hardcoded list)
-const villagers = [
+// Canonical list of 34 social villagers (Characters.json has 48 entries including monsters/animals)
+const villagerNames = [
   'Abigail', 'Alex', 'Elliott', 'Emily', 'Haley', 'Harvey', 'Leah', 'Maru',
   'Penny', 'Sam', 'Sebastian', 'Shane', 'Caroline', 'Clint', 'Demetrius',
   'Dwarf', 'Evelyn', 'George', 'Gus', 'Jas', 'Jodi', 'Kent', 'Krobus',
@@ -2217,14 +2623,43 @@ const villagers = [
   'Vincent', 'Willy', 'Wizard'
 ];
 
-for (const name of villagers) {
+// Mappings for numeric enum fields in Characters.json
+const BIRTH_SEASON_MAP = { 0: 'spring', 1: 'summer', 2: 'fall', 3: 'winter' };
+const GENDER_MAP = { 0: 'male', 1: 'female', 2: 'other' };
+const AGE_MAP = { 0: 'adult', 1: 'teen', 2: 'child' };
+const MANNER_MAP = { 0: 'neutral', 1: 'polite', 2: 'rude' };
+const SOCIAL_ANXIETY_MAP = { 0: 'outgoing', 1: 'shy', 2: 'neutral' };
+const OPTIMISM_MAP = { 0: 'positive', 1: 'negative', 2: 'neutral' };
+
+for (const name of villagerNames) {
   const friendlyId = toKebabCase(name);
-  villagerData.push({
+  const charData = gameData.characters?.[name];
+
+  const villager = {
     type: 'villager',
     id: friendlyId,
     name: name,
-    icon: `assets/villagers/${name}.png`
-  });
+    icon: `assets/villagers/${name}.png`,
+  };
+
+  if (charData) {
+    if (charData.BirthSeason !== undefined && charData.BirthDay !== undefined) {
+      villager.birthday = {
+        season: BIRTH_SEASON_MAP[charData.BirthSeason] ?? null,
+        day: charData.BirthDay,
+      };
+    }
+    if (charData.Gender !== undefined) villager.gender = GENDER_MAP[charData.Gender] ?? null;
+    if (charData.Age !== undefined) villager.age = AGE_MAP[charData.Age] ?? null;
+    if (charData.Manner !== undefined) villager.manner = MANNER_MAP[charData.Manner] ?? null;
+    if (charData.SocialAnxiety !== undefined) villager.socialAnxiety = SOCIAL_ANXIETY_MAP[charData.SocialAnxiety] ?? null;
+    if (charData.Optimism !== undefined) villager.optimism = OPTIMISM_MAP[charData.Optimism] ?? null;
+    if (charData.HomeRegion) villager.homeRegion = charData.HomeRegion;
+    if (charData.CanBeRomanced) villager.canBeRomanced = true;
+    if (charData.LoveInterest) villager.loveInterest = toKebabCase(charData.LoveInterest);
+  }
+
+  villagerData.push(villager);
 }
 
 console.log(`  Processed ${villagerData.length} villagers`);
@@ -2251,8 +2686,8 @@ function matchesPreference(item, entries) {
   if (entries.includes(itemGameId)) return true;
 
   // Check for category match (negative numbers are categories)
-  if (item.category !== undefined) {
-    if (entries.includes(item.category.toString())) return true;
+  if (item.gameCategory !== undefined) {
+    if (entries.includes(item.gameCategory.toString())) return true;
   }
 
   // Check for context tag match
@@ -2557,6 +2992,7 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
   if (!sellerName) continue; // skip unmapped shops
 
   for (const item of (shopData.Items || [])) {
+    if (item.IsRecipe) continue;
     const m = item.ItemId && item.ItemId.match(/\(O\)(\d+)/);
     if (!m) continue;
     const id = parseInt(m[1], 10);
@@ -2672,13 +3108,13 @@ for (const [seedGameIdStr, cropInfo] of Object.entries(gameData.crops)) {
     name: seedObjectData.Name,
     icon: `assets/objects/${toIconFilename(seedObjectData.Name)}`,
     type: 'seed',
-    category: -74,
+    gameCategory: -74,
     price: sellPrice,
     buyPrice: sellPrice * 2,
     seasons,
     produces,
     sellers,
-    sources: buildAcquisitionSources(seedGameId, { includeForage: false, includeTilling: true, includeCrafting: true }),
+    sources: buildAcquisitionSources(seedGameId),
     sellingLocations: getSellingLocations(-74, shopSellingLocations),
   });
 }
@@ -2697,13 +3133,13 @@ if (gameData.objects[String(MIXED_SEEDS_ID)]) {
     name: obj.Name,
     icon: `assets/objects/${toIconFilename(obj.Name)}`,
     type: 'seed',
-    category: -74,
+    gameCategory: -74,
     price: sellPrice,
     buyPrice: sellPrice * 2,
     seasons: ['spring', 'summer', 'fall', 'winter'],
     produces,
     sellers: Array.from(seedSellersMap.get(MIXED_SEEDS_ID) || []).sort(),
-    sources: buildAcquisitionSources(MIXED_SEEDS_ID, { includeForage: false, includeTilling: true, includeCrafting: true }),
+    sources: buildAcquisitionSources(MIXED_SEEDS_ID),
     sellingLocations: getSellingLocations(-74, shopSellingLocations),
   });
 }
@@ -2724,13 +3160,13 @@ if (MIXED_FLOWER_SEEDS_ID && gameData.objects[String(MIXED_FLOWER_SEEDS_ID)]) {
     name: obj.Name,
     icon: `assets/objects/${toIconFilename(obj.Name)}`,
     type: 'seed',
-    category: -74,
+    gameCategory: -74,
     price: sellPrice,
     buyPrice: sellPrice * 2,
     seasons: ['spring', 'summer', 'fall'],
     produces,
     sellers: Array.from(seedSellersMap.get(MIXED_FLOWER_SEEDS_ID) || []).sort(),
-    sources: buildAcquisitionSources(MIXED_FLOWER_SEEDS_ID, { includeForage: false, includeTilling: true, includeCrafting: true }),
+    sources: buildAcquisitionSources(MIXED_FLOWER_SEEDS_ID),
     sellingLocations: getSellingLocations(-74, shopSellingLocations),
   });
 }
@@ -2787,10 +3223,13 @@ for (const [rawKey, furnitureStr] of Object.entries(gameData.furniture)) {
   if (furnitureShopSourcesByGameId.has(gameId)) {
     sources.push(...furnitureShopSourcesByGameId.get(gameId));
   }
+  if (furnitureMailSourcesByGameId.has(gameId)) {
+    sources.push(...furnitureMailSourcesByGameId.get(gameId));
+  }
 
   // Add catalogue source based on context tag (price 0 = freely available via catalogue)
   const catalogue = FURNITURE_CATALOGUE_MAP[contextTag] || DEFAULT_CATALOGUE;
-  sources.push({ type: 'shop', storeId: catalogue.storeId, storeName: catalogue.storeName, storeBaseName: catalogue.storeName, price: 0 });
+  sources.push({ type: 'shop', storeId: catalogue.storeId, storeName: catalogue.storeName, price: 0 });
 
   furnitureData.push({
     id,
@@ -2817,52 +3256,465 @@ console.log(`  Processed ${furnitureData.length} furniture items`);
 console.log('\nProcessing hats...');
 const hatData = [];
 
-// Hat icon overrides for items where the wiki uses a different filename
-// (color variants sharing the same display name, hidden/secret items, etc.)
-const HAT_ICON_OVERRIDES = {
-  57: 'PartyHatRed.png',
-  58: 'PartyHatBlue.png',
-  59: 'PartyHatGreen.png',
-  92: null, // "???" — hidden item, no icon available
-};
+const hatOverrides = rules.hatOverrides.overrides || {};
+const hatIconOverrides = rules.hatOverrides.iconOverrides || {};
 
 // Hat format: name/description/hairstyleOffset/isMask/iconIndex/displayName[/spriteIndex]
 for (const [rawKey, hatStr] of Object.entries(gameData.hats)) {
+  const override = hatOverrides[rawKey] || {};
   const parts = hatStr.split('/');
-  const name = parts[5] || parts[0]; // displayName at [5], fallback to [0]
+  const name = override.name || parts[5] || parts[0]; // displayName at [5], fallback to [0]
   const description = parts[1] || '';
   const isMask = parts[3] === 'true';
 
   const gameId = parseGameId(rawKey);
-  const id = toKebabCase(name) || toKebabCase(rawKey);
+  const id = override.id || toKebabCase(name) || toKebabCase(rawKey);
 
-  // Icon: use override if present, otherwise derive from display name
-  const iconOverride = HAT_ICON_OVERRIDES[gameId];
-  const iconFile = iconOverride !== undefined
-    ? iconOverride
-    : toIconFilename(name);
+  // Icon: per-hat override → gameId icon override → derive from name
+  const iconFile = override.icon || hatIconOverrides[rawKey] || toIconFilename(name);
   const icon = iconFile ? `assets/objects/${iconFile}` : null;
 
-  const sources = [];
+  const sources = override.sources
+    ? override.sources.map(src => {
+        if (!src.condition) return src;
+        const itemNames = collectItemConditionNames(src.condition, gameData.objects);
+        return itemNames ? { ...src, conditionItemNames: itemNames } : src;
+      })
+    : [];
   if (hatShopSourcesByGameId.has(gameId)) {
     sources.push(...hatShopSourcesByGameId.get(gameId));
   }
 
-  hatData.push({
-    id,
-    gameId,
-    name,
-    description,
-    isMask,
-    icon,
-    sources,
-  });
+  hatData.push({ id, gameId, name, description, isMask, icon, sources });
 }
 
 deduplicateIds(hatData);
 
 hatData.sort((a, b) => a.name.localeCompare(b.name));
 console.log(`  Processed ${hatData.length} hats`);
+
+// ============================================================================
+// Collect all already-processed Objects.json gameIds (to avoid double-processing)
+// NOTE: furnitureData and hatData use a different gameId namespace (Furniture.json /
+// Hats.json), so they are intentionally excluded here — their numeric IDs can
+// collide with Objects.json IDs.
+// ============================================================================
+const alreadyProcessedGameIds = new Set();
+const allExistingObjectArrays = [
+  fishData, artisanData, animalProductData, cropData, seedData, forageData,
+  fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
+  resourceData, bigCraftableData,
+  // furnitureData and hatData are explicitly excluded (different ID namespace)
+];
+for (const arr of allExistingObjectArrays) {
+  for (const item of arr) {
+    if (item.gameId !== undefined) alreadyProcessedGameIds.add(String(item.gameId));
+  }
+}
+
+// Helper to make a base item object from an Objects.json entry
+function makeBaseItem(gameId, objectData, type) {
+  const buffs = parseItemBuffs(objectData);
+  const resolvedName = resolveLocalizedText(objectData.DisplayName) || objectData.Name;
+  const item = {
+    type,
+    id: getUniqueItemId(gameId, objectData.Name),
+    gameId,
+    name: resolvedName,
+    icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility ?? -300,
+    gameCategory: objectData.Category ?? 0,
+    contextTags: objectData.ContextTags || [],
+    canBeGifted: objectData.CanBeGivenAsGift !== false,
+    sellingLocations: getSellingLocations(objectData.Category ?? 0, shopSellingLocations),
+    bundles: [],
+    gifts: {},
+  };
+  if (buffs) item.buffs = buffs;
+  return item;
+}
+
+// ============================================================================
+// Process Food / Cooking (category -7)
+// ============================================================================
+console.log('\nProcessing food (cooking)...');
+const foodData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -7) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'food');
+  item.sources = buildAcquisitionSources(gameId);
+  foodData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(foodData);
+foodData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${foodData.length} food items`);
+
+// ============================================================================
+// Process Ores (category -15, excluding metal bars already processed)
+// ============================================================================
+console.log('\nProcessing ores...');
+const oreData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -15) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'ore');
+  item.sources = buildAcquisitionSources(gameId);
+  oreData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(oreData);
+oreData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${oreData.length} ores`);
+
+// ============================================================================
+// Process Geode Minerals (category -12, excluding gems/minerals already processed)
+// ============================================================================
+console.log('\nProcessing geode minerals...');
+const geodeMineralData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -12) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'geode-mineral');
+  item.sources = buildAcquisitionSources(gameId);
+  geodeMineralData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(geodeMineralData);
+geodeMineralData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${geodeMineralData.length} geode minerals`);
+
+// ============================================================================
+// Process Bombs / Crafted Explosives / Fences / Sprinklers (category -8)
+// ============================================================================
+console.log('\nProcessing bombs and crafted items...');
+const bombData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -8) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'crafted');
+  item.sources = buildAcquisitionSources(gameId);
+  bombData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(bombData);
+bombData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${bombData.length} crafted items (bombs/fences/sprinklers)`);
+
+// ============================================================================
+// Process Fertilizers (category -19)
+// ============================================================================
+console.log('\nProcessing fertilizers...');
+const fertilizerData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -19) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'fertilizer');
+  item.sources = buildAcquisitionSources(gameId);
+  fertilizerData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(fertilizerData);
+fertilizerData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${fertilizerData.length} fertilizers`);
+
+// ============================================================================
+// Process Fishing Bait (category -21)
+// ============================================================================
+console.log('\nProcessing fishing bait...');
+const baitData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -21) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'bait');
+  item.sources = buildAcquisitionSources(gameId);
+  baitData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(baitData);
+baitData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${baitData.length} fishing bait items`);
+
+// ============================================================================
+// Process Fishing Tackle (category -22)
+// ============================================================================
+console.log('\nProcessing fishing tackle...');
+const tackleData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -22) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'tackle');
+  item.sources = buildAcquisitionSources(gameId);
+  tackleData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(tackleData);
+tackleData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${tackleData.length} fishing tackle items`);
+
+// ============================================================================
+// Process Flooring / Paths (category -24)
+// ============================================================================
+console.log('\nProcessing flooring...');
+const flooringData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -24) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'flooring');
+  item.sources = buildAcquisitionSources(gameId);
+  flooringData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(flooringData);
+flooringData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${flooringData.length} flooring items`);
+
+// ============================================================================
+// Process Trash / Junk (category -20)
+// ============================================================================
+console.log('\nProcessing trash...');
+const trashData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -20) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'trash');
+  item.canBeGifted = false;
+  item.sources = buildAcquisitionSources(gameId);
+  trashData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(trashData);
+trashData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${trashData.length} trash items`);
+
+// ============================================================================
+// Process Books (category -102 and -103)
+// ============================================================================
+console.log('\nProcessing books...');
+const bookData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -102 && objectData.Category !== -103) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'book');
+  item.sources = buildAcquisitionSources(gameId);
+  bookData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(bookData);
+bookData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${bookData.length} books (${bookData.filter(b => b.gameCategory === -103).length} skill books, ${bookData.filter(b => b.gameCategory === -102).length} power books)`);
+
+// ============================================================================
+// Process Artifacts / Archaeology (category 0, Type=Arch)
+// ============================================================================
+console.log('\nProcessing artifacts...');
+const artifactData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== 0) continue;
+  if (objectData.Type !== 'Arch') continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'artifact');
+  item.sources = buildAcquisitionSources(gameId);
+  artifactData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(artifactData);
+artifactData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${artifactData.length} artifacts`);
+
+// ============================================================================
+// Process Rings (category 0, Type=Ring)
+// ============================================================================
+console.log('\nProcessing rings...');
+const ringData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== 0) continue;
+  if (objectData.Type !== 'Ring') continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'ring');
+  item.sources = buildAcquisitionSources(gameId);
+  ringData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(ringData);
+ringData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${ringData.length} rings`);
+
+// ============================================================================
+// Process Tree Seeds (category -74, not yet processed as crop seeds)
+// ============================================================================
+console.log('\nProcessing tree seeds...');
+const treeSeedData = [];
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (objectData.Category !== -74) continue;
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+
+  const gameId = parseGameId(rawId);
+  const item = makeBaseItem(gameId, objectData, 'tree-seed');
+  item.sources = buildAcquisitionSources(gameId);
+  treeSeedData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(treeSeedData);
+treeSeedData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${treeSeedData.length} tree seeds`);
+
+// ============================================================================
+// Process Remaining Misc Items (everything not yet processed)
+// Includes: crafting ingredients, quest items, special items, etc.
+// Excludes: category -999 (litter/stones), furniture, hats (different json)
+// ============================================================================
+console.log('\nProcessing misc items...');
+const miscData = [];
+
+// Categories to skip entirely (already handled or truly not useful)
+const SKIP_MISC_CATEGORIES = new Set([-999]);
+// Types to skip in category 0
+const SKIP_CAT0_TYPES = new Set(['asdf']); // internal placeholders (Secret Note, Artifact Spot, etc.)
+
+for (const [rawId, objectData] of Object.entries(gameData.objects)) {
+  if (alreadyProcessedGameIds.has(rawId)) continue;
+  if (SKIP_MISC_CATEGORIES.has(objectData.Category)) continue;
+  // In cat 0, skip internal-only items
+  if (objectData.Category === 0 && SKIP_CAT0_TYPES.has(objectData.Type)) continue;
+
+  const gameId = parseGameId(rawId);
+  if (rules.itemVariants[String(gameId)]?.skip) continue;
+  const item = makeBaseItem(gameId, objectData, 'misc');
+  item.sources = buildAcquisitionSources(gameId);
+  const miscVariant = rules.itemVariants[String(gameId)];
+  if (miscVariant?.sources) item.sources.push(...miscVariant.sources);
+  miscData.push(item);
+  alreadyProcessedGameIds.add(rawId);
+}
+
+deduplicateIds(miscData);
+miscData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${miscData.length} misc items`);
+
+// ============================================================================
+// Cross-namespace ID disambiguation
+// Furniture and Hats use separate gameId namespaces from Objects.json, so their
+// friendly IDs can collide with Object-namespace items (e.g. furniture "'Stardrop'"
+// painting → id "stardrop" collides with Object Stardrop gameId 434).
+// Append -gameId to any furniture/hat whose id already exists in the Object namespace.
+// ============================================================================
+const objectNamespaceIds = new Set([
+  fishData, artisanData, animalProductData, cropData, seedData, forageData,
+  fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
+  resourceData, bigCraftableData, foodData, oreData, geodeMineralData, bombData,
+  fertilizerData, baitData, tackleData, flooringData, bookData, artifactData,
+  ringData, treeSeedData, miscData,
+].flatMap(arr => arr.map(i => i.id)));
+
+let crossNamespaceDisambiguated = 0;
+for (const item of [...furnitureData, ...hatData]) {
+  if (objectNamespaceIds.has(item.id)) {
+    item.id = `${item.id}-${String(item.gameId).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+    crossNamespaceDisambiguated++;
+  }
+}
+if (crossNamespaceDisambiguated > 0) {
+  console.log(`  ✓ Disambiguated ${crossNamespaceDisambiguated} furniture/hat ids that collided with Object-namespace ids`);
+}
+
+// ============================================================================
+// Process gift tastes for new item types
+// ============================================================================
+console.log('\nProcessing gift tastes for new item types...');
+const newItemArrays = [
+  foodData, oreData, geodeMineralData, bombData, fertilizerData,
+  baitData, tackleData, flooringData, bookData, artifactData,
+  ringData, treeSeedData, miscData,
+];
+for (const arr of newItemArrays) {
+  for (const item of arr) {
+    if (item.canBeGifted === false) continue;
+    processGiftTastes(item, gameData.npcGiftTastes);
+  }
+}
+
+// ============================================================================
+// Add bundle references for new item types
+// ============================================================================
+const newItemsByGameId = new Map();
+for (const arr of newItemArrays) {
+  for (const item of arr) {
+    newItemsByGameId.set(item.gameId, item);
+    if (typeof item.gameId === 'number') newItemsByGameId.set(String(item.gameId), item);
+  }
+}
+
+// Re-scan bundles to add refs for new item types
+for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
+  if (typeof bundleInfo !== 'string') continue;
+  const parts = bundleInfo.split('/');
+  const bundleName = parts[0];
+  const friendlyId = toKebabCase(bundleName);
+  const itemsString = parts[2];
+  if (!itemsString) continue;
+
+  const itemParts = itemsString.split(' ');
+  for (let i = 0; i < itemParts.length; i += 3) {
+    const itemId = parseInt(itemParts[i], 10);
+    const item = newItemsByGameId.get(itemId) || newItemsByGameId.get(String(itemId));
+    if (item && !item.bundles.includes(friendlyId)) {
+      item.bundles.push(friendlyId);
+    }
+  }
+}
 
 // Write source files
 console.log('\nWriting source files...');
@@ -2958,6 +3810,90 @@ fs.writeFileSync(
 console.log(`  ✓ Wrote items/hats.json (${hatData.length} hats)`);
 
 fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/food.json'),
+  JSON.stringify(foodData, null, 2)
+);
+console.log(`  ✓ Wrote items/food.json (${foodData.length} food items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/ores.json'),
+  JSON.stringify(oreData, null, 2)
+);
+console.log(`  ✓ Wrote items/ores.json (${oreData.length} ores)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/geode-minerals.json'),
+  JSON.stringify(geodeMineralData, null, 2)
+);
+console.log(`  ✓ Wrote items/geode-minerals.json (${geodeMineralData.length} geode minerals)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/crafted.json'),
+  JSON.stringify(bombData, null, 2)
+);
+console.log(`  ✓ Wrote items/crafted.json (${bombData.length} crafted items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/fertilizers.json'),
+  JSON.stringify(fertilizerData, null, 2)
+);
+console.log(`  ✓ Wrote items/fertilizers.json (${fertilizerData.length} fertilizers)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/bait.json'),
+  JSON.stringify(baitData, null, 2)
+);
+console.log(`  ✓ Wrote items/bait.json (${baitData.length} bait items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/tackle.json'),
+  JSON.stringify(tackleData, null, 2)
+);
+console.log(`  ✓ Wrote items/tackle.json (${tackleData.length} tackle items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/flooring.json'),
+  JSON.stringify(flooringData, null, 2)
+);
+console.log(`  ✓ Wrote items/flooring.json (${flooringData.length} flooring items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/trash.json'),
+  JSON.stringify(trashData, null, 2)
+);
+console.log(`  ✓ Wrote items/trash.json (${trashData.length} trash items)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/books.json'),
+  JSON.stringify(bookData, null, 2)
+);
+console.log(`  ✓ Wrote items/books.json (${bookData.length} books)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/artifacts.json'),
+  JSON.stringify(artifactData, null, 2)
+);
+console.log(`  ✓ Wrote items/artifacts.json (${artifactData.length} artifacts)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/rings.json'),
+  JSON.stringify(ringData, null, 2)
+);
+console.log(`  ✓ Wrote items/rings.json (${ringData.length} rings)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/tree-seeds.json'),
+  JSON.stringify(treeSeedData, null, 2)
+);
+console.log(`  ✓ Wrote items/tree-seeds.json (${treeSeedData.length} tree seeds)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/misc.json'),
+  JSON.stringify(miscData, null, 2)
+);
+console.log(`  ✓ Wrote items/misc.json (${miscData.length} misc items)`);
+
+fs.writeFileSync(
   path.join(PROCESSED_DIR, 'reference/villagers.json'),
   JSON.stringify(villagerData, null, 2)
 );
@@ -2974,7 +3910,10 @@ console.log('\n📦 Extracting gift relationships...');
 const relationshipsMap = new Map();
 const allItemTypes = [
   fishData, artisanData, forageData, fruitTreeData, treeFruitsData,
-  mineralData, metalBarData, monsterLootData, resourceData, bigCraftableData, cropData
+  mineralData, metalBarData, monsterLootData, resourceData, bigCraftableData, cropData,
+  foodData, oreData, geodeMineralData, bombData, fertilizerData,
+  baitData, tackleData, flooringData, bookData, artifactData,
+  ringData, treeSeedData, miscData,
 ];
 
 let totalItemsWithGifts = 0;
@@ -3018,6 +3957,421 @@ fs.writeFileSync(
   }, null, 2)
 );
 console.log(`  ✓ Wrote relationships/gifts.json (${relationships.length} unique relationships)`);
+
+// ---------------------------------------------------------------------------
+// Process Buffs.json → reference/buffs.json
+// ---------------------------------------------------------------------------
+console.log('\n✨ Processing buffs...');
+
+// Icon mapping: resolved buff name → icon filename (without extension)
+const BUFF_ICON_MAP = {
+  'Tipsy':             'Tipsy',
+  'Burnt':             'Burnt',
+  'Slimed':            'Slimed',
+  'Jinxed':            'Jinxed',
+  'Frozen':            'Frozen',
+  'Spooked':           'Attack',
+  'Warrior Energy':    'WarriorEnergy',
+  "Yoba's Blessing":   'YobasBlessing',
+  'Adrenaline Rush':   'AdrenalineRush',
+  'Oil of Garlic':     'OilOfGarlic',
+  'Monster Musk':      'MonsterMusk',
+  'Squid Ink Ravioli': 'SquidInkRavioli',
+  'Nauseated':         'Nauseated',
+  'Darkness':          'Darkness',
+  'Weakness':          'Weakness',
+};
+
+// Build grantedByMap: buffName → [itemId, ...]
+// Scan all processed item arrays for items with named buffs (buff.name set)
+const grantedByMap = new Map();
+allItemTypes.forEach(items => {
+  items.forEach(item => {
+    if (!item.buffs || !Array.isArray(item.buffs)) return;
+    item.buffs.forEach(buff => {
+      if (!buff.name) return;
+      if (!grantedByMap.has(buff.name)) grantedByMap.set(buff.name, []);
+      const list = grantedByMap.get(buff.name);
+      if (!list.includes(item.id)) list.push(item.id);
+    });
+  });
+});
+
+const buffData = [];
+for (const [gameKey, b] of Object.entries(gameData.buffs)) {
+  const name = resolveLocalizedText(b.DisplayName);
+  if (!name) continue;
+
+  // Slugify: prefix with "buff-" to avoid collisions with item IDs (e.g. "oil-of-garlic")
+  const baseName = resolveLocalizedText(b.DisplayName);
+  let id = `buff-${toKebabCase(baseName)}`;
+  // If the game key contains a disambiguating suffix (dwarfStatue_0, statue_of_blessings_2, etc.),
+  // all entries sharing the same resolved name get a numeric suffix from the game key.
+  const keySuffix = gameKey.match(/[_-](\d+)$/);
+  if (keySuffix) {
+    // Check if any other entry in gameData.buffs has the same resolved name
+    const sameNameKeys = Object.keys(gameData.buffs).filter(k => {
+      if (k === gameKey) return false;
+      return resolveLocalizedText(gameData.buffs[k].DisplayName) === baseName;
+    });
+    if (sameNameKeys.length > 0) {
+      id = `${id}-${keySuffix[1]}`;
+    }
+  }
+
+  const effects = {};
+  if (b.Effects) {
+    for (const [k, v] of Object.entries(b.Effects)) {
+      if (v !== 0) effects[k] = v;
+    }
+  }
+
+  const iconFile = BUFF_ICON_MAP[name];
+  const description = resolveLocalizedText(b.Description) || null;
+
+  buffData.push({
+    id,
+    gameId: gameKey,
+    name,
+    description,
+    entityType: 'buff',
+    isDebuff: b.IsDebuff || false,
+    duration: Math.round(b.Duration / 1000),
+    icon: iconFile ? `assets/buffs/${iconFile}.png` : null,
+    effects: Object.keys(effects).length > 0 ? effects : null,
+    grantedBy: grantedByMap.get(name) || [],
+  });
+}
+
+// Ensure reference directory exists
+const referenceDir = path.join(PROCESSED_DIR, 'reference');
+if (!fs.existsSync(referenceDir)) {
+  fs.mkdirSync(referenceDir, { recursive: true });
+}
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'reference/buffs.json'),
+  JSON.stringify(buffData, null, 2)
+);
+console.log(`  ✓ Wrote reference/buffs.json (${buffData.length} buffs)`);
+
+// ---------------------------------------------------------------------------
+// Process Events_*.json + rules/events.json → reference/events.json
+// ---------------------------------------------------------------------------
+console.log('\n📖 Processing events...');
+
+function camelToWords(str) {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
+    .replace(/([a-zA-Z])(\d)/g, '$1 $2')
+    .replace(/(\d)([a-zA-Z])/g, '$1 $2')
+    .split(' ')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+}
+
+// Load curated wiki descriptions from rules
+const eventRules = loadJson(path.join(RULES_DIR, 'events.json')).events || [];
+const eventRulesById = new Map(eventRules.map(e => [e.id, e]));
+
+// Known NPC names for matching against descriptions
+const knownNpcNames = new Set([
+  'Abigail','Alex','Caroline','Clint','Demetrius','Dwarf','Elliott','Emily',
+  'Evelyn','George','Gus','Haley','Harvey','Jas','Jodi','Kent','Krobus',
+  'Leah','Leo','Lewis','Linus','Marnie','Maru','Pam','Penny','Pierre',
+  'Robin','Sam','Sandy','Sebastian','Shane','Vincent','Willy','Wizard',
+]);
+
+// Collect data from all Events_*.json files
+const gameEventFiles = fs.readdirSync(GAME_EXPORTS_DIR)
+  .filter(f => f.startsWith('Events_') && f.endsWith('.json'));
+
+// Collect all game event data, merging across variants (same eventId can appear with multiple
+// condition sets for married/unmarried or male/female player variants).
+// gameEventById: { id → { location, internalName, friendship, present, owner, requiredEvents, marriageVariant } }
+const gameEventById = new Map();
+for (const eventFile of gameEventFiles) {
+  const locationKey = eventFile.replace(/^Events_/, '').replace(/\.json$/, '');
+  const events = loadJson(path.join(GAME_EXPORTS_DIR, eventFile));
+  for (const [key] of Object.entries(events)) {
+    const parts = key.split('/');
+    const eventId = parts[0];
+
+    if (!gameEventById.has(eventId)) {
+      gameEventById.set(eventId, {
+        location: locationKey,
+        internalName: null,
+        friendship: [],       // [{npc, points}] — deduplicated across variants
+        present: new Set(),   // NPCs that must be present (p flag)
+        owner: new Set(),     // marriage-candidate owner (o/O flags)
+        requiredEvents: new Set(), // prerequisite event IDs (e flag)
+        mutuallyExclusive: new Set(), // k flag — if these events seen, this won't fire
+        marriageVariant: false,
+        seasons: new Set(),   // z flag
+        year: null,           // y flag
+        weather: new Set(),   // w flag
+        timeWindows: [],      // t flag — [{start, end}] in game minutes (e.g. 900=9am)
+        daysOfWeek: new Set(), // d flag
+        minMoney: null,       // m flag
+        requiredItems: new Set(), // i flag — gameIds that must be in inventory
+        mineLevel: null,      // j flag — mine depth reached
+        requiresMail: new Set(),  // Hl flag — mail flag must be set
+        blockingMail: new Set(),  // l/Hn flag — mail flag must NOT be set
+      });
+    }
+    const ev = gameEventById.get(eventId);
+    const seenFriendship = new Set(ev.friendship.map(f => f.npc));
+
+    for (const p of parts.slice(1)) {
+      if (p.startsWith('f ')) {
+        const rest = p.slice(2).split(' ');
+        if (rest.length >= 2 && !seenFriendship.has(rest[0])) {
+          ev.friendship.push({ npc: rest[0], points: parseInt(rest[1]) });
+          seenFriendship.add(rest[0]);
+        }
+      } else if (p.startsWith('o ') || p.startsWith('O ')) {
+        ev.owner.add(p.slice(2));
+      } else if (p.startsWith('p ')) {
+        ev.present.add(p.slice(2));
+      } else if (p.startsWith('e ')) {
+        ev.requiredEvents.add(p.slice(2));
+      } else if (p.startsWith('k ')) {
+        ev.mutuallyExclusive.add(p.slice(2));
+      } else if (p === 'H') {
+        ev.marriageVariant = true;
+      } else if (p.startsWith('z ')) {
+        ev.seasons.add(p.slice(2));
+      } else if (p.startsWith('y ')) {
+        if (!ev.year) ev.year = parseInt(p.slice(2));
+      } else if (p.startsWith('w ')) {
+        ev.weather.add(p.slice(2));
+      } else if (p.startsWith('t ')) {
+        const [, start, end] = p.split(' ');
+        if (start && end) {
+          const tw = { start: parseInt(start), end: parseInt(end) };
+          // Only add if not already present (across variants)
+          if (!ev.timeWindows.some(x => x.start === tw.start && x.end === tw.end)) {
+            ev.timeWindows.push(tw);
+          }
+        }
+      } else if (p.startsWith('d ')) {
+        for (const day of p.slice(2).split(' ')) ev.daysOfWeek.add(day);
+      } else if (p.startsWith('m ')) {
+        const amt = parseInt(p.slice(2));
+        if (!isNaN(amt) && (ev.minMoney === null || amt > ev.minMoney)) ev.minMoney = amt;
+      } else if (p.startsWith('i ')) {
+        ev.requiredItems.add(p.slice(2));
+      } else if (p.startsWith('j ')) {
+        const lvl = parseInt(p.slice(2));
+        if (!isNaN(lvl) && (ev.mineLevel === null || lvl > ev.mineLevel)) ev.mineLevel = lvl;
+      } else if (p.startsWith('Hl ')) {
+        ev.requiresMail.add(p.slice(3));
+      } else if (p.startsWith('l ') || p.startsWith('Hn ')) {
+        ev.blockingMail.add(p.startsWith('l ') ? p.slice(2) : p.slice(3));
+      } else if (p.startsWith('n ') && !ev.internalName) {
+        ev.internalName = p.slice(2);
+      }
+    }
+  }
+}
+
+// Build reverse map: eventId → [itemIds that reference it in conditions]
+// Scan all processed item arrays for player.events conditions
+function collectEventRefs(obj, eventId) {
+  if (!obj || typeof obj !== 'object') return false;
+  if (obj['in'] && Array.isArray(obj['in'])) {
+    const [val, col] = obj['in'];
+    if (col && col.var === 'player.events' && String(val) === eventId) return true;
+  }
+  return Object.values(obj).some(v => Array.isArray(v)
+    ? v.some(item => collectEventRefs(item, eventId))
+    : collectEventRefs(v, eventId));
+}
+
+const allProcessedArrays = [
+  fishData, artisanData, animalProductData, cropData, seedData, forageData,
+  fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
+  resourceData, bigCraftableData, foodData, oreData, geodeMineralData, bombData,
+  fertilizerData, baitData, tackleData, flooringData, bookData, artifactData,
+  ringData, treeSeedData, miscData, furnitureData, hatData,
+];
+
+// Build eventId → itemIds map by scanning all sources
+const eventGrantedBy = new Map(); // eventId → Set of item ids
+for (const arr of allProcessedArrays) {
+  for (const item of arr) {
+    for (const src of (item.sources || [])) {
+      if (!src.condition) continue;
+      const condStr = JSON.stringify(src.condition);
+      const matches = condStr.matchAll(/"in":\[(\d+),\{"var":"player\.events"\}\]/g);
+      for (const m of matches) {
+        const eid = m[1];
+        if (!eventGrantedBy.has(eid)) eventGrantedBy.set(eid, new Set());
+        eventGrantedBy.get(eid).add(item.id);
+      }
+    }
+  }
+}
+
+// Parse primary NPC from wiki description (fallback when game flags are ambiguous)
+function parseNpcFromDescription(description) {
+  if (!description) return null;
+  const apostropheMatch = description.match(/^([A-Z][a-z]+)'s /);
+  if (apostropheMatch && knownNpcNames.has(apostropheMatch[1])) return apostropheMatch[1];
+  const firstWordMatch = description.match(/^([A-Z][a-z]+) /);
+  if (firstWordMatch && knownNpcNames.has(firstWordMatch[1])) return firstWordMatch[1];
+  return null;
+}
+
+// Parse heart level from description
+function parseHeartLevel(description) {
+  if (!description) return null;
+  const m = description.match(/(\d+) heart event/i);
+  return m ? parseInt(m[1]) : null;
+}
+
+// Determine event type from description
+function parseEventType(description) {
+  if (!description) return 'story';
+  const d = description.toLowerCase();
+  if (d.includes('heart event')) return 'heart';
+  if (d.includes('completion of') || (d.includes('quest') && d.includes('completion'))) return 'quest';
+  if (d.includes('introduction event') || d.match(/^part of the introduction/)) return 'introduction';
+  if (d.startsWith('set-up for')) return 'setup';
+  return 'story';
+}
+
+// Collect all unique event IDs from game exports (only numeric + the ones wiki knows about)
+// We include all wiki events plus any numeric game events not in wiki that have /n names or messages
+const allEventIds = new Set([
+  ...eventRulesById.keys(),
+  ...[...gameEventById.keys()].filter(id => /^\d+$/.test(id) && (
+    gameEventById.get(id).internalName || gameEventById.get(id).message
+  )),
+]);
+
+const eventData = [];
+for (const eventId of [...allEventIds].sort((a, b) => {
+  const aNum = parseInt(a); const bNum = parseInt(b);
+  if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+  if (!isNaN(aNum)) return -1;
+  if (!isNaN(bNum)) return 1;
+  return a.localeCompare(b);
+})) {
+  const wiki = eventRulesById.get(eventId);
+  const game = gameEventById.get(eventId);
+
+  // Derive name: prefer wiki description summary, fall back to internalName camelCase → words
+  const TITLE_CASE_SKIP = new Set(['a','an','the','and','but','or','for','nor','on','at','to','by','in','of','up','as','is','it']);
+  function toTitleCase(str) {
+    return str.split(' ').map((w, i) => {
+      if (i > 0 && TITLE_CASE_SKIP.has(w.toLowerCase())) return w.toLowerCase();
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(' ');
+  }
+
+  let name = null;
+  if (wiki) {
+    // Shorten description to a title: first sentence up to colon or period
+    const desc = wiki.description;
+    const colonIdx = desc.indexOf(':');
+    const periodIdx = desc.indexOf('.');
+    let raw;
+    if (colonIdx > 0 && colonIdx < 80) {
+      raw = desc.slice(0, colonIdx).trim();
+    } else if (periodIdx > 0 && periodIdx < 80) {
+      raw = desc.slice(0, periodIdx).trim();
+    } else {
+      raw = desc.slice(0, 80).trim();
+    }
+    name = toTitleCase(raw);
+  } else if (game?.internalName) {
+    name = camelToWords(game.internalName);
+  } else {
+    name = `Event ${eventId}`;
+  }
+
+  const description = wiki?.description || null;
+  const heartLevel = parseHeartLevel(description);
+  const eventType = parseEventType(description);
+  const locations = wiki?.locations || (game ? [game.location] : []);
+  const grantedBy = eventGrantedBy.has(eventId) ? [...eventGrantedBy.get(eventId)] : [];
+
+  // Primary NPC: single friendship NPC (most authoritative) → description parsing fallback
+  const friendshipNpcs = (game?.friendship || []).map(f => f.npc).filter(n => knownNpcNames.has(n));
+  const uniqueFriendshipNpcs = [...new Set(friendshipNpcs)];
+  const npc = uniqueFriendshipNpcs.length === 1
+    ? uniqueFriendshipNpcs[0]
+    : parseNpcFromDescription(description);
+
+  // All villagers meaningfully involved: union of friendship + present + owner, filtered to known NPCs
+  const villagersInvolved = [...new Set([
+    ...friendshipNpcs,
+    ...[...(game?.present || new Set())].filter(n => knownNpcNames.has(n)),
+    ...[...(game?.owner || new Set())].filter(n => knownNpcNames.has(n)),
+  ])].sort();
+
+  // Required friendship to trigger this event (deduplicated, known NPCs only)
+  const requiredFriendship = (game?.friendship || []).filter(f => knownNpcNames.has(f.npc));
+
+  // Prerequisite event IDs (raw keys, not entity IDs)
+  const requiredEvents = [...(game?.requiredEvents || new Set())].sort();
+  const mutuallyExclusive = [...(game?.mutuallyExclusive || new Set())].sort();
+
+  const marriageVariant = game?.marriageVariant || false;
+
+  // Trigger conditions
+  const year = game?.year ?? null;
+  const seasons = [...(game?.seasons || new Set())].sort();
+  const weather = [...(game?.weather || new Set())].sort();
+  const daysOfWeek = [...(game?.daysOfWeek || new Set())];
+  const timeWindows = game?.timeWindows?.length ? game.timeWindows : null;
+  const minMoney = game?.minMoney ?? null;
+  const requiredItems = [...(game?.requiredItems || new Set())];
+  const mineLevel = game?.mineLevel ?? null;
+  const requiresMail = [...(game?.requiresMail || new Set())].sort();
+  const blockingMail = [...(game?.blockingMail || new Set())].sort();
+
+  // Icon: villager portrait if primary NPC known
+  const icon = npc ? `assets/villagers/${npc}.png` : null;
+
+  eventData.push({
+    id: `event-${eventId}`,
+    gameId: /^\d+$/.test(eventId) ? parseInt(eventId) : null,
+    eventKey: eventId,
+    name,
+    description,
+    entityType: 'event',
+    eventType,
+    npc,
+    heartLevel,
+    villagersInvolved,
+    requiredFriendship,
+    requiredEvents,
+    mutuallyExclusive: mutuallyExclusive.length ? mutuallyExclusive : undefined,
+    marriageVariant,
+    year: year !== null ? year : undefined,
+    seasons: seasons.length ? seasons : undefined,
+    weather: weather.length ? weather : undefined,
+    daysOfWeek: daysOfWeek.length ? daysOfWeek : undefined,
+    timeWindows: timeWindows || undefined,
+    minMoney: minMoney !== null ? minMoney : undefined,
+    requiredItems: requiredItems.length ? requiredItems : undefined,
+    mineLevel: mineLevel !== null ? mineLevel : undefined,
+    requiresMail: requiresMail.length ? requiresMail : undefined,
+    blockingMail: blockingMail.length ? blockingMail : undefined,
+    locations,
+    icon,
+    grantedBy,
+  });
+}
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'reference/events.json'),
+  JSON.stringify(eventData, null, 2)
+);
+console.log(`  ✓ Wrote reference/events.json (${eventData.length} events, ${[...eventGrantedBy.keys()].length} with grantedBy)`);
 
 console.log('\n✅ Game data processing complete!');
 console.log(`\nSource files created in: ${PROCESSED_DIR}`);

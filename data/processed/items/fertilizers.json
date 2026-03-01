@@ -1,0 +1,857 @@
+[
+  {
+    "type": "fertilizer",
+    "id": "basic-fertilizer",
+    "gameId": 368,
+    "name": "Basic Fertilizer",
+    "icon": "assets/objects/BasicFertilizer.png",
+    "price": 2,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 50
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Basic Fertilizer",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 92,
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 1
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Jodi",
+        "sender": "Jodi"
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "basic-retaining-soil",
+    "gameId": 370,
+    "name": "Basic Retaining Soil",
+    "icon": "assets/objects/BasicRetainingSoil.png",
+    "price": 4,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 50
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Basic Retaining Soil",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 4
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Jodi",
+        "sender": "Jodi"
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "deluxe-fertilizer",
+    "gameId": 919,
+    "name": "Deluxe Fertilizer",
+    "icon": "assets/objects/DeluxeFertilizer.png",
+    "price": 70,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Fertilizer",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 337,
+            "amount": 1
+          },
+          {
+            "gameId": 92,
+            "amount": 40
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "deluxe-retaining-soil",
+    "gameId": 920,
+    "name": "Deluxe Retaining Soil",
+    "icon": "assets/objects/DeluxeRetainingSoil.png",
+    "price": 30,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Retaining Soil",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 5
+          },
+          {
+            "gameId": 771,
+            "amount": 3
+          },
+          {
+            "gameId": 330,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "deluxe-speed-gro",
+    "gameId": 466,
+    "name": "Deluxe Speed-Gro",
+    "icon": "assets/objects/DeluxeSpeedGro.png",
+    "price": 40,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "quality_fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-demetrius",
+        "storeName": "Desert Festival Stall (Demetrius)",
+        "price": 80,
+        "quantity": 100,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 80,
+        "days": [
+          "Thursday"
+        ]
+      },
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 75,
+        "yearUnlock": 2
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Speed-Gro",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 725,
+            "amount": 1
+          },
+          {
+            "gameId": 881,
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "hyper-speed-gro",
+    "gameId": 918,
+    "name": "Hyper Speed-Gro",
+    "icon": "assets/objects/HyperSpeedGro.png",
+    "price": 70,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Hyper Speed-Gro",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 909,
+            "amount": 1
+          },
+          {
+            "gameId": 881,
+            "amount": 3
+          },
+          {
+            "gameId": 768,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "quality-fertilizer",
+    "gameId": 369,
+    "name": "Quality Fertilizer",
+    "icon": "assets/objects/QualityFertilizer.png",
+    "price": 10,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "quality_fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 75,
+        "yearUnlock": 2
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Quality Fertilizer",
+        "outputCount": 2,
+        "ingredients": [
+          {
+            "gameId": 92,
+            "amount": 4
+          },
+          {
+            "gameId": -4,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 9
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Jodi",
+        "sender": "Jodi"
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "quality-retaining-soil",
+    "gameId": 371,
+    "name": "Quality Retaining Soil",
+    "icon": "assets/objects/QualityRetainingSoil.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "quality_fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 200,
+        "days": [
+          "Saturday"
+        ]
+      },
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 75,
+        "yearUnlock": 2
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Quality Retaining Soil",
+        "outputCount": 2,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 3
+          },
+          {
+            "gameId": 330,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 7
+        }
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "speed-gro",
+    "gameId": 465,
+    "name": "Speed-Gro",
+    "icon": "assets/objects/SpeedGro.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "fertilizer_item",
+      "use_reverse_name_for_sorting"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-pierre",
+        "storeName": "Pierre's General Store",
+        "price": 50
+      },
+      {
+        "type": "crafting",
+        "recipeName": "Speed-Gro",
+        "outputCount": 5,
+        "ingredients": [
+          {
+            "gameId": 726,
+            "amount": 1
+          },
+          {
+            "gameId": "Moss",
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "fertilizer",
+    "id": "tree-fertilizer",
+    "gameId": 805,
+    "name": "Tree Fertilizer",
+    "icon": "assets/objects/TreeFertilizer.png",
+    "price": 10,
+    "edibility": -300,
+    "gameCategory": -19,
+    "contextTags": [
+      "color_brown",
+      "fertilizer_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "store-pierre",
+      "store-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Tree Fertilizer",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 771,
+            "amount": 5
+          },
+          {
+            "gameId": 390,
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 7
+        }
+      }
+    ]
+  }
+]

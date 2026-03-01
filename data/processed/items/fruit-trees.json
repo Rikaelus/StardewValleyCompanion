@@ -9,7 +9,7 @@
     "icon": "assets/objects/Banana.png",
     "price": 150,
     "edibility": 30,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow",
       "fruit_item",
@@ -48,7 +48,7 @@
     "icon": "assets/objects/Cherry.png",
     "price": 80,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "fruit_item",
@@ -90,7 +90,7 @@
     "icon": "assets/objects/Apricot.png",
     "price": 50,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "fruit_item",
@@ -132,7 +132,7 @@
     "icon": "assets/objects/Orange.png",
     "price": 100,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_orange",
       "fruit_item",
@@ -174,7 +174,7 @@
     "icon": "assets/objects/Peach.png",
     "price": 140,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_pink",
       "fruit_item",
@@ -216,7 +216,7 @@
     "icon": "assets/objects/Pomegranate.png",
     "price": 140,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_dark_pink",
       "fruit_item",
@@ -259,7 +259,7 @@
     "icon": "assets/objects/Apple.png",
     "price": 100,
     "edibility": 15,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_red",
       "fruit_item",
@@ -301,7 +301,7 @@
     "icon": "assets/objects/Mango.png",
     "price": 130,
     "edibility": 40,
-    "category": -79,
+    "gameCategory": -79,
     "contextTags": [
       "color_yellow",
       "fruit_item",

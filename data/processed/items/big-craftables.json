@@ -1,13 +1,164 @@
 [
   {
     "type": "big-craftable",
+    "id": "house-plant-0",
+    "gameId": 0,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-1",
+    "gameId": 1,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-2",
+    "gameId": 2,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-3",
+    "gameId": 3,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-4",
+    "gameId": 4,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-5",
+    "gameId": 5,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-6",
+    "gameId": 6,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "house-plant-7",
+    "gameId": 7,
+    "name": "House Plant",
+    "icon": "assets/objects/HousePlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "scarecrow",
+    "gameId": 8,
+    "name": "Scarecrow",
+    "icon": "assets/objects/Scarecrow.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Scarecrow",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          },
+          {
+            "gameId": 382,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 20
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
     "id": "lightning-rod",
     "gameId": 9,
     "name": "Lightning Rod",
     "icon": "assets/objects/LightningRod.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -46,7 +197,7 @@
     "icon": "assets/objects/BeeHouse.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -89,7 +240,7 @@
     "icon": "assets/objects/Keg.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -132,7 +283,7 @@
     "icon": "assets/objects/Furnace.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -166,7 +317,7 @@
     "icon": "assets/objects/PreservesJar.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -205,7 +356,7 @@
     "icon": "assets/objects/CheesePress.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -242,762 +393,13 @@
   },
   {
     "type": "big-craftable",
-    "id": "recycling-machine",
-    "gameId": 20,
-    "name": "Recycling Machine",
-    "icon": "assets/objects/RecyclingMachine.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Recycling Machine",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 25
-          },
-          {
-            "gameId": 390,
-            "amount": 25
-          },
-          {
-            "gameId": 335,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "fishing",
-          "level": 4
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "crystalarium",
-    "gameId": 21,
-    "name": "Crystalarium",
-    "icon": "assets/objects/Crystalarium.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Crystalarium",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 99
-          },
-          {
-            "gameId": 336,
-            "amount": 5
-          },
-          {
-            "gameId": 337,
-            "amount": 2
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "mining",
-          "level": 9
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "seed-maker",
-    "gameId": 25,
-    "name": "Seed Maker",
-    "icon": "assets/objects/SeedMaker.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Seed Maker",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 25
-          },
-          {
-            "gameId": 382,
-            "amount": 10
-          },
-          {
-            "gameId": 336,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "farming",
-          "level": 9
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "heater",
-    "gameId": 104,
-    "name": "Heater",
-    "icon": "assets/objects/Heater.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "charcoal-kiln",
-    "gameId": 114,
-    "name": "Charcoal Kiln",
-    "icon": "assets/objects/CharcoalKiln.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Charcoal Kiln",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 20
-          },
-          {
-            "gameId": 334,
-            "amount": 2
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "foraging",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "chest",
-    "gameId": 130,
-    "name": "Chest",
-    "icon": "assets/objects/Chest.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "swappable_chest"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Chest",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "big-chest",
-    "gameId": "BigChest",
-    "name": "Big Chest",
-    "icon": "assets/objects/BigChest.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "swappable_chest"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Big Chest",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 120
-          },
-          {
-            "gameId": 334,
-            "amount": 2
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "stone-chest",
-    "gameId": 232,
-    "name": "Stone Chest",
-    "icon": "assets/objects/StoneChest.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "swappable_chest"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Stone Chest",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 50
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "big-stone-chest",
-    "gameId": "BigStoneChest",
-    "name": "Big Stone Chest",
-    "icon": "assets/objects/BigStoneChest.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "swappable_chest"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Big Stone Chest",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 250
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "scarecrow",
-    "gameId": 8,
-    "name": "Scarecrow",
-    "icon": "assets/objects/Scarecrow.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Scarecrow",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 20
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "farming",
-          "level": 1
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "deluxe-scarecrow",
-    "gameId": 167,
-    "name": "Deluxe Scarecrow",
-    "icon": "assets/objects/DeluxeScarecrow.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Deluxe Scarecrow",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          },
-          {
-            "gameId": 386,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 40
-          }
-        ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Sam)",
-        "storeBaseName": "Desert Festival",
-        "price": 50,
-        "quantity": 6,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 2
-      },
-      {
-        "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
-        "storeBaseName": "JojaMart",
-        "price": 75
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "cask",
-    "gameId": 163,
-    "name": "Cask",
-    "icon": "assets/objects/Cask.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Cask",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 20
-          },
-          {
-            "gameId": 709,
-            "amount": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "dehydrator",
-    "gameId": "Dehydrator",
-    "name": "Dehydrator",
-    "icon": "assets/objects/Dehydrator.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Dehydrator",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 30
-          },
-          {
-            "gameId": 330,
-            "amount": 2
-          },
-          {
-            "gameId": 82,
-            "amount": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "heavy-furnace",
-    "gameId": "HeavyFurnace",
-    "name": "Heavy Furnace",
-    "icon": "assets/objects/HeavyFurnace.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Heavy Furnace",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": "(BC)13",
-            "amount": 2
-          },
-          {
-            "gameId": 335,
-            "amount": 3
-          },
-          {
-            "gameId": 390,
-            "amount": 50
-          }
-        ],
-        "unlockCondition": {
-          "type": "level",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "anvil",
-    "gameId": "Anvil",
-    "name": "Anvil",
-    "icon": "assets/objects/Anvil.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Anvil",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 335,
-            "amount": 50
-          }
-        ],
-        "unlockCondition": {
-          "type": "level",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "mini-forge",
-    "gameId": "MiniForge",
-    "name": "Mini-Forge",
-    "icon": "assets/objects/MiniForge.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Mini-Forge",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 852,
-            "amount": 5
-          },
-          {
-            "gameId": 335,
-            "amount": 10
-          },
-          {
-            "gameId": 336,
-            "amount": 10
-          },
-          {
-            "gameId": 337,
-            "amount": 5
-          }
-        ],
-        "unlockCondition": {
-          "type": "level",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "garden-pot",
-    "gameId": 62,
-    "name": "Garden Pot",
-    "icon": "assets/objects/GardenPot.png",
-    "price": 1000,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Garden Pot",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 330,
-            "amount": 1
-          },
-          {
-            "gameId": 390,
-            "amount": 10
-          },
-          {
-            "gameId": 338,
-            "amount": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "wood-sign",
-    "gameId": 37,
-    "name": "Wood Sign",
-    "icon": "assets/objects/WoodSign.png",
-    "price": 5,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "sign_item"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Wood Sign",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 25
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "stone-sign",
-    "gameId": 38,
-    "name": "Stone Sign",
-    "icon": "assets/objects/StoneSign.png",
-    "price": 5,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "sign_item"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Stone Sign",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 25
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "dark-sign",
-    "gameId": 39,
-    "name": "Dark Sign",
-    "icon": "assets/objects/DarkSign.png",
-    "price": 5,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [
-      "sign_item"
-    ],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Dark Sign",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 767,
-            "amount": 5
-          },
-          {
-            "gameId": 881,
-            "amount": 5
-          }
-        ],
-        "unlockCondition": {
-          "type": "friendship",
-          "npc": "Krobus",
-          "hearts": 3
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "text-sign",
-    "gameId": "TextSign",
-    "name": "Text Sign",
-    "icon": "assets/objects/TextSign.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Text Sign",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 25
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "mayonnaise-machine",
-    "gameId": 24,
-    "name": "Mayonnaise Machine",
-    "icon": "assets/objects/MayonnaiseMachine.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Mayonnaise Machine",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 15
-          },
-          {
-            "gameId": 390,
-            "amount": 15
-          },
-          {
-            "gameId": 86,
-            "amount": 1
-          },
-          {
-            "gameId": 334,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "farming",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
     "id": "loom",
     "gameId": 17,
     "name": "Loom",
     "icon": "assets/objects/Loom.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -1036,7 +438,7 @@
     "icon": "assets/objects/OilMaker.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -1069,37 +471,33 @@
   },
   {
     "type": "big-craftable",
-    "id": "worm-bin",
-    "gameId": 154,
-    "name": "Worm Bin",
-    "icon": "assets/objects/WormBin.png",
-    "price": 0,
+    "id": "recycling-machine",
+    "gameId": 20,
+    "name": "Recycling Machine",
+    "icon": "assets/objects/RecyclingMachine.png",
+    "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Worm Bin",
+        "recipeName": "Recycling Machine",
         "outputCount": 1,
         "ingredients": [
           {
-            "gameId": 709,
-            "amount": 15
+            "gameId": 388,
+            "amount": 25
           },
           {
-            "gameId": 336,
-            "amount": 1
+            "gameId": 390,
+            "amount": 25
           },
           {
             "gameId": 335,
             "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 50
           }
         ],
         "unlockCondition": {
@@ -1112,113 +510,1298 @@
   },
   {
     "type": "big-craftable",
-    "id": "deluxe-worm-bin",
-    "gameId": "DeluxeWormBin",
-    "name": "Deluxe Worm Bin",
-    "icon": "assets/objects/DeluxeWormBin.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Deluxe Worm Bin",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": "(BC)154",
-            "amount": 1
-          },
-          {
-            "gameId": "Moss",
-            "amount": 30
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "fishing",
-          "level": 8
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "bait-maker",
-    "gameId": "BaitMaker",
-    "name": "Bait Maker",
-    "icon": "assets/objects/BaitMaker.png",
+    "id": "crystalarium",
+    "gameId": 21,
+    "name": "Crystalarium",
+    "icon": "assets/objects/Crystalarium.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Bait Maker",
+        "recipeName": "Crystalarium",
         "outputCount": 1,
         "ingredients": [
           {
-            "gameId": 335,
-            "amount": 3
+            "gameId": 390,
+            "amount": 99
           },
           {
-            "gameId": 393,
-            "amount": 3
+            "gameId": 336,
+            "amount": 5
           },
           {
-            "gameId": 397,
+            "gameId": 337,
+            "amount": 2
+          },
+          {
+            "gameId": 787,
             "amount": 1
           }
         ],
         "unlockCondition": {
           "type": "skill",
-          "skill": "fishing",
-          "level": 6
+          "skill": "mining",
+          "level": 9
         }
       }
     ]
   },
   {
     "type": "big-craftable",
-    "id": "fish-smoker",
-    "gameId": "FishSmoker",
-    "name": "Fish Smoker",
-    "icon": "assets/objects/FishSmoker.png",
-    "price": 1000,
+    "id": "table-piece-l",
+    "gameId": 22,
+    "name": "Table Piece L",
+    "icon": "assets/objects/TablePieceL.png",
+    "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "table-piece-r",
+    "gameId": 23,
+    "name": "Table Piece R",
+    "icon": "assets/objects/TablePieceR.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "mayonnaise-machine",
+    "gameId": 24,
+    "name": "Mayonnaise Machine",
+    "icon": "assets/objects/MayonnaiseMachine.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Fish Smoker",
+        "recipeName": "Mayonnaise Machine",
         "outputCount": 1,
         "ingredients": [
           {
-            "gameId": 709,
+            "gameId": 388,
+            "amount": 15
+          },
+          {
+            "gameId": 390,
+            "amount": 15
+          },
+          {
+            "gameId": 86,
+            "amount": 1
+          },
+          {
+            "gameId": 334,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seed-maker",
+    "gameId": 25,
+    "name": "Seed Maker",
+    "icon": "assets/objects/SeedMaker.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Seed Maker",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 25
+          },
+          {
+            "gameId": 382,
             "amount": 10
           },
           {
-            "gameId": "SeaJelly",
+            "gameId": 336,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "farming",
+          "level": 9
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "wood-chair-26",
+    "gameId": 26,
+    "name": "Wood Chair",
+    "icon": "assets/objects/WoodChair.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "wood-chair-27",
+    "gameId": 27,
+    "name": "Wood Chair",
+    "icon": "assets/objects/WoodChair.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "skeleton-model",
+    "gameId": 28,
+    "name": "Skeleton Model",
+    "icon": "assets/objects/SkeletonModel.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "obelisk",
+    "gameId": 29,
+    "name": "Obelisk",
+    "icon": "assets/objects/Obelisk.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "chicken-statue",
+    "gameId": 31,
+    "name": "Chicken Statue",
+    "icon": "assets/objects/ChickenStatue.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-cairn",
+    "gameId": 32,
+    "name": "Stone Cairn",
+    "icon": "assets/objects/StoneCairn.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-dwarf",
+        "storeName": "Dwarf Shop",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "suit-of-armor",
+    "gameId": 33,
+    "name": "Suit Of Armor",
+    "icon": "assets/objects/SuitOfArmor.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "sign-of-the-vessel",
+    "gameId": 34,
+    "name": "Sign Of The Vessel",
+    "icon": "assets/objects/SignOfTheVessel.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-krobus",
+        "storeName": "Krobus's Shop",
+        "price": 350
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "basic-log",
+    "gameId": 35,
+    "name": "Basic Log",
+    "icon": "assets/objects/BasicLog.png",
+    "price": 125,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)"
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "lawn-flamingo",
+    "gameId": 36,
+    "name": "Lawn Flamingo",
+    "icon": "assets/objects/LawnFlamingo.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-egg-festival",
+        "storeName": "Egg Festival",
+        "price": 400
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "wood-sign",
+    "gameId": 37,
+    "name": "Wood Sign",
+    "icon": "assets/objects/WoodSign.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "sign_item"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Wood Sign",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-sign",
+    "gameId": 38,
+    "name": "Stone Sign",
+    "icon": "assets/objects/StoneSign.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "sign_item"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Stone Sign",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "dark-sign",
+    "gameId": 39,
+    "name": "Dark Sign",
+    "icon": "assets/objects/DarkSign.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "sign_item"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Dark Sign",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 767,
+            "amount": 5
+          },
+          {
+            "gameId": 881,
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Krobus",
+          "hearts": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "big-green-cane",
+    "gameId": 40,
+    "name": "Big Green Cane",
+    "icon": "assets/objects/BigGreenCane.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "green-canes",
+    "gameId": 41,
+    "name": "Green Canes",
+    "icon": "assets/objects/GreenCanes.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mixed-cane",
+    "gameId": 42,
+    "name": "Mixed Cane",
+    "icon": "assets/objects/MixedCane.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "red-canes",
+    "gameId": 43,
+    "name": "Red Canes",
+    "icon": "assets/objects/RedCanes.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "big-red-cane",
+    "gameId": 44,
+    "name": "Big Red Cane",
+    "icon": "assets/objects/BigRedCane.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "ornamental-hay-bale",
+    "gameId": 45,
+    "name": "Ornamental Hay Bale",
+    "icon": "assets/objects/OrnamentalHayBale.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie",
+        "storeName": "Marnie's Ranch",
+        "price": 250
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "log-section",
+    "gameId": 46,
+    "name": "Log Section",
+    "icon": "assets/objects/LogSection.png",
+    "price": 175,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)"
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "grave-stone",
+    "gameId": 47,
+    "name": "Grave Stone",
+    "icon": "assets/objects/GraveStone.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 200
+      },
+      {
+        "type": "shop",
+        "storeId": "store-spirits-eve",
+        "storeName": "Spirit's Eve",
+        "price": 350
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-decor",
+    "gameId": 48,
+    "name": "Seasonal Decor",
+    "icon": "assets/objects/SeasonalDecor.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-frog",
+    "gameId": 52,
+    "name": "Stone Frog",
+    "icon": "assets/objects/StoneFrog.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-parrot",
+    "gameId": 53,
+    "name": "Stone Parrot",
+    "icon": "assets/objects/StoneParrot.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-owl-54",
+    "gameId": 54,
+    "name": "Stone Owl",
+    "icon": "assets/objects/StoneOwl_Decorative.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-junimo",
+    "gameId": 55,
+    "name": "Stone Junimo",
+    "icon": "assets/objects/StoneJunimo.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "slime-ball",
+    "gameId": 56,
+    "name": "Slime Ball",
+    "icon": "assets/objects/SlimeBall.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "garden-pot",
+    "gameId": 62,
+    "name": "Garden Pot",
+    "icon": "assets/objects/GardenPot.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Garden Pot",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 330,
             "amount": 1
           },
           {
-            "gameId": "RiverJelly",
-            "amount": 1
+            "gameId": 390,
+            "amount": 10
           },
           {
-            "gameId": "CaveJelly",
+            "gameId": 338,
             "amount": 1
           }
         ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "bookcase",
+    "gameId": 64,
+    "name": "Bookcase",
+    "icon": "assets/objects/Bookcase.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "fancy-table",
+    "gameId": 65,
+    "name": "Fancy Table",
+    "icon": "assets/objects/FancyTable.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "ancient-table",
+    "gameId": 66,
+    "name": "Ancient Table",
+    "icon": "assets/objects/AncientTable.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "ancient-stool",
+    "gameId": 67,
+    "name": "Ancient Stool",
+    "icon": "assets/objects/AncientStool.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "grandfather-clock",
+    "gameId": 68,
+    "name": "Grandfather Clock",
+    "icon": "assets/objects/GrandfatherClock.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "teddy-timer",
+    "gameId": 69,
+    "name": "Teddy Timer",
+    "icon": "assets/objects/TeddyTimer.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "dead-tree",
+    "gameId": 70,
+    "name": "Dead Tree",
+    "icon": "assets/objects/DeadTree.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "staircase",
+    "gameId": 71,
+    "name": "Staircase",
+    "icon": "assets/objects/Staircase.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Staircase",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 99
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "mining",
+          "level": 2
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-kent",
+        "storeName": "Desert Festival Stall (Kent)",
+        "quantity": 10,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-trade",
+        "storeName": "Desert Trade (Sandy)",
+        "tradeItemId": "jade",
+        "tradeItemGameId": 70,
+        "tradeItemName": "Jade",
+        "tradeItemIcon": "assets/objects/Jade.png",
+        "tradeItemAmount": 1,
+        "days": [
+          "Sunday"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "tall-torch",
+    "gameId": 72,
+    "name": "Tall Torch",
+    "icon": "assets/objects/TallTorch.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "ritual-mask",
+    "gameId": 73,
+    "name": "Ritual Mask",
+    "icon": "assets/objects/RitualMask.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "bonfire",
+    "gameId": 74,
+    "name": "Bonfire",
+    "icon": "assets/objects/Bonfire.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "bongo",
+    "gameId": 75,
+    "name": "Bongo",
+    "icon": "assets/objects/Bongo.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "decorative-spears",
+    "gameId": 76,
+    "name": "Decorative Spears",
+    "icon": "assets/objects/DecorativeSpears.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "boulder",
+    "gameId": 78,
+    "name": "Boulder",
+    "icon": "assets/objects/Boulder.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "door-79",
+    "gameId": 79,
+    "name": "Door",
+    "icon": "assets/objects/Door.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "door-80",
+    "gameId": 80,
+    "name": "Door",
+    "icon": "assets/objects/Door.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "locked-door-81",
+    "gameId": 81,
+    "name": "Locked Door",
+    "icon": "assets/objects/LockedDoor.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "locked-door-82",
+    "gameId": 82,
+    "name": "Locked Door",
+    "icon": "assets/objects/LockedDoor.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "wicked-statue-83",
+    "gameId": 83,
+    "name": "Wicked Statue",
+    "icon": "assets/objects/WickedStatue.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Wicked Statue",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 382,
+            "amount": 5
+          },
+          {
+            "gameId": 390,
+            "amount": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "wicked-statue-84",
+    "gameId": 84,
+    "name": "Wicked Statue",
+    "icon": "assets/objects/WickedStatue_LitEyes.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "sloth-skeleton-l",
+    "gameId": 85,
+    "name": "Sloth Skeleton L",
+    "icon": "assets/objects/SlothSkeletonL.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "sloth-skeleton-m",
+    "gameId": 86,
+    "name": "Sloth Skeleton M",
+    "icon": "assets/objects/SlothSkeletonM.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "sloth-skeleton-r",
+    "gameId": 87,
+    "name": "Sloth Skeleton R",
+    "icon": "assets/objects/SlothSkeletonR.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "standing-geode",
+    "gameId": 88,
+    "name": "Standing Geode",
+    "icon": "assets/objects/StandingGeode.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "obsidian-vase",
+    "gameId": 89,
+    "name": "Obsidian Vase",
+    "icon": "assets/objects/ObsidianVase.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "bone-mill",
+    "gameId": 90,
+    "name": "Bone Mill",
+    "icon": "assets/objects/BoneMill.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Bone Mill",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 881,
+            "amount": 10
+          },
+          {
+            "gameId": 330,
+            "amount": 3
+          },
+          {
+            "gameId": 390,
+            "amount": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "singing-stone",
+    "gameId": 94,
+    "name": "Singing Stone",
+    "icon": "assets/objects/SingingStone.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "stone-owl-95",
+    "gameId": 95,
+    "name": "Stone Owl",
+    "icon": "assets/objects/StoneOwl_Secret.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "strange-capsule",
+    "gameId": 96,
+    "name": "Strange Capsule",
+    "icon": "assets/objects/StrangeCapsule.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "empty-capsule",
+    "gameId": 98,
+    "name": "Empty Capsule",
+    "icon": "assets/objects/EmptyCapsule.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "feed-hopper",
+    "gameId": 99,
+    "name": "Feed Hopper",
+    "icon": "assets/objects/FeedHopper.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "incubator",
+    "gameId": 101,
+    "name": "Incubator",
+    "icon": "assets/objects/Incubator.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "heater",
+    "gameId": 104,
+    "name": "Heater",
+    "icon": "assets/objects/Heater.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie",
+        "storeName": "Marnie's Ranch",
+        "price": 2000
       }
     ]
   },
@@ -1230,7 +1813,7 @@
     "icon": "assets/objects/Tapper.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "tapper_item"
     ],
@@ -1261,235 +1844,38 @@
   },
   {
     "type": "big-craftable",
-    "id": "mushroom-log",
-    "gameId": "MushroomLog",
-    "name": "Mushroom Log",
-    "icon": "assets/objects/MushroomLog.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Mushroom Log",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 709,
-            "amount": 10
-          },
-          {
-            "gameId": "Moss",
-            "amount": 10
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "foraging",
-          "level": 4
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "slime-incubator",
-    "gameId": 156,
-    "name": "Slime Incubator",
-    "icon": "assets/objects/SlimeIncubator.png",
+    "id": "camera",
+    "gameId": 106,
+    "name": "Camera",
+    "icon": "assets/objects/Camera.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Slime Incubator",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 337,
-            "amount": 2
-          },
-          {
-            "gameId": 766,
-            "amount": 100
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "combat",
-          "level": 8
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "type": "big-craftable",
-    "id": "slime-egg-press",
-    "gameId": 158,
-    "name": "Slime Egg-Press",
-    "icon": "assets/objects/SlimeEggPress.png",
+    "id": "plush-bunny",
+    "gameId": 107,
+    "name": "Plush Bunny",
+    "icon": "assets/objects/PlushBunny.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
-        "type": "crafting",
-        "recipeName": "Slime Egg-Press",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 382,
-            "amount": 25
-          },
-          {
-            "gameId": 82,
-            "amount": 1
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "combat",
-          "level": 6
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "mini-jukebox",
-    "gameId": 209,
-    "name": "Mini-Jukebox",
-    "icon": "assets/objects/MiniJukebox.png",
-    "price": 1500,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Mini-Jukebox",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 335,
-            "amount": 2
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "staircase",
-    "gameId": 71,
-    "name": "Staircase",
-    "icon": "assets/objects/Staircase.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Staircase",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 99
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "mining",
-          "level": 2
-        }
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "statue-of-blessings",
-    "gameId": "StatueOfBlessings",
-    "name": "Statue Of Blessings",
-    "icon": "assets/objects/StatueOfBlessings.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Statue Of Blessings",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 999
-          },
-          {
-            "gameId": 771,
-            "amount": 999
-          },
-          {
-            "gameId": 92,
-            "amount": 999
-          },
-          {
-            "gameId": "Moss",
-            "amount": 333
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
-    "id": "statue-of-the-dwarf-king",
-    "gameId": "StatueOfTheDwarfKing",
-    "name": "Statue Of The Dwarf King",
-    "icon": "assets/objects/StatueOfTheDwarfKing.png",
-    "price": 50,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Statue Of The Dwarf King",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 337,
-            "amount": 20
-          }
-        ]
+        "type": "shop",
+        "storeId": "store-egg-festival",
+        "storeName": "Egg Festival",
+        "price": 2000,
+        "stock": 1,
+        "stockLimit": 1
       }
     ]
   },
@@ -1501,7 +1887,7 @@
     "icon": "assets/objects/TuboFlowers.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -1532,6 +1918,547 @@
             "amount": 1
           }
         ]
+      },
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 250
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-110",
+    "gameId": 110,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_1.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-stardew-valley-fair",
+        "storeName": "Stardew Valley Fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 800,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "decorative-pitcher",
+    "gameId": 111,
+    "name": "Decorative Pitcher",
+    "icon": "assets/objects/DecorativePitcher.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "dried-sunflowers",
+    "gameId": 112,
+    "name": "Dried Sunflowers",
+    "icon": "assets/objects/DriedSunflowers.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-113",
+    "gameId": 113,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_2.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-spirits-eve",
+        "storeName": "Spirit's Eve",
+        "price": 5000,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "charcoal-kiln",
+    "gameId": 114,
+    "name": "Charcoal Kiln",
+    "icon": "assets/objects/CharcoalKiln.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Charcoal Kiln",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 20
+          },
+          {
+            "gameId": 334,
+            "amount": 2
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "stardew-hero-trophy",
+    "gameId": 116,
+    "name": "Stardew Hero Trophy",
+    "icon": "assets/objects/StardewHeroTrophy.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "soda-machine",
+    "gameId": 117,
+    "name": "Soda Machine",
+    "icon": "assets/objects/SodaMachine.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-118",
+    "gameId": 118,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-119",
+    "gameId": 119,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-120",
+    "gameId": 120,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-121",
+    "gameId": 121,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-122",
+    "gameId": 122,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-123",
+    "gameId": 123,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-124",
+    "gameId": 124,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-125",
+    "gameId": 125,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-126",
+    "gameId": 126,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_3.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "statue-of-endless-fortune",
+    "gameId": 127,
+    "name": "Statue Of Endless Fortune",
+    "icon": "assets/objects/StatueOfEndlessFortune.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "mushroom-box",
+    "gameId": 128,
+    "name": "Mushroom Box",
+    "icon": "assets/objects/MushroomBox.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "chest",
+    "gameId": 130,
+    "name": "Chest",
+    "icon": "assets/objects/Chest.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "swappable_chest"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Chest",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-136",
+    "gameId": 136,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_4.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-festival-of-ice",
+        "storeName": "Festival of Ice",
+        "price": 5000,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "storeId": "store-traveling-merchant",
+        "storeName": "Traveling Merchant",
+        "price": 4000,
+        "seasons": [
+          "fall",
+          "winter"
+        ],
+        "rotating": true,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-137",
+    "gameId": 137,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_5.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 2500,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-138",
+    "gameId": 138,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_6.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-dwarf",
+        "storeName": "Dwarf Shop",
+        "price": 2500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-139",
+    "gameId": 139,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_7.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "rarecrow-140",
+    "gameId": 140,
+    "name": "Rarecrow",
+    "icon": "assets/objects/RareCrow_8.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "prairie-king-arcade-system",
+    "gameId": 141,
+    "name": "Prairie King Arcade System",
+    "icon": "assets/objects/PrairieKingArcadeSystem.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "mail",
+        "mailKey": "Beat_PK",
+        "sender": "Prairie King Development Team",
+        "condition": "Beat Journey of the Prairie King"
       }
     ]
   },
@@ -1543,7 +2470,7 @@
     "icon": "assets/objects/WoodenBrazier.png",
     "price": 25,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1574,43 +2501,13 @@
   },
   {
     "type": "big-craftable",
-    "id": "wicked-statue",
-    "gameId": 83,
-    "name": "Wicked Statue",
-    "icon": "assets/objects/WickedStatue.png",
-    "price": 0,
-    "edibility": -300,
-    "category": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Wicked Statue",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 382,
-            "amount": 5
-          },
-          {
-            "gameId": 390,
-            "amount": 25
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "big-craftable",
     "id": "stone-brazier",
     "gameId": 144,
     "name": "Stone Brazier",
     "icon": "assets/objects/StoneBrazier.png",
     "price": 40,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1647,7 +2544,7 @@
     "icon": "assets/objects/GoldBrazier.png",
     "price": 100,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1678,13 +2575,13 @@
   },
   {
     "type": "big-craftable",
-    "id": "campfire",
+    "id": "campfire-146",
     "gameId": 146,
     "name": "Campfire",
     "icon": "assets/objects/Campfire.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "campfire_item",
       "light_source",
@@ -1722,7 +2619,7 @@
     "icon": "assets/objects/StumpBrazier.png",
     "price": 80,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1755,7 +2652,7 @@
     "icon": "assets/objects/CarvedBrazier.png",
     "price": 200,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1788,7 +2685,7 @@
     "icon": "assets/objects/SkullBrazier.png",
     "price": 300,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1817,7 +2714,7 @@
     "icon": "assets/objects/BarrelBrazier.png",
     "price": 80,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1854,7 +2751,7 @@
     "icon": "assets/objects/MarbleBrazier.png",
     "price": 500,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "light_source",
       "torch_item"
@@ -1880,19 +2777,6 @@
             "amount": 100
           }
         ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Pierre)",
-        "storeBaseName": "Desert Festival",
-        "price": 160,
-        "quantity": 5,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 10
       }
     ]
   },
@@ -1904,7 +2788,7 @@
     "icon": "assets/objects/WoodLamppost.png",
     "price": 50,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -1934,7 +2818,7 @@
     "icon": "assets/objects/IronLamppost.png",
     "price": 100,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -1958,136 +2842,290 @@
   },
   {
     "type": "big-craftable",
-    "id": "mini-obelisk",
-    "gameId": 238,
-    "name": "Mini-Obelisk",
-    "icon": "assets/objects/MiniObelisk.png",
+    "id": "worm-bin",
+    "gameId": 154,
+    "name": "Worm Bin",
+    "icon": "assets/objects/WormBin.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Mini-Obelisk",
+        "recipeName": "Worm Bin",
         "outputCount": 1,
         "ingredients": [
           {
             "gameId": 709,
-            "amount": 30
-          },
-          {
-            "gameId": 768,
-            "amount": 20
+            "amount": 15
           },
           {
             "gameId": 336,
-            "amount": 3
+            "amount": 1
+          },
+          {
+            "gameId": 335,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 50
           }
-        ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
-        "price": 200,
-        "stock": 1,
-        "stockLimit": 1
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 4
+        }
       }
     ]
   },
   {
     "type": "big-craftable",
-    "id": "farm-computer",
-    "gameId": 239,
-    "name": "Farm Computer",
-    "icon": "assets/objects/FarmComputer.png",
+    "id": "slime-incubator",
+    "gameId": 156,
+    "name": "Slime Incubator",
+    "icon": "assets/objects/SlimeIncubator.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Farm Computer",
+        "recipeName": "Slime Incubator",
         "outputCount": 1,
         "ingredients": [
           {
-            "gameId": 122,
+            "gameId": 337,
+            "amount": 2
+          },
+          {
+            "gameId": 766,
+            "amount": 100
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "slime-egg-press",
+    "gameId": 158,
+    "name": "Slime Egg-Press",
+    "icon": "assets/objects/SlimeEggPress.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Slime Egg-Press",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 382,
+            "amount": 25
+          },
+          {
+            "gameId": 82,
             "amount": 1
           },
           {
             "gameId": 787,
             "amount": 1
-          },
-          {
-            "gameId": 338,
-            "amount": 10
           }
-        ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
-        "storeBaseName": "Bookseller",
-        "price": 330,
-        "quantity": 3,
-        "tradeItemId": "jack-be-nimble-jack-be-thick",
-        "tradeItemGameId": "Book_Defense",
-        "tradeItemName": "Jack Be Nimble, Jack Be Thick",
-        "tradeItemIcon": "assets/objects/JackBeNimbleJackBeThick.png",
-        "tradeItemAmount": 1
-      },
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "storeBaseName": "Festival of Ice",
-        "price": 200,
-        "stock": 1,
-        "stockLimit": 1
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "combat",
+          "level": 6
+        }
       }
     ]
   },
   {
     "type": "big-craftable",
-    "id": "ostrich-incubator",
-    "gameId": 254,
-    "name": "Ostrich Incubator",
-    "icon": "assets/objects/OstrichIncubator.png",
+    "id": "junimo-kart-arcade-system",
+    "gameId": 159,
+    "name": "Junimo Kart Arcade System",
+    "icon": "assets/objects/JunimoKartArcadeSystem.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "mail",
+        "mailKey": "JunimoKart",
+        "sender": "Junimo Kart Development Team",
+        "condition": "Beat all levels of Junimo Kart"
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "statue-of-perfection",
+    "gameId": 160,
+    "name": "Statue Of Perfection",
+    "icon": "assets/objects/StatueOfPerfection.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "cask",
+    "gameId": 163,
+    "name": "Cask",
+    "icon": "assets/objects/Cask.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Ostrich Incubator",
+        "recipeName": "Cask",
         "outputCount": 1,
         "ingredients": [
           {
-            "gameId": 881,
-            "amount": 50
+            "gameId": 388,
+            "amount": 20
           },
           {
             "gameId": 709,
-            "amount": 50
-          },
-          {
-            "gameId": 848,
-            "amount": 20
+            "amount": 1
           }
         ]
       }
     ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "solid-gold-lewis",
+    "gameId": 164,
+    "name": "Solid Gold Lewis",
+    "icon": "assets/objects/SolidGoldLewis.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "auto-grabber",
+    "gameId": 165,
+    "name": "Auto-Grabber",
+    "icon": "assets/objects/AutoGrabber.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie",
+        "storeName": "Marnie's Ranch",
+        "price": 25000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.farming"
+            },
+            10
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "deluxe-scarecrow",
+    "gameId": 167,
+    "name": "Deluxe Scarecrow",
+    "icon": "assets/objects/DeluxeScarecrow.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Scarecrow",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 50
+          },
+          {
+            "gameId": 386,
+            "amount": 1
+          },
+          {
+            "gameId": 771,
+            "amount": 40
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-174",
+    "gameId": 174,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-175",
+    "gameId": 175,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
   },
   {
     "type": "big-craftable",
@@ -2097,7 +3135,7 @@
     "icon": "assets/objects/GeodeCrusher.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -2125,13 +3163,355 @@
   },
   {
     "type": "big-craftable",
+    "id": "seasonal-plant-184",
+    "gameId": 184,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-egg-festival",
+        "storeName": "Egg Festival",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-plant-188",
+    "gameId": 188,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-egg-festival",
+        "storeName": "Egg Festival",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-plant-192",
+    "gameId": 192,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-plant-196",
+    "gameId": 196,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "storeId": "store-sandy",
+        "storeName": "Oasis (Sandy)",
+        "price": 220
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-plant-200",
+    "gameId": 200,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 240
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "seasonal-plant-204",
+    "gameId": 204,
+    "name": "Seasonal Plant",
+    "icon": "assets/objects/SeasonalPlant.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-flower-dance",
+        "storeName": "Flower Dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "storeId": "store-night-market",
+        "storeName": "Night Market",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "workbench",
+    "gameId": 208,
+    "name": "Workbench",
+    "icon": "assets/objects/Workbench.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 400
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mini-jukebox",
+    "gameId": 209,
+    "name": "Mini-Jukebox",
+    "icon": "assets/objects/MiniJukebox.png",
+    "price": 1500,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Mini-Jukebox",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 2
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "wood-chipper",
+    "gameId": 211,
+    "name": "Wood Chipper",
+    "icon": "assets/objects/WoodChipper.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 160,
+        "yearUnlock": 2
+      },
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 160,
+        "seasons": [
+          "winter"
+        ],
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "storeId": "store-desert-festival-kent",
+        "storeName": "Desert Festival Stall (Kent)",
+        "price": 160,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "telephone",
+    "gameId": 214,
+    "name": "Telephone",
+    "icon": "assets/objects/Telephone.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mini-fridge",
+    "gameId": 216,
+    "name": "Mini-Fridge",
+    "icon": "assets/objects/MiniFridge.png",
+    "price": 1500,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-robin",
+        "storeName": "Carpenter's Shop (Robin)",
+        "price": 120,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "gusGiantOmelet",
+        "sender": "Gus",
+        "isSpecialOrder": true
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "cursed-p-k-arcade-system",
+    "gameId": 219,
+    "name": "Cursed P.K. Arcade System",
+    "icon": "assets/objects/CursedPKArcadeSystem.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "item-pedestal",
+    "gameId": 221,
+    "name": "Item Pedestal",
+    "icon": "assets/objects/ItemPedestal.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
     "id": "solar-panel",
     "gameId": 231,
     "name": "Solar Panel",
     "icon": "assets/objects/SolarPanel.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -2154,65 +3534,328 @@
             "amount": 5
           }
         ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (Gus)",
-        "storeBaseName": "Desert Festival",
-        "price": 400,
-        "quantity": 5,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 30
       }
     ]
   },
   {
     "type": "big-craftable",
-    "id": "bone-mill",
-    "gameId": 90,
-    "name": "Bone Mill",
-    "icon": "assets/objects/BoneMill.png",
+    "id": "stone-chest",
+    "gameId": 232,
+    "name": "Stone Chest",
+    "icon": "assets/objects/StoneChest.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "swappable_chest"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Stone Chest",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mini-obelisk",
+    "gameId": 238,
+    "name": "Mini-Obelisk",
+    "icon": "assets/objects/MiniObelisk.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
     "sources": [
       {
         "type": "crafting",
-        "recipeName": "Bone Mill",
+        "recipeName": "Mini-Obelisk",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 30
+          },
+          {
+            "gameId": 768,
+            "amount": 20
+          },
+          {
+            "gameId": 336,
+            "amount": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "farm-computer",
+    "gameId": 239,
+    "name": "Farm Computer",
+    "icon": "assets/objects/FarmComputer.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Farm Computer",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 122,
+            "amount": 1
+          },
+          {
+            "gameId": 787,
+            "amount": 1
+          },
+          {
+            "gameId": 338,
+            "amount": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "coffee-maker",
+    "gameId": 246,
+    "name": "Coffee Maker",
+    "icon": "assets/objects/CoffeeMaker.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "mail",
+        "mailKey": "georgeGifts",
+        "sender": "Evelyn",
+        "isSpecialOrder": true,
+        "condition": {
+          "==": [
+            {
+              "var": "world.season"
+            },
+            "spring"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "sewing-machine",
+    "gameId": 247,
+    "name": "Sewing Machine",
+    "icon": "assets/objects/SewingMachine.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "mail",
+        "mailKey": "emilyStones",
+        "sender": "Emily",
+        "isSpecialOrder": true,
+        "condition": {
+          "in": [
+            992559,
+            {
+              "var": "player.events"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mini-shipping-bin",
+    "gameId": 248,
+    "name": "Mini-Shipping Bin",
+    "icon": "assets/objects/MiniShippingBin.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 60
+      },
+      {
+        "type": "mail",
+        "mailKey": "MSB_Pierre",
+        "sender": "Pierre",
+        "condition": "Pierre's friendship event (3+ hearts)"
+      },
+      {
+        "type": "mail",
+        "mailKey": "MSB_Lewis",
+        "sender": "Lewis",
+        "isSpecialOrder": true,
+        "condition": {
+          "!": {
+            "==": [
+              {
+                "var": "world.season"
+              },
+              "winter"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "ostrich-incubator",
+    "gameId": 254,
+    "name": "Ostrich Incubator",
+    "icon": "assets/objects/OstrichIncubator.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Ostrich Incubator",
         "outputCount": 1,
         "ingredients": [
           {
             "gameId": 881,
-            "amount": 10
+            "amount": 50
           },
           {
-            "gameId": 330,
-            "amount": 3
+            "gameId": 709,
+            "amount": 50
           },
           {
-            "gameId": 390,
+            "gameId": 848,
             "amount": 20
           }
         ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "junimo-chest",
+    "gameId": 256,
+    "name": "Junimo Chest",
+    "icon": "assets/objects/JunimoChest.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "quantity": 2,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 30,
+        "condition": {
+          "!": {
+            "in": [
+              "gotFirstJunimoChest",
+              {
+                "var": "player.mail"
+              }
+            ]
+          }
+        },
+        "stock": 1,
+        "stockLimit": 2
       },
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "storeBaseName": "Oasis (Sandy)",
-        "price": 150,
-        "days": [
-          "Tuesday"
-        ]
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 15
       }
     ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "barrel-262",
+    "gameId": 262,
+    "name": "Barrel",
+    "icon": "assets/objects/Barrel.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "crate-263",
+    "gameId": 263,
+    "name": "Crate",
+    "icon": "assets/objects/Crate.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
   },
   {
     "type": "big-craftable",
@@ -2222,7 +3865,7 @@
     "icon": "assets/objects/HeavyTapper.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [
       "tapper_item",
       "tapper_multiplier_2"
@@ -2249,13 +3892,70 @@
   },
   {
     "type": "big-craftable",
+    "id": "deconstructor",
+    "gameId": 265,
+    "name": "Deconstructor",
+    "icon": "assets/objects/Deconstructor.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 600,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 20
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "auto-petter",
+    "gameId": 272,
+    "name": "Auto-Petter",
+    "icon": "assets/objects/AutoPetter.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-joja",
+        "storeName": "JojaMart",
+        "price": 50000,
+        "condition": {
+          "in": [
+            502261,
+            {
+              "var": "player.events"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
     "id": "hopper",
     "gameId": 275,
     "name": "Hopper",
     "icon": "assets/objects/Hopper.png",
     "price": 0,
     "edibility": -300,
-    "category": "Big Craftable",
+    "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
@@ -2281,26 +3981,488 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival",
-        "storeName": "Desert Festival (George)",
-        "storeBaseName": "Desert Festival",
-        "quantity": 5,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "storeId": "store-qi-gem-shop",
+        "storeName": "Qi's Walnut Room",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
         "tradeItemAmount": 10
-      },
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "campfire-278",
+    "gameId": 278,
+    "name": "Campfire",
+    "icon": "assets/objects/Campfire_2.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "campfire_item",
+      "light_source",
+      "torch_item"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "statue-of-true-perfection",
+    "gameId": 280,
+    "name": "Statue Of True Perfection",
+    "icon": "assets/objects/StatueOfTruePerfection.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": []
+  },
+  {
+    "type": "big-craftable",
+    "id": "text-sign",
+    "gameId": "TextSign",
+    "name": "Text Sign",
+    "icon": "assets/objects/TextSign.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
       {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "storeBaseName": "Desert Trade (Sandy)",
-        "tradeItemId": "omni-geode",
-        "tradeItemGameId": 749,
-        "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/OmniGeode.png",
-        "tradeItemAmount": 5
+        "type": "crafting",
+        "recipeName": "Text Sign",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mushroom-log",
+    "gameId": "MushroomLog",
+    "name": "Mushroom Log",
+    "icon": "assets/objects/MushroomLog.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Mushroom Log",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": "Moss",
+            "amount": 10
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "foraging",
+          "level": 4
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "bait-maker",
+    "gameId": "BaitMaker",
+    "name": "Bait Maker",
+    "icon": "assets/objects/BaitMaker.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Bait Maker",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 3
+          },
+          {
+            "gameId": 393,
+            "amount": 3
+          },
+          {
+            "gameId": 397,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 6
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "dehydrator",
+    "gameId": "Dehydrator",
+    "name": "Dehydrator",
+    "icon": "assets/objects/Dehydrator.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Dehydrator",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 30
+          },
+          {
+            "gameId": 330,
+            "amount": 2
+          },
+          {
+            "gameId": 82,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "heavy-furnace",
+    "gameId": "HeavyFurnace",
+    "name": "Heavy Furnace",
+    "icon": "assets/objects/HeavyFurnace.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Heavy Furnace",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": "(BC)13",
+            "amount": 2
+          },
+          {
+            "gameId": 335,
+            "amount": 3
+          },
+          {
+            "gameId": 390,
+            "amount": 50
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "statue-of-blessings",
+    "gameId": "StatueOfBlessings",
+    "name": "Statue Of Blessings",
+    "icon": "assets/objects/StatueOfBlessings.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Statue Of Blessings",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 999
+          },
+          {
+            "gameId": 771,
+            "amount": 999
+          },
+          {
+            "gameId": 92,
+            "amount": 999
+          },
+          {
+            "gameId": "Moss",
+            "amount": 333
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "statue-of-the-dwarf-king",
+    "gameId": "StatueOfTheDwarfKing",
+    "name": "Statue Of The Dwarf King",
+    "icon": "assets/objects/StatueOfTheDwarfKing.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Statue Of The Dwarf King",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 337,
+            "amount": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "anvil",
+    "gameId": "Anvil",
+    "name": "Anvil",
+    "icon": "assets/objects/Anvil.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Anvil",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 335,
+            "amount": 50
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "mini-forge",
+    "gameId": "MiniForge",
+    "name": "Mini-Forge",
+    "icon": "assets/objects/MiniForge.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Mini-Forge",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 852,
+            "amount": 5
+          },
+          {
+            "gameId": 335,
+            "amount": 10
+          },
+          {
+            "gameId": 336,
+            "amount": 10
+          },
+          {
+            "gameId": 337,
+            "amount": 5
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "fish-smoker",
+    "gameId": "FishSmoker",
+    "name": "Fish Smoker",
+    "icon": "assets/objects/FishSmoker.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Fish Smoker",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 709,
+            "amount": 10
+          },
+          {
+            "gameId": "SeaJelly",
+            "amount": 1
+          },
+          {
+            "gameId": "RiverJelly",
+            "amount": 1
+          },
+          {
+            "gameId": "CaveJelly",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "deluxe-worm-bin",
+    "gameId": "DeluxeWormBin",
+    "name": "Deluxe Worm Bin",
+    "icon": "assets/objects/DeluxeWormBin.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Deluxe Worm Bin",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": "(BC)154",
+            "amount": 1
+          },
+          {
+            "gameId": "Moss",
+            "amount": 30
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "big-chest",
+    "gameId": "BigChest",
+    "name": "Big Chest",
+    "icon": "assets/objects/BigChest.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "swappable_chest"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Big Chest",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 388,
+            "amount": 120
+          },
+          {
+            "gameId": 334,
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "big-craftable",
+    "id": "big-stone-chest",
+    "gameId": "BigStoneChest",
+    "name": "Big Stone Chest",
+    "icon": "assets/objects/BigStoneChest.png",
+    "price": 0,
+    "edibility": -300,
+    "gameCategory": "Big Craftable",
+    "contextTags": [
+      "swappable_chest"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "sources": [
+      {
+        "type": "crafting",
+        "recipeName": "Big Stone Chest",
+        "outputCount": 1,
+        "ingredients": [
+          {
+            "gameId": 390,
+            "amount": 250
+          }
+        ]
       }
     ]
   }

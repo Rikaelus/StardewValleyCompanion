@@ -48,9 +48,25 @@ const sourceData = {
   seeds:          loadJson(path.join(SOURCE_DIR, 'items/seeds.json')),
   furniture:      loadJson(path.join(SOURCE_DIR, 'items/furniture.json')),
   hats:           loadJson(path.join(SOURCE_DIR, 'items/hats.json')),
+  food:           loadJson(path.join(SOURCE_DIR, 'items/food.json')),
+  ores:           loadJson(path.join(SOURCE_DIR, 'items/ores.json')),
+  geodeMinerals:  loadJson(path.join(SOURCE_DIR, 'items/geode-minerals.json')),
+  crafted:        loadJson(path.join(SOURCE_DIR, 'items/crafted.json')),
+  fertilizers:    loadJson(path.join(SOURCE_DIR, 'items/fertilizers.json')),
+  bait:           loadJson(path.join(SOURCE_DIR, 'items/bait.json')),
+  tackle:         loadJson(path.join(SOURCE_DIR, 'items/tackle.json')),
+  flooring:       loadJson(path.join(SOURCE_DIR, 'items/flooring.json')),
+  trash:          loadJson(path.join(SOURCE_DIR, 'items/trash.json')),
+  books:          loadJson(path.join(SOURCE_DIR, 'items/books.json')),
+  artifacts:      loadJson(path.join(SOURCE_DIR, 'items/artifacts.json')),
+  rings:          loadJson(path.join(SOURCE_DIR, 'items/rings.json')),
+  treeSeeds:      loadJson(path.join(SOURCE_DIR, 'items/tree-seeds.json')),
+  misc:           loadJson(path.join(SOURCE_DIR, 'items/misc.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
   machines:       loadJson(path.join(SOURCE_DIR, 'reference/machines.json')),
+  buffs:          loadJson(path.join(SOURCE_DIR, 'reference/buffs.json')),
+  events:         loadJson(path.join(SOURCE_DIR, 'reference/events.json')),
 };
 
 for (const [key, val] of Object.entries(sourceData)) {
@@ -90,7 +106,7 @@ sourceData.artisan.forEach(artisan => {
 
       const compiledItem = {
         ...artisanBase,
-        itemCategory: 'artisan',
+        category: 'artisan',
         prices: qualityPrices,
         sources: artisan.sources.map(s => {
           if (s.type !== 'machine') return s;
@@ -109,7 +125,7 @@ sourceData.artisan.forEach(artisan => {
       if (isMulti) {
         const genericItem = {
           ...artisanBase,
-          itemCategory: 'artisan',
+          category: 'artisan',
           isGeneric: true,
           sources: artisan.sources.map(s => {
             if (s.type !== 'machine') return s;
@@ -137,9 +153,9 @@ sourceData.artisan.forEach(artisan => {
             id: variantId,
             gameId: artisan.gameId,
             name: variantName,
-            itemCategory: 'artisan',
+            category: 'artisan',
+            gameCategory: artisan.gameCategory,
             type: artisan.type,
-            category: artisan.category,
             icon: artisan.icon,
             contextTags: artisan.contextTags,
             edibility: artisan.edibility,
@@ -163,7 +179,7 @@ sourceData.artisan.forEach(artisan => {
                 inputName: isRoeInput ? `${inputDetail.inputName} Roe` : inputDetail.inputName,
                 inputGameId: inputDetail.inputGameId,
                 inputBasePrice: inputDetail.inputBasePrice,
-                inputCategory: inputDetail.inputCategory,
+                inputGameCategory: inputDetail.inputGameCategory,
               };
             }),
           };
@@ -182,9 +198,9 @@ sourceData.artisan.forEach(artisan => {
             id: `wild-${artisan.id}`,
             gameId: artisan.gameId,
             name: `Wild ${artisan.name}`,
-            itemCategory: 'artisan',
+            category: 'artisan',
+            gameCategory: artisan.gameCategory,
             type: artisan.type,
-            category: artisan.category,
             icon: artisan.icon,
             contextTags: artisan.contextTags,
             edibility: artisan.edibility,
@@ -209,7 +225,7 @@ sourceData.artisan.forEach(artisan => {
         const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
         const compiledItem = {
           ...artisanBase,
-          itemCategory: 'artisan',
+          category: 'artisan',
           prices: qualityPrices,
         };
         if (artisan.canBeAged) {
@@ -224,7 +240,7 @@ sourceData.artisan.forEach(artisan => {
     const qualityPrices = calculateQualityPrices(artisan.price, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
     compiledArtisan.push({
       ...artisanBase,
-      itemCategory: 'artisan',
+      category: 'artisan',
       prices: qualityPrices,
     });
   }
@@ -233,33 +249,49 @@ sourceData.artisan.forEach(artisan => {
 console.log(`  ✓ Expanded artisan: ${sourceData.artisan.length} source → ${compiledArtisan.length} compiled`);
 
 // ---------------------------------------------------------------------------
-// Tag all other item types with itemCategory
+// Tag all entity types with category
 // ---------------------------------------------------------------------------
-console.log('\n🏷️  Tagging item categories...');
+console.log('\n🏷️  Tagging entity categories...');
 
-function tagItems(items, itemCategory, extraFields = {}) {
-  const { gifts: _g, ...rest } = {}; // unused, just to show intent
-  return items.map(item => {
-    const { gifts, ...itemWithoutGifts } = item;
-    return { ...itemWithoutGifts, ...extraFields, itemCategory };
+function tagEntities(entities, category, extraFields = {}) {
+  return entities.map(entity => {
+    const { gifts, ...entityWithoutGifts } = entity;
+    return { ...entityWithoutGifts, ...extraFields, category };
   });
 }
 
-const taggedFish           = tagItems(sourceData.fish, 'fish');
-const taggedCrops          = tagItems(sourceData.crops, 'crop');
-const taggedForage         = tagItems(sourceData.forage, 'forage');
-const taggedTreeFruits     = tagItems(sourceData.treeFruits, 'tree-fruit');
-const taggedMinerals       = tagItems(sourceData.minerals, 'mineral');
-const taggedMetalBars      = tagItems(sourceData.metalBars, 'metal-bar');
-const taggedMonsterLoot    = tagItems(sourceData.monsterLoot, 'monster-loot');
-const taggedResources      = tagItems(sourceData.resources, 'resource');
-const taggedBigCraftables  = tagItems(sourceData.bigCraftables, 'big-craftable');
-const taggedAnimalProducts = tagItems(sourceData.animalProducts, 'animal-product');
-const taggedSeeds          = tagItems(sourceData.seeds, 'seed');
-const taggedFurniture      = tagItems(sourceData.furniture, 'furniture');
-const taggedHats           = tagItems(sourceData.hats, 'hat');
+const taggedFish           = tagEntities(sourceData.fish, 'fish');
+const taggedCrops          = tagEntities(sourceData.crops, 'crop');
+const taggedForage         = tagEntities(sourceData.forage, 'forage');
+const taggedTreeFruits     = tagEntities(sourceData.treeFruits, 'tree-fruit');
+const taggedMinerals       = tagEntities(sourceData.minerals, 'mineral');
+const taggedMetalBars      = tagEntities(sourceData.metalBars, 'metal-bar');
+const taggedMonsterLoot    = tagEntities(sourceData.monsterLoot, 'monster-loot');
+const taggedResources      = tagEntities(sourceData.resources, 'resource');
+const taggedBigCraftables  = tagEntities(sourceData.bigCraftables, 'big-craftable');
+const taggedAnimalProducts = tagEntities(sourceData.animalProducts, 'animal-product');
+const taggedSeeds          = tagEntities(sourceData.seeds, 'seed');
+const taggedFurniture      = tagEntities(sourceData.furniture, 'furniture');
+const taggedHats           = tagEntities(sourceData.hats, 'hat');
+const taggedFood           = tagEntities(sourceData.food, 'food');
+const taggedOres           = tagEntities(sourceData.ores, 'ore');
+const taggedGeodeMinerals  = tagEntities(sourceData.geodeMinerals, 'geode-mineral');
+const taggedCrafted        = tagEntities(sourceData.crafted, 'crafted');
+const taggedFertilizers    = tagEntities(sourceData.fertilizers, 'fertilizer');
+const taggedBait           = tagEntities(sourceData.bait, 'bait');
+const taggedTackle         = tagEntities(sourceData.tackle, 'tackle');
+const taggedFlooring       = tagEntities(sourceData.flooring, 'flooring');
+const taggedTrash          = tagEntities(sourceData.trash, 'trash');
+const taggedBooks          = tagEntities(sourceData.books, 'book');
+const taggedArtifacts      = tagEntities(sourceData.artifacts, 'artifact');
+const taggedRings          = tagEntities(sourceData.rings, 'ring');
+const taggedTreeSeeds      = tagEntities(sourceData.treeSeeds, 'tree-seed');
+const taggedMisc           = tagEntities(sourceData.misc, 'misc');
+const taggedBuffs          = sourceData.buffs.map(b => ({ ...b, category: 'buff' }));
+const taggedEvents         = sourceData.events.map(e => ({ ...e, category: 'event' }));
+const taggedVillagers      = sourceData.villagers.map(v => ({ ...v, category: 'villager' }));
 
-console.log(`  ✓ Tagged all item types`);
+console.log(`  ✓ Tagged all entity types`);
 
 // ---------------------------------------------------------------------------
 // Derive fish locations and seasons (from sources array)
@@ -318,11 +350,11 @@ taggedForage.forEach(item => deriveForageLocationsSeasons(item));
 
 // ---------------------------------------------------------------------------
 // Merge cross-collection items (items that appear in multiple source files)
-// Priority: crop > forage for itemCategory when merging
+// Priority: crop > forage for category when merging
 // ---------------------------------------------------------------------------
 console.log('\n🔗 Merging cross-collection items...');
 
-// CATEGORY_PRIORITY: lower number = higher priority (wins itemCategory in merge)
+// CATEGORY_PRIORITY: lower number = higher priority (wins category in merge)
 const CATEGORY_PRIORITY = {
   'fish': 1,
   'artisan': 2,
@@ -338,10 +370,27 @@ const CATEGORY_PRIORITY = {
   'seed': 12,
   'furniture': 13,
   'hat': 14,
+  'food': 15,
+  'ore': 16,
+  'geode-mineral': 17,
+  'crafted': 18,
+  'fertilizer': 19,
+  'bait': 20,
+  'tackle': 21,
+  'flooring': 22,
+  'trash': 23,
+  'book': 24,
+  'artifact': 25,
+  'ring': 26,
+  'tree-seed': 27,
+  'misc': 28,
+  'buff': 29,
+  'event': 30,
+  'villager': 31,
 };
 
-// All item arrays to merge
-const allTypedItems = [
+// All entity arrays to merge
+const allTypedEntities = [
   ...taggedFish,
   ...compiledArtisan,
   ...taggedCrops,
@@ -356,26 +405,43 @@ const allTypedItems = [
   ...taggedSeeds,
   ...taggedFurniture,
   ...taggedHats,
+  ...taggedFood,
+  ...taggedOres,
+  ...taggedGeodeMinerals,
+  ...taggedCrafted,
+  ...taggedFertilizers,
+  ...taggedBait,
+  ...taggedTackle,
+  ...taggedFlooring,
+  ...taggedTrash,
+  ...taggedBooks,
+  ...taggedArtifacts,
+  ...taggedRings,
+  ...taggedTreeSeeds,
+  ...taggedMisc,
+  ...taggedBuffs,
+  ...taggedEvents,
+  ...taggedVillagers,
 ];
 
-// Merge by friendly id: combine sources arrays, keep highest-priority itemCategory.
-// This handles items that appear in multiple source files (e.g. grape is both crop and forage).
+// Merge by friendly id: combine sources arrays, keep highest-priority category.
+// This handles entities that appear in multiple source files (e.g. grape is both crop and forage).
 // Artisan variants intentionally share a gameId but have unique friendly ids, so they are NOT merged.
-const mergedById = new Map();
+const mergedEntitiesById = new Map();
 let mergedDuplicates = 0;
 
-for (const item of allTypedItems) {
-  const key = item.id;
+for (const entity of allTypedEntities) {
+  const key = entity.id;
 
-  if (!mergedById.has(key)) {
-    mergedById.set(key, { ...item, sources: [...(item.sources || [])] });
+  if (!mergedEntitiesById.has(key)) {
+    mergedEntitiesById.set(key, { ...entity, sources: [...(entity.sources || [])] });
   } else {
-    const existing = mergedById.get(key);
+    const existing = mergedEntitiesById.get(key);
     mergedDuplicates++;
 
     // Merge sources (avoid exact duplicates)
     const existingSrcJson = new Set((existing.sources || []).map(s => JSON.stringify(s)));
-    for (const src of (item.sources || [])) {
+    for (const src of (entity.sources || [])) {
       const srcJson = JSON.stringify(src);
       if (!existingSrcJson.has(srcJson)) {
         existing.sources.push(src);
@@ -384,22 +450,22 @@ for (const item of allTypedItems) {
     }
 
     // Merge bundles array
-    if (item.bundles?.length) {
+    if (entity.bundles?.length) {
       const existingBundles = new Set(existing.bundles || []);
-      for (const b of item.bundles) existingBundles.add(b);
+      for (const b of entity.bundles) existingBundles.add(b);
       existing.bundles = [...existingBundles];
     }
 
-    // Keep highest-priority itemCategory
-    const existingPriority = CATEGORY_PRIORITY[existing.itemCategory] ?? 999;
-    const incomingPriority = CATEGORY_PRIORITY[item.itemCategory] ?? 999;
+    // Keep highest-priority category
+    const existingPriority = CATEGORY_PRIORITY[existing.category] ?? 999;
+    const incomingPriority = CATEGORY_PRIORITY[entity.category] ?? 999;
     if (incomingPriority < existingPriority) {
-      existing.itemCategory = item.itemCategory;
+      existing.category = entity.category;
     }
 
-    // Merge other fields from incoming item (fill in any gaps)
-    for (const [field, val] of Object.entries(item)) {
-      if (field === 'sources' || field === 'bundles' || field === 'itemCategory') continue;
+    // Merge other fields from incoming entity (fill in any gaps)
+    for (const [field, val] of Object.entries(entity)) {
+      if (field === 'sources' || field === 'bundles' || field === 'category') continue;
       if (!(field in existing) && val !== undefined) {
         existing[field] = val;
       }
@@ -407,8 +473,8 @@ for (const item of allTypedItems) {
   }
 }
 
-const allCompiledItems = [...mergedById.values()];
-console.log(`  ✓ Merged ${mergedDuplicates} duplicate ids → ${allCompiledItems.length} unique items`);
+const allCompiledEntities = [...mergedEntitiesById.values()];
+console.log(`  ✓ Merged ${mergedDuplicates} duplicate ids → ${allCompiledEntities.length} unique entities`);
 
 // ---------------------------------------------------------------------------
 // Post-merge: re-derive forage locations/seasons for cross-collection items
@@ -416,7 +482,7 @@ console.log(`  ✓ Merged ${mergedDuplicates} duplicate ids → ${allCompiledIte
 // ---------------------------------------------------------------------------
 console.log('\n🌿 Re-deriving forage locations for merged items...');
 
-allCompiledItems.forEach(item => {
+allCompiledEntities.forEach(item => {
   const forageSources = (item.sources || []).filter(s => s.type === 'forage');
   if (forageSources.length === 0) return;
 
@@ -439,6 +505,53 @@ allCompiledItems.forEach(item => {
 });
 
 // ---------------------------------------------------------------------------
+// Post-merge: collapse shop sources that differ only in seasons into one
+// source with a merged seasons array. E.g. Wheat Seeds at Pierre's has two
+// entries (SEASON summer, SEASON fall) that should show as one row with both
+// seasons active.
+// ---------------------------------------------------------------------------
+const SEASON_ORDER = ['spring', 'summer', 'fall', 'winter'];
+
+for (const item of allCompiledEntities) {
+  const shopSources = (item.sources || []).filter(s => s.type === 'shop');
+  if (shopSources.length < 2) continue;
+
+  // Key = everything except seasons
+  const key = src => [
+    src.storeId, src.storeName, src.price, src.quantity,
+    src.tradeItemId, src.tradeItemAmount, src.tradeItemGameId,
+    src.shopCurrency, src.yearUnlock, src.yearUnlockBefore,
+    src.rotating, src.stock, src.stockLimit,
+    JSON.stringify(src.condition),
+  ].join('\0');
+
+  const groups = new Map();
+  for (const src of shopSources) {
+    const k = key(src);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(src);
+  }
+
+  const merged = [];
+  for (const srcs of groups.values()) {
+    if (srcs.length === 1) {
+      merged.push(...srcs);
+    } else if (srcs.some(s => !s.seasons)) {
+      // No seasons on any — just keep one (they're identical by key)
+      merged.push(srcs[0]);
+    } else {
+      const allSeasons = [...new Set(srcs.flatMap(s => s.seasons))];
+      const sorted = SEASON_ORDER.filter(s => allSeasons.includes(s));
+      merged.push({ ...srcs[0], seasons: sorted });
+    }
+  }
+
+  if (merged.length < shopSources.length) {
+    item.sources = item.sources.filter(s => s.type !== 'shop').concat(merged);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Normalize store IDs: ensure all storeId / sellingLocations values have
 // the store- prefix. Source files may have bare IDs (e.g. "pierre") —
 // this is the canonical enforcement point that makes compiled output correct
@@ -451,7 +564,7 @@ function normalizeStoreId(id) {
 
 console.log('\n🏪 Normalizing store IDs...');
 
-for (const item of allCompiledItems) {
+for (const item of allCompiledEntities) {
   // Normalize sellingLocations array
   if (Array.isArray(item.sellingLocations)) {
     item.sellingLocations = item.sellingLocations.map(normalizeStoreId);
@@ -479,11 +592,11 @@ console.log('\n🔨 Resolving crafting ingredient names...');
 // Crafting recipes reference Object IDs, so prefer non-furniture items on collision
 // (furniture and objects share numeric gameId spaces independently in the game).
 const itemsByGameId = new Map();
-for (const item of allCompiledItems) {
+for (const item of allCompiledEntities) {
   if (item.gameId === undefined || item.gameId === null) continue;
   const existing = itemsByGameId.get(item.gameId);
   // Only set if slot is empty, or if current entry is furniture (lower priority)
-  if (!existing || existing.itemCategory === 'furniture') {
+  if (!existing || existing.category === 'furniture') {
     itemsByGameId.set(item.gameId, item);
   }
 }
@@ -504,9 +617,9 @@ function resolveIngredientName(gameId) {
 }
 
 let resolvedIngredients = 0;
-for (const item of allCompiledItems) {
+for (const item of allCompiledEntities) {
   for (const src of (item.sources || [])) {
-    if (src.type !== 'crafting' || !src.ingredients) continue;
+    if ((src.type !== 'crafting' && src.type !== 'cooking') || !src.ingredients) continue;
     src.ingredientDetails = src.ingredients.map(ing => {
       const ingItem = itemsByGameId.get(ing.gameId);
       const fallbackName = ingItem ? null : resolveIngredientName(ing.gameId);
@@ -522,13 +635,13 @@ for (const item of allCompiledItems) {
     resolvedIngredients++;
   }
 }
-console.log(`  ✓ Resolved ingredient details for ${resolvedIngredients} crafting sources`);
+console.log(`  ✓ Resolved ingredient details for ${resolvedIngredients} crafting/cooking sources`);
 
 // ---------------------------------------------------------------------------
 // Build unified gameIdIndex
 // ---------------------------------------------------------------------------
 const gameIdIndex = {};
-for (const item of allCompiledItems) {
+for (const item of allCompiledEntities) {
   if (item.gameId !== undefined && item.gameId !== null) {
     gameIdIndex[item.gameId] = item.id;
   }
@@ -553,29 +666,38 @@ console.log(`  ✓ Loaded gifts (${giftsData.relationships?.length ?? 0} relatio
 console.log('\n📄 Writing unified entities.json...');
 
 const entitiesData = {
-  items: allCompiledItems,
+  items: allCompiledEntities,
   bundles: sourceData.bundles,
   villagers: sourceData.villagers,
   stores: Object.fromEntries(
-    Object.entries(sellingLocationsData.stores).map(([k, v]) => [k, { ...v, entityType: 'store' }])
+    Object.entries(sellingLocationsData.stores).map(([k, v]) => {
+      const store = { ...v, entityType: 'store' };
+      if (!store.icon && store.npc) {
+        store.icon = `assets/villagers/${store.npc}.png`;
+      }
+      return [k, store];
+    })
   ),
   machines: sourceData.machines.map(m => ({ ...m, entityType: 'machine' })),
+  buffs: sourceData.buffs.map(b => ({ ...b, entityType: 'buff' })),
   relationships: giftsData.relationships || [],
   gameIdIndex,
   meta: {
     compiled: new Date().toISOString(),
-    totalItems: allCompiledItems.length,
+    totalItems: allCompiledEntities.length,
     totalBundles: sourceData.bundles.length,
     totalVillagers: sourceData.villagers.length,
     totalStores: Object.keys(sellingLocationsData.stores || {}).length,
     totalMachines: sourceData.machines.length,
+    totalBuffs: sourceData.buffs.length,
+    totalEvents: sourceData.events.length,
     totalRelationships: giftsData.relationships?.length ?? 0,
     mergedDuplicates,
   }
 };
 
 writeJson(path.join(OUTPUT_DIR, 'entities.json'), entitiesData);
-console.log(`  ✓ Wrote entities.json (${allCompiledItems.length} items, ${sourceData.bundles.length} bundles, ${sourceData.villagers.length} villagers, ${sourceData.machines.length} machines)`);
+console.log(`  ✓ Wrote entities.json (${allCompiledEntities.length} items, ${sourceData.bundles.length} bundles, ${sourceData.villagers.length} villagers, ${sourceData.machines.length} machines)`);
 
 // ---------------------------------------------------------------------------
 // Summary
@@ -584,14 +706,14 @@ console.log('\n📊 Compilation Summary:');
 console.log('━'.repeat(50));
 
 const typeCounts = {};
-for (const item of allCompiledItems) {
-  typeCounts[item.itemCategory] = (typeCounts[item.itemCategory] || 0) + 1;
+for (const item of allCompiledEntities) {
+  typeCounts[item.category] = (typeCounts[item.category] || 0) + 1;
 }
 
 for (const [type, count] of Object.entries(typeCounts).sort((a, b) => a[0].localeCompare(b[0]))) {
   console.log(`  ${type.padEnd(18)} ${count}`);
 }
-console.log(`${'  TOTAL'.padEnd(20)} ${allCompiledItems.length}`);
+console.log(`${'  TOTAL'.padEnd(20)} ${allCompiledEntities.length}`);
 console.log(`  artisan source items: ${sourceData.artisan.length} → ${compiledArtisan.length} expanded`);
 
 const outputSize = JSON.stringify(entitiesData).length;
