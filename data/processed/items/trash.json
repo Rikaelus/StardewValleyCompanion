@@ -2,7 +2,7 @@
   {
     "type": "trash",
     "id": "broken-cd",
-    "gameId": 171,
+    "gameId": "(O)171",
     "name": "Broken CD",
     "icon": "assets/objects/BrokenCD.png",
     "price": 0,
@@ -37,7 +37,7 @@
   {
     "type": "trash",
     "id": "broken-glasses",
-    "gameId": 170,
+    "gameId": "(O)170",
     "name": "Broken Glasses",
     "icon": "assets/objects/BrokenGlasses.png",
     "price": 0,
@@ -72,7 +72,7 @@
   {
     "type": "trash",
     "id": "driftwood",
-    "gameId": 169,
+    "gameId": "(O)169",
     "name": "Driftwood",
     "icon": "assets/objects/Driftwood.png",
     "price": 0,
@@ -107,8 +107,8 @@
   },
   {
     "type": "trash",
-    "id": "rotten-plant-747",
-    "gameId": 747,
+    "id": "rotten-plant-(O)747",
+    "gameId": "(O)747",
     "name": "Rotten Plant",
     "icon": "assets/objects/RottenPlant.png",
     "price": 0,
@@ -128,8 +128,8 @@
   },
   {
     "type": "trash",
-    "id": "rotten-plant-748",
-    "gameId": 748,
+    "id": "rotten-plant-(O)748",
+    "gameId": "(O)748",
     "name": "Rotten Plant",
     "icon": "assets/objects/RottenPlant.png",
     "price": 0,
@@ -150,7 +150,7 @@
   {
     "type": "trash",
     "id": "soggy-newspaper",
-    "gameId": 172,
+    "gameId": "(O)172",
     "name": "Soggy Newspaper",
     "icon": "assets/objects/SoggyNewspaper.png",
     "price": 0,
@@ -185,7 +185,7 @@
   {
     "type": "trash",
     "id": "trash",
-    "gameId": 168,
+    "gameId": "(O)168",
     "name": "Trash",
     "icon": "assets/objects/Trash.png",
     "price": 0,

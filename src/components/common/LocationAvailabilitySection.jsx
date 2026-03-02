@@ -6,7 +6,7 @@ import ShopSourceList from './ShopSourceList'
 import { formatTime, formatProcessingTime } from '../../utils/Formatters'
 import ConditionBadge from './ConditionBadge'
 
-function LocationAvailabilitySection({ entity, findById, findByGameId, getStore, getMachine, onNavigate, eventNames }) {
+function LocationAvailabilitySection({ entity, findById, findByGameId, getStore, getMachine, onNavigate }) {
   if (!entity) return null
 
   const hasSeasons = entity.seasons && entity.seasons.length > 0
@@ -366,7 +366,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
               const jsonCondition = src.condition && typeof src.condition === 'object' ? src.condition : null
               if (jsonCondition) {
                 return (
-                  <ConditionBadge key={i} condition={jsonCondition} eventNames={eventNames}>
+                  <ConditionBadge key={i} condition={jsonCondition}>
                     {(badge, clauseElements, open) => (
                       <>
                         <span className="source-entry">
@@ -405,7 +405,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
           <span className="modal-label">How to Obtain:</span>
           <div className="source-list">
             {freeformSources.map((src, i) => (
-              <ConditionBadge key={i} condition={src.condition} conditionItemNames={src.conditionItemNames} eventNames={eventNames}>
+              <ConditionBadge key={i} condition={src.condition} conditionItemNames={src.conditionItemNames}>
                 {(badge, clauseElements, open) => (
                   <>
                     <span className="source-entry">

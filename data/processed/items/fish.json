@@ -2,7 +2,7 @@
   {
     "type": "fish",
     "id": "pufferfish",
-    "gameId": 128,
+    "gameId": "(O)128",
     "name": "Pufferfish",
     "icon": "assets/objects/Pufferfish.png",
     "difficulty": 80,
@@ -30,9 +30,7 @@
       "fish_upright",
       "season_summer"
     ],
-    "bundles": [
-      "specialty-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -41,7 +39,7 @@
       "linus": "neutral",
       "pierre": "hate",
       "caroline": "dislike",
-      "abigail": "love",
+      "abigail": "dislike",
       "alex": "dislike",
       "george": "dislike",
       "evelyn": "hate",
@@ -73,40 +71,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island Pirate Cove",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island South",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Southeast",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "anchovy",
-    "gameId": 129,
+    "gameId": "(O)129",
     "name": "Anchovy",
     "icon": "assets/objects/Anchovy.png",
     "difficulty": 30,
@@ -177,21 +147,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "spring"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "tuna",
-    "gameId": 130,
+    "gameId": "(O)130",
     "name": "Tuna",
     "icon": "assets/objects/Tuna.png",
     "difficulty": 70,
@@ -220,9 +181,7 @@
       "season_summer",
       "season_winter"
     ],
-    "bundles": [
-      "ocean-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -263,52 +222,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Chest",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Pirate Cove",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island South",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Southeast",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "sardine",
-    "gameId": 131,
+    "gameId": "(O)131",
     "name": "Sardine",
     "icon": "assets/objects/Sardine.png",
     "difficulty": 30,
@@ -341,9 +260,7 @@
       "season_spring",
       "season_winter"
     ],
-    "bundles": [
-      "ocean-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -384,22 +301,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "spring",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "bream",
-    "gameId": 132,
+    "gameId": "(O)132",
     "name": "Bream",
     "icon": "assets/objects/Bream.png",
     "difficulty": 35,
@@ -429,9 +336,7 @@
       "fish_river",
       "season_all"
     ],
-    "bundles": [
-      "night-fishing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -477,23 +382,13 @@
         "type": "mail",
         "mailKey": "Demetrius",
         "sender": "Demetrius"
-      },
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "largemouth-bass",
-    "gameId": 136,
+    "gameId": "(O)136",
     "name": "Largemouth Bass",
     "icon": "assets/objects/LargemouthBass.png",
     "difficulty": 50,
@@ -523,9 +418,7 @@
       "fish_lake",
       "season_all"
     ],
-    "bundles": [
-      "lake-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -571,18 +464,13 @@
         "type": "mail",
         "mailKey": "Linus",
         "sender": "Linus"
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "smallmouth-bass",
-    "gameId": 137,
+    "gameId": "(O)137",
     "name": "Smallmouth Bass",
     "icon": "assets/objects/SmallmouthBass.png",
     "difficulty": 28,
@@ -653,29 +541,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "spring"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall",
-          "spring"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "rainbow-trout",
-    "gameId": 138,
+    "gameId": "(O)138",
     "name": "Rainbow Trout",
     "icon": "assets/objects/RainbowTrout.png",
     "difficulty": 45,
@@ -743,34 +614,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "summer"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "summer"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "salmon",
-    "gameId": 139,
+    "gameId": "(O)139",
     "name": "Salmon",
     "icon": "assets/objects/Salmon.png",
     "difficulty": 50,
@@ -838,27 +687,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "walleye",
-    "gameId": 140,
+    "gameId": "(O)140",
     "name": "Walleye",
     "icon": "assets/objects/Walleye.png",
     "difficulty": 45,
@@ -889,9 +723,7 @@
       "season_fall",
       "season_winter"
     ],
-    "bundles": [
-      "night-fishing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -932,37 +764,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "perch",
-    "gameId": 141,
+    "gameId": "(O)141",
     "name": "Perch",
     "icon": "assets/objects/Perch.png",
     "difficulty": 35,
@@ -1032,34 +839,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "carp",
-    "gameId": 142,
+    "gameId": "(O)142",
     "name": "Carp",
     "icon": "assets/objects/Carp.png",
     "difficulty": 15,
@@ -1092,115 +877,7 @@
       "season_spring",
       "season_winter"
     ],
-    "bundles": [
-      "lake-fish"
-    ],
-    "gifts": {
-      "robin": "hate",
-      "demetrius": "neutral",
-      "maru": "hate",
-      "sebastian": "neutral",
-      "linus": "neutral",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "hate",
-      "pam": "neutral",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
-      "leah": "hate",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "neutral",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
-      "harvey": "hate",
-      "sandy": "hate",
-      "willy": "neutral",
-      "krobus": "hate",
-      "leo": "neutral"
-    },
-    "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
-    ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "fall",
-          "spring",
-          "summer"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mutant Bug Lair",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Secret Woods",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Sewers",
-        "seasons": null
-      }
-    ]
-  },
-  {
-    "type": "fish",
-    "id": "catfish",
-    "gameId": 143,
-    "name": "Catfish",
-    "icon": "assets/objects/Catfish.png",
-    "difficulty": 75,
-    "behaviorType": "mixed",
-    "minSize": 12,
-    "maxSize": 72,
-    "times": [
-      {
-        "start": "600",
-        "end": "2400"
-      }
-    ],
-    "seasons": [
-      "spring",
-      "fall",
-      "winter"
-    ],
-    "weather": "rainy",
-    "isTrapFish": false,
-    "price": 200,
-    "edibility": 20,
-    "gameCategory": -4,
-    "contextTags": [
-      "color_gray",
-      "fish_has_roe",
-      "fish_river",
-      "fish_secret_pond",
-      "fish_swamp",
-      "season_fall",
-      "season_spring",
-      "season_summer"
-    ],
-    "bundles": [
-      "river-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -1233,7 +910,86 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "love",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "sources": []
+  },
+  {
+    "type": "fish",
+    "id": "catfish",
+    "gameId": "(O)143",
+    "name": "Catfish",
+    "icon": "assets/objects/Catfish.png",
+    "difficulty": 75,
+    "behaviorType": "mixed",
+    "minSize": 12,
+    "maxSize": 72,
+    "times": [
+      {
+        "start": "600",
+        "end": "2400"
+      }
+    ],
+    "seasons": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "weather": "rainy",
+    "isTrapFish": false,
+    "price": 200,
+    "edibility": 20,
+    "gameCategory": -4,
+    "contextTags": [
+      "color_gray",
+      "fish_has_roe",
+      "fish_river",
+      "fish_secret_pond",
+      "fish_swamp",
+      "season_fall",
+      "season_spring",
+      "season_summer"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "hate",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -1243,63 +999,16 @@
     ],
     "sources": [
       {
-        "type": "crafting",
-        "recipeName": "Wooden Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 10
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 5
-          }
-        ]
-      },
-      {
         "type": "mail",
         "mailKey": "Linus",
         "sender": "Linus"
-      },
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "spring",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Secret Woods",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall",
-          "spring",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Witch's Swamp",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "pike",
-    "gameId": 144,
+    "gameId": "(O)144",
     "name": "Pike",
     "icon": "assets/objects/Pike.png",
     "difficulty": 60,
@@ -1371,48 +1080,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Stone Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 10
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 5
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "summer",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "sunfish",
-    "gameId": 145,
+    "gameId": "(O)145",
     "name": "Sunfish",
     "icon": "assets/objects/Sunfish.png",
     "difficulty": 30,
@@ -1441,9 +1114,7 @@
       "season_spring",
       "season_summer"
     ],
-    "bundles": [
-      "river-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -1484,48 +1155,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Gold Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 336,
-            "amount": 1
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 5
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "spring",
-          "summer"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "spring",
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "red-mullet",
-    "gameId": 146,
+    "gameId": "(O)146",
     "name": "Red Mullet",
     "icon": "assets/objects/RedMullet.png",
     "difficulty": 55,
@@ -1595,40 +1230,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Campfire",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 390,
-            "amount": 10
-          },
-          {
-            "gameId": 388,
-            "amount": 10
-          },
-          {
-            "gameId": 771,
-            "amount": 10
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "herring",
-    "gameId": 147,
+    "gameId": "(O)147",
     "name": "Herring",
     "icon": "assets/objects/Herring.png",
     "difficulty": 25,
@@ -1699,36 +1306,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Stump Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 709,
-            "amount": 5
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "spring",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "eel",
-    "gameId": 148,
+    "gameId": "(O)148",
     "name": "Eel",
     "icon": "assets/objects/Eel.png",
     "difficulty": 70,
@@ -1759,9 +1342,7 @@
       "season_fall",
       "season_spring"
     ],
-    "bundles": [
-      "night-fishing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -1802,36 +1383,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Carved Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 709,
-            "amount": 10
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "spring"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "octopus",
-    "gameId": 149,
+    "gameId": "(O)149",
     "name": "Octopus",
     "icon": "assets/objects/Octopus.png",
     "difficulty": 95,
@@ -1875,7 +1432,7 @@
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
-      "pam": "hate",
+      "pam": "neutral",
       "emily": "dislike",
       "haley": "hate",
       "jas": "dislike",
@@ -1886,13 +1443,13 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "like",
+      "elliott": "neutral",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "love",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -1900,41 +1457,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Skull Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 881,
-            "amount": 10
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "red-snapper",
-    "gameId": 150,
+    "gameId": "(O)150",
     "name": "Red Snapper",
     "icon": "assets/objects/RedSnapper.png",
     "difficulty": 40,
@@ -1965,9 +1493,7 @@
       "season_summer",
       "season_winter"
     ],
-    "bundles": [
-      "ocean-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -2008,41 +1534,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Barrel Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          },
-          {
-            "gameId": 768,
-            "amount": 1
-          },
-          {
-            "gameId": 382,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "squid",
-    "gameId": 151,
+    "gameId": "(O)151",
     "name": "Squid",
     "icon": "assets/objects/Squid.png",
     "difficulty": 75,
@@ -2086,7 +1583,7 @@
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
-      "pam": "hate",
+      "pam": "neutral",
       "emily": "dislike",
       "haley": "hate",
       "jas": "dislike",
@@ -2097,7 +1594,7 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "like",
+      "elliott": "neutral",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
@@ -2123,37 +1620,13 @@
         "tradeItemName": "Calico Egg",
         "tradeItemIcon": "assets/objects/CalicoEgg.png",
         "tradeItemAmount": 10
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Marble Brazier",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 567,
-            "amount": 1
-          },
-          {
-            "gameId": 62,
-            "amount": 1
-          },
-          {
-            "gameId": 390,
-            "amount": 100
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "seaweed",
-    "gameId": 152,
+    "gameId": "(O)152",
     "name": "Seaweed",
     "icon": "assets/objects/Seaweed.png",
     "difficulty": 5,
@@ -2204,10 +1677,10 @@
       "vincent": "hate",
       "jodi": "hate",
       "kent": "hate",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
       "elliott": "hate",
       "gus": "hate",
       "dwarf": "hate",
@@ -2227,43 +1700,13 @@
         "fishTag": "fish_ocean",
         "minPopulation": 1,
         "chance": 0.088
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Wood Lamp-post",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 50
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Beach Farm",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "green-algae",
-    "gameId": 153,
+    "gameId": "(O)153",
     "name": "Green Algae",
     "icon": "assets/objects/GreenAlgae.png",
     "difficulty": 5,
@@ -2350,73 +1793,13 @@
         "fishTag": "fish_freshwater",
         "minPopulation": 1,
         "chance": 0.05
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Iron Lamp-post",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 335,
-            "amount": 1
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Desert",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F20)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F60)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mutant Bug Lair",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Sewers",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Witch's Swamp",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "sea-cucumber",
-    "gameId": 154,
+    "gameId": "(O)154",
     "name": "Sea Cucumber",
     "icon": "assets/objects/SeaCucumber.png",
     "difficulty": 40,
@@ -2473,13 +1856,13 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "hate",
+      "elliott": "neutral",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "love",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -2487,54 +1870,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Worm Bin",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 709,
-            "amount": 15
-          },
-          {
-            "gameId": 336,
-            "amount": 1
-          },
-          {
-            "gameId": 335,
-            "amount": 1
-          },
-          {
-            "gameId": 771,
-            "amount": 50
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "fishing",
-          "level": 4
-        }
-      },
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "super-cucumber",
-    "gameId": 155,
+    "gameId": "(O)155",
     "name": "Super Cucumber",
     "icon": "assets/objects/SuperCucumber.png",
     "difficulty": 80,
@@ -2591,10 +1932,10 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "hate",
+      "elliott": "neutral",
       "gus": "dislike",
       "dwarf": "dislike",
-      "wizard": "love",
+      "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
       "willy": "neutral",
@@ -2605,46 +1946,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island Pirate Cove",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island South",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Southeast",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "ghostfish",
-    "gameId": 156,
+    "gameId": "(O)156",
     "name": "Ghostfish",
     "icon": "assets/objects/Ghostfish.png",
     "difficulty": 50,
@@ -2674,9 +1981,7 @@
       "fish_mines",
       "season_all"
     ],
-    "bundles": [
-      "specialty-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -2722,43 +2027,13 @@
         "type": "monster-drop",
         "monster": "Ghost",
         "chance": 0.08
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Slime Incubator",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 337,
-            "amount": 2
-          },
-          {
-            "gameId": 766,
-            "amount": 100
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "combat",
-          "level": 8
-        }
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F20)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F60)",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "white-algae",
-    "gameId": 157,
+    "gameId": "(O)157",
     "name": "White Algae",
     "icon": "assets/objects/WhiteAlgae.png",
     "difficulty": 5,
@@ -2859,38 +2134,13 @@
         "fishTag": "item_ghostfish",
         "minPopulation": 9,
         "chance": 0.05
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F20)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F60)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mutant Bug Lair",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Sewers",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Witch's Swamp",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "stonefish",
-    "gameId": 158,
+    "gameId": "(O)158",
     "name": "Stonefish",
     "icon": "assets/objects/Stonefish.png",
     "difficulty": 65,
@@ -2963,42 +2213,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Slime Egg-Press",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 382,
-            "amount": 25
-          },
-          {
-            "gameId": 82,
-            "amount": 1
-          },
-          {
-            "gameId": 787,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "combat",
-          "level": 6
-        }
-      },
-      {
-        "type": "fish",
-        "location": "Mines (F20)",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "crimsonfish",
-    "gameId": 159,
+    "gameId": "(O)159",
     "name": "Crimsonfish",
     "icon": "assets/objects/Crimsonfish.png",
     "difficulty": 95,
@@ -3065,21 +2285,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "summer"
-        ]
-      }
-    ],
-    "minFishingLevel": 5
+    "sources": []
   },
   {
     "type": "fish",
     "id": "angler",
-    "gameId": 160,
+    "gameId": "(O)160",
     "name": "Angler",
     "icon": "assets/objects/Angler.png",
     "difficulty": 85,
@@ -3150,21 +2361,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall"
-        ]
-      }
-    ],
-    "minFishingLevel": 3
+    "sources": []
   },
   {
     "type": "fish",
     "id": "ice-pip",
-    "gameId": 161,
+    "gameId": "(O)161",
     "name": "Ice Pip",
     "icon": "assets/objects/IcePip.png",
     "difficulty": 85,
@@ -3237,18 +2439,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mines (F60)",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "lava-eel",
-    "gameId": 162,
+    "gameId": "(O)162",
     "name": "Lava Eel",
     "icon": "assets/objects/LavaEel.png",
     "difficulty": 90,
@@ -3309,7 +2505,7 @@
       "marnie": "dislike",
       "elliott": "neutral",
       "gus": "dislike",
-      "dwarf": "love",
+      "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
@@ -3321,23 +2517,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mines (F100)",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Volcano Caldera",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "legend",
-    "gameId": 163,
+    "gameId": "(O)163",
     "name": "Legend",
     "icon": "assets/objects/Legend.png",
     "difficulty": 110,
@@ -3407,36 +2592,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "crafting",
-        "recipeName": "Cask",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 20
-          },
-          {
-            "gameId": 709,
-            "amount": 1
-          }
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "spring"
-        ]
-      }
-    ],
-    "minFishingLevel": 10
+    "sources": []
   },
   {
     "type": "fish",
     "id": "sandfish",
-    "gameId": 164,
+    "gameId": "(O)164",
     "name": "Sandfish",
     "icon": "assets/objects/Sandfish.png",
     "difficulty": 65,
@@ -3466,9 +2627,7 @@
       "fish_has_roe",
       "season_all"
     ],
-    "bundles": [
-      "specialty-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -3483,7 +2642,7 @@
       "evelyn": "hate",
       "lewis": "dislike",
       "clint": "dislike",
-      "penny": "love",
+      "penny": "dislike",
       "pam": "neutral",
       "emily": "dislike",
       "haley": "hate",
@@ -3509,18 +2668,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Desert",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "scorpion-carp",
-    "gameId": 165,
+    "gameId": "(O)165",
     "name": "Scorpion Carp",
     "icon": "assets/objects/ScorpionCarp.png",
     "difficulty": 90,
@@ -3592,18 +2745,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Desert",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "flounder",
-    "gameId": 267,
+    "gameId": "(O)267",
     "name": "Flounder",
     "icon": "assets/objects/Flounder.png",
     "difficulty": 50,
@@ -3637,7 +2784,7 @@
       "robin": "dislike",
       "demetrius": "neutral",
       "maru": "dislike",
-      "sebastian": "like",
+      "sebastian": "neutral",
       "linus": "neutral",
       "pierre": "hate",
       "caroline": "dislike",
@@ -3673,41 +2820,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island Pirate Cove",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island South",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Southeast",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "spring",
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "midnight-carp",
-    "gameId": 269,
+    "gameId": "(O)269",
     "name": "Midnight Carp",
     "icon": "assets/objects/MidnightCarp.png",
     "difficulty": 55,
@@ -3777,39 +2895,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island North",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "clam",
-    "gameId": 372,
+    "gameId": "(O)372",
     "name": "Clam",
     "icon": "assets/objects/Clam.png",
     "difficulty": 0,
@@ -3833,9 +2924,7 @@
       "forage_item",
       "forage_item_beach"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -3886,23 +2975,13 @@
           "fall",
           "winter"
         ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "forage",
-      "id": "clam",
-      "context": "Beach foraging"
-    }
+    ]
   },
   {
     "type": "fish",
     "id": "mutant-carp",
-    "gameId": 682,
+    "gameId": "(O)682",
     "name": "Mutant Carp",
     "icon": "assets/objects/MutantCarp.png",
     "difficulty": 80,
@@ -3972,18 +3051,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Sewers",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "sturgeon",
-    "gameId": 698,
+    "gameId": "(O)698",
     "name": "Sturgeon",
     "icon": "assets/objects/Sturgeon.png",
     "difficulty": 78,
@@ -4012,9 +3085,7 @@
       "season_summer",
       "season_winter"
     ],
-    "bundles": [
-      "lake-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4047,7 +3118,7 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "love",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -4055,21 +3126,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "tiger-trout",
-    "gameId": 699,
+    "gameId": "(O)699",
     "name": "Tiger Trout",
     "icon": "assets/objects/TigerTrout.png",
     "difficulty": 60,
@@ -4100,9 +3162,7 @@
       "season_fall",
       "season_winter"
     ],
-    "bundles": [
-      "river-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4135,7 +3195,7 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "like",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -4143,29 +3203,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "bullhead",
-    "gameId": 700,
+    "gameId": "(O)700",
     "name": "Bullhead",
     "icon": "assets/objects/Bullhead.png",
     "difficulty": 46,
@@ -4195,9 +3238,7 @@
       "fish_lake",
       "season_all"
     ],
-    "bundles": [
-      "lake-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4238,18 +3279,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "tilapia",
-    "gameId": 701,
+    "gameId": "(O)701",
     "name": "Tilapia",
     "icon": "assets/objects/Tilapia.png",
     "difficulty": 50,
@@ -4278,9 +3313,7 @@
       "season_fall",
       "season_summer"
     ],
-    "bundles": [
-      "ocean-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4321,31 +3354,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island North",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "chub",
-    "gameId": 702,
+    "gameId": "(O)702",
     "name": "Chub",
     "icon": "assets/objects/Chub.png",
     "difficulty": 35,
@@ -4376,9 +3390,7 @@
       "fish_river",
       "season_all"
     ],
-    "bundles": [
-      "field-research"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4419,23 +3431,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "dorado",
-    "gameId": 704,
+    "gameId": "(O)704",
     "name": "Dorado",
     "icon": "assets/objects/Dorado.png",
     "difficulty": 78,
@@ -4504,20 +3505,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "albacore",
-    "gameId": 705,
+    "gameId": "(O)705",
     "name": "Albacore",
     "icon": "assets/objects/Albacore.png",
     "difficulty": 60,
@@ -4591,21 +3584,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "fall",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "shad",
-    "gameId": 706,
+    "gameId": "(O)706",
     "name": "Shad",
     "icon": "assets/objects/Shad.png",
     "difficulty": 45,
@@ -4636,9 +3620,7 @@
       "season_spring",
       "season_summer"
     ],
-    "bundles": [
-      "river-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -4679,31 +3661,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "fall",
-          "spring",
-          "summer"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "fall",
-          "spring",
-          "summer"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "lingcod",
-    "gameId": 707,
+    "gameId": "(O)707",
     "name": "Lingcod",
     "icon": "assets/objects/Lingcod.png",
     "difficulty": 85,
@@ -4765,7 +3728,7 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "like",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "neutral"
     },
@@ -4773,34 +3736,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": [
-          "winter"
-        ]
-      },
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": [
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "halibut",
-    "gameId": 708,
+    "gameId": "(O)708",
     "name": "Halibut",
     "icon": "assets/objects/Halibut.png",
     "difficulty": 50,
@@ -4876,22 +3817,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": [
-          "spring",
-          "summer",
-          "winter"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "lobster",
-    "gameId": 715,
+    "gameId": "(O)715",
     "name": "Lobster",
     "icon": "assets/objects/Lobster.png",
     "difficulty": 0,
@@ -4911,83 +3842,7 @@
       "fish_has_roe",
       "fish_ocean"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
-    "gifts": {
-      "robin": "dislike",
-      "demetrius": "neutral",
-      "maru": "dislike",
-      "sebastian": "neutral",
-      "linus": "neutral",
-      "pierre": "hate",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "hate",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
-      "pam": "neutral",
-      "emily": "dislike",
-      "haley": "hate",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "love",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "neutral",
-      "krobus": "dislike",
-      "leo": "neutral"
-    },
-    "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
-    ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
-      }
-    ]
-  },
-  {
-    "type": "fish",
-    "id": "crayfish",
-    "gameId": 716,
-    "name": "Crayfish",
-    "icon": "assets/objects/Crayfish.png",
-    "difficulty": 0,
-    "behaviorType": "trap",
-    "minSize": 1,
-    "maxSize": 8,
-    "times": [],
-    "seasons": [],
-    "weather": "both",
-    "isTrapFish": true,
-    "price": 75,
-    "edibility": -300,
-    "gameCategory": -4,
-    "contextTags": [
-      "color_dark_gray",
-      "fish_crab_pot",
-      "fish_freshwater",
-      "fish_has_roe"
-    ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5028,18 +3883,78 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Freshwater (Crab Pot)",
-        "seasons": null
-      }
-    ]
+    "sources": []
+  },
+  {
+    "type": "fish",
+    "id": "crayfish",
+    "gameId": "(O)716",
+    "name": "Crayfish",
+    "icon": "assets/objects/Crayfish.png",
+    "difficulty": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 8,
+    "times": [],
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
+    "price": 75,
+    "edibility": -300,
+    "gameCategory": -4,
+    "contextTags": [
+      "color_dark_gray",
+      "fish_crab_pot",
+      "fish_freshwater",
+      "fish_has_roe"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "hate",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "sources": []
   },
   {
     "type": "fish",
     "id": "crab",
-    "gameId": 717,
+    "gameId": "(O)717",
     "name": "Crab",
     "icon": "assets/objects/Crab.png",
     "difficulty": 0,
@@ -5060,9 +3975,7 @@
       "fish_ocean",
       "fish_upright"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5130,18 +4043,13 @@
         "type": "monster-drop",
         "monster": "Lava Crab",
         "chance": 0.25
-      },
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
       }
     ]
   },
   {
     "type": "fish",
     "id": "cockle",
-    "gameId": 718,
+    "gameId": "(O)718",
     "name": "Cockle",
     "icon": "assets/objects/Cockle.png",
     "difficulty": 0,
@@ -5163,9 +4071,7 @@
       "forage_item",
       "forage_item_beach"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5216,23 +4122,13 @@
           "fall",
           "winter"
         ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "forage",
-      "id": "cockle",
-      "context": "Beach foraging"
-    }
+    ]
   },
   {
     "type": "fish",
     "id": "mussel",
-    "gameId": 719,
+    "gameId": "(O)719",
     "name": "Mussel",
     "icon": "assets/objects/Mussel.png",
     "difficulty": 0,
@@ -5254,9 +4150,7 @@
       "forage_item",
       "forage_item_beach"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5307,23 +4201,13 @@
           "fall",
           "winter"
         ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "forage",
-      "id": "mussel",
-      "context": "Beach foraging"
-    }
+    ]
   },
   {
     "type": "fish",
     "id": "shrimp",
-    "gameId": 720,
+    "gameId": "(O)720",
     "name": "Shrimp",
     "icon": "assets/objects/Shrimp.png",
     "difficulty": 0,
@@ -5344,9 +4228,7 @@
       "fish_ocean",
       "fish_upright"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5387,18 +4269,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "snail",
-    "gameId": 721,
+    "gameId": "(O)721",
     "name": "Snail",
     "icon": "assets/objects/Snail.png",
     "difficulty": 0,
@@ -5419,84 +4295,7 @@
       "fish_has_roe",
       "fish_upright"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
-    "gifts": {
-      "robin": "hate",
-      "demetrius": "neutral",
-      "maru": "hate",
-      "sebastian": "neutral",
-      "linus": "neutral",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "hate",
-      "pam": "neutral",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "love",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
-      "leah": "hate",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "neutral",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
-      "harvey": "hate",
-      "sandy": "hate",
-      "willy": "neutral",
-      "krobus": "hate",
-      "leo": "neutral"
-    },
-    "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
-    ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Freshwater (Crab Pot)",
-        "seasons": null
-      }
-    ]
-  },
-  {
-    "type": "fish",
-    "id": "periwinkle",
-    "gameId": 722,
-    "name": "Periwinkle",
-    "icon": "assets/objects/Periwinkle.png",
-    "difficulty": 0,
-    "behaviorType": "trap",
-    "minSize": 1,
-    "maxSize": 3,
-    "times": [],
-    "seasons": [],
-    "weather": "both",
-    "isTrapFish": true,
-    "price": 20,
-    "edibility": -300,
-    "gameCategory": -4,
-    "contextTags": [
-      "color_cyan",
-      "fish_crab_pot",
-      "fish_freshwater",
-      "fish_has_roe",
-      "fish_upright"
-    ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5537,18 +4336,79 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Freshwater (Crab Pot)",
-        "seasons": null
-      }
-    ]
+    "sources": []
+  },
+  {
+    "type": "fish",
+    "id": "periwinkle",
+    "gameId": "(O)722",
+    "name": "Periwinkle",
+    "icon": "assets/objects/Periwinkle.png",
+    "difficulty": 0,
+    "behaviorType": "trap",
+    "minSize": 1,
+    "maxSize": 3,
+    "times": [],
+    "seasons": [],
+    "weather": "both",
+    "isTrapFish": true,
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": -4,
+    "contextTags": [
+      "color_cyan",
+      "fish_crab_pot",
+      "fish_freshwater",
+      "fish_has_roe",
+      "fish_upright"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "dislike",
+      "demetrius": "neutral",
+      "maru": "dislike",
+      "sebastian": "neutral",
+      "linus": "neutral",
+      "pierre": "hate",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "hate",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "neutral",
+      "emily": "dislike",
+      "haley": "hate",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "neutral",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "neutral",
+      "krobus": "dislike",
+      "leo": "neutral"
+    },
+    "sellingLocations": [
+      "store-willy",
+      "store-shipping-bin"
+    ],
+    "sources": []
   },
   {
     "type": "fish",
     "id": "oyster",
-    "gameId": 723,
+    "gameId": "(O)723",
     "name": "Oyster",
     "icon": "assets/objects/Oyster.png",
     "difficulty": 0,
@@ -5571,9 +4431,7 @@
       "forage_item",
       "forage_item_beach"
     ],
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5624,23 +4482,13 @@
           "fall",
           "winter"
         ]
-      },
-      {
-        "type": "fish",
-        "location": "Ocean (Crab Pot)",
-        "seasons": null
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "forage",
-      "id": "oyster",
-      "context": "Beach foraging"
-    }
+    ]
   },
   {
     "type": "fish",
     "id": "woodskip",
-    "gameId": 734,
+    "gameId": "(O)734",
     "name": "Woodskip",
     "icon": "assets/objects/Woodskip.png",
     "difficulty": 50,
@@ -5671,9 +4519,7 @@
       "fish_secret_pond",
       "season_all"
     ],
-    "bundles": [
-      "specialty-fish"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5714,23 +4560,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest Farm",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Secret Woods",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "glacierfish",
-    "gameId": 775,
+    "gameId": "(O)775",
     "name": "Glacierfish",
     "icon": "assets/objects/Glacierfish.png",
     "difficulty": 100,
@@ -5798,21 +4633,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": [
-          "winter"
-        ]
-      }
-    ],
-    "minFishingLevel": 6
+    "sources": []
   },
   {
     "type": "fish",
     "id": "void-salmon",
-    "gameId": 795,
+    "gameId": "(O)795",
     "name": "Void Salmon",
     "icon": "assets/objects/VoidSalmon.png",
     "difficulty": 80,
@@ -5844,9 +4670,7 @@
       "fish_talk_stiff",
       "season_all"
     ],
-    "bundles": [
-      "the-missing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -5887,18 +4711,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Witch's Swamp",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "slimejack",
-    "gameId": 796,
+    "gameId": "(O)796",
     "name": "Slimejack",
     "icon": "assets/objects/Slimejack.png",
     "difficulty": 55,
@@ -5970,18 +4788,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mutant Bug Lair",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "midnight-squid",
-    "gameId": 798,
+    "gameId": "(O)798",
     "name": "Midnight Squid",
     "icon": "assets/objects/MidnightSquid.png",
     "difficulty": 55,
@@ -6054,18 +4866,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "spook-fish",
-    "gameId": 799,
+    "gameId": "(O)799",
     "name": "Spook Fish",
     "icon": "assets/objects/SpookFish.png",
     "difficulty": 60,
@@ -6136,18 +4942,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "blobfish",
-    "gameId": 800,
+    "gameId": "(O)800",
     "name": "Blobfish",
     "icon": "assets/objects/Blobfish.png",
     "difficulty": 75,
@@ -6218,18 +5018,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "stingray",
-    "gameId": 836,
+    "gameId": "(O)836",
     "name": "Stingray",
     "icon": "assets/objects/Stingray.png",
     "difficulty": 80,
@@ -6301,18 +5095,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island Pirate Cove",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "lionfish",
-    "gameId": 837,
+    "gameId": "(O)837",
     "name": "Lionfish",
     "icon": "assets/objects/Lionfish.png",
     "difficulty": 50,
@@ -6384,28 +5172,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island South",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island Southeast",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "blue-discus",
-    "gameId": 838,
+    "gameId": "(O)838",
     "name": "Blue Discus",
     "icon": "assets/objects/BlueDiscus.png",
     "difficulty": 60,
@@ -6476,23 +5248,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Ginger Island North",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ginger Island West",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "son-of-crimsonfish",
-    "gameId": 898,
+    "gameId": "(O)898",
     "name": "Son of Crimsonfish",
     "icon": "assets/objects/SonOfCrimsonfish.png",
     "difficulty": 95,
@@ -6560,24 +5321,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Night Market",
-        "seasons": null
-      },
-      {
-        "type": "fish",
-        "location": "Ocean",
-        "seasons": null
-      }
-    ],
-    "minFishingLevel": 5
+    "sources": []
   },
   {
     "type": "fish",
     "id": "ms-angler",
-    "gameId": 899,
+    "gameId": "(O)899",
     "name": "Ms. Angler",
     "icon": "assets/objects/MsAngler.png",
     "difficulty": 85,
@@ -6649,19 +5398,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Town River",
-        "seasons": null
-      }
-    ],
-    "minFishingLevel": 3
+    "sources": []
   },
   {
     "type": "fish",
     "id": "legend-ii",
-    "gameId": 900,
+    "gameId": "(O)900",
     "name": "Legend II",
     "icon": "assets/objects/LegendII.png",
     "difficulty": 110,
@@ -6732,19 +5474,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Mountain Lake",
-        "seasons": null
-      }
-    ],
-    "minFishingLevel": 10
+    "sources": []
   },
   {
     "type": "fish",
     "id": "radioactive-carp",
-    "gameId": 901,
+    "gameId": "(O)901",
     "name": "Radioactive Carp",
     "icon": "assets/objects/RadioactiveCarp.png",
     "difficulty": 80,
@@ -6815,18 +5550,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Sewers",
-        "seasons": null
-      }
-    ]
+    "sources": []
   },
   {
     "type": "fish",
     "id": "glacierfish-jr",
-    "gameId": 902,
+    "gameId": "(O)902",
     "name": "Glacierfish Jr.",
     "icon": "assets/objects/GlacierfishJr.png",
     "difficulty": 100,
@@ -6894,19 +5623,12 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": null
-      }
-    ],
-    "minFishingLevel": 6
+    "sources": []
   },
   {
     "type": "fish",
     "id": "goby",
-    "gameId": "Goby",
+    "gameId": "(O)Goby",
     "name": "Goby",
     "icon": "assets/objects/Goby.png",
     "difficulty": 55,
@@ -6978,12 +5700,6 @@
       "store-willy",
       "store-shipping-bin"
     ],
-    "sources": [
-      {
-        "type": "fish",
-        "location": "Forest River",
-        "seasons": null
-      }
-    ]
+    "sources": []
   }
 ]

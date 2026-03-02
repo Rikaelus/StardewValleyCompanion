@@ -162,6 +162,28 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
       )
     }
 
+    // Cooked food can only be normal or iridium quality (via Qi's Seasoning)
+    if (item.type === 'food') {
+      return (
+        <div className={`item-sell-price-container ${className}`}>
+          <div className="item-sell-price item-sell-price-qualities">
+            <span className="price-regular" title="Regular Quality">
+              {regularPrice}g
+            </span>
+            <span className="price-iridium" title="Iridium Quality (Qi's Seasoning)">
+              {Math.floor(basePrice * 2.0 * multiplier)}g
+            </span>
+          </div>
+          {appliedProfession && (
+            <div className="profession-badge">
+              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+            </div>
+          )}
+        </div>
+      )
+    }
+
     // If item has explicit quality prices, use those
     if (hasQualityPrices && item.prices.silver) {
       return (

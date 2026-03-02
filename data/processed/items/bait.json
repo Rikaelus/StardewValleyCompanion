@@ -1,8 +1,8 @@
 [
   {
     "type": "bait",
-    "id": "bait-685",
-    "gameId": 685,
+    "id": "bait-(O)685",
+    "gameId": "(O)685",
     "name": "Bait",
     "icon": "assets/objects/Bait.png",
     "price": 1,
@@ -88,8 +88,8 @@
   },
   {
     "type": "bait",
-    "id": "bait-SpecificBait",
-    "gameId": "SpecificBait",
+    "id": "bait-(O)SpecificBait",
+    "gameId": "(O)SpecificBait",
     "name": "Bait",
     "icon": "assets/objects/SpecificBait.png",
     "price": 5,
@@ -145,7 +145,7 @@
   {
     "type": "bait",
     "id": "challenge-bait",
-    "gameId": "ChallengeBait",
+    "gameId": "(O)ChallengeBait",
     "name": "Challenge Bait",
     "icon": "assets/objects/ChallengeBait.png",
     "price": 1,
@@ -215,7 +215,7 @@
   {
     "type": "bait",
     "id": "deluxe-bait",
-    "gameId": "DeluxeBait",
+    "gameId": "(O)DeluxeBait",
     "name": "Deluxe Bait",
     "icon": "assets/objects/DeluxeBait.png",
     "price": 1,
@@ -316,7 +316,7 @@
   {
     "type": "bait",
     "id": "magic-bait",
-    "gameId": 908,
+    "gameId": "(O)908",
     "name": "Magic Bait",
     "icon": "assets/objects/MagicBait.png",
     "price": 1,
@@ -400,7 +400,7 @@
   {
     "type": "bait",
     "id": "magnet",
-    "gameId": 703,
+    "gameId": "(O)703",
     "name": "Magnet",
     "icon": "assets/objects/Magnet.png",
     "price": 15,
@@ -485,7 +485,7 @@
   {
     "type": "bait",
     "id": "wild-bait",
-    "gameId": 774,
+    "gameId": "(O)774",
     "name": "Wild Bait",
     "icon": "assets/objects/WildBait.png",
     "price": 15,
@@ -503,7 +503,7 @@
       "demetrius": "hate",
       "maru": "hate",
       "sebastian": "hate",
-      "linus": "neutral",
+      "linus": "hate",
       "pierre": "hate",
       "caroline": "hate",
       "abigail": "hate",

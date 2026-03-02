@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { formatConditionClauses } from '../../utils/Formatters'
 import { evaluateCondition } from '../../utils/ConditionEvaluator'
 import { usePlayer } from '../../contexts/PlayerContext'
+import { useEntities } from '../../contexts/EntityContext'
 
 /**
  * Renders a JSON Logic condition as qualifier badge(s).
@@ -15,11 +16,12 @@ import { usePlayer } from '../../contexts/PlayerContext'
  *     {(clauses, open) => open && <span className="source-entry ..."><td>{clauses}</td></span>}
  *   </ConditionBadge>
  */
-function ConditionBadge({ condition, conditionItemNames, eventNames, children }) {
+function ConditionBadge({ condition, conditionItemNames, children }) {
   const [open, setOpen] = useState(false)
   const { player } = usePlayer()
+  const { eventNames, achievementNames } = useEntities()
   const isMet = player?.saveLoaded ? evaluateCondition(condition, player) : null
-  const clauses = formatConditionClauses(condition, conditionItemNames, eventNames)
+  const clauses = formatConditionClauses(condition, conditionItemNames, eventNames, achievementNames)
 
   const metClass = isMet === true ? ' source-condition--met'
     : isMet === false ? ' source-condition--unmet'

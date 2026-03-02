@@ -26,6 +26,12 @@ const TYPE_LABELS = {
   'buff': 'Buff',
   'event': 'Event',
   'villager': 'Villager',
+  'festival': 'Festival',
+  'weapon': 'Weapon',
+  'boot': 'Boots',
+  'trinket': 'Trinket',
+  'tool': 'Tool',
+  'building': 'Building',
 }
 
 function GlobalSearch({ isOpen, onClose }) {

@@ -1,5 +1,7 @@
 /* Unified button + label layout — the whole thing is one clickable button */
 .item-button--with-label {
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
   background: none;
   padding: 0;

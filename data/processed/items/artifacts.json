@@ -2,7 +2,7 @@
   {
     "type": "artifact",
     "id": "amphibian-fossil",
-    "gameId": 587,
+    "gameId": "(O)587",
     "name": "Amphibian Fossil",
     "icon": "assets/objects/AmphibianFossil.png",
     "price": 150,
@@ -61,7 +61,7 @@
   {
     "type": "artifact",
     "id": "ancient-doll",
-    "gameId": 103,
+    "gameId": "(O)103",
     "name": "Ancient Doll",
     "icon": "assets/objects/AncientDoll.png",
     "price": 60,
@@ -132,7 +132,7 @@
   {
     "type": "artifact",
     "id": "ancient-sword",
-    "gameId": 109,
+    "gameId": "(O)109",
     "name": "Ancient Sword",
     "icon": "assets/objects/AncientSword.png",
     "price": 100,
@@ -156,7 +156,7 @@
       "linus": "hate",
       "pierre": "hate",
       "caroline": "hate",
-      "abigail": "like",
+      "abigail": "hate",
       "alex": "hate",
       "george": "hate",
       "evelyn": "hate",
@@ -189,7 +189,7 @@
   {
     "type": "artifact",
     "id": "chipped-amphora",
-    "gameId": 100,
+    "gameId": "(O)100",
     "name": "Chipped Amphora",
     "icon": "assets/objects/ChippedAmphora.png",
     "price": 40,
@@ -260,7 +260,7 @@
   {
     "type": "artifact",
     "id": "dwarf-scroll-ii",
-    "gameId": 97,
+    "gameId": "(O)97",
     "name": "Dwarf Scroll II",
     "icon": "assets/objects/DwarfScrollII.png",
     "price": 1,
@@ -304,7 +304,7 @@
       "marnie": "hate",
       "elliott": "hate",
       "gus": "hate",
-      "dwarf": "like",
+      "dwarf": "hate",
       "wizard": "hate",
       "harvey": "hate",
       "sandy": "hate",
@@ -343,7 +343,7 @@
   {
     "type": "artifact",
     "id": "nautilus-fossil",
-    "gameId": 586,
+    "gameId": "(O)586",
     "name": "Nautilus Fossil",
     "icon": "assets/objects/NautilusFossil.png",
     "price": 80,
@@ -402,7 +402,7 @@
   {
     "type": "artifact",
     "id": "palm-fossil",
-    "gameId": 588,
+    "gameId": "(O)588",
     "name": "Palm Fossil",
     "icon": "assets/objects/PalmFossil.png",
     "price": 100,
@@ -465,7 +465,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-rib",
-    "gameId": 583,
+    "gameId": "(O)583",
     "name": "Prehistoric Rib",
     "icon": "assets/objects/PrehistoricRib.png",
     "price": 100,
@@ -528,7 +528,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-scapula",
-    "gameId": 579,
+    "gameId": "(O)579",
     "name": "Prehistoric Scapula",
     "icon": "assets/objects/PrehistoricScapula.png",
     "price": 100,
@@ -596,7 +596,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-skull",
-    "gameId": 581,
+    "gameId": "(O)581",
     "name": "Prehistoric Skull",
     "icon": "assets/objects/PrehistoricSkull.png",
     "price": 100,
@@ -659,7 +659,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-tibia",
-    "gameId": 580,
+    "gameId": "(O)580",
     "name": "Prehistoric Tibia",
     "icon": "assets/objects/PrehistoricTibia.png",
     "price": 100,
@@ -722,7 +722,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-tool",
-    "gameId": 115,
+    "gameId": "(O)115",
     "name": "Prehistoric Tool",
     "icon": "assets/objects/PrehistoricTool.png",
     "price": 50,
@@ -779,7 +779,7 @@
   {
     "type": "artifact",
     "id": "prehistoric-vertebra",
-    "gameId": 584,
+    "gameId": "(O)584",
     "name": "Prehistoric Vertebra",
     "icon": "assets/objects/PrehistoricVertebra.png",
     "price": 100,
@@ -842,7 +842,7 @@
   {
     "type": "artifact",
     "id": "skeletal-hand",
-    "gameId": 582,
+    "gameId": "(O)582",
     "name": "Skeletal Hand",
     "icon": "assets/objects/SkeletalHand.png",
     "price": 100,
@@ -917,7 +917,7 @@
   {
     "type": "artifact",
     "id": "skeletal-tail",
-    "gameId": 585,
+    "gameId": "(O)585",
     "name": "Skeletal Tail",
     "icon": "assets/objects/SkeletalTail.png",
     "price": 100,
@@ -974,7 +974,7 @@
   {
     "type": "artifact",
     "id": "trilobite",
-    "gameId": 589,
+    "gameId": "(O)589",
     "name": "Trilobite",
     "icon": "assets/objects/Trilobite.png",
     "price": 50,

@@ -2,7 +2,7 @@
   {
     "type": "flooring",
     "id": "brick-floor",
-    "gameId": 293,
+    "gameId": "(O)293",
     "name": "Brick Floor",
     "icon": "assets/objects/BrickFloor.png",
     "price": 1,
@@ -76,7 +76,7 @@
   {
     "type": "flooring",
     "id": "cobblestone-path",
-    "gameId": 411,
+    "gameId": "(O)411",
     "name": "Cobblestone Path",
     "icon": "assets/objects/CobblestonePath.png",
     "price": 1,
@@ -141,7 +141,7 @@
   {
     "type": "flooring",
     "id": "crystal-floor",
-    "gameId": 333,
+    "gameId": "(O)333",
     "name": "Crystal Floor",
     "icon": "assets/objects/CrystalFloor.png",
     "price": 1,
@@ -206,7 +206,7 @@
   {
     "type": "flooring",
     "id": "crystal-path",
-    "gameId": 409,
+    "gameId": "(O)409",
     "name": "Crystal Path",
     "icon": "assets/objects/CrystalPath.png",
     "price": 1,
@@ -271,7 +271,7 @@
   {
     "type": "flooring",
     "id": "gravel-path",
-    "gameId": 407,
+    "gameId": "(O)407",
     "name": "Gravel Path",
     "icon": "assets/objects/GravelPath.png",
     "price": 1,
@@ -336,7 +336,7 @@
   {
     "type": "flooring",
     "id": "rustic-plank-floor",
-    "gameId": 840,
+    "gameId": "(O)840",
     "name": "Rustic Plank Floor",
     "icon": "assets/objects/RusticPlankFloor.png",
     "price": 1,
@@ -401,7 +401,7 @@
   {
     "type": "flooring",
     "id": "stepping-stone-path",
-    "gameId": 415,
+    "gameId": "(O)415",
     "name": "Stepping Stone Path",
     "icon": "assets/objects/SteppingStonePath.png",
     "price": 1,
@@ -466,7 +466,7 @@
   {
     "type": "flooring",
     "id": "stone-floor",
-    "gameId": 329,
+    "gameId": "(O)329",
     "name": "Stone Floor",
     "icon": "assets/objects/StoneFloor.png",
     "price": 1,
@@ -536,7 +536,7 @@
   {
     "type": "flooring",
     "id": "stone-walkway-floor",
-    "gameId": 841,
+    "gameId": "(O)841",
     "name": "Stone Walkway Floor",
     "icon": "assets/objects/StoneWalkwayFloor.png",
     "price": 1,
@@ -601,7 +601,7 @@
   {
     "type": "flooring",
     "id": "straw-floor",
-    "gameId": 401,
+    "gameId": "(O)401",
     "name": "Straw Floor",
     "icon": "assets/objects/StrawFloor.png",
     "price": 1,
@@ -670,7 +670,7 @@
   {
     "type": "flooring",
     "id": "tea-set",
-    "gameId": 341,
+    "gameId": "(O)341",
     "name": "Tea Set",
     "icon": "assets/objects/TeaSet.png",
     "price": 200,
@@ -732,7 +732,7 @@
   {
     "type": "flooring",
     "id": "weathered-floor",
-    "gameId": 331,
+    "gameId": "(O)331",
     "name": "Weathered Floor",
     "icon": "assets/objects/WeatheredFloor.png",
     "price": 1,
@@ -797,7 +797,7 @@
   {
     "type": "flooring",
     "id": "wood-floor",
-    "gameId": 328,
+    "gameId": "(O)328",
     "name": "Wood Floor",
     "icon": "assets/objects/WoodFloor.png",
     "price": 1,
@@ -862,7 +862,7 @@
   {
     "type": "flooring",
     "id": "wood-path",
-    "gameId": 405,
+    "gameId": "(O)405",
     "name": "Wood Path",
     "icon": "assets/objects/WoodPath.png",
     "price": 1,

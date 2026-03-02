@@ -2,7 +2,7 @@
   {
     "type": "artisan",
     "id": "cloth",
-    "gameId": 428,
+    "gameId": "(O)428",
     "name": "Cloth",
     "gameCategory": -26,
     "price": 470,
@@ -69,9 +69,7 @@
         "sender": "Emily"
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -88,7 +86,7 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "love",
+      "emily": "like",
       "haley": "like",
       "jas": "hate",
       "vincent": "hate",
@@ -117,7 +115,7 @@
   {
     "type": "artisan",
     "id": "beer",
-    "gameId": 346,
+    "gameId": "(O)346",
     "name": "Beer",
     "gameCategory": -26,
     "price": 200,
@@ -202,8 +200,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "hate",
-      "pam": "love",
+      "penny": "like",
+      "pam": "like",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -212,7 +210,7 @@
       "kent": "like",
       "sam": "like",
       "leah": "like",
-      "shane": "love",
+      "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
@@ -222,7 +220,7 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "dislike"
+      "leo": "like"
     },
     "processingTimeMinutes": 1750,
     "sellingLocations": [
@@ -233,7 +231,7 @@
   {
     "type": "artisan",
     "id": "pale-ale",
-    "gameId": 303,
+    "gameId": "(O)303",
     "name": "Pale Ale",
     "gameCategory": -26,
     "price": 300,
@@ -307,8 +305,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "hate",
-      "pam": "love",
+      "penny": "like",
+      "pam": "like",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -327,7 +325,7 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "dislike"
+      "leo": "like"
     },
     "processingTimeMinutes": 2250,
     "canBeAged": true,
@@ -341,7 +339,7 @@
   {
     "type": "artisan",
     "id": "green-tea",
-    "gameId": 614,
+    "gameId": "(O)614",
     "name": "Green Tea",
     "gameCategory": -26,
     "price": 100,
@@ -398,15 +396,15 @@
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "love",
+      "caroline": "like",
       "abigail": "like",
       "alex": "like",
       "george": "like",
       "evelyn": "like",
-      "lewis": "love",
+      "lewis": "like",
       "clint": "like",
       "penny": "like",
       "pam": "like",
@@ -439,7 +437,7 @@
   {
     "type": "artisan",
     "id": "coffee",
-    "gameId": 395,
+    "gameId": "(O)395",
     "name": "Coffee",
     "gameCategory": -26,
     "price": 150,
@@ -540,11 +538,11 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "love",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "neutral"
+      "leo": "like"
     },
     "processingTimeMinutes": 120,
     "sellingLocations": [
@@ -555,7 +553,7 @@
   {
     "type": "artisan",
     "id": "mead",
-    "gameId": 459,
+    "gameId": "(O)459",
     "name": "Mead",
     "gameCategory": -26,
     "price": 300,
@@ -629,8 +627,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "hate",
-      "pam": "love",
+      "penny": "like",
+      "pam": "like",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -647,9 +645,9 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "love",
+      "willy": "like",
       "krobus": "like",
-      "leo": "dislike"
+      "leo": "like"
     },
     "processingTimeMinutes": 600,
     "canBeAged": true,
@@ -663,7 +661,7 @@
   {
     "type": "artisan",
     "id": "vinegar",
-    "gameId": 419,
+    "gameId": "(O)419",
     "name": "Vinegar",
     "gameCategory": -26,
     "price": 100,
@@ -758,7 +756,7 @@
   {
     "type": "artisan",
     "id": "juice",
-    "gameId": 350,
+    "gameId": "(O)350",
     "name": "Juice",
     "gameCategory": -26,
     "price": 150,
@@ -782,7 +780,7 @@
           {
             "inputId": "pumpkin",
             "inputName": "Pumpkin",
-            "inputGameId": 276,
+            "inputGameId": "(O)276",
             "inputBasePrice": 320,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -792,7 +790,7 @@
           {
             "inputId": "red-cabbage",
             "inputName": "Red Cabbage",
-            "inputGameId": 266,
+            "inputGameId": "(O)266",
             "inputBasePrice": 260,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -802,7 +800,7 @@
           {
             "inputId": "cauliflower",
             "inputName": "Cauliflower",
-            "inputGameId": 190,
+            "inputGameId": "(O)190",
             "inputBasePrice": 175,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -812,7 +810,7 @@
           {
             "inputId": "artichoke",
             "inputName": "Artichoke",
-            "inputGameId": 274,
+            "inputGameId": "(O)274",
             "inputBasePrice": 160,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -822,7 +820,7 @@
           {
             "inputId": "yam",
             "inputName": "Yam",
-            "inputGameId": 280,
+            "inputGameId": "(O)280",
             "inputBasePrice": 160,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -832,7 +830,7 @@
           {
             "inputId": "amaranth",
             "inputName": "Amaranth",
-            "inputGameId": 300,
+            "inputGameId": "(O)300",
             "inputBasePrice": 150,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -842,7 +840,7 @@
           {
             "inputId": "kale",
             "inputName": "Kale",
-            "inputGameId": 250,
+            "inputGameId": "(O)250",
             "inputBasePrice": 110,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -852,7 +850,7 @@
           {
             "inputId": "beet",
             "inputName": "Beet",
-            "inputGameId": 284,
+            "inputGameId": "(O)284",
             "inputBasePrice": 100,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -862,7 +860,7 @@
           {
             "inputId": "taro-root",
             "inputName": "Taro Root",
-            "inputGameId": 830,
+            "inputGameId": "(O)830",
             "inputBasePrice": 100,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -872,7 +870,7 @@
           {
             "inputId": "radish",
             "inputName": "Radish",
-            "inputGameId": 264,
+            "inputGameId": "(O)264",
             "inputBasePrice": 90,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -882,7 +880,7 @@
           {
             "inputId": "potato",
             "inputName": "Potato",
-            "inputGameId": 192,
+            "inputGameId": "(O)192",
             "inputBasePrice": 80,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -892,7 +890,7 @@
           {
             "inputId": "bok-choy",
             "inputName": "Bok Choy",
-            "inputGameId": 278,
+            "inputGameId": "(O)278",
             "inputBasePrice": 80,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -902,7 +900,7 @@
           {
             "inputId": "broccoli",
             "inputName": "Broccoli",
-            "inputGameId": "Broccoli",
+            "inputGameId": "(O)Broccoli",
             "inputBasePrice": 70,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -912,7 +910,7 @@
           {
             "inputId": "garlic",
             "inputName": "Garlic",
-            "inputGameId": 248,
+            "inputGameId": "(O)248",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -922,7 +920,7 @@
           {
             "inputId": "tomato",
             "inputName": "Tomato",
-            "inputGameId": 256,
+            "inputGameId": "(O)256",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -932,7 +930,7 @@
           {
             "inputId": "eggplant",
             "inputName": "Eggplant",
-            "inputGameId": 272,
+            "inputGameId": "(O)272",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -942,7 +940,7 @@
           {
             "inputId": "corn",
             "inputName": "Corn",
-            "inputGameId": 270,
+            "inputGameId": "(O)270",
             "inputBasePrice": 50,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -952,7 +950,7 @@
           {
             "inputId": "summer-squash",
             "inputName": "Summer Squash",
-            "inputGameId": "SummerSquash",
+            "inputGameId": "(O)SummerSquash",
             "inputBasePrice": 45,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -962,7 +960,7 @@
           {
             "inputId": "green-bean",
             "inputName": "Green Bean",
-            "inputGameId": 188,
+            "inputGameId": "(O)188",
             "inputBasePrice": 40,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -972,7 +970,7 @@
           {
             "inputId": "parsnip",
             "inputName": "Parsnip",
-            "inputGameId": 24,
+            "inputGameId": "(O)24",
             "inputBasePrice": 35,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -982,7 +980,7 @@
           {
             "inputId": "carrot",
             "inputName": "Carrot",
-            "inputGameId": "Carrot",
+            "inputGameId": "(O)Carrot",
             "inputBasePrice": 35,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -992,7 +990,7 @@
           {
             "inputId": "unmilled-rice",
             "inputName": "Unmilled Rice",
-            "inputGameId": 271,
+            "inputGameId": "(O)271",
             "inputBasePrice": 30,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1002,7 +1000,7 @@
           {
             "inputId": "hops",
             "inputName": "Hops",
-            "inputGameId": 304,
+            "inputGameId": "(O)304",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1012,7 +1010,7 @@
           {
             "inputId": "wheat",
             "inputName": "Wheat",
-            "inputGameId": 262,
+            "inputGameId": "(O)262",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1071,7 +1069,7 @@
   {
     "type": "artisan",
     "id": "wine",
-    "gameId": 348,
+    "gameId": "(O)348",
     "name": "Wine",
     "gameCategory": -26,
     "price": 400,
@@ -1106,7 +1104,7 @@
           {
             "inputId": "starfruit",
             "inputName": "Starfruit",
-            "inputGameId": 268,
+            "inputGameId": "(O)268",
             "inputBasePrice": 750,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1116,7 +1114,7 @@
           {
             "inputId": "ancient-fruit",
             "inputName": "Ancient Fruit",
-            "inputGameId": 454,
+            "inputGameId": "(O)454",
             "inputBasePrice": 550,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1126,7 +1124,7 @@
           {
             "inputId": "pineapple",
             "inputName": "Pineapple",
-            "inputGameId": 832,
+            "inputGameId": "(O)832",
             "inputBasePrice": 300,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1136,7 +1134,7 @@
           {
             "inputId": "melon",
             "inputName": "Melon",
-            "inputGameId": 254,
+            "inputGameId": "(O)254",
             "inputBasePrice": 250,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1146,7 +1144,7 @@
           {
             "inputId": "rhubarb",
             "inputName": "Rhubarb",
-            "inputGameId": 252,
+            "inputGameId": "(O)252",
             "inputBasePrice": 220,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1156,7 +1154,7 @@
           {
             "inputId": "strawberry",
             "inputName": "Strawberry",
-            "inputGameId": 400,
+            "inputGameId": "(O)400",
             "inputBasePrice": 120,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1166,7 +1164,7 @@
           {
             "inputId": "grape",
             "inputName": "Grape",
-            "inputGameId": 398,
+            "inputGameId": "(O)398",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1176,7 +1174,7 @@
           {
             "inputId": "spice-berry",
             "inputName": "Spice Berry",
-            "inputGameId": 396,
+            "inputGameId": "(O)396",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1186,7 +1184,7 @@
           {
             "inputId": "cranberries",
             "inputName": "Cranberries",
-            "inputGameId": 282,
+            "inputGameId": "(O)282",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1196,7 +1194,7 @@
           {
             "inputId": "cactus-fruit",
             "inputName": "Cactus Fruit",
-            "inputGameId": 90,
+            "inputGameId": "(O)90",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1206,7 +1204,7 @@
           {
             "inputId": "powdermelon",
             "inputName": "Powdermelon",
-            "inputGameId": "Powdermelon",
+            "inputGameId": "(O)Powdermelon",
             "inputBasePrice": 60,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1216,7 +1214,7 @@
           {
             "inputId": "blueberry",
             "inputName": "Blueberry",
-            "inputGameId": 258,
+            "inputGameId": "(O)258",
             "inputBasePrice": 50,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1226,7 +1224,7 @@
           {
             "inputId": "hot-pepper",
             "inputName": "Hot Pepper",
-            "inputGameId": 260,
+            "inputGameId": "(O)260",
             "inputBasePrice": 40,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1236,7 +1234,7 @@
           {
             "inputId": "qi-fruit",
             "inputName": "Qi Fruit",
-            "inputGameId": 889,
+            "inputGameId": "(O)889",
             "inputBasePrice": 1,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1246,10 +1244,7 @@
         ]
       }
     ],
-    "bundles": [
-      "enchanter-s",
-      "the-missing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -1264,7 +1259,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "hate",
+      "penny": "like",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -1273,18 +1268,18 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "love",
+      "leah": "like",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "love",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "dislike"
+      "leo": "like"
     },
     "processingTimeMinutes": 10000,
     "canBeAged": true,
@@ -1298,7 +1293,7 @@
   {
     "type": "artisan",
     "id": "pickle",
-    "gameId": 342,
+    "gameId": "(O)342",
     "name": "Pickles",
     "gameCategory": -26,
     "price": 100,
@@ -1320,7 +1315,7 @@
           {
             "inputId": "pumpkin",
             "inputName": "Pumpkin",
-            "inputGameId": 276,
+            "inputGameId": "(O)276",
             "inputBasePrice": 320,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1330,7 +1325,7 @@
           {
             "inputId": "red-cabbage",
             "inputName": "Red Cabbage",
-            "inputGameId": 266,
+            "inputGameId": "(O)266",
             "inputBasePrice": 260,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1340,7 +1335,7 @@
           {
             "inputId": "cauliflower",
             "inputName": "Cauliflower",
-            "inputGameId": 190,
+            "inputGameId": "(O)190",
             "inputBasePrice": 175,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1350,7 +1345,7 @@
           {
             "inputId": "artichoke",
             "inputName": "Artichoke",
-            "inputGameId": 274,
+            "inputGameId": "(O)274",
             "inputBasePrice": 160,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1360,7 +1355,7 @@
           {
             "inputId": "yam",
             "inputName": "Yam",
-            "inputGameId": 280,
+            "inputGameId": "(O)280",
             "inputBasePrice": 160,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1370,7 +1365,7 @@
           {
             "inputId": "amaranth",
             "inputName": "Amaranth",
-            "inputGameId": 300,
+            "inputGameId": "(O)300",
             "inputBasePrice": 150,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1380,7 +1375,7 @@
           {
             "inputId": "kale",
             "inputName": "Kale",
-            "inputGameId": 250,
+            "inputGameId": "(O)250",
             "inputBasePrice": 110,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1390,7 +1385,7 @@
           {
             "inputId": "beet",
             "inputName": "Beet",
-            "inputGameId": 284,
+            "inputGameId": "(O)284",
             "inputBasePrice": 100,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1400,7 +1395,7 @@
           {
             "inputId": "taro-root",
             "inputName": "Taro Root",
-            "inputGameId": 830,
+            "inputGameId": "(O)830",
             "inputBasePrice": 100,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1410,7 +1405,7 @@
           {
             "inputId": "radish",
             "inputName": "Radish",
-            "inputGameId": 264,
+            "inputGameId": "(O)264",
             "inputBasePrice": 90,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1420,7 +1415,7 @@
           {
             "inputId": "potato",
             "inputName": "Potato",
-            "inputGameId": 192,
+            "inputGameId": "(O)192",
             "inputBasePrice": 80,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1430,7 +1425,7 @@
           {
             "inputId": "bok-choy",
             "inputName": "Bok Choy",
-            "inputGameId": 278,
+            "inputGameId": "(O)278",
             "inputBasePrice": 80,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1440,7 +1435,7 @@
           {
             "inputId": "broccoli",
             "inputName": "Broccoli",
-            "inputGameId": "Broccoli",
+            "inputGameId": "(O)Broccoli",
             "inputBasePrice": 70,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1450,7 +1445,7 @@
           {
             "inputId": "garlic",
             "inputName": "Garlic",
-            "inputGameId": 248,
+            "inputGameId": "(O)248",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1460,7 +1455,7 @@
           {
             "inputId": "tomato",
             "inputName": "Tomato",
-            "inputGameId": 256,
+            "inputGameId": "(O)256",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1470,7 +1465,7 @@
           {
             "inputId": "eggplant",
             "inputName": "Eggplant",
-            "inputGameId": 272,
+            "inputGameId": "(O)272",
             "inputBasePrice": 60,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1480,7 +1475,7 @@
           {
             "inputId": "corn",
             "inputName": "Corn",
-            "inputGameId": 270,
+            "inputGameId": "(O)270",
             "inputBasePrice": 50,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1490,7 +1485,7 @@
           {
             "inputId": "summer-squash",
             "inputName": "Summer Squash",
-            "inputGameId": "SummerSquash",
+            "inputGameId": "(O)SummerSquash",
             "inputBasePrice": 45,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1500,7 +1495,7 @@
           {
             "inputId": "green-bean",
             "inputName": "Green Bean",
-            "inputGameId": 188,
+            "inputGameId": "(O)188",
             "inputBasePrice": 40,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1510,7 +1505,7 @@
           {
             "inputId": "parsnip",
             "inputName": "Parsnip",
-            "inputGameId": 24,
+            "inputGameId": "(O)24",
             "inputBasePrice": 35,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1520,7 +1515,7 @@
           {
             "inputId": "carrot",
             "inputName": "Carrot",
-            "inputGameId": "Carrot",
+            "inputGameId": "(O)Carrot",
             "inputBasePrice": 35,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1530,7 +1525,7 @@
           {
             "inputId": "unmilled-rice",
             "inputName": "Unmilled Rice",
-            "inputGameId": 271,
+            "inputGameId": "(O)271",
             "inputBasePrice": 30,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1540,7 +1535,7 @@
           {
             "inputId": "hops",
             "inputName": "Hops",
-            "inputGameId": 304,
+            "inputGameId": "(O)304",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1550,7 +1545,7 @@
           {
             "inputId": "wheat",
             "inputName": "Wheat",
-            "inputGameId": 262,
+            "inputGameId": "(O)262",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "vegetable",
@@ -1564,7 +1559,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "hate",
+      "maru": "like",
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
@@ -1583,19 +1578,19 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "hate",
+      "sam": "like",
       "leah": "like",
-      "shane": "hate",
+      "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "love",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "dislike"
+      "leo": "like"
     },
     "processingTimeMinutes": 4000,
     "sellingLocations": [
@@ -1606,7 +1601,7 @@
   {
     "type": "artisan",
     "id": "jelly",
-    "gameId": 344,
+    "gameId": "(O)344",
     "name": "Jelly",
     "gameCategory": -26,
     "price": 160,
@@ -1629,7 +1624,7 @@
           {
             "inputId": "starfruit",
             "inputName": "Starfruit",
-            "inputGameId": 268,
+            "inputGameId": "(O)268",
             "inputBasePrice": 750,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1639,7 +1634,7 @@
           {
             "inputId": "ancient-fruit",
             "inputName": "Ancient Fruit",
-            "inputGameId": 454,
+            "inputGameId": "(O)454",
             "inputBasePrice": 550,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1649,7 +1644,7 @@
           {
             "inputId": "pineapple",
             "inputName": "Pineapple",
-            "inputGameId": 832,
+            "inputGameId": "(O)832",
             "inputBasePrice": 300,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1659,7 +1654,7 @@
           {
             "inputId": "melon",
             "inputName": "Melon",
-            "inputGameId": 254,
+            "inputGameId": "(O)254",
             "inputBasePrice": 250,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1669,7 +1664,7 @@
           {
             "inputId": "rhubarb",
             "inputName": "Rhubarb",
-            "inputGameId": 252,
+            "inputGameId": "(O)252",
             "inputBasePrice": 220,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1679,7 +1674,7 @@
           {
             "inputId": "strawberry",
             "inputName": "Strawberry",
-            "inputGameId": 400,
+            "inputGameId": "(O)400",
             "inputBasePrice": 120,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1689,7 +1684,7 @@
           {
             "inputId": "grape",
             "inputName": "Grape",
-            "inputGameId": 398,
+            "inputGameId": "(O)398",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1699,7 +1694,7 @@
           {
             "inputId": "spice-berry",
             "inputName": "Spice Berry",
-            "inputGameId": 396,
+            "inputGameId": "(O)396",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1709,7 +1704,7 @@
           {
             "inputId": "cranberries",
             "inputName": "Cranberries",
-            "inputGameId": 282,
+            "inputGameId": "(O)282",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1719,7 +1714,7 @@
           {
             "inputId": "cactus-fruit",
             "inputName": "Cactus Fruit",
-            "inputGameId": 90,
+            "inputGameId": "(O)90",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1729,7 +1724,7 @@
           {
             "inputId": "powdermelon",
             "inputName": "Powdermelon",
-            "inputGameId": "Powdermelon",
+            "inputGameId": "(O)Powdermelon",
             "inputBasePrice": 60,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1739,7 +1734,7 @@
           {
             "inputId": "blueberry",
             "inputName": "Blueberry",
-            "inputGameId": 258,
+            "inputGameId": "(O)258",
             "inputBasePrice": 50,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1749,7 +1744,7 @@
           {
             "inputId": "hot-pepper",
             "inputName": "Hot Pepper",
-            "inputGameId": 260,
+            "inputGameId": "(O)260",
             "inputBasePrice": 40,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1759,7 +1754,7 @@
           {
             "inputId": "qi-fruit",
             "inputName": "Qi Fruit",
-            "inputGameId": 889,
+            "inputGameId": "(O)889",
             "inputBasePrice": 1,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -1769,9 +1764,7 @@
         ]
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -1790,8 +1783,8 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "like",
-      "vincent": "like",
+      "jas": "hate",
+      "vincent": "hate",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -1817,7 +1810,7 @@
   {
     "type": "artisan",
     "id": "goat-cheese",
-    "gameId": 426,
+    "gameId": "(O)426",
     "name": "Goat Cheese",
     "gameCategory": -26,
     "price": 400,
@@ -1857,11 +1850,9 @@
         ]
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "love",
+      "robin": "like",
       "demetrius": "like",
       "maru": "like",
       "sebastian": "hate",
@@ -1883,14 +1874,14 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "love",
+      "leah": "like",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "dislike",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -1908,7 +1899,7 @@
   {
     "type": "artisan",
     "id": "cheese",
-    "gameId": 424,
+    "gameId": "(O)424",
     "name": "Cheese",
     "gameCategory": -26,
     "price": 230,
@@ -1962,9 +1953,7 @@
         ]
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -1995,7 +1984,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "dislike",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -2013,7 +2002,7 @@
   {
     "type": "artisan",
     "id": "mayonnaise",
-    "gameId": 306,
+    "gameId": "(O)306",
     "name": "Mayonnaise",
     "gameCategory": -26,
     "price": 190,
@@ -2062,7 +2051,7 @@
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "dislike",
+      "caroline": "like",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -2077,7 +2066,7 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "hate",
+      "sam": "like",
       "leah": "like",
       "shane": "like",
       "marnie": "like",
@@ -2100,7 +2089,7 @@
   {
     "type": "artisan",
     "id": "duck-mayonnaise",
-    "gameId": 307,
+    "gameId": "(O)307",
     "name": "Duck Mayonnaise",
     "gameCategory": -26,
     "price": 375,
@@ -2140,7 +2129,7 @@
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "dislike",
+      "caroline": "like",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -2155,7 +2144,7 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "hate",
+      "sam": "like",
       "leah": "like",
       "shane": "like",
       "marnie": "like",
@@ -2178,7 +2167,7 @@
   {
     "type": "artisan",
     "id": "void-mayonnaise",
-    "gameId": 308,
+    "gameId": "(O)308",
     "name": "Void Mayonnaise",
     "gameCategory": -26,
     "price": 275,
@@ -2212,40 +2201,40 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "hate",
-      "demetrius": "hate",
-      "maru": "hate",
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
       "sebastian": "hate",
-      "linus": "hate",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "hate",
-      "pam": "hate",
-      "emily": "hate",
-      "haley": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
       "jas": "hate",
       "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
-      "leah": "hate",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "hate",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
-      "harvey": "hate",
-      "sandy": "hate",
-      "willy": "hate",
-      "krobus": "love",
-      "leo": "hate"
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
@@ -2256,7 +2245,7 @@
   {
     "type": "artisan",
     "id": "dinosaur-mayonnaise",
-    "gameId": 807,
+    "gameId": "(O)807",
     "name": "Dinosaur Mayonnaise",
     "gameCategory": -26,
     "price": 800,
@@ -2289,9 +2278,7 @@
         ]
       }
     ],
-    "bundles": [
-      "the-missing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -2337,7 +2324,7 @@
   {
     "type": "artisan",
     "id": "oil",
-    "gameId": 247,
+    "gameId": "(O)247",
     "name": "Oil",
     "gameCategory": -26,
     "price": 100,
@@ -2440,7 +2427,7 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "hate"
+      "leo": "like"
     },
     "processingTimeMinutes": 1000,
     "sellingLocations": [
@@ -2451,7 +2438,7 @@
   {
     "type": "artisan",
     "id": "truffle-oil",
-    "gameId": 432,
+    "gameId": "(O)432",
     "name": "Truffle Oil",
     "gameCategory": -26,
     "price": 1065,
@@ -2498,9 +2485,7 @@
         "chance": 0.1
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -2531,7 +2516,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "love",
+      "harvey": "like",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -2546,7 +2531,7 @@
   {
     "type": "artisan",
     "id": "honey",
-    "gameId": 340,
+    "gameId": "(O)340",
     "name": "Honey",
     "gameCategory": -26,
     "price": 100,
@@ -2569,7 +2554,7 @@
           {
             "inputId": "fairy-rose",
             "inputName": "Fairy Rose",
-            "inputGameId": 595,
+            "inputGameId": "(O)595",
             "inputBasePrice": 290,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2579,7 +2564,7 @@
           {
             "inputId": "poppy",
             "inputName": "Poppy",
-            "inputGameId": 376,
+            "inputGameId": "(O)376",
             "inputBasePrice": 140,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2589,7 +2574,7 @@
           {
             "inputId": "summer-spangle",
             "inputName": "Summer Spangle",
-            "inputGameId": 593,
+            "inputGameId": "(O)593",
             "inputBasePrice": 90,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2599,7 +2584,7 @@
           {
             "inputId": "sunflower",
             "inputName": "Sunflower",
-            "inputGameId": 421,
+            "inputGameId": "(O)421",
             "inputBasePrice": 80,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2609,7 +2594,7 @@
           {
             "inputId": "blue-jazz",
             "inputName": "Blue Jazz",
-            "inputGameId": 597,
+            "inputGameId": "(O)597",
             "inputBasePrice": 50,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2619,7 +2604,7 @@
           {
             "inputId": "tulip",
             "inputName": "Tulip",
-            "inputGameId": 591,
+            "inputGameId": "(O)591",
             "inputBasePrice": 30,
             "inputGameCategory": -80,
             "inputType": "flower",
@@ -2638,13 +2623,11 @@
         ]
       }
     ],
-    "bundles": [
-      "artisan"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "hate",
+      "maru": "like",
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
@@ -2659,8 +2642,8 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "like",
-      "vincent": "like",
+      "jas": "hate",
+      "vincent": "hate",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -2687,7 +2670,7 @@
   {
     "type": "artisan",
     "id": "raisins",
-    "gameId": "Raisins",
+    "gameId": "(O)Raisins",
     "name": "Raisins",
     "gameCategory": -26,
     "price": 600,
@@ -2729,7 +2712,7 @@
       "abigail": "like",
       "alex": "like",
       "george": "like",
-      "evelyn": "love",
+      "evelyn": "like",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
@@ -2763,7 +2746,7 @@
   {
     "type": "artisan",
     "id": "driedfruit",
-    "gameId": "DriedFruit",
+    "gameId": "(O)DriedFruit",
     "name": "Dried Fruit",
     "gameCategory": -26,
     "price": 25,
@@ -2782,7 +2765,7 @@
           {
             "inputId": "starfruit",
             "inputName": "Starfruit",
-            "inputGameId": 268,
+            "inputGameId": "(O)268",
             "inputBasePrice": 750,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2792,7 +2775,7 @@
           {
             "inputId": "ancient-fruit",
             "inputName": "Ancient Fruit",
-            "inputGameId": 454,
+            "inputGameId": "(O)454",
             "inputBasePrice": 550,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2802,7 +2785,7 @@
           {
             "inputId": "pineapple",
             "inputName": "Pineapple",
-            "inputGameId": 832,
+            "inputGameId": "(O)832",
             "inputBasePrice": 300,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2812,7 +2795,7 @@
           {
             "inputId": "melon",
             "inputName": "Melon",
-            "inputGameId": 254,
+            "inputGameId": "(O)254",
             "inputBasePrice": 250,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2822,7 +2805,7 @@
           {
             "inputId": "rhubarb",
             "inputName": "Rhubarb",
-            "inputGameId": 252,
+            "inputGameId": "(O)252",
             "inputBasePrice": 220,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2832,7 +2815,7 @@
           {
             "inputId": "strawberry",
             "inputName": "Strawberry",
-            "inputGameId": 400,
+            "inputGameId": "(O)400",
             "inputBasePrice": 120,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2842,7 +2825,7 @@
           {
             "inputId": "grape",
             "inputName": "Grape",
-            "inputGameId": 398,
+            "inputGameId": "(O)398",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2852,7 +2835,7 @@
           {
             "inputId": "spice-berry",
             "inputName": "Spice Berry",
-            "inputGameId": 396,
+            "inputGameId": "(O)396",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2862,7 +2845,7 @@
           {
             "inputId": "cranberries",
             "inputName": "Cranberries",
-            "inputGameId": 282,
+            "inputGameId": "(O)282",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2872,7 +2855,7 @@
           {
             "inputId": "cactus-fruit",
             "inputName": "Cactus Fruit",
-            "inputGameId": 90,
+            "inputGameId": "(O)90",
             "inputBasePrice": 75,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2882,7 +2865,7 @@
           {
             "inputId": "powdermelon",
             "inputName": "Powdermelon",
-            "inputGameId": "Powdermelon",
+            "inputGameId": "(O)Powdermelon",
             "inputBasePrice": 60,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2892,7 +2875,7 @@
           {
             "inputId": "blueberry",
             "inputName": "Blueberry",
-            "inputGameId": 258,
+            "inputGameId": "(O)258",
             "inputBasePrice": 50,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2902,7 +2885,7 @@
           {
             "inputId": "hot-pepper",
             "inputName": "Hot Pepper",
-            "inputGameId": 260,
+            "inputGameId": "(O)260",
             "inputBasePrice": 40,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2912,7 +2895,7 @@
           {
             "inputId": "qi-fruit",
             "inputName": "Qi Fruit",
-            "inputGameId": 889,
+            "inputGameId": "(O)889",
             "inputBasePrice": 1,
             "inputGameCategory": -79,
             "inputType": "fruit",
@@ -2968,7 +2951,7 @@
   {
     "type": "artisan",
     "id": "driedmushroom",
-    "gameId": "DriedMushrooms",
+    "gameId": "(O)DriedMushrooms",
     "name": "Dried Mushrooms",
     "gameCategory": -26,
     "price": 25,
@@ -3083,7 +3066,7 @@
   {
     "type": "artisan",
     "id": "smokedfish",
-    "gameId": "SmokedFish",
+    "gameId": "(O)SmokedFish",
     "name": "Smoked Fish",
     "gameCategory": -26,
     "price": 25,
@@ -3858,7 +3841,7 @@
   {
     "type": "artisan",
     "id": "oak-resin",
-    "gameId": 725,
+    "gameId": "(O)725",
     "name": "Oak Resin",
     "gameCategory": -27,
     "price": 150,
@@ -3882,45 +3865,9 @@
       "color_green",
       "syrup_item"
     ],
-    "bundles": [
-      "exotic-foraging",
-      "enchanter-s"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "like",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "haley": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -3929,7 +3876,7 @@
   {
     "type": "artisan",
     "id": "maple-syrup",
-    "gameId": 724,
+    "gameId": "(O)724",
     "name": "Maple Syrup",
     "gameCategory": -27,
     "price": 200,
@@ -3953,45 +3900,9 @@
       "color_brown",
       "syrup_item"
     ],
-    "bundles": [
-      "exotic-foraging",
-      "chef-s"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "dislike",
-      "sebastian": "like",
-      "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
-      "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "dislike",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
-      "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
-      "harvey": "like",
-      "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
-      "leo": "like"
+      "haley": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -4000,7 +3911,7 @@
   {
     "type": "artisan",
     "id": "pine-tar",
-    "gameId": 726,
+    "gameId": "(O)726",
     "name": "Pine Tar",
     "gameCategory": -27,
     "price": 100,
@@ -4024,44 +3935,9 @@
       "color_brown",
       "syrup_item"
     ],
-    "bundles": [
-      "exotic-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "like",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "haley": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -4070,7 +3946,7 @@
   {
     "type": "artisan",
     "id": "red-mushroom",
-    "gameId": 420,
+    "gameId": "(O)420",
     "name": "Red Mushroom",
     "gameCategory": -81,
     "price": 75,
@@ -4120,45 +3996,26 @@
       "season_fall",
       "season_summer"
     ],
-    "bundles": [
-      "exotic-foraging",
-      "dye"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "hate",
-      "demetrius": "hate",
-      "maru": "hate",
-      "sebastian": "hate",
+      "sebastian": "dislike",
       "linus": "like",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "dislike",
-      "pam": "hate",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
       "leah": "like",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "hate",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
       "harvey": "like",
-      "sandy": "hate",
-      "willy": "hate",
-      "krobus": "hate",
-      "leo": "hate"
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -4167,7 +4024,7 @@
   {
     "type": "artisan",
     "id": "common-mushroom",
-    "gameId": 404,
+    "gameId": "(O)404",
     "name": "Common Mushroom",
     "gameCategory": -81,
     "price": 40,
@@ -4221,11 +4078,9 @@
       "season_fall",
       "season_spring"
     ],
-    "bundles": [
-      "fall-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "maru": "dislike",
+      "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -4252,7 +4107,7 @@
   {
     "type": "artisan",
     "id": "purple-mushroom",
-    "gameId": 422,
+    "gameId": "(O)422",
     "name": "Purple Mushroom",
     "gameCategory": -81,
     "price": 250,
@@ -4296,18 +4151,13 @@
       "forage_item",
       "forage_item_mines"
     ],
-    "bundles": [
-      "exotic-foraging",
-      "field-research"
-    ],
+    "bundles": [],
     "gifts": {
-      "demetrius": "like",
       "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
-      "penny": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -4317,7 +4167,7 @@
       "shane": "dislike",
       "elliott": "dislike",
       "dwarf": "dislike",
-      "wizard": "love",
+      "wizard": "dislike",
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -4330,7 +4180,7 @@
   {
     "type": "artisan",
     "id": "sap",
-    "gameId": 92,
+    "gameId": "(O)92",
     "name": "Sap",
     "gameCategory": -81,
     "price": 2,
@@ -4387,40 +4237,24 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "hate",
-      "demetrius": "hate",
-      "maru": "hate",
-      "sebastian": "hate",
+      "sebastian": "dislike",
       "linus": "like",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "hate",
-      "pam": "hate",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
       "leah": "like",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "hate",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
       "harvey": "like",
-      "sandy": "hate",
-      "willy": "hate",
-      "krobus": "hate",
-      "leo": "hate"
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -4429,7 +4263,7 @@
   {
     "type": "artisan",
     "id": "fiddlehead-fern",
-    "gameId": 259,
+    "gameId": "(O)259",
     "name": "Fiddlehead Fern",
     "gameCategory": -75,
     "price": 90,
@@ -4473,9 +4307,7 @@
       "forage_item_secret",
       "season_summer"
     ],
-    "bundles": [
-      "chef-s"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -4520,7 +4352,7 @@
   {
     "type": "artisan",
     "id": "mystic-syrup",
-    "gameId": "MysticSyrup",
+    "gameId": "(O)MysticSyrup",
     "name": "Mystic Syrup",
     "gameCategory": -27,
     "price": 1000,
@@ -4553,7 +4385,7 @@
   },
   {
     "id": "roe",
-    "gameId": 812,
+    "gameId": "(O)812",
     "name": "Roe",
     "type": "artisan",
     "gameCategory": -23,
@@ -4576,7 +4408,7 @@
           {
             "inputId": "legend",
             "inputName": "Legend",
-            "inputGameId": 163,
+            "inputGameId": "(O)163",
             "inputBasePrice": 5000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4586,7 +4418,7 @@
           {
             "inputId": "legend-ii",
             "inputName": "Legend II",
-            "inputGameId": 900,
+            "inputGameId": "(O)900",
             "inputBasePrice": 5000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4596,7 +4428,7 @@
           {
             "inputId": "crimsonfish",
             "inputName": "Crimsonfish",
-            "inputGameId": 159,
+            "inputGameId": "(O)159",
             "inputBasePrice": 1500,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4606,7 +4438,7 @@
           {
             "inputId": "son-of-crimsonfish",
             "inputName": "Son of Crimsonfish",
-            "inputGameId": 898,
+            "inputGameId": "(O)898",
             "inputBasePrice": 1500,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4616,7 +4448,7 @@
           {
             "inputId": "mutant-carp",
             "inputName": "Mutant Carp",
-            "inputGameId": 682,
+            "inputGameId": "(O)682",
             "inputBasePrice": 1000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4626,7 +4458,7 @@
           {
             "inputId": "glacierfish",
             "inputName": "Glacierfish",
-            "inputGameId": 775,
+            "inputGameId": "(O)775",
             "inputBasePrice": 1000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4636,7 +4468,7 @@
           {
             "inputId": "radioactive-carp",
             "inputName": "Radioactive Carp",
-            "inputGameId": 901,
+            "inputGameId": "(O)901",
             "inputBasePrice": 1000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4646,7 +4478,7 @@
           {
             "inputId": "glacierfish-jr",
             "inputName": "Glacierfish Jr.",
-            "inputGameId": 902,
+            "inputGameId": "(O)902",
             "inputBasePrice": 1000,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4656,7 +4488,7 @@
           {
             "inputId": "angler",
             "inputName": "Angler",
-            "inputGameId": 160,
+            "inputGameId": "(O)160",
             "inputBasePrice": 900,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4666,7 +4498,7 @@
           {
             "inputId": "ms-angler",
             "inputName": "Ms. Angler",
-            "inputGameId": 899,
+            "inputGameId": "(O)899",
             "inputBasePrice": 900,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4676,7 +4508,7 @@
           {
             "inputId": "lava-eel",
             "inputName": "Lava Eel",
-            "inputGameId": 162,
+            "inputGameId": "(O)162",
             "inputBasePrice": 700,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4686,7 +4518,7 @@
           {
             "inputId": "ice-pip",
             "inputName": "Ice Pip",
-            "inputGameId": 161,
+            "inputGameId": "(O)161",
             "inputBasePrice": 500,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4696,7 +4528,7 @@
           {
             "inputId": "blobfish",
             "inputName": "Blobfish",
-            "inputGameId": 800,
+            "inputGameId": "(O)800",
             "inputBasePrice": 500,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4706,7 +4538,7 @@
           {
             "inputId": "stonefish",
             "inputName": "Stonefish",
-            "inputGameId": 158,
+            "inputGameId": "(O)158",
             "inputBasePrice": 300,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4716,7 +4548,7 @@
           {
             "inputId": "super-cucumber",
             "inputName": "Super Cucumber",
-            "inputGameId": 155,
+            "inputGameId": "(O)155",
             "inputBasePrice": 250,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4726,7 +4558,7 @@
           {
             "inputId": "spook-fish",
             "inputName": "Spook Fish",
-            "inputGameId": 799,
+            "inputGameId": "(O)799",
             "inputBasePrice": 220,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4736,7 +4568,7 @@
           {
             "inputId": "pufferfish",
             "inputName": "Pufferfish",
-            "inputGameId": 128,
+            "inputGameId": "(O)128",
             "inputBasePrice": 200,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4746,7 +4578,7 @@
           {
             "inputId": "catfish",
             "inputName": "Catfish",
-            "inputGameId": 143,
+            "inputGameId": "(O)143",
             "inputBasePrice": 200,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4756,7 +4588,7 @@
           {
             "inputId": "sturgeon",
             "inputName": "Sturgeon",
-            "inputGameId": 698,
+            "inputGameId": "(O)698",
             "inputBasePrice": 200,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4766,7 +4598,7 @@
           {
             "inputId": "stingray",
             "inputName": "Stingray",
-            "inputGameId": 836,
+            "inputGameId": "(O)836",
             "inputBasePrice": 180,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4776,7 +4608,7 @@
           {
             "inputId": "octopus",
             "inputName": "Octopus",
-            "inputGameId": 149,
+            "inputGameId": "(O)149",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4786,7 +4618,7 @@
           {
             "inputId": "scorpion-carp",
             "inputName": "Scorpion Carp",
-            "inputGameId": 165,
+            "inputGameId": "(O)165",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4796,7 +4628,7 @@
           {
             "inputId": "midnight-carp",
             "inputName": "Midnight Carp",
-            "inputGameId": 269,
+            "inputGameId": "(O)269",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4806,7 +4638,7 @@
           {
             "inputId": "tiger-trout",
             "inputName": "Tiger Trout",
-            "inputGameId": 699,
+            "inputGameId": "(O)699",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4816,7 +4648,7 @@
           {
             "inputId": "void-salmon",
             "inputName": "Void Salmon",
-            "inputGameId": 795,
+            "inputGameId": "(O)795",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4826,7 +4658,7 @@
           {
             "inputId": "goby",
             "inputName": "Goby",
-            "inputGameId": "Goby",
+            "inputGameId": "(O)Goby",
             "inputBasePrice": 150,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4836,7 +4668,7 @@
           {
             "inputId": "lingcod",
             "inputName": "Lingcod",
-            "inputGameId": 707,
+            "inputGameId": "(O)707",
             "inputBasePrice": 120,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4846,7 +4678,7 @@
           {
             "inputId": "lobster",
             "inputName": "Lobster",
-            "inputGameId": 715,
+            "inputGameId": "(O)715",
             "inputBasePrice": 120,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4856,7 +4688,7 @@
           {
             "inputId": "blue-discus",
             "inputName": "Blue Discus",
-            "inputGameId": 838,
+            "inputGameId": "(O)838",
             "inputBasePrice": 120,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4866,7 +4698,7 @@
           {
             "inputId": "walleye",
             "inputName": "Walleye",
-            "inputGameId": 140,
+            "inputGameId": "(O)140",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4876,7 +4708,7 @@
           {
             "inputId": "tuna",
             "inputName": "Tuna",
-            "inputGameId": 130,
+            "inputGameId": "(O)130",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4886,7 +4718,7 @@
           {
             "inputId": "largemouth-bass",
             "inputName": "Largemouth Bass",
-            "inputGameId": 136,
+            "inputGameId": "(O)136",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4896,7 +4728,7 @@
           {
             "inputId": "pike",
             "inputName": "Pike",
-            "inputGameId": 144,
+            "inputGameId": "(O)144",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4906,7 +4738,7 @@
           {
             "inputId": "flounder",
             "inputName": "Flounder",
-            "inputGameId": 267,
+            "inputGameId": "(O)267",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4916,7 +4748,7 @@
           {
             "inputId": "dorado",
             "inputName": "Dorado",
-            "inputGameId": 704,
+            "inputGameId": "(O)704",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4926,7 +4758,7 @@
           {
             "inputId": "crab",
             "inputName": "Crab",
-            "inputGameId": 717,
+            "inputGameId": "(O)717",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4936,7 +4768,7 @@
           {
             "inputId": "slimejack",
             "inputName": "Slimejack",
-            "inputGameId": 796,
+            "inputGameId": "(O)796",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4946,7 +4778,7 @@
           {
             "inputId": "midnight-squid",
             "inputName": "Midnight Squid",
-            "inputGameId": 798,
+            "inputGameId": "(O)798",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4956,7 +4788,7 @@
           {
             "inputId": "lionfish",
             "inputName": "Lionfish",
-            "inputGameId": 837,
+            "inputGameId": "(O)837",
             "inputBasePrice": 100,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4966,7 +4798,7 @@
           {
             "inputId": "eel",
             "inputName": "Eel",
-            "inputGameId": 148,
+            "inputGameId": "(O)148",
             "inputBasePrice": 85,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4976,7 +4808,7 @@
           {
             "inputId": "squid",
             "inputName": "Squid",
-            "inputGameId": 151,
+            "inputGameId": "(O)151",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4986,7 +4818,7 @@
           {
             "inputId": "halibut",
             "inputName": "Halibut",
-            "inputGameId": 708,
+            "inputGameId": "(O)708",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -4996,7 +4828,7 @@
           {
             "inputId": "salmon",
             "inputName": "Salmon",
-            "inputGameId": 139,
+            "inputGameId": "(O)139",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5006,7 +4838,7 @@
           {
             "inputId": "red-mullet",
             "inputName": "Red Mullet",
-            "inputGameId": 146,
+            "inputGameId": "(O)146",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5016,7 +4848,7 @@
           {
             "inputId": "sea-cucumber",
             "inputName": "Sea Cucumber",
-            "inputGameId": 154,
+            "inputGameId": "(O)154",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5026,7 +4858,7 @@
           {
             "inputId": "sandfish",
             "inputName": "Sandfish",
-            "inputGameId": 164,
+            "inputGameId": "(O)164",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5036,7 +4868,7 @@
           {
             "inputId": "bullhead",
             "inputName": "Bullhead",
-            "inputGameId": 700,
+            "inputGameId": "(O)700",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5046,7 +4878,7 @@
           {
             "inputId": "tilapia",
             "inputName": "Tilapia",
-            "inputGameId": 701,
+            "inputGameId": "(O)701",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5056,7 +4888,7 @@
           {
             "inputId": "albacore",
             "inputName": "Albacore",
-            "inputGameId": 705,
+            "inputGameId": "(O)705",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5066,7 +4898,7 @@
           {
             "inputId": "crayfish",
             "inputName": "Crayfish",
-            "inputGameId": 716,
+            "inputGameId": "(O)716",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5076,7 +4908,7 @@
           {
             "inputId": "woodskip",
             "inputName": "Woodskip",
-            "inputGameId": 734,
+            "inputGameId": "(O)734",
             "inputBasePrice": 75,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5086,7 +4918,7 @@
           {
             "inputId": "rainbow-trout",
             "inputName": "Rainbow Trout",
-            "inputGameId": 138,
+            "inputGameId": "(O)138",
             "inputBasePrice": 65,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5096,7 +4928,7 @@
           {
             "inputId": "snail",
             "inputName": "Snail",
-            "inputGameId": 721,
+            "inputGameId": "(O)721",
             "inputBasePrice": 65,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5106,7 +4938,7 @@
           {
             "inputId": "shad",
             "inputName": "Shad",
-            "inputGameId": 706,
+            "inputGameId": "(O)706",
             "inputBasePrice": 60,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5116,7 +4948,7 @@
           {
             "inputId": "shrimp",
             "inputName": "Shrimp",
-            "inputGameId": 720,
+            "inputGameId": "(O)720",
             "inputBasePrice": 60,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5126,7 +4958,7 @@
           {
             "inputId": "perch",
             "inputName": "Perch",
-            "inputGameId": 141,
+            "inputGameId": "(O)141",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5136,7 +4968,7 @@
           {
             "inputId": "smallmouth-bass",
             "inputName": "Smallmouth Bass",
-            "inputGameId": 137,
+            "inputGameId": "(O)137",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5146,7 +4978,7 @@
           {
             "inputId": "red-snapper",
             "inputName": "Red Snapper",
-            "inputGameId": 150,
+            "inputGameId": "(O)150",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5156,7 +4988,7 @@
           {
             "inputId": "clam",
             "inputName": "Clam",
-            "inputGameId": 372,
+            "inputGameId": "(O)372",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5166,7 +4998,7 @@
           {
             "inputId": "chub",
             "inputName": "Chub",
-            "inputGameId": 702,
+            "inputGameId": "(O)702",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5176,7 +5008,7 @@
           {
             "inputId": "cockle",
             "inputName": "Cockle",
-            "inputGameId": 718,
+            "inputGameId": "(O)718",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5186,7 +5018,7 @@
           {
             "inputId": "bream",
             "inputName": "Bream",
-            "inputGameId": 132,
+            "inputGameId": "(O)132",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5196,7 +5028,7 @@
           {
             "inputId": "ghostfish",
             "inputName": "Ghostfish",
-            "inputGameId": 156,
+            "inputGameId": "(O)156",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5206,7 +5038,7 @@
           {
             "inputId": "sardine",
             "inputName": "Sardine",
-            "inputGameId": 131,
+            "inputGameId": "(O)131",
             "inputBasePrice": 40,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5216,7 +5048,7 @@
           {
             "inputId": "oyster",
             "inputName": "Oyster",
-            "inputGameId": 723,
+            "inputGameId": "(O)723",
             "inputBasePrice": 40,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5226,7 +5058,7 @@
           {
             "inputId": "anchovy",
             "inputName": "Anchovy",
-            "inputGameId": 129,
+            "inputGameId": "(O)129",
             "inputBasePrice": 30,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5236,7 +5068,7 @@
           {
             "inputId": "carp",
             "inputName": "Carp",
-            "inputGameId": 142,
+            "inputGameId": "(O)142",
             "inputBasePrice": 30,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5246,7 +5078,7 @@
           {
             "inputId": "sunfish",
             "inputName": "Sunfish",
-            "inputGameId": 145,
+            "inputGameId": "(O)145",
             "inputBasePrice": 30,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5256,7 +5088,7 @@
           {
             "inputId": "herring",
             "inputName": "Herring",
-            "inputGameId": 147,
+            "inputGameId": "(O)147",
             "inputBasePrice": 30,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5266,7 +5098,7 @@
           {
             "inputId": "mussel",
             "inputName": "Mussel",
-            "inputGameId": 719,
+            "inputGameId": "(O)719",
             "inputBasePrice": 30,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5276,7 +5108,7 @@
           {
             "inputId": "periwinkle",
             "inputName": "Periwinkle",
-            "inputGameId": 722,
+            "inputGameId": "(O)722",
             "inputBasePrice": 20,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5656,7 +5488,7 @@
   },
   {
     "id": "aged-roe",
-    "gameId": 447,
+    "gameId": "(O)447",
     "name": "Aged Roe",
     "type": "artisan",
     "gameCategory": -26,
@@ -5679,7 +5511,7 @@
           {
             "inputId": "legend",
             "inputName": "Legend",
-            "inputGameId": 163,
+            "inputGameId": "(O)163",
             "inputBasePrice": 2530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5689,7 +5521,7 @@
           {
             "inputId": "legend-ii",
             "inputName": "Legend II",
-            "inputGameId": 900,
+            "inputGameId": "(O)900",
             "inputBasePrice": 2530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5699,7 +5531,7 @@
           {
             "inputId": "crimsonfish",
             "inputName": "Crimsonfish",
-            "inputGameId": 159,
+            "inputGameId": "(O)159",
             "inputBasePrice": 780,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5709,7 +5541,7 @@
           {
             "inputId": "son-of-crimsonfish",
             "inputName": "Son of Crimsonfish",
-            "inputGameId": 898,
+            "inputGameId": "(O)898",
             "inputBasePrice": 780,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5719,7 +5551,7 @@
           {
             "inputId": "mutant-carp",
             "inputName": "Mutant Carp",
-            "inputGameId": 682,
+            "inputGameId": "(O)682",
             "inputBasePrice": 530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5729,7 +5561,7 @@
           {
             "inputId": "glacierfish",
             "inputName": "Glacierfish",
-            "inputGameId": 775,
+            "inputGameId": "(O)775",
             "inputBasePrice": 530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5739,7 +5571,7 @@
           {
             "inputId": "radioactive-carp",
             "inputName": "Radioactive Carp",
-            "inputGameId": 901,
+            "inputGameId": "(O)901",
             "inputBasePrice": 530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5749,7 +5581,7 @@
           {
             "inputId": "glacierfish-jr",
             "inputName": "Glacierfish Jr.",
-            "inputGameId": 902,
+            "inputGameId": "(O)902",
             "inputBasePrice": 530,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5759,7 +5591,7 @@
           {
             "inputId": "angler",
             "inputName": "Angler",
-            "inputGameId": 160,
+            "inputGameId": "(O)160",
             "inputBasePrice": 480,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5769,7 +5601,7 @@
           {
             "inputId": "ms-angler",
             "inputName": "Ms. Angler",
-            "inputGameId": 899,
+            "inputGameId": "(O)899",
             "inputBasePrice": 480,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5779,7 +5611,7 @@
           {
             "inputId": "lava-eel",
             "inputName": "Lava Eel",
-            "inputGameId": 162,
+            "inputGameId": "(O)162",
             "inputBasePrice": 380,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5789,7 +5621,7 @@
           {
             "inputId": "ice-pip",
             "inputName": "Ice Pip",
-            "inputGameId": 161,
+            "inputGameId": "(O)161",
             "inputBasePrice": 280,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5799,7 +5631,7 @@
           {
             "inputId": "blobfish",
             "inputName": "Blobfish",
-            "inputGameId": 800,
+            "inputGameId": "(O)800",
             "inputBasePrice": 280,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5809,7 +5641,7 @@
           {
             "inputId": "stonefish",
             "inputName": "Stonefish",
-            "inputGameId": 158,
+            "inputGameId": "(O)158",
             "inputBasePrice": 180,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5819,7 +5651,7 @@
           {
             "inputId": "super-cucumber",
             "inputName": "Super Cucumber",
-            "inputGameId": 155,
+            "inputGameId": "(O)155",
             "inputBasePrice": 155,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5829,7 +5661,7 @@
           {
             "inputId": "spook-fish",
             "inputName": "Spook Fish",
-            "inputGameId": 799,
+            "inputGameId": "(O)799",
             "inputBasePrice": 140,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5839,7 +5671,7 @@
           {
             "inputId": "pufferfish",
             "inputName": "Pufferfish",
-            "inputGameId": 128,
+            "inputGameId": "(O)128",
             "inputBasePrice": 130,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5849,7 +5681,7 @@
           {
             "inputId": "catfish",
             "inputName": "Catfish",
-            "inputGameId": 143,
+            "inputGameId": "(O)143",
             "inputBasePrice": 130,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5859,7 +5691,7 @@
           {
             "inputId": "stingray",
             "inputName": "Stingray",
-            "inputGameId": 836,
+            "inputGameId": "(O)836",
             "inputBasePrice": 120,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5869,7 +5701,7 @@
           {
             "inputId": "octopus",
             "inputName": "Octopus",
-            "inputGameId": 149,
+            "inputGameId": "(O)149",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5879,7 +5711,7 @@
           {
             "inputId": "scorpion-carp",
             "inputName": "Scorpion Carp",
-            "inputGameId": 165,
+            "inputGameId": "(O)165",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5889,7 +5721,7 @@
           {
             "inputId": "midnight-carp",
             "inputName": "Midnight Carp",
-            "inputGameId": 269,
+            "inputGameId": "(O)269",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5899,7 +5731,7 @@
           {
             "inputId": "tiger-trout",
             "inputName": "Tiger Trout",
-            "inputGameId": 699,
+            "inputGameId": "(O)699",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5909,7 +5741,7 @@
           {
             "inputId": "void-salmon",
             "inputName": "Void Salmon",
-            "inputGameId": 795,
+            "inputGameId": "(O)795",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5919,7 +5751,7 @@
           {
             "inputId": "goby",
             "inputName": "Goby",
-            "inputGameId": "Goby",
+            "inputGameId": "(O)Goby",
             "inputBasePrice": 105,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5929,7 +5761,7 @@
           {
             "inputId": "lingcod",
             "inputName": "Lingcod",
-            "inputGameId": 707,
+            "inputGameId": "(O)707",
             "inputBasePrice": 90,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5939,7 +5771,7 @@
           {
             "inputId": "lobster",
             "inputName": "Lobster",
-            "inputGameId": 715,
+            "inputGameId": "(O)715",
             "inputBasePrice": 90,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5949,7 +5781,7 @@
           {
             "inputId": "blue-discus",
             "inputName": "Blue Discus",
-            "inputGameId": 838,
+            "inputGameId": "(O)838",
             "inputBasePrice": 90,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5959,7 +5791,7 @@
           {
             "inputId": "walleye",
             "inputName": "Walleye",
-            "inputGameId": 140,
+            "inputGameId": "(O)140",
             "inputBasePrice": 82,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5969,7 +5801,7 @@
           {
             "inputId": "tuna",
             "inputName": "Tuna",
-            "inputGameId": 130,
+            "inputGameId": "(O)130",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5979,7 +5811,7 @@
           {
             "inputId": "largemouth-bass",
             "inputName": "Largemouth Bass",
-            "inputGameId": 136,
+            "inputGameId": "(O)136",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5989,7 +5821,7 @@
           {
             "inputId": "pike",
             "inputName": "Pike",
-            "inputGameId": 144,
+            "inputGameId": "(O)144",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -5999,7 +5831,7 @@
           {
             "inputId": "flounder",
             "inputName": "Flounder",
-            "inputGameId": 267,
+            "inputGameId": "(O)267",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6009,7 +5841,7 @@
           {
             "inputId": "dorado",
             "inputName": "Dorado",
-            "inputGameId": 704,
+            "inputGameId": "(O)704",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6019,7 +5851,7 @@
           {
             "inputId": "crab",
             "inputName": "Crab",
-            "inputGameId": 717,
+            "inputGameId": "(O)717",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6029,7 +5861,7 @@
           {
             "inputId": "slimejack",
             "inputName": "Slimejack",
-            "inputGameId": 796,
+            "inputGameId": "(O)796",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6039,7 +5871,7 @@
           {
             "inputId": "midnight-squid",
             "inputName": "Midnight Squid",
-            "inputGameId": 798,
+            "inputGameId": "(O)798",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6049,7 +5881,7 @@
           {
             "inputId": "lionfish",
             "inputName": "Lionfish",
-            "inputGameId": 837,
+            "inputGameId": "(O)837",
             "inputBasePrice": 80,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6059,7 +5891,7 @@
           {
             "inputId": "eel",
             "inputName": "Eel",
-            "inputGameId": 148,
+            "inputGameId": "(O)148",
             "inputBasePrice": 72,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6069,7 +5901,7 @@
           {
             "inputId": "squid",
             "inputName": "Squid",
-            "inputGameId": 151,
+            "inputGameId": "(O)151",
             "inputBasePrice": 70,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6079,7 +5911,7 @@
           {
             "inputId": "halibut",
             "inputName": "Halibut",
-            "inputGameId": 708,
+            "inputGameId": "(O)708",
             "inputBasePrice": 70,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6089,7 +5921,7 @@
           {
             "inputId": "salmon",
             "inputName": "Salmon",
-            "inputGameId": 139,
+            "inputGameId": "(O)139",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6099,7 +5931,7 @@
           {
             "inputId": "red-mullet",
             "inputName": "Red Mullet",
-            "inputGameId": 146,
+            "inputGameId": "(O)146",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6109,7 +5941,7 @@
           {
             "inputId": "sea-cucumber",
             "inputName": "Sea Cucumber",
-            "inputGameId": 154,
+            "inputGameId": "(O)154",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6119,7 +5951,7 @@
           {
             "inputId": "sandfish",
             "inputName": "Sandfish",
-            "inputGameId": 164,
+            "inputGameId": "(O)164",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6129,7 +5961,7 @@
           {
             "inputId": "bullhead",
             "inputName": "Bullhead",
-            "inputGameId": 700,
+            "inputGameId": "(O)700",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6139,7 +5971,7 @@
           {
             "inputId": "tilapia",
             "inputName": "Tilapia",
-            "inputGameId": 701,
+            "inputGameId": "(O)701",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6149,7 +5981,7 @@
           {
             "inputId": "albacore",
             "inputName": "Albacore",
-            "inputGameId": 705,
+            "inputGameId": "(O)705",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6159,7 +5991,7 @@
           {
             "inputId": "crayfish",
             "inputName": "Crayfish",
-            "inputGameId": 716,
+            "inputGameId": "(O)716",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6169,7 +6001,7 @@
           {
             "inputId": "woodskip",
             "inputName": "Woodskip",
-            "inputGameId": 734,
+            "inputGameId": "(O)734",
             "inputBasePrice": 67,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6179,7 +6011,7 @@
           {
             "inputId": "rainbow-trout",
             "inputName": "Rainbow Trout",
-            "inputGameId": 138,
+            "inputGameId": "(O)138",
             "inputBasePrice": 62,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6189,7 +6021,7 @@
           {
             "inputId": "snail",
             "inputName": "Snail",
-            "inputGameId": 721,
+            "inputGameId": "(O)721",
             "inputBasePrice": 62,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6199,7 +6031,7 @@
           {
             "inputId": "shad",
             "inputName": "Shad",
-            "inputGameId": 706,
+            "inputGameId": "(O)706",
             "inputBasePrice": 60,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6209,7 +6041,7 @@
           {
             "inputId": "shrimp",
             "inputName": "Shrimp",
-            "inputGameId": 720,
+            "inputGameId": "(O)720",
             "inputBasePrice": 60,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6219,7 +6051,7 @@
           {
             "inputId": "perch",
             "inputName": "Perch",
-            "inputGameId": 141,
+            "inputGameId": "(O)141",
             "inputBasePrice": 57,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6229,7 +6061,7 @@
           {
             "inputId": "smallmouth-bass",
             "inputName": "Smallmouth Bass",
-            "inputGameId": 137,
+            "inputGameId": "(O)137",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6239,7 +6071,7 @@
           {
             "inputId": "red-snapper",
             "inputName": "Red Snapper",
-            "inputGameId": 150,
+            "inputGameId": "(O)150",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6249,7 +6081,7 @@
           {
             "inputId": "clam",
             "inputName": "Clam",
-            "inputGameId": 372,
+            "inputGameId": "(O)372",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6259,7 +6091,7 @@
           {
             "inputId": "chub",
             "inputName": "Chub",
-            "inputGameId": 702,
+            "inputGameId": "(O)702",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6269,7 +6101,7 @@
           {
             "inputId": "cockle",
             "inputName": "Cockle",
-            "inputGameId": 718,
+            "inputGameId": "(O)718",
             "inputBasePrice": 55,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6279,7 +6111,7 @@
           {
             "inputId": "bream",
             "inputName": "Bream",
-            "inputGameId": 132,
+            "inputGameId": "(O)132",
             "inputBasePrice": 52,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6289,7 +6121,7 @@
           {
             "inputId": "ghostfish",
             "inputName": "Ghostfish",
-            "inputGameId": 156,
+            "inputGameId": "(O)156",
             "inputBasePrice": 52,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6299,7 +6131,7 @@
           {
             "inputId": "sardine",
             "inputName": "Sardine",
-            "inputGameId": 131,
+            "inputGameId": "(O)131",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6309,7 +6141,7 @@
           {
             "inputId": "oyster",
             "inputName": "Oyster",
-            "inputGameId": 723,
+            "inputGameId": "(O)723",
             "inputBasePrice": 50,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6319,7 +6151,7 @@
           {
             "inputId": "anchovy",
             "inputName": "Anchovy",
-            "inputGameId": 129,
+            "inputGameId": "(O)129",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6329,7 +6161,7 @@
           {
             "inputId": "carp",
             "inputName": "Carp",
-            "inputGameId": 142,
+            "inputGameId": "(O)142",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6339,7 +6171,7 @@
           {
             "inputId": "sunfish",
             "inputName": "Sunfish",
-            "inputGameId": 145,
+            "inputGameId": "(O)145",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6349,7 +6181,7 @@
           {
             "inputId": "herring",
             "inputName": "Herring",
-            "inputGameId": 147,
+            "inputGameId": "(O)147",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6359,7 +6191,7 @@
           {
             "inputId": "mussel",
             "inputName": "Mussel",
-            "inputGameId": 719,
+            "inputGameId": "(O)719",
             "inputBasePrice": 45,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6369,7 +6201,7 @@
           {
             "inputId": "periwinkle",
             "inputName": "Periwinkle",
-            "inputGameId": 722,
+            "inputGameId": "(O)722",
             "inputBasePrice": 40,
             "inputGameCategory": -4,
             "inputType": "fish",
@@ -6424,7 +6256,7 @@
   },
   {
     "id": "caviar",
-    "gameId": 445,
+    "gameId": "(O)445",
     "name": "Caviar",
     "type": "artisan",
     "gameCategory": -26,
@@ -6446,8 +6278,8 @@
           {
             "inputId": "sturgeon",
             "inputName": "Sturgeon Roe",
-            "inputGameId": 812,
-            "inputFishGameId": 698,
+            "inputGameId": "(O)812",
+            "inputFishGameId": "(O)698",
             "inputBasePrice": 130,
             "inputGameCategory": -23,
             "inputType": "specific",
@@ -6458,9 +6290,7 @@
       }
     ],
     "processingTimeMinutes": 4000,
-    "bundles": [
-      "the-missing"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",

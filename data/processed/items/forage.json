@@ -2,7 +2,7 @@
   {
     "type": "forage",
     "id": "wild-horseradish",
-    "gameId": 16,
+    "gameId": "(O)16",
     "name": "Wild Horseradish",
     "icon": "assets/objects/WildHorseradish.png",
     "price": 50,
@@ -23,37 +23,25 @@
       "Woods"
     ],
     "isFlower": false,
-    "bundles": [
-      "spring-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
-      "caroline": "like",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "pam": "dislike",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
       "jodi": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
-      "marnie": "dislike",
       "elliott": "dislike",
-      "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
       "willy": "dislike",
-      "krobus": "love",
+      "krobus": "dislike",
       "leo": "dislike"
     },
     "sellingLocations": [
@@ -79,41 +67,13 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "spring"
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Cheese Press",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 45
-          },
-          {
-            "gameId": 390,
-            "amount": 45
-          },
-          {
-            "gameId": 709,
-            "amount": 10
-          },
-          {
-            "gameId": 334,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "farming",
-          "level": 6
-        }
       }
     ]
   },
   {
     "type": "forage",
     "id": "daffodil",
-    "gameId": 18,
+    "gameId": "(O)18",
     "name": "Daffodil",
     "icon": "assets/objects/Daffodil.png",
     "price": 30,
@@ -133,32 +93,23 @@
       "Town"
     ],
     "isFlower": false,
-    "bundles": [
-      "spring-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "george": "like",
-      "evelyn": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
       "elliott": "dislike",
-      "gus": "like",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
-      "sandy": "love",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
@@ -207,7 +158,7 @@
   {
     "type": "forage",
     "id": "leek",
-    "gameId": 20,
+    "gameId": "(O)20",
     "name": "Leek",
     "icon": "assets/objects/Leek.png",
     "price": 60,
@@ -228,16 +179,12 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "spring-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
-      "george": "love",
-      "penny": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -276,37 +223,13 @@
         "type": "forage",
         "location": "Backwoods",
         "season": "spring"
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Recycling Machine",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 388,
-            "amount": 25
-          },
-          {
-            "gameId": 390,
-            "amount": 25
-          },
-          {
-            "gameId": 335,
-            "amount": 1
-          }
-        ],
-        "unlockCondition": {
-          "type": "skill",
-          "skill": "fishing",
-          "level": 4
-        }
       }
     ]
   },
   {
     "type": "forage",
     "id": "dandelion",
-    "gameId": 22,
+    "gameId": "(O)22",
     "name": "Dandelion",
     "icon": "assets/objects/Dandelion.png",
     "price": 40,
@@ -326,20 +249,16 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "spring-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
-      "pierre": "like",
+      "pierre": "dislike",
       "caroline": "dislike",
-      "george": "hate",
-      "penny": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "hate",
+      "jodi": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
@@ -395,7 +314,7 @@
   {
     "type": "forage",
     "id": "cave-carrot",
-    "gameId": 78,
+    "gameId": "(O)78",
     "name": "Cave Carrot",
     "icon": "assets/objects/CaveCarrot.png",
     "price": 25,
@@ -415,41 +334,23 @@
     ],
     "locations": [],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "dislike",
-      "kent": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
-      "marnie": "dislike",
       "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "like",
+      "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
-      "sandy": "dislike",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
@@ -475,7 +376,7 @@
   {
     "type": "forage",
     "id": "coconut",
-    "gameId": 88,
+    "gameId": "(O)88",
     "name": "Coconut",
     "icon": "assets/objects/Coconut.png",
     "price": 100,
@@ -497,19 +398,16 @@
       "Desert"
     ],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "linus": "love",
+      "linus": "like",
       "abigail": "dislike",
-      "lewis": "like",
       "pam": "like",
-      "haley": "love",
-      "jas": "like",
-      "vincent": "like",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
       "leah": "like",
@@ -540,14 +438,15 @@
       {
         "type": "mail",
         "mailKey": "Sandy",
-        "sender": "Sandy"
+        "sender": "Sandy",
+        "condition": "3+ hearts with Sandy"
       }
     ]
   },
   {
     "type": "forage",
     "id": "cactus-fruit",
-    "gameId": 90,
+    "gameId": "(O)90",
     "name": "Cactus Fruit",
     "icon": "assets/objects/CactusFruit.png",
     "price": 75,
@@ -568,22 +467,18 @@
       "Desert"
     ],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "linus": "love",
+      "linus": "like",
       "abigail": "dislike",
-      "lewis": "like",
-      "pam": "love",
+      "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
-      "sam": "love",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
@@ -609,35 +504,17 @@
         "location": "Desert"
       },
       {
-        "type": "crafting",
-        "recipeName": "Bone Mill",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 881,
-            "amount": 10
-          },
-          {
-            "gameId": 330,
-            "amount": 3
-          },
-          {
-            "gameId": 390,
-            "amount": 20
-          }
-        ]
-      },
-      {
         "type": "mail",
         "mailKey": "Sandy",
-        "sender": "Sandy"
+        "sender": "Sandy",
+        "condition": "3+ hearts with Sandy"
       }
     ]
   },
   {
     "type": "forage",
     "id": "morel",
-    "gameId": 257,
+    "gameId": "(O)257",
     "name": "Morel",
     "icon": "assets/objects/Morel.png",
     "price": 150,
@@ -658,9 +535,7 @@
       "Woods"
     ],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "maru": "like",
       "sebastian": "dislike",
@@ -680,7 +555,7 @@
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "hate"
+      "leo": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -708,7 +583,7 @@
   {
     "type": "forage",
     "id": "fiddlehead-fern",
-    "gameId": 259,
+    "gameId": "(O)259",
     "name": "Fiddlehead Fern",
     "icon": "assets/objects/FiddleheadFern.png",
     "price": 90,
@@ -728,9 +603,7 @@
       "Woods"
     ],
     "isFlower": false,
-    "bundles": [
-      "chef-s"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -800,7 +673,7 @@
   {
     "type": "forage",
     "id": "chanterelle",
-    "gameId": 281,
+    "gameId": "(O)281",
     "name": "Chanterelle",
     "icon": "assets/objects/Chanterelle.png",
     "price": 160,
@@ -862,7 +735,7 @@
   {
     "type": "forage",
     "id": "holly",
-    "gameId": 283,
+    "gameId": "(O)283",
     "name": "Holly",
     "icon": "assets/objects/Holly.png",
     "price": 80,
@@ -904,7 +777,7 @@
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "hate"
+      "leo": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -945,7 +818,7 @@
   {
     "type": "forage",
     "id": "clam",
-    "gameId": 372,
+    "gameId": "(O)372",
     "name": "Clam",
     "icon": "assets/objects/Clam.png",
     "price": 50,
@@ -971,9 +844,7 @@
       "Beach"
     ],
     "isFlower": false,
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -1025,19 +896,12 @@
           "winter"
         ]
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "fish",
-      "id": "clam",
-      "context": "Crab pot fishing"
-    },
-    "originalGameCategory": -4,
-    "displayGameCategory": -81
+    ]
   },
   {
     "type": "forage",
     "id": "nautilus-shell",
-    "gameId": 392,
+    "gameId": "(O)392",
     "name": "Nautilus Shell",
     "icon": "assets/objects/NautilusShell.png",
     "price": 120,
@@ -1057,14 +921,10 @@
       "Beach"
     ],
     "isFlower": false,
-    "bundles": [
-      "field-research"
-    ],
+    "bundles": [],
     "gifts": {
       "evelyn": "like",
-      "elliott": "neutral",
-      "harvey": "hate",
-      "leo": "like"
+      "elliott": "neutral"
     },
     "sellingLocations": [
       "store-willy",
@@ -1104,7 +964,7 @@
   {
     "type": "forage",
     "id": "coral",
-    "gameId": 393,
+    "gameId": "(O)393",
     "name": "Coral",
     "icon": "assets/objects/Coral.png",
     "price": 80,
@@ -1126,8 +986,7 @@
     "bundles": [],
     "gifts": {
       "evelyn": "like",
-      "elliott": "neutral",
-      "harvey": "hate"
+      "elliott": "neutral"
     },
     "sellingLocations": [
       "store-willy",
@@ -1145,7 +1004,7 @@
   {
     "type": "forage",
     "id": "rainbow-shell",
-    "gameId": 394,
+    "gameId": "(O)394",
     "name": "Rainbow Shell",
     "icon": "assets/objects/RainbowShell.png",
     "price": 300,
@@ -1166,40 +1025,8 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
-      "sebastian": "like",
-      "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
       "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "neutral",
-      "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
-      "harvey": "hate",
-      "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
-      "leo": "like"
+      "elliott": "neutral"
     },
     "sellingLocations": [
       "store-willy",
@@ -1227,7 +1054,7 @@
   {
     "type": "forage",
     "id": "spice-berry",
-    "gameId": 396,
+    "gameId": "(O)396",
     "name": "Spice Berry",
     "icon": "assets/objects/SpiceBerry.png",
     "price": 80,
@@ -1249,27 +1076,23 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "summer-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
-      "evelyn": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "hate",
+      "jodi": "like",
       "kent": "like",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
-      "harvey": "hate",
-      "sandy": "like",
-      "leo": "like"
+      "harvey": "like",
+      "sandy": "like"
     },
     "sellingLocations": [
       "store-pierre",
@@ -1318,7 +1141,7 @@
   {
     "type": "forage",
     "id": "sea-urchin",
-    "gameId": 397,
+    "gameId": "(O)397",
     "name": "Sea Urchin",
     "icon": "assets/objects/SeaUrchin.png",
     "price": 160,
@@ -1337,44 +1160,10 @@
     ],
     "locations": [],
     "isFlower": false,
-    "bundles": [
-      "dye"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "hate",
-      "demetrius": "hate",
-      "maru": "hate",
-      "sebastian": "hate",
-      "linus": "hate",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
       "evelyn": "like",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "hate",
-      "pam": "hate",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
-      "leah": "hate",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "neutral",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
-      "harvey": "hate",
-      "sandy": "hate",
-      "willy": "hate",
-      "krobus": "hate",
-      "leo": "like"
+      "elliott": "neutral"
     },
     "sellingLocations": [
       "store-willy",
@@ -1409,7 +1198,7 @@
   {
     "type": "forage",
     "id": "grape",
-    "gameId": 398,
+    "gameId": "(O)398",
     "name": "Grape",
     "icon": "assets/objects/Grape.png",
     "price": 80,
@@ -1430,19 +1219,16 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "summer-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
-      "penny": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
-      "vincent": "love",
+      "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
       "leah": "like",
@@ -1481,7 +1267,7 @@
   {
     "type": "forage",
     "id": "spring-onion",
-    "gameId": 399,
+    "gameId": "(O)399",
     "name": "Spring Onion",
     "icon": "assets/objects/SpringOnion.png",
     "price": 8,
@@ -1529,7 +1315,7 @@
   {
     "type": "forage",
     "id": "sweet-pea",
-    "gameId": 402,
+    "gameId": "(O)402",
     "name": "Sweet Pea",
     "icon": "assets/objects/SweetPea.png",
     "price": 50,
@@ -1552,9 +1338,7 @@
       "Town"
     ],
     "isFlower": true,
-    "bundles": [
-      "summer-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -1586,7 +1370,7 @@
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
-      "sandy": "love",
+      "sandy": "like",
       "willy": "like",
       "krobus": "like",
       "leo": "like"
@@ -1620,7 +1404,7 @@
   {
     "type": "forage",
     "id": "common-mushroom",
-    "gameId": 404,
+    "gameId": "(O)404",
     "name": "Common Mushroom",
     "icon": "assets/objects/CommonMushroom.png",
     "price": 40,
@@ -1645,11 +1429,9 @@
       "Woods"
     ],
     "isFlower": false,
-    "bundles": [
-      "fall-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "maru": "dislike",
+      "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -1711,7 +1493,7 @@
   {
     "type": "forage",
     "id": "wild-plum",
-    "gameId": 406,
+    "gameId": "(O)406",
     "name": "Wild Plum",
     "icon": "assets/objects/WildPlum.png",
     "price": 80,
@@ -1732,9 +1514,7 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "fall-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -1782,7 +1562,7 @@
   {
     "type": "forage",
     "id": "hazelnut",
-    "gameId": 408,
+    "gameId": "(O)408",
     "name": "Hazelnut",
     "icon": "assets/objects/Hazelnut.png",
     "price": 90,
@@ -1803,9 +1583,7 @@
       "Railroad"
     ],
     "isFlower": false,
-    "bundles": [
-      "fall-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
@@ -1867,7 +1645,7 @@
   {
     "type": "forage",
     "id": "blackberry",
-    "gameId": 410,
+    "gameId": "(O)410",
     "name": "Blackberry",
     "icon": "assets/objects/Blackberry.png",
     "price": 20,
@@ -1887,13 +1665,10 @@
       "Town"
     ],
     "isFlower": false,
-    "bundles": [
-      "fall-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "dislike",
       "linus": "like",
       "abigail": "dislike",
       "pam": "like",
@@ -1933,7 +1708,7 @@
   {
     "type": "forage",
     "id": "winter-root",
-    "gameId": 412,
+    "gameId": "(O)412",
     "name": "Winter Root",
     "icon": "assets/objects/WinterRoot.png",
     "price": 70,
@@ -1953,9 +1728,7 @@
     ],
     "locations": [],
     "isFlower": false,
-    "bundles": [
-      "winter-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
@@ -1995,7 +1768,7 @@
   {
     "type": "forage",
     "id": "crystal-fruit",
-    "gameId": 414,
+    "gameId": "(O)414",
     "name": "Crystal Fruit",
     "icon": "assets/objects/CrystalFruit.png",
     "price": 150,
@@ -2018,13 +1791,10 @@
       "Town"
     ],
     "isFlower": false,
-    "bundles": [
-      "winter-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "dislike",
       "linus": "like",
       "abigail": "dislike",
       "pam": "like",
@@ -2084,7 +1854,7 @@
   {
     "type": "forage",
     "id": "snow-yam",
-    "gameId": 416,
+    "gameId": "(O)416",
     "name": "Snow Yam",
     "icon": "assets/objects/SnowYam.png",
     "price": 100,
@@ -2101,11 +1871,8 @@
     ],
     "locations": [],
     "isFlower": false,
-    "bundles": [
-      "winter-foraging"
-    ],
+    "bundles": [],
     "gifts": {
-      "maru": "hate",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -2114,7 +1881,6 @@
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "dislike",
-      "kent": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
@@ -2140,7 +1906,7 @@
   {
     "type": "forage",
     "id": "crocus",
-    "gameId": 418,
+    "gameId": "(O)418",
     "name": "Crocus",
     "icon": "assets/objects/Crocus.png",
     "price": 60,
@@ -2165,9 +1931,7 @@
       "Town"
     ],
     "isFlower": true,
-    "bundles": [
-      "winter-foraging"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
@@ -2199,7 +1963,7 @@
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
-      "sandy": "love",
+      "sandy": "like",
       "willy": "like",
       "krobus": "like",
       "leo": "like"
@@ -2243,7 +2007,7 @@
   {
     "type": "forage",
     "id": "red-mushroom",
-    "gameId": 420,
+    "gameId": "(O)420",
     "name": "Red Mushroom",
     "icon": "assets/objects/RedMushroom.png",
     "price": 75,
@@ -2269,45 +2033,26 @@
       "Woods"
     ],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging",
-      "dye"
-    ],
+    "bundles": [],
     "gifts": {
-      "robin": "hate",
-      "demetrius": "hate",
-      "maru": "hate",
-      "sebastian": "hate",
+      "sebastian": "dislike",
       "linus": "like",
-      "pierre": "hate",
-      "caroline": "hate",
-      "abigail": "hate",
-      "alex": "hate",
-      "george": "hate",
-      "evelyn": "hate",
-      "lewis": "hate",
-      "clint": "hate",
-      "penny": "dislike",
-      "pam": "hate",
-      "emily": "hate",
-      "haley": "hate",
-      "jas": "hate",
-      "vincent": "hate",
-      "jodi": "hate",
-      "kent": "hate",
-      "sam": "hate",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "sam": "dislike",
       "leah": "like",
-      "shane": "hate",
-      "marnie": "hate",
-      "elliott": "hate",
-      "gus": "hate",
-      "dwarf": "hate",
-      "wizard": "hate",
+      "shane": "dislike",
+      "elliott": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
       "harvey": "like",
-      "sandy": "hate",
-      "willy": "hate",
-      "krobus": "hate",
-      "leo": "hate"
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sellingLocations": [
       "store-shipping-bin"
@@ -2346,7 +2091,7 @@
   {
     "type": "forage",
     "id": "purple-mushroom",
-    "gameId": 422,
+    "gameId": "(O)422",
     "name": "Purple Mushroom",
     "icon": "assets/objects/PurpleMushroom.png",
     "price": 250,
@@ -2369,18 +2114,13 @@
       "Mines (Floors 81-119)"
     ],
     "isFlower": false,
-    "bundles": [
-      "exotic-foraging",
-      "field-research"
-    ],
+    "bundles": [],
     "gifts": {
-      "demetrius": "like",
       "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
-      "penny": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -2390,7 +2130,7 @@
       "shane": "dislike",
       "elliott": "dislike",
       "dwarf": "dislike",
-      "wizard": "love",
+      "wizard": "dislike",
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -2429,7 +2169,7 @@
   {
     "type": "forage",
     "id": "cockle",
-    "gameId": 718,
+    "gameId": "(O)718",
     "name": "Cockle",
     "icon": "assets/objects/Cockle.png",
     "price": 50,
@@ -2453,9 +2193,7 @@
       "Beach"
     ],
     "isFlower": false,
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -2507,19 +2245,12 @@
           "winter"
         ]
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "fish",
-      "id": "cockle",
-      "context": "Crab pot fishing"
-    },
-    "originalGameCategory": -4,
-    "displayGameCategory": -81
+    ]
   },
   {
     "type": "forage",
     "id": "mussel",
-    "gameId": 719,
+    "gameId": "(O)719",
     "name": "Mussel",
     "icon": "assets/objects/Mussel.png",
     "price": 30,
@@ -2543,9 +2274,7 @@
       "Beach"
     ],
     "isFlower": false,
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -2597,19 +2326,12 @@
           "winter"
         ]
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "fish",
-      "id": "mussel",
-      "context": "Crab pot fishing"
-    },
-    "originalGameCategory": -4,
-    "displayGameCategory": -81
+    ]
   },
   {
     "type": "forage",
     "id": "oyster",
-    "gameId": 723,
+    "gameId": "(O)723",
     "name": "Oyster",
     "icon": "assets/objects/Oyster.png",
     "price": 40,
@@ -2634,9 +2356,7 @@
       "Beach"
     ],
     "isFlower": false,
-    "bundles": [
-      "crab-pot"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "neutral",
@@ -2688,19 +2408,12 @@
           "winter"
         ]
       }
-    ],
-    "alsoAvailableAs": {
-      "type": "fish",
-      "id": "oyster",
-      "context": "Crab pot fishing"
-    },
-    "originalGameCategory": -4,
-    "displayGameCategory": -81
+    ]
   },
   {
     "type": "forage",
     "id": "ginger",
-    "gameId": 829,
+    "gameId": "(O)829",
     "name": "Ginger",
     "icon": "assets/objects/Ginger.png",
     "price": 60,

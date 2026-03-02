@@ -214,12 +214,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 2000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -303,15 +297,6 @@
     "icon": "assets/objects/JadeHillsExtended.png",
     "wikiName": "Jade_Hills_Extended",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 5000,
-        "days": [
-          "Wednesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -909,20 +894,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 1000,
-        "tradeItemId": "mango",
-        "tradeItemGameId": 834,
-        "tradeItemName": "Mango",
-        "tradeItemIcon": "assets/objects/Mango.png",
-        "tradeItemAmount": 5,
-        "days": [
-          "Thursday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -974,22 +945,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.abigail"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1005,22 +960,6 @@
     "icon": "assets/objects/AlexPortrait.png",
     "wikiName": "Alex_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.alex"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1108,19 +1047,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
-        "shopCurrency": "qi-gems",
-        "shopCurrencyGameId": 858,
-        "price": 20000,
-        "tradeItemId": "qi-gem",
-        "tradeItemGameId": 858,
-        "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/QiGem.png",
-        "tradeItemAmount": 20
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1206,12 +1132,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 600
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1246,12 +1166,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 500
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1267,15 +1181,6 @@
     "icon": "assets/objects/BirchBench.png",
     "wikiName": "Birch_Bench",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 300,
-        "days": [
-          "Wednesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1295,14 +1200,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1318,17 +1215,6 @@
     "icon": "assets/objects/BirchDoubleBed.png",
     "wikiName": "Birch_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 12000,
-        "tradeItemId": "pearl",
-        "tradeItemGameId": 797,
-        "tradeItemName": "Pearl",
-        "tradeItemIcon": "assets/objects/Pearl.png",
-        "tradeItemAmount": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1348,15 +1234,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 10000,
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1372,15 +1249,6 @@
     "icon": "assets/objects/BirchEndTable.png",
     "wikiName": "Birch_End_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1000,
-        "days": [
-          "Wednesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1417,15 +1285,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1443,15 +1302,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1467,12 +1317,6 @@
     "icon": "assets/objects/BirdHouse.png",
     "wikiName": "Bird_House",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 5000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1628,20 +1472,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.stats.ticketPrizesClaimed"
-            },
-            6
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -1657,32 +1487,6 @@
     "icon": "assets/objects/BluePinstripeDoubleBed.png",
     "wikiName": "Blue_Pinstripe_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1000,
-        "condition": {
-          "and": [
-            {
-              ">=": [
-                {
-                  "var": "player.stats.ticketPrizesClaimed"
-                },
-                6
-              ]
-            },
-            {
-              ">=": [
-                {
-                  "var": "player.houseUpgrade"
-                },
-                1
-              ]
-            }
-          ]
-        }
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -1889,12 +1693,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 2000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2014,12 +1812,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2088,17 +1880,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 100000,
-        "tradeItemId": "bat-wing",
-        "tradeItemGameId": 767,
-        "tradeItemName": "Bat Wing",
-        "tradeItemIcon": "assets/objects/BatWing.png",
-        "tradeItemAmount": 200
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2133,12 +1914,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 4000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2171,34 +1946,6 @@
     "icon": "assets/objects/CalicoStatue.png",
     "wikiName": "Calico_Statue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 25,
-        "days": [
-          "Monday"
-        ]
-      },
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 35,
-        "days": [
-          "Wednesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2286,12 +2033,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 10000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2307,12 +2048,6 @@
     "icon": "assets/objects/Catalogue.png",
     "wikiName": "Catalogue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
-        "price": 60000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2383,12 +2118,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 400
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2404,12 +2133,6 @@
     "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 400
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2429,12 +2152,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 400
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2452,12 +2169,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
-        "price": 400
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2473,12 +2184,6 @@
     "icon": "assets/objects/CeilingLeaves.png",
     "wikiName": "Ceiling_Leaves",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
-        "price": 400
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2549,20 +2254,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 2000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.houseUpgrade"
-            },
-            2
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2614,17 +2305,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-caroline",
-        "storeName": "Desert Festival Stall (Caroline)",
-        "price": 2000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 40
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2640,12 +2320,6 @@
     "icon": "assets/objects/Clothesline.png",
     "wikiName": "Clothesline",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 5000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2665,12 +2339,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-moonlight-jellies",
-        "storeName": "Dance of the Moonlight Jellies",
-        "price": 1200
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2686,12 +2354,6 @@
     "icon": "assets/objects/CloudDecal.png",
     "wikiName": "Cloud_Decal",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-moonlight-jellies",
-        "storeName": "Dance of the Moonlight Jellies",
-        "price": 1200
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2711,12 +2373,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2732,12 +2388,6 @@
     "icon": "assets/objects/CoatStand.png",
     "wikiName": "Coat_Stand",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 2000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2772,12 +2422,6 @@
     "icon": "assets/objects/ColorfulSet.png",
     "wikiName": "Colorful_Set",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-egg-festival",
-        "storeName": "Egg Festival",
-        "price": 500
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -2848,20 +2492,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 10000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.stats.ticketPrizesClaimed"
-            },
-            17
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -2894,48 +2524,6 @@
     "icon": "assets/objects/CrystalChair.png",
     "wikiName": "Crystal_Chair",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 2500,
-        "condition": {
-          ">=": [
-            {
-              "var": "museum.minerals"
-            },
-            40
-          ]
-        }
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 2500,
-        "condition": {
-          ">=": [
-            {
-              "var": "museum.minerals"
-            },
-            40
-          ]
-        }
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 2500,
-        "condition": {
-          ">=": [
-            {
-              "var": "museum.minerals"
-            },
-            40
-          ]
-        }
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3006,12 +2594,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 10000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3044,12 +2626,6 @@
     "icon": "assets/objects/DarkDoghouse.png",
     "wikiName": "Dark_Doghouse",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 10000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3101,17 +2677,6 @@
     "icon": "assets/objects/DarkPiano.png",
     "wikiName": "Dark_Piano",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 1998,
-        "tradeItemId": "coal",
-        "tradeItemGameId": 382,
-        "tradeItemName": "Coal",
-        "tradeItemIcon": "assets/objects/Coal.png",
-        "tradeItemAmount": 999
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3216,12 +2781,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3237,20 +2796,6 @@
     "icon": "assets/objects/DecorativeBarrel.png",
     "wikiName": "Decorative_Barrel",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 10,
-        "days": [
-          "Tuesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3474,12 +3019,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-egg-festival",
-        "storeName": "Egg Festival",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3529,12 +3068,6 @@
     "icon": "assets/objects/DecorativeSword.png",
     "wikiName": "Decorative_Sword",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
-        "price": 10000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3605,46 +3138,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
-        "price": 5000,
-        "condition": {
-          "in": [
-            "WillyTropicalFish",
-            {
-              "var": "player.mail"
-            }
-          ]
-        }
-      },
-      {
-        "type": "mail",
-        "mailKey": "WillyTropicalFish",
-        "sender": "Willy",
-        "isSpecialOrder": true,
-        "condition": {
-          "and": [
-            {
-              "==": [
-                {
-                  "var": "world.islandUnlocked"
-                },
-                true
-              ]
-            },
-            {
-              "in": [
-                "Island_Resort",
-                {
-                  "var": "player.mail"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3660,20 +3153,6 @@
     "icon": "assets/objects/DeluxeRedDoubleBed.png",
     "wikiName": "Deluxe_Red_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 12000,
-        "condition": {
-          "in": [
-            1053978,
-            {
-              "var": "player.events"
-            }
-          ]
-        }
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3710,20 +3189,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 20,
-        "days": [
-          "Tuesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3739,20 +3204,6 @@
     "icon": "assets/objects/DesertEndTable.png",
     "wikiName": "Desert_End_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 20,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3772,20 +3223,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 20,
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3801,20 +3238,6 @@
     "icon": "assets/objects/DesertFlags.png",
     "wikiName": "Desert_Flags",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 10,
-        "days": [
-          "Wednesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3834,20 +3257,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 25,
-        "days": [
-          "Wednesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3863,20 +3272,6 @@
     "icon": "assets/objects/DesertTable.png",
     "wikiName": "Desert_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 25,
-        "days": [
-          "Tuesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -3947,12 +3342,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
-        "price": 10000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3970,20 +3359,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 2000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.houseUpgrade"
-            },
-            1
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -3999,16 +3374,6 @@
     "icon": "assets/objects/DriedSunflowers.png",
     "wikiName": "Dried_Sunflowers",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
-        "shopCurrency": "star-tokens",
-        "shopCurrencyGameId": "StarToken",
-        "price": 100,
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -4130,22 +3495,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.elliott"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -4180,22 +3529,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.emily"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -4211,19 +3544,6 @@
     "icon": "assets/objects/ExoticDoubleBed.png",
     "wikiName": "Exotic_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
-        "shopCurrency": "qi-gems",
-        "shopCurrencyGameId": 858,
-        "price": 12000,
-        "tradeItemId": "qi-gem",
-        "tradeItemGameId": 858,
-        "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/QiGem.png",
-        "tradeItemAmount": 50
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -4430,12 +3750,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 3000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -4451,12 +3765,6 @@
     "icon": "assets/objects/FisherDoubleBed.png",
     "wikiName": "Fisher_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
-        "price": 25000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -4748,12 +4056,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1400
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -4822,12 +4124,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-spirits-eve",
-        "storeName": "Spirit's Eve",
-        "price": 4000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -4843,32 +4139,6 @@
     "icon": "assets/objects/FurnitureCatalogue.png",
     "wikiName": "Furniture_Catalogue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 400000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.houseUpgrade"
-            },
-            1
-          ]
-        }
-      },
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-robin",
-        "storeName": "Desert Festival Stall (Robin)",
-        "price": 400000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 1000,
-        "stock": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -5313,22 +4583,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.haley"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -5344,12 +4598,6 @@
     "icon": "assets/objects/HangingFish.png",
     "wikiName": "Hanging_Fish",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -5384,22 +4632,6 @@
     "icon": "assets/objects/HarveyPortrait.png",
     "wikiName": "Harvey_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.harvey"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -5657,12 +4889,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 700
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -5765,12 +4991,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -5786,12 +5006,6 @@
     "icon": "assets/objects/IcyRug.png",
     "wikiName": "Icy_Rug",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 4000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -5862,24 +5076,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 15000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 15000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 15000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -5929,12 +5125,6 @@
     "icon": "assets/objects/JColaLight.png",
     "wikiName": "J._Cola_Light",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
-        "price": 500
-      },
       {
         "type": "shop",
         "storeId": "store-joja-furniture-catalogue",
@@ -6020,28 +5210,6 @@
     "icon": "assets/objects/FurnitureCatalogue.png",
     "wikiName": "Furniture_Catalogue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
-        "price": 25000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "rotating": true,
-        "condition": {
-          "==": [
-            {
-              "var": "world.communityCenter"
-            },
-            true
-          ]
-        },
-        "stock": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -6401,12 +5569,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -6422,12 +5584,6 @@
     "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 800
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -6447,12 +5603,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -6468,12 +5618,6 @@
     "icon": "assets/objects/JungleDecal.png",
     "wikiName": "Jungle_Decal",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 800
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -6493,25 +5637,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
-        "price": 10000,
-        "tradeItemId": "broken-glasses",
-        "tradeItemGameId": 170,
-        "tradeItemName": "Broken Glasses",
-        "tradeItemIcon": "assets/objects/BrokenGlasses.png",
-        "tradeItemAmount": 5,
-        "condition": {
-          ">=": [
-            {
-              "var": "world.TimesFedRaccoons"
-            },
-            5
-          ]
-        }
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -6527,17 +5652,6 @@
     "icon": "assets/objects/JungleTorch.png",
     "wikiName": "Jungle_Torch",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 1000,
-        "tradeItemId": "cinder-shard",
-        "tradeItemGameId": 848,
-        "tradeItemName": "Cinder Shard",
-        "tradeItemIcon": "assets/objects/CinderShard.png",
-        "tradeItemAmount": 5
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -6623,22 +5737,6 @@
     "icon": "assets/objects/JunimoCatalogue.png",
     "wikiName": "Junimo_Catalogue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 70000,
-        "rotating": true,
-        "condition": {
-          "==": [
-            {
-              "var": "world.communityCenter"
-            },
-            true
-          ]
-        },
-        "stock": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7032,22 +6130,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.krobus"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7063,12 +6145,6 @@
     "icon": "assets/objects/LLightString.png",
     "wikiName": "L._Light_String",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 800
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7122,15 +6198,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 3000,
-        "days": [
-          "Sunday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7146,15 +6213,6 @@
     "icon": "assets/objects/LargeCottageRug.png",
     "wikiName": "Large_Cottage_Rug",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 2000,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7174,12 +6232,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
-        "price": 2000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7195,15 +6247,6 @@
     "icon": "assets/objects/LargeGreenRug.png",
     "wikiName": "Large_Green_Rug",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 2500,
-        "days": [
-          "Friday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7274,12 +6317,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7346,22 +6383,6 @@
     "icon": "assets/objects/LeahPortrait.png",
     "wikiName": "Leah_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.leah"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7432,16 +6453,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
-        "shopCurrency": "star-tokens",
-        "shopCurrencyGameId": "StarToken",
-        "price": 500,
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7510,12 +6521,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 500
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7531,12 +6536,6 @@
     "icon": "assets/objects/LogPanel.png",
     "wikiName": "Log_Panel",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 700
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7811,12 +6810,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7832,22 +6825,6 @@
     "icon": "assets/objects/MaruPortrait.png",
     "wikiName": "Maru_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.maru"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -7935,17 +6912,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 10000,
-        "tradeItemId": "iridium-bar",
-        "tradeItemGameId": 337,
-        "tradeItemName": "Iridium Bar",
-        "tradeItemIcon": "assets/objects/IridiumBar.png",
-        "tradeItemAmount": 15
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -7961,17 +6927,6 @@
     "icon": "assets/objects/MidnightBeachDoubleBed.png",
     "wikiName": "Midnight_Beach_Double_Bed",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 10000,
-        "tradeItemId": "iridium-bar",
-        "tradeItemGameId": 337,
-        "tradeItemName": "Iridium Bar",
-        "tradeItemIcon": "assets/objects/IridiumBar.png",
-        "tradeItemAmount": 30
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8161,12 +7116,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-moonlight-jellies",
-        "storeName": "Dance of the Moonlight Jellies",
-        "price": 4000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8252,12 +7201,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-krobus",
-        "storeName": "Krobus's Shop",
-        "price": 20000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8307,12 +7250,6 @@
     "icon": "assets/objects/MoonlightJelliesBanner.png",
     "wikiName": "Moonlight_Jellies_Banner",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-moonlight-jellies",
-        "storeName": "Dance of the Moonlight Jellies",
-        "price": 800
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8434,17 +7371,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-penny",
-        "storeName": "Desert Festival Stall (Penny)",
-        "price": 1500,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 30
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8460,17 +7386,6 @@
     "icon": "assets/objects/NightSkyDecal2.png",
     "wikiName": "Night_Sky_Decal_#2",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-penny",
-        "storeName": "Desert Festival Stall (Penny)",
-        "price": 1500,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 30
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8490,17 +7405,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-penny",
-        "storeName": "Desert Festival Stall (Penny)",
-        "price": 1500,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 30
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8516,15 +7420,6 @@
     "icon": "assets/objects/OakBench.png",
     "wikiName": "Oak_Bench",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 160,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8544,14 +7439,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "days": [
-          "Monday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8569,15 +7456,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 200,
-        "days": [
-          "Monday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8593,15 +7471,6 @@
     "icon": "assets/objects/OakEndTable.png",
     "wikiName": "Oak_End_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1000,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8638,15 +7507,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Monday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8662,15 +7522,6 @@
     "icon": "assets/objects/OakTeaTable.png",
     "wikiName": "Oak_Tea-Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8707,20 +7558,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 2500,
-        "tradeItemId": "blue-discus",
-        "tradeItemGameId": 838,
-        "tradeItemName": "Blue Discus",
-        "tradeItemIcon": "assets/objects/BlueDiscus.png",
-        "tradeItemAmount": 3,
-        "days": [
-          "Saturday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8736,15 +7573,6 @@
     "icon": "assets/objects/OldWorldRug.png",
     "wikiName": "Old_World_Rug",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 2500,
-        "days": [
-          "Thursday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8815,12 +7643,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8855,20 +7677,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 1000,
-        "tradeItemId": "pineapple",
-        "tradeItemGameId": 832,
-        "tradeItemName": "Pineapple",
-        "tradeItemIcon": "assets/objects/Pineapple.png",
-        "tradeItemAmount": 1,
-        "days": [
-          "Tuesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -8884,12 +7692,6 @@
     "icon": "assets/objects/PastelBanner.png",
     "wikiName": "Pastel_Banner",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-egg-festival",
-        "storeName": "Egg Festival",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -8924,22 +7726,6 @@
     "icon": "assets/objects/PennyPortrait.png",
     "wikiName": "Penny_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.penny"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -9061,17 +7847,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-penny",
-        "storeName": "Desert Festival Stall (Penny)",
-        "price": 8000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 100
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -9106,18 +7881,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 700
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -9133,20 +7896,6 @@
     "icon": "assets/objects/PlasmaTV.png",
     "wikiName": "Plasma_TV",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 9000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.houseUpgrade"
-            },
-            1
-          ]
-        }
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -9625,14 +8374,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 110000,
-        "rotating": true,
-        "stock": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -9973,12 +8714,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 500
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -9994,12 +8729,6 @@
     "icon": "assets/objects/SWallFlower.png",
     "wikiName": "S._Wall_Flower",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
-        "price": 800
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -10036,22 +8765,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.sam"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10086,20 +8799,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 20,
-        "days": [
-          "Monday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10117,22 +8816,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.sebastian"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10148,22 +8831,6 @@
     "icon": "assets/objects/ShanePortrait.png",
     "wikiName": "Shane_Portrait",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 30000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.hearts.shane"
-            },
-            14
-          ]
-        },
-        "stock": 1,
-        "stockLimit": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -10404,12 +9071,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
-        "price": 500
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10614,12 +9275,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 600
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10807,12 +9462,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-moonlight-jellies",
-        "storeName": "Dance of the Moonlight Jellies",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10862,12 +9511,6 @@
     "icon": "assets/objects/StoneFireplace.png",
     "wikiName": "Stone_Fireplace",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 3000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -10921,12 +9564,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 6000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -10942,17 +9579,6 @@
     "icon": "assets/objects/StrawberryDecal.png",
     "wikiName": "Strawberry_Decal",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-penny",
-        "storeName": "Desert Festival Stall (Penny)",
-        "price": 5000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 100
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11006,12 +9632,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11027,20 +9647,6 @@
     "icon": "assets/objects/SunDunes.png",
     "wikiName": "Sun_Dunes",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "price": 1000,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 30,
-        "days": [
-          "Monday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11196,12 +9802,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 1000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11253,18 +9853,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 5000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 5000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11299,17 +9887,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 10000,
-        "tradeItemId": "ginger",
-        "tradeItemGameId": 829,
-        "tradeItemName": "Ginger",
-        "tradeItemIcon": "assets/objects/Ginger.png",
-        "tradeItemAmount": 20
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11325,17 +9902,6 @@
     "icon": "assets/objects/TropicalChair.png",
     "wikiName": "Tropical_Chair",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 6000,
-        "tradeItemId": "lionfish",
-        "tradeItemGameId": 837,
-        "tradeItemName": "Lionfish",
-        "tradeItemIcon": "assets/objects/Lionfish.png",
-        "tradeItemAmount": 1
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11355,20 +9921,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 10000,
-        "tradeItemId": "banana",
-        "tradeItemGameId": 91,
-        "tradeItemName": "Banana",
-        "tradeItemIcon": "assets/objects/Banana.png",
-        "tradeItemAmount": 5,
-        "days": [
-          "Sunday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11384,17 +9936,6 @@
     "icon": "assets/objects/TropicalTV.png",
     "wikiName": "Tropical_TV",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 9000,
-        "tradeItemId": "taro-root",
-        "tradeItemGameId": 830,
-        "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/TaroRoot.png",
-        "tradeItemAmount": 30
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11431,24 +9972,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 100000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 100000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 100000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11481,12 +10004,6 @@
     "icon": "assets/objects/WallCactus.png",
     "wikiName": "Wall_Cactus",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 700
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11523,12 +10040,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
-        "price": 800
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11544,12 +10055,6 @@
     "icon": "assets/objects/WallPalm.png",
     "wikiName": "Wall_Palm",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11654,15 +10159,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 500,
-        "days": [
-          "Saturday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11678,12 +10174,6 @@
     "icon": "assets/objects/WallSconce.png",
     "wikiName": "Wall_Sconce",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11703,15 +10193,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
-        "price": 500,
-        "days": [
-          "Saturday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11727,12 +10208,6 @@
     "icon": "assets/objects/WallSword.png",
     "wikiName": "Wall_Sword",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
-        "price": 2000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11769,15 +10244,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 600,
-        "days": [
-          "Tuesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11793,15 +10259,6 @@
     "icon": "assets/objects/WalnutChair.png",
     "wikiName": "Walnut_Chair",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 700,
-        "days": [
-          "Tuesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11821,15 +10278,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 30,
-        "days": [
-          "Tuesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11845,15 +10293,6 @@
     "icon": "assets/objects/WalnutEndTable.png",
     "wikiName": "Walnut_End_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1000,
-        "days": [
-          "Tuesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11890,15 +10329,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Tuesday"
-        ]
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -11914,15 +10344,6 @@
     "icon": "assets/objects/WalnutTeaTable.png",
     "wikiName": "Walnut_Tea-Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-robin",
-        "storeName": "Carpenter's Shop (Robin)",
-        "price": 1500,
-        "days": [
-          "Tuesday"
-        ]
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -11959,17 +10380,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 12000,
-        "tradeItemId": "cinder-shard",
-        "tradeItemGameId": 848,
-        "tradeItemName": "Cinder Shard",
-        "tradeItemIcon": "assets/objects/CinderShard.png",
-        "tradeItemAmount": 100
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -12002,12 +10412,6 @@
     "icon": "assets/objects/WinterBanner.png",
     "wikiName": "Winter_Banner",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -12044,12 +10448,6 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 3000
-      },
-      {
-        "type": "shop",
         "storeId": "store-furniture-catalogue",
         "storeName": "Furniture Catalogue",
         "price": 0
@@ -12065,12 +10463,6 @@
     "icon": "assets/objects/WinterEndTable.png",
     "wikiName": "Winter_End_Table",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
-        "price": 1000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -12190,12 +10582,6 @@
     "icon": "assets/objects/WizardCatalogue.png",
     "wikiName": "Wizard_Catalogue",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-krobus",
-        "storeName": "Krobus's Shop",
-        "price": 150000
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",
@@ -12400,12 +10786,6 @@
     "icon": "assets/objects/WoodPanel.png",
     "wikiName": "Wood_Panel",
     "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-winter-star",
-        "storeName": "Feast of the Winter Star",
-        "price": 500
-      },
       {
         "type": "shop",
         "storeId": "store-furniture-catalogue",

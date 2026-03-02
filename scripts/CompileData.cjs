@@ -62,6 +62,11 @@ const sourceData = {
   rings:          loadJson(path.join(SOURCE_DIR, 'items/rings.json')),
   treeSeeds:      loadJson(path.join(SOURCE_DIR, 'items/tree-seeds.json')),
   misc:           loadJson(path.join(SOURCE_DIR, 'items/misc.json')),
+  weapons:        loadJson(path.join(SOURCE_DIR, 'items/weapons.json')),
+  boots:          loadJson(path.join(SOURCE_DIR, 'items/boots.json')),
+  tools:          loadJson(path.join(SOURCE_DIR, 'items/tools.json')),
+  trinkets:       loadJson(path.join(SOURCE_DIR, 'items/trinkets.json')),
+  buildings:      loadJson(path.join(SOURCE_DIR, 'items/buildings.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
   machines:       loadJson(path.join(SOURCE_DIR, 'reference/machines.json')),
@@ -287,6 +292,11 @@ const taggedArtifacts      = tagEntities(sourceData.artifacts, 'artifact');
 const taggedRings          = tagEntities(sourceData.rings, 'ring');
 const taggedTreeSeeds      = tagEntities(sourceData.treeSeeds, 'tree-seed');
 const taggedMisc           = tagEntities(sourceData.misc, 'misc');
+const taggedWeapons        = tagEntities(sourceData.weapons, 'weapon');
+const taggedBoots          = tagEntities(sourceData.boots, 'boot');
+const taggedTools          = tagEntities(sourceData.tools, 'tool');
+const taggedTrinkets       = tagEntities(sourceData.trinkets, 'trinket');
+const taggedBuildings      = tagEntities(sourceData.buildings, 'building');
 const taggedBuffs          = sourceData.buffs.map(b => ({ ...b, category: 'buff' }));
 const taggedEvents         = sourceData.events.map(e => ({ ...e, category: 'event' }));
 const taggedVillagers      = sourceData.villagers.map(v => ({ ...v, category: 'villager' }));
@@ -387,6 +397,11 @@ const CATEGORY_PRIORITY = {
   'buff': 29,
   'event': 30,
   'villager': 31,
+  'weapon': 32,
+  'boot': 33,
+  'tool': 34,
+  'trinket': 35,
+  'building': 36,
 };
 
 // All entity arrays to merge
@@ -419,6 +434,11 @@ const allTypedEntities = [
   ...taggedRings,
   ...taggedTreeSeeds,
   ...taggedMisc,
+  ...taggedWeapons,
+  ...taggedBoots,
+  ...taggedTools,
+  ...taggedTrinkets,
+  ...taggedBuildings,
   ...taggedBuffs,
   ...taggedEvents,
   ...taggedVillagers,

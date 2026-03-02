@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './ModalHeader.css'
 
 /**
@@ -8,28 +9,27 @@ import './ModalHeader.css'
  *   <ModalHeader icon={item.icon} name={item.name} subtitle="Category Name" />
  */
 function ModalHeader({ icon, name, subtitle, children, className = '' }) {
-  const handleImageError = (e) => {
-    // Prevent duplicate fallbacks
-    if (e.target.dataset.errorHandled) return
-    e.target.dataset.errorHandled = 'true'
+  const [iconError, setIconError] = useState(false)
 
-    // Fallback to text if image fails to load
-    e.target.style.display = 'none'
-    const fallback = document.createElement('div')
-    fallback.className = 'modal-item-header-icon-fallback'
-    fallback.textContent = name.slice(0, 2).toUpperCase()
-    fallback.title = `${name} (icon not found)`
-    e.target.parentNode.insertBefore(fallback, e.target)
-  }
+  // Reset error state when the icon src changes (navigating to a new entity)
+  useEffect(() => {
+    setIconError(false)
+  }, [icon])
 
   return (
     <div className={`modal-item-header ${className}`}>
-      <img
-        src={icon}
-        alt={name}
-        className="modal-item-header-icon"
-        onError={handleImageError}
-      />
+      {iconError ? (
+        <div className="modal-item-header-icon-fallback" title={`${name} (icon not found)`}>
+          {name.slice(0, 2).toUpperCase()}
+        </div>
+      ) : (
+        <img
+          src={icon}
+          alt={name}
+          className="modal-item-header-icon"
+          onError={() => setIconError(true)}
+        />
+      )}
       <div className="modal-item-header-title-section">
         <div className="modal-item-header-title-row">
           <h3>{name}</h3>

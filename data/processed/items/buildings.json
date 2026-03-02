@@ -1,0 +1,617 @@
+[
+  {
+    "type": "building",
+    "id": "barn",
+    "gameId": "(BLD)Barn",
+    "name": "Barn",
+    "description": "Houses 4 barn-dwelling animals.",
+    "icon": "assets/objects/Barn.png",
+    "builder": "Robin",
+    "buildCost": 6000,
+    "buildDays": 3,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 350
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 150
+      }
+    ],
+    "maxOccupants": 4,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesTo": "(BLD)Big Barn"
+  },
+  {
+    "type": "building",
+    "id": "big-barn",
+    "gameId": "(BLD)Big Barn",
+    "name": "Big Barn",
+    "description": "Houses 8 barn-dwelling animals. Allows animals to give birth. Unlocks goats.",
+    "icon": "assets/objects/BigBarn.png",
+    "builder": "Robin",
+    "buildCost": 12000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 450
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 200
+      }
+    ],
+    "maxOccupants": 8,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesFrom": "(BLD)Barn",
+    "upgradesTo": "(BLD)Deluxe Barn"
+  },
+  {
+    "type": "building",
+    "id": "big-coop",
+    "gameId": "(BLD)Big Coop",
+    "name": "Big Coop",
+    "description": "Houses 8 coop-dwelling animals. Comes with an incubator. Unlocks ducks.",
+    "icon": "assets/objects/BigCoop.png",
+    "builder": "Robin",
+    "buildCost": 10000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 400
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 150
+      }
+    ],
+    "maxOccupants": 8,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesFrom": "(BLD)Coop",
+    "upgradesTo": "(BLD)Deluxe Coop"
+  },
+  {
+    "type": "building",
+    "id": "big-shed",
+    "gameId": "(BLD)Big Shed",
+    "name": "Big Shed",
+    "description": "Doubles the size of the shed. The interior can be decorated.",
+    "icon": "assets/objects/BigShed.png",
+    "builder": "Robin",
+    "buildCost": 20000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 550
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 300
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesFrom": "(BLD)Shed"
+  },
+  {
+    "type": "building",
+    "id": "cabin",
+    "gameId": "(BLD)Cabin",
+    "name": "Cabin",
+    "description": "A home for a friend! Subsidized by the town agricultural fund.",
+    "icon": "assets/objects/Cabin.png",
+    "builder": "Robin",
+    "buildCost": 100,
+    "buildDays": 0,
+    "buildMaterials": [],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "coop",
+    "gameId": "(BLD)Coop",
+    "name": "Coop",
+    "description": "Houses 4 coop-dwelling animals.",
+    "icon": "assets/objects/Coop.png",
+    "builder": "Robin",
+    "buildCost": 4000,
+    "buildDays": 3,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 300
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 100
+      }
+    ],
+    "maxOccupants": 4,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesTo": "(BLD)Big Coop"
+  },
+  {
+    "type": "building",
+    "id": "deluxe-barn",
+    "gameId": "(BLD)Deluxe Barn",
+    "name": "Deluxe Barn",
+    "description": "Houses 12 barn-dwelling animals. Comes with an auto-feed system. Unlocks sheep and pigs.",
+    "icon": "assets/objects/DeluxeBarn.png",
+    "builder": "Robin",
+    "buildCost": 25000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 550
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 300
+      }
+    ],
+    "maxOccupants": 12,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesFrom": "(BLD)Big Barn"
+  },
+  {
+    "type": "building",
+    "id": "deluxe-coop",
+    "gameId": "(BLD)Deluxe Coop",
+    "name": "Deluxe Coop",
+    "description": "Houses 12 coop-dwelling animals. Comes with an auto-feed system. Unlocks rabbits.",
+    "icon": "assets/objects/DeluxeCoop.png",
+    "builder": "Robin",
+    "buildCost": 20000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 500
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 200
+      }
+    ],
+    "maxOccupants": 12,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesFrom": "(BLD)Big Coop"
+  },
+  {
+    "type": "building",
+    "id": "desert-obelisk",
+    "gameId": "(BLD)Desert Obelisk",
+    "name": "Desert Obelisk",
+    "description": "Warps you to the desert.",
+    "icon": "assets/objects/DesertObelisk.png",
+    "builder": "Wizard",
+    "buildCost": 1000000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)337",
+        "amount": 20
+      },
+      {
+        "gameId": "(O)88",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)90",
+        "amount": 10
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "earth-obelisk",
+    "gameId": "(BLD)Earth Obelisk",
+    "name": "Earth Obelisk",
+    "description": "Warps you to the mountains.",
+    "icon": "assets/objects/EarthObelisk.png",
+    "builder": "Wizard",
+    "buildCost": 500000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)337",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)86",
+        "amount": 10
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "farmhouse",
+    "gameId": "(BLD)Farmhouse",
+    "name": "Farmhouse",
+    "description": "Farmhouse",
+    "icon": "assets/objects/Farmhouse.png",
+    "builder": "None",
+    "buildCost": 0,
+    "buildDays": 0,
+    "buildMaterials": [],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "fish-pond",
+    "gameId": "(BLD)Fish Pond",
+    "name": "Fish Pond",
+    "description": "Raise fish and harvest their produce. Fish multiply over time.",
+    "icon": "assets/objects/FishPond.png",
+    "builder": "Robin",
+    "buildCost": 5000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)390",
+        "amount": 200
+      },
+      {
+        "gameId": "(O)152",
+        "amount": 5
+      },
+      {
+        "gameId": "(O)153",
+        "amount": 5
+      }
+    ],
+    "maxOccupants": -1,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "gold-clock",
+    "gameId": "(BLD)Gold Clock",
+    "name": "Gold Clock",
+    "description": "Prevents debris from appearing on your farm. Keeps fences from decaying.",
+    "icon": "assets/objects/GoldClock.png",
+    "builder": "Wizard",
+    "buildCost": 10000000,
+    "buildDays": 0,
+    "buildMaterials": [],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "greenhouse",
+    "gameId": "(BLD)Greenhouse",
+    "name": "Greenhouse",
+    "description": "A place to grow crops from any season, year round!",
+    "icon": "assets/objects/Greenhouse.png",
+    "builder": "None",
+    "buildCost": 0,
+    "buildDays": 0,
+    "buildMaterials": [],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "island-obelisk",
+    "gameId": "(BLD)Island Obelisk",
+    "name": "Island Obelisk",
+    "description": "Warps you to Ginger Island.",
+    "icon": "assets/objects/IslandObelisk.png",
+    "builder": "Wizard",
+    "buildCost": 1000000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)337",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)852",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)91",
+        "amount": 10
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "junimo-hut",
+    "gameId": "(BLD)Junimo Hut",
+    "name": "Junimo Hut",
+    "description": "Junimos will harvest crops around the hut for you.",
+    "icon": "assets/objects/JunimoHut.png",
+    "builder": "Wizard",
+    "buildCost": 20000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)390",
+        "amount": 200
+      },
+      {
+        "gameId": "(O)268",
+        "amount": 9
+      },
+      {
+        "gameId": "(O)771",
+        "amount": 100
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "mill",
+    "gameId": "(BLD)Mill",
+    "name": "Mill",
+    "description": "Allows you to mill wheat, beets and rice.",
+    "icon": "assets/objects/Mill.png",
+    "builder": "Robin",
+    "buildCost": 2500,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 150
+      },
+      {
+        "gameId": "(O)390",
+        "amount": 50
+      },
+      {
+        "gameId": "(O)428",
+        "amount": 4
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "pet-bowl",
+    "gameId": "(BLD)Pet Bowl",
+    "name": "Pet Bowl",
+    "description": "Provides a dedicated home for one pet.",
+    "icon": "assets/objects/PetBowl.png",
+    "builder": "Robin",
+    "buildCost": 5000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)709",
+        "amount": 25
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "shed",
+    "gameId": "(BLD)Shed",
+    "name": "Shed",
+    "description": "An empty building. Fill it with whatever you like! The interior can be decorated.",
+    "icon": "assets/objects/Shed.png",
+    "builder": "Robin",
+    "buildCost": 15000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 300
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": [],
+    "upgradesTo": "(BLD)Big Shed"
+  },
+  {
+    "type": "building",
+    "id": "shipping-bin",
+    "gameId": "(BLD)Shipping Bin",
+    "name": "Shipping Bin",
+    "description": "Throw items inside to sell them overnight.",
+    "icon": "assets/objects/ShippingBin.png",
+    "builder": "Robin",
+    "buildCost": 250,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)388",
+        "amount": 150
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "silo",
+    "gameId": "(BLD)Silo",
+    "name": "Silo",
+    "description": "Allows you to cut and store grass for feed.",
+    "icon": "assets/objects/Silo.png",
+    "builder": "Robin",
+    "buildCost": 100,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)390",
+        "amount": 100
+      },
+      {
+        "gameId": "(O)330",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)334",
+        "amount": 5
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "slime-hutch",
+    "gameId": "(BLD)Slime Hutch",
+    "name": "Slime Hutch",
+    "description": "Raise up to 20 slimes. Fill water troughs and slimes will create slime balls.",
+    "icon": "assets/objects/SlimeHutch.png",
+    "builder": "Robin",
+    "buildCost": 10000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)390",
+        "amount": 500
+      },
+      {
+        "gameId": "(O)338",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)337",
+        "amount": 1
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "stable",
+    "gameId": "(BLD)Stable",
+    "name": "Stable",
+    "description": "Allows you to keep and ride a horse. Horse included.",
+    "icon": "assets/objects/Stable.png",
+    "builder": "Robin",
+    "buildCost": 10000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)709",
+        "amount": 100
+      },
+      {
+        "gameId": "(O)335",
+        "amount": 5
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "water-obelisk",
+    "gameId": "(BLD)Water Obelisk",
+    "name": "Water Obelisk",
+    "description": "Warps you to the beach.",
+    "icon": "assets/objects/WaterObelisk.png",
+    "builder": "Wizard",
+    "buildCost": 500000,
+    "buildDays": 0,
+    "buildMaterials": [
+      {
+        "gameId": "(O)337",
+        "amount": 5
+      },
+      {
+        "gameId": "(O)372",
+        "amount": 10
+      },
+      {
+        "gameId": "(O)393",
+        "amount": 10
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": true,
+    "sources": []
+  },
+  {
+    "type": "building",
+    "id": "well",
+    "gameId": "(BLD)Well",
+    "name": "Well",
+    "description": "Provides a place for you to refill your watering can.",
+    "icon": "assets/objects/Well.png",
+    "builder": "Robin",
+    "buildCost": 1000,
+    "buildDays": 2,
+    "buildMaterials": [
+      {
+        "gameId": "(O)390",
+        "amount": 75
+      }
+    ],
+    "maxOccupants": 20,
+    "maxBuilds": null,
+    "magical": false,
+    "sources": []
+  }
+]

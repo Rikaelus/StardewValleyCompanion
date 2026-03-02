@@ -80,6 +80,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
   // Detect entity type
   const entityType = useMemo(() => {
     if (!currentEntity) return null
+    if (currentEntity.category === 'festival') return 'festival'
     if (currentEntity.entityType) return currentEntity.entityType  // store, machine
     if (currentEntity.items && currentEntity.reward !== undefined) return 'bundle'
     if (currentEntity.type === 'villager') return 'villager'
@@ -204,13 +205,21 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   const type = displayEntity.type || 'unknown'
   const itemHasQuality = displayEntity.hasQuality !== false &&
-    ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product'].includes(type)
+    ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)
   let subtitle = 'Item'
   let modalTitle = displayEntity.name
   let headerName = displayEntity.name
 
-  if (entityType === 'store') {
-    subtitle = displayEntity.parentStore ? 'Festival Stall' : 'Shop'
+  if (entityType === 'festival') {
+    subtitle = 'Festival'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'store') {
+    subtitle = displayEntity.festivalId
+      ? 'Festival Shop'
+      : displayEntity.parentStore
+        ? 'Festival Stall'
+        : 'Shop'
     modalTitle = displayEntity.name
     headerName = displayEntity.name
   } else if (entityType === 'machine') {
@@ -232,6 +241,28 @@ function UniversalModal({ entity, isOpen, onClose }) {
     headerName = displayEntity.name
   } else if (entityType === 'villager') {
     subtitle = displayEntity.canBeRomanced ? 'Villager (Romanceable)' : 'Villager'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'weapon') {
+    subtitle = displayEntity.weaponType || 'Weapon'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'boot') {
+    subtitle = 'Boots'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'trinket') {
+    subtitle = 'Trinket'
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'tool') {
+    const levelNames = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
+    const levelName = levelNames[displayEntity.upgradeLevel] ?? ''
+    subtitle = levelName ? `${levelName} ${displayEntity.toolClass || 'Tool'}` : (displayEntity.toolClass || 'Tool')
+    modalTitle = displayEntity.name
+    headerName = displayEntity.name
+  } else if (entityType === 'building') {
+    subtitle = displayEntity.magical ? 'Magical Building' : 'Farm Building'
     modalTitle = displayEntity.name
     headerName = displayEntity.name
   } else {
@@ -268,15 +299,29 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Compute which sections are visible for the section nav
   const visibleSections = (() => {
-    if (entityType === 'buff' || entityType === 'event' || entityType === 'villager') return []
+    if (entityType === 'buff' || entityType === 'event' || entityType === 'festival' || entityType === 'weapon' || entityType === 'boot' || entityType === 'trinket' || entityType === 'tool' || entityType === 'building') return []
+
+    if (entityType === 'villager') {
+      const sections = [{ id: 'section-villager-details', label: 'Details' }]
+      if (displayEntity.storeIds?.length > 0) sections.push({ id: 'section-villager-shops', label: 'Shops' })
+      const constructs = (itemsByType['building'] || []).filter(b => b.builder?.toLowerCase() === displayEntity.name?.toLowerCase())
+      if (constructs.length > 0) sections.push({ id: 'section-villager-constructs', label: 'Constructs' })
+      const hasGifts = entityData.getVillagerGifts(displayEntity.id)?.some(({ preference }) => preference !== 'neutral')
+      if (hasGifts) sections.push({ id: 'section-villager-gifts', label: 'Gifts' })
+      return sections
+    }
 
     if (entityType === 'store') {
+      const sections = []
+      if (displayEntity.villagerIds?.length > 0) sections.push({ id: 'section-store-run-by', label: 'Run By' })
+      if (displayEntity.festivalId) sections.push({ id: 'section-store-part-of', label: 'Part of' })
       const storeItems = allItems.filter(item =>
         item.sources?.some(s => s.type === 'shop' && s.storeId === displayEntity.id)
       )
       const childStalls = Object.values(entityData.stores || {}).filter(s => s.parentStore === displayEntity.id)
       const label = childStalls.length > 0 ? 'Stalls' : 'Items'
-      return (storeItems.length > 0 || childStalls.length > 0) ? [{ id: 'section-store-items', label }] : []
+      if (storeItems.length > 0 || childStalls.length > 0) sections.push({ id: 'section-store-items', label })
+      return sections
     }
 
     if (entityType === 'machine') {
@@ -337,12 +382,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
       <div className="modal-item-wrapper">
 
         {/* Context tabs for dual-role items (items only) */}
-        {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && renderContextTabs()}
+        {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'festival' && renderContextTabs()}
 
         <div className="modal-item-content">
           <ModalHeader icon={iconPath} name={headerName} subtitle={subtitle}>
             {/* Price display for items only (not bundles, stores, machines, or furniture) */}
-            {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && displayEntity.category !== 'furniture' && (displayEntity.price || displayEntity.prices) && (
+            {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'festival' && displayEntity.category !== 'furniture' && entityType !== 'weapon' && entityType !== 'boot' && entityType !== 'trinket' && entityType !== 'tool' && entityType !== 'building' && (displayEntity.price || displayEntity.prices) && (
               <div className="modal-price">
                 <ItemSellPrice
                   item={displayEntity}
@@ -353,9 +398,88 @@ function UniversalModal({ entity, isOpen, onClose }) {
             )}
           </ModalHeader>
 
+          {displayEntity.description && (
+            <p className="entity-description">{displayEntity.description}</p>
+          )}
+
+          {/* Festival-Specific Sections */}
+          {entityType === 'festival' && (
+            <>
+              <ModalSection title="When & Where">
+                <div className="entity-detail-grid">
+                  {displayEntity.season && displayEntity.startDay != null && (
+                    <>
+                      <span className="label">Date</span>
+                      <span>
+                        {capitalize(displayEntity.season)}{' '}
+                        {displayEntity.startDay}
+                        {displayEntity.endDay !== displayEntity.startDay ? `–${displayEntity.endDay}` : ''}
+                      </span>
+                    </>
+                  )}
+                  {displayEntity.startTime != null && (
+                    <>
+                      <span className="label">Hours</span>
+                      <span>{formatGameTime(displayEntity.startTime)}–{formatGameTime(displayEntity.endTime)}</span>
+                    </>
+                  )}
+                  {displayEntity.location && (
+                    <>
+                      <span className="label">Location</span>
+                      <span>{displayEntity.location}</span>
+                    </>
+                  )}
+                </div>
+              </ModalSection>
+              {displayEntity.note && (
+                <div className="modal-note">{displayEntity.note}</div>
+              )}
+              {displayEntity.shopIds?.length > 0 && (
+                <ModalSection title={displayEntity.shopIds.length === 1 ? 'Shop' : 'Shops'}>
+                  <div className="source-list">
+                    {displayEntity.shopIds.map(sid => {
+                      const store = entityData.getStore(sid)
+                      return store ? (
+                        <span key={sid} className="source-entry">
+                          <ModalItemButton item={store} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })}
+                  </div>
+                </ModalSection>
+              )}
+            </>
+          )}
+
           {/* Store-Specific Sections */}
           {entityType === 'store' && (
             <>
+              {displayEntity.villagerIds?.length > 0 && (
+                <ModalSection id="section-store-run-by" title="Run By">
+                  <div className="source-list">
+                    {displayEntity.villagerIds.map(vid => {
+                      const v = entityData.getVillager(vid)
+                      return v ? (
+                        <span key={vid} className="source-entry">
+                          <ModalItemButton item={v} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })}
+                  </div>
+                </ModalSection>
+              )}
+              {displayEntity.festivalId && (() => {
+                const fest = entityData.getFestival(displayEntity.festivalId)
+                return fest ? (
+                  <ModalSection id="section-store-part-of" title="Part of">
+                    <div className="source-list">
+                      <span className="source-entry">
+                        <ModalItemButton item={fest} variant="inline" onNavigate={handleNavigate} />
+                      </span>
+                    </div>
+                  </ModalSection>
+                ) : null
+              })()}
               {displayEntity.note && (
                 <div className="modal-note">{displayEntity.note}</div>
               )}
@@ -618,7 +742,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
           {/* Villager-Specific Sections */}
           {entityType === 'villager' && (
             <>
-              <ModalSection title="Details">
+              <ModalSection id="section-villager-details" title="Details">
                 <div className="entity-detail-grid">
                   {displayEntity.birthday && <><span className="label">Birthday</span><span>{capitalize(displayEntity.birthday.season)} {displayEntity.birthday.day}</span></>}
                   {displayEntity.gender && <><span className="label">Gender</span><span>{capitalize(displayEntity.gender)}</span></>}
@@ -631,6 +755,59 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   })()}
                 </div>
               </ModalSection>
+              {displayEntity.storeIds?.length > 0 && (
+                <ModalSection id="section-villager-shops" title="Shops">
+                  <div className="source-list">
+                    {displayEntity.storeIds.map(sid => {
+                      const store = entityData.getStore(sid)
+                      return store ? (
+                        <span key={sid} className="source-entry">
+                          <ModalItemButton item={store} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })}
+                  </div>
+                </ModalSection>
+              )}
+              {(() => {
+                const constructs = (itemsByType['building'] || []).filter(b => b.builder?.toLowerCase() === displayEntity.name?.toLowerCase())
+                if (!constructs.length) return null
+                return (
+                  <ModalSection id="section-villager-constructs" title="Constructs">
+                    <div className="source-list">
+                      {constructs.map(b => (
+                        <div key={b.id} className="source-entry" onClick={() => handleNavigate(b)} style={{ cursor: 'pointer' }}>
+                          <span style={{ width: 1, whiteSpace: 'nowrap' }}>
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                              {b.icon && <span className="item-button-icon-box"><img src={b.icon.startsWith('/') ? b.icon : `/${b.icon}`} alt="" width={24} height={24} style={{ display: 'block', imageRendering: 'pixelated' }} /></span>}
+                              <span className="item-button-label">{b.name}</span>
+                            </span>
+                          </span>
+                          <span style={{ width: 1, whiteSpace: 'nowrap', textAlign: 'right' }}>
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                              {b.buildMaterials?.map((mat, i) => {
+                                const matItem = findByGameId(mat.gameId)
+                                return (
+                                  <span key={i}
+                                    onClick={matItem ? e => { e.stopPropagation(); handleNavigate(matItem) } : undefined}
+                                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.2rem', fontSize: '0.8rem', opacity: 0.85, cursor: matItem ? 'pointer' : 'default' }}
+                                  >
+                                    {matItem?.icon && <img src={`/${matItem.icon}`} alt="" width={14} height={14} style={{ imageRendering: 'pixelated' }} />}
+                                    <span>{mat.amount}× {matItem?.name ?? mat.gameId}</span>
+                                  </span>
+                                )
+                              })}
+                              {b.buildCost != null && (
+                                <span style={{ fontSize: '0.8rem', opacity: 0.7 }}>{b.buildCost.toLocaleString()}g</span>
+                              )}
+                            </span>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </ModalSection>
+                )
+              })()}
               {(() => {
                 const villagerGifts = entityData.getVillagerGifts(displayEntity.id)
                 const giftGroups = {}
@@ -644,7 +821,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                 const hasGifts = preferenceOrder.some(p => giftGroups[p]?.length > 0)
                 if (!hasGifts) return null
                 return (
-                  <ModalSection title="Gift Preferences">
+                  <ModalSection id="section-villager-gifts" title="Gift Preferences">
                     {preferenceOrder.map(pref => {
                       const items = giftGroups[pref]
                       if (!items?.length) return null
@@ -667,79 +844,205 @@ function UniversalModal({ entity, isOpen, onClose }) {
             </>
           )}
 
+          {/* Weapon Stats */}
+          {entityType === 'weapon' && (
+            <ModalSection title="Stats">
+              <div className="entity-detail-grid">
+                <span className="label">Damage</span>
+                <span>{displayEntity.minDamage}–{displayEntity.maxDamage}</span>
+                {displayEntity.critChance != null && displayEntity.critChance !== 0.02 && <>
+                  <span className="label">Crit Chance</span>
+                  <span>{(displayEntity.critChance * 100).toFixed(0)}%</span>
+                </>}
+                {displayEntity.critMultiplier != null && displayEntity.critMultiplier !== 3 && <>
+                  <span className="label">Crit Power</span>
+                  <span>{displayEntity.critMultiplier}×</span>
+                </>}
+                {displayEntity.speed !== 0 && <>
+                  <span className="label">Speed</span>
+                  <span>{displayEntity.speed > 0 ? `+${displayEntity.speed}` : displayEntity.speed}</span>
+                </>}
+                {displayEntity.defense !== 0 && <>
+                  <span className="label">Defense</span>
+                  <span>{displayEntity.defense > 0 ? `+${displayEntity.defense}` : displayEntity.defense}</span>
+                </>}
+                {displayEntity.knockback !== 1 && <>
+                  <span className="label">Knockback</span>
+                  <span>{displayEntity.knockback}</span>
+                </>}
+                {displayEntity.areaOfEffect > 0 && <>
+                  <span className="label">Area of Effect</span>
+                  <span>{displayEntity.areaOfEffect}</span>
+                </>}
+                {displayEntity.mineBaseLevel != null && <>
+                  <span className="label">Mine Drop</span>
+                  <span>Floor {displayEntity.mineMinLevel}–{displayEntity.mineBaseLevel}</span>
+                </>}
+              </div>
+            </ModalSection>
+          )}
+
+          {/* Boot Stats */}
+          {entityType === 'boot' && (
+            <ModalSection title="Stats">
+              <div className="entity-detail-grid">
+                <span className="label">Defense</span>
+                <span>+{displayEntity.defense}</span>
+                <span className="label">Immunity</span>
+                <span>+{displayEntity.immunity}</span>
+              </div>
+            </ModalSection>
+          )}
+
+          {/* Tool Upgrade Chain */}
+          {entityType === 'tool' && (displayEntity.upgradesFrom || displayEntity.upgradesTo) && (
+            <ModalSection title="Upgrade Path">
+              <div className="source-list">
+                {displayEntity.upgradesFrom && (() => {
+                  const prev = findByGameId(displayEntity.upgradesFrom)
+                  return prev ? (
+                    <span className="source-entry">
+                      <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades from</span>
+                      <ModalItemButton item={prev} variant="inline" onNavigate={handleNavigate} />
+                    </span>
+                  ) : null
+                })()}
+                {displayEntity.upgradesTo && (() => {
+                  const next = findByGameId(displayEntity.upgradesTo)
+                  return next ? (
+                    <span className="source-entry">
+                      <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades to</span>
+                      <ModalItemButton item={next} variant="inline" onNavigate={handleNavigate} />
+                    </span>
+                  ) : null
+                })()}
+              </div>
+            </ModalSection>
+          )}
+
+          {/* Building Details */}
+          {entityType === 'building' && (
+            <>
+              <ModalSection title="Construction">
+                <div className="entity-detail-grid">
+                  <span className="label">Builder</span>
+                  <span>{(() => {
+                    const builderVillager = entityData.getVillager(displayEntity.builder?.toLowerCase())
+                    return builderVillager
+                      ? <ModalItemButton item={builderVillager} variant="inline" onNavigate={handleNavigate} />
+                      : displayEntity.builder
+                  })()}</span>
+                  <span className="label">Cost</span>
+                  <span>{displayEntity.buildCost?.toLocaleString()}g</span>
+                  {displayEntity.buildDays > 0 && <>
+                    <span className="label">Build Time</span>
+                    <span>{displayEntity.buildDays} day{displayEntity.buildDays !== 1 ? 's' : ''}</span>
+                  </>}
+                  {displayEntity.maxOccupants && <>
+                    <span className="label">Capacity</span>
+                    <span>{displayEntity.maxOccupants} animals</span>
+                  </>}
+                </div>
+              </ModalSection>
+              {displayEntity.buildMaterials?.length > 0 && (
+                <ModalSection title="Materials">
+                  <div className="source-list">
+                    {displayEntity.buildMaterials.map((mat, i) => {
+                      const matItem = findByGameId(mat.gameId)
+                      return (
+                        <span key={i} className="source-entry">
+                          {matItem
+                            ? <ModalItemButton item={matItem} variant="inline" onNavigate={handleNavigate} />
+                            : <span className="source-name">{mat.gameId}</span>
+                          }
+                          <span className="source-qualifiers">
+                            <span className="source-qualifier">×{mat.amount}</span>
+                          </span>
+                        </span>
+                      )
+                    })}
+                  </div>
+                </ModalSection>
+              )}
+              {(displayEntity.upgradesFrom || displayEntity.upgradesTo) && (
+                <ModalSection title="Upgrade Path">
+                  <div className="source-list">
+                    {displayEntity.upgradesFrom && (() => {
+                      const prev = findByGameId(displayEntity.upgradesFrom)
+                      return prev ? (
+                        <span className="source-entry">
+                          <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades from</span>
+                          <ModalItemButton item={prev} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })()}
+                    {displayEntity.upgradesTo && (() => {
+                      const next = findByGameId(displayEntity.upgradesTo)
+                      return next ? (
+                        <span className="source-entry">
+                          <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades to</span>
+                          <ModalItemButton item={next} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })()}
+                  </div>
+                </ModalSection>
+              )}
+            </>
+          )}
+
           {/* Item-Specific Sections */}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && type === 'fish' && (
-            <FishingInfoSection entity={displayEntity} />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && type === 'artisan' && (
-            <VariationsListSection
-              entity={displayEntity}
-              artisanItems={artisanItems}
-              onNavigate={handleNavigate}
-            />
-          )}
+          {(() => {
+            // Non-item entity types — skip all item sections
+            const NON_ITEM_TYPES = new Set(['bundle', 'store', 'machine', 'buff', 'event', 'villager', 'festival', 'building'])
+            if (NON_ITEM_TYPES.has(entityType)) return null
 
-          {/* Universal Item Sections (items only) */}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <LocationAvailabilitySection
-              entity={displayEntity}
-              findById={findById}
-              findByGameId={findByGameId}
-              getStore={entityData.getStore}
-              getMachine={entityData.getMachine}
-              onNavigate={handleNavigate}
-              eventNames={entityData.eventNames}
-            />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <SeedProducesSection
-              entity={displayEntity}
-              cropItems={cropItems}
-              forageItems={forageItems}
-              onNavigate={handleNavigate}
-            />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <AgingInfoSection entity={displayEntity} />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <FoodBuffsSection
-              entity={displayEntity}
-              findById={entityData.findById}
-              onNavigate={handleNavigate}
-            />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <SellingInfoSection
-              key={displayEntity.id}
-              entity={displayEntity}
-              artisanItems={artisanItems}
-              findById={findById}
-              getStore={entityData.getStore}
-              onNavigate={handleNavigate}
-            />
-          )}
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <BundlesSection
-              entity={displayEntity}
-              getBundle={entityData.getBundle}
-              onNavigate={handleNavigate}
-            />
-          )}
+            // Combat/tool types — skip sell price, food buffs, aging, seed produce sections
+            const isEquipment = entityType === 'weapon' || entityType === 'boot' || entityType === 'trinket' || entityType === 'tool'
 
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <ModalGiftPreferences
-              id="section-gifts"
-              giftDetails={entityData.getGiftPreferences(displayEntity.id)}
-              sectionClass="modal-section"
-              giftsClass="modal-gifts"
-              onNavigate={handleNavigate}
-            />
-          )}
-
-          {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'buff' && entityType !== 'event' && entityType !== 'villager' && (
-            <ContextTagsSection entity={displayEntity} />
-          )}
+            return (
+              <>
+                {type === 'fish' && <FishingInfoSection entity={displayEntity} />}
+                {type === 'artisan' && (
+                  <VariationsListSection entity={displayEntity} artisanItems={artisanItems} onNavigate={handleNavigate} />
+                )}
+                <LocationAvailabilitySection
+                  entity={displayEntity}
+                  findById={findById}
+                  findByGameId={findByGameId}
+                  getStore={entityData.getStore}
+                  getMachine={entityData.getMachine}
+                  onNavigate={handleNavigate}
+                />
+                {!isEquipment && (
+                  <SeedProducesSection entity={displayEntity} cropItems={cropItems} forageItems={forageItems} onNavigate={handleNavigate} />
+                )}
+                {!isEquipment && <AgingInfoSection entity={displayEntity} />}
+                {!isEquipment && (
+                  <FoodBuffsSection entity={displayEntity} findById={entityData.findById} onNavigate={handleNavigate} />
+                )}
+                {!isEquipment && (
+                  <SellingInfoSection
+                    key={displayEntity.id}
+                    entity={displayEntity}
+                    artisanItems={artisanItems}
+                    findById={findById}
+                    getStore={entityData.getStore}
+                    onNavigate={handleNavigate}
+                  />
+                )}
+                <BundlesSection entity={displayEntity} getBundle={entityData.getBundle} onNavigate={handleNavigate} />
+                <ModalGiftPreferences
+                  id="section-gifts"
+                  giftDetails={entityData.getGiftPreferences(displayEntity.id)}
+                  sectionClass="modal-section"
+                  giftsClass="modal-gifts"
+                  onNavigate={handleNavigate}
+                />
+                {!isEquipment && <ContextTagsSection entity={displayEntity} />}
+              </>
+            )
+          })()}
         </div>
       </div>
     </Modal>

@@ -48,6 +48,7 @@ export function EntityProvider({ children }) {
         getBundle: () => null,
         getVillager: () => null,
         getStore: () => null,
+        getFestival: () => null,
         getMachine: () => null,
         getBuff: () => null,
         getEvent: () => null,
@@ -55,6 +56,7 @@ export function EntityProvider({ children }) {
         getVillagerGifts: () => [],
         getGiftPreference: () => null,
         eventNames: {},
+        achievementNames: {},
       }
     }
 
@@ -63,6 +65,7 @@ export function EntityProvider({ children }) {
     const allBundles = rawData.bundles || []
     const allVillagers = rawData.villagers || []
     const storesMap = rawData.stores || {}
+    const festivalsMap = rawData.festivals || {}
     const allMachines = rawData.machines || []
     const allBuffs = rawData.buffs || []
     const relationships = rawData.relationships || []
@@ -83,6 +86,11 @@ export function EntityProvider({ children }) {
       'animal-product': entity => entity.category === 'animal-product',
       'furniture':      entity => entity.category === 'furniture',
       'hat':            entity => entity.category === 'hat',
+      'weapon':         entity => entity.category === 'weapon',
+      'boot':           entity => entity.category === 'boot',
+      'trinket':        entity => entity.category === 'trinket',
+      'tool':           entity => entity.category === 'tool',
+      'building':       entity => entity.category === 'building',
     }
 
     const byType = {}
@@ -101,6 +109,7 @@ export function EntityProvider({ children }) {
     const eventsByKey = new Map(allEvents.map(e => [e.eventKey, e]))
     // eventNames map for condition formatter: { eventKey → name }
     const eventNames = Object.fromEntries(allEvents.map(e => [e.eventKey, e.name]))
+    const achievementNames = rawData.achievementNames || {}
 
     // Gift indexes
     const giftsByItem = new Map()
@@ -118,7 +127,11 @@ export function EntityProvider({ children }) {
 
     // ── Lookup helpers ───────────────────────────────────────────────────────
     const findById = (id) => allEntities.find(entity => entity.id === id) ?? null
-    const findByGameId = (gameId) => allEntities.find(entity => entity.gameId === gameId) ?? null
+    // Build a Map for O(1) gameId lookups — qualified IDs are now unique across registries
+    const entitiesByGameId = new Map(
+      allEntities.filter(e => e.gameId != null).map(e => [e.gameId, e])
+    )
+    const findByGameId = (gameId) => entitiesByGameId.get(gameId) ?? null
 
     const findEntity = (id) => {
       const entity = allEntities.find(e => e.id === id)
@@ -136,9 +149,12 @@ export function EntityProvider({ children }) {
       return null
     }
 
+    const festivalsById = new Map(Object.entries(festivalsMap))
+
     const getBundle = (bundleId) => bundlesById.get(bundleId) ?? null
     const getVillager = (villagerId) => villagersById.get(villagerId) ?? null
     const getStore = (storeId) => storesMap[storeId] ?? null
+    const getFestival = (festivalId) => festivalsById.get(festivalId) ?? null
     const getMachine = (machineId) => machinesById.get(machineId) ?? null
     const getBuff = (buffId) => buffsById.get(buffId) ?? null
     const getEvent = (eventKey) => eventsByKey.get(String(eventKey)) ?? null
@@ -182,6 +198,7 @@ export function EntityProvider({ children }) {
       getBundle,
       getVillager,
       getStore,
+      getFestival,
       getMachine,
       getBuff,
       getEvent,
@@ -189,6 +206,7 @@ export function EntityProvider({ children }) {
       getVillagerGifts,
       getGiftPreference,
       eventNames,
+      achievementNames,
     }
   }, [rawData, loading, error])
 

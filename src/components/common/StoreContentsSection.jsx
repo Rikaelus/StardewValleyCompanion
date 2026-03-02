@@ -101,6 +101,8 @@ function StoreContentsSection({ entity, entityType, allItems, stores, findById, 
                 const qualifiers = []
                 if (src.days?.length > 0)
                   qualifiers.push(src.days.join('/'))
+                if (src.yearCycle)
+                  qualifiers.push(`Year ${src.yearCycle} cycle`)
                 if (src.yearUnlock)
                   qualifiers.push(src.yearUnlockBefore ? `Before Year ${src.yearUnlock}` : `Year ${src.yearUnlock}+`)
                 if (src.rotating)

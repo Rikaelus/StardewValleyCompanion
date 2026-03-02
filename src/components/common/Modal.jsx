@@ -10,6 +10,10 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
   const [shouldRender, setShouldRender] = useState(isOpen)
   const bodyRef = useRef(null)
 
+  useEffect(() => {
+    if (bodyRef.current) bodyRef.current.scrollTop = 0
+  }, [title])
+
   const scrollToSection = useCallback((sectionId) => {
     const body = bodyRef.current
     if (!body) return

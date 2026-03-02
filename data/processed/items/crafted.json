@@ -2,7 +2,7 @@
   {
     "type": "crafted",
     "id": "bomb",
-    "gameId": 287,
+    "gameId": "(O)287",
     "name": "Bomb",
     "icon": "assets/objects/Bomb.png",
     "price": 50,
@@ -157,7 +157,7 @@
   {
     "type": "crafted",
     "id": "cherry-bomb",
-    "gameId": 286,
+    "gameId": "(O)286",
     "name": "Cherry Bomb",
     "icon": "assets/objects/CherryBomb.png",
     "price": 50,
@@ -266,7 +266,7 @@
   {
     "type": "crafted",
     "id": "dwarvish-translation-guide",
-    "gameId": 326,
+    "gameId": "(O)326",
     "name": "Dwarvish Translation Guide",
     "icon": "assets/objects/DwarvishTranslationGuide.png",
     "price": 50,
@@ -319,7 +319,7 @@
   {
     "type": "crafted",
     "id": "fireworks-green",
-    "gameId": 895,
+    "gameId": "(O)895",
     "name": "Fireworks (Green)",
     "icon": "assets/objects/FireworksGreen.png",
     "price": 50,
@@ -388,7 +388,7 @@
   {
     "type": "crafted",
     "id": "fireworks-purple",
-    "gameId": 894,
+    "gameId": "(O)894",
     "name": "Fireworks (Purple)",
     "icon": "assets/objects/FireworksPurple.png",
     "price": 50,
@@ -457,7 +457,7 @@
   {
     "type": "crafted",
     "id": "fireworks-red",
-    "gameId": 893,
+    "gameId": "(O)893",
     "name": "Fireworks (Red)",
     "icon": "assets/objects/FireworksRed.png",
     "price": 50,
@@ -526,7 +526,7 @@
   {
     "type": "crafted",
     "id": "gate",
-    "gameId": 325,
+    "gameId": "(O)325",
     "name": "Gate",
     "icon": "assets/objects/Gate.png",
     "price": 4,
@@ -591,7 +591,7 @@
   {
     "type": "crafted",
     "id": "hardwood-fence",
-    "gameId": 298,
+    "gameId": "(O)298",
     "name": "Hardwood Fence",
     "icon": "assets/objects/HardwoodFence.png",
     "price": 10,
@@ -661,7 +661,7 @@
   {
     "type": "crafted",
     "id": "hedge",
-    "gameId": 929,
+    "gameId": "(O)929",
     "name": "Hedge",
     "icon": "assets/objects/Hedge.png",
     "price": 10,
@@ -714,7 +714,7 @@
   {
     "type": "crafted",
     "id": "iridium-sprinkler",
-    "gameId": 645,
+    "gameId": "(O)645",
     "name": "Iridium Sprinkler",
     "icon": "assets/objects/IridiumSprinkler.png",
     "price": 1000,
@@ -802,7 +802,7 @@
   {
     "type": "crafted",
     "id": "iron-fence",
-    "gameId": 324,
+    "gameId": "(O)324",
     "name": "Iron Fence",
     "icon": "assets/objects/IronFence.png",
     "price": 6,
@@ -872,7 +872,7 @@
   {
     "type": "crafted",
     "id": "jack-o-lantern",
-    "gameId": 746,
+    "gameId": "(O)746",
     "name": "Jack-O-Lantern",
     "icon": "assets/objects/JackOLantern.png",
     "price": 0,
@@ -951,7 +951,7 @@
   {
     "type": "crafted",
     "id": "mega-bomb",
-    "gameId": 288,
+    "gameId": "(O)288",
     "name": "Mega Bomb",
     "icon": "assets/objects/MegaBomb.png",
     "price": 50,
@@ -1091,7 +1091,7 @@
   {
     "type": "crafted",
     "id": "quality-sprinkler",
-    "gameId": 621,
+    "gameId": "(O)621",
     "name": "Quality Sprinkler",
     "icon": "assets/objects/QualitySprinkler.png",
     "price": 450,
@@ -1169,7 +1169,7 @@
   {
     "type": "crafted",
     "id": "sprinkler",
-    "gameId": 599,
+    "gameId": "(O)599",
     "name": "Sprinkler",
     "icon": "assets/objects/Sprinkler.png",
     "price": 100,
@@ -1243,7 +1243,7 @@
   {
     "type": "crafted",
     "id": "stone-fence",
-    "gameId": 323,
+    "gameId": "(O)323",
     "name": "Stone Fence",
     "icon": "assets/objects/StoneFence.png",
     "price": 2,
@@ -1313,7 +1313,7 @@
   {
     "type": "crafted",
     "id": "wood-fence",
-    "gameId": 322,
+    "gameId": "(O)322",
     "name": "Wood Fence",
     "icon": "assets/objects/WoodFence.png",
     "price": 1,

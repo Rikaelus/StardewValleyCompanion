@@ -405,7 +405,8 @@ function SellingInfoSection({ entity, artisanItems, findById, getStore, onNaviga
 
   const type = entity.type || 'unknown'
   const itemHasQuality = entity.hasQuality !== false &&
-    ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product'].includes(type)
+    ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)
+  const iridiumOnlyQuality = type === 'food'
 
   const sellingLocations = getSellingLocations(entity, getStore)
   const availableProfessions = getAvailableProfessions(entity, artisanItems)
@@ -498,12 +499,50 @@ function SellingInfoSection({ entity, artisanItems, findById, getStore, onNaviga
               </span>
 
               {trashCanUpgrade !== null ? (
-                <div>
-                  <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
-                  <span className="sell-price-value sell-price-value--trash">
-                    {Math.floor(basePrice * trashCanRefund)}g
-                  </span>
-                </div>
+                <>
+                  <div>
+                    <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
+                    <span className="sell-price-value sell-price-value--trash">
+                      {Math.floor(basePrice * trashCanRefund)}g
+                    </span>
+                  </div>
+                  {iridiumOnlyQuality ? (
+                    <div>
+                      <span className="quality-symbol quality-symbol--sell quality-symbol--iridium">◆</span>
+                      <span className="sell-price-value sell-price-value--trash" style={{ color: '#9c27b0' }}>
+                        {Math.floor(basePrice * 2.0 * trashCanRefund)}g
+                      </span>
+                    </div>
+                  ) : itemHasQuality && entity.maxQuality !== 0 ? (
+                    <>
+                      <div>
+                        <span className="quality-symbol quality-symbol--sell quality-symbol--silver">◆</span>
+                        <span className="sell-price-value sell-price-value--trash" style={{ color: '#9e9e9e' }}>
+                          {Math.floor(basePrice * 1.25 * trashCanRefund)}g
+                        </span>
+                      </div>
+                      <div>
+                        <span className="quality-symbol quality-symbol--sell quality-symbol--gold">★</span>
+                        <span className="sell-price-value sell-price-value--trash" style={{ color: '#f57c00' }}>
+                          {Math.floor(basePrice * 1.5 * trashCanRefund)}g
+                        </span>
+                      </div>
+                      <div>
+                        <span className="quality-symbol quality-symbol--sell quality-symbol--iridium">◆</span>
+                        <span className="sell-price-value sell-price-value--trash" style={{ color: '#9c27b0' }}>
+                          {Math.floor(basePrice * 2.0 * trashCanRefund)}g
+                        </span>
+                      </div>
+                    </>
+                  ) : entity.isTrapFish ? (
+                    <div>
+                      <span className="quality-symbol quality-symbol--sell quality-symbol--silver">◆</span>
+                      <span className="sell-price-value sell-price-value--trash" style={{ color: '#9e9e9e' }}>
+                        {Math.floor(basePrice * 1.25 * trashCanRefund)}g
+                      </span>
+                    </div>
+                  ) : null}
+                </>
               ) : entity.isTrapFish ? (
                 <>
                   <div>
@@ -516,6 +555,21 @@ function SellingInfoSection({ entity, artisanItems, findById, getStore, onNaviga
                     <span className="quality-symbol quality-symbol--sell quality-symbol--silver">◆</span>
                     <span className="sell-price-value" style={{ color: '#9e9e9e' }}>
                       {Math.floor(basePrice * 1.25 * multiplier)}g
+                    </span>
+                  </div>
+                </>
+              ) : iridiumOnlyQuality ? (
+                <>
+                  <div>
+                    <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
+                    <span className="sell-price-value">
+                      {Math.floor(basePrice * multiplier)}g
+                    </span>
+                  </div>
+                  <div>
+                    <span className="quality-symbol quality-symbol--sell quality-symbol--iridium">◆</span>
+                    <span className="sell-price-value" style={{ color: '#9c27b0' }}>
+                      {Math.floor(basePrice * 2.0 * multiplier)}g
                     </span>
                   </div>
                 </>
@@ -558,11 +612,12 @@ function SellingInfoSection({ entity, artisanItems, findById, getStore, onNaviga
 
             <div className="calculator-formula">
               {trashCanUpgrade !== null ? (
-                <>Base: {basePrice}g × {trashCanRefund * 100}% (trash refund)</>
+                <>Base: {basePrice}g × {trashCanRefund * 100}%{(itemHasQuality && entity.maxQuality !== 0) ? ' (per quality tier)' : ''}</>
               ) : multiplier > 1 ? (
                 <>
                   Base: {basePrice}g × {multiplier} (profession)
-                  {(itemHasQuality && entity.maxQuality !== 0) && ' (per quality tier)'}
+                  {(itemHasQuality && entity.maxQuality !== 0 && !iridiumOnlyQuality) && ' (per quality tier)'}
+                  {iridiumOnlyQuality && ' (Qi\'s Seasoning for iridium)'}
                 </>
               ) : (
                 <>Base: {basePrice}g</>

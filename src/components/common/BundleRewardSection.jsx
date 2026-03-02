@@ -10,12 +10,16 @@ function BundleRewardSection({ entity, entityType, findByGameId, onNavigate }) {
     if (parts.length < 3) return null
 
     const type = parts[0] // 'O' for Object, 'BO' for BigCraftable
-    const gameId = parseInt(parts[1])
+    const rawId = parts[1]
     const quantity = parseInt(parts[2])
 
-    if (isNaN(gameId) || isNaN(quantity)) return null
+    if (!rawId || isNaN(quantity)) return null
 
-    return { type, gameId, quantity }
+    // Build the qualified gameId matching how items are stored in entities.json
+    const prefix = type === 'BO' ? '(BC)' : '(O)'
+    const qualifiedGameId = `${prefix}${rawId}`
+
+    return { type, rawId, qualifiedGameId, quantity }
   }
 
   const reward = parseReward(entity.reward)
@@ -29,7 +33,7 @@ function BundleRewardSection({ entity, entityType, findByGameId, onNavigate }) {
     )
   }
 
-  const rewardItem = findByGameId(reward.gameId)
+  const rewardItem = findByGameId(reward.qualifiedGameId)
 
   return (
     <ModalSection id="section-reward" title="Reward">
@@ -47,7 +51,7 @@ function BundleRewardSection({ entity, entityType, findByGameId, onNavigate }) {
             </span>
           </div>
         ) : (
-          <span>Unknown Item ({reward.type} {reward.gameId}) x{reward.quantity}</span>
+          <span>Unknown Item ({reward.qualifiedGameId}) x{reward.quantity}</span>
         )}
       </div>
     </ModalSection>

@@ -2,7 +2,7 @@
   {
     "type": "geode-mineral",
     "id": "aerinite",
-    "gameId": 541,
+    "gameId": "(O)541",
     "name": "Aerinite",
     "icon": "assets/objects/Aerinite.png",
     "price": 125,
@@ -58,7 +58,7 @@
   {
     "type": "geode-mineral",
     "id": "alamite",
-    "gameId": 538,
+    "gameId": "(O)538",
     "name": "Alamite",
     "icon": "assets/objects/Alamite.png",
     "price": 150,
@@ -114,7 +114,7 @@
   {
     "type": "geode-mineral",
     "id": "baryte",
-    "gameId": 540,
+    "gameId": "(O)540",
     "name": "Baryte",
     "icon": "assets/objects/Baryte.png",
     "price": 50,
@@ -170,7 +170,7 @@
   {
     "type": "geode-mineral",
     "id": "basalt",
-    "gameId": 570,
+    "gameId": "(O)570",
     "name": "Basalt",
     "icon": "assets/objects/Basalt.png",
     "price": 175,
@@ -226,7 +226,7 @@
   {
     "type": "geode-mineral",
     "id": "bixite",
-    "gameId": 539,
+    "gameId": "(O)539",
     "name": "Bixite",
     "icon": "assets/objects/Bixite.png",
     "price": 300,
@@ -282,7 +282,7 @@
   {
     "type": "geode-mineral",
     "id": "calcite",
-    "gameId": 542,
+    "gameId": "(O)542",
     "name": "Calcite",
     "icon": "assets/objects/Calcite.png",
     "price": 75,
@@ -338,7 +338,7 @@
   {
     "type": "geode-mineral",
     "id": "celestine",
-    "gameId": 566,
+    "gameId": "(O)566",
     "name": "Celestine",
     "icon": "assets/objects/Celestine.png",
     "price": 125,
@@ -394,7 +394,7 @@
   {
     "type": "geode-mineral",
     "id": "dolomite",
-    "gameId": 543,
+    "gameId": "(O)543",
     "name": "Dolomite",
     "icon": "assets/objects/Dolomite.png",
     "price": 300,
@@ -457,7 +457,7 @@
   {
     "type": "geode-mineral",
     "id": "esperite",
-    "gameId": 544,
+    "gameId": "(O)544",
     "name": "Esperite",
     "icon": "assets/objects/Esperite.png",
     "price": 100,
@@ -513,7 +513,7 @@
   {
     "type": "geode-mineral",
     "id": "fairy-stone",
-    "gameId": 577,
+    "gameId": "(O)577",
     "name": "Fairy Stone",
     "icon": "assets/objects/FairyStone.png",
     "price": 250,
@@ -569,7 +569,7 @@
   {
     "type": "geode-mineral",
     "id": "fire-opal",
-    "gameId": 565,
+    "gameId": "(O)565",
     "name": "Fire Opal",
     "icon": "assets/objects/FireOpal.png",
     "price": 350,
@@ -625,7 +625,7 @@
   {
     "type": "geode-mineral",
     "id": "fluorapatite",
-    "gameId": 545,
+    "gameId": "(O)545",
     "name": "Fluorapatite",
     "icon": "assets/objects/Fluorapatite.png",
     "price": 200,
@@ -681,7 +681,7 @@
   {
     "type": "geode-mineral",
     "id": "geminite",
-    "gameId": 546,
+    "gameId": "(O)546",
     "name": "Geminite",
     "icon": "assets/objects/Geminite.png",
     "price": 150,
@@ -737,7 +737,7 @@
   {
     "type": "geode-mineral",
     "id": "ghost-crystal",
-    "gameId": 561,
+    "gameId": "(O)561",
     "name": "Ghost Crystal",
     "icon": "assets/objects/GhostCrystal.png",
     "price": 200,
@@ -793,7 +793,7 @@
   {
     "type": "geode-mineral",
     "id": "granite",
-    "gameId": 569,
+    "gameId": "(O)569",
     "name": "Granite",
     "icon": "assets/objects/Granite.png",
     "price": 75,
@@ -849,7 +849,7 @@
   {
     "type": "geode-mineral",
     "id": "helvite",
-    "gameId": 547,
+    "gameId": "(O)547",
     "name": "Helvite",
     "icon": "assets/objects/Helvite.png",
     "price": 450,
@@ -905,7 +905,7 @@
   {
     "type": "geode-mineral",
     "id": "hematite",
-    "gameId": 573,
+    "gameId": "(O)573",
     "name": "Hematite",
     "icon": "assets/objects/Hematite.png",
     "price": 150,
@@ -961,7 +961,7 @@
   {
     "type": "geode-mineral",
     "id": "jagoite",
-    "gameId": 549,
+    "gameId": "(O)549",
     "name": "Jagoite",
     "icon": "assets/objects/Jagoite.png",
     "price": 115,
@@ -1017,7 +1017,7 @@
   {
     "type": "geode-mineral",
     "id": "jamborite",
-    "gameId": 548,
+    "gameId": "(O)548",
     "name": "Jamborite",
     "icon": "assets/objects/Jamborite.png",
     "price": 150,
@@ -1073,7 +1073,7 @@
   {
     "type": "geode-mineral",
     "id": "jasper",
-    "gameId": 563,
+    "gameId": "(O)563",
     "name": "Jasper",
     "icon": "assets/objects/Jasper.png",
     "price": 150,
@@ -1129,7 +1129,7 @@
   {
     "type": "geode-mineral",
     "id": "kyanite",
-    "gameId": 550,
+    "gameId": "(O)550",
     "name": "Kyanite",
     "icon": "assets/objects/Kyanite.png",
     "price": 250,
@@ -1185,7 +1185,7 @@
   {
     "type": "geode-mineral",
     "id": "lemon-stone",
-    "gameId": 554,
+    "gameId": "(O)554",
     "name": "Lemon Stone",
     "icon": "assets/objects/LemonStone.png",
     "price": 200,
@@ -1228,7 +1228,7 @@
       "marnie": "dislike",
       "elliott": "dislike",
       "gus": "dislike",
-      "dwarf": "love",
+      "dwarf": "dislike",
       "wizard": "like",
       "harvey": "dislike",
       "sandy": "dislike",
@@ -1241,7 +1241,7 @@
   {
     "type": "geode-mineral",
     "id": "limestone",
-    "gameId": 571,
+    "gameId": "(O)571",
     "name": "Limestone",
     "icon": "assets/objects/Limestone.png",
     "price": 15,
@@ -1304,7 +1304,7 @@
   {
     "type": "geode-mineral",
     "id": "lunarite",
-    "gameId": 551,
+    "gameId": "(O)551",
     "name": "Lunarite",
     "icon": "assets/objects/Lunarite.png",
     "price": 200,
@@ -1361,7 +1361,7 @@
   {
     "type": "geode-mineral",
     "id": "malachite",
-    "gameId": 552,
+    "gameId": "(O)552",
     "name": "Malachite",
     "icon": "assets/objects/Malachite.png",
     "price": 100,
@@ -1417,7 +1417,7 @@
   {
     "type": "geode-mineral",
     "id": "marble",
-    "gameId": 567,
+    "gameId": "(O)567",
     "name": "Marble",
     "icon": "assets/objects/Marble.png",
     "price": 110,
@@ -1473,7 +1473,7 @@
   {
     "type": "geode-mineral",
     "id": "mudstone",
-    "gameId": 574,
+    "gameId": "(O)574",
     "name": "Mudstone",
     "icon": "assets/objects/Mudstone.png",
     "price": 25,
@@ -1529,7 +1529,7 @@
   {
     "type": "geode-mineral",
     "id": "nekoite",
-    "gameId": 555,
+    "gameId": "(O)555",
     "name": "Nekoite",
     "icon": "assets/objects/Nekoite.png",
     "price": 80,
@@ -1585,7 +1585,7 @@
   {
     "type": "geode-mineral",
     "id": "neptunite",
-    "gameId": 553,
+    "gameId": "(O)553",
     "name": "Neptunite",
     "icon": "assets/objects/Neptunite.png",
     "price": 400,
@@ -1641,7 +1641,7 @@
   {
     "type": "geode-mineral",
     "id": "obsidian",
-    "gameId": 575,
+    "gameId": "(O)575",
     "name": "Obsidian",
     "icon": "assets/objects/Obsidian.png",
     "price": 200,
@@ -1660,7 +1660,7 @@
       "robin": "dislike",
       "demetrius": "dislike",
       "maru": "dislike",
-      "sebastian": "love",
+      "sebastian": "dislike",
       "linus": "dislike",
       "pierre": "dislike",
       "caroline": "dislike",
@@ -1697,7 +1697,7 @@
   {
     "type": "geode-mineral",
     "id": "ocean-stone",
-    "gameId": 560,
+    "gameId": "(O)560",
     "name": "Ocean Stone",
     "icon": "assets/objects/OceanStone.png",
     "price": 220,
@@ -1753,7 +1753,7 @@
   {
     "type": "geode-mineral",
     "id": "opal",
-    "gameId": 564,
+    "gameId": "(O)564",
     "name": "Opal",
     "icon": "assets/objects/Opal.png",
     "price": 150,
@@ -1809,7 +1809,7 @@
   {
     "type": "geode-mineral",
     "id": "orpiment",
-    "gameId": 556,
+    "gameId": "(O)556",
     "name": "Orpiment",
     "icon": "assets/objects/Orpiment.png",
     "price": 80,
@@ -1865,7 +1865,7 @@
   {
     "type": "geode-mineral",
     "id": "petrified-slime",
-    "gameId": 557,
+    "gameId": "(O)557",
     "name": "Petrified Slime",
     "icon": "assets/objects/PetrifiedSlime.png",
     "price": 120,
@@ -1922,7 +1922,7 @@
   {
     "type": "geode-mineral",
     "id": "pyrite",
-    "gameId": 559,
+    "gameId": "(O)559",
     "name": "Pyrite",
     "icon": "assets/objects/Pyrite.png",
     "price": 120,
@@ -1978,7 +1978,7 @@
   {
     "type": "geode-mineral",
     "id": "sandstone",
-    "gameId": 568,
+    "gameId": "(O)568",
     "name": "Sandstone",
     "icon": "assets/objects/Sandstone.png",
     "price": 60,
@@ -2034,7 +2034,7 @@
   {
     "type": "geode-mineral",
     "id": "slate",
-    "gameId": 576,
+    "gameId": "(O)576",
     "name": "Slate",
     "icon": "assets/objects/Slate.png",
     "price": 85,
@@ -2090,7 +2090,7 @@
   {
     "type": "geode-mineral",
     "id": "soapstone",
-    "gameId": 572,
+    "gameId": "(O)572",
     "name": "Soapstone",
     "icon": "assets/objects/Soapstone.png",
     "price": 120,
@@ -2146,7 +2146,7 @@
   {
     "type": "geode-mineral",
     "id": "star-shards",
-    "gameId": 578,
+    "gameId": "(O)578",
     "name": "Star Shards",
     "icon": "assets/objects/StarShards.png",
     "price": 500,
@@ -2202,7 +2202,7 @@
   {
     "type": "geode-mineral",
     "id": "thunder-egg",
-    "gameId": 558,
+    "gameId": "(O)558",
     "name": "Thunder Egg",
     "icon": "assets/objects/ThunderEgg.png",
     "price": 100,
@@ -2258,7 +2258,7 @@
   {
     "type": "geode-mineral",
     "id": "tigerseye",
-    "gameId": 562,
+    "gameId": "(O)562",
     "name": "Tigerseye",
     "icon": "assets/objects/Tigerseye.png",
     "price": 275,
@@ -2295,7 +2295,7 @@
       "vincent": "dislike",
       "jodi": "dislike",
       "kent": "dislike",
-      "sam": "love",
+      "sam": "dislike",
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",

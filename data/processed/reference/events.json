@@ -2662,9 +2662,7 @@
       "Town"
     ],
     "icon": null,
-    "grantedBy": [
-      "auto-petter"
-    ]
+    "grantedBy": []
   },
   {
     "id": "event-502969",
@@ -3544,9 +3542,7 @@
       "Farm"
     ],
     "icon": "assets/villagers/Emily.png",
-    "grantedBy": [
-      "sewing-machine"
-    ]
+    "grantedBy": []
   },
   {
     "id": "event-1039573",
@@ -3589,9 +3585,7 @@
       "Robin's Carpenter Shop"
     ],
     "icon": null,
-    "grantedBy": [
-      "deluxe-red-double-bed"
-    ]
+    "grantedBy": []
   },
   {
     "id": "event-1590166",

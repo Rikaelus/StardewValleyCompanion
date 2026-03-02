@@ -1,8 +1,8 @@
 [
   {
     "type": "animal-product",
-    "id": "egg-white",
-    "gameId": 176,
+    "id": "egg",
+    "gameId": "(O)176",
     "name": "Egg",
     "gameCategory": -5,
     "price": 50,
@@ -64,8 +64,8 @@
   },
   {
     "type": "animal-product",
-    "id": "large-egg-white",
-    "gameId": 174,
+    "id": "large-egg",
+    "gameId": "(O)174",
     "name": "Large Egg",
     "gameCategory": -5,
     "price": 95,
@@ -92,9 +92,7 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
+    "bundles": [],
     "gifts": {
       "demetrius": "like",
       "sebastian": "hate",
@@ -118,8 +116,8 @@
   },
   {
     "type": "animal-product",
-    "id": "egg-brown",
-    "gameId": 180,
+    "id": "egg",
+    "gameId": "(O)180",
     "name": "Egg",
     "gameCategory": -5,
     "price": 50,
@@ -164,8 +162,8 @@
   },
   {
     "type": "animal-product",
-    "id": "large-egg-brown",
-    "gameId": 182,
+    "id": "large-egg",
+    "gameId": "(O)182",
     "name": "Large Egg",
     "gameCategory": -5,
     "price": 95,
@@ -177,25 +175,6 @@
         "type": "animal",
         "animalName": "Brown Chicken",
         "animalId": "brown-chicken"
-      },
-      {
-        "type": "crafting",
-        "recipeName": "Geode Crusher",
-        "outputCount": 1,
-        "ingredients": [
-          {
-            "gameId": 336,
-            "amount": 2
-          },
-          {
-            "gameId": 390,
-            "amount": 50
-          },
-          {
-            "gameId": 72,
-            "amount": 1
-          }
-        ]
       }
     ],
     "contextTags": [
@@ -206,9 +185,7 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
+    "bundles": [],
     "gifts": {
       "demetrius": "like",
       "sebastian": "hate",
@@ -233,7 +210,7 @@
   {
     "type": "animal-product",
     "id": "void-egg",
-    "gameId": 305,
+    "gameId": "(O)305",
     "name": "Void Egg",
     "gameCategory": -5,
     "price": 65,
@@ -268,46 +245,30 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
       "demetrius": "like",
-      "maru": "dislike",
-      "sebastian": "love",
+      "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "dislike",
       "abigail": "dislike",
       "alex": "like",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
       "pam": "dislike",
-      "emily": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "hate",
+      "leah": "like",
       "shane": "like",
       "marnie": "like",
-      "elliott": "dislike",
-      "gus": "dislike",
       "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "love",
-      "leo": "dislike"
+      "wizard": "dislike"
     }
   },
   {
     "type": "animal-product",
     "id": "golden-egg",
-    "gameId": 928,
+    "gameId": "(O)928",
     "name": "Golden Egg",
     "gameCategory": -5,
     "price": 500,
@@ -387,7 +348,7 @@
   {
     "type": "animal-product",
     "id": "duck-egg",
-    "gameId": 442,
+    "gameId": "(O)442",
     "name": "Duck Egg",
     "gameCategory": -5,
     "price": 95,
@@ -408,9 +369,7 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
+    "bundles": [],
     "gifts": {
       "demetrius": "like",
       "sebastian": "hate",
@@ -429,14 +388,13 @@
       "shane": "like",
       "marnie": "like",
       "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "like"
+      "wizard": "dislike"
     }
   },
   {
     "type": "animal-product",
     "id": "duck-feather",
-    "gameId": 444,
+    "gameId": "(O)444",
     "name": "Duck Feather",
     "gameCategory": -18,
     "price": 250,
@@ -458,20 +416,13 @@
       "store-marnie",
       "store-shipping-bin"
     ],
-    "bundles": [
-      "dye"
-    ],
-    "gifts": {
-      "penny": "dislike",
-      "elliott": "love",
-      "harvey": "like",
-      "leo": "love"
-    }
+    "bundles": [],
+    "gifts": {}
   },
   {
     "type": "animal-product",
     "id": "wool",
-    "gameId": 440,
+    "gameId": "(O)440",
     "name": "Wool",
     "gameCategory": -18,
     "price": 340,
@@ -503,19 +454,13 @@
       "store-marnie",
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
-    "gifts": {
-      "penny": "dislike",
-      "emily": "love",
-      "sandy": "like"
-    }
+    "bundles": [],
+    "gifts": {}
   },
   {
     "type": "animal-product",
     "id": "rabbit-s-foot",
-    "gameId": 446,
+    "gameId": "(O)446",
     "name": "Rabbit's Foot",
     "gameCategory": -18,
     "price": 565,
@@ -559,50 +504,13 @@
       "store-marnie",
       "store-shipping-bin"
     ],
-    "bundles": [
-      "enchanter-s"
-    ],
-    "gifts": {
-      "robin": "love",
-      "demetrius": "love",
-      "maru": "love",
-      "sebastian": "love",
-      "linus": "love",
-      "pierre": "love",
-      "caroline": "love",
-      "abigail": "love",
-      "alex": "love",
-      "george": "love",
-      "evelyn": "love",
-      "lewis": "love",
-      "clint": "love",
-      "penny": "hate",
-      "pam": "love",
-      "emily": "love",
-      "haley": "love",
-      "jas": "love",
-      "vincent": "love",
-      "jodi": "love",
-      "kent": "love",
-      "sam": "love",
-      "leah": "love",
-      "shane": "love",
-      "marnie": "love",
-      "elliott": "love",
-      "gus": "love",
-      "dwarf": "love",
-      "wizard": "love",
-      "harvey": "love",
-      "sandy": "love",
-      "willy": "love",
-      "krobus": "love",
-      "leo": "love"
-    }
+    "bundles": [],
+    "gifts": {}
   },
   {
     "type": "animal-product",
     "id": "dinosaur-egg",
-    "gameId": 107,
+    "gameId": "(O)107",
     "name": "Dinosaur Egg",
     "gameCategory": 0,
     "price": 350,
@@ -628,14 +536,14 @@
     "bundles": [],
     "gifts": {
       "robin": "hate",
-      "demetrius": "like",
+      "demetrius": "hate",
       "maru": "hate",
       "sebastian": "hate",
       "linus": "hate",
       "pierre": "hate",
       "caroline": "hate",
       "abigail": "hate",
-      "alex": "like",
+      "alex": "hate",
       "george": "hate",
       "evelyn": "hate",
       "lewis": "hate",
@@ -666,7 +574,7 @@
   {
     "type": "animal-product",
     "id": "milk",
-    "gameId": 184,
+    "gameId": "(O)184",
     "name": "Milk",
     "gameCategory": -6,
     "price": 125,
@@ -730,7 +638,7 @@
   {
     "type": "animal-product",
     "id": "large-milk",
-    "gameId": 186,
+    "gameId": "(O)186",
     "name": "Large Milk",
     "gameCategory": -6,
     "price": 190,
@@ -759,9 +667,7 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "linus": "like",
@@ -785,7 +691,7 @@
   {
     "type": "animal-product",
     "id": "goat-milk",
-    "gameId": 436,
+    "gameId": "(O)436",
     "name": "Goat Milk",
     "gameCategory": -6,
     "price": 225,
@@ -825,15 +731,13 @@
       "marnie": "like",
       "elliott": "dislike",
       "dwarf": "neutral",
-      "wizard": "dislike",
-      "harvey": "like",
-      "sandy": "like"
+      "wizard": "dislike"
     }
   },
   {
     "type": "animal-product",
     "id": "l-goat-milk",
-    "gameId": 438,
+    "gameId": "(O)438",
     "name": "L. Goat Milk",
     "gameCategory": -6,
     "price": 345,
@@ -856,9 +760,7 @@
     "sellingLocations": [
       "store-shipping-bin"
     ],
-    "bundles": [
-      "animal"
-    ],
+    "bundles": [],
     "gifts": {
       "robin": "like",
       "linus": "like",
@@ -876,15 +778,13 @@
       "marnie": "like",
       "elliott": "dislike",
       "dwarf": "neutral",
-      "wizard": "dislike",
-      "harvey": "like",
-      "sandy": "like"
+      "wizard": "dislike"
     }
   },
   {
     "type": "animal-product",
     "id": "truffle",
-    "gameId": 430,
+    "gameId": "(O)430",
     "name": "Truffle",
     "gameCategory": -17,
     "price": 625,
@@ -910,19 +810,13 @@
       "store-pierre",
       "store-shipping-bin"
     ],
-    "bundles": [
-      "chef-s"
-    ],
-    "gifts": {
-      "maru": "hate",
-      "leah": "love",
-      "gus": "like"
-    }
+    "bundles": [],
+    "gifts": {}
   },
   {
     "type": "animal-product",
     "id": "ostrich-egg",
-    "gameId": 289,
+    "gameId": "(O)289",
     "name": "Ostrich Egg",
     "gameCategory": -5,
     "price": 600,
@@ -963,8 +857,7 @@
       "shane": "like",
       "marnie": "like",
       "dwarf": "dislike",
-      "wizard": "dislike",
-      "leo": "love"
+      "wizard": "dislike"
     }
   }
 ]

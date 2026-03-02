@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/mail-overrides.schema.json",
+  "description": "Hand-curated overrides for mail items whose trigger conditions and senders cannot be parsed from game data exports. These mails are sent by hardcoded C# game logic rather than the data-driven TriggerActions system.",
+
+  "conditions": {
+    "CF_Fish":    { "condition": "Complete the Fish Tank bundles in the Community Center" },
+    "Beat_PK":    { "condition": "Beat Journey of the Prairie King" },
+    "JunimoKart": { "condition": "Beat all levels of Junimo Kart" },
+    "MSB_Pierre": { "condition": "Pierre's friendship event (3+ hearts)" },
+    "Sandy":      { "condition": "3+ hearts with Sandy" }
+  },
+
+  "senders": {
+    "mom1": "Mom",
+    "mom2": "Mom",
+    "mom3": "Mom",
+    "mom4": "Mom",
+    "mom5": "Mom",
+    "dad1": "Dad",
+    "dad2": "Dad",
+    "dad3": "Dad",
+    "dad4": "Dad",
+    "dad5": "Dad"
+  }
+}

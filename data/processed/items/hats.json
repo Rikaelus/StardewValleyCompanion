@@ -45,22 +45,7 @@
     "description": "Fashionable whether you're an archer or not.",
     "isMask": true,
     "icon": "assets/objects/ArchersCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 4000,
-        "condition": {
-          "in": [
-            17,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "beanie",
@@ -87,22 +72,7 @@
     "description": "Harken back to simpler times with this prairie bonnet.",
     "isMask": true,
     "icon": "assets/objects/BlueBonnet.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            28,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "blue-bow",
@@ -111,18 +81,7 @@
     "description": "This huge bow makes quite a statement!",
     "isMask": false,
     "icon": "assets/objects/BlueBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 50
-      }
-    ]
+    "sources": []
   },
   {
     "id": "blue-cowboy-hat",
@@ -140,22 +99,7 @@
     "description": "A lovely ribbon that sits behind the head.",
     "isMask": false,
     "icon": "assets/objects/BlueRibbon.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            37,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "bluebird-mask",
@@ -164,22 +108,7 @@
     "description": "Wear this to look just like your favorite island trader.",
     "isMask": true,
     "icon": "assets/objects/BluebirdMask.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 50,
-        "tradeItemId": "taro-root",
-        "tradeItemGameId": 830,
-        "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/TaroRoot.png",
-        "tradeItemAmount": 30,
-        "days": [
-          "Wednesday"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "id": "bowler-hat",
@@ -188,22 +117,7 @@
     "description": "Made from smooth felt.",
     "isMask": true,
     "icon": "assets/objects/BowlerHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 10000,
-        "condition": {
-          "in": [
-            3,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "bridal-veil",
@@ -230,22 +144,7 @@
     "description": "This one is very soft.",
     "isMask": false,
     "icon": "assets/objects/ButterflyBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            6,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "cat-ears",
@@ -254,22 +153,7 @@
     "description": "Whiskers included.",
     "isMask": true,
     "icon": "assets/objects/CatEars.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            9,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "chef-hat",
@@ -278,22 +162,7 @@
     "description": "The traditional hat worn by a head chef.",
     "isMask": true,
     "icon": "assets/objects/ChefHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 10000,
-        "condition": {
-          "in": [
-            17,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "chicken-mask",
@@ -302,22 +171,7 @@
     "description": "You'll be sure to get them grinning with this one.",
     "isMask": true,
     "icon": "assets/objects/ChickenMask.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            30,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "cone-hat",
@@ -326,26 +180,7 @@
     "description": "A curiosity from a distant land.",
     "isMask": true,
     "icon": "assets/objects/ConeHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 5000
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 2500
-      },
-      {
-        "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
-        "price": 10000
-      }
-    ]
+    "sources": []
   },
   {
     "id": "cool-cap",
@@ -354,22 +189,7 @@
     "description": "It looks really faded, but it used to be a vibrant blue.",
     "isMask": true,
     "icon": "assets/objects/CoolCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            2,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "copper-pan",
@@ -387,22 +207,7 @@
     "description": "The leather is old and cracked, but surprisingly supple. It smells musty.",
     "isMask": true,
     "icon": "assets/objects/CowboyHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 10000,
-        "condition": {
-          "in": [
-            5,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "cowgal-hat",
@@ -411,22 +216,7 @@
     "description": "The band is studded with fake diamonds.",
     "isMask": true,
     "icon": "assets/objects/CowgalHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            32,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "cowpoke-hat",
@@ -435,22 +225,7 @@
     "description": "For dairy experts.",
     "isMask": true,
     "icon": "assets/objects/CowpokeHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            31,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "daisy",
@@ -459,22 +234,7 @@
     "description": "A fresh spring daisy to put in your hair.",
     "isMask": false,
     "icon": "assets/objects/Daisy.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            20,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "dark-ballcap",
@@ -501,18 +261,7 @@
     "description": "A big, floppy bow made of dark velvet.",
     "isMask": false,
     "icon": "assets/objects/DarkVelvetBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 75
-      }
-    ]
+    "sources": []
   },
   {
     "id": "delicate-bow",
@@ -521,22 +270,7 @@
     "description": "Little pink jewels glisten as you examine it.",
     "isMask": false,
     "icon": "assets/objects/DelicateBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            15,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "deluxe-cowboy-hat",
@@ -545,21 +279,7 @@
     "description": "A cowboy hat with a more extreme shape.",
     "isMask": true,
     "icon": "assets/objects/DeluxeCowboyHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "tradeItemId": "taro-root",
-        "tradeItemGameId": 830,
-        "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/TaroRoot.png",
-        "tradeItemAmount": 30,
-        "days": [
-          "Friday"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "id": "deluxe-pirate-hat",
@@ -586,22 +306,7 @@
     "description": "Keep your ears toasty. Lined with artisanal velvet from Castle Village.",
     "isMask": false,
     "icon": "assets/objects/Earmuffs.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 4000,
-        "condition": {
-          "in": [
-            13,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "elegant-turban",
@@ -610,22 +315,7 @@
     "description": "A fine black silk turban with gold trim.",
     "isMask": true,
     "icon": "assets/objects/ElegantTurban.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 50000,
-        "condition": {
-          "==": [
-            {
-              "var": "player.allAchievements"
-            },
-            true
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "emily-s-magic-hat",
@@ -643,22 +333,7 @@
     "description": "You can't tell if it's real or just from a costume shop.",
     "isMask": true,
     "icon": "assets/objects/EyePatch.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            26,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "fashion-hat",
@@ -676,18 +351,7 @@
     "description": "A city-slicker's standard.",
     "isMask": true,
     "icon": "assets/objects/Fedora.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
-        "shopCurrency": "star-tokens",
-        "shopCurrencyGameId": "StarToken",
-        "price": 500,
-        "stock": 1,
-        "stockLimit": 1
-      }
-    ]
+    "sources": []
   },
   {
     "id": "fishing-hat",
@@ -759,22 +423,7 @@
     "description": "This gnome had a very large head.",
     "isMask": true,
     "icon": "assets/objects/GnomesCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            22,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "goblin-mask",
@@ -783,22 +432,7 @@
     "description": "Freak out the neighborhood with this creepy mask. Rubber ear joints for effect.",
     "isMask": true,
     "icon": "assets/objects/GoblinMask.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 10000,
-        "condition": {
-          "in": [
-            34,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "goggles",
@@ -843,22 +477,7 @@
     "description": "A floppy old topper with a creased bill. Looks like it's been through a lot.",
     "isMask": true,
     "icon": "assets/objects/GoodOlCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            0,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "governor-s-hat",
@@ -867,22 +486,7 @@
     "description": "A replica of the Governor's iconic hat.",
     "isMask": true,
     "icon": "assets/objects/GovernorsHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            38,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "green-turban",
@@ -891,19 +495,7 @@
     "description": "A green silk turban with a gold ornament on the front.",
     "isMask": true,
     "icon": "assets/objects/GreenTurban.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 1500,
-        "tradeItemId": "omni-geode",
-        "tradeItemGameId": 749,
-        "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/OmniGeode.png",
-        "tradeItemAmount": 50
-      }
-    ]
+    "sources": []
   },
   {
     "id": "hair-bone",
@@ -930,22 +522,7 @@
     "description": "The wool lining should stay warm deep into the forest.",
     "isMask": true,
     "icon": "assets/objects/HuntersCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            19,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "infinity-crown",
@@ -954,22 +531,7 @@
     "description": "It's made from an exotic metal you've never seen before.",
     "isMask": true,
     "icon": "assets/objects/InfinityCrown.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 20000,
-        "condition": {
-          "in": [
-            42,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "iridium-pan",
@@ -987,22 +549,7 @@
     "description": "Put your inner clown on display.",
     "isMask": true,
     "icon": "assets/objects/JesterHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 25000,
-        "condition": {
-          "in": [
-            36,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "joja-cap",
@@ -1020,22 +567,7 @@
     "description": "To honor our little buddies...",
     "isMask": true,
     "icon": "assets/objects/JunimoHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 25000,
-        "condition": {
-          "in": [
-            44,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "knight-s-helmet",
@@ -1089,22 +621,7 @@
     "description": "The middle is made of solid gold.",
     "isMask": false,
     "icon": "assets/objects/LuckyBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            1,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "magic-cowboy-hat",
@@ -1113,19 +630,7 @@
     "description": "It's shimmering with prismatic energy",
     "isMask": true,
     "icon": "assets/objects/MagicCowboyHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 500,
-        "tradeItemId": "omni-geode",
-        "tradeItemGameId": 749,
-        "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/OmniGeode.png",
-        "tradeItemAmount": 333
-      }
-    ]
+    "sources": []
   },
   {
     "id": "magic-turban",
@@ -1134,19 +639,7 @@
     "description": "It's shimmering with prismatic energy",
     "isMask": true,
     "icon": "assets/objects/MagicTurban.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
-        "price": 4000,
-        "tradeItemId": "omni-geode",
-        "tradeItemGameId": 749,
-        "tradeItemName": "Omni Geode",
-        "tradeItemIcon": "assets/objects/OmniGeode.png",
-        "tradeItemAmount": 333
-      }
-    ]
+    "sources": []
   },
   {
     "id": "mouse-ears",
@@ -1155,22 +648,7 @@
     "description": "Made from synthetic fibers.",
     "isMask": true,
     "icon": "assets/objects/MouseEars.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            7,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "mr-qi-s-hat",
@@ -1179,21 +657,7 @@
     "description": "A replica of Mr. Qi's iconic hat.",
     "isMask": true,
     "icon": "assets/objects/MrQisHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
-        "shopCurrency": "qi-gems",
-        "shopCurrencyGameId": 858,
-        "price": 200,
-        "tradeItemId": "qi-gem",
-        "tradeItemGameId": 858,
-        "tradeItemName": "Qi Gem",
-        "tradeItemIcon": "assets/objects/QiGem.png",
-        "tradeItemAmount": 5
-      }
-    ]
+    "sources": []
   },
   {
     "id": "mummy-mask",
@@ -1202,18 +666,7 @@
     "description": "A large mummy mask... frightening!",
     "isMask": true,
     "icon": "assets/objects/MummyMask.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 120
-      }
-    ]
+    "sources": []
   },
   {
     "id": "mushroom-cap",
@@ -1240,22 +693,7 @@
     "description": "Looks like it belonged to a postman or policeman. Either way, it's still very soft and smells okay.",
     "isMask": true,
     "icon": "assets/objects/OfficialCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            25,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "pageboy-cap",
@@ -1264,22 +702,7 @@
     "description": "For some reason, it makes you want to sell newspapers.",
     "isMask": true,
     "icon": "assets/objects/PageboyCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            35,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "panda-hat",
@@ -1297,22 +720,7 @@
     "description": "It's made out of special paper that won't disintegrate in the rain.",
     "isMask": true,
     "icon": "assets/objects/PaperHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 10000,
-        "condition": {
-          "in": [
-            40,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "party-hat-57",
@@ -1348,14 +756,7 @@
     "description": "This huge bow makes quite a statement!",
     "isMask": false,
     "icon": "assets/objects/PinkBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-volcano-shop",
-        "storeName": "Volcano Forge Shop",
-        "price": 10000
-      }
-    ]
+    "sources": []
   },
   {
     "id": "pirate-hat",
@@ -1373,22 +774,7 @@
     "description": "Looks alright.",
     "isMask": true,
     "icon": "assets/objects/PlumChapeau.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            16,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "polka-bow",
@@ -1397,22 +783,7 @@
     "description": "This one's sure to be turn heads.",
     "isMask": false,
     "icon": "assets/objects/PolkaBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            29,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "propeller-hat",
@@ -1448,26 +819,7 @@
     "description": "A classic hat from the old frontier days.",
     "isMask": true,
     "icon": "assets/objects/RaccoonHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
-        "tradeItemId": "mixed-seeds",
-        "tradeItemGameId": 770,
-        "tradeItemName": "Mixed Seeds",
-        "tradeItemIcon": "assets/objects/MixedSeeds.png",
-        "tradeItemAmount": 10,
-        "condition": {
-          ">=": [
-            {
-              "var": "world.TimesFedRaccoons"
-            },
-            3
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "radioactive-goggles",
@@ -1494,16 +846,7 @@
     "description": "A unique hat made popular by the famous merchant pig.",
     "isMask": true,
     "icon": "assets/objects/RedFez.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
-        "price": 8000,
-        "rotating": true,
-        "stock": 1
-      }
-    ]
+    "sources": []
   },
   {
     "id": "sailor-s-cap",
@@ -1512,22 +855,7 @@
     "description": "It's fresh and starchy.",
     "isMask": true,
     "icon": "assets/objects/SailorsCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            "Ice Festival",
-            {
-              "var": "player.mail"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "santa-hat",
@@ -1536,22 +864,7 @@
     "description": "Celebrate the magical season.",
     "isMask": true,
     "icon": "assets/objects/SantaHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            12,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "skeleton-mask",
@@ -1569,22 +882,7 @@
     "description": "It's a more aerodynamic style of cap.",
     "isMask": true,
     "icon": "assets/objects/SmallCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
-        "price": 2,
-        "tradeItemId": "taro-root",
-        "tradeItemGameId": 830,
-        "tradeItemName": "Taro Root",
-        "tradeItemIcon": "assets/objects/TaroRoot.png",
-        "tradeItemAmount": 30,
-        "days": [
-          "Monday"
-        ]
-      }
-    ]
+    "sources": []
   },
   {
     "id": "sombrero",
@@ -1593,22 +891,7 @@
     "description": "A festively decorated hat made from woven straw.",
     "isMask": true,
     "icon": "assets/objects/Sombrero.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 25000,
-        "condition": {
-          "in": [
-            4,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "sou-wester",
@@ -1617,22 +900,7 @@
     "description": "The shape helps to keep sailors dry during storms.",
     "isMask": true,
     "icon": "assets/objects/Souwester.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            24,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "space-helmet",
@@ -1641,22 +909,7 @@
     "description": "Warning: This helmet has not actually been tested in outer space.",
     "isMask": true,
     "icon": "assets/objects/SpaceHelmet.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 20000,
-        "condition": {
-          "in": [
-            41,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "sports-cap",
@@ -1665,22 +918,7 @@
     "description": "The cap has a vintage team logo on it.",
     "isMask": true,
     "icon": "assets/objects/SportsCap.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          ">=": [
-            {
-              "var": "player.stats.ticketPrizesClaimed"
-            },
-            11
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "spotted-headscarf",
@@ -1734,22 +972,7 @@
     "description": "Light and cool, it's a farmer's delight.",
     "isMask": true,
     "icon": "assets/objects/StrawHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            "Egg Festival",
-            {
-              "var": "player.mail"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "sunglasses",
@@ -1776,22 +999,7 @@
     "description": "This one has a big amethyst encircled by gold.",
     "isMask": true,
     "icon": "assets/objects/Tiara.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            11,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "tiger-hat",
@@ -1836,22 +1044,7 @@
     "description": "It's shaped like a little palm tree.",
     "isMask": false,
     "icon": "assets/objects/Tropiclip.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            18,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "trucker-hat",
@@ -1860,22 +1053,7 @@
     "description": "Mesh in the back to keep your head cool.",
     "isMask": true,
     "icon": "assets/objects/TruckerHat.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 2000,
-        "condition": {
-          "in": [
-            21,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "warrior-helmet",
@@ -1893,22 +1071,7 @@
     "description": "The color scheme was inspired by the beloved summer melon.",
     "isMask": false,
     "icon": "assets/objects/WatermelonBand.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 1000,
-        "condition": {
-          "in": [
-            27,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "wearable-dwarf-helm",
@@ -1926,22 +1089,7 @@
     "description": "A bow as white as snow.",
     "isMask": false,
     "icon": "assets/objects/WhiteBow.png",
-    "sources": [
-      {
-        "type": "shop",
-        "storeId": "store-hat-mouse",
-        "storeName": "Hat Mouse",
-        "price": 5000,
-        "condition": {
-          "in": [
-            39,
-            {
-              "var": "player.achievements"
-            }
-          ]
-        }
-      }
-    ]
+    "sources": []
   },
   {
     "id": "white-turban",

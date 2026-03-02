@@ -2,7 +2,7 @@
   {
     "type": "ring",
     "id": "amethyst-ring",
-    "gameId": 529,
+    "gameId": "(O)529",
     "name": "Amethyst Ring",
     "icon": "assets/objects/AmethystRing.png",
     "price": 200,
@@ -65,7 +65,7 @@
   {
     "type": "ring",
     "id": "aquamarine-ring",
-    "gameId": 531,
+    "gameId": "(O)531",
     "name": "Aquamarine Ring",
     "icon": "assets/objects/AquamarineRing.png",
     "price": 400,
@@ -136,7 +136,7 @@
   {
     "type": "ring",
     "id": "burglar-s-ring",
-    "gameId": 526,
+    "gameId": "(O)526",
     "name": "Burglar's Ring",
     "icon": "assets/objects/BurglarsRing.png",
     "price": 1500,
@@ -192,7 +192,7 @@
   {
     "type": "ring",
     "id": "combined-ring",
-    "gameId": 880,
+    "gameId": "(O)880",
     "name": "Combined Ring",
     "icon": "assets/objects/CombinedRing.png",
     "price": 100,
@@ -247,7 +247,7 @@
   {
     "type": "ring",
     "id": "crabshell-ring",
-    "gameId": 810,
+    "gameId": "(O)810",
     "name": "Crabshell Ring",
     "icon": "assets/objects/CrabshellRing.png",
     "price": 2000,
@@ -303,7 +303,7 @@
   {
     "type": "ring",
     "id": "emerald-ring",
-    "gameId": 533,
+    "gameId": "(O)533",
     "name": "Emerald Ring",
     "icon": "assets/objects/EmeraldRing.png",
     "price": 600,
@@ -374,7 +374,7 @@
   {
     "type": "ring",
     "id": "glow-ring",
-    "gameId": 517,
+    "gameId": "(O)517",
     "name": "Glow Ring",
     "icon": "assets/objects/GlowRing.png",
     "price": 200,
@@ -430,7 +430,7 @@
   {
     "type": "ring",
     "id": "glowstone-ring",
-    "gameId": 888,
+    "gameId": "(O)888",
     "name": "Glowstone Ring",
     "icon": "assets/objects/GlowstoneRing.png",
     "price": 200,
@@ -518,7 +518,7 @@
   {
     "type": "ring",
     "id": "hot-java-ring",
-    "gameId": 860,
+    "gameId": "(O)860",
     "name": "Hot Java Ring",
     "icon": "assets/objects/HotJavaRing.png",
     "price": 200,
@@ -574,7 +574,7 @@
   {
     "type": "ring",
     "id": "immunity-band",
-    "gameId": 887,
+    "gameId": "(O)887",
     "name": "Immunity Band",
     "icon": "assets/objects/ImmunityBand.png",
     "price": 500,
@@ -630,7 +630,7 @@
   {
     "type": "ring",
     "id": "iridium-band",
-    "gameId": 527,
+    "gameId": "(O)527",
     "name": "Iridium Band",
     "icon": "assets/objects/IridiumBand.png",
     "price": 2000,
@@ -711,7 +711,7 @@
   {
     "type": "ring",
     "id": "jade-ring",
-    "gameId": 532,
+    "gameId": "(O)532",
     "name": "Jade Ring",
     "icon": "assets/objects/JadeRing.png",
     "price": 400,
@@ -782,7 +782,7 @@
   {
     "type": "ring",
     "id": "jukebox-ring",
-    "gameId": 528,
+    "gameId": "(O)528",
     "name": "Jukebox Ring",
     "icon": "assets/objects/JukeboxRing.png",
     "price": 200,
@@ -838,7 +838,7 @@
   {
     "type": "ring",
     "id": "lucky-ring",
-    "gameId": 859,
+    "gameId": "(O)859",
     "name": "Lucky Ring",
     "icon": "assets/objects/LuckyRing.png",
     "price": 200,
@@ -894,7 +894,7 @@
   {
     "type": "ring",
     "id": "magnet-ring",
-    "gameId": 519,
+    "gameId": "(O)519",
     "name": "Magnet Ring",
     "icon": "assets/objects/MagnetRing.png",
     "price": 200,
@@ -950,7 +950,7 @@
   {
     "type": "ring",
     "id": "napalm-ring",
-    "gameId": 811,
+    "gameId": "(O)811",
     "name": "Napalm Ring",
     "icon": "assets/objects/NapalmRing.png",
     "price": 2000,
@@ -1006,7 +1006,7 @@
   {
     "type": "ring",
     "id": "phoenix-ring",
-    "gameId": 863,
+    "gameId": "(O)863",
     "name": "Phoenix Ring",
     "icon": "assets/objects/PhoenixRing.png",
     "price": 200,
@@ -1062,7 +1062,7 @@
   {
     "type": "ring",
     "id": "protection-ring",
-    "gameId": 861,
+    "gameId": "(O)861",
     "name": "Protection Ring",
     "icon": "assets/objects/ProtectionRing.png",
     "price": 200,
@@ -1118,7 +1118,7 @@
   {
     "type": "ring",
     "id": "ring-of-yoba",
-    "gameId": 524,
+    "gameId": "(O)524",
     "name": "Ring of Yoba",
     "icon": "assets/objects/RingofYoba.png",
     "price": 1500,
@@ -1199,7 +1199,7 @@
   {
     "type": "ring",
     "id": "ruby-ring",
-    "gameId": 534,
+    "gameId": "(O)534",
     "name": "Ruby Ring",
     "icon": "assets/objects/RubyRing.png",
     "price": 600,
@@ -1270,7 +1270,7 @@
   {
     "type": "ring",
     "id": "savage-ring",
-    "gameId": 523,
+    "gameId": "(O)523",
     "name": "Savage Ring",
     "icon": "assets/objects/SavageRing.png",
     "price": 1500,
@@ -1326,7 +1326,7 @@
   {
     "type": "ring",
     "id": "slime-charmer-ring",
-    "gameId": 520,
+    "gameId": "(O)520",
     "name": "Slime Charmer Ring",
     "icon": "assets/objects/SlimeCharmerRing.png",
     "price": 700,
@@ -1382,7 +1382,7 @@
   {
     "type": "ring",
     "id": "small-glow-ring",
-    "gameId": 516,
+    "gameId": "(O)516",
     "name": "Small Glow Ring",
     "icon": "assets/objects/SmallGlowRing.png",
     "price": 100,
@@ -1438,7 +1438,7 @@
   {
     "type": "ring",
     "id": "small-magnet-ring",
-    "gameId": 518,
+    "gameId": "(O)518",
     "name": "Small Magnet Ring",
     "icon": "assets/objects/SmallMagnetRing.png",
     "price": 100,
@@ -1494,7 +1494,7 @@
   {
     "type": "ring",
     "id": "soul-sapper-ring",
-    "gameId": 862,
+    "gameId": "(O)862",
     "name": "Soul Sapper Ring",
     "icon": "assets/objects/SoulSapperRing.png",
     "price": 200,
@@ -1550,7 +1550,7 @@
   {
     "type": "ring",
     "id": "sturdy-ring",
-    "gameId": 525,
+    "gameId": "(O)525",
     "name": "Sturdy Ring",
     "icon": "assets/objects/SturdyRing.png",
     "price": 1500,
@@ -1631,7 +1631,7 @@
   {
     "type": "ring",
     "id": "thorns-ring",
-    "gameId": 839,
+    "gameId": "(O)839",
     "name": "Thorns Ring",
     "icon": "assets/objects/ThornsRing.png",
     "price": 200,
@@ -1712,7 +1712,7 @@
   {
     "type": "ring",
     "id": "topaz-ring",
-    "gameId": 530,
+    "gameId": "(O)530",
     "name": "Topaz Ring",
     "icon": "assets/objects/TopazRing.png",
     "price": 200,
@@ -1775,7 +1775,7 @@
   {
     "type": "ring",
     "id": "vampire-ring",
-    "gameId": 522,
+    "gameId": "(O)522",
     "name": "Vampire Ring",
     "icon": "assets/objects/VampireRing.png",
     "price": 1500,
@@ -1831,7 +1831,7 @@
   {
     "type": "ring",
     "id": "warrior-ring",
-    "gameId": 521,
+    "gameId": "(O)521",
     "name": "Warrior Ring",
     "icon": "assets/objects/WarriorRing.png",
     "price": 1500,
@@ -1912,7 +1912,7 @@
   {
     "type": "ring",
     "id": "wedding-ring",
-    "gameId": 801,
+    "gameId": "(O)801",
     "name": "Wedding Ring",
     "icon": "assets/objects/WeddingRing.png",
     "price": 2000,

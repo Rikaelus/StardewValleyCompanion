@@ -237,7 +237,7 @@ const CONDITION_GROUPS = [
  * itemNames: optional { [gameIdStr]: name } map from source.conditionItemNames.
  * Returns null if not formattable.
  */
-function formatSingleRule(rule, itemNames, eventNames) {
+function formatSingleRule(rule, itemNames, eventNames, achievementNames) {
   if (!rule || typeof rule !== 'object') return null
 
   if (rule['!']) {
@@ -255,7 +255,7 @@ function formatSingleRule(rule, itemNames, eventNames) {
       }
       if (collection?.var === 'player.relationships') return `Not ${value.charAt(0).toUpperCase()}${value.slice(1)}`
     }
-    const innerLabel = formatSingleRule(inner, itemNames, eventNames)
+    const innerLabel = formatSingleRule(inner, itemNames, eventNames, achievementNames)
     return innerLabel ? `Not: ${innerLabel}` : null
   }
 
@@ -277,7 +277,10 @@ function formatSingleRule(rule, itemNames, eventNames) {
   if (rule['in']) {
     const [value, collection] = rule['in']
     if (collection?.var === 'player.mail') return MAIL_FLAG_LABELS[value] ?? `Mail Flag: ${value}`
-    if (collection?.var === 'player.achievements') return `Achievement #${value}`
+    if (collection?.var === 'player.achievements') {
+      const name = achievementNames?.[String(value)]
+      return name ? `Unlocked by: ${name}` : `Achievement #${value}`
+    }
     if (collection?.var === 'player.events') {
       const name = eventNames?.[String(value)]
       return name ? `Seen: ${name}` : `Seen Event #${value}`
@@ -293,7 +296,7 @@ function formatSingleRule(rule, itemNames, eventNames) {
   }
 
   if (rule['or']) {
-    return rule['or'].map(r => formatSingleRule(r, itemNames, eventNames)).filter(Boolean).join(' Or ')
+    return rule['or'].map(r => formatSingleRule(r, itemNames, eventNames, achievementNames)).filter(Boolean).join(' Or ')
   }
 
   return null
@@ -304,13 +307,14 @@ function formatSingleRule(rule, itemNames, eventNames) {
  * AND conditions produce multiple clauses; known clusters are collapsed to one.
  * itemNames: optional { [gameIdStr]: name } from source.conditionItemNames.
  * eventNames: optional { [eventId]: name } from entities.eventNames.
+ * achievementNames: optional { [id]: name } from entities.achievementNames.
  * Returns [] if nothing is formattable.
  */
-export function formatConditionClauses(rule, itemNames, eventNames) {
+export function formatConditionClauses(rule, itemNames, eventNames, achievementNames) {
   if (!rule || typeof rule !== 'object') return []
 
   if (!rule['and']) {
-    const label = formatSingleRule(rule, itemNames, eventNames)
+    const label = formatSingleRule(rule, itemNames, eventNames, achievementNames)
     return label ? [label] : []
   }
 
@@ -324,12 +328,12 @@ export function formatConditionClauses(rule, itemNames, eventNames) {
 
   for (const group of CONDITION_GROUPS) {
     if ([...group.flags].every(f => mailFlags.has(f))) {
-      const remaining = nonFlagClauses.map(r => formatSingleRule(r, itemNames, eventNames)).filter(Boolean)
+      const remaining = nonFlagClauses.map(r => formatSingleRule(r, itemNames, eventNames, achievementNames)).filter(Boolean)
       return [group.label, ...remaining]
     }
   }
 
-  return clauses.map(r => formatSingleRule(r, itemNames, eventNames)).filter(Boolean)
+  return clauses.map(r => formatSingleRule(r, itemNames, eventNames, achievementNames)).filter(Boolean)
 }
 
 /**
@@ -337,9 +341,10 @@ export function formatConditionClauses(rule, itemNames, eventNames) {
  * For AND conditions, joins clauses with ' + '.
  * itemNames: optional { [gameIdStr]: name } from source.conditionItemNames.
  * eventNames: optional { [eventId]: name } from entities.eventNames.
+ * achievementNames: optional { [id]: name } from entities.achievementNames.
  * Returns null if not formattable.
  */
-export function formatConditionRule(rule, itemNames, eventNames) {
-  const clauses = formatConditionClauses(rule, itemNames, eventNames)
+export function formatConditionRule(rule, itemNames, eventNames, achievementNames) {
+  const clauses = formatConditionClauses(rule, itemNames, eventNames, achievementNames)
   return clauses.length === 0 ? null : clauses.join(' + ')
 }

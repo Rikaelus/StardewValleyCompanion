@@ -2,7 +2,7 @@
   {
     "type": "fertilizer",
     "id": "basic-fertilizer",
-    "gameId": 368,
+    "gameId": "(O)368",
     "name": "Basic Fertilizer",
     "icon": "assets/objects/BasicFertilizer.png",
     "price": 2,
@@ -88,7 +88,7 @@
   {
     "type": "fertilizer",
     "id": "basic-retaining-soil",
-    "gameId": 370,
+    "gameId": "(O)370",
     "name": "Basic Retaining Soil",
     "icon": "assets/objects/BasicRetainingSoil.png",
     "price": 4,
@@ -174,7 +174,7 @@
   {
     "type": "fertilizer",
     "id": "deluxe-fertilizer",
-    "gameId": 919,
+    "gameId": "(O)919",
     "name": "Deluxe Fertilizer",
     "icon": "assets/objects/DeluxeFertilizer.png",
     "price": 70,
@@ -247,7 +247,7 @@
   {
     "type": "fertilizer",
     "id": "deluxe-retaining-soil",
-    "gameId": 920,
+    "gameId": "(O)920",
     "name": "Deluxe Retaining Soil",
     "icon": "assets/objects/DeluxeRetainingSoil.png",
     "price": 30,
@@ -324,7 +324,7 @@
   {
     "type": "fertilizer",
     "id": "deluxe-speed-gro",
-    "gameId": 466,
+    "gameId": "(O)466",
     "name": "Deluxe Speed-Gro",
     "icon": "assets/objects/DeluxeSpeedGro.png",
     "price": 40,
@@ -431,7 +431,7 @@
   {
     "type": "fertilizer",
     "id": "hyper-speed-gro",
-    "gameId": 918,
+    "gameId": "(O)918",
     "name": "Hyper Speed-Gro",
     "icon": "assets/objects/HyperSpeedGro.png",
     "price": 70,
@@ -508,7 +508,7 @@
   {
     "type": "fertilizer",
     "id": "quality-fertilizer",
-    "gameId": 369,
+    "gameId": "(O)369",
     "name": "Quality Fertilizer",
     "icon": "assets/objects/QualityFertilizer.png",
     "price": 10,
@@ -599,7 +599,7 @@
   {
     "type": "fertilizer",
     "id": "quality-retaining-soil",
-    "gameId": 371,
+    "gameId": "(O)371",
     "name": "Quality Retaining Soil",
     "icon": "assets/objects/QualityRetainingSoil.png",
     "price": 5,
@@ -694,7 +694,7 @@
   {
     "type": "fertilizer",
     "id": "speed-gro",
-    "gameId": 465,
+    "gameId": "(O)465",
     "name": "Speed-Gro",
     "icon": "assets/objects/SpeedGro.png",
     "price": 20,
@@ -779,7 +779,7 @@
   {
     "type": "fertilizer",
     "id": "tree-fertilizer",
-    "gameId": 805,
+    "gameId": "(O)805",
     "name": "Tree Fertilizer",
     "icon": "assets/objects/TreeFertilizer.png",
     "price": 10,
