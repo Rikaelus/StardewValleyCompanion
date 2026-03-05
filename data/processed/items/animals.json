@@ -1,0 +1,444 @@
+[
+  {
+    "type": "animal",
+    "id": "blue-chicken",
+    "gameId": "(FA)Blue Chicken",
+    "name": "Blue Chicken",
+    "icon": "assets/animals/BlueChicken.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 3,
+    "daysToProduce": 1,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)176"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)174"
+    ],
+    "canGetPregnant": false,
+    "sources": []
+  },
+  {
+    "type": "animal",
+    "id": "brown-chicken",
+    "gameId": "(FA)Brown Chicken",
+    "name": "Brown Chicken",
+    "icon": "assets/animals/BrownChicken.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 3,
+    "daysToProduce": 1,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)180"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)182"
+    ],
+    "eggGameIds": [
+      "(O)180",
+      "(O)182"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "hatch",
+        "eggGameIds": [
+          "(O)180",
+          "(O)182"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "brown-cow",
+    "gameId": "(FA)Brown Cow",
+    "name": "Brown Cow",
+    "icon": "assets/animals/BrownCow.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 5,
+    "daysToProduce": 1,
+    "harvestType": 1,
+    "harvestTool": "Milk Pail",
+    "produceGameIds": [
+      "(O)184"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)186"
+    ],
+    "canGetPregnant": true,
+    "sources": [
+      {
+        "type": "pregnancy"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "dinosaur",
+    "gameId": "(FA)Dinosaur",
+    "name": "Dinosaur",
+    "icon": "assets/animals/Dinosaur.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 0,
+    "daysToProduce": 7,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)107"
+    ],
+    "eggGameIds": [
+      "(O)107"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "hatch",
+        "eggGameIds": [
+          "(O)107"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "duck",
+    "gameId": "(FA)Duck",
+    "name": "Duck",
+    "icon": "assets/animals/Duck.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "requiredBuildingGameId": "(BLD)Big Coop",
+    "purchasePrice": 600,
+    "daysToMature": 5,
+    "daysToProduce": 2,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)442"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)444"
+    ],
+    "eggGameIds": [
+      "(O)442"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "goat",
+    "gameId": "(FA)Goat",
+    "name": "Goat",
+    "icon": "assets/animals/Goat.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "requiredBuildingGameId": "(BLD)Big Barn",
+    "purchasePrice": 2000,
+    "daysToMature": 5,
+    "daysToProduce": 2,
+    "harvestType": 1,
+    "harvestTool": "Milk Pail",
+    "produceGameIds": [
+      "(O)436"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)438"
+    ],
+    "canGetPregnant": true,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "golden-chicken",
+    "gameId": "(FA)Golden Chicken",
+    "name": "Golden Chicken",
+    "icon": "assets/animals/GoldenChicken.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 3,
+    "daysToProduce": 1,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)928"
+    ],
+    "eggGameIds": [
+      "(O)928"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "hatch",
+        "eggGameIds": [
+          "(O)928"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "ostrich",
+    "gameId": "(FA)Ostrich",
+    "name": "Ostrich",
+    "icon": "assets/animals/Ostrich.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "requiredBuildingGameId": "(BLD)Barn",
+    "purchasePrice": null,
+    "daysToMature": 7,
+    "daysToProduce": 7,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)289"
+    ],
+    "eggGameIds": [
+      "(O)289"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "hatch",
+        "eggGameIds": [
+          "(O)289"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "pig",
+    "gameId": "(FA)Pig",
+    "name": "Pig",
+    "icon": "assets/animals/Pig.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "requiredBuildingGameId": "(BLD)Deluxe Barn",
+    "purchasePrice": 8000,
+    "daysToMature": 10,
+    "daysToProduce": 1,
+    "harvestType": 2,
+    "produceGameIds": [
+      "(O)430"
+    ],
+    "canGetPregnant": true,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "rabbit",
+    "gameId": "(FA)Rabbit",
+    "name": "Rabbit",
+    "icon": "assets/animals/Rabbit.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "requiredBuildingGameId": "(BLD)Deluxe Coop",
+    "purchasePrice": 4000,
+    "daysToMature": 6,
+    "daysToProduce": 4,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)440"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)446"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "sheep",
+    "gameId": "(FA)Sheep",
+    "name": "Sheep",
+    "icon": "assets/animals/Sheep.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "requiredBuildingGameId": "(BLD)Deluxe Barn",
+    "purchasePrice": 4000,
+    "daysToMature": 4,
+    "daysToProduce": 3,
+    "harvestType": 1,
+    "harvestTool": "Shears",
+    "produceGameIds": [
+      "(O)440"
+    ],
+    "canGetPregnant": true,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "void-chicken",
+    "gameId": "(FA)Void Chicken",
+    "name": "Void Chicken",
+    "icon": "assets/animals/VoidChicken.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "purchasePrice": null,
+    "daysToMature": 3,
+    "daysToProduce": 1,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)305"
+    ],
+    "eggGameIds": [
+      "(O)305"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "hatch",
+        "eggGameIds": [
+          "(O)305"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "white-chicken",
+    "gameId": "(FA)White Chicken",
+    "name": "White Chicken",
+    "icon": "assets/animals/WhiteChicken.png",
+    "houseType": "Coop",
+    "validBuildingGameIds": [
+      "(BLD)Coop",
+      "(BLD)Big Coop",
+      "(BLD)Deluxe Coop"
+    ],
+    "requiredBuildingGameId": "(BLD)Coop",
+    "purchasePrice": 400,
+    "daysToMature": 3,
+    "daysToProduce": 1,
+    "harvestType": 0,
+    "produceGameIds": [
+      "(O)176"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)174"
+    ],
+    "eggGameIds": [
+      "(O)176",
+      "(O)174"
+    ],
+    "canGetPregnant": false,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  },
+  {
+    "type": "animal",
+    "id": "white-cow",
+    "gameId": "(FA)White Cow",
+    "name": "White Cow",
+    "icon": "assets/animals/WhiteCow.png",
+    "houseType": "Barn",
+    "validBuildingGameIds": [
+      "(BLD)Barn",
+      "(BLD)Big Barn",
+      "(BLD)Deluxe Barn"
+    ],
+    "requiredBuildingGameId": "(BLD)Barn",
+    "purchasePrice": 750,
+    "daysToMature": 5,
+    "daysToProduce": 1,
+    "harvestType": 1,
+    "harvestTool": "Milk Pail",
+    "produceGameIds": [
+      "(O)184"
+    ],
+    "deluxeProduceGameIds": [
+      "(O)186"
+    ],
+    "canGetPregnant": true,
+    "sources": [
+      {
+        "type": "shop",
+        "storeId": "store-marnie"
+      }
+    ]
+  }
+]

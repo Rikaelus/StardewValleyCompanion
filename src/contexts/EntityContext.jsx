@@ -91,6 +91,7 @@ export function EntityProvider({ children }) {
       'trinket':        entity => entity.category === 'trinket',
       'tool':           entity => entity.category === 'tool',
       'building':       entity => entity.category === 'building',
+      'animal':         entity => entity.category === 'animal',
     }
 
     const byType = {}

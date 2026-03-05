@@ -98,6 +98,36 @@
   font-size: 16px;
 }
 
+.entity-description {
+  margin: -0.75rem 0 0;
+  font-style: italic;
+  color: #5c4a32;
+  opacity: 0.85;
+}
+
+.building-animals-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.building-animals-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.building-animals-col .label {
+  font-weight: 600;
+  color: #5c4a32;
+  margin-bottom: 0.5rem;
+}
+
+.building-animals-col .bundle-items-list {
+  justify-content: center;
+}
+
 /* Input table margin (artisan) */
 .modal-section:has(.data-table-container) {
   margin-top: 0.5rem;

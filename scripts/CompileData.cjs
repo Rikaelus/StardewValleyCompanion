@@ -67,6 +67,7 @@ const sourceData = {
   tools:          loadJson(path.join(SOURCE_DIR, 'items/tools.json')),
   trinkets:       loadJson(path.join(SOURCE_DIR, 'items/trinkets.json')),
   buildings:      loadJson(path.join(SOURCE_DIR, 'items/buildings.json')),
+  animals:        loadJson(path.join(SOURCE_DIR, 'items/animals.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
   machines:       loadJson(path.join(SOURCE_DIR, 'reference/machines.json')),
@@ -258,45 +259,53 @@ console.log(`  ✓ Expanded artisan: ${sourceData.artisan.length} source → ${c
 // ---------------------------------------------------------------------------
 console.log('\n🏷️  Tagging entity categories...');
 
-function tagEntities(entities, category, extraFields = {}) {
+function tagEntities(entities, category, gameIdPrefix, extraFields = {}) {
   return entities.map(entity => {
     const { gifts, ...entityWithoutGifts } = entity;
+    // Qualify any bare gameId that hasn't already been qualified
+    if (gameIdPrefix && entity.gameId != null) {
+      const s = String(entity.gameId)
+      if (!s.startsWith('(')) {
+        entityWithoutGifts.gameId = `(${gameIdPrefix})${s}`
+      }
+    }
     return { ...entityWithoutGifts, ...extraFields, category };
   });
 }
 
-const taggedFish           = tagEntities(sourceData.fish, 'fish');
-const taggedCrops          = tagEntities(sourceData.crops, 'crop');
-const taggedForage         = tagEntities(sourceData.forage, 'forage');
-const taggedTreeFruits     = tagEntities(sourceData.treeFruits, 'tree-fruit');
-const taggedMinerals       = tagEntities(sourceData.minerals, 'mineral');
-const taggedMetalBars      = tagEntities(sourceData.metalBars, 'metal-bar');
-const taggedMonsterLoot    = tagEntities(sourceData.monsterLoot, 'monster-loot');
-const taggedResources      = tagEntities(sourceData.resources, 'resource');
-const taggedBigCraftables  = tagEntities(sourceData.bigCraftables, 'big-craftable');
-const taggedAnimalProducts = tagEntities(sourceData.animalProducts, 'animal-product');
-const taggedSeeds          = tagEntities(sourceData.seeds, 'seed');
-const taggedFurniture      = tagEntities(sourceData.furniture, 'furniture');
-const taggedHats           = tagEntities(sourceData.hats, 'hat');
-const taggedFood           = tagEntities(sourceData.food, 'food');
-const taggedOres           = tagEntities(sourceData.ores, 'ore');
-const taggedGeodeMinerals  = tagEntities(sourceData.geodeMinerals, 'geode-mineral');
-const taggedCrafted        = tagEntities(sourceData.crafted, 'crafted');
-const taggedFertilizers    = tagEntities(sourceData.fertilizers, 'fertilizer');
-const taggedBait           = tagEntities(sourceData.bait, 'bait');
-const taggedTackle         = tagEntities(sourceData.tackle, 'tackle');
-const taggedFlooring       = tagEntities(sourceData.flooring, 'flooring');
-const taggedTrash          = tagEntities(sourceData.trash, 'trash');
-const taggedBooks          = tagEntities(sourceData.books, 'book');
-const taggedArtifacts      = tagEntities(sourceData.artifacts, 'artifact');
-const taggedRings          = tagEntities(sourceData.rings, 'ring');
-const taggedTreeSeeds      = tagEntities(sourceData.treeSeeds, 'tree-seed');
-const taggedMisc           = tagEntities(sourceData.misc, 'misc');
-const taggedWeapons        = tagEntities(sourceData.weapons, 'weapon');
-const taggedBoots          = tagEntities(sourceData.boots, 'boot');
-const taggedTools          = tagEntities(sourceData.tools, 'tool');
-const taggedTrinkets       = tagEntities(sourceData.trinkets, 'trinket');
-const taggedBuildings      = tagEntities(sourceData.buildings, 'building');
+const taggedFish           = tagEntities(sourceData.fish,           'fish',           'O');
+const taggedCrops          = tagEntities(sourceData.crops,          'crop',           'O');
+const taggedForage         = tagEntities(sourceData.forage,         'forage',         'O');
+const taggedTreeFruits     = tagEntities(sourceData.treeFruits,     'tree-fruit',     'O');
+const taggedMinerals       = tagEntities(sourceData.minerals,       'mineral',        'O');
+const taggedMetalBars      = tagEntities(sourceData.metalBars,      'metal-bar',      'O');
+const taggedMonsterLoot    = tagEntities(sourceData.monsterLoot,    'monster-loot',   'O');
+const taggedResources      = tagEntities(sourceData.resources,      'resource',       'O');
+const taggedBigCraftables  = tagEntities(sourceData.bigCraftables,  'big-craftable',  'BC');
+const taggedAnimalProducts = tagEntities(sourceData.animalProducts, 'animal-product', 'O');
+const taggedSeeds          = tagEntities(sourceData.seeds,          'seed',           'O');
+const taggedFurniture      = tagEntities(sourceData.furniture,      'furniture',      'F');
+const taggedHats           = tagEntities(sourceData.hats,           'hat',            'H');
+const taggedFood           = tagEntities(sourceData.food,           'food',           'O');
+const taggedOres           = tagEntities(sourceData.ores,           'ore',            'O');
+const taggedGeodeMinerals  = tagEntities(sourceData.geodeMinerals,  'geode-mineral',  'O');
+const taggedCrafted        = tagEntities(sourceData.crafted,        'crafted',        'O');
+const taggedFertilizers    = tagEntities(sourceData.fertilizers,    'fertilizer',     'O');
+const taggedBait           = tagEntities(sourceData.bait,           'bait',           'O');
+const taggedTackle         = tagEntities(sourceData.tackle,         'tackle',         'O');
+const taggedFlooring       = tagEntities(sourceData.flooring,       'flooring',       'O');
+const taggedTrash          = tagEntities(sourceData.trash,          'trash',          'O');
+const taggedBooks          = tagEntities(sourceData.books,          'book',           'O');
+const taggedArtifacts      = tagEntities(sourceData.artifacts,      'artifact',       'O');
+const taggedRings          = tagEntities(sourceData.rings,          'ring',           'O');
+const taggedTreeSeeds      = tagEntities(sourceData.treeSeeds,      'tree-seed',      'O');
+const taggedMisc           = tagEntities(sourceData.misc,           'misc',           'O');
+const taggedWeapons        = tagEntities(sourceData.weapons,        'weapon',         'W');
+const taggedBoots          = tagEntities(sourceData.boots,          'boot',           'B');
+const taggedTools          = tagEntities(sourceData.tools,          'tool',           'T');
+const taggedTrinkets       = tagEntities(sourceData.trinkets,       'trinket',        'TR');
+const taggedBuildings      = tagEntities(sourceData.buildings,      'building',       'BLD');
+const taggedAnimals        = tagEntities(sourceData.animals,        'animal',         'FA');
 const taggedBuffs          = sourceData.buffs.map(b => ({ ...b, category: 'buff' }));
 const taggedEvents         = sourceData.events.map(e => ({ ...e, category: 'event' }));
 const taggedVillagers      = sourceData.villagers.map(v => ({ ...v, category: 'villager' }));
@@ -402,6 +411,7 @@ const CATEGORY_PRIORITY = {
   'tool': 34,
   'trinket': 35,
   'building': 36,
+  'animal': 37,
 };
 
 // All entity arrays to merge
@@ -439,6 +449,7 @@ const allTypedEntities = [
   ...taggedTools,
   ...taggedTrinkets,
   ...taggedBuildings,
+  ...taggedAnimals,
   ...taggedBuffs,
   ...taggedEvents,
   ...taggedVillagers,
@@ -609,14 +620,10 @@ console.log(`  ✓ Store IDs normalized`);
 console.log('\n🔨 Resolving crafting ingredient names...');
 
 // Build a gameId → item map for ingredient lookups.
-// Crafting recipes reference Object IDs, so prefer non-furniture items on collision
-// (furniture and objects share numeric gameId spaces independently in the game).
+// Qualified gameIds are unique across all namespaces — no collision handling needed.
 const itemsByGameId = new Map();
 for (const item of allCompiledEntities) {
-  if (item.gameId === undefined || item.gameId === null) continue;
-  const existing = itemsByGameId.get(item.gameId);
-  // Only set if slot is empty, or if current entry is furniture (lower priority)
-  if (!existing || existing.category === 'furniture') {
+  if (item.gameId !== undefined && item.gameId !== null) {
     itemsByGameId.set(item.gameId, item);
   }
 }

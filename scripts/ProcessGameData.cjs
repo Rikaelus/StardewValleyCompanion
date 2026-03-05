@@ -414,6 +414,8 @@ const gameData = {
   tools: loadJson(path.join(GAME_EXPORTS_DIR, 'Tools.json')),
   trinkets: loadJson(path.join(GAME_EXPORTS_DIR, 'Trinkets.json')),
   buildings: loadJson(path.join(GAME_EXPORTS_DIR, 'Buildings.json')),
+  farmAnimals: loadJson(path.join(GAME_EXPORTS_DIR, 'FarmAnimals.json')),
+  farmAnimalStrings: loadJson(path.join(GAME_EXPORTS_DIR, 'Strings_FarmAnimals.json')),
 };
 
 // ---------------------------------------------------------------------------
@@ -3801,6 +3803,15 @@ console.log(`  Processed ${trinketData.length} trinkets`);
 console.log('\nProcessing buildings...');
 const buildingData = [];
 
+// Build occupant type → building gameId array map (shared with animal processing below)
+const occupantTypeToBuildings = {};
+for (const [rawId, b] of Object.entries(gameData.buildings)) {
+  for (const type of (b.ValidOccupantTypes || [])) {
+    if (!occupantTypeToBuildings[type]) occupantTypeToBuildings[type] = [];
+    occupantTypeToBuildings[type].push(`(BLD)${rawId}`);
+  }
+}
+
 for (const [rawId, buildingObj] of Object.entries(gameData.buildings)) {
   const gameId = `(BLD)${rawId}`;
   const name = resolveLocalizedText(buildingObj.Name) || rawId;
@@ -3817,6 +3828,8 @@ for (const [rawId, buildingObj] of Object.entries(gameData.buildings)) {
     ([, b]) => b.BuildingToUpgrade === rawId
   )?.[0];
 
+  const validOccupantTypes = buildingObj.ValidOccupantTypes || [];
+
   buildingData.push({
     type: 'building',
     id: toKebabCase(name),
@@ -3831,6 +3844,7 @@ for (const [rawId, buildingObj] of Object.entries(gameData.buildings)) {
     maxOccupants: buildingObj.MaxOccupants ?? null,
     maxBuilds: buildingObj.MaxBuilds ?? null,
     magical: buildingObj.MagicalConstruction ?? false,
+    ...(validOccupantTypes.length > 0 && { validOccupantTypes }),
     sources: [],
     // BuildingToUpgrade = the building this one replaces/upgrades from
     ...(buildingObj.BuildingToUpgrade && { upgradesFrom: `(BLD)${buildingObj.BuildingToUpgrade}` }),
@@ -3842,6 +3856,78 @@ for (const [rawId, buildingObj] of Object.entries(gameData.buildings)) {
 deduplicateIds(buildingData);
 buildingData.sort((a, b) => a.name.localeCompare(b.name));
 console.log(`  Processed ${buildingData.length} buildings`);
+
+// Process Farm Animals (FarmAnimals.json)
+// ============================================================================
+console.log('\nProcessing farm animals...');
+const animalData = [];
+
+for (const [rawId, animalObj] of Object.entries(gameData.farmAnimals)) {
+  // Resolve display name from localization strings
+  const locKey = animalObj.DisplayName?.match(/Strings\\FarmAnimals:(.+)\]$/)?.[1];
+  const name = (locKey && gameData.farmAnimalStrings[locKey]) || rawId;
+
+  // Produce IDs are bare numerics — qualify as (O)
+  const produceGameIds = (animalObj.ProduceItemIds || [])
+    .map(p => `(O)${p.ItemId}`);
+  const deluxeProduceGameIds = (animalObj.DeluxeProduceItemIds || [])
+    .map(p => `(O)${p.ItemId}`);
+  // Egg IDs used for incubator hatching (also bare numerics)
+  const eggGameIds = (animalObj.EggItemIds || [])
+    .map(id => `(O)${id}`);
+
+  // House type ("Barn"/"Coop") → all compatible building gameIds
+  const houseType = animalObj.House || null;
+  const validBuildingGameIds = houseType ? (occupantTypeToBuildings[houseType] || []) : [];
+
+  // RequiredBuilding = the specific tier needed to purchase this animal
+  const requiredBuildingGameId = animalObj.RequiredBuilding
+    ? `(BLD)${animalObj.RequiredBuilding}`
+    : null;
+
+  // Source: purchasable from Marnie if PurchasePrice > 0; otherwise hatched from egg
+  const sources = [];
+  if (animalObj.PurchasePrice > 0) {
+    sources.push({ type: 'shop', storeId: 'store-marnie' });
+  } else if (eggGameIds.length > 0) {
+    sources.push({ type: 'hatch', eggGameIds });
+  } else if (animalObj.CanGetPregnant) {
+    // Born from a pregnant animal of the same species (e.g. Brown Cow from White/Brown Cow)
+    sources.push({ type: 'pregnancy' });
+  }
+  // else: event-unlocked with no data-driven source (e.g. Blue Chicken via Shane heart event)
+
+  // HarvestType: 0 = drops on ground, 1 = tool required, 2 = forage (pigs)
+  const harvestType = animalObj.HarvestType ?? 0;
+
+  // Icon: assets/animals/{Name}.png — matches wiki File:{Name}.png
+  const iconFilename = rawId.replace(/[^a-zA-Z0-9]/g, '') + '.png';
+
+  animalData.push({
+    type: 'animal',
+    id: toKebabCase(name),
+    gameId: `(FA)${rawId}`,
+    name,
+    icon: `assets/animals/${iconFilename}`,
+    houseType,
+    validBuildingGameIds,
+    ...(requiredBuildingGameId && { requiredBuildingGameId }),
+    purchasePrice: animalObj.PurchasePrice > 0 ? animalObj.PurchasePrice : null,
+    daysToMature: animalObj.DaysToMature ?? 0,
+    daysToProduce: animalObj.DaysToProduce ?? 1,
+    harvestType,
+    ...(animalObj.HarvestTool && { harvestTool: animalObj.HarvestTool }),
+    produceGameIds,
+    ...(deluxeProduceGameIds.length > 0 && { deluxeProduceGameIds }),
+    ...(eggGameIds.length > 0 && { eggGameIds }),
+    canGetPregnant: animalObj.CanGetPregnant ?? false,
+    sources,
+  });
+}
+
+deduplicateIds(animalData);
+animalData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${animalData.length} animals`);
 
 // ============================================================================
 // Cross-namespace ID disambiguation
@@ -4121,6 +4207,12 @@ fs.writeFileSync(
   JSON.stringify(buildingData, null, 2)
 );
 console.log(`  ✓ Wrote items/buildings.json (${buildingData.length} buildings)`);
+
+fs.writeFileSync(
+  path.join(PROCESSED_DIR, 'items/animals.json'),
+  JSON.stringify(animalData, null, 2)
+);
+console.log(`  ✓ Wrote items/animals.json (${animalData.length} animals)`);
 
 fs.writeFileSync(
   path.join(PROCESSED_DIR, 'reference/villagers.json'),

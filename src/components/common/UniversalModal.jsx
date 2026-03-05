@@ -261,6 +261,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
     subtitle = levelName ? `${levelName} ${displayEntity.toolClass || 'Tool'}` : (displayEntity.toolClass || 'Tool')
     modalTitle = displayEntity.name
     headerName = displayEntity.name
+  } else if (entityType === 'animal') {
+    subtitle = displayEntity.houseType ? `${displayEntity.houseType} Animal` : 'Farm Animal'
+    headerName = displayEntity.name
   } else if (entityType === 'building') {
     subtitle = displayEntity.magical ? 'Magical Building' : 'Farm Building'
     modalTitle = displayEntity.name
@@ -299,7 +302,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Compute which sections are visible for the section nav
   const visibleSections = (() => {
-    if (entityType === 'buff' || entityType === 'event' || entityType === 'festival' || entityType === 'weapon' || entityType === 'boot' || entityType === 'trinket' || entityType === 'tool' || entityType === 'building') return []
+    if (entityType === 'buff' || entityType === 'event' || entityType === 'festival' || entityType === 'weapon' || entityType === 'boot' || entityType === 'trinket' || entityType === 'tool' || entityType === 'building' || entityType === 'animal') return []
 
     if (entityType === 'villager') {
       const sections = [{ id: 'section-villager-details', label: 'Details' }]
@@ -988,13 +991,73 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   </div>
                 </ModalSection>
               )}
+              {displayEntity.validOccupantTypes?.length > 0 && (() => {
+                // Build the set of this building + all predecessors in the upgrade chain
+                const thisAndPredecessors = new Set()
+                let cursor = displayEntity
+                while (cursor) {
+                  thisAndPredecessors.add(cursor.gameId)
+                  cursor = cursor.upgradesFrom ? findByGameId(cursor.upgradesFrom) : null
+                }
+                const houseAnimals = (itemsByType['animal'] ?? []).filter(a =>
+                  displayEntity.validOccupantTypes.includes(a.houseType)
+                )
+                const purchasedOrBorn = houseAnimals.filter(a =>
+                  a.requiredBuildingGameId && thisAndPredecessors.has(a.requiredBuildingGameId)
+                )
+                const bornOnly = houseAnimals.filter(a =>
+                  !a.requiredBuildingGameId && a.sources.length > 0
+                )
+                const eventOnly = houseAnimals.filter(a => a.sources.length === 0)
+                const cols = [
+                  { label: 'Purchased / Born', animals: purchasedOrBorn },
+                  { label: 'Born', animals: bornOnly },
+                  { label: 'Event', animals: eventOnly },
+                ].filter(c => c.animals.length > 0)
+                return cols.length > 0 ? (
+                  <ModalSection title="Animals">
+                    <div className="building-animals-grid">
+                      {cols.map(col => (
+                        <div key={col.label} className="building-animals-col">
+                          <div className="label">{col.label}</div>
+                          <div className="bundle-items-list">
+                            {col.animals.map(animal => (
+                              <ModalItemButton key={animal.id} item={animal} variant="bundle-item" onNavigate={handleNavigate} />
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ModalSection>
+                ) : null
+              })()}
+            </>
+          )}
+
+          {/* Animal-Specific Sections */}
+          {entityType === 'animal' && (
+            <>
+              {displayEntity.validBuildingGameIds?.length > 0 && (
+                <ModalSection title="Lives In">
+                  <div className="source-list">
+                    {displayEntity.validBuildingGameIds.map(bgid => {
+                      const building = findByGameId(bgid)
+                      return building ? (
+                        <span key={bgid} className="source-entry">
+                          <ModalItemButton item={building} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      ) : null
+                    })}
+                  </div>
+                </ModalSection>
+              )}
             </>
           )}
 
           {/* Item-Specific Sections */}
           {(() => {
             // Non-item entity types — skip all item sections
-            const NON_ITEM_TYPES = new Set(['bundle', 'store', 'machine', 'buff', 'event', 'villager', 'festival', 'building'])
+            const NON_ITEM_TYPES = new Set(['bundle', 'store', 'machine', 'buff', 'event', 'villager', 'festival', 'building', 'animal'])
             if (NON_ITEM_TYPES.has(entityType)) return null
 
             // Combat/tool types — skip sell price, food buffs, aging, seed produce sections

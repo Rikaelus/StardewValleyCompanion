@@ -22,6 +22,9 @@
     "maxOccupants": 4,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Barn"
+    ],
     "sources": [],
     "upgradesTo": "(BLD)Big Barn"
   },
@@ -48,6 +51,9 @@
     "maxOccupants": 8,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Barn"
+    ],
     "sources": [],
     "upgradesFrom": "(BLD)Barn",
     "upgradesTo": "(BLD)Deluxe Barn"
@@ -75,6 +81,9 @@
     "maxOccupants": 8,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Coop"
+    ],
     "sources": [],
     "upgradesFrom": "(BLD)Coop",
     "upgradesTo": "(BLD)Deluxe Coop"
@@ -144,6 +153,9 @@
     "maxOccupants": 4,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Coop"
+    ],
     "sources": [],
     "upgradesTo": "(BLD)Big Coop"
   },
@@ -170,6 +182,9 @@
     "maxOccupants": 12,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Barn"
+    ],
     "sources": [],
     "upgradesFrom": "(BLD)Big Barn"
   },
@@ -196,6 +211,9 @@
     "maxOccupants": 12,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Coop"
+    ],
     "sources": [],
     "upgradesFrom": "(BLD)Big Coop"
   },
@@ -537,6 +555,9 @@
     "maxOccupants": 20,
     "maxBuilds": null,
     "magical": false,
+    "validOccupantTypes": [
+      "Slime"
+    ],
     "sources": []
   },
   {
