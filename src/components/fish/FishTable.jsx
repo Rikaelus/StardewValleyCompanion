@@ -1,8 +1,8 @@
-import { useMemo, useState, useRef, useEffect } from 'react'
+import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
-import UniversalModal from '../common/UniversalModal'
+import { useModal } from '../../contexts/ModalContext'
 import { formatTime, getDifficultyColor } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
@@ -16,7 +16,7 @@ import {
 function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
   const { villagers: { all: villagers }, ...relationalData } = useEntities()
-  const [selectedFish, setSelectedFish] = useState(null)
+  const { openModal } = useModal()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -34,7 +34,7 @@ function FishTable({ fish, allFish }) {
       createNameColumn({
         cellRenderer: ({ row }) => (
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} />
+            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} onNavigate={openModal} />
             {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐</span>}
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
           </span>
@@ -147,11 +147,6 @@ function FishTable({ fish, allFish }) {
           * Seasons and locations shown are the full range of possibilities. Click on a fish marked with * to see exact availability per location.
         </div>
       )}
-      <UniversalModal
-        entity={selectedFish}
-        isOpen={selectedFish !== null}
-        onClose={() => setSelectedFish(null)}
-      />
     </>
   )
 }

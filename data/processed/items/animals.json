@@ -153,7 +153,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 600
       }
     ]
   },
@@ -185,7 +186,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 2000
       }
     ]
   },
@@ -278,7 +280,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 8000
       }
     ]
   },
@@ -309,7 +312,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 4000
       }
     ]
   },
@@ -338,7 +342,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 4000
       }
     ]
   },
@@ -405,7 +410,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 400
       }
     ]
   },
@@ -437,7 +443,8 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie"
+        "id": "store-marnie",
+        "price": 750
       }
     ]
   }

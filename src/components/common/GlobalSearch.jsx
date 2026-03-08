@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo, useId } from 'react'
 import { createPortal } from 'react-dom'
 import { useEntities } from '../../contexts/EntityContext'
-import { useModalStack } from '../../contexts/ModalContext'
+import { useModalStack, useModal } from '../../contexts/ModalContext'
 import { useDebounce } from '../../hooks/useDebounce'
-import UniversalModal from './UniversalModal'
 import './GlobalSearch.css'
 
 const TYPE_LABELS = {
@@ -36,13 +35,12 @@ const TYPE_LABELS = {
 
 function GlobalSearch({ isOpen, onClose }) {
   const searchId = useId()
-  const { items, stores } = useEntities()
+  const { items } = useEntities()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
+  const { openModal } = useModal()
 
   const [query, setQuery] = useState('')
   const [highlightedIndex, setHighlightedIndex] = useState(0)
-  const [selectedItem, setSelectedItem] = useState(null)
-  const [itemModalOpen, setItemModalOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
 
@@ -87,7 +85,7 @@ function GlobalSearch({ isOpen, onClose }) {
   // Escape to close (only if top modal and no item modal is open)
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && isOpen && isTopModal(searchId) && !itemModalOpen) {
+      if (e.key === 'Escape' && isOpen && isTopModal(searchId)) {
         onClose()
       }
     }
@@ -95,15 +93,14 @@ function GlobalSearch({ isOpen, onClose }) {
       document.addEventListener('keydown', handleEscape)
     }
     return () => document.removeEventListener('keydown', handleEscape)
-  }, [isOpen, onClose, searchId, isTopModal, itemModalOpen])
+  }, [isOpen, onClose, searchId, isTopModal])
 
   // Compute filtered results
   const results = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase()
     if (!q) return []
 
-    const storeList = Object.values(stores || {})
-    const searchable = [...items, ...storeList]
+    const searchable = items
 
     const filtered = searchable.filter(item => {
       if (item.isGeneric || item.isHidden) return false
@@ -143,10 +140,9 @@ function GlobalSearch({ isOpen, onClose }) {
   }, [highlightedIndex])
 
   const openItem = useCallback((item) => {
-    setSelectedItem(item)
-    setItemModalOpen(true)
+    openModal(item)
     onClose()
-  }, [onClose])
+  }, [openModal, onClose])
 
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowDown') {
@@ -244,16 +240,6 @@ function GlobalSearch({ isOpen, onClose }) {
         document.body
       )}
 
-      {selectedItem && (
-        <UniversalModal
-          entity={selectedItem}
-          isOpen={itemModalOpen}
-          onClose={() => {
-            setItemModalOpen(false)
-            setSelectedItem(null)
-          }}
-        />
-      )}
     </>
   )
 }

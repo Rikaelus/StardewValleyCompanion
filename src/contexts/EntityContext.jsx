@@ -38,8 +38,7 @@ export function EntityProvider({ children }) {
         items: [], gameIdIndex: {}, byType: {},
         bundles: { all: [], byId: new Map() },
         villagers: { all: [], byId: new Map() },
-        stores: {},
-        machines: { all: [], byId: new Map() },
+
         buffs: { all: [], byId: new Map() },
         events: { all: [], byId: new Map() },
         findById: () => null,
@@ -49,7 +48,7 @@ export function EntityProvider({ children }) {
         getVillager: () => null,
         getStore: () => null,
         getFestival: () => null,
-        getMachine: () => null,
+        getMachine: () => null, // alias for findById — machines are now items
         getBuff: () => null,
         getEvent: () => null,
         getGiftPreferences: () => [],
@@ -64,18 +63,16 @@ export function EntityProvider({ children }) {
     const gameIdIndex = rawData.gameIdIndex || {}
     const allBundles = rawData.bundles || []
     const allVillagers = rawData.villagers || []
-    const storesMap = rawData.stores || {}
     const festivalsMap = rawData.festivals || {}
-    const allMachines = rawData.machines || []
     const allBuffs = rawData.buffs || []
     const relationships = rawData.relationships || []
 
     // ── Entity collections ───────────────────────────────────────────────────
     const collectionPredicates = {
-      'fish':           entity => entity.sources?.some(s => s.type === 'fish'),
+      'fish':           entity => entity.type === 'fish',
       'artisan':        entity => entity.category === 'artisan',
       'crop':           entity => entity.sources?.some(s => s.type === 'seed'),
-      'forage':         entity => entity.sources?.some(s => s.type === 'forage') || (entity.category === 'forage' && !entity.sources?.some(s => s.type === 'seed')),
+      'forage':         entity => entity.type === 'forage',
       'tree-fruit':     entity => entity.category === 'tree-fruit',
       'mineral':        entity => entity.category === 'mineral',
       'metal-bar':      entity => entity.category === 'metal-bar',
@@ -102,7 +99,6 @@ export function EntityProvider({ children }) {
     // ── Relational indexes ───────────────────────────────────────────────────
     const bundlesById = new Map(allBundles.map(b => [b.id, b]))
     const villagersById = new Map(allVillagers.map(v => [v.id, v]))
-    const machinesById = new Map(allMachines.map(m => [m.id, m]))
     const buffsById = new Map(allBuffs.map(b => [b.id, b]))
 
     // Events live in allEntities (category: 'event'); build a secondary index by eventKey
@@ -141,10 +137,6 @@ export function EntityProvider({ children }) {
       if (bundle) return bundle
       const villager = villagersById.get(id)
       if (villager) return villager
-      const store = storesMap[id]
-      if (store) return store
-      const machine = machinesById.get(id)
-      if (machine) return machine
       const buff = buffsById.get(id)
       if (buff) return buff
       return null
@@ -154,9 +146,9 @@ export function EntityProvider({ children }) {
 
     const getBundle = (bundleId) => bundlesById.get(bundleId) ?? null
     const getVillager = (villagerId) => villagersById.get(villagerId) ?? null
-    const getStore = (storeId) => storesMap[storeId] ?? null
+    const getStore = (storeId) => findById(storeId) // stores are now first-class items
     const getFestival = (festivalId) => festivalsById.get(festivalId) ?? null
-    const getMachine = (machineId) => machinesById.get(machineId) ?? null
+    const getMachine = (machineId) => findById(machineId) // machines are now items
     const getBuff = (buffId) => buffsById.get(buffId) ?? null
     const getEvent = (eventKey) => eventsByKey.get(String(eventKey)) ?? null
 
@@ -191,8 +183,6 @@ export function EntityProvider({ children }) {
       // Relational collections
       bundles: { all: allBundles, byId: bundlesById },
       villagers: { all: allVillagers, byId: villagersById },
-      stores: storesMap,
-      machines: { all: allMachines, byId: machinesById },
       buffs: { all: allBuffs, byId: buffsById },
       events: { all: allEvents, byKey: eventsByKey },
       // Relational helpers

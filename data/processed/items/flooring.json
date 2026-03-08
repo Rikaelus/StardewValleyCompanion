@@ -721,8 +721,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
+        "id": "store-traveling-merchant",
         "price": 1000000,
         "yearUnlock": 25,
         "rotating": true

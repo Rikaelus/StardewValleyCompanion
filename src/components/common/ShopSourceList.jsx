@@ -16,21 +16,21 @@ import SeasonBadges from './SeasonBadges'
  *   findEntity     {Function} (full mode) gameId → item object for currency lookups
  *   onNavigate     {Function} (full mode) modal navigation callback
  */
-function ShopSourceList({ sources, compact = false, findEntity, findEntityById, getStore, onNavigate }) {
+function ShopSourceList({ sources, compact = false, findEntity, findEntityById, onNavigate }) {
   const { player } = usePlayer()
   const shopSources = (sources || []).filter(s => s.type === 'shop')
   if (shopSources.length === 0) return <span style={{ color: '#999' }}>—</span>
 
   // ── Compact mode ────────────────────────────────────────────────────────────
   if (compact) {
-    // Deduplicate by storeName — each storeId now maps to a unique name
+    // Deduplicate by store id
     const seen = new Map()
     for (const src of shopSources) {
-      const key = src.storeName ?? src.storeId
-      if (!seen.has(key)) seen.set(key, src)
+      if (!seen.has(src.id)) seen.set(src.id, src)
     }
     const tags = [...seen.values()].map(src => {
-      const key = src.storeName ?? src.storeId
+      const storeEntity = findEntityById ? findEntityById(src.id) : null
+      const key = storeEntity?.name ?? src.id
       return src.seasons?.length
         ? `${key} (${src.seasons.map(s => s[0].toUpperCase() + s.slice(1)).join('/')})`
         : key
@@ -42,10 +42,11 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
   return (
     <div className="source-list">
       {shopSources.map((src, i) => {
-        const storeName = src.storeName ?? src.storeId
+        const storeEntity = findEntityById ? findEntityById(src.id) : null
+        const storeName = storeEntity?.name ?? src.id
         const isBarter = src.tradeItemId !== undefined || src.tradeItemGameId !== undefined
         // Joja members pay base × 2 instead of base × 2.5, so member price = non-member × 0.8
-        const price = src.price != null && src.storeId === 'store-joja' && player.jojaMember
+        const price = src.price != null && src.id === 'store-joja' && player.jojaMember
           ? Math.floor(src.price * 0.8)
           : src.price
         const currencyItem = isBarter && findEntity
@@ -64,8 +65,6 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         if (src.stock && src.stock !== -1)
           qualifiers.push(`Stock: ${src.stock}`)
         // condition rendered separately via ConditionBadge below
-
-        const storeEntity = getStore ? getStore(src.storeId) : null
 
         const priceDetail = isBarter ? (
           <>

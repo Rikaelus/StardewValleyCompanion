@@ -14,8 +14,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Loom",
-        "machineId": "loom",
+        "id": "loom",
         "inputType": "specific",
         "valueFormula": "470",
         "inputDetails": [
@@ -33,8 +32,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-emily",
-        "storeName": "Desert Festival Stall (Emily)",
+        "id": "store-desert-festival-emily",
         "price": 940,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -46,8 +44,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 940,
         "tradeItemId": "aquamarine",
         "tradeItemGameId": 62,
@@ -139,8 +136,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "200",
         "inputDetails": [
@@ -158,8 +154,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-pam",
-        "storeName": "Desert Festival Stall (Pam)",
+        "id": "store-desert-festival-pam",
         "price": 400,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -169,14 +164,12 @@
       },
       {
         "type": "shop",
-        "storeId": "store-resort-bar",
-        "storeName": "Resort Bar",
+        "id": "store-resort-bar",
         "price": 500
       },
       {
         "type": "shop",
-        "storeId": "store-gus",
-        "storeName": "Saloon (Gus)",
+        "id": "store-gus",
         "price": 400
       },
       {
@@ -255,8 +248,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "300",
         "inputDetails": [
@@ -274,8 +266,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-pam",
-        "storeName": "Desert Festival Stall (Pam)",
+        "id": "store-desert-festival-pam",
         "price": 600,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -285,8 +276,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-resort-bar",
-        "storeName": "Resort Bar",
+        "id": "store-resort-bar",
         "price": 1000
       }
     ],
@@ -361,8 +351,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "100",
         "inputDetails": [
@@ -380,8 +369,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-caroline",
-        "storeName": "Desert Festival Stall (Caroline)",
+        "id": "store-desert-festival-caroline",
         "price": 200,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -459,8 +447,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "150",
         "inputDetails": [
@@ -478,8 +465,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-george",
-        "storeName": "Desert Festival Stall (George)",
+        "id": "store-desert-festival-george",
         "price": 300,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -490,8 +476,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-harvey",
-        "storeName": "Desert Festival Stall (Harvey)",
+        "id": "store-desert-festival-harvey",
         "price": 300,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -502,8 +487,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-gus",
-        "storeName": "Saloon (Gus)",
+        "id": "store-gus",
         "price": 300
       }
     ],
@@ -577,8 +561,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "300",
         "inputDetails": [
@@ -596,8 +579,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-pam",
-        "storeName": "Desert Festival Stall (Pam)",
+        "id": "store-desert-festival-pam",
         "price": 600,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -607,8 +589,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-resort-bar",
-        "storeName": "Resort Bar",
+        "id": "store-resort-bar",
         "price": 800
       }
     ],
@@ -674,8 +655,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "specific",
         "valueFormula": "100",
         "inputDetails": [
@@ -693,8 +673,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-george",
-        "storeName": "Desert Festival Stall (George)",
+        "id": "store-desert-festival-george",
         "price": 200,
         "quantity": 20,
         "tradeItemId": "calico-egg",
@@ -705,8 +684,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 200
       }
     ],
@@ -771,8 +749,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "vegetable",
         "processingTimeMinutes": 6000,
         "valueFormula": "baseValue * 2.25",
@@ -1095,8 +1072,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Keg",
-        "machineId": "keg",
+        "id": "keg",
         "inputType": "fruit",
         "processingTimeMinutes": 10000,
         "valueFormula": "baseValue * 3",
@@ -1306,8 +1282,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Preserves Jar",
-        "machineId": "preserves-jar",
+        "id": "preserves-jar",
         "inputType": "vegetable",
         "processingTimeMinutes": 4000,
         "valueFormula": "baseValue * 1",
@@ -1615,8 +1590,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Preserves Jar",
-        "machineId": "preserves-jar",
+        "id": "preserves-jar",
         "inputType": "fruit",
         "processingTimeMinutes": 4000,
         "valueFormula": "baseValue * 2 + 50",
@@ -1822,8 +1796,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Cheese Press",
-        "machineId": "cheese-press",
+        "id": "cheese-press",
         "inputType": "specific",
         "valueFormula": "400",
         "inputDetails": [
@@ -1911,8 +1884,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Cheese Press",
-        "machineId": "cheese-press",
+        "id": "cheese-press",
         "inputType": "specific",
         "valueFormula": "230",
         "inputDetails": [
@@ -1940,8 +1912,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 460,
         "tradeItemId": "emerald",
         "tradeItemGameId": 60,
@@ -2015,8 +1986,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Mayonnaise Machine",
-        "machineId": "mayonnaise-machine",
+        "id": "mayonnaise-machine",
         "inputType": "specific",
         "valueFormula": "190",
         "inputDetails": [
@@ -2103,8 +2073,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Mayonnaise Machine",
-        "machineId": "mayonnaise-machine",
+        "id": "mayonnaise-machine",
         "inputType": "specific",
         "valueFormula": "375",
         "inputDetails": [
@@ -2181,8 +2150,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Mayonnaise Machine",
-        "machineId": "mayonnaise-machine",
+        "id": "mayonnaise-machine",
         "inputType": "specific",
         "valueFormula": "275",
         "inputDetails": [
@@ -2260,8 +2228,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Mayonnaise Machine",
-        "machineId": "mayonnaise-machine",
+        "id": "mayonnaise-machine",
         "inputType": "specific",
         "valueFormula": "800",
         "inputDetails": [
@@ -2336,8 +2303,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Oil Maker",
-        "machineId": "oil-maker",
+        "id": "oil-maker",
         "inputType": "specific",
         "valueFormula": "100",
         "inputDetails": [
@@ -2375,8 +2341,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-pierre",
-        "storeName": "Desert Festival Stall (Pierre)",
+        "id": "store-desert-festival-pierre",
         "price": 200,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -2387,8 +2352,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 200
       }
     ],
@@ -2450,8 +2414,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Oil Maker",
-        "machineId": "oil-maker",
+        "id": "oil-maker",
         "inputType": "specific",
         "valueFormula": "1065",
         "inputDetails": [
@@ -2469,8 +2432,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-marnie",
-        "storeName": "Desert Festival Stall (Marnie)",
+        "id": "store-desert-festival-marnie",
         "price": 2130,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2545,8 +2507,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Bee House",
-        "machineId": "bee-house",
+        "id": "bee-house",
         "inputType": "flower",
         "processingTimeMinutes": 5760,
         "valueFormula": "baseValue * 2 + 100",
@@ -2615,8 +2576,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 200,
         "days": [
           "Friday"
@@ -2682,8 +2642,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Dehydrator",
-        "machineId": "dehydrator",
+        "id": "dehydrator",
         "inputType": "specific",
         "valueFormula": "600",
         "inputDetails": [
@@ -2756,8 +2715,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Dehydrator",
-        "machineId": "dehydrator",
+        "id": "dehydrator",
         "inputType": "fruit",
         "processingTimeMinutes": 1440,
         "valueFormula": "baseValue * 7.5 + 25",
@@ -2961,8 +2919,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Dehydrator",
-        "machineId": "dehydrator",
+        "id": "dehydrator",
         "inputType": "mushroom",
         "processingTimeMinutes": 1440,
         "valueFormula": "baseValue * 7.5 + 25",
@@ -3076,8 +3033,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Fish Smoker",
-        "machineId": "fish-smoker",
+        "id": "fish-smoker",
         "inputType": "fish",
         "processingTimeMinutes": 50,
         "valueFormula": "baseValue * 2",
@@ -4195,8 +4151,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-vincent",
-        "storeName": "Desert Festival Stall (Vincent)",
+        "id": "store-desert-festival-vincent",
         "price": 4,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -4278,8 +4233,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-kent",
-        "storeName": "Desert Festival Stall (Kent)",
+        "id": "store-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4399,8 +4353,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Fish Pond",
-        "machineId": "fish-pond",
+        "id": "fish-pond",
         "inputType": "fish",
         "processingTimeMinutes": 5760,
         "valueFormula": "(fishPrice / 2) + 30",
@@ -5502,8 +5455,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Preserves Jar",
-        "machineId": "preserves-jar",
+        "id": "preserves-jar",
         "inputType": "roe",
         "processingTimeMinutes": 4000,
         "valueFormula": "roePrice * 2",
@@ -6269,8 +6221,7 @@
     "sources": [
       {
         "type": "machine",
-        "machine": "Preserves Jar",
-        "machineId": "preserves-jar",
+        "id": "preserves-jar",
         "inputType": "specific",
         "processingTimeMinutes": 4000,
         "valueFormula": "500",

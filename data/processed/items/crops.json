@@ -643,8 +643,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
+        "id": "store-traveling-merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -1735,8 +1734,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-luau",
-        "storeName": "Luau",
+        "id": "store-luau",
         "price": 3000,
         "stock": 1,
         "stockLimit": 1
@@ -2398,8 +2396,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-demetrius",
-        "storeName": "Desert Festival Stall (Demetrius)",
+        "id": "store-desert-festival-demetrius",
         "price": 160,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -2727,8 +2724,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 150,
         "days": [
           "Tuesday"
@@ -2934,8 +2930,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-vincent",
-        "storeName": "Desert Festival Stall (Vincent)",
+        "id": "store-desert-festival-vincent",
         "price": 2,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -2947,8 +2942,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 2,
         "tradeItemId": "stone",
         "tradeItemGameId": 390,

@@ -1220,8 +1220,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-evelyn",
-        "storeName": "Desert Festival Stall (Evelyn)",
+        "id": "store-desert-festival-evelyn",
         "price": 280,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1352,8 +1351,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-gus",
-        "storeName": "Saloon (Gus)",
+        "id": "store-gus",
         "price": 550,
         "condition": {
           "in": [
@@ -1456,8 +1454,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-resort-bar",
-        "storeName": "Resort Bar",
+        "id": "store-resort-bar",
         "price": 400
       },
       {
@@ -1636,8 +1633,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-gus",
-        "storeName": "Desert Festival Stall (Gus)",
+        "id": "store-desert-festival-gus",
         "price": 250,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2255,8 +2251,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-alex",
-        "storeName": "Desert Festival Stall (Alex)",
+        "id": "store-desert-festival-alex",
         "price": 70,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2599,8 +2594,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-alex",
-        "storeName": "Desert Festival Stall (Alex)",
+        "id": "store-desert-festival-alex",
         "price": 240,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2687,8 +2681,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 240,
         "days": [
           "Sunday"
@@ -2773,8 +2766,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 2000
       },
       {
@@ -2881,8 +2873,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-gus",
-        "storeName": "Desert Festival Stall (Gus)",
+        "id": "store-desert-festival-gus",
         "price": 410,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2980,8 +2971,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "price": 10000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2996,8 +2986,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jas",
-        "storeName": "Desert Festival Stall (Jas)",
+        "id": "store-desert-festival-jas",
         "price": 10000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3008,8 +2997,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 10000,
         "tradeItemId": "prismatic-shard",
         "tradeItemGameId": 74,
@@ -3024,8 +3012,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 10000,
         "tradeItemId": "golden-mystery-box",
         "tradeItemGameId": "GoldenMysteryBox",
@@ -3301,8 +3288,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-sam",
-        "storeName": "Desert Festival Stall (Sam)",
+        "id": "store-desert-festival-sam",
         "price": 600,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -3403,8 +3389,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 1000
       },
       {
@@ -3576,8 +3561,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 3000
       },
       {
@@ -3908,8 +3892,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 400,
         "quantity": 2,
         "tradeItemId": "stardew-valley-almanac",
@@ -3920,8 +3903,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-shane",
-        "storeName": "Desert Festival Stall (Shane)",
+        "id": "store-desert-festival-shane",
         "price": 400,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -3932,8 +3914,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
+        "id": "store-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 250,
@@ -4025,8 +4006,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-resort-bar",
-        "storeName": "Resort Bar",
+        "id": "store-resort-bar",
         "price": 600
       }
     ]
@@ -4089,8 +4069,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-shane",
-        "storeName": "Desert Festival Stall (Shane)",
+        "id": "store-desert-festival-shane",
         "price": 600,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4101,8 +4080,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-gus",
-        "storeName": "Saloon (Gus)",
+        "id": "store-gus",
         "price": 600
       },
       {
@@ -4271,8 +4249,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-leo",
-        "storeName": "Desert Festival Stall (Leo)",
+        "id": "store-desert-festival-leo",
         "price": 800,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4532,8 +4509,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-festival-of-ice",
-        "storeName": "Festival of Ice",
+        "id": "store-festival-of-ice",
         "price": 250,
         "stock": 1,
         "stockLimit": 1
@@ -5271,8 +5247,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-gus",
-        "storeName": "Saloon (Gus)",
+        "id": "store-gus",
         "price": 240
       },
       {
@@ -5369,8 +5344,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 350,
         "tradeItemId": "ruby",
         "tradeItemGameId": 64,
@@ -5486,8 +5460,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-gus",
-        "storeName": "Desert Festival Stall (Gus)",
+        "id": "store-desert-festival-gus",
         "price": 300,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -6120,8 +6093,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 900,
         "tradeItemId": "diamond",
         "tradeItemGameId": 72,
@@ -6131,8 +6103,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
+        "id": "store-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 400,
@@ -6222,8 +6193,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-leo",
-        "storeName": "Desert Festival Stall (Leo)",
+        "id": "store-desert-festival-leo",
         "price": 1000,
         "quantity": 5,
         "tradeItemId": "calico-egg",

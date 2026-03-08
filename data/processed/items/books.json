@@ -56,8 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
+        "id": "store-marnie",
         "price": 5000,
         "yearUnlock": 2
       }
@@ -232,8 +231,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 15000,
         "rotating": true,
         "stock": 1,
@@ -355,8 +353,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 4000,
         "stock": 1,
         "stockLimit": 1
@@ -476,8 +473,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 25000,
         "stock": 1,
         "stockLimit": 1
@@ -826,8 +822,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 25000,
         "stock": 1,
         "stockLimit": 1
@@ -891,8 +886,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 3000
       }
     ]
@@ -954,8 +948,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 50000,
         "condition": {
           ">=": [
@@ -1026,8 +1019,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 2000,
         "tradeItemId": "fiber",
         "tradeItemGameId": 771,
@@ -1273,8 +1265,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-volcano-shop",
-        "storeName": "Volcano Forge Shop",
+        "id": "store-volcano-shop",
         "price": 2000,
         "tradeItemId": "diamond",
         "tradeItemGameId": 72,
@@ -1399,8 +1390,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 15000,
         "stock": 1,
         "stockLimit": 1
@@ -1464,8 +1454,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 35000,
         "condition": {
           ">=": [
@@ -1537,8 +1526,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 8000,
         "rotating": true,
         "stock": 1,
@@ -1546,8 +1534,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",

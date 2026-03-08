@@ -10,7 +10,8 @@ import HatsPage from './components/hats/HatsPage'
 import Footer from './components/layout/Footer'
 import CharacterBar from './components/common/CharacterBar'
 import GlobalSearch from './components/common/GlobalSearch'
-import { ModalProvider } from './contexts/ModalContext'
+import UniversalModal from './components/common/UniversalModal'
+import { ModalProvider, useModal } from './contexts/ModalContext'
 import { PlayerProvider } from './contexts/PlayerContext'
 import { EntityProvider } from './contexts/EntityContext'
 
@@ -160,6 +161,24 @@ function MainContent() {
   )
 }
 
+function AppShell({ searchOpen, setSearchOpen }) {
+  const { activeEntity, openModal, closeModal } = useModal()
+
+  return (
+    <div className="app">
+      <Navigation onSearchOpen={() => setSearchOpen(true)} />
+      <CharacterBar />
+      <MainContent />
+      <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+      <UniversalModal
+        entity={activeEntity}
+        isOpen={activeEntity !== null}
+        onClose={closeModal}
+      />
+    </div>
+  )
+}
+
 function App() {
   const [searchOpen, setSearchOpen] = useState(false)
 
@@ -179,12 +198,7 @@ function App() {
       <EntityProvider>
         <PlayerProvider>
           <ModalProvider>
-            <div className="app">
-              <Navigation onSearchOpen={() => setSearchOpen(true)} />
-              <CharacterBar />
-              <MainContent />
-              <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
-            </div>
+            <AppShell searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
           </ModalProvider>
         </PlayerProvider>
       </EntityProvider>

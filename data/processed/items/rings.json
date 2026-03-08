@@ -56,8 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 1000
       }
     ]
@@ -119,8 +118,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 2500,
         "condition": {
           ">=": [
@@ -357,8 +355,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 5000,
         "condition": {
           ">=": [
@@ -484,8 +481,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
+        "id": "store-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 1000,
@@ -765,8 +761,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 2500,
         "condition": {
           ">=": [
@@ -1253,8 +1248,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1766,8 +1760,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-marlon",
-        "storeName": "Adventurer's Guild (Marlon)",
+        "id": "store-marlon",
         "price": 1000
       }
     ]

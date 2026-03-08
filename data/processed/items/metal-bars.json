@@ -14,8 +14,7 @@
       "use_reverse_name_for_sorting"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 378,
@@ -83,8 +82,7 @@
       "use_reverse_name_for_sorting"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 380,
@@ -152,8 +150,7 @@
       "use_reverse_name_for_sorting"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 384,
@@ -221,8 +218,7 @@
       "use_reverse_name_for_sorting"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 386,
@@ -287,8 +283,7 @@
       "furnace_item"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 80,
@@ -359,8 +354,7 @@
       "use_reverse_name_for_sorting"
     ],
     "producedBy": {
-      "machine": "Furnace",
-      "machineId": "furnace",
+      "id": "furnace",
       "inputs": [
         {
           "gameId": 909,

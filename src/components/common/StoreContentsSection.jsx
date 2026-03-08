@@ -17,23 +17,23 @@ const CATEGORY_LABELS = {
   trash: 'Trash', misc: 'Miscellaneous',
 }
 
-function StoreContentsSection({ entity, entityType, allItems, stores, findById, onNavigate }) {
+function StoreContentsSection({ entity, entityType, allItems, findById, onNavigate }) {
   if (entityType !== 'store') return null
 
   const storeId = entity.id
-  const childStalls = stores
-    ? Object.values(stores).filter(s => s.parentStore === storeId).sort((a, b) => a.name.localeCompare(b.name))
-    : []
+  const childStalls = allItems
+    .filter(s => s.category === 'store' && s.parentStore === storeId)
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   const storeItems = allItems.filter(item =>
-    item.sources?.some(s => s.type === 'shop' && s.storeId === storeId)
+    item.sources?.some(s => s.type === 'shop' && s.id === storeId)
   ).sort((a, b) => a.name.localeCompare(b.name))
 
   if (storeItems.length === 0 && childStalls.length === 0) return null
 
   // Total row count (may exceed storeItems.length when items have multiple sources for this store)
   const totalRows = storeItems.reduce((n, item) =>
-    n + (item.sources?.filter(s => s.type === 'shop' && s.storeId === storeId).length ?? 0), 0
+    n + (item.sources?.filter(s => s.type === 'shop' && s.id === storeId).length ?? 0), 0
   )
 
   const grouped = {}
@@ -69,7 +69,7 @@ function StoreContentsSection({ entity, entityType, allItems, stores, findById, 
           )}
           <div className="store-items-grid">
             {items.flatMap(item => {
-              const srcs = item.sources?.filter(s => s.type === 'shop' && s.storeId === storeId) ?? []
+              const srcs = item.sources?.filter(s => s.type === 'shop' && s.id === storeId) ?? []
               return srcs.map((src, si) => {
                 const isBarter = src.tradeItemId !== undefined || src.tradeItemGameId !== undefined
                 const currencyItem = isBarter && findById ? findById(src.tradeItemId) : null

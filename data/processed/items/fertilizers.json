@@ -58,8 +58,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50
       },
       {
@@ -144,8 +143,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50
       },
       {
@@ -380,8 +378,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-demetrius",
-        "storeName": "Desert Festival Stall (Demetrius)",
+        "id": "store-desert-festival-demetrius",
         "price": 80,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -392,8 +389,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 80,
         "days": [
           "Thursday"
@@ -401,8 +397,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -564,8 +559,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -655,8 +649,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 200,
         "days": [
           "Saturday"
@@ -664,8 +657,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -750,8 +742,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50
       },
       {

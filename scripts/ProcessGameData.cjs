@@ -605,8 +605,7 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
 
     const normalizedStoreId = normalizeStoreId(storeId);
     const storeDetails = rules.shops.storeDetails?.[storeId];
-    const storeName = storeDetails?.name ?? storeId;
-    const source = { type: 'shop', storeId: normalizedStoreId, storeName };
+    const source = { type: 'shop', id: normalizedStoreId };
 
     // Non-gold shop currency (Currency field: 1=StarTokens, 2=QiCoins, 4=QiGems)
     const SHOP_CURRENCIES = { 1: 'star-tokens', 2: 'qi-coins', 4: 'qi-gems' };
@@ -1611,8 +1610,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
   // Determine the ore/input for this bar
   // Most bars follow pattern: "X Bar" comes from "X Ore"
   let producedBy = {
-    machine: 'Furnace',
-    machineId: 'furnace',
+    id: 'furnace',
     inputs: []
   };
 
@@ -1886,7 +1884,6 @@ function parseMachineRecipes(machines) {
 
       recipes.push({
         id: rule.Id,
-        machine: machineName,
         machineId: toKebabCase(machineName),
         outputItemId,
         outputName,
@@ -2043,8 +2040,7 @@ for (const recipe of machineRecipes) {
 
     const machineSource = {
       type: 'machine',
-      machine: recipe.machine,
-      machineId: recipe.machineId,
+      id: recipe.machineId,
       inputType: recipe.requiredTags.includes('category_fruits') || recipe.requiredTags.includes('keg_wine') || recipe.requiredTags.includes('preserves_jelly') ? 'fruit'
                : recipe.requiredTags.includes('category_flowers') || recipe.outputName === 'Honey' ? 'flower'
                : recipe.requiredTags.includes('category_fish') ? 'fish'
@@ -2113,8 +2109,7 @@ for (const recipe of machineRecipes) {
 
     const machineSource = {
       type: 'machine',
-      machine: recipe.machine,
-      machineId: recipe.machineId,
+      id: recipe.machineId,
       inputType: 'specific',
       valueFormula: `${objectData.Price || 0}`,
       inputDetails
@@ -2188,8 +2183,8 @@ for (const [animalName, animalData] of Object.entries(gameData.farmAnimals)) {
     const gameId = `(O)${rawId}`;
     if (!animalProductSources.has(gameId)) animalProductSources.set(gameId, []);
     const existing = animalProductSources.get(gameId);
-    if (!existing.find(e => e.animalName === animalName)) {
-      existing.push({ animalName, animalId: toKebabCase(animalName), hasQuality: true });
+    if (!existing.find(e => e.id === toKebabCase(animalName))) {
+      existing.push({ id: toKebabCase(animalName), hasQuality: true });
     }
   }
 }
@@ -2218,7 +2213,7 @@ for (const [gameId, animalSources] of animalProductSources.entries()) {
     edibility: objectData.Edibility || -300,
     icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
     hasQuality: true,
-    sources: animalSources.map(a => ({ type: 'animal', animalName: a.animalName, animalId: a.animalId })),
+    sources: animalSources.map(a => ({ type: 'animal', id: a.id })),
     contextTags: objectData.ContextTags || [],
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations),
     bundles: [],
@@ -2492,8 +2487,7 @@ const roeItem = {
   sources: [
     {
       type: 'machine',
-      machine: 'Fish Pond',
-      machineId: 'fish-pond',
+      id: 'fish-pond',
       inputType: 'fish',
       processingTimeMinutes: rules.roeMechanics.roe.processingTimeMinutes,
       valueFormula: rules.roeMechanics.roe.formula,
@@ -2550,8 +2544,7 @@ const agedRoeItem = {
   sources: [
     {
       type: 'machine',
-      machine: rules.roeMechanics.agedRoe.producedBy,
-      machineId: 'preserves-jar',
+      id: 'preserves-jar',
       inputType: rules.roeMechanics.agedRoe.inputType,
       processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
       valueFormula: rules.roeMechanics.agedRoe.formula,
@@ -2593,8 +2586,7 @@ if (caviarObjectData && caviarFishObject) {
     sources: [
       {
         type: 'machine',
-        machine: rules.roeMechanics.agedRoe.producedBy, // same machine: Preserves Jar
-        machineId: 'preserves-jar',
+        id: 'preserves-jar',
         inputType: 'specific',
         processingTimeMinutes: rules.roeMechanics.agedRoe.processingTimeMinutes,
         valueFormula: `${caviarObjectData.Price || 0}`,
@@ -3204,15 +3196,15 @@ const furnitureData = [];
 
 // Name and wiki overrides loaded from data/rules/furniture-names.json
 
-// Map context tags to catalogue store IDs and names
+// Map context tags to catalogue store IDs
 const FURNITURE_CATALOGUE_MAP = {
-  'collection_joja':   { storeId: 'store-joja-furniture-catalogue',   storeName: 'Joja Furniture Catalogue' },
-  'collection_junimo': { storeId: 'store-junimo-furniture-catalogue',  storeName: 'Junimo Furniture Catalogue' },
-  'collection_retro':  { storeId: 'store-retro-furniture-catalogue',   storeName: 'Retro Furniture Catalogue' },
-  'collection_trash':  { storeId: 'store-trash-furniture-catalogue',   storeName: 'Trash Can Furniture Catalogue' },
-  'collection_wizard': { storeId: 'store-wizard-furniture-catalogue',  storeName: 'Wizard Furniture Catalogue' },
+  'collection_joja':   { id: 'store-joja-furniture-catalogue' },
+  'collection_junimo': { id: 'store-junimo-furniture-catalogue' },
+  'collection_retro':  { id: 'store-retro-furniture-catalogue' },
+  'collection_trash':  { id: 'store-trash-furniture-catalogue' },
+  'collection_wizard': { id: 'store-wizard-furniture-catalogue' },
 };
-const DEFAULT_CATALOGUE = { storeId: 'store-furniture-catalogue', storeName: 'Furniture Catalogue' };
+const DEFAULT_CATALOGUE = { id: 'store-furniture-catalogue' };
 
 // Furniture format: name/type/tilesheetSize/boundingBoxSize/rotations/price/placementRestriction/displayName/...
 // Named string IDs (e.g. "JojaCatalogue") and numeric IDs (e.g. "0")
@@ -3249,7 +3241,7 @@ for (const [rawKey, furnitureStr] of Object.entries(gameData.furniture)) {
 
   // Add catalogue source based on context tag (price 0 = freely available via catalogue)
   const catalogue = FURNITURE_CATALOGUE_MAP[contextTag] || DEFAULT_CATALOGUE;
-  sources.push({ type: 'shop', storeId: catalogue.storeId, storeName: catalogue.storeName, price: 0 });
+  sources.push({ type: 'shop', id: catalogue.id, price: 0 });
 
   furnitureData.push({
     id,
@@ -3649,6 +3641,8 @@ for (const [rawId, objectData] of Object.entries(gameData.objects)) {
   if (SKIP_MISC_CATEGORIES.has(objectData.Category)) continue;
   // In cat 0, skip internal-only items
   if (objectData.Category === 0 && SKIP_CAT0_TYPES.has(objectData.Type)) continue;
+  // Skip unnamed placeholder items (e.g. (O)930 is a duplicate of the Concerned Ape Mask hat)
+  if (objectData.Name === '???') continue;
 
   const gameId = `(O)${rawId}`;
   if (rules.itemVariants[String(gameId)]?.skip) continue;
@@ -3888,7 +3882,7 @@ for (const [rawId, animalObj] of Object.entries(gameData.farmAnimals)) {
   // Source: purchasable from Marnie if PurchasePrice > 0; otherwise hatched from egg
   const sources = [];
   if (animalObj.PurchasePrice > 0) {
-    sources.push({ type: 'shop', storeId: 'store-marnie' });
+    sources.push({ type: 'shop', id: 'store-marnie', price: animalObj.PurchasePrice });
   } else if (eggGameIds.length > 0) {
     sources.push({ type: 'hatch', eggGameIds });
   } else if (animalObj.CanGetPregnant) {

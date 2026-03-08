@@ -120,8 +120,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-evelyn",
-        "storeName": "Desert Festival Stall (Evelyn)",
+        "id": "store-desert-festival-evelyn",
         "price": 60,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -132,8 +131,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
+        "id": "store-flower-dance",
         "price": 50,
         "quantity": 10,
         "stockLimit": 1
@@ -276,8 +274,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-caroline",
-        "storeName": "Desert Festival Stall (Caroline)",
+        "id": "store-desert-festival-caroline",
         "price": 80,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -288,8 +285,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-flower-dance",
-        "storeName": "Flower Dance",
+        "id": "store-flower-dance",
         "price": 50,
         "quantity": 10,
         "stockLimit": 1
@@ -361,8 +357,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-vincent",
-        "storeName": "Desert Festival Stall (Vincent)",
+        "id": "store-desert-festival-vincent",
         "price": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -423,8 +418,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 200,
         "quantity": 10,
         "days": [
@@ -492,8 +486,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 150,
         "days": [
           "Tuesday"
@@ -563,8 +556,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-george",
-        "storeName": "Desert Festival Stall (George)",
+        "id": "store-desert-festival-george",
         "price": 300,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -647,8 +639,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-kent",
-        "storeName": "Desert Festival Stall (Kent)",
+        "id": "store-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -933,8 +924,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-demetrius",
-        "storeName": "Desert Festival Stall (Demetrius)",
+        "id": "store-desert-festival-demetrius",
         "price": 240,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1101,8 +1091,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-demetrius",
-        "storeName": "Desert Festival Stall (Demetrius)",
+        "id": "store-desert-festival-demetrius",
         "price": 160,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -1172,8 +1161,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-emily",
-        "storeName": "Desert Festival Stall (Emily)",
+        "id": "store-desert-festival-emily",
         "price": 320,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1610,8 +1598,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-kent",
-        "storeName": "Desert Festival Stall (Kent)",
+        "id": "store-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",

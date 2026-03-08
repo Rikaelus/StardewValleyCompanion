@@ -12,18 +12,15 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "White Chicken",
-        "animalId": "white-chicken"
+        "id": "white-chicken"
       },
       {
         "type": "animal",
-        "animalName": "Blue Chicken",
-        "animalId": "blue-chicken"
+        "id": "blue-chicken"
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-shane",
-        "storeName": "Desert Festival Stall (Shane)",
+        "id": "store-desert-festival-shane",
         "price": 100,
         "quantity": 12,
         "tradeItemId": "calico-egg",
@@ -75,13 +72,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "White Chicken",
-        "animalId": "white-chicken"
+        "id": "white-chicken"
       },
       {
         "type": "animal",
-        "animalName": "Blue Chicken",
-        "animalId": "blue-chicken"
+        "id": "blue-chicken"
       }
     ],
     "contextTags": [
@@ -127,8 +122,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Brown Chicken",
-        "animalId": "brown-chicken"
+        "id": "brown-chicken"
       }
     ],
     "contextTags": [
@@ -173,8 +167,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Brown Chicken",
-        "animalId": "brown-chicken"
+        "id": "brown-chicken"
       }
     ],
     "contextTags": [
@@ -220,13 +213,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Void Chicken",
-        "animalId": "void-chicken"
+        "id": "void-chicken"
       },
       {
         "type": "shop",
-        "storeId": "store-krobus",
-        "storeName": "Krobus's Shop",
+        "id": "store-krobus",
         "price": 5000
       },
       {
@@ -278,13 +269,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Golden Chicken",
-        "animalId": "golden-chicken"
+        "id": "golden-chicken"
       },
       {
         "type": "shop",
-        "storeId": "store-marnie",
-        "storeName": "Marnie's Ranch",
+        "id": "store-marnie",
         "price": 100000,
         "condition": {
           "in": [
@@ -297,8 +286,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 1000,
@@ -358,8 +346,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Duck",
-        "animalId": "duck"
+        "id": "duck"
       }
     ],
     "contextTags": [
@@ -404,8 +391,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Duck",
-        "animalId": "duck"
+        "id": "duck"
       }
     ],
     "contextTags": [
@@ -432,13 +418,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Rabbit",
-        "animalId": "rabbit"
+        "id": "rabbit"
       },
       {
         "type": "animal",
-        "animalName": "Sheep",
-        "animalId": "sheep"
+        "id": "sheep"
       },
       {
         "type": "mail",
@@ -470,13 +454,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Rabbit",
-        "animalId": "rabbit"
+        "id": "rabbit"
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jas",
-        "storeName": "Desert Festival Stall (Jas)",
+        "id": "store-desert-festival-jas",
         "price": 1130,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -520,8 +502,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Dinosaur",
-        "animalId": "dinosaur"
+        "id": "dinosaur"
       }
     ],
     "contextTags": [
@@ -584,18 +565,15 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "White Cow",
-        "animalId": "white-cow"
+        "id": "white-cow"
       },
       {
         "type": "animal",
-        "animalName": "Brown Cow",
-        "animalId": "brown-cow"
+        "id": "brown-cow"
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-alex",
-        "storeName": "Desert Festival Stall (Alex)",
+        "id": "store-desert-festival-alex",
         "price": 250,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -648,13 +626,11 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "White Cow",
-        "animalId": "white-cow"
+        "id": "white-cow"
       },
       {
         "type": "animal",
-        "animalName": "Brown Cow",
-        "animalId": "brown-cow"
+        "id": "brown-cow"
       }
     ],
     "contextTags": [
@@ -701,8 +677,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Goat",
-        "animalId": "goat"
+        "id": "goat"
       }
     ],
     "contextTags": [
@@ -747,8 +722,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Goat",
-        "animalId": "goat"
+        "id": "goat"
       }
     ],
     "contextTags": [
@@ -794,8 +768,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Pig",
-        "animalId": "pig"
+        "id": "pig"
       },
       {
         "type": "monster-drop",
@@ -826,8 +799,7 @@
     "sources": [
       {
         "type": "animal",
-        "animalName": "Ostrich",
-        "animalId": "ostrich"
+        "id": "ostrich"
       }
     ],
     "contextTags": [

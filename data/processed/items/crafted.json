@@ -56,8 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 100,
         "tradeItemId": "quartz",
         "tradeItemGameId": 80,
@@ -67,14 +66,12 @@
       },
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 1000
       },
       {
         "type": "shop",
-        "storeId": "store-volcano-shop",
-        "storeName": "Volcano Forge Shop",
+        "id": "store-volcano-shop",
         "price": 1000
       },
       {
@@ -211,14 +208,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 450
       },
       {
         "type": "shop",
-        "storeId": "store-volcano-shop",
-        "storeName": "Volcano Forge Shop",
+        "id": "store-volcano-shop",
         "price": 450
       },
       {
@@ -372,8 +367,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -441,8 +435,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -510,8 +503,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -765,8 +757,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-krobus",
-        "storeName": "Krobus's Shop",
+        "id": "store-krobus",
         "price": 10000,
         "days": [
           "Friday"
@@ -925,8 +916,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-spirits-eve",
-        "storeName": "Spirit's Eve",
+        "id": "store-spirits-eve",
         "price": 750,
         "quantity": 5,
         "stockLimit": 1
@@ -1005,8 +995,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "price": 100,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1016,8 +1005,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 100,
         "tradeItemId": "iridium-ore",
         "tradeItemGameId": 386,
@@ -1027,14 +1015,12 @@
       },
       {
         "type": "shop",
-        "storeId": "store-dwarf",
-        "storeName": "Dwarf Shop",
+        "id": "store-dwarf",
         "price": 1600
       },
       {
         "type": "shop",
-        "storeId": "store-volcano-shop",
-        "storeName": "Volcano Forge Shop",
+        "id": "store-volcano-shop",
         "price": 1600
       },
       {

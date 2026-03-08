@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import DataTable from '../common/DataTable'
-import UniversalModal from '../common/UniversalModal'
 import { useEntities } from '../../contexts/EntityContext'
+import { useModal } from '../../contexts/ModalContext'
 import { formatLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
@@ -14,13 +14,9 @@ import {
 
 function ForageTable({ data, allData }) {
   const { villagers: { all: villagers }, ...relationalData } = useEntities()
-  const [selectedForage, setSelectedForage] = useState(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { openModal } = useModal()
 
-  const handleRowClick = (forage) => {
-    setSelectedForage(forage)
-    setIsModalOpen(true)
-  }
+  const handleRowClick = openModal
 
   const columns = useMemo(() => {
     // Don't build columns until relational data is loaded
@@ -32,7 +28,7 @@ function ForageTable({ data, allData }) {
       createNameColumn({
         cellRenderer: ({ row }) => (
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} />
+            <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} onNavigate={openModal} />
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
           </span>
         )
@@ -78,11 +74,6 @@ function ForageTable({ data, allData }) {
           * Seasons and locations shown are the full range of possibilities. Click on an item marked with * to see exact availability per location.
         </div>
       )}
-      <UniversalModal
-        entity={selectedForage}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </>
   )
 }

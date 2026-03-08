@@ -8,9 +8,9 @@ import { calculateProfessionMultiplier } from './ItemSellPrice'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { getTrashCanRefund, getProfitColor, formatPrice } from '../../utils/Formatters'
 
-function getSellingLocations(entity, getStore) {
+function getSellingLocations(entity, findById) {
   return (entity.sellingLocations || []).map(id => {
-    const store = getStore(id)
+    const store = findById(id)
     return store?.name || id
   })
 }
@@ -239,7 +239,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
             outputs.push({
               outputItem: artisan,
               outputBasePrice: inputDetail.outputPrice || artisan.prices?.regular || artisan.price || 0,
-              machine: artisanMachineSource.machine,
+              machineId: artisanMachineSource.id,
             })
           }
         })
@@ -362,7 +362,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
   )
 }
 
-function SellingInfoSection({ entity, artisanItems, findById, getStore, onNavigate }) {
+function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
   const { player } = usePlayer()
 
   const [activeProfessions, setActiveProfessions] = useState({
@@ -408,7 +408,7 @@ function SellingInfoSection({ entity, artisanItems, findById, getStore, onNaviga
     ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)
   const iridiumOnlyQuality = type === 'food'
 
-  const sellingLocations = getSellingLocations(entity, getStore)
+  const sellingLocations = getSellingLocations(entity, findById)
   const availableProfessions = getAvailableProfessions(entity, artisanItems)
 
   const multiplier = calculateProfessionMultiplier(entity, activeProfessions)

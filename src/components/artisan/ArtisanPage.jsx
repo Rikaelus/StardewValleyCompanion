@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useArtisanData } from '../../hooks/useData'
 import { useDebounce } from '../../hooks/useDebounce'
+import { useEntities } from '../../contexts/EntityContext'
 import PagePanel from '../common/PagePanel'
 import Tabs from '../common/Tabs'
 import ArtisanTable from './ArtisanTable'
@@ -9,6 +10,7 @@ import './ArtisanPage.css'
 
 function ArtisanPage() {
   const { data, loading, error } = useArtisanData()
+  const { findById } = useEntities()
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
 
@@ -63,9 +65,9 @@ function ArtisanPage() {
   const filterOptions = useMemo(() => {
     if (!data.artisan) return {}
 
-    // Extract unique sources (machine, animal, tree, etc.)
+    // Extract unique machine sources by id
     const getMachineSource = (a) => a.sources?.find(s => s.type === 'machine')
-    const sources = [...new Set(data.artisan.map(a => getMachineSource(a)?.machine).filter(Boolean))].sort()
+    const sources = [...new Set(data.artisan.map(a => getMachineSource(a)?.id).filter(Boolean))].sort()
 
     // Extract unique bundles from artisan bundleDetails
     const bundleMap = new Map()
@@ -125,7 +127,7 @@ function ArtisanPage() {
       }
 
       if (filters.source) {
-        const itemSource = artisan.sources?.find(s => s.type === 'machine')?.machine
+        const itemSource = artisan.sources?.find(s => s.type === 'machine')?.id
         if (itemSource !== filters.source) return false
       }
 
@@ -188,7 +190,7 @@ function ArtisanPage() {
               >
                 <option value="">All Sources</option>
                 {filterOptions.sources.map(source => (
-                  <option key={source} value={source}>{source}</option>
+                  <option key={source} value={source}>{findById(source)?.name ?? source}</option>
                 ))}
               </select>
             </div>

@@ -118,14 +118,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 70
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 87,
         "seasons": [
           "fall"
@@ -133,8 +131,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 70,
         "seasons": [
           "fall"
@@ -263,15 +260,13 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 30,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 30,
         "seasons": [
           "fall"
@@ -335,14 +330,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 75,
         "seasons": [
           "spring"
@@ -350,8 +343,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 60,
         "seasons": [
           "spring"
@@ -414,8 +406,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 20
       }
     ]
@@ -475,14 +466,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 80,
         "seasons": [
           "summer"
@@ -545,14 +534,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 62,
         "seasons": [
           "fall"
@@ -560,8 +547,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50,
         "seasons": [
           "fall"
@@ -626,8 +612,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 80,
         "tradeItemId": "moss",
         "tradeItemGameId": "Moss",
@@ -692,8 +677,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 150
       },
       {
@@ -761,8 +745,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 30,
         "tradeItemId": "maple-seed",
         "tradeItemGameId": 310,
@@ -827,14 +810,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 100,
         "seasons": [
           "spring"
@@ -842,8 +823,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 80,
         "seasons": [
           "spring"
@@ -909,8 +889,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
+        "id": "store-traveling-merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -981,20 +960,17 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 150
       },
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 150
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 187,
         "seasons": [
           "fall"
@@ -1002,8 +978,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 150,
         "seasons": [
           "summer"
@@ -1011,8 +986,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 150,
         "seasons": [
           "fall"
@@ -1075,14 +1049,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 240
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 300,
         "seasons": [
           "fall"
@@ -1090,8 +1062,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 240,
         "seasons": [
           "fall"
@@ -1154,14 +1125,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 25,
         "seasons": [
           "fall"
@@ -1169,8 +1138,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 20,
         "seasons": [
           "fall"
@@ -1233,8 +1201,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jas",
-        "storeName": "Desert Festival Stall (Jas)",
+        "id": "store-desert-festival-jas",
         "price": 200,
         "quantity": 25,
         "tradeItemId": "calico-egg",
@@ -1245,14 +1212,12 @@
       },
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 250,
         "seasons": [
           "fall"
@@ -1260,8 +1225,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 200,
         "seasons": [
           "fall"
@@ -1324,8 +1288,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 90,
         "tradeItemId": "winter-seeds",
         "tradeItemGameId": 498,
@@ -1495,15 +1458,13 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 40,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 40,
         "seasons": [
           "spring"
@@ -1567,14 +1528,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 75,
         "seasons": [
           "fall"
@@ -1582,8 +1541,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 60,
         "seasons": [
           "fall"
@@ -1646,14 +1604,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 75,
         "seasons": [
           "summer"
@@ -1661,8 +1617,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 60,
         "seasons": [
           "summer"
@@ -1725,14 +1680,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 30
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 37,
         "seasons": [
           "spring"
@@ -1740,8 +1693,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 30,
         "seasons": [
           "spring"
@@ -1804,14 +1756,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 70
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 87,
         "seasons": [
           "spring"
@@ -1819,8 +1769,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 70,
         "seasons": [
           "spring"
@@ -1886,8 +1835,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
+        "id": "store-island-trader",
         "price": 200,
         "tradeItemId": "stingray",
         "tradeItemGameId": 836,
@@ -1897,8 +1845,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 200,
         "tradeItemId": "coal",
         "tradeItemGameId": 382,
@@ -2055,14 +2002,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 100,
         "seasons": [
           "summer"
@@ -2070,8 +2015,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 80,
         "seasons": [
           "summer"
@@ -2134,8 +2078,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-emily",
-        "storeName": "Desert Festival Stall (Emily)",
+        "id": "store-desert-festival-emily",
         "quantity": 5,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2146,8 +2089,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-evelyn",
-        "storeName": "Desert Festival Stall (Evelyn)",
+        "id": "store-desert-festival-evelyn",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2157,8 +2099,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jodi",
-        "storeName": "Desert Festival Stall (Jodi)",
+        "id": "store-desert-festival-jodi",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2223,8 +2164,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "quantity": 3,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2239,8 +2179,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-evelyn",
-        "storeName": "Desert Festival Stall (Evelyn)",
+        "id": "store-desert-festival-evelyn",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2250,8 +2189,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jodi",
-        "storeName": "Desert Festival Stall (Jodi)",
+        "id": "store-desert-festival-jodi",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2261,8 +2199,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-stardew-valley-fair",
-        "storeName": "Stardew Valley Fair",
+        "id": "store-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 1000,
@@ -2273,8 +2210,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "tradeItemId": "cave-carrot",
         "tradeItemGameId": 78,
         "tradeItemName": "Cave Carrot",
@@ -2291,8 +2227,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-krobus",
-        "storeName": "Krobus's Shop",
+        "id": "store-krobus",
         "price": 30,
         "quantity": 10,
         "days": [
@@ -2473,8 +2408,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 200,
@@ -2619,14 +2553,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 25,
         "seasons": [
           "spring"
@@ -2634,8 +2566,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 20,
         "seasons": [
           "spring"
@@ -2698,14 +2629,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 40
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 50,
         "seasons": [
           "summer"
@@ -2713,8 +2642,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 40,
         "seasons": [
           "summer"
@@ -2841,8 +2769,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
+        "id": "store-island-trader",
         "price": 480,
         "tradeItemId": "magma-cap",
         "tradeItemGameId": 851,
@@ -2912,14 +2839,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 100
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 125,
         "seasons": [
           "summer"
@@ -2927,8 +2852,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -2991,14 +2915,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 62,
         "seasons": [
           "spring"
@@ -3006,8 +2928,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50,
         "seasons": [
           "spring"
@@ -3072,8 +2993,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 40,
         "tradeItemId": "pine-cone",
         "tradeItemGameId": 311,
@@ -3138,14 +3058,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 100
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 125,
         "seasons": [
           "fall"
@@ -3153,8 +3071,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 100,
         "seasons": [
           "fall"
@@ -3279,14 +3196,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 40
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 50,
         "seasons": [
           "summer"
@@ -3294,8 +3209,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 40,
         "seasons": [
           "summer"
@@ -3358,8 +3272,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
+        "id": "store-traveling-merchant",
         "price": 1000,
         "seasons": [
           "spring",
@@ -3424,15 +3337,13 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 100,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -3441,8 +3352,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-traveling-merchant",
-        "storeName": "Traveling Merchant",
+        "id": "store-traveling-merchant",
         "price": 100,
         "stock": 1
       }
@@ -3503,8 +3413,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 100
       }
     ]
@@ -3564,8 +3473,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 40,
         "seasons": [
           "spring"
@@ -3639,14 +3547,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 62,
         "seasons": [
           "summer"
@@ -3654,8 +3560,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50,
         "seasons": [
           "summer"
@@ -3718,8 +3623,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 70,
         "tradeItemId": "summer-seeds",
         "tradeItemGameId": 496,
@@ -3815,8 +3719,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-sandy",
-        "storeName": "Oasis (Sandy)",
+        "id": "store-sandy",
         "price": 400
       }
     ]
@@ -3876,8 +3779,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -3889,8 +3791,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-egg-shop",
-        "storeName": "Desert Festival Egg Shop",
+        "id": "store-desert-festival-egg-shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -3902,8 +3803,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-maru",
-        "storeName": "Desert Festival Stall (Maru)",
+        "id": "store-desert-festival-maru",
         "quantity": 20,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -3913,8 +3813,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-egg-festival",
-        "storeName": "Egg Festival",
+        "id": "store-egg-festival",
         "price": 100
       }
     ]
@@ -3974,8 +3873,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 110,
         "tradeItemId": "fall-seeds",
         "tradeItemGameId": 497,
@@ -4069,8 +3967,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-raccoon",
-        "storeName": "Raccoon Shop",
+        "id": "store-raccoon",
         "price": 40,
         "tradeItemId": "sap",
         "tradeItemGameId": 92,
@@ -4135,20 +4032,17 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 100,
         "seasons": [
           "summer"
@@ -4156,8 +4050,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 100,
         "seasons": [
           "fall"
@@ -4165,8 +4058,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -4174,8 +4066,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 100,
         "seasons": [
           "fall"
@@ -4238,8 +4129,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-island-trader",
-        "storeName": "Island Trader",
+        "id": "store-island-trader",
         "price": 40,
         "tradeItemId": "bone-fragment",
         "tradeItemGameId": 881,
@@ -4321,8 +4211,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-caroline",
-        "storeName": "Desert Festival Stall (Caroline)",
+        "id": "store-desert-festival-caroline",
         "price": 500,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -4407,14 +4296,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 62,
         "seasons": [
           "summer"
@@ -4422,8 +4309,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 50,
         "seasons": [
           "summer"
@@ -4486,14 +4372,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 25,
         "seasons": [
           "spring"
@@ -4501,8 +4385,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 20,
         "seasons": [
           "spring"
@@ -4565,20 +4448,17 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 10
       },
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 10
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 12,
         "seasons": [
           "summer"
@@ -4586,8 +4466,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 12,
         "seasons": [
           "fall"
@@ -4595,8 +4474,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 10,
         "seasons": [
           "summer"
@@ -4604,8 +4482,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 10,
         "seasons": [
           "fall"
@@ -4668,8 +4545,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-trade",
-        "storeName": "Desert Trade (Sandy)",
+        "id": "store-desert-trade",
         "price": 60,
         "tradeItemId": "spring-seeds",
         "tradeItemGameId": 495,
@@ -4765,14 +4641,12 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-night-market",
-        "storeName": "Night Market",
+        "id": "store-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "storeId": "store-joja",
-        "storeName": "JojaMart",
+        "id": "store-joja",
         "price": 75,
         "seasons": [
           "fall"
@@ -4780,8 +4654,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-pierre",
-        "storeName": "Pierre's General Store",
+        "id": "store-pierre",
         "price": 60,
         "seasons": [
           "fall"

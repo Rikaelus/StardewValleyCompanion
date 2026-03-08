@@ -69,8 +69,8 @@ const sourceData = {
   buildings:      loadJson(path.join(SOURCE_DIR, 'items/buildings.json')),
   animals:        loadJson(path.join(SOURCE_DIR, 'items/animals.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
+  sellingLocations: loadJson(path.join(RULES_DIR, 'selling-locations.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
-  machines:       loadJson(path.join(SOURCE_DIR, 'reference/machines.json')),
   buffs:          loadJson(path.join(SOURCE_DIR, 'reference/buffs.json')),
   events:         loadJson(path.join(SOURCE_DIR, 'reference/events.json')),
 };
@@ -169,15 +169,14 @@ sourceData.artisan.forEach(artisan => {
             sellingLocations: artisan.sellingLocations,
             bundles: artisan.bundles,
             genericId: artisan.id,
-            sources: artisan.sources.map(s => {
+            sources: artisan.sources.filter(s => s.type !== 'fish-pond').map(s => {
               if (s.type !== 'machine') return s;
               // For roe-input items (Aged Roe), the actual input is a roe variant,
               // not the fish itself. Remap inputId/inputName to the roe variant.
               const isRoeInput = s.inputType === 'roe';
               return {
                 type: s.type,
-                machine: s.machine,
-                machineId: s.machineId,
+                id: s.id,
                 inputType: s.inputType,
                 processingTimeMinutes: s.processingTimeMinutes,
                 valueFormula: s.valueFormula,
@@ -309,6 +308,11 @@ const taggedAnimals        = tagEntities(sourceData.animals,        'animal',   
 const taggedBuffs          = sourceData.buffs.map(b => ({ ...b, category: 'buff' }));
 const taggedEvents         = sourceData.events.map(e => ({ ...e, category: 'event' }));
 const taggedVillagers      = sourceData.villagers.map(v => ({ ...v, category: 'villager' }));
+const taggedStores         = Object.entries(sourceData.sellingLocations.stores || {}).map(([, v]) => {
+  const store = { ...v, category: 'store' };
+  if (!store.icon && store.npc) store.icon = `assets/villagers/${store.npc}.png`;
+  return store;
+});
 
 console.log(`  ✓ Tagged all entity types`);
 
@@ -412,6 +416,7 @@ const CATEGORY_PRIORITY = {
   'trinket': 35,
   'building': 36,
   'animal': 37,
+  'store': 38,
 };
 
 // All entity arrays to merge
@@ -453,6 +458,7 @@ const allTypedEntities = [
   ...taggedBuffs,
   ...taggedEvents,
   ...taggedVillagers,
+  ...taggedStores,
 ];
 
 // Merge by friendly id: combine sources arrays, keep highest-priority category.
@@ -549,7 +555,7 @@ for (const item of allCompiledEntities) {
 
   // Key = everything except seasons
   const key = src => [
-    src.storeId, src.storeName, src.price, src.quantity,
+    src.id, src.price, src.quantity,
     src.tradeItemId, src.tradeItemAmount, src.tradeItemGameId,
     src.shopCurrency, src.yearUnlock, src.yearUnlockBefore,
     src.rotating, src.stock, src.stockLimit,
@@ -600,11 +606,11 @@ for (const item of allCompiledEntities) {
   if (Array.isArray(item.sellingLocations)) {
     item.sellingLocations = item.sellingLocations.map(normalizeStoreId);
   }
-  // Normalize storeId in each shop source
+  // Normalize store id in each shop source
   if (Array.isArray(item.sources)) {
     for (const src of item.sources) {
-      if (src.type === 'shop' && src.storeId) {
-        src.storeId = normalizeStoreId(src.storeId);
+      if (src.type === 'shop' && src.id) {
+        src.id = normalizeStoreId(src.id);
       }
     }
   }
@@ -675,16 +681,13 @@ for (const item of allCompiledEntities) {
 }
 
 // ---------------------------------------------------------------------------
-// Load remaining reference data (bundles, villagers, stores, gifts)
+// Load remaining reference data (bundles, villagers, gifts)
 // ---------------------------------------------------------------------------
 console.log('\n📖 Loading reference data...');
-
-const sellingLocationsData = loadJson(path.join(RULES_DIR, 'selling-locations.json'));
 
 const giftsPath = path.join(SOURCE_DIR, 'relationships/gifts.json');
 const giftsData = fs.existsSync(giftsPath) ? loadJson(giftsPath) : { relationships: [] };
 
-console.log(`  ✓ Loaded stores (${Object.keys(sellingLocationsData.stores || {}).length} stores)`);
 console.log(`  ✓ Loaded gifts (${giftsData.relationships?.length ?? 0} relationships)`);
 
 // ---------------------------------------------------------------------------
@@ -696,16 +699,6 @@ const entitiesData = {
   items: allCompiledEntities,
   bundles: sourceData.bundles,
   villagers: sourceData.villagers,
-  stores: Object.fromEntries(
-    Object.entries(sellingLocationsData.stores).map(([k, v]) => {
-      const store = { ...v, entityType: 'store' };
-      if (!store.icon && store.npc) {
-        store.icon = `assets/villagers/${store.npc}.png`;
-      }
-      return [k, store];
-    })
-  ),
-  machines: sourceData.machines.map(m => ({ ...m, entityType: 'machine' })),
   buffs: sourceData.buffs.map(b => ({ ...b, entityType: 'buff' })),
   relationships: giftsData.relationships || [],
   gameIdIndex,
@@ -714,8 +707,7 @@ const entitiesData = {
     totalItems: allCompiledEntities.length,
     totalBundles: sourceData.bundles.length,
     totalVillagers: sourceData.villagers.length,
-    totalStores: Object.keys(sellingLocationsData.stores || {}).length,
-    totalMachines: sourceData.machines.length,
+    totalStores: taggedStores.length,
     totalBuffs: sourceData.buffs.length,
     totalEvents: sourceData.events.length,
     totalRelationships: giftsData.relationships?.length ?? 0,
@@ -724,7 +716,7 @@ const entitiesData = {
 };
 
 writeJson(path.join(OUTPUT_DIR, 'entities.json'), entitiesData);
-console.log(`  ✓ Wrote entities.json (${allCompiledEntities.length} items, ${sourceData.bundles.length} bundles, ${sourceData.villagers.length} villagers, ${sourceData.machines.length} machines)`);
+console.log(`  ✓ Wrote entities.json (${allCompiledEntities.length} items, ${sourceData.bundles.length} bundles, ${sourceData.villagers.length} villagers)`);
 
 // ---------------------------------------------------------------------------
 // Summary

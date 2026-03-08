@@ -218,23 +218,20 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 150,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 250,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 30,
         "quantity": 20,
         "tradeItemId": "mining-monthly",
@@ -245,8 +242,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-clint",
-        "storeName": "Desert Festival Stall (Clint)",
+        "id": "store-desert-festival-clint",
         "price": 30,
         "quantity": 50,
         "tradeItemId": "calico-egg",
@@ -370,23 +366,20 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 75,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 150,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-clint",
-        "storeName": "Desert Festival Stall (Clint)",
+        "id": "store-desert-festival-clint",
         "price": 10,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -511,16 +504,14 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 400,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 750,
         "yearUnlock": 2
       },
@@ -671,23 +662,20 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 150,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "storeId": "store-clint",
-        "storeName": "Blacksmith (Clint)",
+        "id": "store-clint",
         "price": 250,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "storeId": "store-desert-festival-clint",
-        "storeName": "Desert Festival Stall (Clint)",
+        "id": "store-desert-festival-clint",
         "price": 20,
         "quantity": 100,
         "tradeItemId": "calico-egg",

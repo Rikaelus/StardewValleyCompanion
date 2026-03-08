@@ -12,7 +12,7 @@ import {
 
 function ArtisanTable({ artisanGoods, allArtisan }) {
   const { player } = usePlayer()
-  const { villagers: { all: villagers }, ...relationalData } = useEntities()
+  const { villagers: { all: villagers }, findById, ...relationalData } = useEntities()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -35,9 +35,12 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
         createNameColumn(),
         {
           id: 'machine',
-          accessorFn: (row) => row.sources?.find(s => s.type === 'machine')?.machine,
+          accessorFn: (row) => row.sources?.find(s => s.type === 'machine')?.id,
           header: 'Machine',
-          cell: ({ row }) => row.original.sources?.find(s => s.type === 'machine')?.machine || '—',
+          cell: ({ row }) => {
+            const src = row.original.sources?.find(s => s.type === 'machine')
+            return src?.id ? (findById(src.id)?.name ?? src.id) : '—'
+          },
         },
         {
           id: 'inputType',
@@ -100,13 +103,14 @@ function ArtisanTable({ artisanGoods, allArtisan }) {
         accessorFn: (row) => {
           const machineSource = row.sources?.find(s => s.type === 'machine')
           const tapperSource = row.sources?.find(s => s.type === 'tapper')
-          return machineSource?.machine || tapperSource?.treeName || null
+          return machineSource?.id || tapperSource?.treeName || null
         },
         header: 'Source',
         cell: ({ row }) => {
           const machineSource = row.original.sources?.find(s => s.type === 'machine')
           const tapperSource = row.original.sources?.find(s => s.type === 'tapper')
-          return machineSource?.machine || tapperSource?.treeName || '—'
+          if (machineSource?.id) return findById(machineSource.id)?.name ?? machineSource.id
+          return tapperSource?.treeName || '—'
         },
       },
       {

@@ -54,8 +54,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 1000,
         "condition": {
           ">=": [
@@ -147,8 +146,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 750,
         "condition": {
           ">=": [
@@ -300,8 +298,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 1000,
         "condition": {
           ">=": [
@@ -389,8 +386,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 200,
         "condition": {
           ">=": [
@@ -534,8 +530,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -623,8 +618,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -708,8 +702,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -797,8 +790,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 750,
         "condition": {
           ">=": [

@@ -1611,8 +1611,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-pierre",
-        "storeName": "Desert Festival Stall (Pierre)",
+        "id": "store-desert-festival-pierre",
         "price": 160,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4019,8 +4018,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-elliott",
-        "storeName": "Desert Festival Stall (Elliott)",
+        "id": "store-desert-festival-elliott",
         "price": 200,
         "quantity": 5,
         "tradeItemId": "calico-egg",

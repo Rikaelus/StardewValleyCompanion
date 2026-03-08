@@ -1,7 +1,7 @@
 import ModalSection from './ModalSection'
 import ModalItemButton from './ModalItemButton'
 
-function VariationsListSection({ entity, artisanItems, onNavigate }) {
+function VariationsListSection({ entity, artisanItems, findById, onNavigate }) {
   if (!entity?.isGeneric || !entity.variations) return null
 
   const variationItems = entity.variations
@@ -15,8 +15,9 @@ function VariationsListSection({ entity, artisanItems, onNavigate }) {
       <div className="variations-list">
         {variationItems.map(variation => {
           const varMachineSource = variation.sources?.find(s => s.type === 'machine')
+          const machineName = varMachineSource?.id ? (findById(varMachineSource.id)?.name ?? varMachineSource.id) : null
           const source = varMachineSource
-            ? `${varMachineSource.machine}: ${varMachineSource.inputName}`
+            ? `${machineName}: ${varMachineSource.inputName}`
             : null
 
           return (

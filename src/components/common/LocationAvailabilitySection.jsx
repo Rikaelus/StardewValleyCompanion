@@ -6,7 +6,7 @@ import ShopSourceList from './ShopSourceList'
 import { formatTime, formatProcessingTime } from '../../utils/Formatters'
 import ConditionBadge from './ConditionBadge'
 
-function LocationAvailabilitySection({ entity, findById, findByGameId, getStore, getMachine, onNavigate }) {
+function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigate }) {
   if (!entity) return null
 
   const hasSeasons = entity.seasons && entity.seasons.length > 0
@@ -15,7 +15,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
 
   const isSeed = entity.type === 'seed'
   const allSources = entity.sources || []
-  const shopSources = allSources.filter(s => s.type === 'shop').sort((a, b) => (a.storeName ?? '').localeCompare(b.storeName ?? ''))
+  const shopSources = allSources.filter(s => s.type === 'shop').sort((a, b) => (a.id ?? '').localeCompare(b.id ?? ''))
   const monsterDropSources = allSources.filter(s => s.type === 'monster-drop')
   const fishPondSources = allSources.filter(s => s.type === 'fish-pond')
   const tillingSources = allSources.filter(s => s.type === 'tilling')
@@ -82,7 +82,6 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
             sources={entity.sources}
             findEntity={findByGameId}
             findEntityById={findById}
-            getStore={getStore}
             onNavigate={onNavigate}
           />
         </div>
@@ -232,11 +231,30 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
         <div className="source-group">
           <span className="modal-label">Produced By:</span>
           <div className="source-list">
-            {animalSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name">{src.animal || src.animalName}</span>
-              </span>
-            ))}
+            {animalSources.map((src, i) => {
+              const animalEntity = src.id ? findById(src.id) : null
+              const freq = animalEntity?.daysToProduce === 1 ? 'daily'
+                : animalEntity?.daysToProduce > 1 ? `every ${animalEntity.daysToProduce} days`
+                : null
+              const toolId = animalEntity?.harvestTool?.toLowerCase().replace(/\s+/g, '-')
+              const toolEntity = toolId ? findById(toolId) : null
+              return (
+                <span key={i} className="source-entry">
+                  {animalEntity
+                    ? <ModalItemButton item={animalEntity} variant="inline" onNavigate={onNavigate} />
+                    : <span className="source-name">{src.id}</span>
+                  }
+                  {(freq || toolEntity) && (
+                    <span className="source-qualifiers">
+                      <span className="source-qualifier">
+                        {freq}
+                        {toolEntity && <> with <ModalItemButton item={toolEntity} variant="inline" onNavigate={onNavigate} /></>}
+                      </span>
+                    </span>
+                  )}
+                </span>
+              )
+            })}
           </div>
         </div>
       )}
@@ -271,14 +289,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
                 : src.inputName || inputDetail?.inputName || (src.inputType && src.inputType !== 'specific'
                   ? src.inputType.charAt(0).toUpperCase() + src.inputType.slice(1)
                   : null)
-              const machineEntity = src.machineId ? getMachine(src.machineId) : null
+              const machineEntity = src.id ? findById(src.id) : null
               return (
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {machineEntity ? (
                       <ModalItemButton item={machineEntity} variant="inline" onNavigate={onNavigate} />
                     ) : (
-                      src.machine
+                      src.id
                     )}
                   </span>
                   {inputDisplay && <span className="source-qualifiers"><span className="source-qualifier">{inputDisplay}</span></span>}
@@ -360,7 +378,13 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
           <span className="modal-label">Mail:</span>
           <div className="source-list">
             {mailSources.map((src, i) => {
-              const name = src.sender ? `From ${src.sender}` : src.mailKey
+              const senderVillager = src.sender ? findById(src.sender.toLowerCase()) : null
+              const senderNode = src.sender
+                ? <>{senderVillager
+                    ? <><span style={{ marginRight: '0.25em' }}>From</span><ModalItemButton item={senderVillager} variant="inline" onNavigate={onNavigate} /></>
+                    : `From ${src.sender}`
+                  }</>
+                : src.mailKey
               const specialOrderLabel = src.isSpecialOrder ? 'Special Order Reward' : null
               const stringCondition = typeof src.condition === 'string' ? src.condition : null
               const jsonCondition = src.condition && typeof src.condition === 'object' ? src.condition : null
@@ -370,7 +394,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
                     {(badge, clauseElements, open) => (
                       <>
                         <span className="source-entry">
-                          <span className="source-name">{name}</span>
+                          <span className="source-name">{senderNode}</span>
                           <span className="source-qualifiers">
                             {specialOrderLabel && <span className="source-qualifier">{specialOrderLabel}</span>}
                             {badge}
@@ -388,7 +412,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, getStore,
               }
               return (
                 <span key={i} className="source-entry">
-                  <span className="source-name">{name}</span>
+                  <span className="source-name">{senderNode}</span>
                   <span className="source-qualifiers">
                     {specialOrderLabel && <span className="source-qualifier">{specialOrderLabel}</span>}
                     {stringCondition && <span className="source-qualifier">{stringCondition}</span>}

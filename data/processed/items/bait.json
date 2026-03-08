@@ -56,8 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 5,
         "condition": {
           ">=": [
@@ -267,8 +266,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-bookseller",
-        "storeName": "Bookseller",
+        "id": "store-bookseller",
         "price": 2,
         "quantity": 30,
         "tradeItemId": "bait-and-bobber",
@@ -279,8 +277,7 @@
       },
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 100,
         "condition": {
           ">=": [
@@ -368,8 +365,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-qi-gem-shop",
-        "storeName": "Qi's Walnut Room",
+        "id": "store-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 2,
@@ -452,8 +448,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-willy",
-        "storeName": "Willy's Fish Shop",
+        "id": "store-willy",
         "price": 1000,
         "condition": {
           ">=": [

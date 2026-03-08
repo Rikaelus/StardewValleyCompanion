@@ -117,8 +117,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-jas",
-        "storeName": "Desert Festival Stall (Jas)",
+        "id": "store-desert-festival-jas",
         "price": 120,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -245,8 +244,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-vincent",
-        "storeName": "Desert Festival Stall (Vincent)",
+        "id": "store-desert-festival-vincent",
         "price": 80,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -897,8 +895,7 @@
     "sources": [
       {
         "type": "shop",
-        "storeId": "store-desert-festival-vincent",
-        "storeName": "Desert Festival Stall (Vincent)",
+        "id": "store-desert-festival-vincent",
         "price": 200,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
