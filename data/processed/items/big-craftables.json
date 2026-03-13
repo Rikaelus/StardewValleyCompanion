@@ -1,120 +1,8 @@
 [
   {
     "type": "big-craftable",
-    "id": "house-plant-0",
-    "gameId": 0,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-1",
-    "gameId": 1,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-2",
-    "gameId": 2,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-3",
-    "gameId": 3,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-4",
-    "gameId": 4,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-5",
-    "gameId": 5,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-6",
-    "gameId": 6,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "house-plant-7",
-    "gameId": 7,
-    "name": "House Plant",
-    "icon": "assets/objects/HousePlant.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "scarecrow",
-    "gameId": 8,
+    "gameId": "(BC)8",
     "name": "Scarecrow",
     "icon": "assets/objects/Scarecrow.png",
     "price": 50,
@@ -128,7 +16,7 @@
   {
     "type": "big-craftable",
     "id": "lightning-rod",
-    "gameId": 9,
+    "gameId": "(BC)9",
     "name": "Lightning Rod",
     "icon": "assets/objects/LightningRod.png",
     "price": 50,
@@ -142,7 +30,7 @@
   {
     "type": "big-craftable",
     "id": "bee-house",
-    "gameId": 10,
+    "gameId": "(BC)10",
     "name": "Bee House",
     "icon": "assets/objects/BeeHouse.png",
     "price": 50,
@@ -156,7 +44,7 @@
   {
     "type": "big-craftable",
     "id": "keg",
-    "gameId": 12,
+    "gameId": "(BC)12",
     "name": "Keg",
     "icon": "assets/objects/Keg.png",
     "price": 50,
@@ -170,7 +58,7 @@
   {
     "type": "big-craftable",
     "id": "furnace",
-    "gameId": 13,
+    "gameId": "(BC)13",
     "name": "Furnace",
     "icon": "assets/objects/Furnace.png",
     "price": 50,
@@ -184,7 +72,7 @@
   {
     "type": "big-craftable",
     "id": "preserves-jar",
-    "gameId": 15,
+    "gameId": "(BC)15",
     "name": "Preserves Jar",
     "icon": "assets/objects/PreservesJar.png",
     "price": 50,
@@ -198,7 +86,7 @@
   {
     "type": "big-craftable",
     "id": "cheese-press",
-    "gameId": 16,
+    "gameId": "(BC)16",
     "name": "Cheese Press",
     "icon": "assets/objects/CheesePress.png",
     "price": 50,
@@ -212,7 +100,7 @@
   {
     "type": "big-craftable",
     "id": "loom",
-    "gameId": 17,
+    "gameId": "(BC)17",
     "name": "Loom",
     "icon": "assets/objects/Loom.png",
     "price": 50,
@@ -226,7 +114,7 @@
   {
     "type": "big-craftable",
     "id": "oil-maker",
-    "gameId": 19,
+    "gameId": "(BC)19",
     "name": "Oil Maker",
     "icon": "assets/objects/OilMaker.png",
     "price": 50,
@@ -240,7 +128,7 @@
   {
     "type": "big-craftable",
     "id": "recycling-machine",
-    "gameId": 20,
+    "gameId": "(BC)20",
     "name": "Recycling Machine",
     "icon": "assets/objects/RecyclingMachine.png",
     "price": 50,
@@ -254,7 +142,7 @@
   {
     "type": "big-craftable",
     "id": "crystalarium",
-    "gameId": 21,
+    "gameId": "(BC)21",
     "name": "Crystalarium",
     "icon": "assets/objects/Crystalarium.png",
     "price": 50,
@@ -267,36 +155,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "table-piece-l",
-    "gameId": 22,
-    "name": "Table Piece L",
-    "icon": "assets/objects/TablePieceL.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "table-piece-r",
-    "gameId": 23,
-    "name": "Table Piece R",
-    "icon": "assets/objects/TablePieceR.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "mayonnaise-machine",
-    "gameId": 24,
+    "gameId": "(BC)24",
     "name": "Mayonnaise Machine",
     "icon": "assets/objects/MayonnaiseMachine.png",
     "price": 50,
@@ -310,7 +170,7 @@
   {
     "type": "big-craftable",
     "id": "seed-maker",
-    "gameId": 25,
+    "gameId": "(BC)25",
     "name": "Seed Maker",
     "icon": "assets/objects/SeedMaker.png",
     "price": 50,
@@ -323,64 +183,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "wood-chair-26",
-    "gameId": 26,
-    "name": "Wood Chair",
-    "icon": "assets/objects/WoodChair.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "wood-chair-27",
-    "gameId": 27,
-    "name": "Wood Chair",
-    "icon": "assets/objects/WoodChair.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "skeleton-model",
-    "gameId": 28,
-    "name": "Skeleton Model",
-    "icon": "assets/objects/SkeletonModel.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "obelisk",
-    "gameId": 29,
-    "name": "Obelisk",
-    "icon": "assets/objects/Obelisk.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "chicken-statue",
-    "gameId": 31,
+    "gameId": "(BC)31",
     "name": "Chicken Statue",
     "icon": "assets/objects/ChickenStatue.png",
     "price": 50,
@@ -394,7 +198,7 @@
   {
     "type": "big-craftable",
     "id": "stone-cairn",
-    "gameId": 32,
+    "gameId": "(BC)32",
     "name": "Stone Cairn",
     "icon": "assets/objects/StoneCairn.png",
     "price": 50,
@@ -403,12 +207,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-dwarf",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "suit-of-armor",
-    "gameId": 33,
+    "gameId": "(BC)33",
     "name": "Suit Of Armor",
     "icon": "assets/objects/SuitOfArmor.png",
     "price": 50,
@@ -417,12 +227,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "sign-of-the-vessel",
-    "gameId": 34,
+    "gameId": "(BC)34",
     "name": "Sign Of The Vessel",
     "icon": "assets/objects/SignOfTheVessel.png",
     "price": 50,
@@ -431,12 +247,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 350
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "basic-log",
-    "gameId": 35,
+    "gameId": "(BC)35",
     "name": "Basic Log",
     "icon": "assets/objects/BasicLog.png",
     "price": 125,
@@ -445,12 +267,17 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin"
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "lawn-flamingo",
-    "gameId": 36,
+    "gameId": "(BC)36",
     "name": "Lawn Flamingo",
     "icon": "assets/objects/LawnFlamingo.png",
     "price": 50,
@@ -459,12 +286,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-egg-festival",
+        "price": 400
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "wood-sign",
-    "gameId": 37,
+    "gameId": "(BC)37",
     "name": "Wood Sign",
     "icon": "assets/objects/WoodSign.png",
     "price": 5,
@@ -480,7 +313,7 @@
   {
     "type": "big-craftable",
     "id": "stone-sign",
-    "gameId": 38,
+    "gameId": "(BC)38",
     "name": "Stone Sign",
     "icon": "assets/objects/StoneSign.png",
     "price": 5,
@@ -496,7 +329,7 @@
   {
     "type": "big-craftable",
     "id": "dark-sign",
-    "gameId": 39,
+    "gameId": "(BC)39",
     "name": "Dark Sign",
     "icon": "assets/objects/DarkSign.png",
     "price": 5,
@@ -512,7 +345,7 @@
   {
     "type": "big-craftable",
     "id": "big-green-cane",
-    "gameId": 40,
+    "gameId": "(BC)40",
     "name": "Big Green Cane",
     "icon": "assets/objects/BigGreenCane.png",
     "price": 50,
@@ -521,12 +354,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "green-canes",
-    "gameId": 41,
+    "gameId": "(BC)41",
     "name": "Green Canes",
     "icon": "assets/objects/GreenCanes.png",
     "price": 50,
@@ -535,12 +374,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "mixed-cane",
-    "gameId": 42,
+    "gameId": "(BC)42",
     "name": "Mixed Cane",
     "icon": "assets/objects/MixedCane.png",
     "price": 50,
@@ -549,12 +394,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "red-canes",
-    "gameId": 43,
+    "gameId": "(BC)43",
     "name": "Red Canes",
     "icon": "assets/objects/RedCanes.png",
     "price": 50,
@@ -563,12 +414,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "big-red-cane",
-    "gameId": 44,
+    "gameId": "(BC)44",
     "name": "Big Red Cane",
     "icon": "assets/objects/BigRedCane.png",
     "price": 50,
@@ -577,12 +434,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "ornamental-hay-bale",
-    "gameId": 45,
+    "gameId": "(BC)45",
     "name": "Ornamental Hay Bale",
     "icon": "assets/objects/OrnamentalHayBale.png",
     "price": 50,
@@ -591,12 +454,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-marnie",
+        "price": 250
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "log-section",
-    "gameId": 46,
+    "gameId": "(BC)46",
     "name": "Log Section",
     "icon": "assets/objects/LogSection.png",
     "price": 175,
@@ -605,12 +474,22 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin"
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "grave-stone",
-    "gameId": 47,
+    "gameId": "(BC)47",
     "name": "Grave Stone",
     "icon": "assets/objects/GraveStone.png",
     "price": 50,
@@ -619,26 +498,49 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 200
+      },
+      {
+        "type": "shop",
+        "id": "loc-spirits-eve",
+        "price": 350
+      }
+    ]
   },
   {
     "type": "big-craftable",
+    "category": "furniture",
     "id": "seasonal-decor",
-    "gameId": 48,
+    "gameId": "(BC)48",
     "name": "Seasonal Decor",
-    "icon": "assets/objects/SeasonalDecor.png",
+    "icon": "assets/objects/SeasonalDecorSpring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-flower-dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "stone-frog",
-    "gameId": 52,
+    "gameId": "(BC)52",
     "name": "Stone Frog",
     "icon": "assets/objects/StoneFrog.png",
     "price": 50,
@@ -647,12 +549,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "stone-parrot",
-    "gameId": 53,
+    "gameId": "(BC)53",
     "name": "Stone Parrot",
     "icon": "assets/objects/StoneParrot.png",
     "price": 50,
@@ -661,12 +569,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "stone-owl-54",
-    "gameId": 54,
+    "id": "stone-owl-(BC)54",
+    "gameId": "(BC)54",
     "name": "Stone Owl",
     "icon": "assets/objects/StoneOwl_Decorative.png",
     "price": 50,
@@ -675,12 +589,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "stone-junimo",
-    "gameId": 55,
+    "gameId": "(BC)55",
     "name": "Stone Junimo",
     "icon": "assets/objects/StoneJunimo.png",
     "price": 50,
@@ -694,7 +614,7 @@
   {
     "type": "big-craftable",
     "id": "slime-ball",
-    "gameId": 56,
+    "gameId": "(BC)56",
     "name": "Slime Ball",
     "icon": "assets/objects/SlimeBall.png",
     "price": 50,
@@ -708,7 +628,7 @@
   {
     "type": "big-craftable",
     "id": "garden-pot",
-    "gameId": 62,
+    "gameId": "(BC)62",
     "name": "Garden Pot",
     "icon": "assets/objects/GardenPot.png",
     "price": 1000,
@@ -721,106 +641,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "bookcase",
-    "gameId": 64,
-    "name": "Bookcase",
-    "icon": "assets/objects/Bookcase.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "fancy-table",
-    "gameId": 65,
-    "name": "Fancy Table",
-    "icon": "assets/objects/FancyTable.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "ancient-table",
-    "gameId": 66,
-    "name": "Ancient Table",
-    "icon": "assets/objects/AncientTable.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "ancient-stool",
-    "gameId": 67,
-    "name": "Ancient Stool",
-    "icon": "assets/objects/AncientStool.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "grandfather-clock",
-    "gameId": 68,
-    "name": "Grandfather Clock",
-    "icon": "assets/objects/GrandfatherClock.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "teddy-timer",
-    "gameId": 69,
-    "name": "Teddy Timer",
-    "icon": "assets/objects/TeddyTimer.png",
-    "price": 50,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "dead-tree",
-    "gameId": 70,
-    "name": "Dead Tree",
-    "icon": "assets/objects/DeadTree.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "staircase",
-    "gameId": 71,
+    "gameId": "(BC)71",
     "name": "Staircase",
     "icon": "assets/objects/Staircase.png",
     "price": 0,
@@ -829,152 +651,35 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-kent",
+        "quantity": 10,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "loc-desert-trade",
+        "tradeItemId": "jade",
+        "tradeItemGameId": 70,
+        "tradeItemName": "Jade",
+        "tradeItemIcon": "assets/objects/Jade.png",
+        "tradeItemAmount": 1,
+        "days": [
+          "Sunday"
+        ]
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "tall-torch",
-    "gameId": 72,
-    "name": "Tall Torch",
-    "icon": "assets/objects/TallTorch.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "ritual-mask",
-    "gameId": 73,
-    "name": "Ritual Mask",
-    "icon": "assets/objects/RitualMask.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "bonfire",
-    "gameId": 74,
-    "name": "Bonfire",
-    "icon": "assets/objects/Bonfire.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "bongo",
-    "gameId": 75,
-    "name": "Bongo",
-    "icon": "assets/objects/Bongo.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "decorative-spears",
-    "gameId": 76,
-    "name": "Decorative Spears",
-    "icon": "assets/objects/DecorativeSpears.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "boulder",
-    "gameId": 78,
-    "name": "Boulder",
-    "icon": "assets/objects/Boulder.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "door-79",
-    "gameId": 79,
-    "name": "Door",
-    "icon": "assets/objects/Door.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "door-80",
-    "gameId": 80,
-    "name": "Door",
-    "icon": "assets/objects/Door.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "locked-door-81",
-    "gameId": 81,
-    "name": "Locked Door",
-    "icon": "assets/objects/LockedDoor.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "locked-door-82",
-    "gameId": 82,
-    "name": "Locked Door",
-    "icon": "assets/objects/LockedDoor.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "wicked-statue-83",
-    "gameId": 83,
+    "id": "wicked-statue-(BC)83",
+    "gameId": "(BC)83",
     "name": "Wicked Statue",
     "icon": "assets/objects/WickedStatue.png",
     "price": 0,
@@ -987,8 +692,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "wicked-statue-84",
-    "gameId": 84,
+    "id": "wicked-statue-(BC)84",
+    "gameId": "(BC)84",
     "name": "Wicked Statue",
     "icon": "assets/objects/WickedStatue_LitEyes.png",
     "price": 0,
@@ -1002,7 +707,7 @@
   {
     "type": "big-craftable",
     "id": "sloth-skeleton-l",
-    "gameId": 85,
+    "gameId": "(BC)85",
     "name": "Sloth Skeleton L",
     "icon": "assets/objects/SlothSkeletonL.png",
     "price": 0,
@@ -1016,7 +721,7 @@
   {
     "type": "big-craftable",
     "id": "sloth-skeleton-m",
-    "gameId": 86,
+    "gameId": "(BC)86",
     "name": "Sloth Skeleton M",
     "icon": "assets/objects/SlothSkeletonM.png",
     "price": 0,
@@ -1030,7 +735,7 @@
   {
     "type": "big-craftable",
     "id": "sloth-skeleton-r",
-    "gameId": 87,
+    "gameId": "(BC)87",
     "name": "Sloth Skeleton R",
     "icon": "assets/objects/SlothSkeletonR.png",
     "price": 0,
@@ -1044,7 +749,7 @@
   {
     "type": "big-craftable",
     "id": "standing-geode",
-    "gameId": 88,
+    "gameId": "(BC)88",
     "name": "Standing Geode",
     "icon": "assets/objects/StandingGeode.png",
     "price": 0,
@@ -1058,7 +763,7 @@
   {
     "type": "big-craftable",
     "id": "obsidian-vase",
-    "gameId": 89,
+    "gameId": "(BC)89",
     "name": "Obsidian Vase",
     "icon": "assets/objects/ObsidianVase.png",
     "price": 0,
@@ -1072,7 +777,7 @@
   {
     "type": "big-craftable",
     "id": "bone-mill",
-    "gameId": 90,
+    "gameId": "(BC)90",
     "name": "Bone Mill",
     "icon": "assets/objects/BoneMill.png",
     "price": 0,
@@ -1086,7 +791,7 @@
   {
     "type": "big-craftable",
     "id": "singing-stone",
-    "gameId": 94,
+    "gameId": "(BC)94",
     "name": "Singing Stone",
     "icon": "assets/objects/SingingStone.png",
     "price": 0,
@@ -1099,8 +804,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "stone-owl-95",
-    "gameId": 95,
+    "id": "stone-owl-(BC)95",
+    "gameId": "(BC)95",
     "name": "Stone Owl",
     "icon": "assets/objects/StoneOwl_Secret.png",
     "price": 0,
@@ -1114,7 +819,7 @@
   {
     "type": "big-craftable",
     "id": "strange-capsule",
-    "gameId": 96,
+    "gameId": "(BC)96",
     "name": "Strange Capsule",
     "icon": "assets/objects/StrangeCapsule.png",
     "price": 0,
@@ -1128,7 +833,7 @@
   {
     "type": "big-craftable",
     "id": "empty-capsule",
-    "gameId": 98,
+    "gameId": "(BC)98",
     "name": "Empty Capsule",
     "icon": "assets/objects/EmptyCapsule.png",
     "price": 0,
@@ -1141,22 +846,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "feed-hopper",
-    "gameId": 99,
-    "name": "Feed Hopper",
-    "icon": "assets/objects/FeedHopper.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "incubator",
-    "gameId": 101,
+    "gameId": "(BC)101",
     "name": "Incubator",
     "icon": "assets/objects/Incubator.png",
     "price": 0,
@@ -1170,7 +861,7 @@
   {
     "type": "big-craftable",
     "id": "heater",
-    "gameId": 104,
+    "gameId": "(BC)104",
     "name": "Heater",
     "icon": "assets/objects/Heater.png",
     "price": 0,
@@ -1179,12 +870,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-marnie",
+        "price": 2000
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "tapper",
-    "gameId": 105,
+    "gameId": "(BC)105",
     "name": "Tapper",
     "icon": "assets/objects/Tapper.png",
     "price": 0,
@@ -1199,22 +896,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "camera",
-    "gameId": 106,
-    "name": "Camera",
-    "icon": "assets/objects/Camera.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "plush-bunny",
-    "gameId": 107,
+    "gameId": "(BC)107",
     "name": "Plush Bunny",
     "icon": "assets/objects/PlushBunny.png",
     "price": 0,
@@ -1223,12 +906,20 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-egg-festival",
+        "price": 2000,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "tub-o-flowers",
-    "gameId": 108,
+    "gameId": "(BC)108",
     "name": "Tub o' Flowers",
     "icon": "assets/objects/TuboFlowers.png",
     "price": 0,
@@ -1237,12 +928,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-flower-dance",
+        "price": 250
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-110",
-    "gameId": 110,
+    "id": "rarecrow-(BC)110",
+    "gameId": "(BC)110",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_1.png",
     "price": 0,
@@ -1251,26 +948,22 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "decorative-pitcher",
-    "gameId": 111,
-    "name": "Decorative Pitcher",
-    "icon": "assets/objects/DecorativePitcher.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-stardew-valley-fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 800,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "dried-sunflowers",
-    "gameId": 112,
+    "gameId": "(BC)112",
     "name": "Dried Sunflowers",
     "icon": "assets/objects/DriedSunflowers.png",
     "price": 0,
@@ -1283,8 +976,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-113",
-    "gameId": 113,
+    "id": "rarecrow-(BC)113",
+    "gameId": "(BC)113",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_2.png",
     "price": 0,
@@ -1293,12 +986,20 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-spirits-eve",
+        "price": 5000,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "charcoal-kiln",
-    "gameId": 114,
+    "gameId": "(BC)114",
     "name": "Charcoal Kiln",
     "icon": "assets/objects/CharcoalKiln.png",
     "price": 0,
@@ -1312,7 +1013,7 @@
   {
     "type": "big-craftable",
     "id": "stardew-hero-trophy",
-    "gameId": 116,
+    "gameId": "(BC)116",
     "name": "Stardew Hero Trophy",
     "icon": "assets/objects/StardewHeroTrophy.png",
     "price": 0,
@@ -1326,7 +1027,7 @@
   {
     "type": "big-craftable",
     "id": "soda-machine",
-    "gameId": 117,
+    "gameId": "(BC)117",
     "name": "Soda Machine",
     "icon": "assets/objects/SodaMachine.png",
     "price": 0,
@@ -1339,120 +1040,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "barrel-118",
-    "gameId": 118,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-119",
-    "gameId": 119,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "barrel-120",
-    "gameId": 120,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-121",
-    "gameId": 121,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "barrel-122",
-    "gameId": 122,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-123",
-    "gameId": 123,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "barrel-124",
-    "gameId": 124,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-125",
-    "gameId": 125,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "rarecrow-126",
-    "gameId": 126,
+    "id": "rarecrow-(BC)126",
+    "gameId": "(BC)126",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_3.png",
     "price": 0,
@@ -1466,7 +1055,7 @@
   {
     "type": "big-craftable",
     "id": "statue-of-endless-fortune",
-    "gameId": 127,
+    "gameId": "(BC)127",
     "name": "Statue Of Endless Fortune",
     "icon": "assets/objects/StatueOfEndlessFortune.png",
     "price": 0,
@@ -1479,22 +1068,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "mushroom-box",
-    "gameId": 128,
-    "name": "Mushroom Box",
-    "icon": "assets/objects/MushroomBox.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "chest",
-    "gameId": 130,
+    "gameId": "(BC)130",
     "name": "Chest",
     "icon": "assets/objects/Chest.png",
     "price": 0,
@@ -1509,8 +1084,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-136",
-    "gameId": 136,
+    "id": "rarecrow-(BC)136",
+    "gameId": "(BC)136",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_4.png",
     "price": 0,
@@ -1519,12 +1094,31 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-festival-of-ice",
+        "price": 5000,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "loc-traveling-merchant",
+        "price": 4000,
+        "seasons": [
+          "fall",
+          "winter"
+        ],
+        "rotating": true,
+        "stock": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-137",
-    "gameId": 137,
+    "id": "rarecrow-(BC)137",
+    "gameId": "(BC)137",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_5.png",
     "price": 0,
@@ -1533,12 +1127,20 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-flower-dance",
+        "price": 2500,
+        "stock": 1,
+        "stockLimit": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-138",
-    "gameId": 138,
+    "id": "rarecrow-(BC)138",
+    "gameId": "(BC)138",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_6.png",
     "price": 0,
@@ -1547,12 +1149,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-dwarf",
+        "price": 2500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-139",
-    "gameId": 139,
+    "id": "rarecrow-(BC)139",
+    "gameId": "(BC)139",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_7.png",
     "price": 0,
@@ -1561,12 +1169,52 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            20
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "rarecrow-140",
-    "gameId": 140,
+    "id": "rarecrow-(BC)140",
+    "gameId": "(BC)140",
     "name": "Rarecrow",
     "icon": "assets/objects/RareCrow_8.png",
     "price": 0,
@@ -1575,12 +1223,52 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 5000,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.artifacts"
+            },
+            40
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "prairie-king-arcade-system",
-    "gameId": 141,
+    "gameId": "(BC)141",
     "name": "Prairie King Arcade System",
     "icon": "assets/objects/PrairieKingArcadeSystem.png",
     "price": 0,
@@ -1594,7 +1282,7 @@
   {
     "type": "big-craftable",
     "id": "wooden-brazier",
-    "gameId": 143,
+    "gameId": "(BC)143",
     "name": "Wooden Brazier",
     "icon": "assets/objects/WoodenBrazier.png",
     "price": 25,
@@ -1611,7 +1299,7 @@
   {
     "type": "big-craftable",
     "id": "stone-brazier",
-    "gameId": 144,
+    "gameId": "(BC)144",
     "name": "Stone Brazier",
     "icon": "assets/objects/StoneBrazier.png",
     "price": 40,
@@ -1628,7 +1316,7 @@
   {
     "type": "big-craftable",
     "id": "gold-brazier",
-    "gameId": 145,
+    "gameId": "(BC)145",
     "name": "Gold Brazier",
     "icon": "assets/objects/GoldBrazier.png",
     "price": 100,
@@ -1644,8 +1332,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "campfire-146",
-    "gameId": 146,
+    "id": "campfire-(BC)146",
+    "gameId": "(BC)146",
     "name": "Campfire",
     "icon": "assets/objects/Campfire.png",
     "price": 0,
@@ -1663,7 +1351,7 @@
   {
     "type": "big-craftable",
     "id": "stump-brazier",
-    "gameId": 147,
+    "gameId": "(BC)147",
     "name": "Stump Brazier",
     "icon": "assets/objects/StumpBrazier.png",
     "price": 80,
@@ -1680,7 +1368,7 @@
   {
     "type": "big-craftable",
     "id": "carved-brazier",
-    "gameId": 148,
+    "gameId": "(BC)148",
     "name": "Carved Brazier",
     "icon": "assets/objects/CarvedBrazier.png",
     "price": 200,
@@ -1697,7 +1385,7 @@
   {
     "type": "big-craftable",
     "id": "skull-brazier",
-    "gameId": 149,
+    "gameId": "(BC)149",
     "name": "Skull Brazier",
     "icon": "assets/objects/SkullBrazier.png",
     "price": 300,
@@ -1714,7 +1402,7 @@
   {
     "type": "big-craftable",
     "id": "barrel-brazier",
-    "gameId": 150,
+    "gameId": "(BC)150",
     "name": "Barrel Brazier",
     "icon": "assets/objects/BarrelBrazier.png",
     "price": 80,
@@ -1731,7 +1419,7 @@
   {
     "type": "big-craftable",
     "id": "marble-brazier",
-    "gameId": 151,
+    "gameId": "(BC)151",
     "name": "Marble Brazier",
     "icon": "assets/objects/MarbleBrazier.png",
     "price": 500,
@@ -1748,7 +1436,7 @@
   {
     "type": "big-craftable",
     "id": "wood-lamp-post",
-    "gameId": 152,
+    "gameId": "(BC)152",
     "name": "Wood Lamp-post",
     "icon": "assets/objects/WoodLamppost.png",
     "price": 50,
@@ -1762,7 +1450,7 @@
   {
     "type": "big-craftable",
     "id": "iron-lamp-post",
-    "gameId": 153,
+    "gameId": "(BC)153",
     "name": "Iron Lamp-post",
     "icon": "assets/objects/IronLamppost.png",
     "price": 100,
@@ -1776,7 +1464,7 @@
   {
     "type": "big-craftable",
     "id": "worm-bin",
-    "gameId": 154,
+    "gameId": "(BC)154",
     "name": "Worm Bin",
     "icon": "assets/objects/WormBin.png",
     "price": 0,
@@ -1790,7 +1478,7 @@
   {
     "type": "big-craftable",
     "id": "slime-incubator",
-    "gameId": 156,
+    "gameId": "(BC)156",
     "name": "Slime Incubator",
     "icon": "assets/objects/SlimeIncubator.png",
     "price": 0,
@@ -1804,7 +1492,7 @@
   {
     "type": "big-craftable",
     "id": "slime-egg-press",
-    "gameId": 158,
+    "gameId": "(BC)158",
     "name": "Slime Egg-Press",
     "icon": "assets/objects/SlimeEggPress.png",
     "price": 0,
@@ -1818,7 +1506,7 @@
   {
     "type": "big-craftable",
     "id": "junimo-kart-arcade-system",
-    "gameId": 159,
+    "gameId": "(BC)159",
     "name": "Junimo Kart Arcade System",
     "icon": "assets/objects/JunimoKartArcadeSystem.png",
     "price": 0,
@@ -1832,7 +1520,7 @@
   {
     "type": "big-craftable",
     "id": "statue-of-perfection",
-    "gameId": 160,
+    "gameId": "(BC)160",
     "name": "Statue Of Perfection",
     "icon": "assets/objects/StatueOfPerfection.png",
     "price": 0,
@@ -1846,7 +1534,7 @@
   {
     "type": "big-craftable",
     "id": "cask",
-    "gameId": 163,
+    "gameId": "(BC)163",
     "name": "Cask",
     "icon": "assets/objects/Cask.png",
     "price": 0,
@@ -1860,7 +1548,7 @@
   {
     "type": "big-craftable",
     "id": "solid-gold-lewis",
-    "gameId": 164,
+    "gameId": "(BC)164",
     "name": "Solid Gold Lewis",
     "icon": "assets/objects/SolidGoldLewis.png",
     "price": 0,
@@ -1874,7 +1562,7 @@
   {
     "type": "big-craftable",
     "id": "auto-grabber",
-    "gameId": 165,
+    "gameId": "(BC)165",
     "name": "Auto-Grabber",
     "icon": "assets/objects/AutoGrabber.png",
     "price": 0,
@@ -1883,12 +1571,26 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-marnie",
+        "price": 25000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.skills.farming"
+            },
+            10
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "deluxe-scarecrow",
-    "gameId": 167,
+    "gameId": "(BC)167",
     "name": "Deluxe Scarecrow",
     "icon": "assets/objects/DeluxeScarecrow.png",
     "price": 50,
@@ -1901,36 +1603,8 @@
   },
   {
     "type": "big-craftable",
-    "id": "barrel-174",
-    "gameId": 174,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-175",
-    "gameId": 175,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
     "id": "geode-crusher",
-    "gameId": 182,
+    "gameId": "(BC)182",
     "name": "Geode Crusher",
     "icon": "assets/objects/GeodeCrusher.png",
     "price": 0,
@@ -1943,92 +1617,164 @@
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-184",
-    "gameId": 184,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)184",
+    "gameId": "(BC)184",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant1Spring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-egg-festival",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-188",
-    "gameId": 188,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)188",
+    "gameId": "(BC)188",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant2Spring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-egg-festival",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-192",
-    "gameId": 192,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)192",
+    "gameId": "(BC)192",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant3Spring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-flower-dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-196",
-    "gameId": 196,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)196",
+    "gameId": "(BC)196",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant4Spring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "loc-sandy",
+        "price": 220
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-200",
-    "gameId": 200,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)200",
+    "gameId": "(BC)200",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant5Spring.png",
     "price": 200,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 240
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "seasonal-plant-204",
-    "gameId": 204,
+    "category": "furniture",
+    "id": "seasonal-plant-(BC)204",
+    "gameId": "(BC)204",
     "name": "Seasonal Plant",
-    "icon": "assets/objects/SeasonalPlant.png",
+    "icon": "assets/objects/SeasonalPlant6Spring.png",
     "price": 50,
     "edibility": -300,
     "gameCategory": "Big Craftable",
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-flower-dance",
+        "price": 350
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 500
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "workbench",
-    "gameId": 208,
+    "gameId": "(BC)208",
     "name": "Workbench",
     "icon": "assets/objects/Workbench.png",
     "price": 1000,
@@ -2037,12 +1783,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 400
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "mini-jukebox",
-    "gameId": 209,
+    "gameId": "(BC)209",
     "name": "Mini-Jukebox",
     "icon": "assets/objects/MiniJukebox.png",
     "price": 1500,
@@ -2056,7 +1808,7 @@
   {
     "type": "big-craftable",
     "id": "wood-chipper",
-    "gameId": 211,
+    "gameId": "(BC)211",
     "name": "Wood Chipper",
     "icon": "assets/objects/WoodChipper.png",
     "price": 500,
@@ -2065,12 +1817,40 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 160,
+        "yearUnlock": 2
+      },
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 160,
+        "seasons": [
+          "winter"
+        ],
+        "yearUnlock": 2,
+        "yearUnlockBefore": true
+      },
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-kent",
+        "price": 160,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "stock": 1
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "telephone",
-    "gameId": 214,
+    "gameId": "(BC)214",
     "name": "Telephone",
     "icon": "assets/objects/Telephone.png",
     "price": 1000,
@@ -2079,12 +1859,18 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 300
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "mini-fridge",
-    "gameId": 216,
+    "gameId": "(BC)216",
     "name": "Mini-Fridge",
     "icon": "assets/objects/MiniFridge.png",
     "price": 1500,
@@ -2093,40 +1879,26 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "cursed-p-k-arcade-system",
-    "gameId": 219,
-    "name": "Cursed P.K. Arcade System",
-    "icon": "assets/objects/CursedPKArcadeSystem.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "item-pedestal",
-    "gameId": 221,
-    "name": "Item Pedestal",
-    "icon": "assets/objects/ItemPedestal.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-robin",
+        "price": 120,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "solar-panel",
-    "gameId": 231,
+    "gameId": "(BC)231",
     "name": "Solar Panel",
     "icon": "assets/objects/SolarPanel.png",
     "price": 0,
@@ -2140,7 +1912,7 @@
   {
     "type": "big-craftable",
     "id": "stone-chest",
-    "gameId": 232,
+    "gameId": "(BC)232",
     "name": "Stone Chest",
     "icon": "assets/objects/StoneChest.png",
     "price": 0,
@@ -2156,7 +1928,7 @@
   {
     "type": "big-craftable",
     "id": "mini-obelisk",
-    "gameId": 238,
+    "gameId": "(BC)238",
     "name": "Mini-Obelisk",
     "icon": "assets/objects/MiniObelisk.png",
     "price": 0,
@@ -2170,7 +1942,7 @@
   {
     "type": "big-craftable",
     "id": "farm-computer",
-    "gameId": 239,
+    "gameId": "(BC)239",
     "name": "Farm Computer",
     "icon": "assets/objects/FarmComputer.png",
     "price": 0,
@@ -2184,7 +1956,7 @@
   {
     "type": "big-craftable",
     "id": "coffee-maker",
-    "gameId": 246,
+    "gameId": "(BC)246",
     "name": "Coffee Maker",
     "icon": "assets/objects/CoffeeMaker.png",
     "price": 0,
@@ -2198,7 +1970,7 @@
   {
     "type": "big-craftable",
     "id": "sewing-machine",
-    "gameId": 247,
+    "gameId": "(BC)247",
     "name": "Sewing Machine",
     "icon": "assets/objects/SewingMachine.png",
     "price": 0,
@@ -2212,7 +1984,7 @@
   {
     "type": "big-craftable",
     "id": "mini-shipping-bin",
-    "gameId": 248,
+    "gameId": "(BC)248",
     "name": "Mini-Shipping Bin",
     "icon": "assets/objects/MiniShippingBin.png",
     "price": 0,
@@ -2221,12 +1993,25 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 60
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "ostrich-incubator",
-    "gameId": 254,
+    "gameId": "(BC)254",
     "name": "Ostrich Incubator",
     "icon": "assets/objects/OstrichIncubator.png",
     "price": 0,
@@ -2240,7 +2025,7 @@
   {
     "type": "big-craftable",
     "id": "junimo-chest",
-    "gameId": 256,
+    "gameId": "(BC)256",
     "name": "Junimo Chest",
     "icon": "assets/objects/JunimoChest.png",
     "price": 0,
@@ -2249,40 +2034,50 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "barrel-262",
-    "gameId": 262,
-    "name": "Barrel",
-    "icon": "assets/objects/Barrel.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
-  },
-  {
-    "type": "big-craftable",
-    "id": "crate-263",
-    "gameId": 263,
-    "name": "Crate",
-    "icon": "assets/objects/Crate.png",
-    "price": 0,
-    "edibility": -300,
-    "gameCategory": "Big Craftable",
-    "contextTags": [],
-    "bundles": [],
-    "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "quantity": 2,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 30,
+        "condition": {
+          "!": {
+            "in": [
+              "gotFirstJunimoChest",
+              {
+                "var": "player.mail"
+              }
+            ]
+          }
+        },
+        "stock": 1,
+        "stockLimit": 2
+      },
+      {
+        "type": "shop",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 120,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 15
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "heavy-tapper",
-    "gameId": 264,
+    "gameId": "(BC)264",
     "name": "Heavy Tapper",
     "icon": "assets/objects/HeavyTapper.png",
     "price": 0,
@@ -2299,7 +2094,7 @@
   {
     "type": "big-craftable",
     "id": "deconstructor",
-    "gameId": 265,
+    "gameId": "(BC)265",
     "name": "Deconstructor",
     "icon": "assets/objects/Deconstructor.png",
     "price": 0,
@@ -2308,12 +2103,25 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 600,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 20
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "auto-petter",
-    "gameId": 272,
+    "gameId": "(BC)272",
     "name": "Auto-Petter",
     "icon": "assets/objects/AutoPetter.png",
     "price": 0,
@@ -2322,12 +2130,26 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-joja",
+        "price": 50000,
+        "condition": {
+          "in": [
+            502261,
+            {
+              "var": "player.events"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "type": "big-craftable",
     "id": "hopper",
-    "gameId": 275,
+    "gameId": "(BC)275",
     "name": "Hopper",
     "icon": "assets/objects/Hopper.png",
     "price": 0,
@@ -2336,12 +2158,24 @@
     "contextTags": [],
     "bundles": [],
     "gifts": {},
-    "sources": []
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 10
+      }
+    ]
   },
   {
     "type": "big-craftable",
-    "id": "campfire-278",
-    "gameId": 278,
+    "id": "campfire-(BC)278",
+    "gameId": "(BC)278",
     "name": "Campfire",
     "icon": "assets/objects/Campfire_2.png",
     "price": 0,
@@ -2359,7 +2193,7 @@
   {
     "type": "big-craftable",
     "id": "statue-of-true-perfection",
-    "gameId": 280,
+    "gameId": "(BC)280",
     "name": "Statue Of True Perfection",
     "icon": "assets/objects/StatueOfTruePerfection.png",
     "price": 0,
@@ -2373,7 +2207,7 @@
   {
     "type": "big-craftable",
     "id": "text-sign",
-    "gameId": "TextSign",
+    "gameId": "(BC)TextSign",
     "name": "Text Sign",
     "icon": "assets/objects/TextSign.png",
     "price": 50,
@@ -2387,7 +2221,7 @@
   {
     "type": "big-craftable",
     "id": "mushroom-log",
-    "gameId": "MushroomLog",
+    "gameId": "(BC)MushroomLog",
     "name": "Mushroom Log",
     "icon": "assets/objects/MushroomLog.png",
     "price": 50,
@@ -2401,7 +2235,7 @@
   {
     "type": "big-craftable",
     "id": "bait-maker",
-    "gameId": "BaitMaker",
+    "gameId": "(BC)BaitMaker",
     "name": "Bait Maker",
     "icon": "assets/objects/BaitMaker.png",
     "price": 50,
@@ -2415,7 +2249,7 @@
   {
     "type": "big-craftable",
     "id": "dehydrator",
-    "gameId": "Dehydrator",
+    "gameId": "(BC)Dehydrator",
     "name": "Dehydrator",
     "icon": "assets/objects/Dehydrator.png",
     "price": 50,
@@ -2429,7 +2263,7 @@
   {
     "type": "big-craftable",
     "id": "heavy-furnace",
-    "gameId": "HeavyFurnace",
+    "gameId": "(BC)HeavyFurnace",
     "name": "Heavy Furnace",
     "icon": "assets/objects/HeavyFurnace.png",
     "price": 50,
@@ -2443,7 +2277,7 @@
   {
     "type": "big-craftable",
     "id": "statue-of-blessings",
-    "gameId": "StatueOfBlessings",
+    "gameId": "(BC)StatueOfBlessings",
     "name": "Statue Of Blessings",
     "icon": "assets/objects/StatueOfBlessings.png",
     "price": 50,
@@ -2457,7 +2291,7 @@
   {
     "type": "big-craftable",
     "id": "statue-of-the-dwarf-king",
-    "gameId": "StatueOfTheDwarfKing",
+    "gameId": "(BC)StatueOfTheDwarfKing",
     "name": "Statue Of The Dwarf King",
     "icon": "assets/objects/StatueOfTheDwarfKing.png",
     "price": 50,
@@ -2471,7 +2305,7 @@
   {
     "type": "big-craftable",
     "id": "anvil",
-    "gameId": "Anvil",
+    "gameId": "(BC)Anvil",
     "name": "Anvil",
     "icon": "assets/objects/Anvil.png",
     "price": 50,
@@ -2485,7 +2319,7 @@
   {
     "type": "big-craftable",
     "id": "mini-forge",
-    "gameId": "MiniForge",
+    "gameId": "(BC)MiniForge",
     "name": "Mini-Forge",
     "icon": "assets/objects/MiniForge.png",
     "price": 50,
@@ -2499,7 +2333,7 @@
   {
     "type": "big-craftable",
     "id": "fish-smoker",
-    "gameId": "FishSmoker",
+    "gameId": "(BC)FishSmoker",
     "name": "Fish Smoker",
     "icon": "assets/objects/FishSmoker.png",
     "price": 1000,
@@ -2513,7 +2347,7 @@
   {
     "type": "big-craftable",
     "id": "deluxe-worm-bin",
-    "gameId": "DeluxeWormBin",
+    "gameId": "(BC)DeluxeWormBin",
     "name": "Deluxe Worm Bin",
     "icon": "assets/objects/DeluxeWormBin.png",
     "price": 0,
@@ -2527,7 +2361,7 @@
   {
     "type": "big-craftable",
     "id": "big-chest",
-    "gameId": "BigChest",
+    "gameId": "(BC)BigChest",
     "name": "Big Chest",
     "icon": "assets/objects/BigChest.png",
     "price": 0,
@@ -2543,7 +2377,7 @@
   {
     "type": "big-craftable",
     "id": "big-stone-chest",
-    "gameId": "BigStoneChest",
+    "gameId": "(BC)BigStoneChest",
     "name": "Big Stone Chest",
     "icon": "assets/objects/BigStoneChest.png",
     "price": 0,

@@ -14,7 +14,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -56,7 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 100,
         "tradeItemId": "quartz",
         "tradeItemGameId": 80,
@@ -66,58 +66,76 @@
       },
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 1000
       },
       {
         "type": "shop",
-        "id": "store-volcano-shop",
+        "id": "loc-volcano-shop",
         "price": 1000
       },
       {
         "type": "monster-drop",
         "monster": "Bat",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Frost Bat",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Lava Bat",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Lava Crab",
-        "chance": 0.4
+        "rolls": [
+          0.4
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Squid Kid",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Serpent",
-        "chance": 0.15
+        "rolls": [
+          0.15
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Hot Head",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Royal Serpent",
-        "chance": 0.15
+        "rolls": [
+          0.15
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Blue Squid",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "crafting",
@@ -166,7 +184,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -208,23 +226,27 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 450
       },
       {
         "type": "shop",
-        "id": "store-volcano-shop",
+        "id": "loc-volcano-shop",
         "price": 450
       },
       {
         "type": "monster-drop",
         "monster": "Duggy",
-        "chance": 0.25
+        "rolls": [
+          0.25
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Rock Crab",
-        "chance": 0.4
+        "rolls": [
+          0.4
+        ]
       },
       {
         "type": "crafting",
@@ -270,7 +292,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -309,7 +331,14 @@
       "krobus": "dislike",
       "leo": "dislike"
     },
-    "sources": []
+    "sources": [
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate Dwarf Scroll I, then donate Dwarf Scroll II, then donate Dwarf Scroll III, then donate Dwarf Scroll IV"
+      }
+    ]
   },
   {
     "type": "crafted",
@@ -325,7 +354,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -367,7 +396,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-qi-gem-shop",
+        "id": "loc-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -393,7 +422,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -435,7 +464,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-qi-gem-shop",
+        "id": "loc-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -461,7 +490,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -503,7 +532,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-qi-gem-shop",
+        "id": "loc-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 100,
@@ -527,7 +556,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -592,7 +621,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -652,59 +681,6 @@
   },
   {
     "type": "crafted",
-    "id": "hedge",
-    "gameId": "(O)929",
-    "name": "Hedge",
-    "icon": "assets/objects/Hedge.png",
-    "price": 10,
-    "edibility": -300,
-    "gameCategory": -8,
-    "contextTags": [],
-    "canBeGifted": true,
-    "sellingLocations": [
-      "store-shipping-bin"
-    ],
-    "bundles": [],
-    "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "dislike",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
-    },
-    "sources": []
-  },
-  {
-    "type": "crafted",
     "id": "iridium-sprinkler",
     "gameId": "(O)645",
     "name": "Iridium Sprinkler",
@@ -715,7 +691,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -757,7 +733,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-krobus",
+        "id": "loc-krobus",
         "price": 10000,
         "days": [
           "Friday"
@@ -802,7 +778,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -874,7 +850,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -916,7 +892,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-spirits-eve",
+        "id": "loc-spirits-eve",
         "price": 750,
         "quantity": 5,
         "stockLimit": 1
@@ -953,7 +929,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -995,7 +971,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "price": 100,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1005,7 +981,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 100,
         "tradeItemId": "iridium-ore",
         "tradeItemGameId": 386,
@@ -1015,33 +991,41 @@
       },
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 1600
       },
       {
         "type": "shop",
-        "id": "store-volcano-shop",
+        "id": "loc-volcano-shop",
         "price": 1600
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Bat",
-        "chance": 0.05
+        "rolls": [
+          0.05
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Squid Kid",
-        "chance": 0.05
+        "rolls": [
+          0.05
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Magma Duggy",
-        "chance": 0.4
+        "rolls": [
+          0.4
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Blue Squid",
-        "chance": 0.05
+        "rolls": [
+          0.05
+        ]
       },
       {
         "type": "crafting",
@@ -1086,7 +1070,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1164,7 +1148,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1238,7 +1222,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1308,7 +1292,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

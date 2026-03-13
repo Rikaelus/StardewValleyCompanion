@@ -89,6 +89,7 @@ namespace DataExporter
                     "Data/MonsterSlayerQuests",
                     "Data/Achievements",
                     "Data/MuseumRewards",
+                    "Data/IslandFieldOffice",
                     "Data/Powers",
 
                     // Buildings & Animals
@@ -140,6 +141,7 @@ namespace DataExporter
                     "Data/Events/HarveyRoom",
                     "Data/Events/Hospital",
                     "Data/Events/IslandFarmHouse",
+                    "Data/Events/IslandFieldOffice",
                     "Data/Events/IslandHut",
                     "Data/Events/IslandNorth",
                     "Data/Events/IslandSouth",

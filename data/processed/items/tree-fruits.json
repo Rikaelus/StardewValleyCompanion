@@ -17,8 +17,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "exotic-foraging"
@@ -59,8 +59,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "exotic-foraging"
@@ -104,8 +104,8 @@
     ],
     "treeId": "banana",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -143,8 +143,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -182,8 +182,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "summer-crops",
@@ -225,8 +225,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "summer-crops"
@@ -267,8 +267,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "summer-crops"
@@ -307,8 +307,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -346,8 +346,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -383,8 +383,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -424,8 +424,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "summer-foraging"
@@ -467,8 +467,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "summer-foraging"
@@ -509,8 +509,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -549,8 +549,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "fall-foraging"
@@ -590,8 +590,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "fall-foraging"
@@ -632,8 +632,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "winter-foraging"
@@ -672,8 +672,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "the-missing"
@@ -715,8 +715,8 @@
     ],
     "treeId": "apple",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan",
@@ -779,8 +779,8 @@
     ],
     "treeId": "apricot",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan"
@@ -842,8 +842,8 @@
     ],
     "treeId": "orange",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan"
@@ -905,8 +905,8 @@
     ],
     "treeId": "peach",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan"
@@ -968,8 +968,8 @@
     ],
     "treeId": "pomegranate",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan",
@@ -1032,8 +1032,8 @@
     ],
     "treeId": "cherry",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "artisan"
@@ -1091,8 +1091,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1132,8 +1132,8 @@
     ],
     "treeId": "mango",
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1170,8 +1170,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1209,8 +1209,8 @@
     "seasons": [],
     "treeId": null,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

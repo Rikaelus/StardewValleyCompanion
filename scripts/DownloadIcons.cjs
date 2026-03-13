@@ -79,9 +79,11 @@ function getWikiImageUrl(wikiName) {
 }
 
 // Derive the wiki image name for an item.
-// Priority: icon-overrides.json > item.name > PascalCase-split of icon filename.
+// Priority: icon-overrides.json (by friendly id or gameId) > item.wikiName > item.name > PascalCase-split of icon filename.
 function wikiNameForItem(item, overrides) {
   if (overrides[item.id]) return overrides[item.id];
+  if (item.gameId && overrides[item.gameId]) return overrides[item.gameId];
+  if (item.wikiName) return item.wikiName;
   if (item.name) return item.name;
   // Fallback: split PascalCase icon filename
   const filename = path.basename(item.icon, '.png');

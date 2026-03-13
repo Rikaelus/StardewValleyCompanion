@@ -12,6 +12,7 @@
       "(BLD)Deluxe Coop"
     ],
     "purchasePrice": null,
+    "sellPrice": 800,
     "daysToMature": 3,
     "daysToProduce": 1,
     "harvestType": 0,
@@ -37,6 +38,7 @@
       "(BLD)Deluxe Coop"
     ],
     "purchasePrice": null,
+    "sellPrice": 800,
     "daysToMature": 3,
     "daysToProduce": 1,
     "harvestType": 0,
@@ -46,18 +48,26 @@
     "deluxeProduceGameIds": [
       "(O)182"
     ],
-    "eggGameIds": [
-      "(O)180",
-      "(O)182"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "hatch",
-        "eggGameIds": [
-          "(O)180",
-          "(O)182"
-        ]
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "egg-brown",
+            "inputGameId": "(O)180",
+            "inputName": "Egg",
+            "inputType": "specific"
+          },
+          {
+            "inputId": "large-egg-brown",
+            "inputGameId": "(O)182",
+            "inputName": "Large Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 9000
       }
     ]
   },
@@ -74,6 +84,7 @@
       "(BLD)Deluxe Barn"
     ],
     "purchasePrice": null,
+    "sellPrice": 1500,
     "daysToMature": 5,
     "daysToProduce": 1,
     "harvestType": 1,
@@ -104,22 +115,27 @@
       "(BLD)Deluxe Coop"
     ],
     "purchasePrice": null,
+    "sellPrice": 1000,
     "daysToMature": 0,
     "daysToProduce": 7,
     "harvestType": 0,
     "produceGameIds": [
       "(O)107"
     ],
-    "eggGameIds": [
-      "(O)107"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "hatch",
-        "eggGameIds": [
-          "(O)107"
-        ]
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "dinosaur-egg",
+            "inputGameId": "(O)107",
+            "inputName": "Dinosaur Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 18000
       }
     ]
   },
@@ -136,7 +152,8 @@
       "(BLD)Deluxe Coop"
     ],
     "requiredBuildingGameId": "(BLD)Big Coop",
-    "purchasePrice": 600,
+    "purchasePrice": 1200,
+    "sellPrice": 1200,
     "daysToMature": 5,
     "daysToProduce": 2,
     "harvestType": 0,
@@ -146,15 +163,25 @@
     "deluxeProduceGameIds": [
       "(O)444"
     ],
-    "eggGameIds": [
-      "(O)442"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 600
+        "id": "loc-marnie",
+        "price": 1200
+      },
+      {
+        "type": "hatch",
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "duck-egg",
+            "inputGameId": "(O)442",
+            "inputName": "Duck Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 9000
       }
     ]
   },
@@ -171,7 +198,8 @@
       "(BLD)Deluxe Barn"
     ],
     "requiredBuildingGameId": "(BLD)Big Barn",
-    "purchasePrice": 2000,
+    "purchasePrice": 4000,
+    "sellPrice": 4000,
     "daysToMature": 5,
     "daysToProduce": 2,
     "harvestType": 1,
@@ -186,8 +214,11 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 2000
+        "id": "loc-marnie",
+        "price": 4000
+      },
+      {
+        "type": "pregnancy"
       }
     ]
   },
@@ -204,22 +235,27 @@
       "(BLD)Deluxe Coop"
     ],
     "purchasePrice": null,
+    "sellPrice": 800,
     "daysToMature": 3,
     "daysToProduce": 1,
     "harvestType": 0,
     "produceGameIds": [
       "(O)928"
     ],
-    "eggGameIds": [
-      "(O)928"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "hatch",
-        "eggGameIds": [
-          "(O)928"
-        ]
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "golden-egg",
+            "inputGameId": "(O)928",
+            "inputName": "Golden Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 9000
       }
     ]
   },
@@ -237,22 +273,27 @@
     ],
     "requiredBuildingGameId": "(BLD)Barn",
     "purchasePrice": null,
+    "sellPrice": 16000,
     "daysToMature": 7,
     "daysToProduce": 7,
     "harvestType": 0,
     "produceGameIds": [
       "(O)289"
     ],
-    "eggGameIds": [
-      "(O)289"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "hatch",
-        "eggGameIds": [
-          "(O)289"
-        ]
+        "id": "ostrich-incubator",
+        "inputDetails": [
+          {
+            "inputId": "ostrich-egg",
+            "inputGameId": "(O)289",
+            "inputName": "Ostrich Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 15000
       }
     ]
   },
@@ -269,7 +310,8 @@
       "(BLD)Deluxe Barn"
     ],
     "requiredBuildingGameId": "(BLD)Deluxe Barn",
-    "purchasePrice": 8000,
+    "purchasePrice": 16000,
+    "sellPrice": 16000,
     "daysToMature": 10,
     "daysToProduce": 1,
     "harvestType": 2,
@@ -280,8 +322,11 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 8000
+        "id": "loc-marnie",
+        "price": 16000
+      },
+      {
+        "type": "pregnancy"
       }
     ]
   },
@@ -298,7 +343,8 @@
       "(BLD)Deluxe Coop"
     ],
     "requiredBuildingGameId": "(BLD)Deluxe Coop",
-    "purchasePrice": 4000,
+    "purchasePrice": 8000,
+    "sellPrice": 8000,
     "daysToMature": 6,
     "daysToProduce": 4,
     "harvestType": 0,
@@ -312,8 +358,8 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 4000
+        "id": "loc-marnie",
+        "price": 8000
       }
     ]
   },
@@ -330,7 +376,8 @@
       "(BLD)Deluxe Barn"
     ],
     "requiredBuildingGameId": "(BLD)Deluxe Barn",
-    "purchasePrice": 4000,
+    "purchasePrice": 8000,
+    "sellPrice": 8000,
     "daysToMature": 4,
     "daysToProduce": 3,
     "harvestType": 1,
@@ -342,8 +389,11 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 4000
+        "id": "loc-marnie",
+        "price": 8000
+      },
+      {
+        "type": "pregnancy"
       }
     ]
   },
@@ -360,22 +410,27 @@
       "(BLD)Deluxe Coop"
     ],
     "purchasePrice": null,
+    "sellPrice": 800,
     "daysToMature": 3,
     "daysToProduce": 1,
     "harvestType": 0,
     "produceGameIds": [
       "(O)305"
     ],
-    "eggGameIds": [
-      "(O)305"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "hatch",
-        "eggGameIds": [
-          "(O)305"
-        ]
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "void-egg",
+            "inputGameId": "(O)305",
+            "inputName": "Void Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 9000
       }
     ]
   },
@@ -392,7 +447,8 @@
       "(BLD)Deluxe Coop"
     ],
     "requiredBuildingGameId": "(BLD)Coop",
-    "purchasePrice": 400,
+    "purchasePrice": 800,
+    "sellPrice": 800,
     "daysToMature": 3,
     "daysToProduce": 1,
     "harvestType": 0,
@@ -402,16 +458,31 @@
     "deluxeProduceGameIds": [
       "(O)174"
     ],
-    "eggGameIds": [
-      "(O)176",
-      "(O)174"
-    ],
     "canGetPregnant": false,
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 400
+        "id": "loc-marnie",
+        "price": 800
+      },
+      {
+        "type": "hatch",
+        "id": "incubator",
+        "inputDetails": [
+          {
+            "inputId": "egg-white",
+            "inputGameId": "(O)176",
+            "inputName": "Egg",
+            "inputType": "specific"
+          },
+          {
+            "inputId": "large-egg-white",
+            "inputGameId": "(O)174",
+            "inputName": "Large Egg",
+            "inputType": "specific"
+          }
+        ],
+        "processingTimeMinutes": 9000
       }
     ]
   },
@@ -428,7 +499,8 @@
       "(BLD)Deluxe Barn"
     ],
     "requiredBuildingGameId": "(BLD)Barn",
-    "purchasePrice": 750,
+    "purchasePrice": 1500,
+    "sellPrice": 1500,
     "daysToMature": 5,
     "daysToProduce": 1,
     "harvestType": 1,
@@ -443,8 +515,11 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
-        "price": 750
+        "id": "loc-marnie",
+        "price": 1500
+      },
+      {
+        "type": "pregnancy"
       }
     ]
   }

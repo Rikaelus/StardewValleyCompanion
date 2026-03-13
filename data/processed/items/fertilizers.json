@@ -15,8 +15,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -58,7 +58,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50
       },
       {
@@ -100,8 +100,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -143,7 +143,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50
       },
       {
@@ -184,8 +184,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -257,8 +257,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -335,8 +335,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -378,7 +378,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-demetrius",
+        "id": "loc-desert-festival-demetrius",
         "price": 80,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -389,7 +389,7 @@
       },
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 80,
         "days": [
           "Thursday"
@@ -397,7 +397,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -438,8 +438,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -516,8 +516,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -559,7 +559,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -606,8 +606,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -649,7 +649,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 200,
         "days": [
           "Saturday"
@@ -657,7 +657,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 75,
         "yearUnlock": 2
       },
@@ -699,8 +699,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -742,7 +742,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50
       },
       {
@@ -782,8 +782,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

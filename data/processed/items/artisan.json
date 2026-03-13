@@ -21,7 +21,7 @@
           {
             "inputId": "wool",
             "inputName": "Wool",
-            "inputGameId": 440,
+            "inputGameId": "(O)440",
             "inputBasePrice": 340,
             "inputGameCategory": -18,
             "inputType": "Basic",
@@ -32,7 +32,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-emily",
+        "id": "loc-desert-festival-emily",
         "price": 940,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -44,7 +44,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 940,
         "tradeItemId": "aquamarine",
         "tradeItemGameId": 62,
@@ -58,7 +58,10 @@
       {
         "type": "monster-drop",
         "monster": "Mummy",
-        "chance": 0.25
+        "rolls": [
+          0.2,
+          0.05
+        ]
       },
       {
         "type": "mail",
@@ -83,7 +86,7 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "love",
       "haley": "like",
       "jas": "hate",
       "vincent": "hate",
@@ -105,8 +108,8 @@
     },
     "processingTimeMinutes": 240,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -143,7 +146,7 @@
           {
             "inputId": "wheat",
             "inputName": "Wheat",
-            "inputGameId": 262,
+            "inputGameId": "(O)262",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "Basic",
@@ -154,7 +157,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-pam",
+        "id": "loc-desert-festival-pam",
         "price": 400,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -164,12 +167,12 @@
       },
       {
         "type": "shop",
-        "id": "store-resort-bar",
+        "id": "loc-resort-bar",
         "price": 500
       },
       {
         "type": "shop",
-        "id": "store-gus",
+        "id": "loc-gus",
         "price": 400
       },
       {
@@ -193,8 +196,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
-      "pam": "like",
+      "penny": "hate",
+      "pam": "love",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -203,7 +206,7 @@
       "kent": "like",
       "sam": "like",
       "leah": "like",
-      "shane": "like",
+      "shane": "love",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
@@ -213,12 +216,12 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "dislike"
     },
     "processingTimeMinutes": 1750,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -255,7 +258,7 @@
           {
             "inputId": "hops",
             "inputName": "Hops",
-            "inputGameId": 304,
+            "inputGameId": "(O)304",
             "inputBasePrice": 25,
             "inputGameCategory": -75,
             "inputType": "Basic",
@@ -266,7 +269,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-pam",
+        "id": "loc-desert-festival-pam",
         "price": 600,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -276,7 +279,7 @@
       },
       {
         "type": "shop",
-        "id": "store-resort-bar",
+        "id": "loc-resort-bar",
         "price": 1000
       }
     ],
@@ -295,8 +298,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
-      "pam": "like",
+      "penny": "hate",
+      "pam": "love",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -315,15 +318,15 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "dislike"
     },
     "processingTimeMinutes": 2250,
     "canBeAged": true,
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -358,7 +361,7 @@
           {
             "inputId": "tea-leaves",
             "inputName": "Tea Leaves",
-            "inputGameId": 815,
+            "inputGameId": "(O)815",
             "inputBasePrice": 50,
             "inputGameCategory": -75,
             "inputType": "Basic",
@@ -369,7 +372,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-caroline",
+        "id": "loc-desert-festival-caroline",
         "price": 200,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -384,15 +387,15 @@
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "hate",
+      "sebastian": "like",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "love",
       "abigail": "like",
       "alex": "like",
       "george": "like",
       "evelyn": "like",
-      "lewis": "like",
+      "lewis": "love",
       "clint": "like",
       "penny": "like",
       "pam": "like",
@@ -418,8 +421,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -454,7 +457,7 @@
           {
             "inputId": "coffee-bean",
             "inputName": "Coffee Bean",
-            "inputGameId": 433,
+            "inputGameId": "(O)433",
             "inputBasePrice": 15,
             "inputGameCategory": -74,
             "inputType": "Seeds",
@@ -465,7 +468,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-george",
+        "id": "loc-desert-festival-george",
         "price": 300,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -476,7 +479,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-harvey",
+        "id": "loc-desert-festival-harvey",
         "price": 300,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -487,7 +490,7 @@
       },
       {
         "type": "shop",
-        "id": "store-gus",
+        "id": "loc-gus",
         "price": 300
       }
     ],
@@ -522,16 +525,16 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "love",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "neutral"
     },
     "processingTimeMinutes": 120,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -568,7 +571,7 @@
           {
             "inputId": "honey",
             "inputName": "Honey",
-            "inputGameId": 340,
+            "inputGameId": "(O)340",
             "inputBasePrice": 100,
             "inputGameCategory": -26,
             "inputType": "Basic",
@@ -579,7 +582,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-pam",
+        "id": "loc-desert-festival-pam",
         "price": 600,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -589,7 +592,7 @@
       },
       {
         "type": "shop",
-        "id": "store-resort-bar",
+        "id": "loc-resort-bar",
         "price": 800
       }
     ],
@@ -608,8 +611,8 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
-      "pam": "like",
+      "penny": "hate",
+      "pam": "love",
       "emily": "like",
       "haley": "like",
       "jas": "hate",
@@ -626,17 +629,17 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "like",
+      "willy": "love",
       "krobus": "like",
-      "leo": "like"
+      "leo": "dislike"
     },
     "processingTimeMinutes": 600,
     "canBeAged": true,
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -658,22 +661,24 @@
         "id": "keg",
         "inputType": "specific",
         "valueFormula": "100",
+        "outputCount": 2,
         "inputDetails": [
           {
             "inputId": "rice",
             "inputName": "Rice",
-            "inputGameId": 423,
+            "inputGameId": "(O)423",
             "inputBasePrice": 100,
             "inputGameCategory": 0,
             "inputType": "Basic",
-            "outputPrice": 100,
-            "outputIridiumPrice": 140
+            "outputPrice": 200,
+            "outputIridiumPrice": 280,
+            "outputCount": 2
           }
         ]
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-george",
+        "id": "loc-desert-festival-george",
         "price": 200,
         "quantity": 20,
         "tradeItemId": "calico-egg",
@@ -684,7 +689,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 200
       }
     ],
@@ -727,8 +732,8 @@
     },
     "processingTimeMinutes": 600,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1039,8 +1044,8 @@
     "agingDaysToIridium": 28,
     "agingDaysPerTier": 7,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1235,7 +1240,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "hate",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -1244,26 +1249,26 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "love",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "love",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "dislike"
     },
     "processingTimeMinutes": 10000,
     "canBeAged": true,
     "agingDaysToIridium": 56,
     "agingDaysPerTier": 14,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1534,7 +1539,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "hate",
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
@@ -1553,24 +1558,24 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "like",
+      "sam": "hate",
       "leah": "like",
-      "shane": "like",
+      "shane": "hate",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "love",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "dislike"
     },
     "processingTimeMinutes": 4000,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1757,8 +1762,8 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "hate",
-      "vincent": "hate",
+      "jas": "like",
+      "vincent": "like",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -1777,8 +1782,8 @@
     },
     "processingTimeMinutes": 4000,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1803,7 +1808,7 @@
           {
             "inputId": "goat-milk",
             "inputName": "Goat Milk",
-            "inputGameId": 436,
+            "inputGameId": "(O)436",
             "inputBasePrice": 225,
             "inputGameCategory": -6,
             "inputType": "Basic",
@@ -1813,19 +1818,20 @@
           {
             "inputId": "l-goat-milk",
             "inputName": "L. Goat Milk",
-            "inputGameId": 438,
+            "inputGameId": "(O)438",
             "inputBasePrice": 345,
             "inputGameCategory": -6,
             "inputType": "Basic",
             "outputPrice": 400,
-            "outputIridiumPrice": 560
+            "outputIridiumPrice": 560,
+            "outputQuality": 2
           }
         ]
       }
     ],
     "bundles": [],
     "gifts": {
-      "robin": "like",
+      "robin": "love",
       "demetrius": "like",
       "maru": "like",
       "sebastian": "hate",
@@ -1847,14 +1853,14 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "love",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -1865,8 +1871,8 @@
     "agingDaysToIridium": 14,
     "agingDaysPerTier": 3.5,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1891,7 +1897,7 @@
           {
             "inputId": "milk",
             "inputName": "Milk",
-            "inputGameId": 184,
+            "inputGameId": "(O)184",
             "inputBasePrice": 125,
             "inputGameCategory": -6,
             "inputType": "Basic",
@@ -1901,18 +1907,19 @@
           {
             "inputId": "large-milk",
             "inputName": "Large Milk",
-            "inputGameId": 186,
+            "inputGameId": "(O)186",
             "inputBasePrice": 190,
             "inputGameCategory": -6,
             "inputType": "Basic",
             "outputPrice": 230,
-            "outputIridiumPrice": 322
+            "outputIridiumPrice": 322,
+            "outputQuality": 2
           }
         ]
       },
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 460,
         "tradeItemId": "emerald",
         "tradeItemGameId": 60,
@@ -1955,7 +1962,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -1966,8 +1973,8 @@
     "agingDaysToIridium": 14,
     "agingDaysPerTier": 3.5,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1989,22 +1996,68 @@
         "id": "mayonnaise-machine",
         "inputType": "specific",
         "valueFormula": "190",
+        "outputCount": 10,
         "inputDetails": [
           {
             "inputId": "ostrich-egg",
             "inputName": "Ostrich Egg",
-            "inputGameId": 289,
+            "inputGameId": "(O)289",
             "inputBasePrice": 600,
+            "inputGameCategory": -5,
+            "inputType": "Basic",
+            "outputPrice": 1900,
+            "outputIridiumPrice": 2660,
+            "outputCount": 10
+          },
+          {
+            "inputId": "golden-egg",
+            "inputName": "Golden Egg",
+            "inputGameId": "(O)928",
+            "inputBasePrice": 500,
+            "inputGameCategory": -5,
+            "inputType": "Basic",
+            "outputPrice": 570,
+            "outputIridiumPrice": 798,
+            "outputCount": 3,
+            "outputQuality": 2
+          },
+          {
+            "inputId": "large-egg-white",
+            "inputName": "Large Egg (White)",
+            "inputGameId": "(O)174",
+            "inputBasePrice": 95,
+            "inputGameCategory": -5,
+            "inputType": "Basic",
+            "outputPrice": 190,
+            "outputIridiumPrice": 266,
+            "outputQuality": 2
+          },
+          {
+            "inputId": "large-egg-brown",
+            "inputName": "Large Egg (Brown)",
+            "inputGameId": "(O)182",
+            "inputBasePrice": 95,
+            "inputGameCategory": -5,
+            "inputType": "Basic",
+            "outputPrice": 190,
+            "outputIridiumPrice": 266,
+            "outputQuality": 2
+          },
+          {
+            "inputId": "egg-white",
+            "inputName": "Egg (White)",
+            "inputGameId": "(O)176",
+            "inputBasePrice": 50,
             "inputGameCategory": -5,
             "inputType": "Basic",
             "outputPrice": 190,
             "outputIridiumPrice": 266
           },
           {
-            "inputId": "golden-egg",
-            "inputName": "Golden Egg",
-            "inputGameId": 928,
-            "inputBasePrice": 500,
+            "inputId": "egg-brown",
+            "inputName": "Egg (Brown)",
+            "inputGameId": "(O)180",
+            "inputBasePrice": 50,
             "inputGameCategory": -5,
             "inputType": "Basic",
             "outputPrice": 190,
@@ -2021,7 +2074,7 @@
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "dislike",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -2036,7 +2089,7 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "like",
+      "sam": "hate",
       "leah": "like",
       "shane": "like",
       "marnie": "like",
@@ -2052,8 +2105,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2080,7 +2133,7 @@
           {
             "inputId": "duck-egg",
             "inputName": "Duck Egg",
-            "inputGameId": 442,
+            "inputGameId": "(O)442",
             "inputBasePrice": 95,
             "inputGameCategory": -5,
             "inputType": "Basic",
@@ -2098,7 +2151,7 @@
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "dislike",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -2113,7 +2166,7 @@
       "vincent": "hate",
       "jodi": "like",
       "kent": "like",
-      "sam": "like",
+      "sam": "hate",
       "leah": "like",
       "shane": "like",
       "marnie": "like",
@@ -2129,8 +2182,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2157,7 +2210,7 @@
           {
             "inputId": "void-egg",
             "inputName": "Void Egg",
-            "inputGameId": 305,
+            "inputGameId": "(O)305",
             "inputBasePrice": 65,
             "inputGameCategory": -5,
             "inputType": "Basic",
@@ -2169,45 +2222,45 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
       "sebastian": "hate",
-      "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
-      "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
       "jas": "hate",
       "vincent": "hate",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
-      "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
-      "harvey": "like",
-      "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
-      "leo": "like"
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "love",
+      "leo": "hate"
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2235,7 +2288,7 @@
           {
             "inputId": "dinosaur-egg",
             "inputName": "Dinosaur Egg",
-            "inputGameId": 107,
+            "inputGameId": "(O)107",
             "inputBasePrice": 350,
             "inputGameCategory": 0,
             "inputType": "Arch",
@@ -2284,8 +2337,8 @@
     },
     "processingTimeMinutes": 180,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2310,7 +2363,7 @@
           {
             "inputId": "corn",
             "inputName": "Corn",
-            "inputGameId": 270,
+            "inputGameId": "(O)270",
             "inputBasePrice": 50,
             "inputGameCategory": -75,
             "inputType": "Basic",
@@ -2320,7 +2373,7 @@
           {
             "inputId": "sunflower",
             "inputName": "Sunflower",
-            "inputGameId": 421,
+            "inputGameId": "(O)421",
             "inputBasePrice": 80,
             "inputGameCategory": -80,
             "inputType": "Basic",
@@ -2330,7 +2383,7 @@
           {
             "inputId": "sunflower-seeds",
             "inputName": "Sunflower Seeds",
-            "inputGameId": 431,
+            "inputGameId": "(O)431",
             "inputBasePrice": 20,
             "inputGameCategory": -74,
             "inputType": "Seeds",
@@ -2341,7 +2394,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-pierre",
+        "id": "loc-desert-festival-pierre",
         "price": 200,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -2352,7 +2405,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 200
       }
     ],
@@ -2391,12 +2444,12 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "hate"
     },
     "processingTimeMinutes": 1000,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2421,7 +2474,7 @@
           {
             "inputId": "truffle",
             "inputName": "Truffle",
-            "inputGameId": 430,
+            "inputGameId": "(O)430",
             "inputBasePrice": 625,
             "inputGameCategory": -17,
             "inputType": "Basic",
@@ -2432,7 +2485,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-marnie",
+        "id": "loc-desert-festival-marnie",
         "price": 2130,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2444,7 +2497,9 @@
       {
         "type": "monster-drop",
         "monster": "Truffle Crab",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       }
     ],
     "bundles": [],
@@ -2478,7 +2533,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "love",
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
@@ -2486,8 +2541,8 @@
     },
     "processingTimeMinutes": 360,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2576,7 +2631,7 @@
       },
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 200,
         "days": [
           "Friday"
@@ -2587,7 +2642,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "hate",
       "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
@@ -2602,8 +2657,8 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "hate",
-      "vincent": "hate",
+      "jas": "like",
+      "vincent": "like",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -2623,8 +2678,8 @@
     "processingTimeMinutes": 5760,
     "includeWildVariant": true,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2649,7 +2704,7 @@
           {
             "inputId": "grape",
             "inputName": "Grape",
-            "inputGameId": 398,
+            "inputGameId": "(O)398",
             "inputBasePrice": 80,
             "inputGameCategory": -79,
             "inputType": "Basic",
@@ -2671,7 +2726,7 @@
       "abigail": "like",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "love",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
@@ -2698,8 +2753,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2902,8 +2957,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3016,8 +3071,8 @@
     },
     "processingTimeMinutes": 1440,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3790,8 +3845,8 @@
     },
     "processingTimeMinutes": 50,
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3823,10 +3878,43 @@
     ],
     "bundles": [],
     "gifts": {
-      "haley": "dislike"
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3858,10 +3946,43 @@
     ],
     "bundles": [],
     "gifts": {
-      "haley": "dislike"
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "dislike",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "dislike",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3893,10 +4014,43 @@
     ],
     "bundles": [],
     "gifts": {
-      "haley": "dislike"
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "like",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "dislike",
+      "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
+      "elliott": "dislike",
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3954,27 +4108,44 @@
     ],
     "bundles": [],
     "gifts": {
-      "sebastian": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
       "linus": "like",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "sam": "dislike",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "dislike",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
       "leah": "like",
-      "shane": "dislike",
-      "elliott": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
       "harvey": "like",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -4036,7 +4207,7 @@
     ],
     "bundles": [],
     "gifts": {
-      "maru": "like",
+      "maru": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -4057,7 +4228,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -4109,11 +4281,13 @@
     ],
     "bundles": [],
     "gifts": {
+      "demetrius": "like",
       "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
+      "penny": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -4123,14 +4297,15 @@
       "shane": "dislike",
       "elliott": "dislike",
       "dwarf": "dislike",
-      "wizard": "dislike",
+      "wizard": "love",
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -4151,7 +4326,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-vincent",
+        "id": "loc-desert-festival-vincent",
         "price": 4,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -4163,22 +4338,30 @@
       {
         "type": "monster-drop",
         "monster": "Green Slime",
-        "chance": 0.15
+        "rolls": [
+          0.15
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Frost Jelly",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Sludge",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Tiger Slime",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "tapper",
@@ -4192,27 +4375,44 @@
     ],
     "bundles": [],
     "gifts": {
-      "sebastian": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
       "linus": "like",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "sam": "dislike",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
       "leah": "like",
-      "shane": "dislike",
-      "elliott": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
       "harvey": "like",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -4233,7 +4433,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-kent",
+        "id": "loc-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4299,8 +4499,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -4334,7 +4534,7 @@
       "haley": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ]
   },
   {
@@ -5435,8 +5635,8 @@
     "bundles": [],
     "gifts": {},
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -6202,8 +6402,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -6227,10 +6427,9 @@
         "valueFormula": "500",
         "inputDetails": [
           {
-            "inputId": "sturgeon",
+            "inputId": "sturgeon-roe",
             "inputName": "Sturgeon Roe",
             "inputGameId": "(O)812",
-            "inputFishGameId": "(O)698",
             "inputBasePrice": 130,
             "inputGameCategory": -23,
             "inputType": "specific",
@@ -6279,8 +6478,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   }
 ]

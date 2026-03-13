@@ -289,18 +289,6 @@
   },
   {
     "type": "tool",
-    "id": "lantern",
-    "gameId": "(T)Lantern",
-    "name": "Lantern",
-    "description": "Lights up dark places.",
-    "icon": "assets/objects/Lantern.png",
-    "toolClass": "Lantern",
-    "upgradeLevel": -1,
-    "price": 0,
-    "sources": []
-  },
-  {
-    "type": "tool",
     "id": "milk-pail",
     "gameId": "(T)MilkPail",
     "name": "Milk Pail",

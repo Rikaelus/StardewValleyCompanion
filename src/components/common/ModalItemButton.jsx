@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 import ItemButton from './ItemButton'
-import { useModal } from '../../contexts/ModalContext'
+import { useOpenModal } from '../../contexts/ModalContext'
 import { pluralize } from '../../utils/Pluralize'
 import 'react-tooltip/dist/react-tooltip.css'
 // TODO: rename ModalItemButton → ModalEntityButton and item prop → entity (high churn, cosmetic)
@@ -29,7 +29,7 @@ function ModalItemButton({
   quantity = 1, // Stack quantity (bundle-item variant only)
   showSlotBackground = false // Show bundle slot background (bundle-item variant only)
 }) {
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
   const [imageError, setImageError] = useState(false)
 
   if (!item) return null
@@ -93,8 +93,9 @@ function ModalItemButton({
     )
   }
 
-  // Render inline variant (text link with magnifying glass)
-  if (variant === 'inline') {
+  // Render inline variant (small icon + text link)
+  if (variant === 'inline' || variant === 'icon-inline') {
+    const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
     return (
       <button
         onClick={handleClick}
@@ -116,8 +117,11 @@ function ModalItemButton({
         aria-label={`View ${item.name} details`}
         type="button"
       >
-        <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
-        {label ?? (plural ? pluralize(item.name) : item.name)}
+        {iconSrc && !imageError
+          ? <img src={iconSrc} alt="" width={16} height={16} onError={() => setImageError(true)} style={{ imageRendering: 'pixelated', flexShrink: 0 }} />
+          : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
+        }
+        <span style={{ position: 'relative', top: '2px' }}>{label ?? (plural ? pluralize(item.name) : item.name)}</span>
       </button>
     )
   }

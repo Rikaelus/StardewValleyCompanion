@@ -14,8 +14,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "construction"
@@ -71,8 +71,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "construction"
@@ -129,8 +129,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "construction"
@@ -186,8 +186,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -241,7 +241,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -293,7 +294,7 @@
     "contextTags": [],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {}
@@ -312,8 +313,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

@@ -50,11 +50,11 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -91,7 +91,7 @@
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "dislike",
       "abigail": "dislike",
       "alex": "like",
       "george": "like",
@@ -110,7 +110,7 @@
       "leah": "like",
       "shane": "like",
       "marnie": "like",
-      "elliott": "like",
+      "elliott": "hate",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
@@ -121,8 +121,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -157,10 +157,11 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "penny": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
-      "vincent": "dislike",
+      "vincent": "love",
       "jodi": "like",
       "kent": "like",
       "leah": "like",
@@ -170,8 +171,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -235,7 +236,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "hate",
       "pam": "like",
       "emily": "like",
       "haley": "dislike",
@@ -255,11 +256,11 @@
       "sandy": "like",
       "willy": "like",
       "krobus": "like",
-      "leo": "like"
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -291,8 +292,8 @@
     "bundles": [],
     "gifts": {},
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -333,14 +334,14 @@
       "abigail": "like",
       "alex": "like",
       "george": "dislike",
-      "evelyn": "like",
+      "evelyn": "love",
       "lewis": "like",
       "clint": "dislike",
       "penny": "like",
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "like",
+      "jas": "love",
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
@@ -359,7 +360,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -400,7 +402,7 @@
       "abigail": "like",
       "alex": "like",
       "george": "dislike",
-      "evelyn": "like",
+      "evelyn": "love",
       "lewis": "like",
       "clint": "dislike",
       "penny": "like",
@@ -426,7 +428,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -493,7 +496,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -541,7 +545,7 @@
       "penny": "like",
       "pam": "like",
       "emily": "like",
-      "haley": "like",
+      "haley": "love",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
@@ -561,7 +565,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -629,8 +634,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -643,7 +648,7 @@
       },
       {
         "type": "shop",
-        "id": "store-traveling-merchant",
+        "id": "loc-traveling-merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -655,7 +660,9 @@
       {
         "type": "monster-drop",
         "monster": "Dust Spirit",
-        "chance": 0.01
+        "rolls": [
+          0.01
+        ]
       }
     ]
   },
@@ -677,43 +684,44 @@
     "notes": null,
     "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
-      "sebastian": "dislike",
-      "linus": "like",
-      "pierre": "like",
-      "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "dislike",
-      "evelyn": "like",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
       "lewis": "like",
-      "clint": "dislike",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
-      "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
-      "harvey": "like",
-      "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
-      "leo": "like"
+      "clint": "hate",
+      "penny": "love",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -750,7 +758,7 @@
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "love",
       "abigail": "like",
       "alex": "like",
       "george": "dislike",
@@ -780,7 +788,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -825,7 +834,7 @@
       "lewis": "like",
       "clint": "like",
       "penny": "like",
-      "pam": "like",
+      "pam": "love",
       "emily": "like",
       "haley": "dislike",
       "jas": "dislike",
@@ -847,8 +856,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -920,8 +929,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -954,7 +963,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "love",
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
@@ -988,8 +997,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1061,8 +1070,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1103,12 +1112,12 @@
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
-      "pierre": "like",
+      "pierre": "hate",
       "caroline": "like",
       "abigail": "dislike",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "hate",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
@@ -1117,7 +1126,7 @@
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "like",
+      "jodi": "dislike",
       "kent": "like",
       "sam": "dislike",
       "leah": "like",
@@ -1134,8 +1143,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1202,8 +1211,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1251,8 +1260,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1287,6 +1296,7 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "penny": "love",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
@@ -1300,8 +1310,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1368,8 +1378,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1404,6 +1414,7 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "lewis": "like",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
@@ -1417,8 +1428,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1453,6 +1464,7 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "lewis": "love",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
@@ -1460,14 +1472,14 @@
       "jodi": "like",
       "kent": "like",
       "leah": "like",
-      "shane": "like",
+      "shane": "love",
       "elliott": "like",
       "harvey": "like",
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1535,8 +1547,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1603,8 +1615,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1671,8 +1683,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1720,8 +1732,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1734,7 +1746,7 @@
       },
       {
         "type": "shop",
-        "id": "store-luau",
+        "id": "loc-luau",
         "price": 3000,
         "stock": 1,
         "stockLimit": 1
@@ -1765,7 +1777,7 @@
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
-      "pierre": "like",
+      "pierre": "hate",
       "caroline": "like",
       "abigail": "dislike",
       "alex": "like",
@@ -1796,8 +1808,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1868,8 +1880,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1936,8 +1948,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1975,7 +1987,7 @@
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "dislike",
+      "abigail": "love",
       "alex": "like",
       "george": "like",
       "evelyn": "like",
@@ -1999,13 +2011,13 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "like",
-      "krobus": "like",
+      "willy": "love",
+      "krobus": "love",
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2072,8 +2084,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2108,7 +2120,7 @@
       "demetrius": "like",
       "maru": "like",
       "sebastian": "like",
-      "linus": "like",
+      "linus": "love",
       "pierre": "like",
       "caroline": "like",
       "abigail": "dislike",
@@ -2140,8 +2152,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2155,7 +2167,9 @@
       {
         "type": "monster-drop",
         "monster": "Duggy",
-        "chance": 0.03
+        "rolls": [
+          0.03
+        ]
       }
     ]
   },
@@ -2194,8 +2208,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2236,7 +2250,7 @@
       "abigail": "dislike",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "love",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
@@ -2262,8 +2276,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2294,27 +2308,38 @@
     "notes": null,
     "bundles": [],
     "gifts": {
+      "robin": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
+      "caroline": "like",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "pam": "dislike",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
       "jodi": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
+      "marnie": "dislike",
       "elliott": "dislike",
+      "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
       "willy": "dislike",
-      "krobus": "dislike",
+      "krobus": "love",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2369,21 +2394,23 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "evelyn": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "like",
+      "jodi": "hate",
       "kent": "like",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
-      "harvey": "like",
-      "sandy": "like"
+      "harvey": "hate",
+      "sandy": "like",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2396,7 +2423,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-demetrius",
+        "id": "loc-desert-festival-demetrius",
         "price": 160,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -2450,6 +2477,7 @@
     "notes": null,
     "bundles": [],
     "gifts": {
+      "maru": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -2470,7 +2498,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2554,7 +2583,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2568,7 +2598,9 @@
       {
         "type": "monster-drop",
         "monster": "Frost Jelly",
-        "chance": 0.08
+        "rolls": [
+          0.08
+        ]
       },
       {
         "type": "tilling",
@@ -2614,8 +2646,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2647,7 +2679,8 @@
     "bundles": [],
     "gifts": {
       "robin": "like",
-      "demetrius": "like",
+      "demetrius": "love",
+      "maru": "love",
       "linus": "like",
       "abigail": "dislike",
       "pam": "like",
@@ -2663,8 +2696,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2695,14 +2728,16 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "linus": "like",
+      "linus": "love",
       "abigail": "dislike",
-      "pam": "like",
+      "lewis": "like",
+      "pam": "love",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
+      "sam": "love",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
@@ -2710,8 +2745,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2724,7 +2759,7 @@
       },
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 150,
         "days": [
           "Tuesday"
@@ -2796,8 +2831,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2845,8 +2880,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2916,8 +2951,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-robin",
-      "store-shipping-bin"
+      "loc-robin",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2930,7 +2965,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-vincent",
+        "id": "loc-desert-festival-vincent",
         "price": 2,
         "quantity": 10,
         "tradeItemId": "calico-egg",
@@ -2942,7 +2977,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 2,
         "tradeItemId": "stone",
         "tradeItemGameId": 390,
@@ -2956,12 +2991,18 @@
       {
         "type": "monster-drop",
         "monster": "Wilderness Golem",
-        "chance": 1
+        "rolls": [
+          0.9,
+          0.5
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Golem",
-        "chance": 1
+        "rolls": [
+          0.9,
+          0.5
+        ]
       }
     ]
   },
@@ -3003,8 +3044,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -3071,8 +3112,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -3139,8 +3180,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -3207,8 +3248,8 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -3256,8 +3297,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {

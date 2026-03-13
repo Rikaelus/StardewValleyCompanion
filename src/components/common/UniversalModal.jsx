@@ -1,12 +1,13 @@
 import { useRef, useEffect, useMemo, useState, useCallback } from 'react'
 import { useModalUrl } from '../../hooks/useModalUrl'
-import { useModal } from '../../contexts/ModalContext'
+import { useOpenModal } from '../../contexts/ModalContext'
 import Modal from './Modal'
 import ModalHeader from './ModalHeader'
 import ModalGiftPreferences from './ModalGiftPreferences'
 import ItemSellPrice from './ItemSellPrice'
 import { useEntities } from '../../contexts/EntityContext'
-import { getCategoryName } from '../../utils/Formatters'
+import { getEntitySubtitle, computeDropCountDistribution, formatChance } from '../../utils/Formatters'
+import InfoTooltip from './InfoTooltip'
 import FishingInfoSection from './FishingInfoSection'
 import AgingInfoSection from './AgingInfoSection'
 import ContextTagsSection from './ContextTagsSection'
@@ -18,7 +19,6 @@ import BundleRequirementsSection from './BundleRequirementsSection'
 import BundleRewardSection from './BundleRewardSection'
 import StoreContentsSection from './StoreContentsSection'
 import MachineOutputsSection from './MachineOutputsSection'
-import ShopSourceList from './ShopSourceList'
 import SellingInfoSection from './SellingInfoSection'
 import FoodBuffsSection, { BuffIcon, formatDuration } from './FoodBuffsSection'
 import ModalItemButton from './ModalItemButton'
@@ -85,7 +85,8 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const entityType = useMemo(() => {
     if (!currentEntity) return null
     if (currentEntity.category === 'festival') return 'festival'
-    if (currentEntity.entityType) return currentEntity.entityType  // store, machine
+    if (currentEntity.category === 'location') return 'location'
+    if (currentEntity.entityType) return currentEntity.entityType  // machine
     if (currentEntity.items && currentEntity.reward !== undefined) return 'bundle'
     if (currentEntity.type === 'villager') return 'villager'
     if (currentEntity.category === 'villager') return 'villager'
@@ -112,7 +113,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
   }, [itemsError])
 
   // Sync modal state to URL via global openModal from context
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
   useModalUrl({
     enabled: true,
     history,
@@ -223,93 +224,11 @@ function UniversalModal({ entity, isOpen, onClose }) {
   const type = displayEntity.type || 'unknown'
   const itemHasQuality = displayEntity.hasQuality !== false &&
     ['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)
-  let subtitle = 'Item'
+  const subtitle = getEntitySubtitle(displayEntity)
   let modalTitle = displayEntity.name
   let headerName = displayEntity.name
 
-  if (entityType === 'festival') {
-    subtitle = 'Festival'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'store') {
-    subtitle = displayEntity.festivalId
-      ? 'Festival Shop'
-      : displayEntity.parentStore
-        ? 'Festival Stall'
-        : 'Shop'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'machine') {
-    subtitle = 'Machine'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'bundle') {
-    subtitle = 'Community Center Bundle'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'buff') {
-    subtitle = displayEntity.isDebuff ? 'Debuff' : 'Buff'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'event') {
-    subtitle = displayEntity.heartLevel ? `${displayEntity.heartLevel} Heart Event` : 'Event'
-    if (displayEntity.npc) subtitle = `${displayEntity.npc} — ${subtitle}`
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'villager') {
-    subtitle = displayEntity.canBeRomanced ? 'Villager (Romanceable)' : 'Villager'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'weapon') {
-    subtitle = displayEntity.weaponType || 'Weapon'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'boot') {
-    subtitle = 'Boots'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'trinket') {
-    subtitle = 'Trinket'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'tool') {
-    const levelNames = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
-    const levelName = levelNames[displayEntity.upgradeLevel] ?? ''
-    subtitle = levelName ? `${levelName} ${displayEntity.toolClass || 'Tool'}` : (displayEntity.toolClass || 'Tool')
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else if (entityType === 'animal') {
-    subtitle = displayEntity.houseType ? `${displayEntity.houseType} Animal` : 'Farm Animal'
-    headerName = displayEntity.name
-  } else if (entityType === 'building') {
-    subtitle = displayEntity.magical ? 'Magical Building' : 'Farm Building'
-    modalTitle = displayEntity.name
-    headerName = displayEntity.name
-  } else {
-    const subtitleCategory = displayEntity.displayGameCategory !== undefined
-      ? displayEntity.displayGameCategory
-      : displayEntity.gameCategory
-    const categoryName = getCategoryName(subtitleCategory, type)
-
-    const typeDisplayName = {
-      'fish': 'Fish',
-      'forage': 'Forage',
-      'crop': 'Crop',
-      'artisan': 'Artisan Goods',
-      'fruit-tree': 'Fruit Tree',
-      'tree-fruit': 'Tree Fruit',
-      'mineral': 'Mineral',
-      'metal-bar': 'Metal Bar',
-      'monster-loot': 'Monster Loot',
-      'resource': 'Resource',
-      'seed': 'Seeds'
-    }[type] || 'Item'
-
-    subtitle = categoryName
-    if (typeDisplayName !== categoryName && categoryName !== 'Item') {
-      subtitle = `${typeDisplayName} (${categoryName})`
-    }
-
+  {
     const isLegendaryFish = type === 'fish' && displayEntity.contextTags?.includes('fish_legendary')
     modalTitle = isLegendaryFish ? `⭐${displayEntity.name}` : displayEntity.name
     headerName = isLegendaryFish ? `⭐${displayEntity.name}` : displayEntity.name
@@ -323,15 +242,16 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
     if (entityType === 'animal') {
       const sections = []
-      if (displayEntity.sources?.some(s => s.type === 'shop')) sections.push({ id: 'section-animal-purchase', label: 'Purchase' })
-      const outputItems = allItems.filter(item => !item.isGeneric && item.sources?.some(s => s.id === displayEntity.id))
+      const outputItems = allItems.filter(item => !item.isGeneric && item.sources?.some(s => s.id === displayEntity.id && s.type !== 'shop'))
       if (outputItems.length > 0) sections.push({ id: 'section-machine-outputs', label: 'Produces' })
+      if (displayEntity.sellPrice) sections.push({ id: 'section-calculator', label: 'Selling Calculator' })
       return sections
     }
 
     if (entityType === 'villager') {
       const sections = [{ id: 'section-villager-details', label: 'Details' }]
-      if (displayEntity.storeIds?.length > 0) sections.push({ id: 'section-villager-shops', label: 'Shops' })
+      const runsLocations = allItems.filter(i => i.category === 'location' && i.operator?.toLowerCase() === displayEntity.name?.toLowerCase())
+      if (runsLocations.length > 0) sections.push({ id: 'section-villager-runs', label: 'Runs Stores' })
       const constructs = (itemsByType['building'] || []).filter(b => b.builder?.toLowerCase() === displayEntity.name?.toLowerCase())
       if (constructs.length > 0) sections.push({ id: 'section-villager-constructs', label: 'Constructs' })
       const hasGifts = entityData.getVillagerGifts(displayEntity.id)?.some(({ preference }) => preference !== 'neutral')
@@ -339,16 +259,16 @@ function UniversalModal({ entity, isOpen, onClose }) {
       return sections
     }
 
-    if (entityType === 'store') {
+    if (entityType === 'location') {
       const sections = []
-      if (displayEntity.villagerIds?.length > 0) sections.push({ id: 'section-store-run-by', label: 'Run By' })
-      if (displayEntity.festivalId) sections.push({ id: 'section-store-part-of', label: 'Part of' })
+      if (displayEntity.villagerIds?.length > 0) sections.push({ id: 'section-location-run-by', label: 'Run By' })
+      if (displayEntity.festival) sections.push({ id: 'section-location-part-of', label: 'Part Of' })
       const storeItems = allItems.filter(item =>
         item.sources?.some(s => s.type === 'shop' && s.id === displayEntity.id)
       )
-      const childStalls = allItems.filter(s => s.category === 'store' && s.parentStore === displayEntity.id)
+      const childStalls = allItems.filter(s => s.category === 'location' && s.festival === displayEntity.id)
       const label = childStalls.length > 0 ? 'Stalls' : 'Items'
-      if (storeItems.length > 0 || childStalls.length > 0) sections.push({ id: 'section-store-items', label })
+      if (storeItems.length > 0 || childStalls.length > 0) sections.push({ id: 'section-location-items', label })
       return sections
     }
 
@@ -356,8 +276,17 @@ function UniversalModal({ entity, isOpen, onClose }) {
       const sections = []
       if (displayEntity.buildCost != null) sections.push({ id: 'section-building-construction', label: 'Construction' })
       if (displayEntity.buildMaterials?.length > 0) sections.push({ id: 'section-building-materials', label: 'Materials' })
-      const outputItems = allItems.filter(item => !item.isGeneric && item.sources?.some(s => s.id === displayEntity.id))
+      const outputItems = allItems.filter(item => !item.isGeneric && item.sources?.some(s => s.id === displayEntity.id && s.type !== 'shop'))
       if (outputItems.length > 0) sections.push({ id: 'section-machine-outputs', label: 'Produces' })
+      return sections
+    }
+
+    if (entityType === 'monster') {
+      const sections = [{ id: 'section-monster-info', label: 'Info' }]
+      const dropItems = allItems.filter(item =>
+        item.sources?.some(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id)
+      )
+      if (dropItems.length > 0) sections.push({ id: 'section-monster-drops', label: 'Drops' })
       return sections
     }
 
@@ -392,6 +321,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
       type === 'fish' && { id: 'section-fishing', label: 'Fishing Info' },
       type === 'artisan' && displayEntity.isGeneric && displayEntity.variations?.length > 0 && { id: 'section-variations', label: 'Variations' },
       hasLocationSection && { id: 'section-location', label: 'Location & Availability' },
+      displayEntity.usedInRecipes?.length > 0 && { id: 'section-uses', label: 'Uses' },
       hasProduces && { id: 'section-produces', label: 'Produces' },
       hasBuffs && { id: 'section-buffs', label: 'Effects' },
       hasAging && { id: 'section-aging', label: 'Cask Aging' },
@@ -406,12 +336,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
       <div className="modal-item-wrapper">
 
         {/* Context tabs for dual-role items (items only) */}
-        {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'festival' && renderContextTabs()}
+        {entityType !== 'bundle' && entityType !== 'location' && entityType !== 'machine' && entityType !== 'festival' && renderContextTabs()}
 
         <div className="modal-item-content">
           <ModalHeader icon={iconPath} name={headerName} subtitle={subtitle}>
-            {/* Price display for items only (not bundles, stores, machines, or furniture) */}
-            {entityType !== 'bundle' && entityType !== 'store' && entityType !== 'machine' && entityType !== 'festival' && displayEntity.category !== 'furniture' && entityType !== 'weapon' && entityType !== 'boot' && entityType !== 'trinket' && entityType !== 'tool' && entityType !== 'building' && (displayEntity.price || displayEntity.prices) && (
+            {/* Price display for items only (not bundles, locations, machines, or furniture) */}
+            {entityType !== 'bundle' && entityType !== 'location' && entityType !== 'machine' && entityType !== 'festival' && displayEntity.category !== 'furniture' && entityType !== 'weapon' && entityType !== 'boot' && entityType !== 'trinket' && entityType !== 'tool' && entityType !== 'building' && (displayEntity.price || displayEntity.prices) && (
               <div className="modal-price">
                 <ItemSellPrice
                   item={displayEntity}
@@ -431,26 +361,26 @@ function UniversalModal({ entity, isOpen, onClose }) {
             <>
               <ModalSection title="When & Where">
                 <div className="entity-detail-grid">
-                  {displayEntity.season && displayEntity.startDay != null && (
+                  {displayEntity.season && displayEntity.dayStart != null && (
                     <>
                       <span className="label">Date</span>
                       <span>
                         {capitalize(displayEntity.season)}{' '}
-                        {displayEntity.startDay}
-                        {displayEntity.endDay !== displayEntity.startDay ? `–${displayEntity.endDay}` : ''}
+                        {displayEntity.dayStart}
+                        {displayEntity.dayEnd != null && displayEntity.dayEnd !== displayEntity.dayStart ? `–${displayEntity.dayEnd}` : ''}
                       </span>
                     </>
                   )}
-                  {displayEntity.startTime != null && (
+                  {displayEntity.hours?.open != null && (
                     <>
                       <span className="label">Hours</span>
-                      <span>{formatGameTime(displayEntity.startTime)}–{formatGameTime(displayEntity.endTime)}</span>
+                      <span>{formatGameTime(displayEntity.hours.open)}–{formatGameTime(displayEntity.hours.close)}</span>
                     </>
                   )}
-                  {displayEntity.location && (
+                  {displayEntity.address && (
                     <>
                       <span className="label">Location</span>
-                      <span>{displayEntity.location}</span>
+                      <span>{displayEntity.address}</span>
                     </>
                   )}
                 </div>
@@ -458,14 +388,14 @@ function UniversalModal({ entity, isOpen, onClose }) {
               {displayEntity.note && (
                 <div className="modal-note">{displayEntity.note}</div>
               )}
-              {displayEntity.shopIds?.length > 0 && (
-                <ModalSection title={displayEntity.shopIds.length === 1 ? 'Shop' : 'Shops'}>
+              {displayEntity.locationIds?.length > 0 && (
+                <ModalSection title={displayEntity.locationIds.length === 1 ? 'Location' : 'Locations'}>
                   <div className="source-list">
-                    {displayEntity.shopIds.map(sid => {
-                      const store = entityData.getStore(sid)
-                      return store ? (
-                        <span key={sid} className="source-entry">
-                          <ModalItemButton item={store} variant="inline" onNavigate={handleNavigate} />
+                    {displayEntity.locationIds.map(lid => {
+                      const loc = entityData.getLocation(lid)
+                      return loc ? (
+                        <span key={lid} className="source-entry">
+                          <ModalItemButton item={loc} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       ) : null
                     })}
@@ -475,27 +405,25 @@ function UniversalModal({ entity, isOpen, onClose }) {
             </>
           )}
 
-          {/* Store-Specific Sections */}
-          {entityType === 'store' && (
+          {/* Location-Specific Sections */}
+          {entityType === 'location' && (
             <>
-              {displayEntity.villagerIds?.length > 0 && (
-                <ModalSection id="section-store-run-by" title="Run By">
-                  <div className="source-list">
-                    {displayEntity.villagerIds.map(vid => {
-                      const v = entityData.getVillager(vid)
-                      return v ? (
-                        <span key={vid} className="source-entry">
-                          <ModalItemButton item={v} variant="inline" onNavigate={handleNavigate} />
-                        </span>
-                      ) : null
-                    })}
-                  </div>
-                </ModalSection>
-              )}
-              {displayEntity.festivalId && (() => {
-                const fest = entityData.getFestival(displayEntity.festivalId)
+              {displayEntity.operator && (() => {
+                const v = entityData.getVillager(displayEntity.operator?.toLowerCase())
+                return v ? (
+                  <ModalSection id="section-location-run-by" title="Run By">
+                    <div className="source-list">
+                      <span className="source-entry">
+                        <ModalItemButton item={v} variant="inline" onNavigate={handleNavigate} />
+                      </span>
+                    </div>
+                  </ModalSection>
+                ) : null
+              })()}
+              {displayEntity.festival && (() => {
+                const fest = entityData.getFestival(displayEntity.festival)
                 return fest ? (
-                  <ModalSection id="section-store-part-of" title="Part of">
+                  <ModalSection id="section-location-part-of" title="Part Of">
                     <div className="source-list">
                       <span className="source-entry">
                         <ModalItemButton item={fest} variant="inline" onNavigate={handleNavigate} />
@@ -504,18 +432,29 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   </ModalSection>
                 ) : null
               })()}
+              {displayEntity.hours && (
+                <ModalSection title="Hours">
+                  <div className="entity-detail-grid">
+                    <span className="label">Open</span>
+                    <span>{formatGameTime(displayEntity.hours.open)}–{formatGameTime(displayEntity.hours.close)}</span>
+                    {displayEntity.hours.closedDays?.length > 0 && (
+                      <>
+                        <span className="label">Closed</span>
+                        <span>{displayEntity.hours.closedDays.join(', ')}</span>
+                      </>
+                    )}
+                  </div>
+                </ModalSection>
+              )}
               {displayEntity.note && (
                 <div className="modal-note">{displayEntity.note}</div>
               )}
-              <StoreContentsSection
-                entity={displayEntity}
-                entityType={entityType}
-                allItems={allItems}
-                findById={findById}
-                onNavigate={handleNavigate}
-              />
+              {displayEntity.notes?.map((n, i) => (
+                <div key={i} className="modal-note">{n}</div>
+              ))}
             </>
           )}
+
 
           {/* Bundle-Specific Sections */}
           {entityType === 'bundle' && (
@@ -767,20 +706,21 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   })()}
                 </div>
               </ModalSection>
-              {displayEntity.storeIds?.length > 0 && (
-                <ModalSection id="section-villager-shops" title="Shops">
-                  <div className="source-list">
-                    {displayEntity.storeIds.map(sid => {
-                      const store = entityData.getStore(sid)
-                      return store ? (
-                        <span key={sid} className="source-entry">
-                          <ModalItemButton item={store} variant="inline" onNavigate={handleNavigate} />
+              {(() => {
+                const runsLocations = allItems.filter(i => i.category === 'location' && i.operator?.toLowerCase() === displayEntity.name?.toLowerCase())
+                if (!runsLocations.length) return null
+                return (
+                  <ModalSection id="section-villager-runs" title="Runs Stores">
+                    <div className="source-list">
+                      {runsLocations.map(loc => (
+                        <span key={loc.id} className="source-entry">
+                          <ModalItemButton item={loc} variant="inline" onNavigate={handleNavigate} />
                         </span>
-                      ) : null
-                    })}
-                  </div>
-                </ModalSection>
-              )}
+                      ))}
+                    </div>
+                  </ModalSection>
+                )
+              })()}
               {(() => {
                 const constructs = (itemsByType['building'] || []).filter(b => b.builder?.toLowerCase() === displayEntity.name?.toLowerCase())
                 if (!constructs.length) return null
@@ -837,14 +777,24 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     {preferenceOrder.map(pref => {
                       const items = giftGroups[pref]
                       if (!items?.length) return null
+                      const sorted = [...items].sort((a, b) => a.name.localeCompare(b.name))
+                      const cols = 3
+                      const rows = Math.ceil(sorted.length / cols)
+                      const columns = Array.from({ length: cols }, (_, c) =>
+                        sorted.slice(c * rows, c * rows + rows)
+                      )
                       return (
                         <div key={pref} className="villager-gift-group">
                           <span className={`villager-gift-pref-label gift-pref-${pref}`}>{capitalize(pref)}</span>
-                          <div className="source-list">
-                            {items.map(item => (
-                              <span key={item.id} className="source-entry">
-                                <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
-                              </span>
+                          <div className="villager-gift-columns">
+                            {columns.map((col, ci) => (
+                              <div key={ci} className="villager-gift-column">
+                                {col.map(item => (
+                                  <div key={item.id} className="villager-gift-entry">
+                                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                  </div>
+                                ))}
+                              </div>
                             ))}
                           </div>
                         </div>
@@ -1078,16 +1028,6 @@ function UniversalModal({ entity, isOpen, onClose }) {
           {/* Animal-Specific Sections */}
           {entityType === 'animal' && (
             <>
-              {displayEntity.sources?.some(s => s.type === 'shop') && (
-                <ModalSection id="section-animal-purchase" title="Where to Buy">
-                  <ShopSourceList
-                    sources={displayEntity.sources}
-                    findEntityById={findById}
-                    findEntity={findByGameId}
-                    onNavigate={handleNavigate}
-                  />
-                </ModalSection>
-              )}
               {displayEntity.validBuildingGameIds?.length > 0 && (() => {
                 // Only show buildings at or above the required upgrade level
                 const requiredId = displayEntity.requiredBuildingGameId
@@ -1116,6 +1056,67 @@ function UniversalModal({ entity, isOpen, onClose }) {
             </>
           )}
 
+          {entityType === 'monster' && (() => {
+            // Sort by the probability of getting at least 1 (= 1 - P(all rolls fail))
+            const dropChance = src => src?.rolls ? 1 - src.rolls.reduce((p, r) => p * (1 - r), 1) : 0
+            const dropItems = allItems.filter(item =>
+              item.sources?.some(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id)
+            ).sort((a, b) => {
+              const aChance = dropChance(a.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id))
+              const bChance = dropChance(b.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id))
+              return bChance - aChance
+            })
+            return (
+              <>
+                <ModalSection id="section-monster-info" title="Info">
+                  <div className="entity-detail-grid">
+                    {displayEntity.hp > 0 && (
+                      <><span className="label">HP</span><span>{displayEntity.hp}</span></>
+                    )}
+                    {displayEntity.damageToFarmer > 0 && (
+                      <><span className="label">Damage</span><span>{displayEntity.damageToFarmer}</span></>
+                    )}
+                    {displayEntity.locations?.length > 0 && (
+                      <><span className="label">Found At</span><span>{displayEntity.locations.join(', ')}</span></>
+                    )}
+                  </div>
+                </ModalSection>
+                {dropItems.length > 0 && (
+                  <ModalSection id="section-monster-drops" title={`Drops (${dropItems.length})`}>
+                    <div className="source-list">
+                      {dropItems.map(item => {
+                        const src = item.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id)
+                        const multiRoll = src?.rolls?.length > 1
+                        const dist = multiRoll ? computeDropCountDistribution(src.rolls) : null
+                        return (
+                          <span key={item.id} className="source-entry">
+                            <span className="source-name">
+                              <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                            </span>
+                            <span />
+                            <span className="source-detail">
+                              {multiRoll ? (
+                                <>
+                                  {dist.map(({ count, chance }, j) => (
+                                    <span key={count}>{j > 0 ? ' / ' : ''}×{count} {formatChance(chance)}</span>
+                                  ))}
+                                  {' '}
+                                  <InfoTooltip text="Each roll is independent and fires on every kill. Percentages show the chance of receiving exactly that many." />
+                                </>
+                              ) : (
+                                formatChance(src?.rolls?.[0] ?? 0)
+                              )}
+                            </span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </ModalSection>
+                )}
+              </>
+            )
+          })()}
+
           {/* Produces / Crafting Sections (any entity that acts as a machine or building) */}
           <MachineOutputsSection
             entity={displayEntity}
@@ -1127,7 +1128,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
           {/* Item-Specific Sections */}
           {(() => {
             // Non-item entity types — skip all item sections
-            const NON_ITEM_TYPES = new Set(['bundle', 'store', 'machine', 'buff', 'event', 'villager', 'festival', 'building', 'animal'])
+            const NON_ITEM_TYPES = new Set(['bundle', 'location', 'machine', 'buff', 'event', 'villager', 'festival', 'building', 'monster'])
             if (NON_ITEM_TYPES.has(entityType)) return null
 
             // Combat/tool types — skip sell price, food buffs, aging, seed produce sections
@@ -1145,6 +1146,57 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   findByGameId={findByGameId}
                   onNavigate={handleNavigate}
                 />
+                <StoreContentsSection
+                  entity={displayEntity}
+                  entityType={entityType}
+                  allItems={allItems}
+                  findById={findById}
+                  onNavigate={handleNavigate}
+                />
+                {displayEntity.usedInRecipes?.length > 0 && (() => {
+                  const cooking = displayEntity.usedInRecipes.filter(r => r.type === 'cooking')
+                  const crafting = displayEntity.usedInRecipes.filter(r => r.type === 'crafting')
+                  return (
+                    <ModalSection id="section-uses" title="Uses">
+                      {cooking.length > 0 && (
+                        <div className="source-group">
+                          {crafting.length > 0 && <span className="modal-label">Ingredient For:</span>}
+                          <div className="source-list">
+                            {cooking.map((r, i) => {
+                              const recipeItem = findById(r.recipeId)
+                              return (
+                                <span key={i} className="source-entry">
+                                  <span className="source-name">
+                                    {recipeItem ? <ModalItemButton item={recipeItem} variant="inline" onNavigate={handleNavigate} /> : r.recipeName}
+                                  </span>
+                                  {r.amount > 1 && <span className="source-qualifiers"><span className="source-qualifier">×{r.amount}</span></span>}
+                                </span>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                      {crafting.length > 0 && (
+                        <div className="source-group">
+                          {cooking.length > 0 && <span className="modal-label">Used to Craft:</span>}
+                          <div className="source-list">
+                            {crafting.map((r, i) => {
+                              const recipeItem = findById(r.recipeId)
+                              return (
+                                <span key={i} className="source-entry">
+                                  <span className="source-name">
+                                    {recipeItem ? <ModalItemButton item={recipeItem} variant="inline" onNavigate={handleNavigate} /> : r.recipeName}
+                                  </span>
+                                  {r.amount > 1 && <span className="source-qualifiers"><span className="source-qualifier">×{r.amount}</span></span>}
+                                </span>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </ModalSection>
+                  )
+                })()}
                 {!isEquipment && (
                   <SeedProducesSection entity={displayEntity} cropItems={cropItems} forageItems={forageItems} onNavigate={handleNavigate} />
                 )}

@@ -24,19 +24,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 70
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 87,
         "seasons": [
           "fall"
@@ -44,7 +44,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 70,
         "seasons": [
           "fall"
@@ -52,8 +52,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -94,11 +94,17 @@
             "amount": 1
           }
         ]
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate Ancient Seed"
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -126,19 +132,19 @@
       }
     ],
     "sellers": [
-      "night-market",
-      "pierre"
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 30,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 30,
         "seasons": [
           "fall"
@@ -147,8 +153,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -176,19 +182,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 75,
         "seasons": [
           "spring"
@@ -196,7 +202,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 60,
         "seasons": [
           "spring"
@@ -204,8 +210,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -233,18 +239,18 @@
       }
     ],
     "sellers": [
-      "sandy"
+      "loc-sandy"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 20
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -272,18 +278,18 @@
       }
     ],
     "sellers": [
-      "night-market",
-      "pierre"
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 80,
         "seasons": [
           "summer"
@@ -291,8 +297,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -320,19 +326,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 62,
         "seasons": [
           "fall"
@@ -340,7 +346,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50,
         "seasons": [
           "fall"
@@ -348,8 +354,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -380,7 +386,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 80,
         "tradeItemId": "moss",
         "tradeItemGameId": "Moss",
@@ -390,8 +396,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -417,12 +423,12 @@
       }
     ],
     "sellers": [
-      "sandy"
+      "loc-sandy"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 150
       },
       {
@@ -433,8 +439,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -465,7 +471,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 30,
         "tradeItemId": "maple-seed",
         "tradeItemGameId": 310,
@@ -475,8 +481,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -504,19 +510,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 100,
         "seasons": [
           "spring"
@@ -524,16 +530,22 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 80,
         "seasons": [
           "spring"
         ]
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 5 items to the museum"
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -562,12 +574,12 @@
       }
     ],
     "sellers": [
-      "traveling-merchant"
+      "loc-traveling-merchant"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-traveling-merchant",
+        "id": "loc-traveling-merchant",
         "price": 2500,
         "seasons": [
           "fall",
@@ -579,12 +591,14 @@
       {
         "type": "monster-drop",
         "monster": "Dust Spirit",
-        "chance": 0.01
+        "rolls": [
+          0.01
+        ]
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -613,24 +627,24 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 150
       },
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 150
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 187,
         "seasons": [
           "fall"
@@ -638,7 +652,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 150,
         "seasons": [
           "summer"
@@ -646,7 +660,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 150,
         "seasons": [
           "fall"
@@ -654,8 +668,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -683,19 +697,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 240
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 300,
         "seasons": [
           "fall"
@@ -703,7 +717,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 240,
         "seasons": [
           "fall"
@@ -711,8 +725,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -740,19 +754,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 25,
         "seasons": [
           "fall"
@@ -760,7 +774,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 20,
         "seasons": [
           "fall"
@@ -768,8 +782,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -797,15 +811,15 @@
       }
     ],
     "sellers": [
-      "desert-festival-jas",
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-desert-festival-jas",
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-jas",
+        "id": "loc-desert-festival-jas",
         "price": 200,
         "quantity": 25,
         "tradeItemId": "calico-egg",
@@ -816,12 +830,12 @@
       },
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 250,
         "seasons": [
           "fall"
@@ -829,7 +843,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 200,
         "seasons": [
           "fall"
@@ -837,8 +851,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -896,12 +910,12 @@
       }
     ],
     "sellers": [
-      "desert-trade"
+      "loc-desert-trade"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 90,
         "tradeItemId": "winter-seeds",
         "tradeItemGameId": 498,
@@ -942,8 +956,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -996,8 +1010,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1025,19 +1039,19 @@
       }
     ],
     "sellers": [
-      "night-market",
-      "pierre"
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 40,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 40,
         "seasons": [
           "spring"
@@ -1046,8 +1060,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1075,19 +1089,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 75,
         "seasons": [
           "fall"
@@ -1095,7 +1109,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 60,
         "seasons": [
           "fall"
@@ -1103,8 +1117,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1132,19 +1146,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 75,
         "seasons": [
           "summer"
@@ -1152,7 +1166,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 60,
         "seasons": [
           "summer"
@@ -1160,8 +1174,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1189,19 +1203,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 30
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 37,
         "seasons": [
           "spring"
@@ -1209,7 +1223,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 30,
         "seasons": [
           "spring"
@@ -1217,8 +1231,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1246,19 +1260,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 70
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 87,
         "seasons": [
           "spring"
@@ -1266,7 +1280,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 70,
         "seasons": [
           "spring"
@@ -1274,8 +1288,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1303,19 +1317,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 80
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 100,
         "seasons": [
           "summer"
@@ -1323,16 +1337,22 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 80,
         "seasons": [
           "summer"
         ]
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 10 items to the museum"
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1415,7 +1435,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-emily",
+        "id": "loc-desert-festival-emily",
         "quantity": 5,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1426,7 +1446,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-evelyn",
+        "id": "loc-desert-festival-evelyn",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1436,7 +1456,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-jodi",
+        "id": "loc-desert-festival-jodi",
         "quantity": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1446,8 +1466,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1508,17 +1528,17 @@
       }
     ],
     "sellers": [
-      "desert-festival-egg-shop",
-      "desert-festival-evelyn",
-      "desert-festival-jodi",
-      "krobus",
-      "raccoon",
-      "stardew-valley-fair"
+      "loc-desert-festival-egg-shop",
+      "loc-desert-festival-evelyn",
+      "loc-desert-festival-jodi",
+      "loc-krobus",
+      "loc-raccoon",
+      "loc-stardew-valley-fair"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "quantity": 3,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1533,7 +1553,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-evelyn",
+        "id": "loc-desert-festival-evelyn",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1543,7 +1563,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-jodi",
+        "id": "loc-desert-festival-jodi",
         "quantity": 25,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1553,7 +1573,7 @@
       },
       {
         "type": "shop",
-        "id": "store-stardew-valley-fair",
+        "id": "loc-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 1000,
@@ -1564,7 +1584,7 @@
       },
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "tradeItemId": "cave-carrot",
         "tradeItemGameId": 78,
         "tradeItemName": "Cave Carrot",
@@ -1581,7 +1601,7 @@
       },
       {
         "type": "shop",
-        "id": "store-krobus",
+        "id": "loc-krobus",
         "price": 30,
         "quantity": 10,
         "days": [
@@ -1591,12 +1611,16 @@
       {
         "type": "monster-drop",
         "monster": "Wilderness Golem",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Golem",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "fish-pond",
@@ -1651,8 +1675,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1680,19 +1704,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 25,
         "seasons": [
           "spring"
@@ -1700,7 +1724,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 20,
         "seasons": [
           "spring"
@@ -1708,8 +1732,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1737,19 +1761,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 40
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 50,
         "seasons": [
           "summer"
@@ -1757,7 +1781,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 40,
         "seasons": [
           "summer"
@@ -1765,8 +1789,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1794,12 +1818,12 @@
       }
     ],
     "sellers": [
-      "island-trader"
+      "loc-island-trader"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-island-trader",
+        "id": "loc-island-trader",
         "price": 480,
         "tradeItemId": "magma-cap",
         "tradeItemGameId": 851,
@@ -1810,12 +1834,15 @@
       {
         "type": "monster-drop",
         "monster": "Hot Head",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1843,19 +1870,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 100
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 125,
         "seasons": [
           "summer"
@@ -1863,7 +1890,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -1871,8 +1898,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1900,19 +1927,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 62,
         "seasons": [
           "spring"
@@ -1920,7 +1947,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50,
         "seasons": [
           "spring"
@@ -1928,8 +1955,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1960,7 +1987,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 40,
         "tradeItemId": "pine-cone",
         "tradeItemGameId": 311,
@@ -1970,8 +1997,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -1999,19 +2026,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 100
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 125,
         "seasons": [
           "fall"
@@ -2019,16 +2046,22 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 100,
         "seasons": [
           "fall"
         ]
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 35 items to the museum"
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2067,8 +2100,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2096,19 +2129,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 40
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 50,
         "seasons": [
           "summer"
@@ -2116,7 +2149,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 40,
         "seasons": [
           "summer"
@@ -2124,8 +2157,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2153,12 +2186,12 @@
       }
     ],
     "sellers": [
-      "traveling-merchant"
+      "loc-traveling-merchant"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-traveling-merchant",
+        "id": "loc-traveling-merchant",
         "price": 1000,
         "seasons": [
           "spring",
@@ -2168,8 +2201,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2197,20 +2230,20 @@
       }
     ],
     "sellers": [
-      "night-market",
-      "pierre",
-      "traveling-merchant"
+      "loc-night-market",
+      "loc-pierre",
+      "loc-traveling-merchant"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 100,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -2219,14 +2252,14 @@
       },
       {
         "type": "shop",
-        "id": "store-traveling-merchant",
+        "id": "loc-traveling-merchant",
         "price": 100,
         "stock": 1
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2254,18 +2287,18 @@
       }
     ],
     "sellers": [
-      "sandy"
+      "loc-sandy"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 100
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2293,12 +2326,12 @@
       }
     ],
     "sellers": [
-      "pierre"
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 40,
         "seasons": [
           "spring"
@@ -2308,7 +2341,10 @@
       {
         "type": "monster-drop",
         "monster": "Grub",
-        "chance": 0.1
+        "rolls": [
+          0.05,
+          0.05
+        ]
       },
       {
         "type": "tilling",
@@ -2317,8 +2353,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2346,19 +2382,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 62,
         "seasons": [
           "summer"
@@ -2366,7 +2402,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50,
         "seasons": [
           "summer"
@@ -2374,8 +2410,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2433,12 +2469,12 @@
       }
     ],
     "sellers": [
-      "desert-trade"
+      "loc-desert-trade"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 70,
         "tradeItemId": "summer-seeds",
         "tradeItemGameId": 496,
@@ -2479,8 +2515,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2508,18 +2544,24 @@
       }
     ],
     "sellers": [
-      "sandy"
+      "loc-sandy"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 400
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 15 items to the museum"
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2547,14 +2589,14 @@
       }
     ],
     "sellers": [
-      "desert-festival-egg-shop",
-      "desert-festival-maru",
-      "egg-festival"
+      "loc-desert-festival-egg-shop",
+      "loc-desert-festival-maru",
+      "loc-egg-festival"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -2566,7 +2608,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
         "tradeItemName": "Calico Egg",
@@ -2578,7 +2620,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-maru",
+        "id": "loc-desert-festival-maru",
         "quantity": 20,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2588,13 +2630,13 @@
       },
       {
         "type": "shop",
-        "id": "store-egg-festival",
+        "id": "loc-egg-festival",
         "price": 100
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2642,12 +2684,12 @@
       }
     ],
     "sellers": [
-      "desert-trade"
+      "loc-desert-trade"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 110,
         "tradeItemId": "fall-seeds",
         "tradeItemGameId": 497,
@@ -2684,8 +2726,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2716,7 +2758,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 40,
         "tradeItemId": "sap",
         "tradeItemGameId": 92,
@@ -2726,8 +2768,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2756,24 +2798,24 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 200
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 100,
         "seasons": [
           "summer"
@@ -2781,7 +2823,7 @@
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 100,
         "seasons": [
           "fall"
@@ -2789,7 +2831,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 100,
         "seasons": [
           "summer"
@@ -2797,7 +2839,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 100,
         "seasons": [
           "fall"
@@ -2805,8 +2847,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2834,12 +2876,12 @@
       }
     ],
     "sellers": [
-      "island-trader"
+      "loc-island-trader"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-island-trader",
+        "id": "loc-island-trader",
         "price": 40,
         "tradeItemId": "bone-fragment",
         "tradeItemGameId": 881,
@@ -2850,7 +2892,10 @@
       {
         "type": "monster-drop",
         "monster": "Magma Duggy",
-        "chance": 1
+        "rolls": [
+          0.5,
+          0.5
+        ]
       },
       {
         "type": "fish-pond",
@@ -2866,8 +2911,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2895,19 +2940,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 50
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 62,
         "seasons": [
           "summer"
@@ -2915,7 +2960,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 50,
         "seasons": [
           "summer"
@@ -2923,8 +2968,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -2952,19 +2997,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 20
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 25,
         "seasons": [
           "spring"
@@ -2972,7 +3017,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 20,
         "seasons": [
           "spring"
@@ -2980,8 +3025,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3010,24 +3055,24 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 10
       },
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 10
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 12,
         "seasons": [
           "summer"
@@ -3035,7 +3080,7 @@
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 12,
         "seasons": [
           "fall"
@@ -3043,7 +3088,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 10,
         "seasons": [
           "summer"
@@ -3051,7 +3096,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 10,
         "seasons": [
           "fall"
@@ -3059,8 +3104,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3118,12 +3163,12 @@
       }
     ],
     "sellers": [
-      "desert-trade"
+      "loc-desert-trade"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 60,
         "tradeItemId": "spring-seeds",
         "tradeItemGameId": 495,
@@ -3164,8 +3209,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   },
   {
@@ -3193,19 +3238,19 @@
       }
     ],
     "sellers": [
-      "joja",
-      "night-market",
-      "pierre"
+      "loc-joja",
+      "loc-night-market",
+      "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-night-market",
+        "id": "loc-night-market",
         "price": 60
       },
       {
         "type": "shop",
-        "id": "store-joja",
+        "id": "loc-joja",
         "price": 75,
         "seasons": [
           "fall"
@@ -3213,7 +3258,7 @@
       },
       {
         "type": "shop",
-        "id": "store-pierre",
+        "id": "loc-pierre",
         "price": 60,
         "seasons": [
           "fall"
@@ -3221,8 +3266,8 @@
       }
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ]
   }
 ]

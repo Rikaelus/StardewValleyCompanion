@@ -68,8 +68,10 @@ const sourceData = {
   trinkets:       loadJson(path.join(SOURCE_DIR, 'items/trinkets.json')),
   buildings:      loadJson(path.join(SOURCE_DIR, 'items/buildings.json')),
   animals:        loadJson(path.join(SOURCE_DIR, 'items/animals.json')),
+  monsters:       loadJson(path.join(SOURCE_DIR, 'items/monsters.json')),
   bundles:        loadJson(path.join(SOURCE_DIR, 'collections/bundles.json')),
-  sellingLocations: loadJson(path.join(RULES_DIR, 'selling-locations.json')),
+  locations: loadJson(path.join(RULES_DIR, 'locations.json')),
+  festivals: loadJson(path.join(RULES_DIR, 'festivals.json')),
   villagers:      loadJson(path.join(SOURCE_DIR, 'reference/villagers.json')),
   buffs:          loadJson(path.join(SOURCE_DIR, 'reference/buffs.json')),
   events:         loadJson(path.join(SOURCE_DIR, 'reference/events.json')),
@@ -106,8 +108,11 @@ sourceData.artisan.forEach(artisan => {
     const shouldMergeInputs = inputDetails.length > 1 && namingRule?.pattern === 'none';
 
     if (shouldMergeInputs) {
-      // Multiple inputs produce same named item (Cheese, Goat Cheese)
-      const basePrice = inputDetails[0].outputPrice;
+      // Multiple inputs produce same named item (Cheese, Goat Cheese, Mayonnaise)
+      // Use artisan.price (item's own base price) when outputs have varying counts,
+      // otherwise fall back to inputDetails[0].outputPrice (covers fixed-output items like Cheese)
+      const hasVaryingOutputCount = inputDetails.some(d => d.outputCount && d.outputCount > 1);
+      const basePrice = hasVaryingOutputCount ? artisan.price : inputDetails[0].outputPrice;
       const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
       const compiledItem = {
@@ -268,7 +273,9 @@ function tagEntities(entities, category, gameIdPrefix, extraFields = {}) {
         entityWithoutGifts.gameId = `(${gameIdPrefix})${s}`
       }
     }
-    return { ...entityWithoutGifts, ...extraFields, category };
+    // Allow entity to override its own category (e.g. BC items reclassified as furniture)
+    const effectiveCategory = entityWithoutGifts.category || category;
+    return { ...entityWithoutGifts, ...extraFields, category: effectiveCategory };
   });
 }
 
@@ -305,14 +312,51 @@ const taggedTools          = tagEntities(sourceData.tools,          'tool',     
 const taggedTrinkets       = tagEntities(sourceData.trinkets,       'trinket',        'TR');
 const taggedBuildings      = tagEntities(sourceData.buildings,      'building',       'BLD');
 const taggedAnimals        = tagEntities(sourceData.animals,        'animal',         'FA');
+const taggedMonsters       = sourceData.monsters.map(m => ({ ...m, category: 'monster' }));
 const taggedBuffs          = sourceData.buffs.map(b => ({ ...b, category: 'buff' }));
 const taggedEvents         = sourceData.events.map(e => ({ ...e, category: 'event' }));
 const taggedVillagers      = sourceData.villagers.map(v => ({ ...v, category: 'villager' }));
-const taggedStores         = Object.entries(sourceData.sellingLocations.stores || {}).map(([, v]) => {
-  const store = { ...v, category: 'store' };
-  if (!store.icon && store.npc) store.icon = `assets/villagers/${store.npc}.png`;
-  return store;
+
+// Normalize any legacy store- prefixes in villager storeIds — add loc- prefix
+for (const v of sourceData.villagers) {
+  if (Array.isArray(v.storeIds)) {
+    v.storeIds = v.storeIds.map(id =>
+      id.startsWith('loc-') ? id :
+      id.startsWith('store-') ? 'loc-' + id.slice(6) :
+      'loc-' + id
+    );
+  }
+}
+
+const taggedLocations = Object.values(sourceData.locations.locations || {}).map(loc => {
+  const location = { ...loc, category: 'location' };
+  if (!location.icon && location.operator) {
+    location.icon = `assets/villagers/${location.operator}.png`;
+  }
+  return location;
 });
+
+const taggedFestivals = Object.values(sourceData.festivals.festivals || {}).map(fest => ({
+  ...fest,
+  category: 'festival',
+}));
+
+// Derive buys for each location from categorySellingLocations
+const buysByLocation = {};
+for (const [cat, locIds] of Object.entries(sourceData.locations.categorySellingLocations || {})) {
+  for (const locId of locIds) {
+    if (!buysByLocation[locId]) buysByLocation[locId] = [];
+    buysByLocation[locId].push(parseInt(cat));
+  }
+}
+for (const loc of taggedLocations) {
+  if (buysByLocation[loc.id]?.length > 0) loc.buys = buysByLocation[loc.id];
+}
+
+// Derive locationIds for each festival from the festival's own locations array
+for (const fest of taggedFestivals) {
+  fest.locationIds = (fest.locations || []).map(l => l.id);
+}
 
 console.log(`  ✓ Tagged all entity types`);
 
@@ -416,7 +460,9 @@ const CATEGORY_PRIORITY = {
   'trinket': 35,
   'building': 36,
   'animal': 37,
-  'store': 38,
+  'monster': 38,
+  'location': 39,
+  'festival': 40,
 };
 
 // All entity arrays to merge
@@ -455,10 +501,12 @@ const allTypedEntities = [
   ...taggedTrinkets,
   ...taggedBuildings,
   ...taggedAnimals,
+  ...taggedMonsters,
   ...taggedBuffs,
   ...taggedEvents,
   ...taggedVillagers,
-  ...taggedStores,
+  ...taggedLocations,
+  ...taggedFestivals,
 ];
 
 // Merge by friendly id: combine sources arrays, keep highest-priority category.
@@ -467,8 +515,12 @@ const allTypedEntities = [
 const mergedEntitiesById = new Map();
 let mergedDuplicates = 0;
 
+// Categories that should never be merged with other categories even if ids collide
+const NO_MERGE_CATEGORIES = new Set(['location', 'festival', 'villager']);
+
 for (const entity of allTypedEntities) {
-  const key = entity.id;
+  // Use a compound key for location/festival/villager to prevent cross-type merging
+  const key = NO_MERGE_CATEGORIES.has(entity.category) ? `${entity.category}:${entity.id}` : entity.id;
 
   if (!mergedEntitiesById.has(key)) {
     mergedEntitiesById.set(key, { ...entity, sources: [...(entity.sources || [])] });
@@ -588,35 +640,35 @@ for (const item of allCompiledEntities) {
   }
 }
 
+
 // ---------------------------------------------------------------------------
-// Normalize store IDs: ensure all storeId / sellingLocations values have
-// the store- prefix. Source files may have bare IDs (e.g. "pierre") —
-// this is the canonical enforcement point that makes compiled output correct
-// regardless of source file state.
+// Normalize legacy store- prefixes in sellingLocations and shop source IDs.
+// Processed source files may still carry the old prefix; convert them to loc-
+// prefix here so compiled output uses the new prefixed location IDs throughout.
 // ---------------------------------------------------------------------------
-function normalizeStoreId(id) {
+console.log('\n🏪 Normalizing legacy store- prefixes to loc-...');
+
+function normalizeLegacyId(id) {
   if (!id || typeof id !== 'string') return id;
-  return id.startsWith('store-') ? id : `store-${id}`;
+  if (id.startsWith('loc-')) return id;
+  if (id.startsWith('store-')) return 'loc-' + id.slice(6);
+  return id; // non-location IDs (e.g. machine IDs) pass through unchanged
 }
 
-console.log('\n🏪 Normalizing store IDs...');
-
 for (const item of allCompiledEntities) {
-  // Normalize sellingLocations array
   if (Array.isArray(item.sellingLocations)) {
-    item.sellingLocations = item.sellingLocations.map(normalizeStoreId);
+    item.sellingLocations = item.sellingLocations.map(normalizeLegacyId);
   }
-  // Normalize store id in each shop source
   if (Array.isArray(item.sources)) {
     for (const src of item.sources) {
       if (src.type === 'shop' && src.id) {
-        src.id = normalizeStoreId(src.id);
+        src.id = normalizeLegacyId(src.id);
       }
     }
   }
 }
 
-console.log(`  ✓ Store IDs normalized`);
+console.log(`  ✓ Legacy store- prefixes normalized to loc-`);
 
 // ---------------------------------------------------------------------------
 // Resolve crafting ingredient names
@@ -654,7 +706,7 @@ for (const item of allCompiledEntities) {
   for (const src of (item.sources || [])) {
     if ((src.type !== 'crafting' && src.type !== 'cooking') || !src.ingredients) continue;
     src.ingredientDetails = src.ingredients.map(ing => {
-      const ingItem = itemsByGameId.get(ing.gameId);
+      const ingItem = itemsByGameId.get(ing.gameId) ?? itemsByGameId.get(`(O)${ing.gameId}`);
       const fallbackName = ingItem ? null : resolveIngredientName(ing.gameId);
       return {
         gameId: ing.gameId,
@@ -669,6 +721,42 @@ for (const item of allCompiledEntities) {
   }
 }
 console.log(`  ✓ Resolved ingredient details for ${resolvedIngredients} crafting/cooking sources`);
+
+// Build reverse index: ingredientId -> [{ recipeId, recipeName, type, amount }]
+const ingredientUsedIn = new Map();
+for (const item of allCompiledEntities) {
+  for (const src of (item.sources || [])) {
+    if (src.type !== 'crafting' && src.type !== 'cooking') continue;
+    for (const ing of (src.ingredientDetails || [])) {
+      if (!ing.id) continue;
+      if (!ingredientUsedIn.has(ing.id)) ingredientUsedIn.set(ing.id, []);
+      ingredientUsedIn.get(ing.id).push({ recipeId: item.id, recipeName: item.name, type: src.type, amount: ing.amount });
+    }
+  }
+}
+for (const item of allCompiledEntities) {
+  const usedIn = ingredientUsedIn.get(item.id);
+  if (usedIn?.length > 0) item.usedInRecipes = usedIn;
+}
+console.log(`  ✓ Built reverse ingredient index for ${ingredientUsedIn.size} ingredients`);
+
+// ---------------------------------------------------------------------------
+// Enrich monster-drop sources with monsterId (friendly ID)
+// ---------------------------------------------------------------------------
+console.log('\n🗡️ Enriching monster-drop sources...');
+const monsterById = new Map(taggedMonsters.map(m => [m.internalName, m]));
+let enrichedDrops = 0;
+for (const item of allCompiledEntities) {
+  for (const src of (item.sources || [])) {
+    if (src.type !== 'monster-drop' || !src.monster) continue;
+    const monster = monsterById.get(src.monster);
+    if (monster) {
+      src.monsterId = monster.id;
+      enrichedDrops++;
+    }
+  }
+}
+console.log(`  ✓ Enriched ${enrichedDrops} monster-drop sources with monsterId`);
 
 // ---------------------------------------------------------------------------
 // Build unified gameIdIndex
@@ -707,7 +795,8 @@ const entitiesData = {
     totalItems: allCompiledEntities.length,
     totalBundles: sourceData.bundles.length,
     totalVillagers: sourceData.villagers.length,
-    totalStores: taggedStores.length,
+    totalLocations: taggedLocations.length,
+    totalFestivals: taggedFestivals.length,
     totalBuffs: sourceData.buffs.length,
     totalEvents: sourceData.events.length,
     totalRelationships: giftsData.relationships?.length ?? 0,

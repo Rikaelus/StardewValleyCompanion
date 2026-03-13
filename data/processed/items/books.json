@@ -14,7 +14,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -56,7 +56,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-marnie",
+        "id": "loc-marnie",
         "price": 5000,
         "yearUnlock": 2
       }
@@ -77,7 +77,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -112,7 +112,7 @@
       "wizard": "neutral",
       "harvey": "neutral",
       "sandy": "neutral",
-      "willy": "neutral",
+      "willy": "like",
       "krobus": "neutral",
       "leo": "neutral"
     },
@@ -133,7 +133,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -165,7 +165,7 @@
       "elliott": "like",
       "gus": "neutral",
       "dwarf": "neutral",
-      "wizard": "neutral",
+      "wizard": "love",
       "harvey": "neutral",
       "sandy": "neutral",
       "willy": "neutral",
@@ -189,7 +189,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -231,7 +231,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 15000,
         "rotating": true,
         "stock": 1,
@@ -254,18 +254,18 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "neutral",
       "demetrius": "neutral",
       "maru": "neutral",
-      "sebastian": "neutral",
+      "sebastian": "like",
       "linus": "neutral",
       "pierre": "neutral",
       "caroline": "neutral",
-      "abigail": "neutral",
+      "abigail": "like",
       "alex": "dislike",
       "george": "neutral",
       "evelyn": "neutral",
@@ -311,7 +311,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -335,7 +335,7 @@
       "jas": "neutral",
       "vincent": "neutral",
       "jodi": "neutral",
-      "kent": "neutral",
+      "kent": "like",
       "sam": "neutral",
       "leah": "neutral",
       "shane": "neutral",
@@ -353,7 +353,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 4000,
         "stock": 1,
         "stockLimit": 1
@@ -375,7 +375,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -431,7 +431,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -473,7 +473,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 25000,
         "stock": 1,
         "stockLimit": 1
@@ -496,7 +496,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -508,7 +508,7 @@
       "pierre": "neutral",
       "caroline": "neutral",
       "abigail": "neutral",
-      "alex": "dislike",
+      "alex": "love",
       "george": "neutral",
       "evelyn": "neutral",
       "lewis": "neutral",
@@ -554,7 +554,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -589,7 +589,7 @@
       "wizard": "neutral",
       "harvey": "neutral",
       "sandy": "neutral",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "neutral",
       "leo": "neutral"
     },
@@ -611,7 +611,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -667,7 +667,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -683,7 +683,7 @@
       "george": "neutral",
       "evelyn": "neutral",
       "lewis": "neutral",
-      "clint": "neutral",
+      "clint": "like",
       "penny": "love",
       "pam": "neutral",
       "emily": "neutral",
@@ -724,18 +724,18 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "neutral",
       "demetrius": "neutral",
       "maru": "neutral",
-      "sebastian": "neutral",
+      "sebastian": "like",
       "linus": "neutral",
       "pierre": "neutral",
       "caroline": "neutral",
-      "abigail": "neutral",
+      "abigail": "love",
       "alex": "dislike",
       "george": "neutral",
       "evelyn": "neutral",
@@ -760,7 +760,7 @@
       "harvey": "neutral",
       "sandy": "neutral",
       "willy": "neutral",
-      "krobus": "neutral",
+      "krobus": "love",
       "leo": "neutral"
     },
     "sources": []
@@ -780,7 +780,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -822,7 +822,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 25000,
         "stock": 1,
         "stockLimit": 1
@@ -844,49 +844,49 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "neutral",
-      "demetrius": "neutral",
-      "maru": "neutral",
-      "sebastian": "neutral",
-      "linus": "neutral",
-      "pierre": "neutral",
-      "caroline": "neutral",
-      "abigail": "neutral",
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
+      "sebastian": "dislike",
+      "linus": "dislike",
+      "pierre": "love",
+      "caroline": "dislike",
+      "abigail": "dislike",
       "alex": "dislike",
-      "george": "neutral",
-      "evelyn": "neutral",
-      "lewis": "neutral",
-      "clint": "neutral",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
       "penny": "love",
-      "pam": "neutral",
-      "emily": "neutral",
-      "haley": "neutral",
-      "jas": "neutral",
-      "vincent": "neutral",
-      "jodi": "neutral",
-      "kent": "neutral",
-      "sam": "neutral",
-      "leah": "neutral",
-      "shane": "neutral",
-      "marnie": "neutral",
+      "pam": "dislike",
+      "emily": "dislike",
+      "haley": "dislike",
+      "jas": "dislike",
+      "vincent": "dislike",
+      "jodi": "dislike",
+      "kent": "dislike",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
       "elliott": "like",
-      "gus": "neutral",
-      "dwarf": "neutral",
-      "wizard": "neutral",
-      "harvey": "neutral",
-      "sandy": "neutral",
-      "willy": "neutral",
-      "krobus": "neutral",
-      "leo": "neutral"
+      "gus": "dislike",
+      "dwarf": "dislike",
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
     },
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 3000
       }
     ]
@@ -906,7 +906,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -948,7 +948,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 50000,
         "condition": {
           ">=": [
@@ -977,7 +977,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1019,7 +1019,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 2000,
         "tradeItemId": "fiber",
         "tradeItemGameId": 771,
@@ -1052,7 +1052,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1080,7 +1080,7 @@
       "sam": "neutral",
       "leah": "neutral",
       "shane": "neutral",
-      "marnie": "neutral",
+      "marnie": "like",
       "elliott": "like",
       "gus": "neutral",
       "dwarf": "neutral",
@@ -1109,7 +1109,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1117,7 +1117,7 @@
       "demetrius": "neutral",
       "maru": "neutral",
       "sebastian": "neutral",
-      "linus": "neutral",
+      "linus": "love",
       "pierre": "neutral",
       "caroline": "neutral",
       "abigail": "neutral",
@@ -1166,7 +1166,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1201,7 +1201,7 @@
       "wizard": "neutral",
       "harvey": "neutral",
       "sandy": "neutral",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "neutral",
       "leo": "neutral"
     },
@@ -1223,7 +1223,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1265,7 +1265,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-volcano-shop",
+        "id": "loc-volcano-shop",
         "price": 2000,
         "tradeItemId": "diamond",
         "tradeItemGameId": 72,
@@ -1292,7 +1292,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1348,7 +1348,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1390,7 +1390,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 15000,
         "stock": 1,
         "stockLimit": 1
@@ -1412,7 +1412,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1454,7 +1454,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 35000,
         "condition": {
           ">=": [
@@ -1484,11 +1484,11 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "neutral",
+      "robin": "like",
       "demetrius": "neutral",
       "maru": "neutral",
       "sebastian": "neutral",
@@ -1526,7 +1526,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 8000,
         "rotating": true,
         "stock": 1,
@@ -1534,7 +1534,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "price": 1000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -1560,11 +1560,11 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "neutral",
+      "robin": "love",
       "demetrius": "neutral",
       "maru": "neutral",
       "sebastian": "neutral",

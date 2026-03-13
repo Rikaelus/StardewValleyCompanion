@@ -18,6 +18,18 @@
     "PennyPortrait":     { "name": "Penny's Portrait",      "wikiName": "Penny_Portrait" },
     "SamPortrait":       { "name": "Sam's Portrait",        "wikiName": "Sam_Portrait" },
     "SebastianPortrait": { "name": "Sebastian's Portrait",  "wikiName": "Sebastian_Portrait" },
-    "ShanePortrait":     { "name": "Shane's Portrait",      "wikiName": "Shane_Portrait" }
+    "ShanePortrait":     { "name": "Shane's Portrait",      "wikiName": "Shane_Portrait" },
+
+    "67":                { "name": "Dining Chair (yellow)", "wikiName": "Dining_Chair_(yellow)" },
+    "70":                { "name": "Dining Chair (red)",    "wikiName": "Dining_Chair_(red)" },
+
+    "FancyTree1":        { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant" },
+    "FancyTree2":        { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2" },
+    "FancyTree3":        { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_3" },
+    "FancyHousePlant1":  { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2_1" },
+    "FancyHousePlant2":  { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2_2" },
+    "FancyHousePlant3":  { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2_3" },
+    "FancyHousePlant4":  { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2_4" },
+    "FancyHousePlant5":  { "name": "Fancy House Plant",     "wikiName": "Fancy_House_Plant_2_5" }
   }
 }

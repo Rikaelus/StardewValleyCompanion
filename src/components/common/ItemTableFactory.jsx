@@ -144,7 +144,7 @@ export function createVillagerGiftColumns(villagers, relationalData) {
     },
     header: () => (
       <img
-        src={villager.icon}
+        src={villager.icon?.startsWith('/') ? villager.icon : `/${villager.icon}`}
         alt={villager.name}
         title={villager.name}
         width={24}

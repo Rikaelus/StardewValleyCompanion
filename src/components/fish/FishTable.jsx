@@ -2,7 +2,7 @@ import { useMemo, useRef, useEffect } from 'react'
 import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
-import { useModal } from '../../contexts/ModalContext'
+import { useOpenModal } from '../../contexts/ModalContext'
 import { formatTime, getDifficultyColor } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
@@ -16,7 +16,7 @@ import {
 function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
   const { villagers: { all: villagers }, ...relationalData } = useEntities()
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change

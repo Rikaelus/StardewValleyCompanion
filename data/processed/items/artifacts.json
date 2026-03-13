@@ -17,7 +17,64 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "anchor",
+    "gameId": "(O)117",
+    "name": "Anchor",
+    "icon": "assets/objects/Anchor.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray",
+      "dye_strong",
+      "marine_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -75,7 +132,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -117,7 +174,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-jas",
+        "id": "loc-desert-festival-jas",
         "price": 120,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -130,21 +187,22 @@
   },
   {
     "type": "artifact",
-    "id": "ancient-sword",
-    "gameId": "(O)109",
-    "name": "Ancient Sword",
-    "icon": "assets/objects/AncientSword.png",
+    "id": "ancient-drum",
+    "gameId": "(O)123",
+    "name": "Ancient Drum",
+    "icon": "assets/objects/AncientDrum.png",
     "price": 100,
     "edibility": -300,
     "gameCategory": 0,
     "contextTags": [
       "ancient_item",
-      "color_gray",
-      "dye_strong"
+      "color_purple",
+      "dye_strong",
+      "instrument_item"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -187,6 +245,384 @@
   },
   {
     "type": "artifact",
+    "id": "ancient-seed",
+    "gameId": "(O)114",
+    "name": "Ancient Seed",
+    "icon": "assets/objects/AncientSeed.png",
+    "price": 5,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Grub",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Fly",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bug",
+        "rolls": [
+          0.005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "ancient-sword",
+    "gameId": "(O)109",
+    "name": "Ancient Sword",
+    "icon": "assets/objects/AncientSword.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "ancient_item",
+      "color_gray",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "like",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "like",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "arrowhead",
+    "gameId": "(O)101",
+    "name": "Arrowhead",
+    "icon": "assets/objects/Arrowhead.png",
+    "price": 40,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray",
+      "dye_strong",
+      "hunting_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "bone-flute",
+    "gameId": "(O)119",
+    "name": "Bone Flute",
+    "icon": "assets/objects/BoneFlute.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_sand",
+      "dye_strong",
+      "instrument_item",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "like",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "chewing-stick",
+    "gameId": "(O)105",
+    "name": "Chewing Stick",
+    "icon": "assets/objects/ChewingStick.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "ancient_item",
+      "color_brown",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "like",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.03
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "chicken-statue",
+    "gameId": "(O)113",
+    "name": "Chicken Statue",
+    "icon": "assets/objects/ChickenStatue.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "chicken_item",
+      "color_sand",
+      "dye_strong",
+      "statue_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
     "id": "chipped-amphora",
     "gameId": "(O)100",
     "name": "Chipped Amphora",
@@ -202,7 +638,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -244,7 +680,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-vincent",
+        "id": "loc-desert-festival-vincent",
         "price": 80,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -257,33 +693,34 @@
   },
   {
     "type": "artifact",
-    "id": "dwarf-scroll-ii",
-    "gameId": "(O)97",
-    "name": "Dwarf Scroll II",
-    "icon": "assets/objects/DwarfScrollII.png",
-    "price": 1,
+    "id": "dinosaur-egg",
+    "gameId": "(O)107",
+    "name": "Dinosaur Egg",
+    "icon": "assets/objects/DinosaurEgg.png",
+    "price": 350,
     "edibility": -300,
     "gameCategory": 0,
     "contextTags": [
       "color_green",
+      "dinosaur_item",
       "dye_strong",
-      "scroll_item"
+      "egg_item"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
-      "demetrius": "hate",
+      "demetrius": "like",
       "maru": "hate",
       "sebastian": "hate",
       "linus": "hate",
       "pierre": "hate",
       "caroline": "hate",
       "abigail": "hate",
-      "alex": "hate",
+      "alex": "like",
       "george": "hate",
       "evelyn": "hate",
       "lewis": "hate",
@@ -310,53 +747,25 @@
       "krobus": "hate",
       "leo": "hate"
     },
-    "sources": [
-      {
-        "type": "monster-drop",
-        "monster": "Dust Spirit",
-        "chance": 0.005
-      },
-      {
-        "type": "monster-drop",
-        "monster": "Frost Bat",
-        "chance": 0.005
-      },
-      {
-        "type": "monster-drop",
-        "monster": "Frost Jelly",
-        "chance": 0.005
-      },
-      {
-        "type": "monster-drop",
-        "monster": "Ghost",
-        "chance": 0.005
-      },
-      {
-        "type": "monster-drop",
-        "monster": "Skeleton Warrior",
-        "chance": 0.005
-      }
-    ]
+    "sources": []
   },
   {
     "type": "artifact",
-    "id": "nautilus-fossil",
-    "gameId": "(O)586",
-    "name": "Nautilus Fossil",
-    "icon": "assets/objects/NautilusFossil.png",
-    "price": 80,
+    "id": "dried-starfish",
+    "gameId": "(O)116",
+    "name": "Dried Starfish",
+    "icon": "assets/objects/DriedStarfish.png",
+    "price": 40,
     "edibility": -300,
     "gameCategory": 0,
     "contextTags": [
-      "bone_item",
-      "color_white",
-      "fossil_item",
-      "marine_item",
-      "prehistoric_item"
+      "color_yellow",
+      "dye_strong",
+      "marine_item"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -399,6 +808,1089 @@
   },
   {
     "type": "artifact",
+    "id": "dwarf-gadget",
+    "gameId": "(O)122",
+    "name": "Dwarf Gadget",
+    "icon": "assets/objects/DwarfGadget.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray",
+      "dwarvish_item",
+      "dye_strong",
+      "machine_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "love",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "dwarf-scroll-i",
+    "gameId": "(O)96",
+    "name": "Dwarf Scroll I",
+    "icon": "assets/objects/DwarfScrollI.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_red",
+      "dye_strong",
+      "scroll_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Green Slime",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bat",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Stone Golem",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Grub",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Fly",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Rock Crab",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bug",
+        "rolls": [
+          0.005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "dwarf-scroll-ii",
+    "gameId": "(O)97",
+    "name": "Dwarf Scroll II",
+    "icon": "assets/objects/DwarfScrollII.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_green",
+      "dye_strong",
+      "scroll_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Dust Spirit",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Bat",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Ghost",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "dwarf-scroll-iii",
+    "gameId": "(O)98",
+    "name": "Dwarf Scroll III",
+    "icon": "assets/objects/DwarfScrollIII.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_blue",
+      "dye_strong",
+      "scroll_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Lava Bat",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "rolls": [
+          0.015
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Sludge",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Crab",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Brute",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Shaman",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Tiger Slime",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Sniper",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spider",
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "rolls": [
+          0.005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "dwarf-scroll-iv",
+    "gameId": "(O)99",
+    "name": "Dwarf Scroll IV",
+    "icon": "assets/objects/DwarfScrollIV.png",
+    "price": 1,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow",
+      "dye_strong",
+      "scroll_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Green Slime",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Dust Spirit",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bat",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Bat",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Bat",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Stone Golem",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Grub",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Fly",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Sludge",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Ghost",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Duggy",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Rock Crab",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Crab",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Brute",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Shaman",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bug",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Mummy",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Big Slime",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Tiger Slime",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Sniper",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spider",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "dwarvish-helm",
+    "gameId": "(O)121",
+    "name": "Dwarvish Helm",
+    "icon": "assets/objects/DwarvishHelm.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "dwarvish_item",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "like",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "elvish-jewelry",
+    "gameId": "(O)104",
+    "name": "Elvish Jewelry",
+    "icon": "assets/objects/ElvishJewelry.png",
+    "price": 200,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow",
+      "dye_strong",
+      "elvish_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "glass-shards",
+    "gameId": "(O)118",
+    "name": "Glass Shards",
+    "icon": "assets/objects/GlassShards.png",
+    "price": 20,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_cyan",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "golden-mask",
+    "gameId": "(O)124",
+    "name": "Golden Mask",
+    "icon": "assets/objects/GoldenMask.png",
+    "price": 500,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gold",
+      "dye_strong",
+      "golden_relic_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "golden-relic",
+    "gameId": "(O)125",
+    "name": "Golden Relic",
+    "icon": "assets/objects/GoldenRelic.png",
+    "price": 250,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gold",
+      "dye_strong",
+      "golden_relic_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "nautilus-fossil",
+    "gameId": "(O)586",
+    "name": "Nautilus Fossil",
+    "icon": "assets/objects/NautilusFossil.png",
+    "price": 80,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_white",
+      "fossil_item",
+      "marine_item",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "ornamental-fan",
+    "gameId": "(O)106",
+    "name": "Ornamental Fan",
+    "icon": "assets/objects/OrnamentalFan.png",
+    "price": 300,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_white",
+      "dye_strong",
+      "noble_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.03
+        ]
+      }
+    ]
+  },
+  {
+    "type": "artifact",
     "id": "palm-fossil",
     "gameId": "(O)588",
     "name": "Palm Fossil",
@@ -413,7 +1905,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -462,6 +1954,63 @@
   },
   {
     "type": "artifact",
+    "id": "prehistoric-handaxe",
+    "gameId": "(O)120",
+    "name": "Prehistoric Handaxe",
+    "icon": "assets/objects/PrehistoricHandaxe.png",
+    "price": 50,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray",
+      "dye_strong",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
     "id": "prehistoric-rib",
     "gameId": "(O)583",
     "name": "Prehistoric Rib",
@@ -476,7 +2025,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -539,7 +2088,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -582,7 +2131,9 @@
       {
         "type": "monster-drop",
         "monster": "Skeleton",
-        "chance": 0.005
+        "rolls": [
+          0.005
+        ]
       },
       {
         "type": "tilling",
@@ -607,7 +2158,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -670,7 +2221,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -733,7 +2284,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -790,7 +2341,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -839,21 +2390,20 @@
   },
   {
     "type": "artifact",
-    "id": "skeletal-hand",
-    "gameId": "(O)582",
-    "name": "Skeletal Hand",
-    "icon": "assets/objects/SkeletalHand.png",
-    "price": 100,
+    "id": "rare-disc",
+    "gameId": "(O)108",
+    "name": "Rare Disc",
+    "icon": "assets/objects/RareDisc.png",
+    "price": 300,
     "edibility": -300,
     "gameCategory": 0,
     "contextTags": [
-      "bone_item",
-      "color_white",
-      "prehistoric_item"
+      "color_dark_gray",
+      "dye_strong"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -894,40 +2444,80 @@
     },
     "sources": [
       {
-        "type": "shop",
-        "id": "store-desert-festival-vincent",
-        "price": 200,
-        "tradeItemId": "calico-egg",
-        "tradeItemGameId": "CalicoEgg",
-        "tradeItemName": "Calico Egg",
-        "tradeItemIcon": "assets/objects/CalicoEgg.png",
-        "tradeItemAmount": 2,
-        "stock": 1
+        "type": "monster-drop",
+        "monster": "Bat",
+        "rolls": [
+          0.001
+        ]
       },
       {
-        "type": "tilling",
-        "location": "Backwoods",
-        "chance": 0.1
+        "type": "monster-drop",
+        "monster": "Frost Bat",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Bat",
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Brute",
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Shaman",
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Sniper",
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spider",
+        "rolls": [
+          0.003
+        ]
       }
     ]
   },
   {
     "type": "artifact",
-    "id": "skeletal-tail",
-    "gameId": "(O)585",
-    "name": "Skeletal Tail",
-    "icon": "assets/objects/SkeletalTail.png",
-    "price": 100,
+    "id": "rusty-cog",
+    "gameId": "(O)112",
+    "name": "Rusty Cog",
+    "icon": "assets/objects/RustyCog.png",
+    "price": 25,
     "edibility": -300,
     "gameCategory": 0,
     "contextTags": [
-      "bone_item",
-      "color_white",
-      "prehistoric_item"
+      "color_brown",
+      "dye_strong",
+      "machine_item"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -970,6 +2560,373 @@
   },
   {
     "type": "artifact",
+    "id": "rusty-spoon",
+    "gameId": "(O)110",
+    "name": "Rusty Spoon",
+    "icon": "assets/objects/RustySpoon.png",
+    "price": 25,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_gray",
+      "cooking_item",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "tilling",
+        "location": "Town River",
+        "chance": 0.2
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "rusty-spur",
+    "gameId": "(O)111",
+    "name": "Rusty Spur",
+    "icon": "assets/objects/RustySpur.png",
+    "price": 25,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_brown",
+      "cowboy_item",
+      "dye_strong"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "skeletal-hand",
+    "gameId": "(O)582",
+    "name": "Skeletal Hand",
+    "icon": "assets/objects/SkeletalHand.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_white",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-vincent",
+        "price": 200,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2,
+        "stock": 1
+      },
+      {
+        "type": "tilling",
+        "location": "Backwoods",
+        "chance": 0.1
+      }
+    ]
+  },
+  {
+    "type": "artifact",
+    "id": "skeletal-tail",
+    "gameId": "(O)585",
+    "name": "Skeletal Tail",
+    "icon": "assets/objects/SkeletalTail.png",
+    "price": 100,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "bone_item",
+      "color_white",
+      "prehistoric_item"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "strange-doll-(O)126",
+    "gameId": "(O)126",
+    "name": "Strange Doll",
+    "icon": "assets/objects/StrangeDoll.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_green",
+      "doll_item",
+      "dye_strong",
+      "strange_doll_1"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "love",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
+    "id": "strange-doll-(O)127",
+    "gameId": "(O)127",
+    "name": "Strange Doll",
+    "icon": "assets/objects/StrangeDoll.png",
+    "price": 1000,
+    "edibility": -300,
+    "gameCategory": 0,
+    "contextTags": [
+      "color_yellow",
+      "doll_item",
+      "dye_strong",
+      "strange_doll_2"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "love",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
+    },
+    "sources": []
+  },
+  {
+    "type": "artifact",
     "id": "trilobite",
     "gameId": "(O)589",
     "name": "Trilobite",
@@ -984,7 +2941,7 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

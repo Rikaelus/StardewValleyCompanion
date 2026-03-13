@@ -13,8 +13,48 @@
     ],
     "rarity": "uncommon",
     "sellingLocations": [
-      "store-marlon",
-      "store-shipping-bin"
+      "loc-marlon",
+      "loc-shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-vincent",
+        "price": 16,
+        "quantity": 3,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Grub",
+        "rolls": [
+          0.6
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Fly",
+        "rolls": [
+          0.9
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bug",
+        "rolls": [
+          0.76
+        ]
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "fish_carnivorous",
+        "minPopulation": 9,
+        "chance": 0.05
+      }
     ],
     "bundles": [],
     "gifts": {
@@ -69,8 +109,75 @@
     ],
     "rarity": "uncommon",
     "sellingLocations": [
-      "store-marlon",
-      "store-shipping-bin"
+      "loc-marlon",
+      "loc-shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 10,
+        "quantity": 50,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Green Slime",
+        "rolls": [
+          0.75,
+          0.05
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Jelly",
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Sludge",
+        "rolls": [
+          0.8
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Big Slime",
+        "rolls": [
+          0.99,
+          0.9,
+          0.4
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Tiger Slime",
+        "rolls": [
+          0.8
+        ]
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_slimejack",
+        "minPopulation": 9,
+        "chance": 0.075
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_slimejack",
+        "minPopulation": 9,
+        "chance": 0.12
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_slimejack",
+        "minPopulation": 9,
+        "chance": 0.2
+      }
     ],
     "bundles": [
       "adventurer-s"
@@ -126,8 +233,43 @@
     ],
     "rarity": "uncommon",
     "sellingLocations": [
-      "store-marlon",
-      "store-shipping-bin"
+      "loc-marlon",
+      "loc-shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 30,
+        "quantity": 10,
+        "days": [
+          "Sunday"
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Bat",
+        "rolls": [
+          0.9,
+          0.4
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Frost Bat",
+        "rolls": [
+          0.9,
+          0.55
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Lava Bat",
+        "rolls": [
+          0.9,
+          0.7
+        ]
+      }
     ],
     "bundles": [
       "adventurer-s"
@@ -183,8 +325,73 @@
     ],
     "rarity": "rare",
     "sellingLocations": [
-      "store-marlon",
-      "store-shipping-bin"
+      "loc-marlon",
+      "loc-shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 80,
+        "quantity": 10
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Iridium Bat",
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Ghost",
+        "rolls": [
+          0.95,
+          0.1
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Squid Kid",
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Metal Head",
+        "rolls": [
+          0.65
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Mummy",
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Hot Head",
+        "rolls": [
+          0.65
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Blue Squid",
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_sunfish",
+        "minPopulation": 10,
+        "chance": 0.08
+      }
     ],
     "bundles": [
       "adventurer-s"
@@ -240,8 +447,85 @@
     ],
     "rarity": "rare",
     "sellingLocations": [
-      "store-marlon",
-      "store-shipping-bin"
+      "loc-marlon",
+      "loc-shipping-bin"
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 100,
+        "quantity": 10
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Guy",
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Brute",
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Shaman",
+        "rolls": [
+          0.75,
+          0.2
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Serpent",
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Shadow Sniper",
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Spider",
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "type": "monster-drop",
+        "monster": "Royal Serpent",
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "type": "fish-pond",
+        "fishTag": "item_void_salmon",
+        "minPopulation": 8,
+        "chance": 0.08
+      }
     ],
     "bundles": [
       "adventurer-s"

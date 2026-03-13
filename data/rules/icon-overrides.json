@@ -2,6 +2,13 @@
   "$schema": "icon-overrides-schema",
   "description": "Maps friendly item IDs to the wiki image name to use when downloading icons. Used when the wiki image filename differs from what can be derived from item.name.",
   "overrides": {
+    "(BC)48":                         "Seasonal_Decor_Spring",
+    "(BC)184":                        "Seasonal_Plant_1_Spring",
+    "(BC)188":                        "Seasonal_Plant_2_Spring",
+    "(BC)192":                        "Seasonal_Plant_3_Spring",
+    "(BC)196":                        "Seasonal_Plant_4_Spring",
+    "(BC)200":                        "Seasonal_Plant_5_Spring",
+    "(BC)204":                        "Seasonal_Plant_6_Spring",
     "pi-a-colada":                    "Piña Colada",
     "trash":                          "Trash (item)",
     "fireworks-green":                "Fireworks (Green)",
@@ -18,6 +25,9 @@
     "strange-doll-127":               "Strange Doll (yellow)",
     "jack-be-nimble-jack-be-thick":   "Jack Be Nimble, Jack Be Thick",
     "ways-of-the-wild":               "Ways Of The Wild",
-    "book-horse":                     "Horse The Book"
+    "book-horse":                     "Horse The Book",
+    "monster-fly":                    "Cave Fly",
+    "monster-sludge":                 "Purple Slime",
+    "monster-skeleton-warrior":       "Skeleton Dangerous"
   }
 }

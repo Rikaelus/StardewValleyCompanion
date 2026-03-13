@@ -41,6 +41,11 @@
       "format": "{input} {product}",
       "note": "Flavored by nearby flower: 'Poppy Honey', 'Fairy Rose Honey', etc."
     },
+    "Mayonnaise": {
+      "pattern": "none",
+      "format": "{product}",
+      "note": "Ostrich Egg produces 10x and Golden Egg produces 3x the same 'Mayonnaise' — no variant names"
+    },
     "Cheese": {
       "pattern": "none",
       "format": "{product}",

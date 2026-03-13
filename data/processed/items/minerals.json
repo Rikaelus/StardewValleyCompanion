@@ -13,8 +13,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -68,8 +69,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "dye"
@@ -125,8 +127,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -180,8 +183,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -235,8 +239,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -290,8 +295,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -345,8 +351,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -401,8 +408,9 @@
     ],
     "mineralType": "gem",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "the-missing"
@@ -458,8 +466,9 @@
     ],
     "mineralType": "mineral",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "geologist-s"
@@ -515,8 +524,9 @@
     ],
     "mineralType": "crystal",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "geologist-s"
@@ -572,8 +582,9 @@
     ],
     "mineralType": "crystal",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "geologist-s"
@@ -629,8 +640,9 @@
     ],
     "mineralType": "crystal",
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [
       "geologist-s"

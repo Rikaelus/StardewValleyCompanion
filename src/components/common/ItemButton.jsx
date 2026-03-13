@@ -46,7 +46,7 @@ function ItemButton({
 
     return (
       <img
-        src={item.icon}
+        src={item.icon.startsWith('/') ? item.icon : `/${item.icon}`}
         alt={item.name || 'Item'}
         width={iconSize}
         height={iconSize}

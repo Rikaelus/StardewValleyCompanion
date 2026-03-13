@@ -15,8 +15,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -59,12 +60,20 @@
       {
         "type": "monster-drop",
         "monster": "Skeleton",
-        "chance": 1
+        "rolls": [
+          0.5,
+          0.4,
+          0.2
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Lava Lurk",
-        "chance": 1
+        "rolls": [
+          0.5,
+          0.4,
+          0.2
+        ]
       },
       {
         "type": "tilling",
@@ -92,8 +101,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -136,22 +146,34 @@
       {
         "type": "monster-drop",
         "monster": "Magma Sprite",
-        "chance": 0.7
+        "rolls": [
+          0.5,
+          0.2
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Magma Duggy",
-        "chance": 0.55
+        "rolls": [
+          0.4,
+          0.15
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Magma Sparker",
-        "chance": 0.7
+        "rolls": [
+          0.5,
+          0.2
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "False Magma Cap",
-        "chance": 0.7
+        "rolls": [
+          0.5,
+          0.2
+        ]
       },
       {
         "type": "fish-pond",
@@ -175,8 +197,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -218,20 +241,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 150,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 250,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 30,
         "quantity": 20,
         "tradeItemId": "mining-monthly",
@@ -242,7 +265,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-clint",
+        "id": "loc-desert-festival-clint",
         "price": 30,
         "quantity": 50,
         "tradeItemId": "calico-egg",
@@ -254,37 +277,51 @@
       {
         "type": "monster-drop",
         "monster": "Dust Spirit",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Stone Golem",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Wilderness Golem",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Golem",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Metal Head",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Spiker",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Hot Head",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "garbage-can",
@@ -323,63 +360,64 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "dislike",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
       "clint": "neutral",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
       "sam": "hate",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sources": [
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 75,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 150,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-clint",
+        "id": "loc-desert-festival-clint",
         "price": 10,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -391,17 +429,26 @@
       {
         "type": "monster-drop",
         "monster": "Metal Head",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Spiker",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Hot Head",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "fish-pond",
@@ -461,8 +508,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -504,14 +552,14 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 400,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 750,
         "yearUnlock": 2
       },
@@ -544,8 +592,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -588,12 +637,21 @@
       {
         "type": "monster-drop",
         "monster": "Iridium Bat",
-        "chance": 1
+        "rolls": [
+          0.9,
+          0.5,
+          0.25,
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Crab",
-        "chance": 1
+        "rolls": [
+          0.5,
+          0.5,
+          0.5
+        ]
       },
       {
         "type": "fish-pond",
@@ -619,63 +677,64 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "dislike",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
       "clint": "neutral",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
       "sam": "hate",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sources": [
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 150,
         "yearUnlock": 2,
         "yearUnlockBefore": true
       },
       {
         "type": "shop",
-        "id": "store-clint",
+        "id": "loc-clint",
         "price": 250,
         "yearUnlock": 2
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-clint",
+        "id": "loc-desert-festival-clint",
         "price": 20,
         "quantity": 100,
         "tradeItemId": "calico-egg",
@@ -687,22 +746,33 @@
       {
         "type": "monster-drop",
         "monster": "Stone Golem",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Metal Head",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Spiker",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Hot Head",
-        "chance": 0.2
+        "rolls": [
+          0.1,
+          0.1
+        ]
       },
       {
         "type": "fish-pond",
@@ -732,45 +802,46 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
-      "demetrius": "dislike",
-      "maru": "dislike",
-      "sebastian": "dislike",
-      "linus": "dislike",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
-      "evelyn": "dislike",
-      "lewis": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "like",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
       "clint": "neutral",
-      "penny": "dislike",
-      "pam": "dislike",
-      "emily": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
       "sam": "hate",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
-      "elliott": "dislike",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sources": []
   }

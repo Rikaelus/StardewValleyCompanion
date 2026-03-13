@@ -10,7 +10,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -26,7 +26,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -42,7 +42,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -58,7 +58,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -74,7 +74,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -90,7 +90,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -106,7 +106,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -122,7 +122,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -138,7 +138,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -154,7 +154,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -170,7 +170,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -186,7 +186,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -202,7 +202,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 2000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -218,7 +223,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -234,7 +239,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -250,7 +255,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -266,7 +271,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -282,7 +287,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 5000,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -298,7 +311,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -314,7 +327,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -330,7 +343,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -346,7 +359,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -362,7 +375,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -378,7 +391,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -394,7 +407,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -410,7 +423,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -426,7 +439,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -442,7 +455,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -458,7 +471,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -474,7 +487,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -490,7 +503,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -506,7 +519,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -522,7 +535,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -538,7 +551,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -554,7 +567,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -570,7 +583,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -586,7 +599,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -602,7 +615,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -618,7 +631,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -634,7 +647,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -650,7 +663,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -666,7 +679,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -682,7 +695,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -698,7 +711,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -714,7 +727,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -730,7 +743,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -746,7 +759,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -762,7 +775,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -778,7 +791,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -794,7 +807,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -810,7 +823,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -826,7 +839,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -842,7 +855,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 1000,
+        "tradeItemId": "mango",
+        "tradeItemGameId": 834,
+        "tradeItemName": "Mango",
+        "tradeItemIcon": "assets/objects/Mango.png",
+        "tradeItemAmount": 5,
+        "days": [
+          "Thursday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -858,7 +884,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -874,7 +900,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -890,7 +916,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.abigail"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -906,7 +947,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.alex"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -922,7 +978,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -938,13 +994,13 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "anchor",
+    "id": "anchor-1675",
     "gameId": 1675,
     "name": "Anchor",
     "type": "painting",
@@ -954,7 +1010,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -970,7 +1026,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -986,7 +1042,19 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 20000,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 20
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1002,7 +1070,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1018,7 +1086,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1034,7 +1102,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1050,7 +1118,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1066,7 +1134,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 600
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1082,7 +1155,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1098,7 +1171,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1114,7 +1192,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 300,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1130,7 +1216,14 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1146,7 +1239,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-trade",
+        "price": 12000,
+        "tradeItemId": "pearl",
+        "tradeItemGameId": 797,
+        "tradeItemName": "Pearl",
+        "tradeItemIcon": "assets/objects/Pearl.png",
+        "tradeItemAmount": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1162,7 +1265,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 10000,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1178,7 +1289,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1000,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1194,7 +1313,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1210,7 +1329,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1226,7 +1353,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1242,7 +1377,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 5000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1258,7 +1398,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1274,7 +1414,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1290,7 +1430,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1306,7 +1446,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -1322,7 +1462,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -1338,7 +1478,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1354,7 +1494,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1370,7 +1510,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1386,7 +1526,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.ticketPrizesClaimed"
+            },
+            6
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1402,7 +1555,32 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1000,
+        "condition": {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "player.stats.ticketPrizesClaimed"
+                },
+                6
+              ]
+            },
+            {
+              ">=": [
+                {
+                  "var": "player.houseUpgrade"
+                },
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1418,7 +1596,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -1434,7 +1612,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1450,7 +1628,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1466,7 +1644,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1482,7 +1660,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1498,7 +1676,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1514,7 +1692,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -1530,7 +1708,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -1546,7 +1724,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1562,7 +1740,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1578,7 +1756,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1594,7 +1772,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 2000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1610,7 +1793,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -1626,7 +1809,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -1642,7 +1825,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1658,7 +1841,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -1674,7 +1857,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1690,7 +1873,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1706,7 +1889,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1722,7 +1910,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -1738,7 +1926,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -1754,7 +1942,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1770,7 +1958,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-trade",
+        "price": 100000,
+        "tradeItemId": "bat-wing",
+        "tradeItemGameId": 767,
+        "tradeItemName": "Bat Wing",
+        "tradeItemIcon": "assets/objects/BatWing.png",
+        "tradeItemAmount": 200
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1786,7 +1984,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1802,7 +2000,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 4000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1818,7 +2021,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1834,7 +2037,33 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 35,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1850,7 +2079,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1866,7 +2095,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1882,7 +2111,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1898,7 +2127,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -1914,7 +2143,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 10000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1930,7 +2164,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-pierre",
+        "price": 60000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1946,7 +2185,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -1962,7 +2201,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1978,7 +2217,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -1989,12 +2228,17 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/CeilingLeaves.png",
-    "wikiName": "Ceiling_Leaves",
+    "icon": "assets/objects/CeilingLeaves1.png",
+    "wikiName": "Ceiling_Leaves_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2005,12 +2249,17 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/CeilingLeaves.png",
-    "wikiName": "Ceiling_Leaves",
+    "icon": "assets/objects/CeilingLeaves2.png",
+    "wikiName": "Ceiling_Leaves_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2021,12 +2270,17 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/CeilingLeaves.png",
-    "wikiName": "Ceiling_Leaves",
+    "icon": "assets/objects/CeilingLeaves3.png",
+    "wikiName": "Ceiling_Leaves_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2037,12 +2291,17 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/CeilingLeaves.png",
-    "wikiName": "Ceiling_Leaves",
+    "icon": "assets/objects/CeilingLeaves4.png",
+    "wikiName": "Ceiling_Leaves_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-flower-dance",
+        "price": 400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2053,12 +2312,17 @@
     "name": "Ceiling Leaves",
     "type": "painting",
     "price": 50,
-    "icon": "assets/objects/CeilingLeaves.png",
-    "wikiName": "Ceiling_Leaves",
+    "icon": "assets/objects/CeilingLeaves5.png",
+    "wikiName": "Ceiling_Leaves_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-flower-dance",
+        "price": 400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2074,7 +2338,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2090,7 +2354,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2106,7 +2370,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2122,7 +2386,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 2000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            2
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2138,7 +2415,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2154,7 +2431,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -2170,7 +2447,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-caroline",
+        "price": 2000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 40
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2186,7 +2473,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 5000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2197,12 +2489,17 @@
     "name": "Cloud Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/CloudDecal.png",
-    "wikiName": "Cloud_Decal",
+    "icon": "assets/objects/CloudDecal1.png",
+    "wikiName": "Cloud_Decal_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-moonlight-jellies",
+        "price": 1200
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2213,12 +2510,17 @@
     "name": "Cloud Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/CloudDecal.png",
-    "wikiName": "Cloud_Decal",
+    "icon": "assets/objects/CloudDecal2.png",
+    "wikiName": "Cloud_Decal_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-moonlight-jellies",
+        "price": 1200
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2234,7 +2536,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-night-market",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2250,7 +2557,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 2000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2266,7 +2578,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2282,7 +2594,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-egg-festival",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2298,7 +2615,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2314,7 +2631,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2330,7 +2647,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2346,7 +2663,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 10000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.ticketPrizesClaimed"
+            },
+            17
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2362,7 +2692,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -2378,7 +2708,46 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-night-market",
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 2500,
+        "condition": {
+          ">=": [
+            {
+              "var": "museum.minerals"
+            },
+            40
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2394,7 +2763,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -2410,7 +2779,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2426,7 +2795,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2442,7 +2811,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 10000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2458,7 +2832,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2474,7 +2848,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 10000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2490,7 +2869,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -2506,7 +2885,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -2522,7 +2901,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-trade",
+        "price": 1998,
+        "tradeItemId": "coal",
+        "tradeItemGameId": 382,
+        "tradeItemName": "Coal",
+        "tradeItemIcon": "assets/objects/Coal.png",
+        "tradeItemAmount": 999
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2538,7 +2927,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -2554,7 +2943,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2570,7 +2959,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2586,7 +2975,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2602,7 +2991,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -2618,7 +3007,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2634,7 +3028,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2650,7 +3057,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2661,12 +3068,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor1.png",
+    "wikiName": "Decorative_Door_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2677,12 +3084,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor2.png",
+    "wikiName": "Decorative_Door_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2693,12 +3100,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor3.png",
+    "wikiName": "Decorative_Door_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2709,12 +3116,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor4.png",
+    "wikiName": "Decorative_Door_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2725,12 +3132,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor5.png",
+    "wikiName": "Decorative_Door_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2741,12 +3148,12 @@
     "name": "Decorative Door",
     "type": "painting",
     "price": 5000,
-    "icon": "assets/objects/DecorativeDoor.png",
-    "wikiName": "Decorative_Door",
+    "icon": "assets/objects/DecorativeDoor6.png",
+    "wikiName": "Decorative_Door_6",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2762,7 +3169,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2778,7 +3185,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -2794,7 +3201,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -2810,7 +3217,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2826,7 +3233,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2842,7 +3249,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-egg-festival",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2858,7 +3270,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -2874,7 +3286,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2890,7 +3302,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marlon",
+        "price": 10000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2906,7 +3323,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2922,7 +3339,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2938,7 +3355,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -2954,7 +3371,46 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-willy",
+        "price": 5000,
+        "condition": {
+          "in": [
+            "WillyTropicalFish",
+            {
+              "var": "player.mail"
+            }
+          ]
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "WillyTropicalFish",
+        "sender": "Willy",
+        "isSpecialOrder": true,
+        "condition": {
+          "and": [
+            {
+              "==": [
+                {
+                  "var": "world.islandUnlocked"
+                },
+                true
+              ]
+            },
+            {
+              "in": [
+                "Island_Resort",
+                {
+                  "var": "player.mail"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2970,7 +3426,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 12000,
+        "condition": {
+          "in": [
+            1053978,
+            {
+              "var": "player.events"
+            }
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -2986,7 +3455,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3002,7 +3471,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3018,7 +3500,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3034,7 +3529,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3050,7 +3558,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3066,7 +3587,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "days": [
+          "Wednesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3082,39 +3616,52 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "dining-chair-67",
-    "gameId": 67,
-    "name": "Dining Chair",
-    "type": "chair",
-    "price": 1200,
-    "icon": "assets/objects/DiningChair.png",
-    "wikiName": "Dining_Chair",
-    "sources": [
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "days": [
+          "Tuesday"
+        ]
+      },
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
   },
   {
-    "id": "dining-chair-70",
+    "id": "dining-chair-red",
     "gameId": 70,
-    "name": "Dining Chair",
+    "name": "Dining Chair (red)",
     "type": "chair",
     "price": 1200,
-    "icon": "assets/objects/DiningChair.png",
-    "wikiName": "Dining_Chair",
+    "icon": "assets/objects/DiningChair(red).png",
+    "wikiName": "Dining_Chair_(red)",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "dining-chair-yellow",
+    "gameId": 67,
+    "name": "Dining Chair (yellow)",
+    "type": "chair",
+    "price": 1200,
+    "icon": "assets/objects/DiningChair(yellow).png",
+    "wikiName": "Dining_Chair_(yellow)",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3130,7 +3677,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3146,7 +3693,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marnie",
+        "price": 10000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3162,7 +3714,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 2000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3178,7 +3743,16 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-stardew-valley-fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 100,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3194,7 +3768,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3210,7 +3784,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3226,7 +3800,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3242,7 +3816,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3258,7 +3832,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3274,7 +3848,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3290,7 +3864,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.elliott"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3306,7 +3895,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3322,7 +3911,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.emily"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3338,7 +3942,19 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-qi-gem-shop",
+        "shopCurrency": "qi-gems",
+        "shopCurrencyGameId": 858,
+        "price": 12000,
+        "tradeItemId": "qi-gem",
+        "tradeItemGameId": 858,
+        "tradeItemName": "Qi Gem",
+        "tradeItemIcon": "assets/objects/QiGem.png",
+        "tradeItemAmount": 50
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3354,7 +3970,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3370,7 +3986,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3386,7 +4002,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3402,7 +4018,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3418,7 +4034,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3434,7 +4050,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3450,7 +4066,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3466,7 +4082,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3482,7 +4098,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3493,12 +4109,12 @@
     "name": "Fancy House Plant",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/FancyHousePlant.png",
-    "wikiName": "Fancy_House_Plant",
+    "icon": "assets/objects/FancyHousePlant2.png",
+    "wikiName": "Fancy_House_Plant_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3509,12 +4125,92 @@
     "name": "Fancy House Plant",
     "type": "decor",
     "price": 500,
-    "icon": "assets/objects/FancyHousePlant.png",
-    "wikiName": "Fancy_House_Plant",
+    "icon": "assets/objects/FancyHousePlant3.png",
+    "wikiName": "Fancy_House_Plant_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "fancy-house-plant-FancyHousePlant3",
+    "gameId": "FancyHousePlant3",
+    "name": "Fancy House Plant",
+    "type": "decor",
+    "price": 250,
+    "icon": "assets/objects/FancyHousePlant23.png",
+    "wikiName": "Fancy_House_Plant_2_3",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "fancy-house-plant-FancyHousePlant1",
+    "gameId": "FancyHousePlant1",
+    "name": "Fancy House Plant",
+    "type": "decor",
+    "price": 250,
+    "icon": "assets/objects/FancyHousePlant21.png",
+    "wikiName": "Fancy_House_Plant_2_1",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "fancy-house-plant-FancyHousePlant2",
+    "gameId": "FancyHousePlant2",
+    "name": "Fancy House Plant",
+    "type": "decor",
+    "price": 250,
+    "icon": "assets/objects/FancyHousePlant22.png",
+    "wikiName": "Fancy_House_Plant_2_2",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "fancy-house-plant-FancyHousePlant4",
+    "gameId": "FancyHousePlant4",
+    "name": "Fancy House Plant",
+    "type": "decor",
+    "price": 250,
+    "icon": "assets/objects/FancyHousePlant24.png",
+    "wikiName": "Fancy_House_Plant_2_4",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "id": "fancy-house-plant-FancyHousePlant5",
+    "gameId": "FancyHousePlant5",
+    "name": "Fancy House Plant",
+    "type": "decor",
+    "price": 250,
+    "icon": "assets/objects/FancyHousePlant25.png",
+    "wikiName": "Fancy_House_Plant_2_5",
+    "sources": [
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3530,7 +4226,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 3000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3546,7 +4247,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-willy",
+        "price": 25000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3557,12 +4263,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL1.png",
+    "wikiName": "Floor_Divider_L_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3573,12 +4279,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL2.png",
+    "wikiName": "Floor_Divider_L_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3589,12 +4295,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL3.png",
+    "wikiName": "Floor_Divider_L_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3605,12 +4311,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL4.png",
+    "wikiName": "Floor_Divider_L_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3621,12 +4327,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL5.png",
+    "wikiName": "Floor_Divider_L_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3637,12 +4343,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL6.png",
+    "wikiName": "Floor_Divider_L_6",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3653,12 +4359,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL7.png",
+    "wikiName": "Floor_Divider_L_7",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3669,12 +4375,12 @@
     "name": "Floor Divider L",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerL.png",
-    "wikiName": "Floor_Divider_L",
+    "icon": "assets/objects/FloorDividerL8.png",
+    "wikiName": "Floor_Divider_L_8",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3685,12 +4391,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR1.png",
+    "wikiName": "Floor_Divider_R_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3701,12 +4407,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR2.png",
+    "wikiName": "Floor_Divider_R_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3717,12 +4423,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR3.png",
+    "wikiName": "Floor_Divider_R_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3733,12 +4439,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR4.png",
+    "wikiName": "Floor_Divider_R_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3749,12 +4455,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR5.png",
+    "wikiName": "Floor_Divider_R_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3765,12 +4471,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR6.png",
+    "wikiName": "Floor_Divider_R_6",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3781,12 +4487,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR7.png",
+    "wikiName": "Floor_Divider_R_7",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3797,12 +4503,12 @@
     "name": "Floor Divider R",
     "type": "rug",
     "price": 50,
-    "icon": "assets/objects/FloorDividerR.png",
-    "wikiName": "Floor_Divider_R",
+    "icon": "assets/objects/FloorDividerR8.png",
+    "wikiName": "Floor_Divider_R_8",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3818,7 +4524,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1400
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3834,7 +4545,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3850,7 +4561,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3866,7 +4577,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3882,7 +4593,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-spirits-eve",
+        "price": 4000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3898,7 +4614,31 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 400000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-robin",
+        "price": 400000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 1000,
+        "stock": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3914,7 +4654,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3930,7 +4670,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3946,7 +4686,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3962,7 +4702,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -3978,7 +4718,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -3994,7 +4734,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4010,7 +4750,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4026,7 +4766,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4042,7 +4782,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4058,7 +4798,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4074,7 +4814,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4090,7 +4830,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4106,7 +4846,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -4122,7 +4862,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4138,7 +4878,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -4154,7 +4894,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -4170,7 +4910,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4186,7 +4926,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4202,7 +4942,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4218,7 +4958,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4234,7 +4974,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4250,7 +4990,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4266,7 +5006,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -4282,7 +5022,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4298,7 +5038,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4314,7 +5054,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.haley"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4330,7 +5085,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-willy",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4346,7 +5106,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4362,7 +5122,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.harvey"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4373,12 +5148,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant1.png",
+    "wikiName": "House_Plant_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4389,12 +5164,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant2.png",
+    "wikiName": "House_Plant_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4405,12 +5180,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant3.png",
+    "wikiName": "House_Plant_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4421,12 +5196,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant4.png",
+    "wikiName": "House_Plant_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4437,12 +5212,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant5.png",
+    "wikiName": "House_Plant_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4453,12 +5228,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant6.png",
+    "wikiName": "House_Plant_6",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4469,12 +5244,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant7.png",
+    "wikiName": "House_Plant_7",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4485,12 +5260,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant8.png",
+    "wikiName": "House_Plant_8",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4501,12 +5276,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant9.png",
+    "wikiName": "House_Plant_9",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4517,12 +5292,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant10.png",
+    "wikiName": "House_Plant_10",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4533,12 +5308,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant11.png",
+    "wikiName": "House_Plant_11",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4549,12 +5324,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant12.png",
+    "wikiName": "House_Plant_12",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4565,12 +5340,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant13.png",
+    "wikiName": "House_Plant_13",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4581,12 +5356,12 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant14.png",
+    "wikiName": "House_Plant_14",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4597,92 +5372,17 @@
     "name": "House Plant",
     "type": "decor",
     "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
+    "icon": "assets/objects/HousePlant15.png",
+    "wikiName": "House_Plant_15",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "house-plant-FancyHousePlant3",
-    "gameId": "FancyHousePlant3",
-    "name": "House Plant",
-    "type": "decor",
-    "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
-    "sources": [
+        "id": "loc-winter-star",
+        "price": 700
+      },
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "house-plant-FancyHousePlant1",
-    "gameId": "FancyHousePlant1",
-    "name": "House Plant",
-    "type": "decor",
-    "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
-    "sources": [
-      {
-        "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "house-plant-FancyHousePlant2",
-    "gameId": "FancyHousePlant2",
-    "name": "House Plant",
-    "type": "decor",
-    "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
-    "sources": [
-      {
-        "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "house-plant-FancyHousePlant4",
-    "gameId": "FancyHousePlant4",
-    "name": "House Plant",
-    "type": "decor",
-    "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
-    "sources": [
-      {
-        "type": "shop",
-        "id": "store-furniture-catalogue",
-        "price": 0
-      }
-    ]
-  },
-  {
-    "id": "house-plant-FancyHousePlant5",
-    "gameId": "FancyHousePlant5",
-    "name": "House Plant",
-    "type": "decor",
-    "price": 250,
-    "icon": "assets/objects/HousePlant.png",
-    "wikiName": "House_Plant",
-    "sources": [
-      {
-        "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4698,7 +5398,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4714,7 +5419,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 4000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4730,7 +5440,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4746,7 +5456,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4762,7 +5472,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4778,7 +5488,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-night-market",
+        "price": 15000
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 15000
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 15000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4794,7 +5519,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4810,7 +5535,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4826,7 +5551,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "loc-joja",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4842,7 +5572,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4858,7 +5588,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4874,7 +5604,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4890,7 +5620,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4906,7 +5636,27 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-joja",
+        "price": 25000
+      },
+      {
+        "type": "shop",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "rotating": true,
+        "condition": {
+          "==": [
+            {
+              "var": "world.communityCenter"
+            },
+            true
+          ]
+        },
+        "stock": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -4922,7 +5672,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4938,7 +5688,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4954,7 +5704,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4970,7 +5720,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -4986,7 +5736,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5002,7 +5752,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5018,7 +5768,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5034,7 +5784,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5050,7 +5800,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5066,7 +5816,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5082,7 +5832,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5098,7 +5848,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5114,7 +5864,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5130,7 +5880,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5146,7 +5896,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5162,7 +5912,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5178,7 +5928,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5194,7 +5944,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5210,7 +5960,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5226,7 +5976,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5237,12 +5987,17 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/JungleDecal.png",
-    "wikiName": "Jungle_Decal",
+    "icon": "assets/objects/JungleDecal1.png",
+    "wikiName": "Jungle_Decal_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5253,12 +6008,17 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/JungleDecal.png",
-    "wikiName": "Jungle_Decal",
+    "icon": "assets/objects/JungleDecal2.png",
+    "wikiName": "Jungle_Decal_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5269,12 +6029,17 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/JungleDecal.png",
-    "wikiName": "Jungle_Decal",
+    "icon": "assets/objects/JungleDecal3.png",
+    "wikiName": "Jungle_Decal_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5285,12 +6050,17 @@
     "name": "Jungle Decal",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/JungleDecal.png",
-    "wikiName": "Jungle_Decal",
+    "icon": "assets/objects/JungleDecal4.png",
+    "wikiName": "Jungle_Decal_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5306,7 +6076,25 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-raccoon",
+        "price": 10000,
+        "tradeItemId": "broken-glasses",
+        "tradeItemGameId": 170,
+        "tradeItemName": "Broken Glasses",
+        "tradeItemIcon": "assets/objects/BrokenGlasses.png",
+        "tradeItemAmount": 5,
+        "condition": {
+          ">=": [
+            {
+              "var": "world.TimesFedRaccoons"
+            },
+            5
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5322,7 +6110,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 1000,
+        "tradeItemId": "cinder-shard",
+        "tradeItemGameId": 848,
+        "tradeItemName": "Cinder Shard",
+        "tradeItemIcon": "assets/objects/CinderShard.png",
+        "tradeItemAmount": 5
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5338,7 +6136,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5354,7 +6152,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5370,7 +6168,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5386,7 +6184,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5402,7 +6200,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 70000,
+        "rotating": true,
+        "condition": {
+          "==": [
+            {
+              "var": "world.communityCenter"
+            },
+            true
+          ]
+        },
+        "stock": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5418,7 +6231,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5434,7 +6247,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5450,7 +6263,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5466,7 +6279,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5482,7 +6295,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5498,7 +6311,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5514,7 +6327,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5530,7 +6343,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5546,7 +6359,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5562,7 +6375,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5578,7 +6391,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5594,7 +6407,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5610,7 +6423,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5626,7 +6439,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5642,7 +6455,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5658,7 +6471,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5674,7 +6487,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5690,7 +6503,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5706,7 +6519,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5722,7 +6535,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5738,7 +6551,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5754,7 +6567,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5770,7 +6583,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.krobus"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5786,7 +6614,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5802,7 +6635,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -5818,7 +6651,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -5834,7 +6667,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 3000,
+        "days": [
+          "Sunday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5850,7 +6691,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 2000,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5866,7 +6715,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-willy",
+        "price": 2000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5882,7 +6736,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 2500,
+        "days": [
+          "Friday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5898,7 +6760,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5914,7 +6776,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -5930,7 +6792,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -5946,7 +6808,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -5962,7 +6829,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -5978,7 +6845,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -5994,7 +6861,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -6010,7 +6877,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.leah"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6026,7 +6908,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6042,7 +6924,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6058,7 +6940,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6074,7 +6956,16 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-stardew-valley-fair",
+        "shopCurrency": "star-tokens",
+        "shopCurrencyGameId": "StarToken",
+        "price": 500,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6090,7 +6981,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -6106,7 +6997,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6122,7 +7013,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6133,12 +7024,17 @@
     "name": "Log Panel",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/LogPanel.png",
-    "wikiName": "Log_Panel",
+    "icon": "assets/objects/LogPanel1.png",
+    "wikiName": "Log_Panel_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6149,12 +7045,17 @@
     "name": "Log Panel",
     "type": "painting",
     "price": 500,
-    "icon": "assets/objects/LogPanel.png",
-    "wikiName": "Log_Panel",
+    "icon": "assets/objects/LogPanel2.png",
+    "wikiName": "Log_Panel_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 700
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6170,7 +7071,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6186,7 +7087,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -6202,7 +7103,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6218,7 +7119,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6234,7 +7135,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6250,7 +7151,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6266,7 +7167,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6282,7 +7183,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6298,7 +7199,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6314,7 +7215,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6330,7 +7231,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6346,7 +7247,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6362,7 +7263,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6378,7 +7279,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6394,7 +7295,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -6410,7 +7311,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6426,7 +7332,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.maru"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6442,7 +7363,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -6458,7 +7379,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -6474,7 +7395,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6490,7 +7411,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6506,7 +7427,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-trade",
+        "price": 10000,
+        "tradeItemId": "iridium-bar",
+        "tradeItemGameId": 337,
+        "tradeItemName": "Iridium Bar",
+        "tradeItemIcon": "assets/objects/IridiumBar.png",
+        "tradeItemAmount": 15
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6522,7 +7453,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-trade",
+        "price": 10000,
+        "tradeItemId": "iridium-bar",
+        "tradeItemGameId": 337,
+        "tradeItemName": "Iridium Bar",
+        "tradeItemIcon": "assets/objects/IridiumBar.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6538,7 +7479,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6554,7 +7495,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6570,7 +7511,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6586,7 +7527,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6602,7 +7543,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6618,7 +7559,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6634,7 +7575,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6650,7 +7591,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6666,7 +7607,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6682,7 +7623,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6698,7 +7639,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-moonlight-jellies",
+        "price": 4000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6714,7 +7660,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6730,7 +7676,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6746,7 +7692,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -6762,7 +7708,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6778,7 +7724,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-krobus",
+        "price": 20000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6794,7 +7745,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6810,7 +7761,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6826,7 +7777,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-moonlight-jellies",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6842,7 +7798,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6858,7 +7814,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6874,7 +7830,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6890,7 +7846,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6906,7 +7862,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6922,7 +7878,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6938,7 +7894,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-penny",
+        "price": 1500,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6954,7 +7920,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-penny",
+        "price": 1500,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6970,7 +7946,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-penny",
+        "price": 1500,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -6986,7 +7972,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 160,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7002,7 +7996,14 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7018,7 +8019,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 200,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7034,7 +8043,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1000,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7050,7 +8067,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7066,7 +8083,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7082,7 +8107,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7098,7 +8131,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7114,7 +8147,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 2500,
+        "tradeItemId": "blue-discus",
+        "tradeItemGameId": 838,
+        "tradeItemName": "Blue Discus",
+        "tradeItemIcon": "assets/objects/BlueDiscus.png",
+        "tradeItemAmount": 3,
+        "days": [
+          "Saturday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7130,7 +8176,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 2500,
+        "days": [
+          "Thursday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7146,7 +8200,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7162,7 +8216,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -7178,7 +8232,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7194,7 +8248,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7210,7 +8269,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7226,7 +8285,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 1000,
+        "tradeItemId": "pineapple",
+        "tradeItemGameId": 832,
+        "tradeItemName": "Pineapple",
+        "tradeItemIcon": "assets/objects/Pineapple.png",
+        "tradeItemAmount": 1,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7242,7 +8314,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-egg-festival",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7258,7 +8335,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7274,7 +8351,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.penny"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7290,7 +8382,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7306,7 +8398,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7322,7 +8414,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7338,7 +8430,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7354,7 +8446,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7370,7 +8462,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7386,7 +8478,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-penny",
+        "price": 8000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 100
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7402,7 +8504,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7418,7 +8520,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 700
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7434,7 +8546,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 9000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.houseUpgrade"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7450,7 +8575,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -7466,7 +8591,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -7482,7 +8607,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -7498,7 +8623,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -7514,7 +8639,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -7530,7 +8655,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7546,7 +8671,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -7562,7 +8687,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7578,7 +8703,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -7594,7 +8719,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7610,7 +8735,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7626,7 +8751,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -7642,7 +8767,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7658,7 +8783,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7674,7 +8799,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7690,7 +8815,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7706,7 +8831,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -7722,7 +8847,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7738,7 +8863,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7754,7 +8879,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7770,7 +8895,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7786,7 +8911,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7802,7 +8927,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -7818,7 +8943,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7834,7 +8959,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7850,7 +8975,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7866,7 +8991,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7882,7 +9007,14 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 110000,
+        "rotating": true,
+        "stock": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -7898,7 +9030,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7914,7 +9046,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7930,7 +9062,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7946,7 +9078,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7962,7 +9094,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7978,7 +9110,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -7994,7 +9126,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8010,7 +9142,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8026,7 +9158,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8042,7 +9174,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8058,7 +9190,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8074,7 +9206,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8090,7 +9222,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8106,7 +9238,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8122,7 +9254,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8138,7 +9270,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-retro-furniture-catalogue",
+        "id": "retro-catalogue",
         "price": 0
       }
     ]
@@ -8154,7 +9286,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8170,7 +9302,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8186,7 +9318,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8202,7 +9334,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8218,7 +9355,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-flower-dance",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8234,7 +9376,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8250,7 +9392,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.sam"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8266,7 +9423,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8282,7 +9439,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8298,7 +9468,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.sebastian"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8314,7 +9499,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-traveling-merchant",
+        "price": 30000,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.hearts.shane"
+            },
+            14
+          ]
+        },
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8330,7 +9530,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8346,7 +9546,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8362,7 +9562,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8378,7 +9578,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -8394,7 +9594,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8410,7 +9610,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8426,7 +9626,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8442,7 +9642,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8458,7 +9658,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8474,7 +9674,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8490,7 +9690,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8506,7 +9706,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8522,7 +9722,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8538,7 +9738,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-willy",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8554,7 +9759,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -8570,7 +9775,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -8586,7 +9791,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -8597,12 +9802,12 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/SmallJunimoPlush.png",
-    "wikiName": "Small_Junimo_Plush",
+    "icon": "assets/objects/SmallJunimoPlush1.png",
+    "wikiName": "Small_Junimo_Plush_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8613,12 +9818,12 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/SmallJunimoPlush.png",
-    "wikiName": "Small_Junimo_Plush",
+    "icon": "assets/objects/SmallJunimoPlush2.png",
+    "wikiName": "Small_Junimo_Plush_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8629,12 +9834,12 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/SmallJunimoPlush.png",
-    "wikiName": "Small_Junimo_Plush",
+    "icon": "assets/objects/SmallJunimoPlush3.png",
+    "wikiName": "Small_Junimo_Plush_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8645,12 +9850,12 @@
     "name": "Small Junimo Plush",
     "type": "decor",
     "price": 1500,
-    "icon": "assets/objects/SmallJunimoPlush.png",
-    "wikiName": "Small_Junimo_Plush",
+    "icon": "assets/objects/SmallJunimoPlush4.png",
+    "wikiName": "Small_Junimo_Plush_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8666,7 +9871,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -8682,7 +9887,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8698,7 +9903,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8714,7 +9919,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8730,7 +9935,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 600
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8746,7 +9956,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8762,7 +9972,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8778,7 +9988,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -8794,7 +10004,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8810,7 +10020,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -8826,7 +10036,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]
@@ -8842,7 +10052,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8858,7 +10068,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8874,7 +10084,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-joja-furniture-catalogue",
+        "id": "joja-catalogue",
         "price": 0
       }
     ]
@@ -8890,7 +10100,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8906,7 +10116,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-moonlight-jellies",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8922,7 +10137,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8938,7 +10153,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8954,7 +10169,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 3000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -8970,7 +10190,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -8986,7 +10206,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9002,7 +10222,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 6000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9018,7 +10243,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-penny",
+        "price": 5000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 100
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9034,7 +10269,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9050,7 +10285,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9066,7 +10301,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-night-market",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9082,7 +10322,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-desert-festival-egg-shop",
+        "price": 1000,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30,
+        "days": [
+          "Monday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9098,7 +10351,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9114,7 +10367,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9130,7 +10383,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9146,7 +10399,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9162,7 +10415,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9178,7 +10431,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -9194,7 +10447,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9210,7 +10463,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9226,7 +10479,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9242,7 +10500,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9258,7 +10516,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9274,7 +10532,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 5000
+      },
+      {
+        "type": "shop",
+        "id": "loc-festival-of-ice",
+        "price": 5000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9290,7 +10558,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9306,7 +10574,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 10000,
+        "tradeItemId": "ginger",
+        "tradeItemGameId": 829,
+        "tradeItemName": "Ginger",
+        "tradeItemIcon": "assets/objects/Ginger.png",
+        "tradeItemAmount": 20
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9322,7 +10600,18 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 6000,
+        "tradeItemId": "lionfish",
+        "tradeItemGameId": 837,
+        "tradeItemName": "Lionfish",
+        "tradeItemIcon": "assets/objects/Lionfish.png",
+        "tradeItemAmount": 1,
+        "dayParity": "even"
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9338,7 +10627,20 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 10000,
+        "tradeItemId": "banana",
+        "tradeItemGameId": 91,
+        "tradeItemName": "Banana",
+        "tradeItemIcon": "assets/objects/Banana.png",
+        "tradeItemAmount": 5,
+        "days": [
+          "Sunday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9354,7 +10656,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 9000,
+        "tradeItemId": "taro-root",
+        "tradeItemGameId": 830,
+        "tradeItemName": "Taro Root",
+        "tradeItemIcon": "assets/objects/TaroRoot.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9370,7 +10682,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9386,7 +10698,22 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-night-market",
+        "price": 100000
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 100000
+      },
+      {
+        "type": "shop",
+        "id": "loc-night-market",
+        "price": 100000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9402,7 +10729,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9418,7 +10745,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 700
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9434,7 +10766,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9450,7 +10782,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-flower-dance",
+        "price": 800
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9466,7 +10803,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-luau",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9482,7 +10824,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9493,12 +10835,12 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce1.png",
+    "wikiName": "Wall_Sconce_1",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9509,12 +10851,12 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce2.png",
+    "wikiName": "Wall_Sconce_2",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9525,12 +10867,12 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 1000,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce3.png",
+    "wikiName": "Wall_Sconce_3",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9541,12 +10883,12 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce4.png",
+    "wikiName": "Wall_Sconce_4",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9557,12 +10899,20 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce5.png",
+    "wikiName": "Wall_Sconce_5",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 500,
+        "days": [
+          "Saturday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9573,12 +10923,17 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce6.png",
+    "wikiName": "Wall_Sconce_6",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9589,12 +10944,20 @@
     "name": "Wall Sconce",
     "type": "sconce",
     "price": 500,
-    "icon": "assets/objects/WallSconce.png",
-    "wikiName": "Wall_Sconce",
+    "icon": "assets/objects/WallSconce7.png",
+    "wikiName": "Wall_Sconce_7",
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-sandy",
+        "price": 500,
+        "days": [
+          "Saturday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9610,7 +10973,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-marlon",
+        "price": 2000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9626,7 +10994,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9642,7 +11010,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 600,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9658,7 +11034,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 700,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9674,7 +11058,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 30,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9690,7 +11082,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1000,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9706,7 +11106,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9722,7 +11122,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9738,7 +11146,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-robin",
+        "price": 1500,
+        "days": [
+          "Tuesday"
+        ]
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9754,7 +11170,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9770,7 +11186,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-island-trader",
+        "price": 12000,
+        "tradeItemId": "cinder-shard",
+        "tradeItemGameId": 848,
+        "tradeItemName": "Cinder Shard",
+        "tradeItemIcon": "assets/objects/CinderShard.png",
+        "tradeItemAmount": 100
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9786,7 +11212,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9802,7 +11228,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9818,7 +11249,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9834,7 +11265,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 3000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9850,7 +11286,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-festival-of-ice",
+        "price": 1000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9866,7 +11307,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9882,7 +11323,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9898,7 +11339,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9914,7 +11355,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9930,7 +11371,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9946,7 +11387,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9962,7 +11403,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-krobus",
+        "price": 150000
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -9978,7 +11424,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -9994,7 +11440,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10010,7 +11456,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10026,7 +11472,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10042,7 +11488,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10058,7 +11504,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10074,7 +11520,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10090,7 +11536,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10106,7 +11552,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10122,7 +11568,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10138,7 +11584,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10154,7 +11600,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "loc-winter-star",
+        "price": 500
+      },
+      {
+        "type": "shop",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10170,7 +11621,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10186,7 +11637,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10202,7 +11653,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10218,7 +11669,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-trash-furniture-catalogue",
+        "id": "trash-catalogue",
         "price": 0
       }
     ]
@@ -10234,7 +11685,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10250,7 +11701,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10266,7 +11717,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-wizard-furniture-catalogue",
+        "id": "wizard-catalogue",
         "price": 0
       }
     ]
@@ -10282,7 +11733,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10298,7 +11749,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-furniture-catalogue",
+        "id": "furniture-catalogue",
         "price": 0
       }
     ]
@@ -10314,7 +11765,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-junimo-furniture-catalogue",
+        "id": "junimo-catalogue",
         "price": 0
       }
     ]

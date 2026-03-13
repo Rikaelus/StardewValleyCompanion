@@ -1,127 +1,332 @@
 {
   "_comment": "Maps game shop IDs to friendly store IDs used throughout the app. Shops not listed here are ignored during source parsing (festival-only, UI catalogues, etc.).",
   "shopMap": {
-    "SeedShop": "pierre",
-    "Joja": "joja",
-    "FishShop": "willy",
-    "AnimalShop": "marnie",
-    "Blacksmith": "clint",
-    "Carpenter": "robin",
-    "Saloon": "gus",
-    "AdventureShop": "marlon",
-    "Sandy": "sandy",
-    "DesertTrade": "desert-trade",
-    "Traveler": "traveling-merchant",
-    "IslandTrade": "island-trader",
-    "Dwarf": "dwarf",
-    "HatMouse": "hat-mouse",
-    "QiGemShop": "qi-gem-shop",
-    "VolcanoShop": "volcano-shop",
-    "Raccoon": "raccoon",
-    "ShadowShop": "krobus",
-    "ResortBar": "resort-bar",
-    "Bookseller": "bookseller",
-    "BooksellerTrade": "bookseller",
-    "Festival_EggFestival_Pierre": "egg-festival",
-    "Festival_FlowerDance_Pierre": "flower-dance",
-    "Festival_Luau_Pierre": "luau",
-    "Festival_SpiritsEve_Pierre": "spirits-eve",
-    "Festival_DanceOfTheMoonlightJellies_Pierre": "moonlight-jellies",
-    "Festival_FeastOfTheWinterStar_Pierre": "winter-star",
-    "Festival_FestivalOfIce_TravelingMerchant": "festival-of-ice",
-    "Festival_NightMarket_MagicBoat_Day1": "night-market",
-    "Festival_NightMarket_MagicBoat_Day2": "night-market",
-    "Festival_NightMarket_MagicBoat_Day3": "night-market",
-    "Festival_NightMarket_DecorationBoat": "night-market",
-    "Festival_StardewValleyFair_StarTokens": "stardew-valley-fair",
-    "DesertFestival_EggShop": "desert-festival-egg-shop",
-    "DesertFestival_Abigail": "desert-festival-abigail",
-    "DesertFestival_Alex": "desert-festival-alex",
-    "DesertFestival_Caroline": "desert-festival-caroline",
-    "DesertFestival_Clint": "desert-festival-clint",
-    "DesertFestival_Demetrius": "desert-festival-demetrius",
-    "DesertFestival_Elliott": "desert-festival-elliott",
-    "DesertFestival_Emily": "desert-festival-emily",
-    "DesertFestival_Evelyn": "desert-festival-evelyn",
-    "DesertFestival_George": "desert-festival-george",
-    "DesertFestival_Gus": "desert-festival-gus",
-    "DesertFestival_Haley": "desert-festival-haley",
-    "DesertFestival_Harvey": "desert-festival-harvey",
-    "DesertFestival_Jas": "desert-festival-jas",
-    "DesertFestival_Jodi": "desert-festival-jodi",
-    "DesertFestival_Kent": "desert-festival-kent",
-    "DesertFestival_Leah": "desert-festival-leah",
-    "DesertFestival_Leo": "desert-festival-leo",
-    "DesertFestival_Marnie": "desert-festival-marnie",
-    "DesertFestival_Maru": "desert-festival-maru",
-    "DesertFestival_Pam": "desert-festival-pam",
-    "DesertFestival_Penny": "desert-festival-penny",
-    "DesertFestival_Pierre": "desert-festival-pierre",
-    "DesertFestival_Robin": "desert-festival-robin",
-    "DesertFestival_Sam": "desert-festival-sam",
-    "DesertFestival_Sebastian": "desert-festival-sebastian",
-    "DesertFestival_Shane": "desert-festival-shane",
-    "DesertFestival_Vincent": "desert-festival-vincent"
+    "SeedShop": "loc-pierre",
+    "Joja": "loc-joja",
+    "FishShop": "loc-willy",
+    "AnimalShop": "loc-marnie",
+    "Blacksmith": "loc-clint",
+    "Carpenter": "loc-robin",
+    "Saloon": "loc-gus",
+    "AdventureShop": "loc-marlon",
+    "Sandy": "loc-sandy",
+    "DesertTrade": "loc-desert-trade",
+    "Traveler": "loc-traveling-merchant",
+    "IslandTrade": "loc-island-trader",
+    "Dwarf": "loc-dwarf",
+    "HatMouse": "loc-hat-mouse",
+    "QiGemShop": "loc-qi-gem-shop",
+    "VolcanoShop": "loc-volcano-shop",
+    "Raccoon": "loc-raccoon",
+    "ShadowShop": "loc-krobus",
+    "ResortBar": "loc-resort-bar",
+    "Bookseller": "loc-bookseller",
+    "BooksellerTrade": "loc-bookseller",
+    "Festival_EggFestival_Pierre": "loc-egg-festival",
+    "Festival_FlowerDance_Pierre": "loc-flower-dance",
+    "Festival_Luau_Pierre": "loc-luau",
+    "Festival_SpiritsEve_Pierre": "loc-spirits-eve",
+    "Festival_DanceOfTheMoonlightJellies_Pierre": "loc-moonlight-jellies",
+    "Festival_FeastOfTheWinterStar_Pierre": "loc-winter-star",
+    "Festival_FestivalOfIce_TravelingMerchant": "loc-festival-of-ice",
+    "Festival_NightMarket_MagicBoat_Day1": "loc-night-market",
+    "Festival_NightMarket_MagicBoat_Day2": "loc-night-market",
+    "Festival_NightMarket_MagicBoat_Day3": "loc-night-market",
+    "Festival_NightMarket_DecorationBoat": "loc-night-market",
+    "Festival_StardewValleyFair_StarTokens": "loc-stardew-valley-fair",
+    "DesertFestival_EggShop": "loc-desert-festival-egg-shop",
+    "DesertFestival_Abigail": "loc-desert-festival-abigail",
+    "DesertFestival_Alex": "loc-desert-festival-alex",
+    "DesertFestival_Caroline": "loc-desert-festival-caroline",
+    "DesertFestival_Clint": "loc-desert-festival-clint",
+    "DesertFestival_Demetrius": "loc-desert-festival-demetrius",
+    "DesertFestival_Elliott": "loc-desert-festival-elliott",
+    "DesertFestival_Emily": "loc-desert-festival-emily",
+    "DesertFestival_Evelyn": "loc-desert-festival-evelyn",
+    "DesertFestival_George": "loc-desert-festival-george",
+    "DesertFestival_Gus": "loc-desert-festival-gus",
+    "DesertFestival_Haley": "loc-desert-festival-haley",
+    "DesertFestival_Harvey": "loc-desert-festival-harvey",
+    "DesertFestival_Jas": "loc-desert-festival-jas",
+    "DesertFestival_Jodi": "loc-desert-festival-jodi",
+    "DesertFestival_Kent": "loc-desert-festival-kent",
+    "DesertFestival_Leah": "loc-desert-festival-leah",
+    "DesertFestival_Leo": "loc-desert-festival-leo",
+    "DesertFestival_Marnie": "loc-desert-festival-marnie",
+    "DesertFestival_Maru": "loc-desert-festival-maru",
+    "DesertFestival_Pam": "loc-desert-festival-pam",
+    "DesertFestival_Penny": "loc-desert-festival-penny",
+    "DesertFestival_Pierre": "loc-desert-festival-pierre",
+    "DesertFestival_Robin": "loc-desert-festival-robin",
+    "DesertFestival_Sam": "loc-desert-festival-sam",
+    "DesertFestival_Sebastian": "loc-desert-festival-sebastian",
+    "DesertFestival_Shane": "loc-desert-festival-shane",
+    "DesertFestival_Vincent": "loc-desert-festival-vincent"
   },
   "storeDetails": {
-    "pierre": { "name": "Pierre's General Store", "npc": "Pierre" },
-    "joja": { "name": "JojaMart", "npc": null, "priceMultiplier": 2.5 },
-    "willy": { "name": "Willy's Fish Shop", "npc": "Willy" },
-    "marnie": { "name": "Marnie's Ranch", "npc": "Marnie" },
-    "clint": { "name": "Blacksmith (Clint)", "npc": "Clint" },
-    "robin": { "name": "Carpenter's Shop (Robin)", "npc": "Robin" },
-    "gus": { "name": "Saloon (Gus)", "npc": "Gus" },
-    "marlon": { "name": "Adventurer's Guild (Marlon)", "npc": "Marlon" },
-    "sandy": { "name": "Oasis (Sandy)", "npc": "Sandy" },
-    "desert-trade": { "name": "Desert Trade (Sandy)", "npc": "Sandy" },
-    "traveling-merchant": { "name": "Traveling Merchant", "npc": null },
-    "island-trader": { "name": "Island Trader", "npc": null },
-    "dwarf": { "name": "Dwarf Shop", "npc": "Dwarf" },
-    "hat-mouse": { "name": "Hat Mouse", "npc": null },
-    "qi-gem-shop": { "name": "Qi's Walnut Room", "npc": "Mr. Qi" },
-    "volcano-shop": { "name": "Volcano Forge Shop", "npc": null },
-    "raccoon": { "name": "Raccoon Shop", "npc": null },
-    "krobus": { "name": "Krobus's Shop", "npc": "Krobus" },
-    "resort-bar": { "name": "Resort Bar", "npc": null },
-    "bookseller": { "name": "Bookseller", "npc": null },
-    "shipping-bin": { "name": "Shipping Bin", "npc": null },
-    "egg-festival": { "name": "Egg Festival", "npc": "Pierre" },
-    "flower-dance": { "name": "Flower Dance", "npc": "Pierre" },
-    "luau": { "name": "Luau", "npc": "Pierre" },
-    "spirits-eve": { "name": "Spirit's Eve", "npc": "Pierre" },
-    "moonlight-jellies": { "name": "Dance of the Moonlight Jellies", "npc": "Pierre" },
-    "winter-star": { "name": "Feast of the Winter Star", "npc": "Pierre" },
-    "festival-of-ice": { "name": "Festival of Ice", "npc": null },
-    "night-market": { "name": "Night Market", "npc": null },
-    "stardew-valley-fair": { "name": "Stardew Valley Fair", "npc": null },
-    "desert-festival": { "name": "Desert Festival", "npc": null },
-    "desert-festival-egg-shop": { "name": "Desert Festival Egg Shop", "npc": null },
-    "desert-festival-abigail": { "name": "Desert Festival Stall (Abigail)", "npc": "Abigail", "parentStore": "desert-festival" },
-    "desert-festival-alex": { "name": "Desert Festival Stall (Alex)", "npc": "Alex", "parentStore": "desert-festival" },
-    "desert-festival-caroline": { "name": "Desert Festival Stall (Caroline)", "npc": "Caroline", "parentStore": "desert-festival" },
-    "desert-festival-clint": { "name": "Desert Festival Stall (Clint)", "npc": "Clint", "parentStore": "desert-festival" },
-    "desert-festival-demetrius": { "name": "Desert Festival Stall (Demetrius)", "npc": "Demetrius", "parentStore": "desert-festival" },
-    "desert-festival-elliott": { "name": "Desert Festival Stall (Elliott)", "npc": "Elliott", "parentStore": "desert-festival" },
-    "desert-festival-emily": { "name": "Desert Festival Stall (Emily)", "npc": "Emily", "parentStore": "desert-festival" },
-    "desert-festival-evelyn": { "name": "Desert Festival Stall (Evelyn)", "npc": "Evelyn", "parentStore": "desert-festival" },
-    "desert-festival-george": { "name": "Desert Festival Stall (George)", "npc": "George", "parentStore": "desert-festival" },
-    "desert-festival-gus": { "name": "Desert Festival Stall (Gus)", "npc": "Gus", "parentStore": "desert-festival" },
-    "desert-festival-haley": { "name": "Desert Festival Stall (Haley)", "npc": "Haley", "parentStore": "desert-festival" },
-    "desert-festival-harvey": { "name": "Desert Festival Stall (Harvey)", "npc": "Harvey", "parentStore": "desert-festival" },
-    "desert-festival-jas": { "name": "Desert Festival Stall (Jas)", "npc": "Jas", "parentStore": "desert-festival" },
-    "desert-festival-jodi": { "name": "Desert Festival Stall (Jodi)", "npc": "Jodi", "parentStore": "desert-festival" },
-    "desert-festival-kent": { "name": "Desert Festival Stall (Kent)", "npc": "Kent", "parentStore": "desert-festival" },
-    "desert-festival-leah": { "name": "Desert Festival Stall (Leah)", "npc": "Leah", "parentStore": "desert-festival" },
-    "desert-festival-leo": { "name": "Desert Festival Stall (Leo)", "npc": "Leo", "parentStore": "desert-festival" },
-    "desert-festival-marnie": { "name": "Desert Festival Stall (Marnie)", "npc": "Marnie", "parentStore": "desert-festival" },
-    "desert-festival-maru": { "name": "Desert Festival Stall (Maru)", "npc": "Maru", "parentStore": "desert-festival" },
-    "desert-festival-pam": { "name": "Desert Festival Stall (Pam)", "npc": "Pam", "parentStore": "desert-festival" },
-    "desert-festival-penny": { "name": "Desert Festival Stall (Penny)", "npc": "Penny", "parentStore": "desert-festival" },
-    "desert-festival-pierre": { "name": "Desert Festival Stall (Pierre)", "npc": "Pierre", "parentStore": "desert-festival" },
-    "desert-festival-robin": { "name": "Desert Festival Stall (Robin)", "npc": "Robin", "parentStore": "desert-festival" },
-    "desert-festival-sam": { "name": "Desert Festival Stall (Sam)", "npc": "Sam", "parentStore": "desert-festival" },
-    "desert-festival-sebastian": { "name": "Desert Festival Stall (Sebastian)", "npc": "Sebastian", "parentStore": "desert-festival" },
-    "desert-festival-shane": { "name": "Desert Festival Stall (Shane)", "npc": "Shane", "parentStore": "desert-festival" },
-    "desert-festival-vincent": { "name": "Desert Festival Stall (Vincent)", "npc": "Vincent", "parentStore": "desert-festival" }
+    "loc-pierre": {
+      "name": "Pierre's General Store",
+      "npc": "Pierre"
+    },
+    "loc-joja": {
+      "name": "JojaMart",
+      "npc": null,
+      "priceMultiplier": 2.5
+    },
+    "loc-willy": {
+      "name": "Willy's Fish Shop",
+      "npc": "Willy"
+    },
+    "loc-marnie": {
+      "name": "Marnie's Ranch",
+      "npc": "Marnie"
+    },
+    "loc-clint": {
+      "name": "Blacksmith (Clint)",
+      "npc": "Clint"
+    },
+    "loc-robin": {
+      "name": "Carpenter's Shop (Robin)",
+      "npc": "Robin"
+    },
+    "loc-gus": {
+      "name": "Saloon (Gus)",
+      "npc": "Gus"
+    },
+    "loc-marlon": {
+      "name": "Adventurer's Guild (Marlon)",
+      "npc": "Marlon"
+    },
+    "loc-sandy": {
+      "name": "Oasis (Sandy)",
+      "npc": "Sandy"
+    },
+    "loc-desert-trade": {
+      "name": "Desert Trader",
+      "npc": "Desert Trader"
+    },
+    "loc-traveling-merchant": {
+      "name": "Traveling Merchant",
+      "npc": null
+    },
+    "loc-island-trader": {
+      "name": "Island Trader",
+      "npc": null
+    },
+    "loc-dwarf": {
+      "name": "Dwarf Shop",
+      "npc": "Dwarf"
+    },
+    "loc-hat-mouse": {
+      "name": "Hat Mouse",
+      "npc": null
+    },
+    "loc-qi-gem-shop": {
+      "name": "Qi's Walnut Room",
+      "npc": "Mr. Qi"
+    },
+    "loc-volcano-shop": {
+      "name": "Volcano Forge Shop",
+      "npc": null
+    },
+    "loc-raccoon": {
+      "name": "Raccoon Shop",
+      "npc": null
+    },
+    "loc-krobus": {
+      "name": "Krobus's Shop",
+      "npc": "Krobus"
+    },
+    "loc-resort-bar": {
+      "name": "Resort Bar",
+      "npc": null
+    },
+    "loc-bookseller": {
+      "name": "Bookseller",
+      "npc": null
+    },
+    "loc-shipping-bin": {
+      "name": "Shipping Bin",
+      "npc": null
+    },
+    "loc-egg-festival": {
+      "name": "Egg Festival",
+      "npc": "Pierre"
+    },
+    "loc-flower-dance": {
+      "name": "Flower Dance",
+      "npc": "Pierre"
+    },
+    "loc-luau": {
+      "name": "Luau",
+      "npc": "Pierre"
+    },
+    "loc-spirits-eve": {
+      "name": "Spirit's Eve",
+      "npc": "Pierre"
+    },
+    "loc-moonlight-jellies": {
+      "name": "Dance of the Moonlight Jellies",
+      "npc": "Pierre"
+    },
+    "loc-winter-star": {
+      "name": "Feast of the Winter Star",
+      "npc": "Pierre"
+    },
+    "loc-festival-of-ice": {
+      "name": "Festival of Ice",
+      "npc": null
+    },
+    "loc-night-market": {
+      "name": "Night Market",
+      "npc": null
+    },
+    "loc-stardew-valley-fair": {
+      "name": "Stardew Valley Fair",
+      "npc": null
+    },
+    "loc-desert-festival": {
+      "name": "Desert Festival",
+      "npc": null
+    },
+    "loc-desert-festival-egg-shop": {
+      "name": "Desert Festival Egg Shop",
+      "npc": null
+    },
+    "loc-desert-festival-abigail": {
+      "name": "Desert Festival Stall (Abigail)",
+      "npc": "Abigail",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-alex": {
+      "name": "Desert Festival Stall (Alex)",
+      "npc": "Alex",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-caroline": {
+      "name": "Desert Festival Stall (Caroline)",
+      "npc": "Caroline",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-clint": {
+      "name": "Desert Festival Stall (Clint)",
+      "npc": "Clint",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-demetrius": {
+      "name": "Desert Festival Stall (Demetrius)",
+      "npc": "Demetrius",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-elliott": {
+      "name": "Desert Festival Stall (Elliott)",
+      "npc": "Elliott",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-emily": {
+      "name": "Desert Festival Stall (Emily)",
+      "npc": "Emily",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-evelyn": {
+      "name": "Desert Festival Stall (Evelyn)",
+      "npc": "Evelyn",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-george": {
+      "name": "Desert Festival Stall (George)",
+      "npc": "George",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-gus": {
+      "name": "Desert Festival Stall (Gus)",
+      "npc": "Gus",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-haley": {
+      "name": "Desert Festival Stall (Haley)",
+      "npc": "Haley",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-harvey": {
+      "name": "Desert Festival Stall (Harvey)",
+      "npc": "Harvey",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-jas": {
+      "name": "Desert Festival Stall (Jas)",
+      "npc": "Jas",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-jodi": {
+      "name": "Desert Festival Stall (Jodi)",
+      "npc": "Jodi",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-kent": {
+      "name": "Desert Festival Stall (Kent)",
+      "npc": "Kent",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-leah": {
+      "name": "Desert Festival Stall (Leah)",
+      "npc": "Leah",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-leo": {
+      "name": "Desert Festival Stall (Leo)",
+      "npc": "Leo",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-marnie": {
+      "name": "Desert Festival Stall (Marnie)",
+      "npc": "Marnie",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-maru": {
+      "name": "Desert Festival Stall (Maru)",
+      "npc": "Maru",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-pam": {
+      "name": "Desert Festival Stall (Pam)",
+      "npc": "Pam",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-penny": {
+      "name": "Desert Festival Stall (Penny)",
+      "npc": "Penny",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-pierre": {
+      "name": "Desert Festival Stall (Pierre)",
+      "npc": "Pierre",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-robin": {
+      "name": "Desert Festival Stall (Robin)",
+      "npc": "Robin",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-sam": {
+      "name": "Desert Festival Stall (Sam)",
+      "npc": "Sam",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-sebastian": {
+      "name": "Desert Festival Stall (Sebastian)",
+      "npc": "Sebastian",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-shane": {
+      "name": "Desert Festival Stall (Shane)",
+      "npc": "Shane",
+      "parentStore": "loc-desert-festival"
+    },
+    "loc-desert-festival-vincent": {
+      "name": "Desert Festival Stall (Vincent)",
+      "npc": "Vincent",
+      "parentStore": "loc-desert-festival"
+    }
   }
 }

@@ -63,34 +63,30 @@ function DataTable({
   const [sorting, setSorting] = useState(getSortingFromUrl)
   const [pagination, setPagination] = useState(getPaginationFromUrl)
 
-  // Sync sorting and pagination to URL
+  // Sync sorting and pagination to URL — only reacts to internal state changes,
+  // not to external URL changes (avoids racing with useModalUrl's ?modal= param)
   useEffect(() => {
     if (!syncUrlState) return
 
-    const params = new URLSearchParams(searchParams)
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev)
 
-    // Update sort parameters
-    if (sorting.length > 0) {
-      params.set('sortBy', sorting[0].id)
-      params.set('sortOrder', sorting[0].desc ? 'desc' : 'asc')
-    } else {
-      params.delete('sortBy')
-      params.delete('sortOrder')
-    }
+      if (sorting.length > 0) {
+        next.set('sortBy', sorting[0].id)
+        next.set('sortOrder', sorting[0].desc ? 'desc' : 'asc')
+      } else {
+        next.delete('sortBy')
+        next.delete('sortOrder')
+      }
 
-    // Update page parameter (convert 0-indexed to 1-indexed for URL)
-    if (enablePagination && pagination.pageIndex > 0) {
-      params.set('page', (pagination.pageIndex + 1).toString())
-    } else {
-      params.delete('page')
-    }
+      if (enablePagination && pagination.pageIndex > 0) {
+        next.set('page', (pagination.pageIndex + 1).toString())
+      } else {
+        next.delete('page')
+      }
 
-    // Only update if params actually changed
-    const currentParams = searchParams.toString()
-    const newParams = params.toString()
-    if (currentParams !== newParams) {
-      setSearchParams(params, { replace: true })
-    }
+      return next
+    }, { replace: true })
   }, [sorting, pagination, syncUrlState, enablePagination, setSearchParams])
 
   const table = useReactTable({

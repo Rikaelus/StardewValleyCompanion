@@ -2662,7 +2662,9 @@
       "Town"
     ],
     "icon": null,
-    "grantedBy": []
+    "grantedBy": [
+      "auto-petter"
+    ]
   },
   {
     "id": "event-502969",
@@ -3585,7 +3587,9 @@
       "Robin's Carpenter Shop"
     ],
     "icon": null,
-    "grantedBy": []
+    "grantedBy": [
+      "deluxe-red-double-bed"
+    ]
   },
   {
     "id": "event-1590166",

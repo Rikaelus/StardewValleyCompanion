@@ -1,146 +1,694 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Mapping of internal location names from Locations.json to user-friendly display names. Unmapped locations are filtered out (interior locations, temp locations, etc.)",
-  "source": "Game data and https://stardewvalleywiki.com/Fish",
+  "_comment": "Location entity definitions. Regular store locations, festival locations, and festival-only sub-locations.",
   "locations": {
-    "Mountain": {
-      "displayName": "Mountain Lake",
-      "type": "valley"
+    "loc-pierre": {
+      "id": "loc-pierre",
+      "name": "Pierre's General Store",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "SeedShop"
+      },
+      "address": "Pelican Town",
+      "hours": {
+        "open": 900,
+        "close": 1700,
+        "closedDays": [
+          "Wednesday"
+        ]
+      },
+      "notes": [
+        "Open 7 days a week after the Community Center is restored (or with the Key To The Town).",
+        "After completing the \"Pierre's Missing Stocklist\" quest, all seasonal seeds are available year-round at a 50% markup for out-of-season seeds."
+      ]
     },
-    "Forest": {
-      "displayName": "Forest River",
-      "type": "valley"
+    "loc-joja": {
+      "id": "loc-joja",
+      "name": "JojaMart",
+      "icon": "assets/objects/JojaCap.png",
+      "shop": {
+        "gameShopId": "Joja"
+      },
+      "address": "Pelican Town"
     },
-    "Town": {
-      "displayName": "Town River",
-      "type": "valley"
+    "loc-willy": {
+      "id": "loc-willy",
+      "name": "Willy's Fish Shop",
+      "operator": "Willy",
+      "shop": {
+        "gameShopId": "FishShop"
+      },
+      "address": "Beach",
+      "hours": {
+        "open": 900,
+        "close": 1700
+      }
     },
-    "Beach": {
-      "displayName": "Ocean",
-      "type": "valley"
+    "loc-marnie": {
+      "id": "loc-marnie",
+      "name": "Marnie's Ranch",
+      "operator": "Marnie",
+      "shop": {
+        "gameShopId": "AnimalShop"
+      },
+      "address": "South of Farm",
+      "hours": {
+        "open": 900,
+        "close": 1600,
+        "closedDays": [
+          "Monday",
+          "Tuesday"
+        ]
+      }
     },
-    "UndergroundMine": {
-      "displayName": "Mines",
-      "type": "special"
+    "loc-clint": {
+      "id": "loc-clint",
+      "name": "Blacksmith (Clint)",
+      "operator": "Clint",
+      "shop": {
+        "gameShopId": "Blacksmith"
+      },
+      "address": "Pelican Town",
+      "hours": {
+        "open": 900,
+        "close": 1600,
+        "closedDays": [
+          "Friday"
+        ]
+      }
     },
-    "Woods": {
-      "displayName": "Secret Woods",
-      "type": "valley"
+    "loc-robin": {
+      "id": "loc-robin",
+      "name": "Carpenter's Shop (Robin)",
+      "operator": "Robin",
+      "shop": {
+        "gameShopId": "Carpenter"
+      },
+      "address": "Mountain",
+      "hours": {
+        "open": 900,
+        "close": 1700,
+        "closedDays": [
+          "Tuesday"
+        ]
+      }
     },
-    "Sewer": {
-      "displayName": "Sewers",
-      "type": "special"
+    "loc-gus": {
+      "id": "loc-gus",
+      "name": "Saloon (Gus)",
+      "operator": "Gus",
+      "shop": {
+        "gameShopId": "Saloon"
+      },
+      "address": "Pelican Town",
+      "hours": {
+        "open": 1200,
+        "close": 2400
+      }
     },
-    "Desert": {
-      "displayName": "Desert",
-      "type": "valley"
+    "loc-marlon": {
+      "id": "loc-marlon",
+      "name": "Adventurer's Guild (Marlon)",
+      "operator": "Marlon",
+      "icon": "assets/objects/BookMarlon.png",
+      "shop": {
+        "gameShopId": "AdventureShop"
+      },
+      "address": "Mountain",
+      "hours": {
+        "open": 900,
+        "close": 2200
+      }
     },
-    "Backwoods": {
-      "displayName": null,
-      "type": "valley",
-      "notes": "No fishable water (placeholder data in game files)"
+    "loc-sandy": {
+      "id": "loc-sandy",
+      "name": "Oasis (Sandy)",
+      "operator": "Sandy",
+      "shop": {
+        "gameShopId": "Sandy"
+      },
+      "address": "Calico Desert"
     },
-    "Railroad": {
-      "displayName": "Railroad",
-      "type": "valley"
+    "loc-desert-trade": {
+      "id": "loc-desert-trade",
+      "name": "Desert Trader",
+      "operator": "Desert Trader",
+      "shop": {
+        "gameShopId": "DesertTrade"
+      },
+      "address": "Calico Desert"
     },
-    "Farm_Standard": {
-      "displayName": "Farm",
-      "type": "farm"
+    "loc-traveling-merchant": {
+      "id": "loc-traveling-merchant",
+      "name": "Traveling Merchant",
+      "icon": "assets/objects/PurpleMushroom.png",
+      "shop": {
+        "gameShopId": "Traveler"
+      },
+      "address": "Cindersap Forest",
+      "note": "Appears Fridays and Sundays in Cindersap Forest. Also visits the Night Market (Winter 15-17) and Desert Festival (Spring 15-17)."
     },
-    "Farm_Beach": {
-      "displayName": "Beach Farm",
-      "type": "farm"
+    "loc-island-trader": {
+      "id": "loc-island-trader",
+      "name": "Island Trader",
+      "icon": "assets/objects/WarpTotemIsland.png",
+      "shop": {
+        "gameShopId": "IslandTrade"
+      },
+      "address": "Ginger Island"
     },
-    "Farm_Forest": {
-      "displayName": "Forest Farm",
-      "type": "farm"
+    "loc-dwarf": {
+      "id": "loc-dwarf",
+      "name": "Dwarf Shop",
+      "operator": "Dwarf",
+      "shop": {
+        "gameShopId": "Dwarf"
+      },
+      "address": "Mines"
     },
-    "Farm_FourCorners": {
-      "displayName": "Four Corners Farm",
-      "type": "farm"
+    "loc-hat-mouse": {
+      "id": "loc-hat-mouse",
+      "name": "Hat Mouse",
+      "icon": "assets/objects/TopHat.png",
+      "shop": {
+        "gameShopId": "HatMouse"
+      },
+      "address": "Cindersap Forest"
     },
-    "Farm_Hilltop": {
-      "displayName": "Hilltop Farm",
-      "type": "farm"
+    "loc-qi-gem-shop": {
+      "id": "loc-qi-gem-shop",
+      "name": "Qi's Walnut Room",
+      "operator": "Mr. Qi",
+      "icon": "assets/objects/QiGem.png",
+      "shop": {
+        "gameShopId": "QiGemShop"
+      },
+      "address": "Ginger Island"
     },
-    "Farm_Riverland": {
-      "displayName": "Riverland Farm",
-      "type": "farm"
+    "loc-volcano-shop": {
+      "id": "loc-volcano-shop",
+      "name": "Volcano Forge Shop",
+      "icon": "assets/objects/CinderShard.png",
+      "shop": {
+        "gameShopId": "VolcanoShop"
+      },
+      "address": "Volcano Dungeon"
     },
-    "Farm_Wilderness": {
-      "displayName": "Wilderness Farm",
-      "type": "farm"
+    "loc-raccoon": {
+      "id": "loc-raccoon",
+      "name": "Raccoon Shop",
+      "icon": "assets/objects/RaccoonHat.png",
+      "shop": {
+        "gameShopId": "Raccoon"
+      },
+      "address": "Cindersap Forest"
     },
-    "Farm_MeadowlandsFarm": {
-      "displayName": "Meadowlands Farm",
-      "type": "farm"
+    "loc-krobus": {
+      "id": "loc-krobus",
+      "name": "Krobus's Shop",
+      "operator": "Krobus",
+      "shop": {
+        "gameShopId": "ShadowShop"
+      },
+      "address": "Sewers",
+      "hours": {
+        "open": 0,
+        "close": 2400
+      }
     },
-    "BugLand": {
-      "displayName": "Mutant Bug Lair",
-      "type": "special"
+    "loc-resort-bar": {
+      "id": "loc-resort-bar",
+      "name": "Resort Bar",
+      "operator": "Gus",
+      "shop": {
+        "gameShopId": "ResortBar"
+      },
+      "address": "Ginger Island Resort"
     },
-    "WitchSwamp": {
-      "displayName": "Witch's Swamp",
-      "type": "special"
+    "loc-bookseller": {
+      "id": "loc-bookseller",
+      "name": "Bookseller",
+      "icon": "assets/objects/BookStack.png",
+      "shop": {
+        "gameShopId": "Bookseller"
+      },
+      "address": "Pelican Town",
+      "note": "Appears on the 1st and 15th of each season."
     },
-    "Submarine": {
-      "displayName": "Night Market",
-      "type": "special",
-      "notes": "Winter event only"
+    "loc-shipping-bin": {
+      "id": "loc-shipping-bin",
+      "name": "Shipping Bin",
+      "icon": "assets/objects/Chest.png"
     },
-    "BeachNightMarket": {
-      "displayName": "Night Market",
-      "type": "special",
-      "notes": "Alternative name for Submarine location"
+    "loc-trash-can": {
+      "id": "loc-trash-can",
+      "name": "Trash Can",
+      "icon": "assets/objects/Trash.png"
     },
-    "IslandWest": {
-      "displayName": "Ginger Island West",
-      "type": "island"
+    "loc-egg-festival": {
+      "id": "loc-egg-festival",
+      "name": "Egg Festival",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_EggFestival_Pierre"
+      },
+      "address": "Pelican Town",
+      "festival": "fest-egg-festival"
     },
-    "IslandSouth": {
-      "displayName": "Ginger Island South",
-      "type": "island"
+    "loc-flower-dance": {
+      "id": "loc-flower-dance",
+      "name": "Flower Dance",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_FlowerDance_Pierre"
+      },
+      "address": "Cindersap Forest",
+      "festival": "fest-flower-dance"
     },
-    "IslandNorth": {
-      "displayName": "Ginger Island North",
-      "type": "island"
+    "loc-luau": {
+      "id": "loc-luau",
+      "name": "Luau",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_Luau_Pierre"
+      },
+      "address": "Beach",
+      "festival": "fest-luau"
     },
-    "IslandSouthEast": {
-      "displayName": "Ginger Island Southeast",
-      "type": "island"
+    "loc-spirits-eve": {
+      "id": "loc-spirits-eve",
+      "name": "Spirit's Eve",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_SpiritsEve_Pierre"
+      },
+      "address": "Pelican Town",
+      "festival": "fest-spirits-eve"
     },
-    "IslandSouthEastCave": {
-      "displayName": "Ginger Island Pirate Cove",
-      "type": "island"
+    "loc-moonlight-jellies": {
+      "id": "loc-moonlight-jellies",
+      "name": "Dance of the Moonlight Jellies",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_DanceOfTheMoonlightJellies_Pierre"
+      },
+      "address": "Beach",
+      "festival": "fest-moonlight-jellies"
     },
-    "IslandFishing": {
-      "displayName": "Ginger Island Ocean",
-      "type": "island"
+    "loc-winter-star": {
+      "id": "loc-winter-star",
+      "name": "Feast of the Winter Star",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "Festival_FeastOfTheWinterStar_Pierre"
+      },
+      "address": "Pelican Town",
+      "festival": "fest-winter-star"
     },
-    "Caldera": {
-      "displayName": "Volcano Caldera",
-      "type": "island"
+    "loc-festival-of-ice": {
+      "id": "loc-festival-of-ice",
+      "name": "Festival of Ice",
+      "icon": "assets/objects/FrozenTear.png",
+      "shop": {
+        "gameShopId": "Festival_FestivalOfIce_TravelingMerchant"
+      },
+      "address": "Cindersap Forest",
+      "festival": "fest-festival-of-ice"
     },
-    "Mine": {
-      "displayName": "Mines",
-      "type": "special"
+    "loc-stardew-valley-fair": {
+      "id": "loc-stardew-valley-fair",
+      "name": "Stardew Valley Fair",
+      "icon": "assets/objects/StarToken.png",
+      "shop": {
+        "gameShopId": "Festival_StardewValleyFair_StarTokens"
+      },
+      "address": "Pelican Town",
+      "festival": "fest-stardew-valley-fair"
     },
-    "SkullCave": {
-      "displayName": "Skull Cavern",
-      "type": "special"
+    "loc-night-market": {
+      "id": "loc-night-market",
+      "name": "Night Market",
+      "icon": "assets/objects/MidnightCarp.png",
+      "address": "Beach",
+      "festival": "fest-night-market"
     },
-    "Volcano": {
-      "displayName": "Volcano",
-      "type": "island"
+    "loc-night-market-decoration": {
+      "id": "loc-night-market-decoration",
+      "name": "Night Market Decoration Boat",
+      "icon": "assets/objects/MidnightCarp.png",
+      "shop": {
+        "gameShopId": "Festival_NightMarket_DecorationBoat"
+      },
+      "address": "Beach",
+      "festival": "fest-night-market"
     },
-    "IslandNorthCave1": {
-      "displayName": "Volcano Dungeon",
-      "type": "island"
+    "loc-night-market-magic": {
+      "id": "loc-night-market-magic",
+      "name": "Night Market Magic Boat",
+      "icon": "assets/objects/MidnightCarp.png",
+      "shop": {
+        "gameShopId": "Festival_NightMarket_MagicBoat_Day1"
+      },
+      "address": "Beach",
+      "festival": "fest-night-market"
     },
-    "FarmCave": {
-      "displayName": "Farm Cave",
-      "type": "farm"
+    "loc-night-market-lupini": {
+      "id": "loc-night-market-lupini",
+      "name": "Night Market (Lupini's Paintings)",
+      "icon": "assets/objects/MidnightCarp.png",
+      "address": "Beach",
+      "festival": "fest-night-market",
+      "note": "Sells 3 rotating paintings, one per night."
+    },
+    "loc-desert-festival": {
+      "id": "loc-desert-festival",
+      "name": "Desert Festival",
+      "icon": "assets/objects/CalicoEgg.png",
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival"
+    },
+    "loc-desert-festival-egg-shop": {
+      "id": "loc-desert-festival-egg-shop",
+      "name": "Desert Festival Egg Shop",
+      "icon": "assets/objects/CalicoEgg.png",
+      "shop": {
+        "gameShopId": "DesertFestival_EggShop"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival"
+    },
+    "loc-desert-festival-abigail": {
+      "id": "loc-desert-festival-abigail",
+      "name": "Desert Festival Stall (Abigail)",
+      "operator": "Abigail",
+      "shop": {
+        "gameShopId": "DesertFestival_Abigail"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-alex": {
+      "id": "loc-desert-festival-alex",
+      "name": "Desert Festival Stall (Alex)",
+      "operator": "Alex",
+      "shop": {
+        "gameShopId": "DesertFestival_Alex"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-caroline": {
+      "id": "loc-desert-festival-caroline",
+      "name": "Desert Festival Stall (Caroline)",
+      "operator": "Caroline",
+      "shop": {
+        "gameShopId": "DesertFestival_Caroline"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-clint": {
+      "id": "loc-desert-festival-clint",
+      "name": "Desert Festival Stall (Clint)",
+      "operator": "Clint",
+      "shop": {
+        "gameShopId": "DesertFestival_Clint"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-demetrius": {
+      "id": "loc-desert-festival-demetrius",
+      "name": "Desert Festival Stall (Demetrius)",
+      "operator": "Demetrius",
+      "shop": {
+        "gameShopId": "DesertFestival_Demetrius"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-elliott": {
+      "id": "loc-desert-festival-elliott",
+      "name": "Desert Festival Stall (Elliott)",
+      "operator": "Elliott",
+      "shop": {
+        "gameShopId": "DesertFestival_Elliott"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-emily": {
+      "id": "loc-desert-festival-emily",
+      "name": "Desert Festival Stall (Emily)",
+      "operator": "Emily",
+      "shop": {
+        "gameShopId": "DesertFestival_Emily"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-evelyn": {
+      "id": "loc-desert-festival-evelyn",
+      "name": "Desert Festival Stall (Evelyn)",
+      "operator": "Evelyn",
+      "shop": {
+        "gameShopId": "DesertFestival_Evelyn"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-george": {
+      "id": "loc-desert-festival-george",
+      "name": "Desert Festival Stall (George)",
+      "operator": "George",
+      "shop": {
+        "gameShopId": "DesertFestival_George"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-gus": {
+      "id": "loc-desert-festival-gus",
+      "name": "Desert Festival Stall (Gus)",
+      "operator": "Gus",
+      "shop": {
+        "gameShopId": "DesertFestival_Gus"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-haley": {
+      "id": "loc-desert-festival-haley",
+      "name": "Desert Festival Stall (Haley)",
+      "operator": "Haley",
+      "shop": {
+        "gameShopId": "DesertFestival_Haley"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-harvey": {
+      "id": "loc-desert-festival-harvey",
+      "name": "Desert Festival Stall (Harvey)",
+      "operator": "Harvey",
+      "shop": {
+        "gameShopId": "DesertFestival_Harvey"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-jas": {
+      "id": "loc-desert-festival-jas",
+      "name": "Desert Festival Stall (Jas)",
+      "operator": "Jas",
+      "shop": {
+        "gameShopId": "DesertFestival_Jas"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-jodi": {
+      "id": "loc-desert-festival-jodi",
+      "name": "Desert Festival Stall (Jodi)",
+      "operator": "Jodi",
+      "shop": {
+        "gameShopId": "DesertFestival_Jodi"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-kent": {
+      "id": "loc-desert-festival-kent",
+      "name": "Desert Festival Stall (Kent)",
+      "operator": "Kent",
+      "shop": {
+        "gameShopId": "DesertFestival_Kent"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-leah": {
+      "id": "loc-desert-festival-leah",
+      "name": "Desert Festival Stall (Leah)",
+      "operator": "Leah",
+      "shop": {
+        "gameShopId": "DesertFestival_Leah"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-leo": {
+      "id": "loc-desert-festival-leo",
+      "name": "Desert Festival Stall (Leo)",
+      "operator": "Leo",
+      "shop": {
+        "gameShopId": "DesertFestival_Leo"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-marnie": {
+      "id": "loc-desert-festival-marnie",
+      "name": "Desert Festival Stall (Marnie)",
+      "operator": "Marnie",
+      "shop": {
+        "gameShopId": "DesertFestival_Marnie"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-maru": {
+      "id": "loc-desert-festival-maru",
+      "name": "Desert Festival Stall (Maru)",
+      "operator": "Maru",
+      "shop": {
+        "gameShopId": "DesertFestival_Maru"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-pam": {
+      "id": "loc-desert-festival-pam",
+      "name": "Desert Festival Stall (Pam)",
+      "operator": "Pam",
+      "shop": {
+        "gameShopId": "DesertFestival_Pam"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-penny": {
+      "id": "loc-desert-festival-penny",
+      "name": "Desert Festival Stall (Penny)",
+      "operator": "Penny",
+      "shop": {
+        "gameShopId": "DesertFestival_Penny"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-pierre": {
+      "id": "loc-desert-festival-pierre",
+      "name": "Desert Festival Stall (Pierre)",
+      "operator": "Pierre",
+      "shop": {
+        "gameShopId": "DesertFestival_Pierre"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-robin": {
+      "id": "loc-desert-festival-robin",
+      "name": "Desert Festival Stall (Robin)",
+      "operator": "Robin",
+      "shop": {
+        "gameShopId": "DesertFestival_Robin"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-sam": {
+      "id": "loc-desert-festival-sam",
+      "name": "Desert Festival Stall (Sam)",
+      "operator": "Sam",
+      "shop": {
+        "gameShopId": "DesertFestival_Sam"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-sebastian": {
+      "id": "loc-desert-festival-sebastian",
+      "name": "Desert Festival Stall (Sebastian)",
+      "operator": "Sebastian",
+      "shop": {
+        "gameShopId": "DesertFestival_Sebastian"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-shane": {
+      "id": "loc-desert-festival-shane",
+      "name": "Desert Festival Stall (Shane)",
+      "operator": "Shane",
+      "shop": {
+        "gameShopId": "DesertFestival_Shane"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+    },
+    "loc-desert-festival-vincent": {
+      "id": "loc-desert-festival-vincent",
+      "name": "Desert Festival Stall (Vincent)",
+      "operator": "Vincent",
+      "shop": {
+        "gameShopId": "DesertFestival_Vincent"
+      },
+      "address": "Calico Desert",
+      "festival": "fest-desert-festival",
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
     }
+  },
+  "categorySellingLocations": {
+    "-17": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "-20": [
+      "loc-trash-can",
+      "loc-shipping-bin"
+    ],
+    "-23": [
+      "loc-willy",
+      "loc-shipping-bin"
+    ],
+    "-27": [
+      "loc-shipping-bin"
+    ]
   }
 }

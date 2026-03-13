@@ -11,8 +11,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -54,7 +54,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 1000,
         "condition": {
           ">=": [
@@ -103,8 +103,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -146,7 +146,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 750,
         "condition": {
           ">=": [
@@ -195,8 +195,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -239,7 +239,9 @@
       {
         "type": "monster-drop",
         "monster": "Mummy",
-        "chance": 0.01
+        "rolls": [
+          0.01
+        ]
       }
     ]
   },
@@ -255,8 +257,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -298,7 +300,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 1000,
         "condition": {
           ">=": [
@@ -343,8 +345,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -386,7 +388,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 200,
         "condition": {
           ">=": [
@@ -411,8 +413,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -487,8 +489,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -530,7 +532,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -575,8 +577,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -618,7 +620,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -659,8 +661,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -702,7 +704,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 500,
         "condition": {
           ">=": [
@@ -747,8 +749,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -790,7 +792,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-willy",
+        "id": "loc-willy",
         "price": 750,
         "condition": {
           ">=": [

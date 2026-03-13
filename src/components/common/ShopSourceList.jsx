@@ -46,7 +46,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         const storeName = storeEntity?.name ?? src.id
         const isBarter = src.tradeItemId !== undefined || src.tradeItemGameId !== undefined
         // Joja members pay base × 2 instead of base × 2.5, so member price = non-member × 0.8
-        const price = src.price != null && src.id === 'store-joja' && player.jojaMember
+        const price = src.price != null && src.id === 'loc-joja' && player.jojaMember
           ? Math.floor(src.price * 0.8)
           : src.price
         const currencyItem = isBarter && findEntity
@@ -58,6 +58,8 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         const qualifiers = []
         if (src.days?.length > 0)
           qualifiers.push(src.days.join('/'))
+        if (src.dayParity)
+          qualifiers.push(src.dayParity === 'odd' ? 'Odd days' : 'Even days')
         if (src.yearUnlock)
           qualifiers.push(src.yearUnlockBefore ? `Before Year ${src.yearUnlock}` : `Year ${src.yearUnlock}+`)
         if (src.rotating)
@@ -70,7 +72,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
           <>
             {(src.quantity > 1 || src.tradeItemAmount > 1) && (
               <span className="source-qualifier">
-                {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? src.tradeItemAmount : ''}
+                {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? `×${src.tradeItemAmount}` : ''}
               </span>
             )}
             {currencyItem ? (
@@ -87,7 +89,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         ) : shopCurrencyItem ? (
           <>
             <span className="source-qualifier">
-              {src.quantity > 1 ? `${src.quantity} for ` : ''}{price > 1 ? price : ''}
+              {src.quantity > 1 ? `${src.quantity} for ` : ''}{price > 1 ? `×${price}` : ''}
             </span>
             <ModalItemButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} />
           </>

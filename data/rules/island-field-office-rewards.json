@@ -1,0 +1,11 @@
+{
+  "_comment": "Rewards from Professor Snail's Island Field Office (Ginger Island). Hardcoded in C# game code, not available as a data asset.",
+  "rewardSourceName": "Professor Snail's Field Office",
+  "rewards": [
+    {
+      "rewardItemGameId": "289",
+      "condition": "complete all island fossil collections",
+      "_comment": "Ostrich Egg — given upon donating all 4 fossil collections (Large Animal, Snake, Mummified Bat, Mummified Frog)"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Mapping of internal location names from Locations.json to user-friendly display names. Unmapped locations are filtered out (interior locations, temp locations, etc.)",
+  "source": "Game data and https://stardewvalleywiki.com/Fish",
+  "locations": {
+    "Mountain": {
+      "displayName": "Mountain Lake",
+      "type": "valley"
+    },
+    "Forest": {
+      "displayName": "Forest River",
+      "type": "valley"
+    },
+    "Town": {
+      "displayName": "Town River",
+      "type": "valley"
+    },
+    "Beach": {
+      "displayName": "Ocean",
+      "type": "valley"
+    },
+    "UndergroundMine": {
+      "displayName": "Mines",
+      "type": "special"
+    },
+    "Woods": {
+      "displayName": "Secret Woods",
+      "type": "valley"
+    },
+    "Sewer": {
+      "displayName": "Sewers",
+      "type": "special"
+    },
+    "Desert": {
+      "displayName": "Desert",
+      "type": "valley"
+    },
+    "Backwoods": {
+      "displayName": null,
+      "type": "valley",
+      "notes": "No fishable water (placeholder data in game files)"
+    },
+    "Railroad": {
+      "displayName": "Railroad",
+      "type": "valley"
+    },
+    "Farm_Standard": {
+      "displayName": "Farm",
+      "type": "farm"
+    },
+    "Farm_Beach": {
+      "displayName": "Beach Farm",
+      "type": "farm"
+    },
+    "Farm_Forest": {
+      "displayName": "Forest Farm",
+      "type": "farm"
+    },
+    "Farm_FourCorners": {
+      "displayName": "Four Corners Farm",
+      "type": "farm"
+    },
+    "Farm_Hilltop": {
+      "displayName": "Hilltop Farm",
+      "type": "farm"
+    },
+    "Farm_Riverland": {
+      "displayName": "Riverland Farm",
+      "type": "farm"
+    },
+    "Farm_Wilderness": {
+      "displayName": "Wilderness Farm",
+      "type": "farm"
+    },
+    "Farm_MeadowlandsFarm": {
+      "displayName": "Meadowlands Farm",
+      "type": "farm"
+    },
+    "BugLand": {
+      "displayName": "Mutant Bug Lair",
+      "type": "special"
+    },
+    "WitchSwamp": {
+      "displayName": "Witch's Swamp",
+      "type": "special"
+    },
+    "Submarine": {
+      "displayName": "Night Market",
+      "type": "special",
+      "notes": "Winter event only"
+    },
+    "BeachNightMarket": {
+      "displayName": "Night Market",
+      "type": "special",
+      "notes": "Alternative name for Submarine location"
+    },
+    "IslandWest": {
+      "displayName": "Ginger Island West",
+      "type": "island"
+    },
+    "IslandSouth": {
+      "displayName": "Ginger Island South",
+      "type": "island"
+    },
+    "IslandNorth": {
+      "displayName": "Ginger Island North",
+      "type": "island"
+    },
+    "IslandSouthEast": {
+      "displayName": "Ginger Island Southeast",
+      "type": "island"
+    },
+    "IslandSouthEastCave": {
+      "displayName": "Ginger Island Pirate Cove",
+      "type": "island"
+    },
+    "IslandFishing": {
+      "displayName": "Ginger Island Ocean",
+      "type": "island"
+    },
+    "Caldera": {
+      "displayName": "Volcano Caldera",
+      "type": "island"
+    },
+    "Mine": {
+      "displayName": "Mines",
+      "type": "special"
+    },
+    "SkullCave": {
+      "displayName": "Skull Cavern",
+      "type": "special"
+    },
+    "Volcano": {
+      "displayName": "Volcano",
+      "type": "island"
+    },
+    "IslandNorthCave1": {
+      "displayName": "Volcano Dungeon",
+      "type": "island"
+    },
+    "FarmCave": {
+      "displayName": "Farm Cave",
+      "type": "farm"
+    }
+  }
+}

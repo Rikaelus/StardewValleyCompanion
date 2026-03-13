@@ -18,11 +18,9 @@ const CATEGORY_LABELS = {
 }
 
 function StoreContentsSection({ entity, entityType, allItems, findById, onNavigate }) {
-  if (entityType !== 'store') return null
-
   const storeId = entity.id
   const childStalls = allItems
-    .filter(s => s.category === 'store' && s.parentStore === storeId)
+    .filter(s => s.category === 'location' && s.festival === storeId)
     .sort((a, b) => a.name.localeCompare(b.name))
 
   const storeItems = allItems.filter(item =>
@@ -77,7 +75,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                   <>
                     {(src.quantity > 1 || src.tradeItemAmount > 1) && (
                       <span className="source-qualifier">
-                        {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? src.tradeItemAmount : ''}
+                        {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? `×${src.tradeItemAmount}` : ''}
                       </span>
                     )}
                     {currencyItem ? (
@@ -101,6 +99,8 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                 const qualifiers = []
                 if (src.days?.length > 0)
                   qualifiers.push(src.days.join('/'))
+                if (src.dayParity)
+                  qualifiers.push(src.dayParity === 'odd' ? 'Odd days' : 'Even days')
                 if (src.yearCycle)
                   qualifiers.push(`Year ${src.yearCycle} cycle`)
                 if (src.yearUnlock)

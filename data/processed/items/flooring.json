@@ -11,7 +11,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -54,7 +54,9 @@
       {
         "type": "monster-drop",
         "monster": "Shadow Guy",
-        "chance": 0.03
+        "rolls": [
+          0.03
+        ]
       },
       {
         "type": "crafting",
@@ -85,7 +87,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -150,7 +152,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -215,7 +217,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -280,7 +282,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -345,7 +347,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -410,7 +412,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -475,7 +477,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -518,7 +520,9 @@
       {
         "type": "monster-drop",
         "monster": "Shadow Guy",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "crafting",
@@ -545,7 +549,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -610,7 +614,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -679,7 +683,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -721,7 +725,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-traveling-merchant",
+        "id": "loc-traveling-merchant",
         "price": 1000000,
         "yearUnlock": 25,
         "rotating": true
@@ -740,7 +744,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -805,7 +809,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -870,7 +874,7 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {

@@ -11,7 +11,7 @@ import { getTrashCanRefund, getProfitColor, formatPrice } from '../../utils/Form
 function getSellingLocations(entity, findById) {
   return (entity.sellingLocations || []).map(id => {
     const store = findById(id)
-    return store?.name || id
+    return store || { id, name: id }
   })
 }
 
@@ -240,6 +240,8 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
               outputItem: artisan,
               outputBasePrice: inputDetail.outputPrice || artisan.prices?.regular || artisan.price || 0,
               machineId: artisanMachineSource.id,
+              outputQuality: inputDetail.outputQuality ?? null,
+              outputCount: inputDetail.outputCount ?? null,
             })
           }
         })
@@ -272,8 +274,9 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
   if (trashCanUpgrade !== null) return null
 
   const inputBasePrice = entity.prices?.regular || entity.price || 0
+  const hasQuality = entity.type !== 'artisan' && entity.gameCategory !== -26 && entity.gameCategory !== -23
   const qualityMultipliers = { regular: 1.0, silver: 1.25, gold: 1.5, iridium: 2.0 }
-  const inputMultiplier = qualityMultipliers[outputInputQuality]
+  const inputMultiplier = hasQuality ? qualityMultipliers[outputInputQuality] : 1.0
   const inputProfessionMultiplier = calculateProfessionMultiplier(entity, activeProfessions)
   const adjustedInputPrice = Math.floor(inputBasePrice * inputMultiplier * inputProfessionMultiplier)
 
@@ -281,18 +284,21 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
     <div className="profit-section">
       <div className="profit-header">
         <div className="modal-label">Processing Into:</div>
-        <InfoTooltip text="Shows the profit from processing this item into other goods. The price shown is this item's sell value at the selected quality. Percentages show profit at each output quality tier." />
+        <InfoTooltip text="Shows the profit from processing this item into other goods. The price shown is this item's sell value at the selected quality. Percentages compare total output value (all items in the batch) vs selling the input raw." />
       </div>
 
       <div className="profit-source-selector">
         <span className="profit-source-name">{entity.name}</span>
-        <QualitySelector
-          value={outputInputQuality}
-          onChange={setOutputInputQuality}
-          name="outputInputQuality"
-        />
+        {hasQuality && (
+          <QualitySelector
+            value={outputInputQuality}
+            onChange={setOutputInputQuality}
+            name="outputInputQuality"
+          />
+        )}
         <span className="price-display" style={{
-          color: outputInputQuality === 'regular' ? '#666' :
+          color: !hasQuality ? '#666' :
+                 outputInputQuality === 'regular' ? '#666' :
                  outputInputQuality === 'silver' ? '#9e9e9e' :
                  outputInputQuality === 'gold' ? '#f57c00' : '#9c27b0'
         }}>
@@ -303,16 +309,20 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {outputs.filter(o => !o.isGeneric).map((output, idx, specificOutputs) => {
           const outputProfessionMultiplier = calculateProfessionMultiplier(output.outputItem, activeProfessions)
+          const outputHasQuality = output.outputItem.type !== 'artisan' && output.outputQuality == null
+          const fixedQualityMultiplier = output.outputQuality === 0 ? 1.0
+            : output.outputQuality === 1 ? 1.25
+            : output.outputQuality === 2 ? 1.5
+            : output.outputQuality === 4 ? 2.0
+            : null
 
-          const regularOutputPrice = Math.floor(output.outputBasePrice * outputProfessionMultiplier)
-          const silverOutputPrice = Math.floor(output.outputBasePrice * 1.25 * outputProfessionMultiplier)
-          const goldOutputPrice = Math.floor(output.outputBasePrice * 1.5 * outputProfessionMultiplier)
-          const iridiumOutputPrice = Math.floor(output.outputBasePrice * 2.0 * outputProfessionMultiplier)
-
-          const regularProfit = adjustedInputPrice > 0 ? Math.round(((regularOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const silverProfit = adjustedInputPrice > 0 ? Math.round(((silverOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const goldProfit = adjustedInputPrice > 0 ? Math.round(((goldOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const iridiumProfit = adjustedInputPrice > 0 ? Math.round(((iridiumOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
+          const calcProfit = (multiplier) => {
+            const price = Math.floor(output.outputBasePrice * multiplier * outputProfessionMultiplier)
+            return adjustedInputPrice > 0 ? Math.round(((price - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
+          }
+          const profitPct = (pct) => `${pct >= 0 ? '+' : ''}${pct}%`
+          const fixedQualitySymbol = output.outputQuality === 1 ? '◆' : output.outputQuality === 2 ? '★' : output.outputQuality === 4 ? '◆' : '●'
+          const fixedQualityTier = output.outputQuality === 1 ? 'silver' : output.outputQuality === 2 ? 'gold' : output.outputQuality === 4 ? 'iridium' : 'regular'
 
           return (
             <div key={idx} className="processing-row processing-row--output">
@@ -320,45 +330,106 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
                 {specificOutputs.length === 1 ? '└→' : idx === specificOutputs.length - 1 ? '└→' : '├→'}
               </span>
 
-              <div style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                 <ModalItemButton
                   item={output.outputItem}
                   variant="inline"
                   onNavigate={onNavigate}
                 />
+                {output.outputCount > 1 && (
+                  <span className="output-count">×{output.outputCount}</span>
+                )}
               </div>
 
               <div className="quality-tiers">
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--regular">●</span>
-                  <span style={{ color: getProfitColor(regularProfit) }}>
-                    {regularProfit >= 0 ? '+' : ''}{regularProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--silver">◆</span>
-                  <span style={{ color: getProfitColor(silverProfit) }}>
-                    {silverProfit >= 0 ? '+' : ''}{silverProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--gold">★</span>
-                  <span style={{ color: getProfitColor(goldProfit) }}>
-                    {goldProfit >= 0 ? '+' : ''}{goldProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--iridium">◆</span>
-                  <span style={{ color: getProfitColor(iridiumProfit) }}>
-                    {iridiumProfit >= 0 ? '+' : ''}{iridiumProfit}%
-                  </span>
-                </div>
+                {outputHasQuality ? (
+                  [['●', 'regular', 1.0], ['◆', 'silver', 1.25], ['★', 'gold', 1.5], ['◆', 'iridium', 2.0]].map(([sym, tier, mult]) => {
+                    const pct = calcProfit(mult)
+                    return (
+                      <div key={tier} className="quality-tier">
+                        <span className={`quality-symbol quality-symbol--${tier}`}>{sym}</span>
+                        <span style={{ color: getProfitColor(pct) }}>{profitPct(pct)}</span>
+                      </div>
+                    )
+                  })
+                ) : fixedQualityMultiplier != null ? (
+                  <div className="quality-tier">
+                    <span className={`quality-symbol quality-symbol--${fixedQualityTier}`}>{fixedQualitySymbol}</span>
+                    <span style={{ color: getProfitColor(calcProfit(fixedQualityMultiplier)) }}>{profitPct(calcProfit(fixedQualityMultiplier))}</span>
+                  </div>
+                ) : (
+                  <div className="quality-tier">
+                    <span className="quality-symbol quality-symbol--regular">●</span>
+                    <span style={{ color: getProfitColor(calcProfit(1.0)) }}>{profitPct(calcProfit(1.0))}</span>
+                  </div>
+                )}
               </div>
             </div>
           )
         })}
       </div>
     </div>
+  )
+}
+
+const ANIMAL_HEARTS = [0, 1, 2, 3, 4, 5]
+
+function AnimalSellingCalculator({ entity }) {
+  const [hearts, setHearts] = useState(5)
+  const friendship = hearts * 200
+  const multiplier = (friendship / 1000) + 0.3
+  const price = Math.floor(entity.sellPrice * multiplier)
+  const multiplierDisplay = Math.round(multiplier * 100) / 100
+
+  return (
+    <ModalSection id="section-calculator" title="Selling Calculator">
+      <div className="profit-section">
+        <div className="calculator-box">
+          <div className="calculator-controls">
+            <span className="modal-label">Friendship:</span>
+            <div style={{ display: 'flex', gap: '0.1rem', alignItems: 'center' }}>
+              {ANIMAL_HEARTS.map(h => (
+                <label key={h} style={{ cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name={`animal-hearts-${entity.id}`}
+                    value={h}
+                    checked={hearts === h}
+                    onChange={() => setHearts(h)}
+                    style={{ display: 'none' }}
+                  />
+                  <span style={{
+                    fontSize: h === 0 ? '0.85rem' : '1.1rem',
+                    color: h === 0
+                      ? (hearts === 0 ? '#e05c5c' : '#ccc')
+                      : (h <= hearts ? '#e05c5c' : '#ccc'),
+                    userSelect: 'none',
+                    lineHeight: 1,
+                  }}>
+                    {h === 0 ? '○' : '♥'}
+                  </span>
+                </label>
+              ))}
+              <span style={{ fontSize: '0.75rem', color: '#888', marginLeft: '0.4rem' }}>
+                {hearts} heart{hearts !== 1 ? 's' : ''}
+              </span>
+            </div>
+          </div>
+
+          <div className="calculator-results">
+            <div className="calculator-prices">
+              <span style={{ fontWeight: 600 }}>Sell Price:</span>
+              <div>
+                <span className="sell-price-value">{price.toLocaleString()}g</span>
+              </div>
+            </div>
+            <div className="calculator-formula">
+              {entity.sellPrice.toLocaleString()}g × {multiplierDisplay} = {price.toLocaleString()}g
+            </div>
+          </div>
+        </div>
+      </div>
+    </ModalSection>
   )
 }
 
@@ -400,6 +471,11 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
   if (entity.isGeneric) return null
   if (entity.category === 'furniture') return null
 
+  if (entity.category === 'animal') {
+    if (!entity.sellPrice) return null
+    return <AnimalSellingCalculator entity={entity} />
+  }
+
   const basePrice = entity.prices?.regular || entity.price || 0
   if (basePrice === 0) return null
 
@@ -421,8 +497,13 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
         <div className="sell-locations">
           <span className="modal-label">Sell At:</span>
           <div className="tag-list tag-list-location">
-            {sellingLocations.map((loc, i) => (
-              <span key={i} className="tag">{loc}</span>
+            {sellingLocations.map((loc) => (
+              <ModalItemButton
+                key={loc.id}
+                item={loc}
+                variant="inline"
+                onNavigate={onNavigate}
+              />
             ))}
           </div>
         </div>

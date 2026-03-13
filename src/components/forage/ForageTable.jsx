@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import { useEntities } from '../../contexts/EntityContext'
-import { useModal } from '../../contexts/ModalContext'
+import { useOpenModal } from '../../contexts/ModalContext'
 import { formatLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
@@ -14,7 +14,7 @@ import {
 
 function ForageTable({ data, allData }) {
   const { villagers: { all: villagers }, ...relationalData } = useEntities()
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
 
   const handleRowClick = openModal
 

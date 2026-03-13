@@ -1,30 +1,111 @@
 {
   "$schema": "item-variants-schema",
-  "description": "Items that share the same Name but have different gameIds and sprites. Maps gameIds to unique IDs and icon filenames. Only needed when DisplayName extraction doesn't provide correct sprite name.",
+  "description": "Items that share the same Name but have different gameIds and sprites. Maps fully-qualified gameIds to unique IDs and icon filenames. Only needed when DisplayName extraction doesn't provide correct sprite name.",
   "variants": {
-    "176": {
-      "name": "Egg",
+    "(O)176": {
+      "name": "Egg (White)",
       "uniqueId": "egg-white",
-      "notes": "White chicken egg - uniqueId needed because multiple items share 'Egg' name"
+      "notes": "White chicken egg - display name disambiguated from brown egg (O)180"
     },
-    "180": {
-      "name": "Egg",
+    "(O)180": {
+      "name": "Egg (Brown)",
       "uniqueId": "egg-brown",
-      "notes": "Brown chicken egg - uniqueId needed because multiple items share 'Egg' name"
+      "notes": "Brown chicken egg - display name disambiguated from white egg (O)176"
     },
-    "174": {
-      "name": "Large Egg",
+    "(O)174": {
+      "name": "Large Egg (White)",
       "uniqueId": "large-egg-white",
-      "notes": "Large white chicken egg - uniqueId needed because multiple items share 'Large Egg' name"
+      "notes": "Large white chicken egg - display name disambiguated from brown large egg (O)182"
     },
-    "182": {
-      "name": "Large Egg",
+    "(O)182": {
+      "name": "Large Egg (Brown)",
       "uniqueId": "large-egg-brown",
-      "notes": "Large brown chicken egg - uniqueId needed because multiple items share 'Large Egg' name"
+      "notes": "Large brown chicken egg - display name disambiguated from white large egg (O)174"
     },
-    "930": {
+    "(O)SpecificBait": {
+      "name": "Specific Bait",
+      "uniqueId": "specific-bait",
+      "notes": "1.6 targeted bait crafted at Bait Maker using a specific fish to increase catch rate of that fish. Shares display name 'Bait' with (O)685 in game data."
+    },
+    "(O)930": {
       "skip": true,
       "notes": "Intermediate object used internally when granting the ??? hat (gameId 92). Has no price, no acquisition source, and no wiki page — the hat entry is the player-facing item."
+    },
+    "(O)742": {
+      "skip": true,
+      "notes": "Haley's Lost Bracelet — quest-only item, never in player inventory outside the quest, no wiki image."
+    },
+    "(O)788": {
+      "skip": true,
+      "notes": "Lost Axe — quest-only item (Linus's quest), no wiki image as standalone item."
+    },
+    "(O)789": {
+      "skip": true,
+      "notes": "Lucky Purple Shorts — quest-only item, no wiki image as standalone item."
+    },
+    "(O)GoldCoin": {
+      "skip": true,
+      "notes": "Gold Coin — internal currency/event object, not a player-obtainable item."
+    },
+    "(O)790": {
+      "skip": true,
+      "notes": "Berry Basket — seasonal event item handed to player temporarily, no wiki image as standalone item."
+    },
+    "(O)803": {
+      "skip": true,
+      "notes": "Iridium Milk — special event item, no wiki image as standalone item."
+    },
+    "(O)PetLicense": {
+      "skip": true,
+      "notes": "Pet License — special item received through game events, no wiki image."
+    },
+    "(O)925": {
+      "skip": true,
+      "notes": "Slime Crate — world-placed object dropped by slimes, not directly obtainable by players, no wiki image."
+    },
+    "(O)927": {
+      "skip": true,
+      "notes": "Camping Stove — event/placement object, no wiki image as standalone item."
+    },
+    "(O)30": {
+      "skip": true,
+      "notes": "Lumber — intermediate crafting material shown in recipes but has no wiki image as a standalone item page."
+    },
+    "(O)461": {
+      "skip": true,
+      "notes": "Decorative Pot — no wiki image as standalone item."
+    },
+    "(O)929": {
+      "skip": true,
+      "notes": "Hedge — craftable fence-like item but has no wiki image as standalone item."
+    },
+    "(BC)48": {
+      "category": "furniture",
+      "notes": "Seasonal Decor — stored as BigCraftable in game data but is functionally decorative furniture placed indoors."
+    },
+    "(BC)184": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 1 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BC)188": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 2 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BC)192": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 3 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BC)196": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 4 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BC)200": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 5 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BC)204": {
+      "category": "furniture",
+      "notes": "Seasonal Plant variant 6 — stored as BigCraftable but is functionally decorative furniture."
     }
   }
 }

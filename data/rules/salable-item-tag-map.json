@@ -1,0 +1,47 @@
+{
+  "description": "Maps Shops.json SalableItemTags to item categories or specific item IDs. Used to auto-derive which shops buy which items from players.",
+  "notes": [
+    "Standard category_* tags map to numeric item categories from Objects.json.",
+    "The three 'sell_at_*' special tags are game-engine aliases for the same categories as the explicit tags.",
+    "They appear redundant but the game uses them for legacy/dynamic resolution. We treat them as aliases.",
+    "category_ingredients refers to 4 specific cooking ingredient items not in any numbered category.",
+    "book_item is a context tag on item objects (not a category number).",
+    "category_weapon/boots/ring/trinket refer to items from separate game files (not Objects.json)."
+  ],
+  "tagToCategories": {
+    "category_greens": [-81],
+    "category_flowers": [-80],
+    "category_fruits": [-79],
+    "category_seeds": [-74],
+    "category_artisan_goods": [-26],
+    "category_cooking": [-7],
+    "category_milk": [-6],
+    "category_egg": [-5],
+    "category_fish": [-4],
+    "category_gem": [-2],
+    "category_fertilizer": [-19],
+    "category_meat": [-18],
+    "category_building_resources": [-16],
+    "category_metal_resources": [-15],
+    "category_minerals": [-12],
+    "category_monster_loot": [-28],
+    "category_tackle": [-22],
+    "category_bait": [-21],
+    "category_vegetable": [-75],
+    "category_sell_at_pierres": [-75, -79, -80, -81],
+    "category_sell_at_pierres_and_marnies": [-5, -6],
+    "category_sell_at_fish_shop": [-4]
+  },
+  "tagToSpecificGameIds": {
+    "category_ingredients": ["(O)245", "(O)246", "(O)247", "(O)419"]
+  },
+  "tagToContextTag": {
+    "book_item": "book_item"
+  },
+  "tagToEntityType": {
+    "category_weapon": "weapon",
+    "category_boots": "boots",
+    "category_ring": "ring",
+    "category_trinket": "trinket"
+  }
+}

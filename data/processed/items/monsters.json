@@ -1,0 +1,2244 @@
+[
+  {
+    "type": "monster",
+    "id": "monster-green-slime",
+    "name": "Green Slime",
+    "internalName": "Green Slime",
+    "icon": "assets/monsters/GreenSlime.png",
+    "hp": 24,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 1–39)",
+      "Skull Cavern",
+      "Farm (Wilderness)"
+    ],
+    "drops": [
+      {
+        "gameId": 766,
+        "rolls": [
+          0.75,
+          0.05
+        ]
+      },
+      {
+        "gameId": 153,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 66,
+        "rolls": [
+          0.015
+        ]
+      },
+      {
+        "gameId": 92,
+        "rolls": [
+          0.15
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-dust-spirit",
+    "name": "Dust Sprite",
+    "internalName": "Dust Spirit",
+    "icon": "assets/monsters/DustSprite.png",
+    "hp": 40,
+    "resilience": 6,
+    "damageToFarmer": 2,
+    "locations": [
+      "Mines (Floors 40–79)"
+    ],
+    "drops": [
+      {
+        "gameId": 382,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 433,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 84,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 414,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 97,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-bat",
+    "name": "Bat",
+    "internalName": "Bat",
+    "icon": "assets/monsters/Bat.png",
+    "hp": 24,
+    "resilience": 6,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 1–39)"
+    ],
+    "drops": [
+      {
+        "gameId": 767,
+        "rolls": [
+          0.9,
+          0.4
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-frost-bat",
+    "name": "Frost Bat",
+    "internalName": "Frost Bat",
+    "icon": "assets/monsters/FrostBat.png",
+    "hp": 36,
+    "resilience": 7,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 40–79)"
+    ],
+    "drops": [
+      {
+        "gameId": 767,
+        "rolls": [
+          0.9,
+          0.55
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 97,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-lava-bat",
+    "name": "Lava Bat",
+    "internalName": "Lava Bat",
+    "icon": "assets/monsters/LavaBat.png",
+    "hp": 80,
+    "resilience": 15,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 767,
+        "rolls": [
+          0.9,
+          0.7
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-iridium-bat",
+    "name": "Iridium Bat",
+    "internalName": "Iridium Bat",
+    "icon": "assets/monsters/IridiumBat.png",
+    "hp": 300,
+    "resilience": 30,
+    "damageToFarmer": 1,
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 386,
+        "rolls": [
+          0.9,
+          0.5,
+          0.25,
+          0.1
+        ]
+      },
+      {
+        "gameId": 288,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 768,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 773,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 349,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 787,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.008
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-stone-golem",
+    "name": "Stone Golem",
+    "internalName": "Stone Golem",
+    "icon": "assets/monsters/StoneGolem.png",
+    "hp": 45,
+    "resilience": 5,
+    "damageToFarmer": 5,
+    "locations": [
+      "Mines (Floors 1–39)"
+    ],
+    "drops": [
+      {
+        "gameId": 390,
+        "rolls": [
+          0.9
+        ]
+      },
+      {
+        "gameId": 80,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 380,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-wilderness-golem",
+    "name": "Wilderness Golem",
+    "internalName": "Wilderness Golem",
+    "icon": "assets/monsters/WildernessGolem.png",
+    "hp": 30,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "locations": [
+      "Farm (Wilderness)"
+    ],
+    "drops": [
+      {
+        "gameId": 771,
+        "rolls": [
+          0.9,
+          0.5
+        ]
+      },
+      {
+        "gameId": 770,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 86,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-iridium-golem",
+    "name": "Wilderness Golem",
+    "internalName": "Iridium Golem",
+    "icon": "assets/monsters/WildernessGolem.png",
+    "hp": 30,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 771,
+        "rolls": [
+          0.9,
+          0.5
+        ]
+      },
+      {
+        "gameId": 770,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 86,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-grub",
+    "name": "Grub",
+    "internalName": "Grub",
+    "icon": "assets/monsters/Grub.png",
+    "hp": 20,
+    "resilience": 4,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines (Floors 1–39)"
+    ],
+    "drops": [
+      {
+        "gameId": 684,
+        "rolls": [
+          0.6
+        ]
+      },
+      {
+        "gameId": 273,
+        "rolls": [
+          0.05,
+          0.05
+        ]
+      },
+      {
+        "gameId": 157,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 114,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-fly",
+    "name": "Fly",
+    "internalName": "Fly",
+    "icon": "assets/monsters/Fly.png",
+    "hp": 22,
+    "resilience": 6,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 684,
+        "rolls": [
+          0.9
+        ]
+      },
+      {
+        "gameId": 157,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 114,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-frost-jelly",
+    "name": "Frost Jelly",
+    "internalName": "Frost Jelly",
+    "icon": "assets/monsters/FrostJelly.png",
+    "hp": 106,
+    "resilience": 7,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines (Floors 40–79)"
+    ],
+    "drops": [
+      {
+        "gameId": 766,
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "gameId": 412,
+        "rolls": [
+          0.08
+        ]
+      },
+      {
+        "gameId": 70,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.015
+        ]
+      },
+      {
+        "gameId": 92,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 97,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-sludge",
+    "name": "Sludge",
+    "internalName": "Sludge",
+    "icon": "assets/monsters/Sludge.png",
+    "hp": 205,
+    "resilience": 16,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines (Floors 80–119)",
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 766,
+        "rolls": [
+          0.8
+        ]
+      },
+      {
+        "gameId": 157,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 92,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-shadow-guy",
+    "name": "Shadow Guy",
+    "internalName": "Shadow Guy",
+    "icon": "assets/monsters/ShadowGuy.png",
+    "hp": 125,
+    "resilience": 20,
+    "damageToFarmer": 2,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "gameId": 329,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.002
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 335,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 334,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 203,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 293,
+        "rolls": [
+          0.03
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-ghost",
+    "name": "Ghost",
+    "internalName": "Ghost",
+    "icon": "assets/monsters/Ghost.png",
+    "hp": 96,
+    "resilience": 10,
+    "damageToFarmer": 3,
+    "coins": {
+      "min": 0,
+      "max": 3
+    },
+    "locations": [
+      "Mines (Floors 60+)"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.95,
+          0.1
+        ]
+      },
+      {
+        "gameId": 156,
+        "rolls": [
+          0.08
+        ]
+      },
+      {
+        "gameId": 338,
+        "rolls": [
+          0.08
+        ]
+      },
+      {
+        "gameId": 97,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-carbon-ghost",
+    "name": "Carbon Ghost",
+    "internalName": "Carbon Ghost",
+    "icon": "assets/monsters/CarbonGhost.png",
+    "hp": 190,
+    "resilience": 25,
+    "damageToFarmer": 3,
+    "coins": {
+      "min": 0,
+      "max": 3
+    },
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 749,
+        "rolls": [
+          0.99
+        ]
+      },
+      {
+        "gameId": 338,
+        "rolls": [
+          0.1
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-duggy",
+    "name": "Duggy",
+    "internalName": "Duggy",
+    "icon": "assets/monsters/Duggy.png",
+    "hp": 40,
+    "resilience": 6,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines (Floors 1–39)"
+    ],
+    "drops": [
+      {
+        "gameId": 286,
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "gameId": 535,
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "gameId": 280,
+        "rolls": [
+          0.03
+        ]
+      },
+      {
+        "gameId": 105,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 86,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-rock-crab",
+    "name": "Rock Crab",
+    "internalName": "Rock Crab",
+    "icon": "assets/monsters/RockCrab.png",
+    "hp": 30,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "locations": [
+      "Mines (Floors 1–39)",
+      "Beach"
+    ],
+    "drops": [
+      {
+        "gameId": 717,
+        "rolls": [
+          0.15
+        ]
+      },
+      {
+        "gameId": 286,
+        "rolls": [
+          0.4
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-truffle-crab",
+    "name": "Rock Crab",
+    "internalName": "Truffle Crab",
+    "icon": "assets/monsters/RockCrab.png",
+    "hp": 30,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "locations": [
+      "Ginger Island (Beach)"
+    ],
+    "drops": [
+      {
+        "gameId": 430,
+        "rolls": [
+          0.999,
+          0.5,
+          0.1
+        ]
+      },
+      {
+        "gameId": 717,
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "gameId": 432,
+        "rolls": [
+          0.1
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-lava-crab",
+    "name": "Lava Crab",
+    "internalName": "Lava Crab",
+    "icon": "assets/monsters/LavaCrab.png",
+    "hp": 120,
+    "resilience": 15,
+    "damageToFarmer": 3,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 717,
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.4
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-iridium-crab",
+    "name": "Iridium Crab",
+    "internalName": "Iridium Crab",
+    "icon": "assets/monsters/IridiumCrab.png",
+    "hp": 240,
+    "resilience": 15,
+    "damageToFarmer": 3,
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 732,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 386,
+        "rolls": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-squid-kid",
+    "name": "Squid Kid",
+    "internalName": "Squid Kid",
+    "icon": "assets/monsters/SquidKid.png",
+    "hp": 1,
+    "resilience": 18,
+    "damageToFarmer": 2,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "gameId": 814,
+        "rolls": [
+          0.2
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 288,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-skeleton-warrior",
+    "name": "Skeleton Warrior",
+    "internalName": "Skeleton Warrior",
+    "icon": "assets/monsters/SkeletonWarrior.png",
+    "hp": 300,
+    "resilience": 12,
+    "damageToFarmer": 3,
+    "coins": {
+      "min": 1,
+      "max": 3
+    },
+    "locations": [
+      "Mines (Floors 70–79)"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "gameId": 105,
+        "rolls": [
+          0.03
+        ]
+      },
+      {
+        "gameId": 106,
+        "rolls": [
+          0.03
+        ]
+      },
+      {
+        "gameId": 166,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 60,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 232,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.03
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 97,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-shadow-brute",
+    "name": "Shadow Brute",
+    "internalName": "Shadow Brute",
+    "icon": "assets/monsters/ShadowBrute.png",
+    "hp": 160,
+    "resilience": 18,
+    "damageToFarmer": 2,
+    "locations": [
+      "Mines (Floors 80–119)",
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.002
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 335,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 334,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 203,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.0005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-shadow-shaman",
+    "name": "Shadow Shaman",
+    "internalName": "Shadow Shaman",
+    "icon": "assets/monsters/ShadowShaman.png",
+    "hp": 80,
+    "resilience": 17,
+    "damageToFarmer": 2,
+    "locations": [
+      "Mines (Floors 80–119)",
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.75,
+          0.2
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.002
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 335,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 334,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.0005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-skeleton",
+    "name": "Skeleton",
+    "internalName": "Skeleton",
+    "icon": "assets/monsters/Skeleton.png",
+    "hp": 140,
+    "resilience": 10,
+    "damageToFarmer": 1,
+    "coins": {
+      "min": 0,
+      "max": 2
+    },
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 881,
+        "rolls": [
+          0.5,
+          0.4,
+          0.2
+        ]
+      },
+      {
+        "gameId": 579,
+        "rolls": [
+          0.005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-skeleton-mage",
+    "name": "Skeleton Mage",
+    "internalName": "Skeleton Mage",
+    "icon": "assets/monsters/SkeletonMage.png",
+    "hp": 60,
+    "resilience": 5,
+    "damageToFarmer": 1,
+    "coins": {
+      "min": 0,
+      "max": 2
+    },
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": []
+  },
+  {
+    "type": "monster",
+    "id": "monster-metal-head",
+    "name": "Metal Head",
+    "internalName": "Metal Head",
+    "icon": "assets/monsters/MetalHead.png",
+    "hp": 40,
+    "resilience": 15,
+    "damageToFarmer": 8,
+    "locations": [
+      "Mines (Floors 80–119)"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.65
+        ]
+      },
+      {
+        "gameId": 378,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 380,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-spiker",
+    "name": "Spiker",
+    "internalName": "Spiker",
+    "icon": "assets/monsters/Spiker.png",
+    "hp": 5,
+    "resilience": 15,
+    "damageToFarmer": 4,
+    "locations": [
+      "Mines (Floors 40–79)"
+    ],
+    "drops": [
+      {
+        "gameId": 378,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 380,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-bug",
+    "name": "Bug",
+    "internalName": "Bug",
+    "icon": "assets/monsters/Bug.png",
+    "hp": 1,
+    "resilience": 8,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines (Floors 1–39)"
+    ],
+    "drops": [
+      {
+        "gameId": 684,
+        "rolls": [
+          0.76
+        ]
+      },
+      {
+        "gameId": 157,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 114,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 96,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-mummy",
+    "name": "Mummy",
+    "internalName": "Mummy",
+    "icon": "assets/monsters/Mummy.png",
+    "hp": 260,
+    "resilience": 30,
+    "damageToFarmer": 0,
+    "coins": {
+      "min": 0,
+      "max": 3
+    },
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "gameId": 428,
+        "rolls": [
+          0.2,
+          0.05
+        ]
+      },
+      {
+        "gameId": 243,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 856,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-big-slime",
+    "name": "Big Slime",
+    "internalName": "Big Slime",
+    "icon": "assets/monsters/BigSlime.png",
+    "hp": 60,
+    "resilience": 5,
+    "damageToFarmer": 0,
+    "locations": [
+      "Mines",
+      "Skull Cavern",
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 766,
+        "rolls": [
+          0.99,
+          0.9,
+          0.4
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-serpent",
+    "name": "Serpent",
+    "internalName": "Serpent",
+    "icon": "assets/monsters/Serpent.png",
+    "hp": 150,
+    "resilience": 23,
+    "damageToFarmer": 0,
+    "coins": {
+      "min": 0,
+      "max": 2
+    },
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.15
+        ]
+      },
+      {
+        "gameId": 226,
+        "rolls": [
+          0.06
+        ]
+      },
+      {
+        "gameId": 446,
+        "rolls": [
+          0.008
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-pepper-rex",
+    "name": "Pepper Rex",
+    "internalName": "Pepper Rex",
+    "icon": "assets/monsters/PepperRex.png",
+    "hp": 300,
+    "resilience": 15,
+    "damageToFarmer": 5,
+    "locations": [
+      "Skull Cavern"
+    ],
+    "drops": []
+  },
+  {
+    "type": "monster",
+    "id": "monster-tiger-slime",
+    "name": "Tiger Slime",
+    "internalName": "Tiger Slime",
+    "icon": "assets/monsters/TigerSlime.png",
+    "hp": 415,
+    "resilience": 23,
+    "damageToFarmer": 0,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)",
+      "Skull Cavern (Dangerous)"
+    ],
+    "drops": [
+      {
+        "gameId": 766,
+        "rolls": [
+          0.8
+        ]
+      },
+      {
+        "gameId": 157,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 92,
+        "rolls": [
+          0.5
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-lava-lurk",
+    "name": "Lava Lurk",
+    "internalName": "Lava Lurk",
+    "icon": "assets/monsters/LavaLurk.png",
+    "hp": 220,
+    "resilience": 15,
+    "damageToFarmer": 5,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 881,
+        "rolls": [
+          0.5,
+          0.4,
+          0.2
+        ]
+      },
+      {
+        "gameId": 852,
+        "rolls": [
+          0.15
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-hot-head",
+    "name": "Hot Head",
+    "internalName": "Hot Head",
+    "icon": "assets/monsters/HotHead.png",
+    "hp": 250,
+    "resilience": 18,
+    "damageToFarmer": 8,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.65
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 378,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 380,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 382,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 833,
+        "rolls": [
+          0.1,
+          0.1
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-magma-sprite",
+    "name": "Magma Sprite",
+    "internalName": "Magma Sprite",
+    "icon": "assets/monsters/MagmaSprite.png",
+    "hp": 220,
+    "resilience": 15,
+    "damageToFarmer": 8,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 848,
+        "rolls": [
+          0.5,
+          0.2
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-magma-duggy",
+    "name": "Magma Duggy",
+    "internalName": "Magma Duggy",
+    "icon": "assets/monsters/MagmaDuggy.png",
+    "hp": 380,
+    "resilience": 16,
+    "damageToFarmer": 0,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 831,
+        "rolls": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "gameId": 288,
+        "rolls": [
+          0.4
+        ]
+      },
+      {
+        "gameId": 848,
+        "rolls": [
+          0.4,
+          0.15
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-magma-sparker",
+    "name": "Magma Sparker",
+    "internalName": "Magma Sparker",
+    "icon": "assets/monsters/MagmaSparker.png",
+    "hp": 310,
+    "resilience": 15,
+    "damageToFarmer": 8,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 848,
+        "rolls": [
+          0.5,
+          0.2
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-false-magma-cap",
+    "name": "False Magma Cap",
+    "internalName": "False Magma Cap",
+    "icon": "assets/monsters/FalseMagmaCap.png",
+    "hp": 290,
+    "resilience": 15,
+    "damageToFarmer": 3,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 851,
+        "rolls": [
+          0.99
+        ]
+      },
+      {
+        "gameId": 848,
+        "rolls": [
+          0.5,
+          0.2
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-dwarvish-sentry",
+    "name": "Dwarvish Sentry",
+    "internalName": "Dwarvish Sentry",
+    "icon": "assets/monsters/DwarvishSentry.png",
+    "hp": 300,
+    "resilience": 18,
+    "damageToFarmer": 5,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 60,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 62,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 64,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 66,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 68,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 70,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 72,
+        "rolls": [
+          0.1
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-putrid-ghost",
+    "name": "Putrid Ghost",
+    "internalName": "Putrid Ghost",
+    "icon": "assets/monsters/PutridGhost.png",
+    "hp": 500,
+    "resilience": 25,
+    "damageToFarmer": 3,
+    "coins": {
+      "min": 0,
+      "max": 3
+    },
+    "locations": [
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 749,
+        "rolls": [
+          0.99
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-shadow-sniper",
+    "name": "Shadow Sniper",
+    "internalName": "Shadow Sniper",
+    "icon": "assets/monsters/ShadowSniper.png",
+    "hp": 300,
+    "resilience": 18,
+    "damageToFarmer": 2,
+    "locations": [
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.002
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 335,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 334,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 203,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.0005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-spider",
+    "name": "Spider",
+    "internalName": "Spider",
+    "icon": "assets/monsters/Spider.png",
+    "hp": 200,
+    "resilience": 15,
+    "damageToFarmer": 2,
+    "locations": [
+      "Witch's Swamp"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.75,
+          0.1
+        ]
+      },
+      {
+        "gameId": 337,
+        "rolls": [
+          0.002
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.01
+        ]
+      },
+      {
+        "gameId": 335,
+        "rolls": [
+          0.02
+        ]
+      },
+      {
+        "gameId": 334,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 203,
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "gameId": 108,
+        "rolls": [
+          0.003
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.0005
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-royal-serpent",
+    "name": "Royal Serpent",
+    "internalName": "Royal Serpent",
+    "icon": "assets/monsters/RoyalSerpent.png",
+    "hp": 150,
+    "resilience": 23,
+    "damageToFarmer": 0,
+    "coins": {
+      "min": 0,
+      "max": 2
+    },
+    "locations": [
+      "Skull Cavern (Dangerous)"
+    ],
+    "drops": [
+      {
+        "gameId": 769,
+        "rolls": [
+          0.99,
+          0.15
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.15
+        ]
+      },
+      {
+        "gameId": 226,
+        "rolls": [
+          0.06
+        ]
+      },
+      {
+        "gameId": 446,
+        "rolls": [
+          0.008
+        ]
+      },
+      {
+        "gameId": 74,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  },
+  {
+    "type": "monster",
+    "id": "monster-blue-squid",
+    "name": "Blue Squid",
+    "internalName": "Blue Squid",
+    "icon": "assets/monsters/BlueSquid.png",
+    "hp": 80,
+    "resilience": 18,
+    "damageToFarmer": 2,
+    "locations": [
+      "Ginger Island (Volcano Dungeon)"
+    ],
+    "drops": [
+      {
+        "gameId": 768,
+        "rolls": [
+          0.75
+        ]
+      },
+      {
+        "gameId": 814,
+        "rolls": [
+          0.2
+        ]
+      },
+      {
+        "gameId": 336,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 287,
+        "rolls": [
+          0.1
+        ]
+      },
+      {
+        "gameId": 288,
+        "rolls": [
+          0.05
+        ]
+      },
+      {
+        "gameId": 98,
+        "rolls": [
+          0.005
+        ]
+      },
+      {
+        "gameId": 99,
+        "rolls": [
+          0.001
+        ]
+      }
+    ]
+  }
+]

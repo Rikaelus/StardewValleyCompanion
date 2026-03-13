@@ -13,8 +13,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -69,8 +70,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -125,8 +127,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -181,8 +184,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -237,8 +241,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -293,8 +298,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -349,8 +355,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -405,8 +412,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -468,8 +476,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -524,8 +533,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -580,8 +590,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -636,8 +647,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -692,8 +704,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -748,8 +761,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -804,8 +818,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -860,8 +875,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -916,8 +932,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -972,8 +989,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1028,8 +1046,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1084,8 +1103,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1140,8 +1160,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1196,8 +1217,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1228,7 +1250,7 @@
       "marnie": "dislike",
       "elliott": "dislike",
       "gus": "dislike",
-      "dwarf": "dislike",
+      "dwarf": "love",
       "wizard": "like",
       "harvey": "dislike",
       "sandy": "dislike",
@@ -1252,8 +1274,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1316,8 +1339,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1372,8 +1396,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1428,8 +1453,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1484,8 +1510,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1540,8 +1567,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1596,8 +1624,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1652,15 +1681,16 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "dislike",
       "demetrius": "dislike",
       "maru": "dislike",
-      "sebastian": "dislike",
+      "sebastian": "love",
       "linus": "dislike",
       "pierre": "dislike",
       "caroline": "dislike",
@@ -1708,8 +1738,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1764,8 +1795,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1820,8 +1852,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1877,8 +1910,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1933,8 +1967,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1989,8 +2024,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2045,8 +2081,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2101,8 +2138,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2157,8 +2195,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2213,8 +2252,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2269,8 +2309,9 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-clint",
-      "store-shipping-bin"
+      "loc-clint",
+      "loc-volcano-shop",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2295,7 +2336,7 @@
       "vincent": "dislike",
       "jodi": "dislike",
       "kent": "dislike",
-      "sam": "dislike",
+      "sam": "love",
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",

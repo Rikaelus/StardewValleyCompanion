@@ -154,6 +154,130 @@ export function getCategoryName(category, type) {
 }
 
 // ---------------------------------------------------------------------------
+// Canonical entity type label (used by GlobalSearch and UniversalModal subtitle)
+// ---------------------------------------------------------------------------
+
+const ENTITY_TYPE_LABELS = {
+  'fish': 'Fish',
+  'artisan': 'Artisan Goods',
+  'forage': 'Forage',
+  'fruit': 'Fruit',
+  'vegetable': 'Vegetable',
+  'flower': 'Flower',
+  'seed': 'Seed',
+  'mineral': 'Mineral',
+  'geode-mineral': 'Geode Mineral',
+  'metal-bar': 'Metal Bar',
+  'monster-loot': 'Monster Loot',
+  'resource': 'Resource',
+  'big-craftable': 'Big Craftable',
+  'animal-product': 'Animal Product',
+  'tree-fruit': 'Tree Fruit',
+  'tree-seed': 'Tree Seed',
+  'hat': 'Hat',
+  'ring': 'Ring',
+  'book': 'Book',
+  'food': 'Food',
+  'crafted': 'Crafted Item',
+  'bait': 'Bait',
+  'tackle': 'Tackle',
+  'fertilizer': 'Fertilizer',
+  'flooring': 'Flooring',
+  'ore': 'Ore',
+  'trash': 'Trash',
+  'misc': 'Misc',
+  'artifact': 'Artifact',
+  'furniture': 'Furniture',
+  'location': 'Location',
+  'buff': 'Buff',
+  'event': 'Event',
+  'villager': 'Villager',
+  'festival': 'Festival',
+  'weapon': 'Weapon',
+  'boot': 'Boots',
+  'trinket': 'Trinket',
+  'tool': 'Tool',
+  'building': 'Building',
+  'animal': 'Farm Animal',
+  'monster': 'Monster',
+  'bundle': 'Bundle',
+}
+
+/**
+ * Returns the canonical base label for an entity — used in GlobalSearch chips
+ * and as the foundation for getEntitySubtitle.
+ */
+export function getEntityLabel(entity) {
+  if (!entity) return ''
+  const key = entity.category || entity.type || entity.entityType
+  return ENTITY_TYPE_LABELS[key] || ENTITY_TYPE_LABELS[entity.type] || 'Item'
+}
+
+/**
+ * Returns the full subtitle for an entity — used in the UniversalModal header.
+ * Builds on getEntityLabel but adds specifics (weapon type, tool level, etc.).
+ */
+export function getEntitySubtitle(entity) {
+  if (!entity) return ''
+  const category = entity.category
+  const type = entity.type || entity.entityType
+
+  if (category === 'festival') return 'Festival'
+  if (category === 'location') return entity.festival ? 'Festival Location' : 'Location'
+  if (category === 'bundle') return 'Community Center Bundle'
+
+  if (type === 'buff' || category === 'buff') return entity.isDebuff ? 'Debuff' : 'Buff'
+
+  if (type === 'event' || category === 'event') {
+    const base = entity.heartLevel ? `${entity.heartLevel} Heart Event` : 'Event'
+    return entity.npc ? `${entity.npc} — ${base}` : base
+  }
+
+  if (type === 'villager' || category === 'villager') {
+    return entity.canBeRomanced ? 'Villager (Romanceable)' : 'Villager'
+  }
+
+  if (type === 'weapon' || category === 'weapon') {
+    const WEAPON_TYPE_LABELS = { sword: 'Sword', club: 'Club', dagger: 'Dagger', slingshot: 'Slingshot' }
+    return WEAPON_TYPE_LABELS[entity.weaponType] || entity.weaponType || 'Weapon'
+  }
+
+  if (type === 'boot' || category === 'boot') return 'Boots'
+  if (type === 'trinket' || category === 'trinket') return 'Trinket'
+
+  if (type === 'tool' || category === 'tool') {
+    const LEVEL_NAMES = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
+    const TOOL_CLASS_LABELS = {
+      FishingRod: 'Fishing Rod', WateringCan: 'Watering Can',
+      GenericTool: 'Tool', MilkPail: 'Milk Pail',
+    }
+    const levelName = LEVEL_NAMES[entity.upgradeLevel] ?? ''
+    const toolClass = TOOL_CLASS_LABELS[entity.toolClass] || entity.toolClass || 'Tool'
+    return levelName ? `${levelName} ${toolClass}` : toolClass
+  }
+
+  if (type === 'animal' || category === 'animal') {
+    return entity.houseType ? `${entity.houseType} Animal` : 'Farm Animal'
+  }
+
+  if (type === 'building' || category === 'building') {
+    return entity.magical ? 'Magical Building' : 'Farm Building'
+  }
+
+  // Items — derive from game category + type
+  const subtitleCategory = entity.displayGameCategory !== undefined
+    ? entity.displayGameCategory
+    : entity.gameCategory
+  const categoryName = getCategoryName(subtitleCategory, type)
+  const baseLabel = getEntityLabel(entity)
+
+  if (baseLabel !== 'Item' && baseLabel !== categoryName && categoryName !== 'Item') {
+    return `${baseLabel} (${categoryName})`
+  }
+  return baseLabel !== 'Item' ? baseLabel : categoryName
+}
+
+// ---------------------------------------------------------------------------
 // JSON Logic condition → human-readable label
 // ---------------------------------------------------------------------------
 
@@ -347,4 +471,48 @@ export function formatConditionClauses(rule, itemNames, eventNames, achievementN
 export function formatConditionRule(rule, itemNames, eventNames, achievementNames) {
   const clauses = formatConditionClauses(rule, itemNames, eventNames, achievementNames)
   return clauses.length === 0 ? null : clauses.join(' + ')
+}
+
+/**
+ * Compute the probability distribution of how many of an item drop from a monster kill,
+ * given an array of independent roll probabilities.
+ *
+ * Each roll is an independent Bernoulli trial. Returns an array of { count, chance }
+ * objects sorted by count descending, omitting entries with negligible probability.
+ * For a single roll, returns [{ count: 1, chance: roll }] (no zero entry).
+ */
+/**
+ * Format a probability (0–1) as a percentage string with enough precision
+ * to avoid showing "0%" for small but nonzero values.
+ * e.g. 0.9 → "90%", 0.015 → "1.5%", 0.001 → "0.1%", 0.0005 → "0.05%"
+ */
+export function formatChance(p) {
+  const pct = p * 100
+  if (pct >= 10) return `${Math.round(pct)}%`
+  if (pct >= 1) return `${parseFloat(pct.toFixed(1))}%`
+  if (pct >= 0.1) return `${parseFloat(pct.toFixed(2))}%`
+  return `${parseFloat(pct.toFixed(3))}%`
+}
+
+export function computeDropCountDistribution(rolls) {
+  if (!rolls || rolls.length === 0) return []
+  if (rolls.length === 1) return [{ count: 1, chance: rolls[0] }]
+
+  // Enumerate all 2^n outcomes
+  const n = rolls.length
+  const countProbs = new Array(n + 1).fill(0)
+  for (let mask = 0; mask < (1 << n); mask++) {
+    let p = 1
+    let count = 0
+    for (let i = 0; i < n; i++) {
+      if (mask & (1 << i)) { p *= rolls[i]; count++ }
+      else p *= (1 - rolls[i])
+    }
+    countProbs[count] += p
+  }
+
+  return countProbs
+    .map((chance, count) => ({ count, chance }))
+    .filter(({ count, chance }) => count > 0 && chance >= 0.0001)
+    .sort((a, b) => b.count - a.count)
 }

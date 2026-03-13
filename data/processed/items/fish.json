@@ -39,7 +39,7 @@
       "linus": "neutral",
       "pierre": "hate",
       "caroline": "dislike",
-      "abigail": "dislike",
+      "abigail": "love",
       "alex": "dislike",
       "george": "dislike",
       "evelyn": "hate",
@@ -68,8 +68,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -144,8 +144,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -219,8 +219,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -298,8 +298,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -374,8 +374,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -456,8 +456,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -538,8 +538,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -611,8 +611,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -684,8 +684,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -761,8 +761,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -836,8 +836,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -879,44 +879,44 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
+      "robin": "hate",
       "demetrius": "neutral",
-      "maru": "dislike",
+      "maru": "hate",
       "sebastian": "neutral",
       "linus": "neutral",
       "pierre": "hate",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
       "evelyn": "hate",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
       "pam": "neutral",
-      "emily": "dislike",
+      "emily": "hate",
       "haley": "hate",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
       "elliott": "neutral",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
       "willy": "neutral",
-      "krobus": "dislike",
+      "krobus": "hate",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -989,13 +989,13 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1077,8 +1077,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1152,8 +1152,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1227,8 +1227,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1303,8 +1303,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1380,8 +1380,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1432,7 +1432,7 @@
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
-      "pam": "neutral",
+      "pam": "hate",
       "emily": "dislike",
       "haley": "hate",
       "jas": "dislike",
@@ -1443,19 +1443,19 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "neutral",
+      "elliott": "like",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1531,8 +1531,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1583,7 +1583,7 @@
       "lewis": "dislike",
       "clint": "dislike",
       "penny": "dislike",
-      "pam": "neutral",
+      "pam": "hate",
       "emily": "dislike",
       "haley": "hate",
       "jas": "dislike",
@@ -1594,7 +1594,7 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "neutral",
+      "elliott": "like",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
@@ -1605,13 +1605,13 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-pierre",
+        "id": "loc-desert-festival-pierre",
         "price": 160,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1676,10 +1676,10 @@
       "vincent": "hate",
       "jodi": "hate",
       "kent": "hate",
-      "sam": "hate",
-      "leah": "hate",
-      "shane": "hate",
-      "marnie": "hate",
+      "sam": "dislike",
+      "leah": "dislike",
+      "shane": "dislike",
+      "marnie": "dislike",
       "elliott": "hate",
       "gus": "hate",
       "dwarf": "hate",
@@ -1691,7 +1691,7 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1773,13 +1773,15 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "monster-drop",
         "monster": "Green Slime",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "fish-pond",
@@ -1792,6 +1794,16 @@
         "fishTag": "fish_freshwater",
         "minPopulation": 1,
         "chance": 0.05
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
       }
     ]
   },
@@ -1855,19 +1867,19 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "neutral",
+      "elliott": "hate",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1931,10 +1943,10 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "neutral",
+      "elliott": "hate",
       "gus": "dislike",
       "dwarf": "dislike",
-      "wizard": "dislike",
+      "wizard": "love",
       "harvey": "dislike",
       "sandy": "dislike",
       "willy": "neutral",
@@ -1942,8 +1954,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -2018,14 +2030,26 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "monster-drop",
         "monster": "Ghost",
-        "chance": 0.08
+        "rolls": [
+          0.08
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
       }
     ]
   },
@@ -2100,39 +2124,59 @@
       "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "monster-drop",
         "monster": "Grub",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Fly",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Sludge",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Bug",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Tiger Slime",
-        "chance": 0.1
+        "rolls": [
+          0.1
+        ]
       },
       {
         "type": "fish-pond",
         "fishTag": "item_ghostfish",
         "minPopulation": 9,
         "chance": 0.05
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      },
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
       }
     ]
   },
@@ -2209,10 +2253,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2281,10 +2331,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2357,10 +2413,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2435,10 +2497,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2504,7 +2572,7 @@
       "marnie": "dislike",
       "elliott": "neutral",
       "gus": "dislike",
-      "dwarf": "dislike",
+      "dwarf": "love",
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
@@ -2513,10 +2581,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F100)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2588,10 +2662,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2641,7 +2721,7 @@
       "evelyn": "hate",
       "lewis": "dislike",
       "clint": "dislike",
-      "penny": "dislike",
+      "penny": "love",
       "pam": "neutral",
       "emily": "dislike",
       "haley": "hate",
@@ -2664,8 +2744,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -2741,10 +2821,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -2783,7 +2869,7 @@
       "robin": "dislike",
       "demetrius": "neutral",
       "maru": "dislike",
-      "sebastian": "neutral",
+      "sebastian": "like",
       "linus": "neutral",
       "pierre": "hate",
       "caroline": "dislike",
@@ -2816,8 +2902,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -2891,8 +2977,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -2961,8 +3047,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2974,6 +3060,11 @@
           "fall",
           "winter"
         ]
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
       }
     ]
   },
@@ -3047,8 +3138,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3117,13 +3208,13 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "love",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3194,13 +3285,13 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3275,8 +3366,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3350,8 +3441,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3427,8 +3518,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3501,8 +3592,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3580,8 +3671,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3657,8 +3748,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3727,13 +3818,13 @@
       "wizard": "dislike",
       "harvey": "dislike",
       "sandy": "dislike",
-      "willy": "neutral",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3813,8 +3904,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -3868,7 +3959,7 @@
       "leah": "dislike",
       "shane": "dislike",
       "marnie": "dislike",
-      "elliott": "neutral",
+      "elliott": "love",
       "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
@@ -3879,10 +3970,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -3945,10 +4042,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -4012,13 +4115,13 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-elliott",
+        "id": "loc-desert-festival-elliott",
         "price": 200,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4030,17 +4133,28 @@
       {
         "type": "monster-drop",
         "monster": "Rock Crab",
-        "chance": 0.15
+        "rolls": [
+          0.15
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Truffle Crab",
-        "chance": 0.25
+        "rolls": [
+          0.25
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Lava Crab",
-        "chance": 0.25
+        "rolls": [
+          0.25
+        ]
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
       }
     ]
   },
@@ -4107,8 +4221,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -4120,6 +4234,11 @@
           "fall",
           "winter"
         ]
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
       }
     ]
   },
@@ -4186,8 +4305,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -4199,6 +4318,11 @@
           "fall",
           "winter"
         ]
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
       }
     ]
   },
@@ -4264,10 +4388,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -4295,46 +4425,52 @@
     ],
     "bundles": [],
     "gifts": {
-      "robin": "dislike",
+      "robin": "hate",
       "demetrius": "neutral",
-      "maru": "dislike",
+      "maru": "hate",
       "sebastian": "neutral",
       "linus": "neutral",
       "pierre": "hate",
-      "caroline": "dislike",
-      "abigail": "dislike",
-      "alex": "dislike",
-      "george": "dislike",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
       "evelyn": "hate",
-      "lewis": "dislike",
-      "clint": "dislike",
-      "penny": "dislike",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
       "pam": "neutral",
-      "emily": "dislike",
+      "emily": "hate",
       "haley": "hate",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "kent": "dislike",
-      "sam": "dislike",
-      "leah": "dislike",
-      "shane": "dislike",
-      "marnie": "dislike",
+      "jas": "hate",
+      "vincent": "love",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
       "elliott": "neutral",
-      "gus": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
-      "harvey": "dislike",
-      "sandy": "dislike",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
       "willy": "neutral",
-      "krobus": "dislike",
+      "krobus": "hate",
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -4398,10 +4534,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Freshwater (Crab Pot)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -4467,8 +4609,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -4480,6 +4622,11 @@
           "fall",
           "winter"
         ]
+      },
+      {
+        "type": "fish",
+        "location": "Ocean (Crab Pot)",
+        "seasons": null
       }
     ]
   },
@@ -4555,8 +4702,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -4628,10 +4775,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F100)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -4706,8 +4859,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -4783,8 +4936,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -4861,8 +5014,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -4937,8 +5090,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5013,8 +5166,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5090,8 +5243,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5167,8 +5320,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5243,8 +5396,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5316,10 +5469,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F60)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -5393,10 +5552,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F20)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -5469,10 +5634,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -5545,8 +5716,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -5618,10 +5789,16 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
-    "sources": []
+    "sources": [
+      {
+        "type": "fish",
+        "location": "Mines (F100)",
+        "seasons": null
+      }
+    ]
   },
   {
     "type": "fish",
@@ -5695,8 +5872,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": []
   }

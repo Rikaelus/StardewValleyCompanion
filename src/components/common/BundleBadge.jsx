@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useModal } from '../../contexts/ModalContext'
+import { useOpenModal } from '../../contexts/ModalContext'
 import './BundleBadge.css'
 
 function BundleBadge({ bundle, showModal = false, onNavigate = null }) {
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
   const [isHovered, setIsHovered] = useState(false)
 
   if (!bundle) return null

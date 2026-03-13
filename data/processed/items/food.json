@@ -13,8 +13,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -31,14 +31,14 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "dislike",
       "pam": "like",
       "emily": "like",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
-      "kent": "like",
+      "kent": "hate",
       "sam": "like",
       "leah": "like",
       "shane": "like",
@@ -85,8 +85,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -102,7 +102,7 @@
       "george": "like",
       "evelyn": "like",
       "lewis": "like",
-      "clint": "like",
+      "clint": "love",
       "penny": "like",
       "pam": "like",
       "emily": "like",
@@ -160,8 +160,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -176,7 +176,7 @@
       "alex": "like",
       "george": "like",
       "evelyn": "like",
-      "lewis": "like",
+      "lewis": "love",
       "clint": "like",
       "penny": "like",
       "pam": "like",
@@ -246,8 +246,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -282,7 +282,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -330,8 +330,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -342,7 +342,7 @@
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
+      "abigail": "love",
       "alex": "like",
       "george": "like",
       "evelyn": "like",
@@ -420,13 +420,13 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
-      "demetrius": "like",
+      "demetrius": "love",
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
@@ -508,8 +508,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -520,7 +520,7 @@
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
+      "abigail": "love",
       "alex": "like",
       "george": "like",
       "evelyn": "like",
@@ -589,8 +589,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -598,7 +598,7 @@
       "demetrius": "like",
       "maru": "like",
       "sebastian": "like",
-      "linus": "like",
+      "linus": "love",
       "pierre": "like",
       "caroline": "like",
       "abigail": "like",
@@ -623,7 +623,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -661,6 +661,98 @@
   },
   {
     "type": "food",
+    "id": "bread",
+    "gameId": "(O)216",
+    "name": "Bread",
+    "icon": "assets/objects/Bread.png",
+    "price": 60,
+    "edibility": 20,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown",
+      "food_bakery"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "hate",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "dislike",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-gus",
+        "price": 120
+      },
+      {
+        "type": "shop",
+        "id": "loc-krobus",
+        "price": 120,
+        "quantity": 5,
+        "days": [
+          "Saturday"
+        ],
+        "rotating": true
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Bread",
+        "ingredients": [
+          {
+            "gameId": 246,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 11
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Evelyn",
+        "sender": "Evelyn"
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "bruschetta",
     "gameId": "(O)618",
     "name": "Bruschetta",
@@ -674,8 +766,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -741,6 +833,78 @@
   },
   {
     "type": "food",
+    "id": "carp-surprise",
+    "gameId": "(O)209",
+    "name": "Carp Surprise",
+    "icon": "assets/objects/CarpSurprise.png",
+    "price": 150,
+    "edibility": 36,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown",
+      "food_seafood"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "dislike",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "cooking",
+        "recipeName": "Carp Surprise",
+        "ingredients": [
+          {
+            "gameId": 142,
+            "amount": 4
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 16
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "cheese-cauliflower",
     "gameId": "(O)197",
     "name": "Cheese Cauliflower",
@@ -753,14 +917,14 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "love",
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
@@ -832,8 +996,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -844,10 +1008,10 @@
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
+      "abigail": "love",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "love",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
@@ -856,7 +1020,7 @@
       "haley": "like",
       "jas": "like",
       "vincent": "like",
-      "jodi": "like",
+      "jodi": "love",
       "kent": "like",
       "sam": "like",
       "leah": "like",
@@ -866,7 +1030,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -917,8 +1081,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -953,7 +1117,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -1002,8 +1166,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1033,7 +1197,7 @@
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
-      "gus": "like",
+      "gus": "hate",
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
@@ -1082,20 +1246,20 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
       "abigail": "like",
-      "alex": "like",
+      "alex": "love",
       "george": "like",
       "evelyn": "like",
       "lewis": "like",
@@ -1177,8 +1341,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1204,14 +1368,14 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -1220,7 +1384,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-evelyn",
+        "id": "loc-desert-festival-evelyn",
         "price": 280,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1298,8 +1462,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1328,13 +1492,13 @@
       "leah": "like",
       "shane": "like",
       "marnie": "like",
-      "elliott": "like",
+      "elliott": "love",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -1351,7 +1515,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-gus",
+        "id": "loc-gus",
         "price": 550,
         "condition": {
           "in": [
@@ -1365,7 +1529,9 @@
       {
         "type": "monster-drop",
         "monster": "Iridium Crab",
-        "chance": 0.5
+        "rolls": [
+          0.5
+        ]
       },
       {
         "type": "cooking",
@@ -1411,8 +1577,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1434,7 +1600,7 @@
       "emily": "like",
       "haley": "like",
       "jas": "like",
-      "vincent": "like",
+      "vincent": "love",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -1454,7 +1620,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-resort-bar",
+        "id": "loc-resort-bar",
         "price": 400
       },
       {
@@ -1483,21 +1649,22 @@
   },
   {
     "type": "food",
-    "id": "dish-o-the-sea",
-    "gameId": "(O)242",
-    "name": "Dish O' The Sea",
-    "icon": "assets/objects/DishOTheSea.png",
-    "price": 220,
-    "edibility": 60,
+    "id": "cranberry-sauce",
+    "gameId": "(O)238",
+    "name": "Cranberry Sauce",
+    "icon": "assets/objects/CranberrySauce.png",
+    "price": 120,
+    "edibility": 50,
     "gameCategory": -7,
     "contextTags": [
-      "color_yellow",
-      "food_seafood"
+      "color_red",
+      "dye_strong",
+      "food_sauce"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1530,9 +1697,204 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 300,
+        "isDebuff": false,
+        "effects": {
+          "MiningLevel": 2
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-festival-of-ice",
+        "price": 200,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Cran. Sauce",
+        "ingredients": [
+          {
+            "gameId": 282,
+            "amount": 1
+          },
+          {
+            "gameId": 245,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Gus",
+          "hearts": 7
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "crispy-bass",
+    "gameId": "(O)214",
+    "name": "Crispy Bass",
+    "icon": "assets/objects/CrispyBass.png",
+    "price": 150,
+    "edibility": 36,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown",
+      "food_seafood"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "love",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 600,
+        "isDebuff": false,
+        "effects": {
+          "MagneticRadius": 64
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-jodi",
+        "price": 300,
+        "quantity": 3,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 25,
+        "stock": 5
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Crispy Bass",
+        "ingredients": [
+          {
+            "gameId": 136,
+            "amount": 1
+          },
+          {
+            "gameId": 246,
+            "amount": 1
+          },
+          {
+            "gameId": 247,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Kent",
+          "hearts": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "dish-o-the-sea",
+    "gameId": "(O)242",
+    "name": "Dish O' The Sea",
+    "icon": "assets/objects/DishOTheSea.png",
+    "price": 220,
+    "edibility": 60,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_yellow",
+      "food_seafood"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "love",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -1569,6 +1931,110 @@
   },
   {
     "type": "food",
+    "id": "eggplant-parmesan",
+    "gameId": "(O)231",
+    "name": "Eggplant Parmesan",
+    "icon": "assets/objects/EggplantParmesan.png",
+    "price": 200,
+    "edibility": 70,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_red",
+      "dye_medium",
+      "food_pasta"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "love",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 400,
+        "isDebuff": false,
+        "effects": {
+          "MiningLevel": 1,
+          "Defense": 3
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-gus",
+        "price": 400,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 30
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Eggplant Parm.",
+        "ingredients": [
+          {
+            "gameId": 272,
+            "amount": 1
+          },
+          {
+            "gameId": 256,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Lewis",
+          "hearts": 7
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "ClintReward2",
+        "sender": "Clint"
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "escargot",
     "gameId": "(O)729",
     "name": "Escargot",
@@ -1581,8 +2047,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1612,12 +2078,12 @@
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
-      "gus": "like",
+      "gus": "love",
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -1633,7 +2099,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-gus",
+        "id": "loc-desert-festival-gus",
         "price": 250,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1677,15 +2143,15 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
@@ -1706,7 +2172,7 @@
       "sam": "like",
       "leah": "like",
       "shane": "like",
-      "marnie": "like",
+      "marnie": "love",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
@@ -1763,8 +2229,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1780,7 +2246,7 @@
       "george": "like",
       "evelyn": "like",
       "lewis": "like",
-      "clint": "like",
+      "clint": "love",
       "penny": "like",
       "pam": "like",
       "emily": "like",
@@ -1788,7 +2254,7 @@
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
-      "kent": "like",
+      "kent": "love",
       "sam": "like",
       "leah": "like",
       "shane": "like",
@@ -1844,8 +2310,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1880,7 +2346,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -1939,8 +2405,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -1950,7 +2416,7 @@
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "love",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -1959,7 +2425,7 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "hate",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
@@ -1970,12 +2436,12 @@
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
-      "gus": "like",
+      "gus": "love",
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -2036,8 +2502,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2046,7 +2512,7 @@
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
-      "pierre": "like",
+      "pierre": "love",
       "caroline": "like",
       "abigail": "like",
       "alex": "like",
@@ -2072,7 +2538,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -2122,8 +2588,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2137,16 +2603,16 @@
       "abigail": "like",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "hate",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "dislike",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
-      "jodi": "like",
+      "jodi": "love",
       "kent": "like",
       "sam": "like",
       "leah": "like",
@@ -2158,7 +2624,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -2208,8 +2674,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2235,7 +2701,7 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -2251,7 +2717,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-alex",
+        "id": "loc-desert-festival-alex",
         "price": 70,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2286,8 +2752,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2300,7 +2766,7 @@
       "caroline": "like",
       "abigail": "like",
       "alex": "like",
-      "george": "like",
+      "george": "love",
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
@@ -2320,7 +2786,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -2376,8 +2842,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2397,7 +2863,7 @@
       "penny": "like",
       "pam": "like",
       "emily": "like",
-      "haley": "like",
+      "haley": "love",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
@@ -2457,8 +2923,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2480,7 +2946,7 @@
       "emily": "like",
       "haley": "like",
       "jas": "like",
-      "vincent": "like",
+      "vincent": "love",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -2529,6 +2995,81 @@
   },
   {
     "type": "food",
+    "id": "glazed-yams",
+    "gameId": "(O)208",
+    "name": "Glazed Yams",
+    "icon": "assets/objects/GlazedYams.png",
+    "price": 200,
+    "edibility": 80,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "love",
+      "clint": "like",
+      "penny": "like",
+      "pam": "love",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "dislike",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "cooking",
+        "recipeName": "Glazed Yams",
+        "ingredients": [
+          {
+            "gameId": 280,
+            "amount": 1
+          },
+          {
+            "gameId": 245,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 22
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "hashbrowns",
     "gameId": "(O)210",
     "name": "Hashbrowns",
@@ -2542,8 +3083,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2569,14 +3110,14 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "hate",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -2594,7 +3135,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-alex",
+        "id": "loc-desert-festival-alex",
         "price": 240,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2638,13 +3179,13 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
-      "demetrius": "like",
+      "demetrius": "love",
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
@@ -2658,21 +3199,21 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "dislike",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -2681,7 +3222,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 240,
         "days": [
           "Sunday"
@@ -2723,8 +3264,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2766,13 +3307,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 2000
       },
       {
         "type": "monster-drop",
         "monster": "Iridium Bat",
-        "chance": 0.05
+        "rolls": [
+          0.05
+        ]
       },
       {
         "type": "crafting",
@@ -2820,8 +3363,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2856,7 +3399,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -2873,7 +3416,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-gus",
+        "id": "loc-desert-festival-gus",
         "price": 410,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -2905,18 +3448,20 @@
   },
   {
     "type": "food",
-    "id": "magic-rock-candy",
-    "gameId": "(O)279",
-    "name": "Magic Rock Candy",
-    "icon": "assets/objects/MagicRockCandy.png",
-    "price": 5000,
-    "edibility": 200,
+    "id": "lucky-lunch",
+    "gameId": "(O)204",
+    "name": "Lucky Lunch",
+    "icon": "assets/objects/LuckyLunch.png",
+    "price": 250,
+    "edibility": 40,
     "gameCategory": -7,
-    "contextTags": [],
+    "contextTags": [
+      "color_yellow"
+    ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -2957,6 +3502,93 @@
     },
     "buffs": [
       {
+        "duration": 960,
+        "isDebuff": false,
+        "effects": {
+          "LuckLevel": 3
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "cooking",
+        "recipeName": "Lucky Lunch",
+        "ingredients": [
+          {
+            "gameId": 154,
+            "amount": 1
+          },
+          {
+            "gameId": 229,
+            "amount": 1
+          },
+          {
+            "gameId": 597,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "luck",
+          "level": 8
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "magic-rock-candy",
+    "gameId": "(O)279",
+    "name": "Magic Rock Candy",
+    "icon": "assets/objects/MagicRockCandy.png",
+    "price": 5000,
+    "edibility": 200,
+    "gameCategory": -7,
+    "contextTags": [],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "love",
+      "demetrius": "love",
+      "maru": "love",
+      "sebastian": "love",
+      "linus": "love",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "love",
+      "alex": "love",
+      "george": "love",
+      "evelyn": "love",
+      "lewis": "love",
+      "clint": "love",
+      "penny": "love",
+      "pam": "love",
+      "emily": "love",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
+      "jodi": "love",
+      "kent": "love",
+      "sam": "love",
+      "leah": "love",
+      "shane": "love",
+      "marnie": "love",
+      "elliott": "love",
+      "gus": "like",
+      "dwarf": "love",
+      "wizard": "love",
+      "harvey": "like",
+      "sandy": "love",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
         "duration": 720,
         "isDebuff": false,
         "effects": {
@@ -2971,7 +3603,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-egg-shop",
+        "id": "loc-desert-festival-egg-shop",
         "price": 10000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2986,7 +3618,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-jas",
+        "id": "loc-desert-festival-jas",
         "price": 10000,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -2997,7 +3629,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 10000,
         "tradeItemId": "prismatic-shard",
         "tradeItemGameId": 74,
@@ -3012,7 +3644,7 @@
       },
       {
         "type": "shop",
-        "id": "store-raccoon",
+        "id": "loc-raccoon",
         "price": 10000,
         "tradeItemId": "golden-mystery-box",
         "tradeItemGameId": "GoldenMysteryBox",
@@ -3039,6 +3671,12 @@
             }
           ]
         }
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 90 items to the museum"
       }
     ]
   },
@@ -3058,8 +3696,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3073,12 +3711,12 @@
       "abigail": "like",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "hate",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "hate",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
@@ -3094,7 +3732,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -3143,8 +3781,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3178,10 +3816,10 @@
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
-      "sandy": "like",
+      "sandy": "love",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "dislike"
+      "leo": "like"
     },
     "buffs": [
       {
@@ -3234,8 +3872,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3260,7 +3898,7 @@
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
-      "sam": "like",
+      "sam": "love",
       "leah": "like",
       "shane": "like",
       "marnie": "like",
@@ -3288,7 +3926,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-sam",
+        "id": "loc-desert-festival-sam",
         "price": 600,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -3336,14 +3974,14 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "love",
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
@@ -3389,13 +4027,15 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 1000
       },
       {
         "type": "monster-drop",
         "monster": "Mummy",
-        "chance": 0.04
+        "rolls": [
+          0.04
+        ]
       },
       {
         "type": "cooking",
@@ -3436,8 +4076,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3509,45 +4149,45 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
-      "sebastian": "like",
-      "linus": "like",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
-      "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
       "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
+      "dwarf": "hate",
+      "wizard": "hate",
       "harvey": "like",
-      "sandy": "like",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "buffs": [
       {
@@ -3561,7 +4201,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-dwarf",
+        "id": "loc-dwarf",
         "price": 3000
       },
       {
@@ -3601,15 +4241,15 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "hate",
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
@@ -3680,8 +4320,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3698,7 +4338,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "dislike",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -3746,20 +4386,21 @@
   },
   {
     "type": "food",
-    "id": "parsnip-soup",
-    "gameId": "(O)199",
-    "name": "Parsnip Soup",
-    "icon": "assets/objects/ParsnipSoup.png",
-    "price": 120,
-    "edibility": 34,
+    "id": "pancakes",
+    "gameId": "(O)211",
+    "name": "Pancakes",
+    "icon": "assets/objects/Pancakes.png",
+    "price": 80,
+    "edibility": 36,
     "gameCategory": -7,
     "contextTags": [
-      "color_yellow"
+      "color_brown",
+      "food_breakfast"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3778,6 +4419,105 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "love",
+      "kent": "like",
+      "sam": "like",
+      "leah": "hate",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "dislike",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 960,
+        "isDebuff": false,
+        "effects": {
+          "ForagingLevel": 2
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-alex",
+        "price": 160,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 10
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Pancakes",
+        "ingredients": [
+          {
+            "gameId": 246,
+            "amount": 1
+          },
+          {
+            "gameId": -5,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 18
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Gus"
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "parsnip-soup",
+    "gameId": "(O)199",
+    "name": "Parsnip Soup",
+    "icon": "assets/objects/ParsnipSoup.png",
+    "price": 120,
+    "edibility": 34,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_yellow"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "hate",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "love",
       "emily": "like",
       "haley": "like",
       "jas": "like",
@@ -3839,14 +4579,14 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "love",
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
@@ -3867,7 +4607,7 @@
       "kent": "like",
       "sam": "like",
       "leah": "like",
-      "shane": "like",
+      "shane": "love",
       "marnie": "like",
       "elliott": "like",
       "gus": "like",
@@ -3892,7 +4632,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-bookseller",
+        "id": "loc-bookseller",
         "price": 400,
         "quantity": 2,
         "tradeItemId": "stardew-valley-almanac",
@@ -3903,7 +4643,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-shane",
+        "id": "loc-desert-festival-shane",
         "price": 400,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -3914,7 +4654,7 @@
       },
       {
         "type": "shop",
-        "id": "store-stardew-valley-fair",
+        "id": "loc-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 250,
@@ -3963,8 +4703,72 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "hate",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "hate",
+      "pam": "love",
+      "emily": "like",
+      "haley": "like",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "like",
+      "kent": "dislike",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "hate"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-resort-bar",
+        "price": 600
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "pink-cake",
+    "gameId": "(O)221",
+    "name": "Pink Cake",
+    "icon": "assets/objects/PinkCake.png",
+    "price": 480,
+    "edibility": 100,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_pink",
+      "food_bakery",
+      "food_sweet"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -3984,20 +4788,20 @@
       "penny": "like",
       "pam": "like",
       "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
-      "marnie": "like",
+      "marnie": "love",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -4006,8 +4810,65 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-resort-bar",
-        "price": 600
+        "id": "loc-desert-festival-haley",
+        "price": 960,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Pink Cake",
+        "ingredients": [
+          {
+            "gameId": 254,
+            "amount": 1
+          },
+          {
+            "gameId": 246,
+            "amount": 1
+          },
+          {
+            "gameId": 245,
+            "amount": 1
+          },
+          {
+            "gameId": -5,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 25
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "mom4",
+        "sender": "Mom",
+        "condition": {
+          "and": [
+            {
+              ">=": [
+                {
+                  "var": "player.moneyEarned"
+                },
+                120000
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "player.gender"
+                },
+                "male"
+              ]
+            }
+          ]
+        }
       }
     ]
   },
@@ -4026,8 +4887,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4052,15 +4913,15 @@
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
+      "sam": "love",
+      "leah": "hate",
+      "shane": "love",
       "marnie": "like",
-      "elliott": "like",
+      "elliott": "dislike",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -4069,7 +4930,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-shane",
+        "id": "loc-desert-festival-shane",
         "price": 600,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4080,7 +4941,7 @@
       },
       {
         "type": "shop",
-        "id": "store-gus",
+        "id": "loc-gus",
         "price": 600
       },
       {
@@ -4127,8 +4988,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4149,7 +5010,7 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "like",
+      "jas": "love",
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
@@ -4206,8 +5067,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4244,12 +5105,12 @@
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "dislike"
+      "leo": "love"
     },
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-leo",
+        "id": "loc-desert-festival-leo",
         "price": 800,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -4291,8 +5152,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4309,7 +5170,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "love",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -4318,7 +5179,7 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "love",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -4372,8 +5233,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4401,7 +5262,7 @@
       "sam": "like",
       "leah": "like",
       "shane": "like",
-      "marnie": "like",
+      "marnie": "love",
       "elliott": "like",
       "gus": "like",
       "dwarf": "like",
@@ -4456,15 +5317,15 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "love",
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
@@ -4509,7 +5370,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-festival-of-ice",
+        "id": "loc-festival-of-ice",
         "price": 250,
         "stock": 1,
         "stockLimit": 1
@@ -4550,8 +5411,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4629,8 +5490,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4647,7 +5508,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "love",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -4716,14 +5577,14 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "maru": "like",
+      "maru": "love",
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
@@ -4740,7 +5601,7 @@
       "haley": "like",
       "jas": "like",
       "vincent": "like",
-      "jodi": "like",
+      "jodi": "love",
       "kent": "like",
       "sam": "like",
       "leah": "like",
@@ -4750,7 +5611,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "dislike",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -4784,6 +5645,94 @@
   },
   {
     "type": "food",
+    "id": "rice-pudding",
+    "gameId": "(O)232",
+    "name": "Rice Pudding",
+    "icon": "assets/objects/RicePudding.png",
+    "price": 260,
+    "edibility": 46,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_white",
+      "food_sweet"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "love",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "dislike",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "dislike",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "dislike",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "monster-drop",
+        "monster": "Skeleton Warrior",
+        "rolls": [
+          0.04
+        ]
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Rice Pudding",
+        "ingredients": [
+          {
+            "gameId": -6,
+            "amount": 1
+          },
+          {
+            "gameId": 245,
+            "amount": 1
+          },
+          {
+            "gameId": 423,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Evelyn",
+          "hearts": 7
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "roasted-hazelnuts",
     "gameId": "(O)607",
     "name": "Roasted Hazelnuts",
@@ -4796,8 +5745,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4821,7 +5770,7 @@
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
-      "kent": "like",
+      "kent": "love",
       "sam": "like",
       "leah": "like",
       "shane": "like",
@@ -4867,8 +5816,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4885,7 +5834,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "love",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -4940,21 +5889,21 @@
   },
   {
     "type": "food",
-    "id": "salmon-dinner",
-    "gameId": "(O)212",
-    "name": "Salmon Dinner",
-    "icon": "assets/objects/SalmonDinner.png",
-    "price": 300,
-    "edibility": 50,
+    "id": "salad",
+    "gameId": "(O)196",
+    "name": "Salad",
+    "icon": "assets/objects/Salad.png",
+    "price": 110,
+    "edibility": 45,
     "gameCategory": -7,
     "contextTags": [
-      "color_pink",
-      "food_seafood"
+      "color_green",
+      "food_salad"
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -4980,7 +5929,7 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "love",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -4990,6 +5939,103 @@
       "harvey": "like",
       "sandy": "like",
       "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-leah",
+        "price": 220,
+        "quantity": 5,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 20
+      },
+      {
+        "type": "shop",
+        "id": "loc-gus",
+        "price": 220
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Salad",
+        "ingredients": [
+          {
+            "gameId": 20,
+            "amount": 1
+          },
+          {
+            "gameId": 22,
+            "amount": 1
+          },
+          {
+            "gameId": 419,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Emily",
+          "hearts": 3
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "salmon-dinner",
+    "gameId": "(O)212",
+    "name": "Salmon Dinner",
+    "icon": "assets/objects/SalmonDinner.png",
+    "price": 300,
+    "edibility": 50,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_pink",
+      "food_seafood"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "love",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "hate",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -5035,32 +6081,32 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "like",
       "demetrius": "like",
       "maru": "like",
-      "sebastian": "like",
+      "sebastian": "love",
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
       "abigail": "like",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "hate",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "hate",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
-      "kent": "like",
+      "kent": "hate",
       "sam": "like",
       "leah": "like",
       "shane": "like",
@@ -5071,7 +6117,7 @@
       "wizard": "like",
       "harvey": "like",
       "sandy": "like",
-      "willy": "dislike",
+      "willy": "neutral",
       "krobus": "dislike",
       "leo": "dislike"
     },
@@ -5100,6 +6146,103 @@
   },
   {
     "type": "food",
+    "id": "seafoam-pudding",
+    "gameId": "(O)265",
+    "name": "Seafoam Pudding",
+    "icon": "assets/objects/SeafoamPudding.png",
+    "price": 300,
+    "edibility": 70,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_blue",
+      "food_seafood"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "like",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "like",
+      "sandy": "hate",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "hate"
+    },
+    "buffs": [
+      {
+        "duration": 300,
+        "isDebuff": false,
+        "effects": {
+          "FishingLevel": 4
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-moonlight-jellies",
+        "price": 5000,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Seafoam Pudding",
+        "ingredients": [
+          {
+            "gameId": 267,
+            "amount": 1
+          },
+          {
+            "gameId": 269,
+            "amount": 1
+          },
+          {
+            "gameId": 814,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "skill",
+          "skill": "fishing",
+          "level": 9
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "shrimp-cocktail",
     "gameId": "(O)733",
     "name": "Shrimp Cocktail",
@@ -5113,8 +6256,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5204,12 +6347,12 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "like",
+      "robin": "love",
       "demetrius": "like",
       "maru": "like",
       "sebastian": "like",
@@ -5247,7 +6390,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-gus",
+        "id": "loc-gus",
         "price": 240
       },
       {
@@ -5291,8 +6434,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5303,15 +6446,15 @@
       "linus": "like",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
+      "abigail": "love",
       "alex": "like",
       "george": "like",
-      "evelyn": "like",
+      "evelyn": "hate",
       "lewis": "like",
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "dislike",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
@@ -5344,7 +6487,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 350,
         "tradeItemId": "ruby",
         "tradeItemGameId": 64,
@@ -5355,12 +6498,16 @@
       {
         "type": "monster-drop",
         "monster": "Serpent",
-        "chance": 0.06
+        "rolls": [
+          0.06
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Royal Serpent",
-        "chance": 0.06
+        "rolls": [
+          0.06
+        ]
       },
       {
         "type": "fish-pond",
@@ -5401,8 +6548,8 @@
     "contextTags": [],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5460,7 +6607,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-gus",
+        "id": "loc-desert-festival-gus",
         "price": 300,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -5508,8 +6655,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5535,7 +6682,7 @@
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "love",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -5591,66 +6738,74 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
-      "robin": "like",
-      "demetrius": "like",
-      "maru": "like",
-      "sebastian": "like",
-      "linus": "like",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
       "pierre": "like",
       "caroline": "like",
-      "abigail": "like",
-      "alex": "like",
-      "george": "like",
-      "evelyn": "like",
-      "lewis": "like",
-      "clint": "like",
-      "penny": "like",
-      "pam": "like",
-      "emily": "like",
-      "haley": "like",
-      "jas": "like",
-      "vincent": "like",
-      "jodi": "like",
-      "kent": "like",
-      "sam": "like",
-      "leah": "like",
-      "shane": "like",
-      "marnie": "like",
-      "elliott": "like",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "neutral",
+      "marnie": "hate",
+      "elliott": "hate",
       "gus": "like",
-      "dwarf": "like",
-      "wizard": "like",
+      "dwarf": "hate",
+      "wizard": "hate",
       "harvey": "like",
-      "sandy": "like",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "like",
+      "leo": "hate"
     },
     "sources": [
       {
         "type": "monster-drop",
         "monster": "Shadow Guy",
-        "chance": 0.04
+        "rolls": [
+          0.04
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Shadow Brute",
-        "chance": 0.04
+        "rolls": [
+          0.04
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Shadow Sniper",
-        "chance": 0.04
+        "rolls": [
+          0.04
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Spider",
-        "chance": 0.04
+        "rolls": [
+          0.04
+        ]
       },
       {
         "type": "cooking",
@@ -5679,6 +6834,122 @@
   },
   {
     "type": "food",
+    "id": "stuffing",
+    "gameId": "(O)239",
+    "name": "Stuffing",
+    "icon": "assets/objects/Stuffing.png",
+    "price": 165,
+    "edibility": 68,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown",
+      "food_sauce"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "love",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 480,
+        "isDebuff": false,
+        "effects": {
+          "Defense": 2
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-bookseller",
+        "price": 330,
+        "quantity": 3,
+        "tradeItemId": "jack-be-nimble-jack-be-thick",
+        "tradeItemGameId": "Book_Defense",
+        "tradeItemName": "Jack Be Nimble, Jack Be Thick",
+        "tradeItemIcon": "assets/objects/JackBeNimbleJackBeThick.png",
+        "tradeItemAmount": 1,
+        "condition": {
+          ">=": [
+            {
+              "var": "player.stats.Book_Defense"
+            },
+            1
+          ]
+        }
+      },
+      {
+        "type": "shop",
+        "id": "loc-festival-of-ice",
+        "price": 200,
+        "stock": 1,
+        "stockLimit": 1
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Stuffing",
+        "ingredients": [
+          {
+            "gameId": 216,
+            "amount": 1
+          },
+          {
+            "gameId": 282,
+            "amount": 1
+          },
+          {
+            "gameId": 408,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Pam",
+          "hearts": 7
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
     "id": "super-meal",
     "gameId": "(O)237",
     "name": "Super Meal",
@@ -5691,8 +6962,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5725,7 +6996,7 @@
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
-      "harvey": "like",
+      "harvey": "love",
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
@@ -5782,8 +7053,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5802,14 +7073,14 @@
       "clint": "like",
       "penny": "like",
       "pam": "like",
-      "emily": "like",
+      "emily": "love",
       "haley": "like",
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -5872,8 +7143,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5890,7 +7161,7 @@
       "evelyn": "like",
       "lewis": "like",
       "clint": "like",
-      "penny": "like",
+      "penny": "love",
       "pam": "like",
       "emily": "like",
       "haley": "like",
@@ -5902,7 +7173,7 @@
       "leah": "like",
       "shane": "like",
       "marnie": "like",
-      "elliott": "like",
+      "elliott": "love",
       "gus": "like",
       "dwarf": "like",
       "wizard": "like",
@@ -5968,8 +7239,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -5978,7 +7249,7 @@
       "maru": "like",
       "sebastian": "like",
       "linus": "like",
-      "pierre": "like",
+      "pierre": "hate",
       "caroline": "like",
       "abigail": "like",
       "alex": "like",
@@ -5993,9 +7264,9 @@
       "jas": "like",
       "vincent": "like",
       "jodi": "like",
-      "kent": "like",
+      "kent": "hate",
       "sam": "like",
-      "leah": "like",
+      "leah": "dislike",
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
@@ -6041,8 +7312,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -6063,8 +7334,8 @@
       "pam": "like",
       "emily": "like",
       "haley": "like",
-      "jas": "like",
-      "vincent": "like",
+      "jas": "hate",
+      "vincent": "hate",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
@@ -6079,7 +7350,7 @@
       "sandy": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "dislike"
+      "leo": "hate"
     },
     "buffs": [
       {
@@ -6093,7 +7364,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-trade",
+        "id": "loc-desert-trade",
         "price": 900,
         "tradeItemId": "diamond",
         "tradeItemGameId": 72,
@@ -6103,7 +7374,7 @@
       },
       {
         "type": "shop",
-        "id": "store-stardew-valley-fair",
+        "id": "loc-stardew-valley-fair",
         "shopCurrency": "star-tokens",
         "shopCurrencyGameId": "StarToken",
         "price": 400,
@@ -6124,6 +7395,12 @@
           "type": "level",
           "level": 100
         }
+      },
+      {
+        "type": "reward",
+        "rewardSource": "museum",
+        "rewardSourceName": "Gunther's Museum",
+        "condition": "donate 70 items to the museum"
       }
     ]
   },
@@ -6141,8 +7418,8 @@
     ],
     "canBeGifted": true,
     "sellingLocations": [
-      "store-gus",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -6152,7 +7429,7 @@
       "sebastian": "like",
       "linus": "like",
       "pierre": "like",
-      "caroline": "like",
+      "caroline": "love",
       "abigail": "like",
       "alex": "like",
       "george": "like",
@@ -6172,7 +7449,7 @@
       "shane": "like",
       "marnie": "like",
       "elliott": "like",
-      "gus": "like",
+      "gus": "love",
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
@@ -6193,7 +7470,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-leo",
+        "id": "loc-desert-festival-leo",
         "price": 1000,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -6223,6 +7500,177 @@
           "type": "level",
           "level": 100
         }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "trout-soup",
+    "gameId": "(O)219",
+    "name": "Trout Soup",
+    "icon": "assets/objects/TroutSoup.png",
+    "price": 100,
+    "edibility": 40,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_brown",
+      "food_seafood",
+      "food_soup"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "hate",
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "buffs": [
+      {
+        "duration": 400,
+        "isDebuff": false,
+        "effects": {
+          "FishingLevel": 1
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-willy",
+        "price": 250
+      },
+      {
+        "type": "cooking",
+        "recipeName": "Trout Soup",
+        "ingredients": [
+          {
+            "gameId": 138,
+            "amount": 1
+          },
+          {
+            "gameId": 153,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "level",
+          "level": 19
+        }
+      }
+    ]
+  },
+  {
+    "type": "food",
+    "id": "vegetable-medley",
+    "gameId": "(O)200",
+    "name": "Vegetable Medley",
+    "icon": "assets/objects/VegetableMedley.png",
+    "price": 120,
+    "edibility": 66,
+    "gameCategory": -7,
+    "contextTags": [
+      "color_green"
+    ],
+    "canBeGifted": true,
+    "sellingLocations": [
+      "loc-pierre",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
+      "evelyn": "like",
+      "lewis": "love",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "love",
+      "kent": "like",
+      "sam": "like",
+      "leah": "love",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "like",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "like",
+      "sandy": "like",
+      "willy": "dislike",
+      "krobus": "dislike",
+      "leo": "dislike"
+    },
+    "sources": [
+      {
+        "type": "cooking",
+        "recipeName": "Vegetable Stew",
+        "ingredients": [
+          {
+            "gameId": 256,
+            "amount": 1
+          },
+          {
+            "gameId": 284,
+            "amount": 1
+          }
+        ],
+        "unlockCondition": {
+          "type": "friendship",
+          "npc": "Caroline",
+          "hearts": 7
+        }
+      },
+      {
+        "type": "mail",
+        "mailKey": "Gus"
       }
     ]
   }

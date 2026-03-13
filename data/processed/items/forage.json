@@ -25,27 +25,38 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "robin": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
+      "caroline": "like",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "pam": "dislike",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
       "jodi": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
+      "marnie": "dislike",
       "elliott": "dislike",
+      "gus": "dislike",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
       "willy": "dislike",
-      "krobus": "dislike",
+      "krobus": "love",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -97,30 +108,38 @@
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
+      "pierre": "like",
+      "caroline": "like",
+      "george": "like",
+      "evelyn": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
       "elliott": "dislike",
+      "gus": "like",
       "dwarf": "dislike",
       "wizard": "dislike",
       "harvey": "like",
+      "sandy": "love",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-evelyn",
+        "id": "loc-desert-festival-evelyn",
         "price": 60,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -131,7 +150,7 @@
       },
       {
         "type": "shop",
-        "id": "store-flower-dance",
+        "id": "loc-flower-dance",
         "price": 50,
         "quantity": 10,
         "stockLimit": 1
@@ -183,6 +202,8 @@
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
+      "george": "love",
+      "penny": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -199,7 +220,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -251,12 +273,14 @@
     "gifts": {
       "sebastian": "dislike",
       "linus": "like",
-      "pierre": "dislike",
+      "pierre": "like",
       "caroline": "dislike",
+      "george": "hate",
+      "penny": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "dislike",
+      "jodi": "hate",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
@@ -269,12 +293,13 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-caroline",
+        "id": "loc-desert-festival-caroline",
         "price": 80,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -285,7 +310,7 @@
       },
       {
         "type": "shop",
-        "id": "store-flower-dance",
+        "id": "loc-flower-dance",
         "price": 50,
         "quantity": 10,
         "stockLimit": 1
@@ -332,32 +357,49 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "robin": "dislike",
+      "demetrius": "dislike",
+      "maru": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
+      "abigail": "dislike",
+      "alex": "dislike",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
+      "pam": "dislike",
+      "emily": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "dislike",
+      "kent": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
+      "marnie": "dislike",
       "elliott": "dislike",
-      "dwarf": "dislike",
+      "gus": "dislike",
+      "dwarf": "like",
       "wizard": "dislike",
       "harvey": "like",
+      "sandy": "dislike",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-vincent",
+        "id": "loc-desert-festival-vincent",
         "price": 50,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -397,12 +439,13 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "linus": "like",
+      "linus": "love",
       "abigail": "dislike",
+      "lewis": "like",
       "pam": "like",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
+      "haley": "love",
+      "jas": "like",
+      "vincent": "like",
       "jodi": "like",
       "kent": "like",
       "leah": "like",
@@ -412,13 +455,13 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 200,
         "quantity": 10,
         "days": [
@@ -465,14 +508,16 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
-      "linus": "like",
+      "linus": "love",
       "abigail": "dislike",
-      "pam": "like",
+      "lewis": "like",
+      "pam": "love",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
+      "sam": "love",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
@@ -480,13 +525,13 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-sandy",
+        "id": "loc-sandy",
         "price": 150,
         "days": [
           "Tuesday"
@@ -548,15 +593,16 @@
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "dislike"
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-george",
+        "id": "loc-desert-festival-george",
         "price": 300,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -633,13 +679,13 @@
       "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-kent",
+        "id": "loc-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -709,7 +755,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -768,10 +815,11 @@
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
-      "leo": "dislike"
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -873,8 +921,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -915,16 +963,18 @@
     "bundles": [],
     "gifts": {
       "evelyn": "like",
-      "elliott": "neutral"
+      "elliott": "neutral",
+      "harvey": "hate",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-demetrius",
+        "id": "loc-desert-festival-demetrius",
         "price": 240,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -976,11 +1026,12 @@
     "bundles": [],
     "gifts": {
       "evelyn": "like",
-      "elliott": "neutral"
+      "elliott": "neutral",
+      "harvey": "hate"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1015,12 +1066,44 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "robin": "like",
+      "demetrius": "like",
+      "maru": "like",
+      "sebastian": "like",
+      "linus": "like",
+      "pierre": "like",
+      "caroline": "like",
+      "abigail": "like",
+      "alex": "like",
+      "george": "like",
       "evelyn": "like",
-      "elliott": "neutral"
+      "lewis": "like",
+      "clint": "like",
+      "penny": "like",
+      "pam": "like",
+      "emily": "like",
+      "haley": "like",
+      "jas": "like",
+      "vincent": "like",
+      "jodi": "like",
+      "kent": "like",
+      "sam": "like",
+      "leah": "like",
+      "shane": "like",
+      "marnie": "like",
+      "elliott": "neutral",
+      "gus": "like",
+      "dwarf": "like",
+      "wizard": "like",
+      "harvey": "hate",
+      "sandy": "like",
+      "willy": "like",
+      "krobus": "like",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1072,26 +1155,28 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "evelyn": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
-      "jodi": "like",
+      "jodi": "hate",
       "kent": "like",
       "leah": "like",
       "shane": "like",
       "elliott": "like",
-      "harvey": "like",
-      "sandy": "like"
+      "harvey": "hate",
+      "sandy": "like",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-demetrius",
+        "id": "loc-desert-festival-demetrius",
         "price": 160,
         "quantity": 3,
         "tradeItemId": "calico-egg",
@@ -1151,17 +1236,49 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
+      "linus": "hate",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
       "evelyn": "like",
-      "elliott": "neutral"
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "hate",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
+      "leah": "hate",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "neutral",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
+      "harvey": "hate",
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "like"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-emily",
+        "id": "loc-desert-festival-emily",
         "price": 320,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1213,10 +1330,11 @@
       "demetrius": "like",
       "linus": "like",
       "abigail": "dislike",
+      "penny": "hate",
       "pam": "like",
       "haley": "dislike",
       "jas": "dislike",
-      "vincent": "dislike",
+      "vincent": "love",
       "jodi": "like",
       "kent": "like",
       "leah": "like",
@@ -1226,8 +1344,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1296,7 +1414,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": []
   },
@@ -1358,13 +1477,14 @@
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
-      "sandy": "like",
+      "sandy": "love",
       "willy": "like",
       "krobus": "like",
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1419,7 +1539,7 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
-      "maru": "like",
+      "maru": "dislike",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -1440,7 +1560,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1521,8 +1642,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1593,12 +1714,13 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "store-desert-festival-kent",
+        "id": "loc-desert-festival-kent",
         "price": 180,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -1656,6 +1778,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
+      "maru": "dislike",
       "linus": "like",
       "abigail": "dislike",
       "pam": "like",
@@ -1671,8 +1794,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1737,13 +1860,16 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
         "type": "monster-drop",
         "monster": "Frost Jelly",
-        "chance": 0.08
+        "rolls": [
+          0.08
+        ]
       },
       {
         "type": "tilling",
@@ -1782,6 +1908,7 @@
     "gifts": {
       "robin": "like",
       "demetrius": "like",
+      "maru": "dislike",
       "linus": "like",
       "abigail": "dislike",
       "pam": "like",
@@ -1797,8 +1924,8 @@
       "sandy": "like"
     },
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1834,7 +1961,9 @@
       {
         "type": "monster-drop",
         "monster": "Dust Spirit",
-        "chance": 0.02
+        "rolls": [
+          0.02
+        ]
       }
     ]
   },
@@ -1860,6 +1989,7 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "maru": "hate",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
@@ -1868,6 +1998,7 @@
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "dislike",
+      "kent": "dislike",
       "sam": "dislike",
       "leah": "like",
       "shane": "dislike",
@@ -1880,7 +2011,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -1950,13 +2082,14 @@
       "dwarf": "like",
       "wizard": "like",
       "harvey": "like",
-      "sandy": "like",
+      "sandy": "love",
       "willy": "like",
       "krobus": "like",
       "leo": "like"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2022,27 +2155,44 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
-      "sebastian": "dislike",
+      "robin": "hate",
+      "demetrius": "hate",
+      "maru": "hate",
+      "sebastian": "hate",
       "linus": "like",
-      "pierre": "dislike",
-      "caroline": "dislike",
-      "haley": "dislike",
-      "jas": "dislike",
-      "vincent": "dislike",
-      "jodi": "dislike",
-      "sam": "dislike",
+      "pierre": "hate",
+      "caroline": "hate",
+      "abigail": "hate",
+      "alex": "hate",
+      "george": "hate",
+      "evelyn": "hate",
+      "lewis": "hate",
+      "clint": "hate",
+      "penny": "dislike",
+      "pam": "hate",
+      "emily": "hate",
+      "haley": "hate",
+      "jas": "hate",
+      "vincent": "hate",
+      "jodi": "hate",
+      "kent": "hate",
+      "sam": "hate",
       "leah": "like",
-      "shane": "dislike",
-      "elliott": "dislike",
-      "dwarf": "dislike",
-      "wizard": "dislike",
+      "shane": "hate",
+      "marnie": "hate",
+      "elliott": "hate",
+      "gus": "hate",
+      "dwarf": "hate",
+      "wizard": "hate",
       "harvey": "like",
-      "willy": "dislike",
-      "krobus": "dislike",
-      "leo": "dislike"
+      "sandy": "hate",
+      "willy": "hate",
+      "krobus": "hate",
+      "leo": "hate"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2103,11 +2253,13 @@
     "isFlower": false,
     "bundles": [],
     "gifts": {
+      "demetrius": "like",
       "maru": "like",
       "sebastian": "dislike",
       "linus": "like",
       "pierre": "dislike",
       "caroline": "dislike",
+      "penny": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
@@ -2117,14 +2269,15 @@
       "shane": "dislike",
       "elliott": "dislike",
       "dwarf": "dislike",
-      "wizard": "dislike",
+      "wizard": "love",
       "harvey": "like",
       "willy": "dislike",
       "krobus": "dislike",
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2218,8 +2371,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2299,8 +2452,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2381,8 +2534,8 @@
       "leo": "neutral"
     },
     "sellingLocations": [
-      "store-willy",
-      "store-shipping-bin"
+      "loc-willy",
+      "loc-shipping-bin"
     ],
     "sources": [
       {
@@ -2442,7 +2595,8 @@
       "leo": "dislike"
     },
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "sources": []
   }

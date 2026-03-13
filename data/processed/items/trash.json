@@ -14,8 +14,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -49,8 +49,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -85,8 +85,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -107,6 +107,58 @@
   },
   {
     "type": "trash",
+    "id": "joja-cola",
+    "gameId": "(O)167",
+    "name": "Joja Cola",
+    "icon": "assets/objects/JojaCola.png",
+    "price": 25,
+    "edibility": 5,
+    "gameCategory": -20,
+    "contextTags": [
+      "color_blue",
+      "drink_item"
+    ],
+    "canBeGifted": false,
+    "sellingLocations": [
+      "loc-trash-can",
+      "loc-shipping-bin"
+    ],
+    "bundles": [],
+    "gifts": {},
+    "buffs": [
+      {
+        "duration": 30,
+        "isDebuff": false,
+        "effects": {
+          "Speed": 1
+        }
+      }
+    ],
+    "sources": [
+      {
+        "type": "shop",
+        "id": "loc-desert-festival-sam",
+        "price": 50,
+        "quantity": 6,
+        "tradeItemId": "calico-egg",
+        "tradeItemGameId": "CalicoEgg",
+        "tradeItemName": "Calico Egg",
+        "tradeItemIcon": "assets/objects/CalicoEgg.png",
+        "tradeItemAmount": 2
+      },
+      {
+        "type": "shop",
+        "id": "loc-joja",
+        "price": 75
+      },
+      {
+        "type": "garbage-can",
+        "location": "JojaMart"
+      }
+    ]
+  },
+  {
+    "type": "trash",
     "id": "rotten-plant-(O)747",
     "gameId": "(O)747",
     "name": "Rotten Plant",
@@ -119,8 +171,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -140,8 +192,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -162,8 +214,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},
@@ -197,8 +249,8 @@
     ],
     "canBeGifted": false,
     "sellingLocations": [
-      "store-trash-can",
-      "store-shipping-bin"
+      "loc-trash-can",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {},

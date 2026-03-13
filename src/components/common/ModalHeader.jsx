@@ -10,11 +10,9 @@ import './ModalHeader.css'
  */
 function ModalHeader({ icon, name, subtitle, children, className = '' }) {
   const [iconError, setIconError] = useState(false)
-  const [iconLoaded, setIconLoaded] = useState(false)
 
   useEffect(() => {
     setIconError(false)
-    setIconLoaded(false)
   }, [icon])
 
   return (
@@ -28,8 +26,6 @@ function ModalHeader({ icon, name, subtitle, children, className = '' }) {
           src={icon}
           alt={name}
           className="modal-item-header-icon"
-          style={iconLoaded ? undefined : { visibility: 'hidden' }}
-          onLoad={() => setIconLoaded(true)}
           onError={() => setIconError(true)}
         />
       )}

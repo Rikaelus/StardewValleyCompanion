@@ -1,13 +1,57 @@
 import { useEffect, useRef } from 'react'
-import { useSearchParams, useLocation } from 'react-router-dom'
 
 
 const PARAM = 'modal'
 const SEP = ','
 
 /**
+ * Write the ?modal= param directly via the History API so that react-router's
+ * useSearchParams subscribers (DataTable, FishPage, etc.) are NOT notified.
+ * This prevents the entire page from re-rendering when the modal opens/closes.
+ *
+ * @param {'replace'|'push'} mode
+ */
+function writeModalParam(trail, mode = 'replace') {
+  const url = new URL(window.location.href)
+  // For HashRouter, search params live inside the hash: #/path?param=value
+  const hashParts = url.hash.split('?')
+  const hashPath = hashParts[0] || '#/'
+  const params = new URLSearchParams(hashParts[1] || '')
+
+  if (trail) {
+    params.set(PARAM, trail)
+  } else {
+    params.delete(PARAM)
+  }
+
+  const paramStr = params.toString()
+  const newHash = paramStr ? `${hashPath}?${paramStr}` : hashPath
+  const newUrl = `${url.origin}${url.pathname}${newHash}`
+
+  if (mode === 'push') {
+    window.history.pushState(null, '', newUrl)
+  } else {
+    window.history.replaceState(null, '', newUrl)
+  }
+}
+
+/**
+ * Read the current ?modal= param from the hash portion of the URL.
+ */
+function readModalParam() {
+  const hash = window.location.hash
+  const qIdx = hash.indexOf('?')
+  if (qIdx === -1) return ''
+  const params = new URLSearchParams(hash.slice(qIdx + 1))
+  return params.get(PARAM) || ''
+}
+
+/**
  * Syncs a modal's breadcrumb history to/from the URL search param `?modal=id1,id2,id3`.
  * Enabled automatically when onOpen is provided.
+ *
+ * Uses the History API directly (not react-router's setSearchParams) to avoid
+ * triggering re-renders in every component that uses useSearchParams.
  *
  * @param {boolean}  enabled       - Whether URL sync is active
  * @param {Object[]} history       - Current breadcrumb history array
@@ -18,49 +62,46 @@ const SEP = ','
  * @param {Function} onClose       - Called when the modal should close
  */
 export function useModalUrl({ enabled, history, setHistory, onOpen, findEntity, entitiesLoading, isOpen, onClose }) {
-  const [, setSearchParams] = useSearchParams()
-  const location = useLocation()
-  const isSyncing = useRef(false)
-  const prevHistoryLen = useRef(0)
+  // Authoritative ref for what trail we last intentionally wrote to the URL.
+  // Used to suppress the popstate handler from firing on our own writes.
+  const canonicalTrail = useRef(null)
   const wasOpen = useRef(false)
 
   // ── On mount (after entities load): restore modal from URL if param is present ──
   const didRestore = useRef(false)
   useEffect(() => {
     if (!enabled || entitiesLoading || didRestore.current) return
-    const params = new URLSearchParams(location.search)
-    const raw = params.get(PARAM)
+    const raw = readModalParam()
     if (!raw) return
     const ids = raw.split(SEP).filter(Boolean)
     if (ids.length === 0) return
     const entities = ids.map(id => findEntity(id))
     if (entities.some(e => !e)) return
     didRestore.current = true
-    isSyncing.current = true
-    prevHistoryLen.current = ids.length
+    canonicalTrail.current = raw
     setHistory(entities)
     onOpen(entities[0])
-    setTimeout(() => { isSyncing.current = false }, 0)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled, entitiesLoading])
 
   // ── History → URL ─────────────────────────────────────────────────────────
+  // When local history changes, write it to the URL and update canonicalTrail.
   useEffect(() => {
     if (!enabled) return
-    if (isSyncing.current) return
     if (!isOpen) return
     if (history.length === 0) return
 
     const trail = history.map(e => e.id).join(SEP)
-    const isDeeper = history.length > prevHistoryLen.current
-    prevHistoryLen.current = history.length
 
-    setSearchParams(prev => {
-      const next = new URLSearchParams(prev)
-      next.set(PARAM, trail)
-      return next
-    }, { replace: !isDeeper })
-  }, [enabled, history, isOpen, setSearchParams])
+    // Already canonical — nothing to do
+    if (trail === canonicalTrail.current) return
+
+    const isDeeper = canonicalTrail.current !== null &&
+      history.length > canonicalTrail.current.split(SEP).length
+
+    canonicalTrail.current = trail
+    writeModalParam(trail, isDeeper ? 'push' : 'replace')
+  }, [enabled, history, isOpen])
 
   // ── Close → URL: clear param when modal closes ────────────────────────────
   useEffect(() => {
@@ -68,48 +109,54 @@ export function useModalUrl({ enabled, history, setHistory, onOpen, findEntity, 
     if (isOpen) { wasOpen.current = true; return }
     if (!wasOpen.current) return
     wasOpen.current = false
-    prevHistoryLen.current = 0
-    setSearchParams(prev => {
-      if (!prev.has(PARAM)) return prev
-      const next = new URLSearchParams(prev)
-      next.delete(PARAM)
-      return next
-    }, { replace: true })
-  }, [enabled, isOpen, setSearchParams])
+    canonicalTrail.current = null
 
-  // ── Location change: sync URL → history (handles browser back/forward) ────
-  const prevTrail = useRef(null)
+    // Only write if there's actually a modal param to clear
+    if (readModalParam()) {
+      writeModalParam(null, 'replace')
+    }
+  }, [enabled, isOpen])
+
+  // ── Browser back/forward: sync URL → history ──────────────────────────────
+  // Listen for popstate events (browser back/forward buttons) to sync URL changes
+  // back into the modal's history state.
+  const onCloseRef = useRef(onClose)
+  const onOpenRef = useRef(onOpen)
+  const findEntityRef = useRef(findEntity)
+  const setHistoryRef = useRef(setHistory)
+  const isOpenRef = useRef(isOpen)
+
+  useEffect(() => { onCloseRef.current = onClose }, [onClose])
+  useEffect(() => { onOpenRef.current = onOpen }, [onOpen])
+  useEffect(() => { findEntityRef.current = findEntity }, [findEntity])
+  useEffect(() => { setHistoryRef.current = setHistory }, [setHistory])
+  useEffect(() => { isOpenRef.current = isOpen }, [isOpen])
+
   useEffect(() => {
     if (!enabled) return
-    const params = new URLSearchParams(location.search)
-    const raw = params.get(PARAM)
-    const trail = raw || ''
 
-    if (isSyncing.current) return
-    if (trail === prevTrail.current) return
-    prevTrail.current = trail
+    const handlePopState = () => {
+      const trail = readModalParam()
 
-    if (!trail) {
-      if (isOpen) {
-        isSyncing.current = true
-        prevHistoryLen.current = 0
-        onClose()
-        setTimeout(() => { isSyncing.current = false }, 0)
+      // This is a URL state we ourselves wrote — ignore
+      if (trail === canonicalTrail.current) return
+
+      canonicalTrail.current = trail
+
+      if (!trail) {
+        if (isOpenRef.current) onCloseRef.current()
+        return
       }
-      return
+
+      const ids = trail.split(SEP).filter(Boolean)
+      const entities = ids.map(id => findEntityRef.current(id))
+      if (entities.some(e => !e)) return
+
+      setHistoryRef.current(entities)
+      if (!isOpenRef.current) onOpenRef.current(entities[0])
     }
 
-    const ids = trail.split(SEP).filter(Boolean)
-    const entities = ids.map(id => findEntity(id))
-    if (entities.some(e => !e)) return
-
-    const currentTrail = history.map(e => e.id).join(SEP)
-    if (trail === currentTrail) return
-
-    isSyncing.current = true
-    prevHistoryLen.current = ids.length
-    setHistory(entities)
-    if (!isOpen) onOpen(entities[0])
-    setTimeout(() => { isSyncing.current = false }, 0)
-  }, [enabled, location.search]) // eslint-disable-line react-hooks/exhaustive-deps
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [enabled])
 }

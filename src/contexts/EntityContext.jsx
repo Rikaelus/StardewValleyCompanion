@@ -46,6 +46,7 @@ export function EntityProvider({ children }) {
         findEntity: () => null,
         getBundle: () => null,
         getVillager: () => null,
+        getLocation: () => null,
         getStore: () => null,
         getFestival: () => null,
         getMachine: () => null, // alias for findById — machines are now items
@@ -63,7 +64,6 @@ export function EntityProvider({ children }) {
     const gameIdIndex = rawData.gameIdIndex || {}
     const allBundles = rawData.bundles || []
     const allVillagers = rawData.villagers || []
-    const festivalsMap = rawData.festivals || {}
     const allBuffs = rawData.buffs || []
     const relationships = rawData.relationships || []
 
@@ -142,12 +142,11 @@ export function EntityProvider({ children }) {
       return null
     }
 
-    const festivalsById = new Map(Object.entries(festivalsMap))
-
     const getBundle = (bundleId) => bundlesById.get(bundleId) ?? null
     const getVillager = (villagerId) => villagersById.get(villagerId) ?? null
-    const getStore = (storeId) => findById(storeId) // stores are now first-class items
-    const getFestival = (festivalId) => festivalsById.get(festivalId) ?? null
+    const getLocation = (id) => findById(id)
+    const getStore = getLocation  // backward-compat alias
+    const getFestival = (id) => findById(id)
     const getMachine = (machineId) => findById(machineId) // machines are now items
     const getBuff = (buffId) => buffsById.get(buffId) ?? null
     const getEvent = (eventKey) => eventsByKey.get(String(eventKey)) ?? null
@@ -188,6 +187,7 @@ export function EntityProvider({ children }) {
       // Relational helpers
       getBundle,
       getVillager,
+      getLocation,
       getStore,
       getFestival,
       getMachine,

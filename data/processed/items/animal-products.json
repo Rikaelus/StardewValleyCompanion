@@ -1,9 +1,9 @@
 [
   {
     "type": "animal-product",
-    "id": "egg",
+    "id": "egg-white",
     "gameId": "(O)176",
-    "name": "Egg",
+    "name": "Egg (White)",
     "gameCategory": -5,
     "price": 50,
     "edibility": 10,
@@ -20,7 +20,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-shane",
+        "id": "loc-desert-festival-shane",
         "price": 100,
         "quantity": 12,
         "tradeItemId": "calico-egg",
@@ -35,7 +35,9 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -61,9 +63,9 @@
   },
   {
     "type": "animal-product",
-    "id": "large-egg",
+    "id": "large-egg-white",
     "gameId": "(O)174",
-    "name": "Large Egg",
+    "name": "Large Egg (White)",
     "gameCategory": -5,
     "price": 95,
     "edibility": 15,
@@ -85,7 +87,9 @@
       "large_egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -111,9 +115,9 @@
   },
   {
     "type": "animal-product",
-    "id": "egg",
+    "id": "egg-brown",
     "gameId": "(O)180",
-    "name": "Egg",
+    "name": "Egg (Brown)",
     "gameCategory": -5,
     "price": 50,
     "edibility": 10,
@@ -130,7 +134,9 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -156,9 +162,9 @@
   },
   {
     "type": "animal-product",
-    "id": "large-egg",
+    "id": "large-egg-brown",
     "gameId": "(O)182",
-    "name": "Large Egg",
+    "name": "Large Egg (Brown)",
     "gameCategory": -5,
     "price": 95,
     "edibility": 15,
@@ -176,7 +182,9 @@
       "large_egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -217,7 +225,7 @@
       },
       {
         "type": "shop",
-        "id": "store-krobus",
+        "id": "loc-krobus",
         "price": 5000
       },
       {
@@ -232,28 +240,46 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
+      "robin": "dislike",
       "demetrius": "like",
-      "sebastian": "hate",
+      "maru": "dislike",
+      "sebastian": "love",
       "linus": "like",
       "pierre": "like",
+      "caroline": "dislike",
       "abigail": "dislike",
       "alex": "like",
+      "george": "dislike",
+      "evelyn": "dislike",
+      "lewis": "dislike",
+      "clint": "dislike",
+      "penny": "dislike",
       "pam": "dislike",
+      "emily": "dislike",
       "haley": "dislike",
       "jas": "dislike",
       "vincent": "dislike",
       "jodi": "like",
       "kent": "like",
       "sam": "like",
-      "leah": "like",
+      "leah": "hate",
       "shane": "like",
       "marnie": "like",
+      "elliott": "dislike",
+      "gus": "dislike",
       "dwarf": "dislike",
-      "wizard": "dislike"
+      "wizard": "dislike",
+      "harvey": "dislike",
+      "sandy": "dislike",
+      "willy": "dislike",
+      "krobus": "love",
+      "leo": "dislike"
     }
   },
   {
@@ -273,7 +299,7 @@
       },
       {
         "type": "shop",
-        "id": "store-marnie",
+        "id": "loc-marnie",
         "price": 100000,
         "condition": {
           "in": [
@@ -286,7 +312,7 @@
       },
       {
         "type": "shop",
-        "id": "store-qi-gem-shop",
+        "id": "loc-qi-gem-shop",
         "shopCurrency": "qi-gems",
         "shopCurrencyGameId": 858,
         "price": 1000,
@@ -309,7 +335,9 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -354,7 +382,9 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -375,7 +405,8 @@
       "shane": "like",
       "marnie": "like",
       "dwarf": "dislike",
-      "wizard": "dislike"
+      "wizard": "dislike",
+      "harvey": "like"
     }
   },
   {
@@ -398,12 +429,17 @@
       "color_green"
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-marnie",
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
-    "gifts": {}
+    "gifts": {
+      "penny": "dislike",
+      "elliott": "love",
+      "harvey": "like",
+      "leo": "love"
+    }
   },
   {
     "type": "animal-product",
@@ -434,12 +470,16 @@
       "color_white"
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-marnie",
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
-    "gifts": {}
+    "gifts": {
+      "penny": "dislike",
+      "emily": "love",
+      "sandy": "like"
+    }
   },
   {
     "type": "animal-product",
@@ -458,7 +498,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-jas",
+        "id": "loc-desert-festival-jas",
         "price": 1130,
         "tradeItemId": "calico-egg",
         "tradeItemGameId": "CalicoEgg",
@@ -470,24 +510,63 @@
       {
         "type": "monster-drop",
         "monster": "Serpent",
-        "chance": 0.008
+        "rolls": [
+          0.008
+        ]
       },
       {
         "type": "monster-drop",
         "monster": "Royal Serpent",
-        "chance": 0.008
+        "rolls": [
+          0.008
+        ]
       }
     ],
     "contextTags": [
       "color_yellow"
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-marnie",
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
-    "gifts": {}
+    "gifts": {
+      "robin": "love",
+      "demetrius": "love",
+      "maru": "love",
+      "sebastian": "love",
+      "linus": "love",
+      "pierre": "love",
+      "caroline": "love",
+      "abigail": "love",
+      "alex": "love",
+      "george": "love",
+      "evelyn": "love",
+      "lewis": "love",
+      "clint": "love",
+      "penny": "hate",
+      "pam": "love",
+      "emily": "love",
+      "haley": "love",
+      "jas": "love",
+      "vincent": "love",
+      "jodi": "love",
+      "kent": "love",
+      "sam": "love",
+      "leah": "love",
+      "shane": "love",
+      "marnie": "love",
+      "elliott": "love",
+      "gus": "love",
+      "dwarf": "love",
+      "wizard": "love",
+      "harvey": "love",
+      "sandy": "love",
+      "willy": "love",
+      "krobus": "love",
+      "leo": "love"
+    }
   },
   {
     "type": "animal-product",
@@ -512,19 +591,19 @@
       "egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
       "robin": "hate",
-      "demetrius": "hate",
+      "demetrius": "like",
       "maru": "hate",
       "sebastian": "hate",
       "linus": "hate",
       "pierre": "hate",
       "caroline": "hate",
       "abigail": "hate",
-      "alex": "hate",
+      "alex": "like",
       "george": "hate",
       "evelyn": "hate",
       "lewis": "hate",
@@ -573,7 +652,7 @@
       },
       {
         "type": "shop",
-        "id": "store-desert-festival-alex",
+        "id": "loc-desert-festival-alex",
         "price": 250,
         "quantity": 5,
         "tradeItemId": "calico-egg",
@@ -590,7 +669,9 @@
       "milk_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -641,7 +722,9 @@
       "milk_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -686,7 +769,9 @@
       "milk_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -706,7 +791,9 @@
       "marnie": "like",
       "elliott": "dislike",
       "dwarf": "neutral",
-      "wizard": "dislike"
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "like"
     }
   },
   {
@@ -732,7 +819,9 @@
       "milk_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -752,7 +841,9 @@
       "marnie": "like",
       "elliott": "dislike",
       "dwarf": "neutral",
-      "wizard": "dislike"
+      "wizard": "dislike",
+      "harvey": "like",
+      "sandy": "like"
     }
   },
   {
@@ -773,18 +864,26 @@
       {
         "type": "monster-drop",
         "monster": "Truffle Crab",
-        "chance": 1
+        "rolls": [
+          0.999,
+          0.5,
+          0.1
+        ]
       }
     ],
     "contextTags": [
       "color_brown"
     ],
     "sellingLocations": [
-      "store-pierre",
-      "store-shipping-bin"
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
-    "gifts": {}
+    "gifts": {
+      "maru": "hate",
+      "leah": "love",
+      "gus": "like"
+    }
   },
   {
     "type": "animal-product",
@@ -800,6 +899,12 @@
       {
         "type": "animal",
         "id": "ostrich"
+      },
+      {
+        "type": "reward",
+        "rewardSource": "island-field-office",
+        "rewardSourceName": "Professor Snail's Field Office",
+        "condition": "complete all island fossil collections"
       }
     ],
     "contextTags": [
@@ -808,7 +913,9 @@
       "large_egg_item"
     ],
     "sellingLocations": [
-      "store-shipping-bin"
+      "loc-marnie",
+      "loc-pierre",
+      "loc-shipping-bin"
     ],
     "bundles": [],
     "gifts": {
@@ -829,7 +936,8 @@
       "shane": "like",
       "marnie": "like",
       "dwarf": "dislike",
-      "wizard": "dislike"
+      "wizard": "dislike",
+      "leo": "love"
     }
   }
 ]

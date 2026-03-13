@@ -3,8 +3,17 @@ import { ModalGrid, ModalGridItem } from './ModalGrid'
 import ModalItemButton from './ModalItemButton'
 import SeasonBadges from './SeasonBadges'
 import ShopSourceList from './ShopSourceList'
-import { formatTime, formatProcessingTime } from '../../utils/Formatters'
+import { formatTime, formatProcessingTime, computeDropCountDistribution, formatChance } from '../../utils/Formatters'
 import ConditionBadge from './ConditionBadge'
+import InfoTooltip from './InfoTooltip'
+
+function formatUnlockCondition(condition) {
+  if (!condition) return null
+  if (condition.type === 'skill') return `${condition.skill[0].toUpperCase()}${condition.skill.slice(1)} level ${condition.level}+`
+  if (condition.type === 'friendship') return `${condition.hearts}♥ ${condition.npc}`
+  if (condition.type === 'level') return `Mine level ${condition.level}+`
+  return null
+}
 
 function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigate }) {
   if (!entity) return null
@@ -22,6 +31,8 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const craftingSources = allSources.filter(s => s.type === 'crafting')
   const cookingSources = allSources.filter(s => s.type === 'cooking')
   const animalSources = allSources.filter(s => s.type === 'animal')
+  const hatchSources = allSources.filter(s => s.type === 'hatch')
+  const pregnancySources = allSources.filter(s => s.type === 'pregnancy')
   const tapperSources = allSources.filter(s => s.type === 'tapper')
   const machineSources = allSources.filter(s => s.type === 'machine').sort((a, b) => (a.machine ?? '').localeCompare(b.machine ?? ''))
   const seedSources = allSources.filter(s => s.type === 'seed')
@@ -29,14 +40,16 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const forageSources = allSources.filter(s => s.type === 'forage')
   const otherSources = allSources.filter(s => s.type === 'other')
   const mailSources = allSources.filter(s => s.type === 'mail')
+  const rewardSources = allSources.filter(s => s.type === 'reward')
   // Sources with no type (freeform description + optional condition — e.g. ??? hat)
   const freeformSources = allSources.filter(s => !s.type && s.description)
   const hasBuyingInfo = shopSources.length > 0
   const hasOtherSources = monsterDropSources.length > 0 || fishPondSources.length > 0 ||
     tillingSources.length > 0 || craftingSources.length > 0 || cookingSources.length > 0 ||
-    animalSources.length > 0 || tapperSources.length > 0 || machineSources.length > 0 ||
+    animalSources.length > 0 || hatchSources.length > 0 || pregnancySources.length > 0 ||
+    tapperSources.length > 0 || machineSources.length > 0 ||
     seedSources.length > 0 || fishSources.length > 0 || forageSources.length > 0 ||
-    otherSources.length > 0 || mailSources.length > 0 || freeformSources.length > 0
+    otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 || freeformSources.length > 0
 
   if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasBuyingInfo && !hasOtherSources) return null
 
@@ -95,7 +108,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               <span key={i} className="source-entry">
                 <span className="source-name">{src.location}</span>
                 <span />
-                <span className="source-detail">{Math.round(src.chance * 100)}%</span>
+                <span className="source-detail">{formatChance(src.chance)}</span>
               </span>
             ))}
           </div>
@@ -110,7 +123,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               <span key={i} className="source-entry">
                 <span className="source-name" style={{ textTransform: 'capitalize' }}>{src.fishTag.replace(/_/g, ' ')} pond</span>
                 <span className="source-qualifiers"><span className="source-qualifier">Population: {src.minPopulation}+</span></span>
-                <span className="source-detail">{Math.round(src.chance * 100)}%</span>
+                <span className="source-detail">{formatChance(src.chance)}</span>
               </span>
             ))}
           </div>
@@ -121,13 +134,34 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Monster Drops:</span>
           <div className="source-list">
-            {monsterDropSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name">{src.monster}</span>
-                <span />
-                <span className="source-detail">{Math.round(src.chance * 100)}%</span>
-              </span>
-            ))}
+            {monsterDropSources.map((src, i) => {
+              const monsterEntity = src.monsterId ? findById(src.monsterId) : null
+              const multiRoll = src.rolls?.length > 1
+              const dist = multiRoll ? computeDropCountDistribution(src.rolls) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {monsterEntity
+                      ? <ModalItemButton item={monsterEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.monster}
+                  </span>
+                  <span />
+                  <span className="source-detail">
+                    {multiRoll ? (
+                      <>
+                        {dist.map(({ count, chance }, j) => (
+                          <span key={count}>{j > 0 ? ' / ' : ''}×{count} {formatChance(chance)}</span>
+                        ))}
+                        {' '}
+                        <InfoTooltip text="Each roll is independent and fires on every kill. Percentages show the chance of receiving exactly that many." />
+                      </>
+                    ) : (
+                      formatChance(src.rolls?.[0] ?? 0)
+                    )}
+                  </span>
+                </span>
+              )
+            })}
           </div>
         </div>
       )}
@@ -136,94 +170,96 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Crafting:</span>
           <div className="source-list crafting-source-list">
-            {craftingSources.map((src, i) => (
-              <div key={i} className="crafting-source-entry">
-                <span className="source-entry">
-                  {src.recipeName && src.recipeName !== entity.name
-                    ? <span className="source-name">{src.recipeName}</span>
-                    : <span />
-                  }
-                  {src.unlockCondition && (
-                    <span className="source-qualifiers">
-                      <span className="source-qualifier crafting-unlock">
-                        {src.unlockCondition.type === 'skill' && (
-                          `${src.unlockCondition.skill[0].toUpperCase()}${src.unlockCondition.skill.slice(1)} ${src.unlockCondition.level}+`
-                        )}
-                        {src.unlockCondition.type === 'friendship' && (
-                          `${src.unlockCondition.hearts}♥ ${src.unlockCondition.npc}`
-                        )}
-                        {src.unlockCondition.type === 'level' && (
-                          `Level ${src.unlockCondition.level}+`
-                        )}
+            {craftingSources.map((src, i) => {
+              const unlockText = formatUnlockCondition(src.unlockCondition)
+              const showRecipeName = src.recipeName && src.recipeName !== entity.name
+              return (
+                <div key={i} className="crafting-source-entry">
+                  <div className="crafting-meta">
+                    {showRecipeName && (
+                      <span className="crafting-meta-row">
+                        <span className="crafting-meta-label">Recipe</span>
+                        <span className="crafting-meta-value">{src.recipeName}</span>
                       </span>
-                    </span>
-                  )}
-                  {src.outputCount > 1 && (
-                    <span className="source-detail">×{src.outputCount}</span>
-                  )}
-                </span>
-                {src.ingredientDetails?.length > 0 && src.ingredientDetails.map((ing, j) => {
-                  const ingItem = ing.id ? findById(ing.id) : null
-                  return (
-                    <span key={j} className="source-entry">
-                      <span className="source-name">
-                        {ingItem ? (
-                          <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
-                        ) : (
-                          ing.name || `Item #${ing.gameId}`
-                        )}
+                    )}
+                    {src.outputCount > 1 && (
+                      <span className="crafting-meta-row">
+                        <span className="crafting-meta-label">Yield</span>
+                        <span className="crafting-meta-value">×{src.outputCount}</span>
                       </span>
-                      <span />
-                      <span className="source-detail">×{ing.amount}</span>
-                    </span>
-                  )
-                })}
-              </div>
-            ))}
+                    )}
+                    {unlockText && (
+                      <span className="crafting-meta-row">
+                        <span className="crafting-meta-label">Unlocked</span>
+                        <span className="crafting-meta-value">{unlockText}</span>
+                      </span>
+                    )}
+                  </div>
+                  {src.ingredientDetails?.length > 0 && (
+                    src.ingredientDetails.map((ing, j) => {
+                      const ingItem = (ing.id ? findById(ing.id) : null)
+                        ?? (ing.gameId != null ? (findByGameId(`(O)${ing.gameId}`) ?? findByGameId(ing.gameId)) : null)
+                      return (
+                        <span key={j} className="source-entry source-entry--subrow">
+                          <span className="source-name">
+                            {ingItem ? (
+                              <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                            ) : (
+                              ing.name || `Item #${ing.gameId}`
+                            )}
+                          </span>
+                          <span />
+                          <span className="source-detail">×{ing.amount}</span>
+                        </span>
+                      )
+                    })
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
 
       {cookingSources.length > 0 && (
         <div className="source-group">
-          {cookingSources.map((src, i) => (
-            <div key={i} className="crafting-source-entry">
-              <div className="source-group-header">
-                <span className="modal-label">Cooking Recipe:</span>
-                {src.unlockCondition && (
-                  <span className="source-qualifier crafting-unlock">
-                    {src.unlockCondition.type === 'skill' && (
-                      `Unlocked: ${src.unlockCondition.skill[0].toUpperCase()}${src.unlockCondition.skill.slice(1)} ${src.unlockCondition.level}+`
-                    )}
-                    {src.unlockCondition.type === 'friendship' && (
-                      `Unlocked: ${src.unlockCondition.hearts}♥ ${src.unlockCondition.npc}`
-                    )}
-                    {src.unlockCondition.type === 'level' && (
-                      `Unlocked: Level ${src.unlockCondition.level}+`
-                    )}
-                  </span>
-                )}
-              </div>
-              <div className="source-list crafting-source-list">
-                {src.ingredientDetails?.length > 0 && src.ingredientDetails.map((ing, j) => {
-                  const ingItem = ing.id ? findById(ing.id) : null
-                  return (
-                    <span key={j} className="source-entry">
-                      <span className="source-name">
-                        {ingItem ? (
-                          <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
-                        ) : (
-                          ing.name || `Item #${ing.gameId}`
-                        )}
+          <span className="modal-label">Cooking Recipe:</span>
+          <div className="source-list crafting-source-list">
+            {cookingSources.map((src, i) => {
+              const unlockText = formatUnlockCondition(src.unlockCondition)
+              return (
+                <div key={i} className="crafting-source-entry">
+                  <div className="crafting-meta">
+                    {unlockText && (
+                      <span className="crafting-meta-row">
+                        <span className="crafting-meta-label">Unlocked</span>
+                        <span className="crafting-meta-value">{unlockText}</span>
                       </span>
-                      <span />
-                      <span className="source-detail">×{ing.amount}</span>
-                    </span>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+                    )}
+                  </div>
+                  {src.ingredientDetails?.length > 0 && (
+                    src.ingredientDetails.map((ing, j) => {
+                      const ingItem = (ing.id ? findById(ing.id) : null)
+                        ?? (ing.gameId != null ? (findByGameId(`(O)${ing.gameId}`) ?? findByGameId(ing.gameId)) : null)
+                      return (
+                        <span key={j} className="source-entry source-entry--subrow">
+                          <span className="source-name">
+                            {ingItem ? (
+                              <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                            ) : (
+                              ing.name || `Item #${ing.gameId}`
+                            )}
+                          </span>
+                          <span />
+                          <span className="source-detail">×{ing.amount}</span>
+                        </span>
+                      )
+                    })
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </div>
       )}
 
@@ -255,6 +291,51 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 </span>
               )
             })}
+          </div>
+        </div>
+      )}
+
+      {hatchSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Hatched From:</span>
+          <div className="source-list">
+            {hatchSources.flatMap((src, i) => {
+              const incubatorEntity = src.id ? findById(src.id) : null
+              return (src.inputDetails || []).map((inputDetail, j) => {
+                const inputItem = inputDetail.inputGameId ? findByGameId(inputDetail.inputGameId) : null
+                const inputDisplay = inputItem
+                  ? <ModalItemButton item={inputItem} variant="inline" onNavigate={onNavigate} />
+                  : inputDetail.inputName || null
+                return (
+                  <span key={`${i}-${j}`} className="source-entry">
+                    <span className="source-name">
+                      {incubatorEntity
+                        ? <ModalItemButton item={incubatorEntity} variant="inline" onNavigate={onNavigate} />
+                        : src.id}
+                    </span>
+                    {(inputDisplay || src.processingTimeMinutes) && (
+                      <span className="source-qualifiers">
+                        <span className="source-qualifier">
+                          {inputDisplay}
+                          {src.processingTimeMinutes && <> for {formatProcessingTime(src.processingTimeMinutes)}</>}
+                        </span>
+                      </span>
+                    )}
+                  </span>
+                )
+              })
+            })}
+          </div>
+        </div>
+      )}
+
+      {pregnancySources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Also Born From:</span>
+          <div className="source-list">
+            <span className="source-entry">
+              <span className="source-name source-name--indented">Pregnant animals of the same species</span>
+            </span>
           </div>
         </div>
       )}
@@ -299,10 +380,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                       src.id
                     )}
                   </span>
-                  {inputDisplay && <span className="source-qualifiers"><span className="source-qualifier">{inputDisplay}</span></span>}
-                  {entity.processingTimeMinutes &&
-                    <span className="source-detail">{formatProcessingTime(entity.processingTimeMinutes)}</span>
-                  }
+                  {(inputDisplay || src.processingTimeMinutes) && (
+                    <span className="source-qualifiers">
+                      <span className="source-qualifier">
+                        {inputDisplay}
+                        {src.processingTimeMinutes && <> for {formatProcessingTime(src.processingTimeMinutes)}</>}
+                      </span>
+                    </span>
+                  )}
                 </span>
               )
             })}
@@ -394,7 +479,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                     {(badge, clauseElements, open) => (
                       <>
                         <span className="source-entry">
-                          <span className="source-name">{senderNode}</span>
+                          <span className="source-name source-name--indented">{senderNode}</span>
                           <span className="source-qualifiers">
                             {specialOrderLabel && <span className="source-qualifier">{specialOrderLabel}</span>}
                             {badge}
@@ -412,7 +497,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               }
               return (
                 <span key={i} className="source-entry">
-                  <span className="source-name">{senderNode}</span>
+                  <span className="source-name source-name--indented">{senderNode}</span>
                   <span className="source-qualifiers">
                     {specialOrderLabel && <span className="source-qualifier">{specialOrderLabel}</span>}
                     {stringCondition && <span className="source-qualifier">{stringCondition}</span>}
@@ -420,6 +505,24 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 </span>
               )
             })}
+          </div>
+        </div>
+      )}
+
+      {rewardSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Reward From:</span>
+          <div className="source-list">
+            {rewardSources.map((src, i) => (
+              <span key={i} className="source-entry">
+                <span className="source-name source-name--indented">{src.rewardSourceName}</span>
+                {src.condition && (
+                  <span className="source-qualifiers">
+                    <span className="source-qualifier">{src.condition}</span>
+                  </span>
+                )}
+              </span>
+            ))}
           </div>
         </div>
       )}

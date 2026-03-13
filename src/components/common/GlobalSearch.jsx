@@ -1,43 +1,16 @@
 import { useState, useEffect, useRef, useCallback, useMemo, useId } from 'react'
 import { createPortal } from 'react-dom'
 import { useEntities } from '../../contexts/EntityContext'
-import { useModalStack, useModal } from '../../contexts/ModalContext'
+import { useModalStack, useOpenModal } from '../../contexts/ModalContext'
 import { useDebounce } from '../../hooks/useDebounce'
+import { getEntityLabel } from '../../utils/Formatters'
 import './GlobalSearch.css'
-
-const TYPE_LABELS = {
-  'fish': 'Fish',
-  'artisan': 'Artisan',
-  'forage': 'Forage',
-  'fruit': 'Fruit',
-  'vegetable': 'Vegetable',
-  'flower': 'Flower',
-  'seed': 'Seed',
-  'mineral': 'Mineral',
-  'metal-bar': 'Metal Bar',
-  'monster-loot': 'Monster Loot',
-  'resource': 'Resource',
-  'big-craftable': 'Big Craftable',
-  'animal-product': 'Animal Product',
-  'tree-fruit': 'Tree Fruit',
-  'hat': 'Hat',
-  'store': 'Shop',
-  'buff': 'Buff',
-  'event': 'Event',
-  'villager': 'Villager',
-  'festival': 'Festival',
-  'weapon': 'Weapon',
-  'boot': 'Boots',
-  'trinket': 'Trinket',
-  'tool': 'Tool',
-  'building': 'Building',
-}
 
 function GlobalSearch({ isOpen, onClose }) {
   const searchId = useId()
   const { items } = useEntities()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
-  const { openModal } = useModal()
+  const openModal = useOpenModal()
 
   const [query, setQuery] = useState('')
   const [highlightedIndex, setHighlightedIndex] = useState(0)
@@ -105,7 +78,7 @@ function GlobalSearch({ isOpen, onClose }) {
     const filtered = searchable.filter(item => {
       if (item.isGeneric || item.isHidden) return false
       if (item.name?.toLowerCase().includes(q)) return true
-      const label = TYPE_LABELS[item.type || item.entityType]
+      const label = getEntityLabel(item)
       return label?.toLowerCase().includes(q)
     })
 
@@ -205,7 +178,7 @@ function GlobalSearch({ isOpen, onClose }) {
                   const iconPath = item.icon
                     ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
                     : null
-                  const categoryLabel = TYPE_LABELS[item.type || item.entityType] || ''
+                  const categoryLabel = getEntityLabel(item)
 
                   return (
                     <li

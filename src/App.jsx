@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, memo } from 'react'
 import FishPage from './components/fish/FishPage'
 import ArtisanPage from './components/artisan/ArtisanPage'
 import ForagePage from './components/forage/ForagePage'
@@ -135,7 +135,7 @@ function Navigation({ onSearchOpen }) {
   )
 }
 
-function MainContent() {
+const MainContent = memo(function MainContent() {
   const location = useLocation()
 
   return (
@@ -159,7 +159,7 @@ function MainContent() {
       </div>
     </div>
   )
-}
+})
 
 function AppShell({ searchOpen, setSearchOpen }) {
   const { activeEntity, openModal, closeModal } = useModal()
