@@ -16,12 +16,6 @@
     "seasons": [
       "spring"
     ],
-    "locations": [
-      "Backwoods",
-      "Forest",
-      "Mountain",
-      "Woods"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -97,11 +91,6 @@
     ],
     "seasons": [
       "spring"
-    ],
-    "locations": [
-      "BusStop",
-      "Railroad",
-      "Town"
     ],
     "isFlower": false,
     "bundles": [],
@@ -189,12 +178,6 @@
     "seasons": [
       "spring"
     ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Mountain",
-      "Railroad"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -262,11 +245,6 @@
     ],
     "seasons": [
       "spring"
-    ],
-    "locations": [
-      "BusStop",
-      "Forest",
-      "Railroad"
     ],
     "isFlower": false,
     "bundles": [],
@@ -353,7 +331,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -431,9 +408,6 @@
       "fall",
       "winter"
     ],
-    "locations": [
-      "Desert"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -499,9 +473,6 @@
       "summer",
       "fall",
       "winter"
-    ],
-    "locations": [
-      "Desert"
     ],
     "isFlower": false,
     "bundles": [],
@@ -569,9 +540,6 @@
     "seasons": [
       "spring"
     ],
-    "locations": [
-      "Woods"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -636,9 +604,6 @@
     ],
     "seasons": [
       "summer"
-    ],
-    "locations": [
-      "Woods"
     ],
     "isFlower": false,
     "bundles": [],
@@ -727,10 +692,6 @@
     "seasons": [
       "fall"
     ],
-    "locations": [
-      "IslandNorthCave1",
-      "Woods"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -786,14 +747,6 @@
     ],
     "seasons": [
       "winter"
-    ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Forest",
-      "Mountain",
-      "Town",
-      "Woods"
     ],
     "isFlower": false,
     "bundles": [],
@@ -879,9 +832,6 @@
       "summer",
       "winter"
     ],
-    "locations": [
-      "Beach"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -956,9 +906,6 @@
     "seasons": [
       "winter"
     ],
-    "locations": [
-      "Beach"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1021,7 +968,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1059,9 +1005,6 @@
     ],
     "seasons": [
       "summer"
-    ],
-    "locations": [
-      "Beach"
     ],
     "isFlower": false,
     "bundles": [],
@@ -1140,13 +1083,6 @@
     ],
     "seasons": [
       "summer"
-    ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Forest",
-      "Mountain",
-      "Railroad"
     ],
     "isFlower": false,
     "bundles": [],
@@ -1232,7 +1168,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1317,12 +1252,6 @@
     "seasons": [
       "summer"
     ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Mountain",
-      "Railroad"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1390,7 +1319,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1437,12 +1365,6 @@
     ],
     "seasons": [
       "summer"
-    ],
-    "locations": [
-      "BusStop",
-      "Forest",
-      "Railroad",
-      "Town"
     ],
     "isFlower": true,
     "bundles": [],
@@ -1529,13 +1451,6 @@
       "fall",
       "spring"
     ],
-    "locations": [
-      "Backwoods",
-      "Forest",
-      "IslandNorthCave1",
-      "Mountain",
-      "Woods"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1616,12 +1531,6 @@
     "seasons": [
       "fall"
     ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Mountain",
-      "Railroad"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1684,12 +1593,6 @@
     ],
     "seasons": [
       "fall"
-    ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Mountain",
-      "Railroad"
     ],
     "isFlower": false,
     "bundles": [],
@@ -1768,11 +1671,6 @@
     "seasons": [
       "fall"
     ],
-    "locations": [
-      "Forest",
-      "Railroad",
-      "Town"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1836,7 +1734,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -1894,14 +1791,6 @@
     ],
     "seasons": [
       "winter"
-    ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Forest",
-      "Mountain",
-      "Railroad",
-      "Town"
     ],
     "isFlower": false,
     "bundles": [],
@@ -1985,7 +1874,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -2040,14 +1928,6 @@
     ],
     "seasons": [
       "winter"
-    ],
-    "locations": [
-      "Backwoods",
-      "BusStop",
-      "Forest",
-      "Mountain",
-      "Railroad",
-      "Town"
     ],
     "isFlower": true,
     "bundles": [],
@@ -2147,11 +2027,6 @@
       "summer",
       "winter"
     ],
-    "locations": [
-      "IslandNorthCave1",
-      "Mines (Floors 81-119)",
-      "Woods"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -2246,10 +2121,6 @@
       "summer",
       "winter"
     ],
-    "locations": [
-      "IslandNorthCave1",
-      "Mines (Floors 81-119)"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -2329,9 +2200,6 @@
       "summer",
       "winter"
     ],
-    "locations": [
-      "Beach"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -2409,9 +2277,6 @@
       "spring",
       "summer",
       "winter"
-    ],
-    "locations": [
-      "Beach"
     ],
     "isFlower": false,
     "bundles": [],
@@ -2492,9 +2357,6 @@
       "summer",
       "winter"
     ],
-    "locations": [
-      "Beach"
-    ],
     "isFlower": false,
     "bundles": [],
     "gifts": {
@@ -2571,7 +2433,6 @@
       "fall",
       "winter"
     ],
-    "locations": [],
     "isFlower": false,
     "bundles": [],
     "gifts": {

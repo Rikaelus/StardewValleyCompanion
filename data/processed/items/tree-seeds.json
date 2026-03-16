@@ -118,7 +118,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 70
       },
       {
@@ -266,7 +266,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 30,
         "yearUnlock": 2
       },
@@ -336,7 +336,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -472,7 +472,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -540,7 +540,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -816,7 +816,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -974,12 +974,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 150
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 150
       },
       {
@@ -1063,7 +1063,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 240
       },
       {
@@ -1139,7 +1139,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -1226,7 +1226,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
@@ -1472,7 +1472,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40,
         "yearUnlock": 2
       },
@@ -1542,7 +1542,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -1618,7 +1618,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -1694,7 +1694,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 30
       },
       {
@@ -1770,7 +1770,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 70
       },
       {
@@ -2016,7 +2016,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -2577,7 +2577,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -2653,7 +2653,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40
       },
       {
@@ -2866,7 +2866,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100
       },
       {
@@ -2942,7 +2942,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -3085,7 +3085,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100
       },
       {
@@ -3229,7 +3229,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40
       },
       {
@@ -3370,7 +3370,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100,
         "yearUnlock": 2
       },
@@ -3583,7 +3583,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -4074,12 +4074,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
@@ -4341,7 +4341,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -4417,7 +4417,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -4493,12 +4493,12 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 10
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 10
       },
       {
@@ -4686,7 +4686,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {

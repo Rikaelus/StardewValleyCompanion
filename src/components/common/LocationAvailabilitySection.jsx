@@ -7,6 +7,24 @@ import { formatTime, formatProcessingTime, computeDropCountDistribution, formatC
 import ConditionBadge from './ConditionBadge'
 import InfoTooltip from './InfoTooltip'
 
+const FISH_TAG_LABELS = {
+  'fish_ocean': 'Any Ocean Fish',
+  'fish_freshwater': 'Any Freshwater Fish',
+  'fish_river': 'Any River Fish',
+  'fish_lake': 'Any Lake Fish',
+  'fish_legendary': 'Any Legendary Fish',
+  'fish_desert': 'Any Desert Fish',
+  'fish_semi_rare': 'Any Semi-Rare Fish',
+  'fish_carnivorous': 'Any Carnivorous Fish',
+  'category_fish': 'Any Fish',
+}
+
+function formatFishTag(tag) {
+  if (FISH_TAG_LABELS[tag]) return FISH_TAG_LABELS[tag]
+  // item_lava_eel → Lava Eel
+  return tag.replace(/^item_/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+}
+
 function formatUnlockCondition(condition) {
   if (!condition) return null
   if (condition.type === 'skill') return `${condition.skill[0].toUpperCase()}${condition.skill.slice(1)} level ${condition.level}+`
@@ -38,6 +56,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const seedSources = allSources.filter(s => s.type === 'seed')
   const fishSources = allSources.filter(s => s.type === 'fish')
   const forageSources = allSources.filter(s => s.type === 'forage')
+  const breakableDropSources = allSources.filter(s => s.type === 'breakable-drop')
   const otherSources = allSources.filter(s => s.type === 'other')
   const mailSources = allSources.filter(s => s.type === 'mail')
   const rewardSources = allSources.filter(s => s.type === 'reward')
@@ -49,6 +68,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
     animalSources.length > 0 || hatchSources.length > 0 || pregnancySources.length > 0 ||
     tapperSources.length > 0 || machineSources.length > 0 ||
     seedSources.length > 0 || fishSources.length > 0 || forageSources.length > 0 ||
+    breakableDropSources.length > 0 ||
     otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 || freeformSources.length > 0
 
   if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasBuyingInfo && !hasOtherSources) return null
@@ -104,13 +124,20 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Tilling / Digging:</span>
           <div className="source-list">
-            {tillingSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name">{src.location}</span>
-                <span />
-                <span className="source-detail">{formatChance(src.chance)}</span>
-              </span>
-            ))}
+            {tillingSources.map((src, i) => {
+              const locEntity = src.locationId ? findById(src.locationId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {locEntity
+                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.location}
+                  </span>
+                  <span />
+                  <span className="source-detail">{formatChance(src.chance)}</span>
+                </span>
+              )
+            })}
           </div>
         </div>
       )}
@@ -121,7 +148,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
           <div className="source-list">
             {fishPondSources.map((src, i) => (
               <span key={i} className="source-entry">
-                <span className="source-name" style={{ textTransform: 'capitalize' }}>{src.fishTag.replace(/_/g, ' ')} pond</span>
+                <span className="source-name source-name--indented">{formatFishTag(src.fishTag)} Pond</span>
                 <span className="source-qualifiers"><span className="source-qualifier">Population: {src.minPopulation}+</span></span>
                 <span className="source-detail">{formatChance(src.chance)}</span>
               </span>
@@ -159,6 +186,30 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                       formatChance(src.rolls?.[0] ?? 0)
                     )}
                   </span>
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {breakableDropSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Breakable Containers:</span>
+          <div className="source-list">
+            {breakableDropSources.map((src, i) => {
+              const breakableEntity = src.breakableId ? findById(src.breakableId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {breakableEntity
+                      ? <ModalItemButton item={breakableEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.breakableId}
+                  </span>
+                  <span />
+                  {src.chance != null && (
+                    <span className="source-detail">{formatChance(src.chance)}</span>
+                  )}
                 </span>
               )
             })}
@@ -427,14 +478,21 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Caught At:</span>
           <div className="source-list">
-            {fishSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name">{src.location}</span>
-                <span className="source-qualifiers">
-                  <SeasonBadges seasons={src.seasons ?? ['spring', 'summer', 'fall', 'winter']} compact />
+            {fishSources.map((src, i) => {
+              const locEntity = src.locationId ? findById(src.locationId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {locEntity
+                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.location}
+                  </span>
+                  <span className="source-qualifiers">
+                    <SeasonBadges seasons={src.seasons ?? ['spring', 'summer', 'fall', 'winter']} compact />
+                  </span>
                 </span>
-              </span>
-            ))}
+              )
+            })}
           </div>
         </div>
       )}
@@ -445,9 +503,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
           <div className="source-list">
             {forageSources.map((src, i) => {
               const seasons = src.seasons ?? (src.season ? [src.season] : ['spring', 'summer', 'fall', 'winter'])
+              const locEntity = src.locationId ? findById(src.locationId) : null
               return (
                 <span key={i} className="source-entry">
-                  <span className="source-name">{src.location}</span>
+                  <span className="source-name">
+                    {locEntity
+                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.location}
+                  </span>
                   <span className="source-qualifiers">
                     <SeasonBadges seasons={seasons} compact />
                   </span>

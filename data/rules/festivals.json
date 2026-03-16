@@ -11,12 +11,7 @@
         "open": 900,
         "close": 1400
       },
-      "address": "Pelican Town",
-      "locations": [
-        {
-          "id": "loc-egg-festival"
-        }
-      ]
+      "address": "Pelican Town"
     },
     "fest-flower-dance": {
       "id": "fest-flower-dance",
@@ -28,12 +23,7 @@
         "open": 900,
         "close": 1400
       },
-      "address": "Cindersap Forest",
-      "locations": [
-        {
-          "id": "loc-flower-dance"
-        }
-      ]
+      "address": "Cindersap Forest"
     },
     "fest-luau": {
       "id": "fest-luau",
@@ -45,12 +35,7 @@
         "open": 900,
         "close": 1400
       },
-      "address": "Beach",
-      "locations": [
-        {
-          "id": "loc-luau"
-        }
-      ]
+      "address": "Beach"
     },
     "fest-moonlight-jellies": {
       "id": "fest-moonlight-jellies",
@@ -62,12 +47,7 @@
         "open": 2000,
         "close": 2400
       },
-      "address": "Beach",
-      "locations": [
-        {
-          "id": "loc-moonlight-jellies"
-        }
-      ]
+      "address": "Beach"
     },
     "fest-stardew-valley-fair": {
       "id": "fest-stardew-valley-fair",
@@ -79,12 +59,7 @@
         "open": 900,
         "close": 1500
       },
-      "address": "Pelican Town",
-      "locations": [
-        {
-          "id": "loc-stardew-valley-fair"
-        }
-      ]
+      "address": "Pelican Town"
     },
     "fest-spirits-eve": {
       "id": "fest-spirits-eve",
@@ -96,12 +71,7 @@
         "open": 2000,
         "close": 2400
       },
-      "address": "Pelican Town",
-      "locations": [
-        {
-          "id": "loc-spirits-eve"
-        }
-      ]
+      "address": "Pelican Town"
     },
     "fest-festival-of-ice": {
       "id": "fest-festival-of-ice",
@@ -113,12 +83,7 @@
         "open": 900,
         "close": 1400
       },
-      "address": "Cindersap Forest",
-      "locations": [
-        {
-          "id": "loc-festival-of-ice"
-        }
-      ]
+      "address": "Cindersap Forest"
     },
     "fest-winter-star": {
       "id": "fest-winter-star",
@@ -130,12 +95,7 @@
         "open": 900,
         "close": 1400
       },
-      "address": "Pelican Town",
-      "locations": [
-        {
-          "id": "loc-winter-star"
-        }
-      ]
+      "address": "Pelican Town"
     },
     "fest-night-market": {
       "id": "fest-night-market",
@@ -148,22 +108,7 @@
         "open": 1700,
         "close": 2400
       },
-      "address": "Beach",
-      "locations": [
-        {
-          "id": "loc-night-market-decoration"
-        },
-        {
-          "id": "loc-night-market-magic"
-        },
-        {
-          "id": "loc-night-market-lupini"
-        },
-        {
-          "id": "loc-traveling-merchant",
-          "note": "Visits all 3 nights of the Night Market"
-        }
-      ]
+      "address": "Beach"
     },
     "fest-desert-festival": {
       "id": "fest-desert-festival",
@@ -176,201 +121,7 @@
         "open": 1000,
         "close": 2400
       },
-      "address": "Calico Desert",
-      "locations": [
-        {
-          "id": "loc-desert-festival-egg-shop"
-        },
-        {
-          "id": "loc-desert-festival-abigail",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-alex",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-caroline",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-clint",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-demetrius",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-elliott",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-emily",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-evelyn",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-george",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-gus",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-haley",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-harvey",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-jas",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-jodi",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-kent",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-leah",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-leo",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-marnie",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-maru",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-pam",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-penny",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-pierre",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-robin",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-sam",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-sebastian",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-shane",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        },
-        {
-          "id": "loc-desert-festival-vincent",
-          "rotation": {
-            "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
-          }
-        }
-      ]
+      "address": "Calico Desert"
     }
   }
 }

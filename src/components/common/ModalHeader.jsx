@@ -17,9 +17,14 @@ function ModalHeader({ icon, name, subtitle, children, className = '' }) {
 
   return (
     <div className={`modal-item-header ${className}`}>
-      {iconError ? (
+      {!icon || iconError ? (
         <div className="modal-item-header-icon-fallback" title={`${name} (icon not found)`}>
-          {name.slice(0, 2).toUpperCase()}
+          {(() => {
+          const words = name.split(/\s+/)
+          return words.length > 1
+            ? (words[0][0] + words[1][0]).toUpperCase()
+            : name.slice(0, 2).toUpperCase()
+        })()}
         </div>
       ) : (
         <img

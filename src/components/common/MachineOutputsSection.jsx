@@ -11,7 +11,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
   // Animal-specific harvest context
   let harvestToolItem = null
   let harvestFrequency = null
-  if (entity.category === 'animal') {
+  if (entity.type === 'animal') {
     if (entity.harvestTool) {
       const toolId = entity.harvestTool.toLowerCase().replace(/\s+/g, '-')
       harvestToolItem = findById(toolId)

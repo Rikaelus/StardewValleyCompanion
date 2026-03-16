@@ -10,6 +10,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 2,
+        "days": [
+          "Winter 16"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -152,6 +161,15 @@
     "icon": "assets/objects/Clouds.png",
     "wikiName": "Clouds",
     "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 2,
+        "days": [
+          "Winter 15"
+        ]
+      },
       {
         "type": "shop",
         "id": "furniture-catalogue",
@@ -359,6 +377,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 3,
+        "days": [
+          "Winter 17"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -471,6 +498,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 1,
+        "days": [
+          "Winter 16"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -519,6 +555,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 1,
+        "days": [
+          "Winter 15"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -549,6 +594,15 @@
     "icon": "assets/objects/SolarKingdom.png",
     "wikiName": "Solar_Kingdom",
     "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 1,
+        "days": [
+          "Winter 17"
+        ]
+      },
       {
         "type": "shop",
         "id": "furniture-catalogue",
@@ -711,6 +765,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 3,
+        "days": [
+          "Winter 15"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -743,6 +806,15 @@
     "sources": [
       {
         "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 2,
+        "days": [
+          "Winter 17"
+        ]
+      },
+      {
+        "type": "shop",
         "id": "furniture-catalogue",
         "price": 0
       }
@@ -757,6 +829,15 @@
     "icon": "assets/objects/TropicalFish173.png",
     "wikiName": "Tropical_Fish_#173",
     "sources": [
+      {
+        "type": "shop",
+        "id": "loc-night-market-lupini",
+        "price": 1200,
+        "yearCycle": 3,
+        "days": [
+          "Winter 16"
+        ]
+      },
       {
         "type": "shop",
         "id": "furniture-catalogue",
@@ -2536,7 +2617,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 1000
       },
       {
@@ -2708,7 +2789,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 2500,
         "condition": {
           ">=": [
@@ -2721,7 +2802,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 2500,
         "condition": {
           ">=": [
@@ -2734,7 +2815,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 2500,
         "condition": {
           ">=": [
@@ -5488,17 +5569,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 15000
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 15000
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 15000
       },
       {
@@ -8525,7 +8606,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 800
       },
       {
@@ -10301,7 +10382,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 800
       },
       {
@@ -10698,17 +10779,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100000
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100000
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100000
       },
       {

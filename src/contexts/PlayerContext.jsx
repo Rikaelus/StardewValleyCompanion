@@ -8,6 +8,7 @@ const DEFAULT_PLAYER = {
   name: '',
   farmName: '',
   jojaMember: false,
+  recentSearches: [],
   professions: {
     // Farming Level 5 & 10
     tiller: false,     // Crops worth 10% more
@@ -69,13 +70,22 @@ export function PlayerProvider({ children }) {
     }))
   }, [])
 
+  const addRecentSearch = useCallback((query) => {
+    const q = query.trim()
+    if (!q) return
+    setPlayerState(prev => {
+      const filtered = (prev.recentSearches || []).filter(s => s.toLowerCase() !== q.toLowerCase())
+      return { ...prev, recentSearches: [q, ...filtered].slice(0, 5) }
+    })
+  }, [])
+
   const resetPlayer = useCallback(() => {
     setPlayerState(DEFAULT_PLAYER)
   }, [])
 
   const value = useMemo(
-    () => ({ player, setPlayer, setProfession, resetPlayer }),
-    [player, setPlayer, setProfession, resetPlayer]
+    () => ({ player, setPlayer, setProfession, addRecentSearch, resetPlayer }),
+    [player, setPlayer, setProfession, addRecentSearch, resetPlayer]
   )
 
   return (

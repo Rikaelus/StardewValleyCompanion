@@ -8,11 +8,6 @@
     "hp": 24,
     "resilience": 5,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 1–39)",
-      "Skull Cavern",
-      "Farm (Wilderness)"
-    ],
     "drops": [
       {
         "gameId": 766,
@@ -62,9 +57,6 @@
     "hp": 40,
     "resilience": 6,
     "damageToFarmer": 2,
-    "locations": [
-      "Mines (Floors 40–79)"
-    ],
     "drops": [
       {
         "gameId": 382,
@@ -119,9 +111,6 @@
     "hp": 24,
     "resilience": 6,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 1–39)"
-    ],
     "drops": [
       {
         "gameId": 767,
@@ -165,9 +154,6 @@
     "hp": 36,
     "resilience": 7,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 40–79)"
-    ],
     "drops": [
       {
         "gameId": 767,
@@ -211,9 +197,6 @@
     "hp": 80,
     "resilience": 15,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 767,
@@ -257,9 +240,6 @@
     "hp": 300,
     "resilience": 30,
     "damageToFarmer": 1,
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 386,
@@ -317,9 +297,6 @@
     "hp": 45,
     "resilience": 5,
     "damageToFarmer": 5,
-    "locations": [
-      "Mines (Floors 1–39)"
-    ],
     "drops": [
       {
         "gameId": 390,
@@ -368,9 +345,6 @@
     "hp": 30,
     "resilience": 5,
     "damageToFarmer": 1,
-    "locations": [
-      "Farm (Wilderness)"
-    ],
     "drops": [
       {
         "gameId": 771,
@@ -414,9 +388,6 @@
     "hp": 30,
     "resilience": 5,
     "damageToFarmer": 1,
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 771,
@@ -460,9 +431,6 @@
     "hp": 20,
     "resilience": 4,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines (Floors 1–39)"
-    ],
     "drops": [
       {
         "gameId": 684,
@@ -512,9 +480,6 @@
     "hp": 22,
     "resilience": 6,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 684,
@@ -557,9 +522,6 @@
     "hp": 106,
     "resilience": 7,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines (Floors 40–79)"
-    ],
     "drops": [
       {
         "gameId": 766,
@@ -614,10 +576,6 @@
     "hp": 205,
     "resilience": 16,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines (Floors 80–119)",
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 766,
@@ -666,9 +624,6 @@
     "hp": 125,
     "resilience": 20,
     "damageToFarmer": 2,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -752,9 +707,6 @@
       "min": 0,
       "max": 3
     },
-    "locations": [
-      "Mines (Floors 60+)"
-    ],
     "drops": [
       {
         "gameId": 768,
@@ -802,9 +754,6 @@
       "min": 0,
       "max": 3
     },
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 749,
@@ -829,9 +778,6 @@
     "hp": 40,
     "resilience": 6,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines (Floors 1–39)"
-    ],
     "drops": [
       {
         "gameId": 286,
@@ -892,10 +838,6 @@
     "hp": 30,
     "resilience": 5,
     "damageToFarmer": 1,
-    "locations": [
-      "Mines (Floors 1–39)",
-      "Beach"
-    ],
     "drops": [
       {
         "gameId": 717,
@@ -932,9 +874,6 @@
     "hp": 30,
     "resilience": 5,
     "damageToFarmer": 1,
-    "locations": [
-      "Ginger Island (Beach)"
-    ],
     "drops": [
       {
         "gameId": 430,
@@ -967,9 +906,6 @@
     "hp": 120,
     "resilience": 15,
     "damageToFarmer": 3,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 717,
@@ -1006,9 +942,6 @@
     "hp": 240,
     "resilience": 15,
     "damageToFarmer": 3,
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 732,
@@ -1035,9 +968,6 @@
     "hp": 1,
     "resilience": 18,
     "damageToFarmer": 2,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 768,
@@ -1096,9 +1026,6 @@
       "min": 1,
       "max": 3
     },
-    "locations": [
-      "Mines (Floors 70–79)"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -1171,10 +1098,6 @@
     "hp": 160,
     "resilience": 18,
     "damageToFarmer": 2,
-    "locations": [
-      "Mines (Floors 80–119)",
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -1248,10 +1171,6 @@
     "hp": 80,
     "resilience": 17,
     "damageToFarmer": 2,
-    "locations": [
-      "Mines (Floors 80–119)",
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -1323,9 +1242,6 @@
       "min": 0,
       "max": 2
     },
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 881,
@@ -1356,9 +1272,6 @@
       "min": 0,
       "max": 2
     },
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": []
   },
   {
@@ -1370,9 +1283,6 @@
     "hp": 40,
     "resilience": 15,
     "damageToFarmer": 8,
-    "locations": [
-      "Mines (Floors 80–119)"
-    ],
     "drops": [
       {
         "gameId": 768,
@@ -1423,9 +1333,6 @@
     "hp": 5,
     "resilience": 15,
     "damageToFarmer": 4,
-    "locations": [
-      "Mines (Floors 40–79)"
-    ],
     "drops": [
       {
         "gameId": 378,
@@ -1458,9 +1365,6 @@
     "hp": 1,
     "resilience": 8,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines (Floors 1–39)"
-    ],
     "drops": [
       {
         "gameId": 684,
@@ -1507,9 +1411,6 @@
       "min": 0,
       "max": 3
     },
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 768,
@@ -1560,11 +1461,6 @@
     "hp": 60,
     "resilience": 5,
     "damageToFarmer": 0,
-    "locations": [
-      "Mines",
-      "Skull Cavern",
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 766,
@@ -1595,9 +1491,6 @@
       "min": 0,
       "max": 2
     },
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -1641,9 +1534,6 @@
     "hp": 300,
     "resilience": 15,
     "damageToFarmer": 5,
-    "locations": [
-      "Skull Cavern"
-    ],
     "drops": []
   },
   {
@@ -1655,10 +1545,6 @@
     "hp": 415,
     "resilience": 23,
     "damageToFarmer": 0,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)",
-      "Skull Cavern (Dangerous)"
-    ],
     "drops": [
       {
         "gameId": 766,
@@ -1707,9 +1593,6 @@
     "hp": 220,
     "resilience": 15,
     "damageToFarmer": 5,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 881,
@@ -1736,9 +1619,6 @@
     "hp": 250,
     "resilience": 18,
     "damageToFarmer": 8,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 768,
@@ -1802,9 +1682,6 @@
     "hp": 220,
     "resilience": 15,
     "damageToFarmer": 8,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 848,
@@ -1824,9 +1701,6 @@
     "hp": 380,
     "resilience": 16,
     "damageToFarmer": 0,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 831,
@@ -1859,9 +1733,6 @@
     "hp": 310,
     "resilience": 15,
     "damageToFarmer": 8,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 848,
@@ -1881,9 +1752,6 @@
     "hp": 290,
     "resilience": 15,
     "damageToFarmer": 3,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 851,
@@ -1909,9 +1777,6 @@
     "hp": 300,
     "resilience": 18,
     "damageToFarmer": 5,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 60,
@@ -1970,9 +1835,6 @@
       "min": 0,
       "max": 3
     },
-    "locations": [
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 749,
@@ -1991,9 +1853,6 @@
     "hp": 300,
     "resilience": 18,
     "damageToFarmer": 2,
-    "locations": [
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -2067,9 +1926,6 @@
     "hp": 200,
     "resilience": 15,
     "damageToFarmer": 2,
-    "locations": [
-      "Witch's Swamp"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -2147,9 +2003,6 @@
       "min": 0,
       "max": 2
     },
-    "locations": [
-      "Skull Cavern (Dangerous)"
-    ],
     "drops": [
       {
         "gameId": 769,
@@ -2193,9 +2046,6 @@
     "hp": 80,
     "resilience": 18,
     "damageToFarmer": 2,
-    "locations": [
-      "Ginger Island (Volcano Dungeon)"
-    ],
     "drops": [
       {
         "gameId": 768,

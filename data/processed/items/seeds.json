@@ -25,13 +25,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 70
       },
       {
@@ -132,13 +132,13 @@
       }
     ],
     "sellers": [
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 30,
         "yearUnlock": 2
       },
@@ -183,13 +183,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -278,13 +278,13 @@
       }
     ],
     "sellers": [
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -327,13 +327,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -511,13 +511,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -628,18 +628,18 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 150
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 150
       },
       {
@@ -698,13 +698,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 240
       },
       {
@@ -755,13 +755,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -813,7 +813,7 @@
     "sellers": [
       "loc-desert-festival-jas",
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
@@ -830,7 +830,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
@@ -1039,13 +1039,13 @@
       }
     ],
     "sellers": [
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40,
         "yearUnlock": 2
       },
@@ -1090,13 +1090,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -1147,13 +1147,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {
@@ -1204,13 +1204,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 30
       },
       {
@@ -1261,13 +1261,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 70
       },
       {
@@ -1318,13 +1318,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 80
       },
       {
@@ -1705,13 +1705,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -1762,13 +1762,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40
       },
       {
@@ -1871,13 +1871,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100
       },
       {
@@ -1928,13 +1928,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -2027,13 +2027,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100
       },
       {
@@ -2130,13 +2130,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 40
       },
       {
@@ -2230,14 +2230,14 @@
       }
     ],
     "sellers": [
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre",
       "loc-traveling-merchant"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 100,
         "yearUnlock": 2
       },
@@ -2383,13 +2383,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -2799,18 +2799,18 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
@@ -2941,13 +2941,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 50
       },
       {
@@ -2998,13 +2998,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 20
       },
       {
@@ -3056,18 +3056,18 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 10
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 10
       },
       {
@@ -3239,13 +3239,13 @@
     ],
     "sellers": [
       "loc-joja",
-      "loc-night-market",
+      "loc-night-market-magic",
       "loc-pierre"
     ],
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 60
       },
       {

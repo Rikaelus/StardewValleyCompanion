@@ -62,7 +62,7 @@ namespace DataExporter
 
                     // NPCs & Characters
                     "Data/Characters",
-                    "Data/NPCDispositions",
+                    // NPCDispositions removed — replaced by Data/Characters in 1.6
                     "Data/NPCGiftTastes",
                     "Data/Pets",
                     "Data/Mannequins",
@@ -89,7 +89,7 @@ namespace DataExporter
                     "Data/MonsterSlayerQuests",
                     "Data/Achievements",
                     "Data/MuseumRewards",
-                    "Data/IslandFieldOffice",
+                    // IslandFieldOffice removed — doesn't exist as a data asset in 1.6
                     "Data/Powers",
 
                     // Buildings & Animals
@@ -141,7 +141,7 @@ namespace DataExporter
                     "Data/Events/HarveyRoom",
                     "Data/Events/Hospital",
                     "Data/Events/IslandFarmHouse",
-                    "Data/Events/IslandFieldOffice",
+                    // Data/Events/IslandFieldOffice removed — no .xnb exists in 1.6
                     "Data/Events/IslandHut",
                     "Data/Events/IslandNorth",
                     "Data/Events/IslandSouth",
@@ -193,13 +193,55 @@ namespace DataExporter
                     "Strings/FarmAnimals",
                     "Strings/BundleNames",
                     "Strings/EnchantmentNames",
+                    "Strings/Events",
                     "Strings/Movies",
+                    "Strings/MovieConcessions",
+                    "Strings/MovieReactions",
                     "Strings/Quests",
                     "Strings/SpecialOrderStrings",
                     "Strings/StringsFromCSFiles",
                     "Strings/Notes",
                     "Strings/Shirts",
                     "Strings/Pants",
+                    "Strings/WorldMap",
+                    "Strings/Lexicon",
+                    "Strings/SimpleNonVillagerDialogues",
+                    "Strings/SpeechBubbles",
+                    "Strings/StringsFromMaps",
+                    "Strings/animationDescriptions",
+                    "Strings/credits",
+
+                    // Per-villager schedule strings
+                    "Strings/schedules/Abigail",
+                    "Strings/schedules/Alex",
+                    "Strings/schedules/Caroline",
+                    "Strings/schedules/Clint",
+                    "Strings/schedules/Demetrius",
+                    "Strings/schedules/Elliott",
+                    "Strings/schedules/Emily",
+                    "Strings/schedules/Evelyn",
+                    "Strings/schedules/George",
+                    "Strings/schedules/Gus",
+                    "Strings/schedules/Haley",
+                    "Strings/schedules/Harvey",
+                    "Strings/schedules/Jas",
+                    "Strings/schedules/Jodi",
+                    "Strings/schedules/Leah",
+                    "Strings/schedules/Leo",
+                    "Strings/schedules/Lewis",
+                    "Strings/schedules/Linus",
+                    "Strings/schedules/Marnie",
+                    "Strings/schedules/Maru",
+                    "Strings/schedules/Pam",
+                    "Strings/schedules/Penny",
+                    "Strings/schedules/Pierre",
+                    "Strings/schedules/Robin",
+                    "Strings/schedules/Sam",
+                    "Strings/schedules/Sandy",
+                    "Strings/schedules/Sebastian",
+                    "Strings/schedules/Shane",
+                    "Strings/schedules/Vincent",
+                    "Strings/schedules/Willy",
                 };
 
                 int successCount = 0;

@@ -16,9 +16,6 @@
     "blockingMail": [
       "somethingWasDonated"
     ],
-    "locations": [
-      "Museum"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -45,9 +42,6 @@
     "marriageVariant": false,
     "daysOfWeek": [
       "Sat"
-    ],
-    "locations": [
-      "Pierre's General Store"
     ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
@@ -85,9 +79,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
   },
@@ -117,9 +108,6 @@
         "start": 2000,
         "end": 2200
       }
-    ],
-    "locations": [
-      "Pierre's General Store"
     ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
@@ -154,9 +142,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
   },
@@ -182,9 +167,6 @@
         "end": 800
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -209,9 +191,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -236,9 +215,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Clinic"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -272,9 +248,6 @@
         "end": 2340
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -299,9 +272,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -332,9 +302,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -360,9 +327,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
   },
@@ -387,9 +351,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
   },
@@ -422,9 +383,6 @@
         "start": 1000,
         "end": 1600
       }
-    ],
-    "locations": [
-      "Beach"
     ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
@@ -462,9 +420,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
   },
@@ -489,9 +444,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
   },
@@ -516,9 +468,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Pierre's General Store"
-    ],
     "icon": "assets/villagers/Pierre.png",
     "grantedBy": []
   },
@@ -544,9 +493,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Pierre's General Store"
-    ],
     "icon": "assets/villagers/Caroline.png",
     "grantedBy": []
   },
@@ -571,9 +517,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": "assets/villagers/George.png",
     "grantedBy": []
   },
@@ -598,9 +541,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": "assets/villagers/Evelyn.png",
     "grantedBy": []
   },
@@ -631,9 +571,6 @@
     "weather": [
       "sunny"
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -658,9 +595,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -686,9 +620,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": "assets/villagers/Demetrius.png",
     "grantedBy": []
   },
@@ -722,9 +653,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Linus.png",
     "grantedBy": []
   },
@@ -749,9 +677,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Sebastian's Room"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -785,9 +710,6 @@
         "end": 2300
       }
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -812,9 +734,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": "assets/villagers/Robin.png",
     "grantedBy": []
   },
@@ -848,9 +767,6 @@
         "end": 1400
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
   },
@@ -875,9 +791,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Pam & Penny's Trailer"
-    ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
   },
@@ -902,9 +815,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Pam & Penny's Trailer"
-    ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
   },
@@ -935,9 +845,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Spa Pool"
-    ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
   },
@@ -962,9 +869,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Elliott's House"
-    ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
   },
@@ -995,9 +899,6 @@
         "start": 1500,
         "end": 2200
       }
-    ],
-    "locations": [
-      "Stardrop Saloon"
     ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
@@ -1032,9 +933,6 @@
         "end": 1300
       }
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
   },
@@ -1059,9 +957,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Sam's House"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -1095,9 +990,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -1122,9 +1014,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Sam's House"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -1157,9 +1046,6 @@
         "end": 800
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -1184,9 +1070,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Leah's House"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -1211,9 +1094,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Leah's House"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -1241,9 +1121,6 @@
     "seasons": [
       "winter"
     ],
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -1268,9 +1145,6 @@
         "start": 1500,
         "end": 1700
       }
-    ],
-    "locations": [
-      "Town"
     ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
@@ -1308,9 +1182,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -1344,9 +1215,6 @@
         "end": 800
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -1372,9 +1240,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
   },
@@ -1399,9 +1264,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Clinic"
-    ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
   },
@@ -1432,9 +1294,6 @@
         "end": 1500
       }
     ],
-    "locations": [
-      "Pierre's General Store"
-    ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
   },
@@ -1458,9 +1317,6 @@
         "start": 600,
         "end": 1800
       }
-    ],
-    "locations": [
-      "Farm"
     ],
     "icon": "assets/villagers/Kent.png",
     "grantedBy": []
@@ -1486,9 +1342,6 @@
       }
     ],
     "minMoney": 25000,
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Demetrius.png",
     "grantedBy": []
   },
@@ -1507,9 +1360,6 @@
     "requiredEvents": [],
     "marriageVariant": false,
     "minMoney": 10,
-    "locations": [
-      "Oasis"
-    ],
     "icon": "assets/villagers/Sandy.png",
     "grantedBy": []
   },
@@ -1540,9 +1390,6 @@
         "end": 930
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Marnie.png",
     "grantedBy": []
   },
@@ -1570,9 +1417,6 @@
     ],
     "requiredItems": [
       "78"
-    ],
-    "locations": [
-      "Marnie's Ranch"
     ],
     "icon": null,
     "grantedBy": []
@@ -1612,9 +1456,6 @@
         "end": 930
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Jodi.png",
     "grantedBy": []
   },
@@ -1646,9 +1487,6 @@
     ],
     "requiredItems": [
       "136"
-    ],
-    "locations": [
-      "Sam's House"
     ],
     "icon": null,
     "grantedBy": []
@@ -1682,9 +1520,6 @@
     "requiredItems": [
       "136"
     ],
-    "locations": [
-      "Sam's House"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -1714,9 +1549,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": "assets/villagers/Gus.png",
     "grantedBy": []
   },
@@ -1755,9 +1587,6 @@
         "end": 2300
       }
     ],
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": "assets/villagers/Clint.png",
     "grantedBy": []
   },
@@ -1783,9 +1612,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Sam's House"
-    ],
     "icon": "assets/villagers/Kent.png",
     "grantedBy": []
   },
@@ -1823,9 +1649,6 @@
         "end": 1830
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Clint.png",
     "grantedBy": []
   },
@@ -1857,9 +1680,6 @@
       "Fri",
       "Sat"
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Pierre.png",
     "grantedBy": []
   },
@@ -1877,9 +1697,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Wizard's Tower"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -1897,9 +1714,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Bus Stop"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -1923,9 +1737,6 @@
         "end": 2600
       }
     ],
-    "locations": [
-      "Mines"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -1943,9 +1754,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -1978,9 +1786,6 @@
         "start": 900,
         "end": 1600
       }
-    ],
-    "locations": [
-      "Cindersap Forest"
     ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
@@ -2017,9 +1822,6 @@
       "ccFishTank",
       "ccPantry",
       "ccVault"
-    ],
-    "locations": [
-      "Town"
     ],
     "icon": "assets/villagers/Pierre.png",
     "grantedBy": []
@@ -2086,9 +1888,6 @@
       "195019"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2154,9 +1953,6 @@
       "195099"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2224,9 +2020,6 @@
     "marriageVariant": false,
     "requiredItems": [
       "446"
-    ],
-    "locations": [
-      "Haley & Emily's House"
     ],
     "icon": null,
     "grantedBy": []
@@ -2296,9 +2089,6 @@
     "requiredItems": [
       "446"
     ],
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2332,9 +2122,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -2361,9 +2148,6 @@
     "marriageVariant": false,
     "weather": [
       "sunny"
-    ],
-    "locations": [
-      "Beach"
     ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
@@ -2395,9 +2179,6 @@
       }
     ],
     "mineLevel": 10,
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Jas.png",
     "grantedBy": []
   },
@@ -2431,9 +2212,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Linus.png",
     "grantedBy": []
   },
@@ -2463,9 +2241,6 @@
         "start": 2000,
         "end": 2400
       }
-    ],
-    "locations": [
-      "Mountain"
     ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
@@ -2497,9 +2272,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -2520,9 +2292,6 @@
     "blockingMail": [
       "ccFishTank"
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Willy.png",
     "grantedBy": []
   },
@@ -2540,9 +2309,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Wizard's Tower"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2567,9 +2333,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Elliott's House"
-    ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
   },
@@ -2608,9 +2371,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -2635,9 +2395,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -2657,9 +2414,6 @@
     "marriageVariant": true,
     "weather": [
       "sunny"
-    ],
-    "locations": [
-      "Town"
     ],
     "icon": null,
     "grantedBy": [
@@ -2697,9 +2451,6 @@
       }
     ],
     "mineLevel": 7,
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Linus.png",
     "grantedBy": []
   },
@@ -2726,9 +2477,6 @@
     "marriageVariant": false,
     "blockingMail": [
       "pamHouseUpgrade"
-    ],
-    "locations": [
-      "Pam & Penny's House"
     ],
     "icon": "assets/villagers/Pam.png",
     "grantedBy": []
@@ -2760,9 +2508,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Railroad"
-    ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
   },
@@ -2780,9 +2525,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Railroad"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2801,9 +2543,6 @@
     "requiredEvents": [],
     "marriageVariant": true,
     "year": 3,
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2829,9 +2568,6 @@
         "end": 620
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -2856,9 +2592,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Clinic"
-    ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
   },
@@ -2883,9 +2616,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Leah's House"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -2907,9 +2637,6 @@
     "marriageVariant": false,
     "blockingMail": [
       "pamHouseUpgrade"
-    ],
-    "locations": [
-      "Town"
     ],
     "icon": null,
     "grantedBy": []
@@ -2940,9 +2667,6 @@
         "start": 2000,
         "end": 2400
       }
-    ],
-    "locations": [
-      "Cindersap Forest"
     ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
@@ -2982,9 +2706,6 @@
         "end": 2300
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Lewis.png",
     "grantedBy": []
   },
@@ -3002,9 +2723,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": true,
-    "locations": [
-      "Farm"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3031,10 +2749,6 @@
     "marriageVariant": false,
     "daysOfWeek": [
       "Fri"
-    ],
-    "locations": [
-      "Sewers",
-      "Wizard's Tower"
     ],
     "icon": "assets/villagers/Dwarf.png",
     "grantedBy": []
@@ -3066,9 +2780,6 @@
         "end": 1710
       }
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Willy.png",
     "grantedBy": []
   },
@@ -3094,9 +2805,6 @@
         "start": 900,
         "end": 1700
       }
-    ],
-    "locations": [
-      "Caroline's Sunroom"
     ],
     "icon": "assets/villagers/Caroline.png",
     "grantedBy": []
@@ -3135,9 +2843,6 @@
         "end": 1500
       }
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -3160,9 +2865,6 @@
         "start": 600,
         "end": 1710
       }
-    ],
-    "locations": [
-      "Beach"
     ],
     "icon": "assets/villagers/Willy.png",
     "grantedBy": []
@@ -3207,9 +2909,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -3244,9 +2943,6 @@
       }
     ],
     "minMoney": 1000,
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Marnie.png",
     "grantedBy": []
   },
@@ -3275,9 +2971,6 @@
     ],
     "blockingMail": [
       "ccPantry"
-    ],
-    "locations": [
-      "Farm"
     ],
     "icon": "assets/villagers/Evelyn.png",
     "grantedBy": []
@@ -3309,9 +3002,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Mines"
-    ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
   },
@@ -3342,9 +3032,6 @@
         "end": 2200
       }
     ],
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -3371,9 +3058,6 @@
       "463391"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Haley & Emily's House"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -3391,9 +3075,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Pierre's General Store"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3411,9 +3092,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Trailer"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3446,9 +3124,6 @@
         "start": 600,
         "end": 1130
       }
-    ],
-    "locations": [
-      "Farm"
     ],
     "icon": "assets/villagers/Gus.png",
     "grantedBy": []
@@ -3483,9 +3158,6 @@
         "end": 1130
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -3508,9 +3180,6 @@
         "start": 600,
         "end": 1130
       }
-    ],
-    "locations": [
-      "Farm"
     ],
     "icon": "assets/villagers/Clint.png",
     "grantedBy": []
@@ -3540,9 +3209,6 @@
         "end": 1130
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -3563,9 +3229,6 @@
     "requiresMail": [
       "addedParrotBoy"
     ],
-    "locations": [
-      "Island Hut"
-    ],
     "icon": "assets/villagers/Leo.png",
     "grantedBy": []
   },
@@ -3583,9 +3246,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Robin's Carpenter Shop"
-    ],
     "icon": null,
     "grantedBy": [
       "deluxe-red-double-bed"
@@ -3622,9 +3282,6 @@
       }
     ],
     "minMoney": 1000,
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Marnie.png",
     "grantedBy": []
   },
@@ -3655,9 +3312,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Museum"
-    ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
   },
@@ -3683,9 +3337,6 @@
         "end": 800
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3710,9 +3361,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -3739,9 +3387,6 @@
     "requiredItems": [
       "724"
     ],
-    "locations": [
-      "Secret Woods"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3761,9 +3406,6 @@
       "2111194"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Lewis's House"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -3791,9 +3433,6 @@
         "start": 2200,
         "end": 2540
       }
-    ],
-    "locations": [
-      "Secret Woods"
     ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
@@ -3827,9 +3466,6 @@
         "end": 630
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -3848,9 +3484,6 @@
     "requiredEvents": [],
     "marriageVariant": true,
     "year": 3,
-    "locations": [
-      "Farm"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3881,9 +3514,6 @@
         "end": 1600
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -3908,9 +3538,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Sebastian's Room"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -3941,9 +3568,6 @@
         "end": 1400
       }
     ],
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -3962,9 +3586,6 @@
     "requiredEvents": [],
     "marriageVariant": true,
     "mineLevel": 15,
-    "locations": [
-      "Pierre's General Store"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -3982,9 +3603,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Beach"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -4002,9 +3620,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -4031,9 +3646,6 @@
       "2118991"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Marnie's Ranch"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4058,9 +3670,6 @@
     ],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Marnie's Ranch"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4087,9 +3696,6 @@
       "3910975"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Marnie's Ranch"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4124,9 +3730,6 @@
         "start": 900,
         "end": 2000
       }
-    ],
-    "locations": [
-      "Cindersap Forest"
     ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
@@ -4171,9 +3774,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Cindersap Forest"
-    ],
     "icon": "assets/villagers/Jas.png",
     "grantedBy": []
   },
@@ -4213,9 +3813,6 @@
         "end": 820
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Leah.png",
     "grantedBy": []
   },
@@ -4246,9 +3843,6 @@
         "end": 1500
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Elliott.png",
     "grantedBy": []
   },
@@ -4270,9 +3864,6 @@
       "3912126"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -4306,9 +3897,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4330,9 +3918,6 @@
       "3917584"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4354,9 +3939,6 @@
       "3917585"
     ],
     "marriageVariant": false,
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -4391,9 +3973,6 @@
         "end": 820
       }
     ],
-    "locations": [
-      "Farm"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -4421,9 +4000,6 @@
       "Fri",
       "Sat"
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -4443,9 +4019,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Stardrop Saloon"
-    ],
     "icon": "assets/villagers/Alex.png",
     "grantedBy": []
   },
@@ -4475,9 +4048,6 @@
         "start": 500,
         "end": 820
       }
-    ],
-    "locations": [
-      "Farm"
     ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
@@ -4509,9 +4079,6 @@
         "end": 2400
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Emily.png",
     "grantedBy": []
   },
@@ -4541,9 +4108,6 @@
         "start": 2000,
         "end": 2400
       }
-    ],
-    "locations": [
-      "Farmhouse"
     ],
     "icon": "assets/villagers/Harvey.png",
     "grantedBy": []
@@ -4581,9 +4145,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -4614,9 +4175,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -4643,9 +4201,6 @@
         "start": 610,
         "end": 1700
       }
-    ],
-    "locations": [
-      "Farmhouse"
     ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
@@ -4674,9 +4229,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -4704,9 +4256,6 @@
         "end": 1700
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -4732,9 +4281,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Bus Stop"
-    ],
     "icon": "assets/villagers/Sam.png",
     "grantedBy": []
   },
@@ -4758,9 +4304,6 @@
     "marriageVariant": false,
     "blockingMail": [
       "noQuilt"
-    ],
-    "locations": [
-      "Farmhouse"
     ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
@@ -4792,9 +4335,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Penny.png",
     "grantedBy": []
   },
@@ -4825,9 +4365,6 @@
         "end": 2500
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Maru.png",
     "grantedBy": []
   },
@@ -4845,9 +4382,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Alex's House"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -4881,9 +4415,6 @@
         "end": 1500
       }
     ],
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
   },
@@ -4916,9 +4447,6 @@
     ],
     "requiredItems": [
       "220"
-    ],
-    "locations": [
-      "Town"
     ],
     "icon": "assets/villagers/Haley.png",
     "grantedBy": []
@@ -4958,9 +4486,6 @@
     "requiresMail": [
       "leoMoved"
     ],
-    "locations": [
-      "Island North"
-    ],
     "icon": "assets/villagers/Leo.png",
     "grantedBy": []
   },
@@ -4998,9 +4523,6 @@
     ],
     "requiresMail": [
       "leoMoved"
-    ],
-    "locations": [
-      "Island West"
     ],
     "icon": "assets/villagers/Leo.png",
     "grantedBy": []
@@ -5040,9 +4562,6 @@
     "requiresMail": [
       "leoMoved"
     ],
-    "locations": [
-      "Island South"
-    ],
     "icon": "assets/villagers/Leo.png",
     "grantedBy": []
   },
@@ -5072,9 +4591,6 @@
         "start": 610,
         "end": 1700
       }
-    ],
-    "locations": [
-      "Backwoods"
     ],
     "icon": "assets/villagers/Abigail.png",
     "grantedBy": []
@@ -5109,9 +4625,6 @@
         "end": 2500
       }
     ],
-    "locations": [
-      "Beach"
-    ],
     "icon": "assets/villagers/Krobus.png",
     "grantedBy": []
   },
@@ -5137,10 +4650,6 @@
         "start": 600,
         "end": 1900
       }
-    ],
-    "locations": [
-      "Mountain",
-      "Wizard's Tower"
     ],
     "icon": null,
     "grantedBy": []
@@ -5168,9 +4677,6 @@
         "start": 620,
         "end": 1700
       }
-    ],
-    "locations": [
-      "Farmhouse"
     ],
     "icon": null,
     "grantedBy": []
@@ -5207,9 +4713,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Leo.png",
     "grantedBy": []
   },
@@ -5243,9 +4746,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Mountain"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -5273,9 +4773,6 @@
         "end": 1900
       }
     ],
-    "locations": [
-      "Farmhouse"
-    ],
     "icon": "assets/villagers/Sebastian.png",
     "grantedBy": []
   },
@@ -5295,9 +4792,6 @@
     "marriageVariant": false,
     "requiresMail": [
       "willyBoatFixed"
-    ],
-    "locations": [
-      "Willy's Boat"
     ],
     "icon": "assets/villagers/Willy.png",
     "grantedBy": []
@@ -5324,9 +4818,6 @@
         "end": 1800
       }
     ],
-    "locations": [
-      "Bus Stop"
-    ],
     "icon": "assets/villagers/Shane.png",
     "grantedBy": []
   },
@@ -5344,9 +4835,6 @@
     "requiredFriendship": [],
     "requiredEvents": [],
     "marriageVariant": false,
-    "locations": [
-      "Qi's Nut Room"
-    ],
     "icon": null,
     "grantedBy": []
   },
@@ -5365,9 +4853,6 @@
     "requiredEvents": [],
     "marriageVariant": false,
     "mineLevel": 57,
-    "locations": [
-      "Town"
-    ],
     "icon": "assets/villagers/Lewis.png",
     "grantedBy": []
   }

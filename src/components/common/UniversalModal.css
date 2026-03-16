@@ -330,11 +330,10 @@
 }
 .source-entry:nth-child(odd) { background-color: #fdfbf7; }
 .source-entry:nth-child(even) { background-color: #f9f6f0; }
-.source-entry > * { display: table-cell; padding: 0.2rem 0; vertical-align: middle; }
-.source-entry--subrow > * { padding-top: 0; padding-bottom: 0; }
+.source-entry > * { display: table-cell; vertical-align: middle; }
 .source-detail { width: 1%; white-space: nowrap; }
 .source-name { font-weight: 600; padding-top: 0.1rem; }
-.source-name--indented { padding-left: 0.75rem; }
+.source-name--indented { padding-left: 1.25rem; }
 .source-name--link {
   background: none;
   border: none;
@@ -495,7 +494,6 @@
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
-
 /* Villager gift preference groups */
 .villager-gift-group { margin-bottom: 0.75rem; }
 .villager-gift-columns {

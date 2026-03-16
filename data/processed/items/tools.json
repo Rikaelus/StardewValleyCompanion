@@ -1,6 +1,6 @@
 [
   {
-    "type": "tool",
+    "type": "fishing-rod",
     "id": "advanced-iridium-rod",
     "gameId": "(T)AdvancedIridiumRod",
     "name": "Advanced Iridium Rod",
@@ -12,7 +12,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "axe",
     "id": "axe",
     "gameId": "(T)Axe",
     "name": "Axe",
@@ -24,7 +24,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "fishing-rod",
     "id": "bamboo-pole",
     "gameId": "(T)BambooPole",
     "name": "Bamboo Pole",
@@ -36,7 +36,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "axe",
     "id": "copper-axe",
     "gameId": "(T)CopperAxe",
     "name": "Copper Axe",
@@ -48,7 +48,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "hoe",
     "id": "copper-hoe",
     "gameId": "(T)CopperHoe",
     "name": "Copper Hoe",
@@ -60,7 +60,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pan",
     "id": "copper-pan",
     "gameId": "(T)Pan",
     "name": "Copper Pan",
@@ -72,7 +72,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pickaxe",
     "id": "copper-pickaxe",
     "gameId": "(T)CopperPickaxe",
     "name": "Copper Pickaxe",
@@ -84,7 +84,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "generic-tool",
     "id": "copper-trash-can",
     "gameId": "(T)CopperTrashCan",
     "name": "Copper Trash Can",
@@ -96,7 +96,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "watering-can",
     "id": "copper-watering-can",
     "gameId": "(T)CopperWateringCan",
     "name": "Copper Watering Can",
@@ -108,7 +108,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "fishing-rod",
     "id": "fiberglass-rod",
     "gameId": "(T)FiberglassRod",
     "name": "Fiberglass Rod",
@@ -120,7 +120,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "axe",
     "id": "gold-axe",
     "gameId": "(T)GoldAxe",
     "name": "Gold Axe",
@@ -132,7 +132,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "hoe",
     "id": "gold-hoe",
     "gameId": "(T)GoldHoe",
     "name": "Gold Hoe",
@@ -144,7 +144,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pan",
     "id": "gold-pan",
     "gameId": "(T)GoldPan",
     "name": "Gold Pan",
@@ -156,7 +156,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pickaxe",
     "id": "gold-pickaxe",
     "gameId": "(T)GoldPickaxe",
     "name": "Gold Pickaxe",
@@ -168,7 +168,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "generic-tool",
     "id": "gold-trash-can",
     "gameId": "(T)GoldTrashCan",
     "name": "Gold Trash Can",
@@ -180,7 +180,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "watering-can",
     "id": "gold-watering-can",
     "gameId": "(T)GoldWateringCan",
     "name": "Gold Watering Can",
@@ -192,7 +192,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "hoe",
     "id": "hoe",
     "gameId": "(T)Hoe",
     "name": "Hoe",
@@ -204,7 +204,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "axe",
     "id": "iridium-axe",
     "gameId": "(T)IridiumAxe",
     "name": "Iridium Axe",
@@ -216,7 +216,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "hoe",
     "id": "iridium-hoe",
     "gameId": "(T)IridiumHoe",
     "name": "Iridium Hoe",
@@ -228,7 +228,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pan",
     "id": "iridium-pan",
     "gameId": "(T)IridiumPan",
     "name": "Iridium Pan",
@@ -240,7 +240,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pickaxe",
     "id": "iridium-pickaxe",
     "gameId": "(T)IridiumPickaxe",
     "name": "Iridium Pickaxe",
@@ -252,7 +252,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "fishing-rod",
     "id": "iridium-rod",
     "gameId": "(T)IridiumRod",
     "name": "Iridium Rod",
@@ -264,7 +264,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "generic-tool",
     "id": "iridium-trash-can",
     "gameId": "(T)IridiumTrashCan",
     "name": "Iridium Trash Can",
@@ -276,7 +276,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "watering-can",
     "id": "iridium-watering-can",
     "gameId": "(T)IridiumWateringCan",
     "name": "Iridium Watering Can",
@@ -288,7 +288,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "milk-pail",
     "id": "milk-pail",
     "gameId": "(T)MilkPail",
     "name": "Milk Pail",
@@ -300,7 +300,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pickaxe",
     "id": "pickaxe",
     "gameId": "(T)Pickaxe",
     "name": "Pickaxe",
@@ -312,7 +312,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "wand",
     "id": "return-scepter",
     "gameId": "(T)ReturnScepter",
     "name": "Return Scepter",
@@ -324,7 +324,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "shears",
     "id": "shears",
     "gameId": "(T)Shears",
     "name": "Shears",
@@ -336,7 +336,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "axe",
     "id": "steel-axe",
     "gameId": "(T)SteelAxe",
     "name": "Steel Axe",
@@ -348,7 +348,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "hoe",
     "id": "steel-hoe",
     "gameId": "(T)SteelHoe",
     "name": "Steel Hoe",
@@ -360,7 +360,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pan",
     "id": "steel-pan",
     "gameId": "(T)SteelPan",
     "name": "Steel Pan",
@@ -372,7 +372,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "pickaxe",
     "id": "steel-pickaxe",
     "gameId": "(T)SteelPickaxe",
     "name": "Steel Pickaxe",
@@ -384,7 +384,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "generic-tool",
     "id": "steel-trash-can",
     "gameId": "(T)SteelTrashCan",
     "name": "Steel Trash Can",
@@ -396,7 +396,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "watering-can",
     "id": "steel-watering-can",
     "gameId": "(T)SteelWateringCan",
     "name": "Steel Watering Can",
@@ -408,7 +408,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "fishing-rod",
     "id": "training-rod",
     "gameId": "(T)TrainingRod",
     "name": "Training Rod",
@@ -420,7 +420,7 @@
     "sources": []
   },
   {
-    "type": "tool",
+    "type": "watering-can",
     "id": "watering-can",
     "gameId": "(T)WateringCan",
     "name": "Watering Can",

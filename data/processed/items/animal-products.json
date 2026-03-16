@@ -1,6 +1,6 @@
 [
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "egg-white",
     "gameId": "(O)176",
     "name": "Egg (White)",
@@ -62,7 +62,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "large-egg-white",
     "gameId": "(O)174",
     "name": "Large Egg (White)",
@@ -114,7 +114,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "egg-brown",
     "gameId": "(O)180",
     "name": "Egg (Brown)",
@@ -161,7 +161,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "large-egg-brown",
     "gameId": "(O)182",
     "name": "Large Egg (Brown)",
@@ -209,7 +209,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "void-egg",
     "gameId": "(O)305",
     "name": "Void Egg",
@@ -283,7 +283,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "golden-egg",
     "gameId": "(O)928",
     "name": "Golden Egg",
@@ -362,7 +362,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "duck-egg",
     "gameId": "(O)442",
     "name": "Duck Egg",
@@ -410,7 +410,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "other",
     "id": "duck-feather",
     "gameId": "(O)444",
     "name": "Duck Feather",
@@ -442,7 +442,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "other",
     "id": "wool",
     "gameId": "(O)440",
     "name": "Wool",
@@ -482,7 +482,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "other",
     "id": "rabbit-s-foot",
     "gameId": "(O)446",
     "name": "Rabbit's Foot",
@@ -569,7 +569,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "dinosaur-egg",
     "gameId": "(O)107",
     "name": "Dinosaur Egg",
@@ -632,7 +632,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "milk",
     "id": "milk",
     "gameId": "(O)184",
     "name": "Milk",
@@ -695,7 +695,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "milk",
     "id": "large-milk",
     "gameId": "(O)186",
     "name": "Large Milk",
@@ -748,7 +748,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "milk",
     "id": "goat-milk",
     "gameId": "(O)436",
     "name": "Goat Milk",
@@ -797,7 +797,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "milk",
     "id": "l-goat-milk",
     "gameId": "(O)438",
     "name": "L. Goat Milk",
@@ -847,7 +847,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "other",
     "id": "truffle",
     "gameId": "(O)430",
     "name": "Truffle",
@@ -886,7 +886,7 @@
     }
   },
   {
-    "type": "animal-product",
+    "type": "egg",
     "id": "ostrich-egg",
     "gameId": "(O)289",
     "name": "Ostrich Egg",

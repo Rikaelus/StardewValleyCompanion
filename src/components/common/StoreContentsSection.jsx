@@ -3,24 +3,26 @@ import ModalItemButton from './ModalItemButton'
 import ConditionBadge from './ConditionBadge'
 import SeasonBadges from './SeasonBadges'
 
-const CATEGORY_ORDER = ['furniture', 'hat', 'fish', 'crop', 'seed', 'artisan', 'animal-product', 'forage', 'tree-fruit', 'mineral', 'geode-mineral', 'metal-bar', 'ore', 'resource', 'big-craftable', 'monster-loot', 'ring', 'food', 'bait', 'tackle', 'fertilizer', 'flooring', 'crafted', 'book', 'artifact', 'tree-seed', 'trash', 'misc', 'other']
+const CATEGORY_ORDER = ['furniture', 'hat', 'fish', 'crop', 'seed', 'artisan', 'animal-product', 'forage', 'tree-fruit', 'mineral', 'metal-bar', 'ore', 'resource', 'big-craftable', 'monster-loot', 'ring', 'weapon', 'boot', 'food', 'bait', 'tackle', 'fertilizer', 'flooring', 'crafted', 'book', 'artifact', 'tree-seed', 'tool', 'trinket', 'trash', 'misc', 'other']
 
 const CATEGORY_LABELS = {
   furniture: 'Furniture', hat: 'Hats', fish: 'Fish', crop: 'Crops', seed: 'Seeds',
   artisan: 'Artisan Goods', 'animal-product': 'Animal Products', forage: 'Forage',
-  'tree-fruit': 'Tree Fruits', mineral: 'Minerals', 'geode-mineral': 'Geode Minerals',
+  'tree-fruit': 'Tree Fruits', mineral: 'Minerals',
   'metal-bar': 'Metal Bars', ore: 'Ores', resource: 'Resources',
   'big-craftable': 'Big Craftables', 'monster-loot': 'Monster Loot',
-  ring: 'Rings', food: 'Food', bait: 'Bait', tackle: 'Tackle',
+  ring: 'Rings', weapon: 'Weapons', boot: 'Boots', food: 'Food',
+  bait: 'Bait', tackle: 'Tackle',
   fertilizer: 'Fertilizers', flooring: 'Flooring', crafted: 'Crafted Items',
   book: 'Books', artifact: 'Artifacts', 'tree-seed': 'Tree Seeds',
+  tool: 'Tools', trinket: 'Trinkets',
   trash: 'Trash', misc: 'Miscellaneous',
 }
 
 function StoreContentsSection({ entity, entityType, allItems, findById, onNavigate }) {
   const storeId = entity.id
   const childStalls = allItems
-    .filter(s => s.category === 'location' && s.festival === storeId)
+    .filter(s => s.type === 'location' && s.locations?.some(l => l.id === storeId))
     .sort((a, b) => a.name.localeCompare(b.name))
 
   const storeItems = allItems.filter(item =>
@@ -36,7 +38,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
 
   const grouped = {}
   for (const item of storeItems) {
-    const cat = item.category || item.type || 'other'
+    const cat = item.type || 'other'
     if (!grouped[cat]) grouped[cat] = []
     grouped[cat].push(item)
   }
@@ -91,7 +93,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                   </>
                 ) : (
                   src.price != null
-                    ? (src.quantity > 1 ? `${src.quantity} for ${src.price}g` : `${src.price}g`)
+                    ? (src.quantity > 1 ? `${src.quantity} for ${src.price.toLocaleString()}g` : `${src.price.toLocaleString()}g`)
                     : '—'
                 )
 

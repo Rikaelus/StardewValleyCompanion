@@ -1,0 +1,135 @@
+{
+  "_comment": "Breakable world objects and their drops. Sourced from decompiled game code: BreakableContainer.releaseContents(), ResourceClump.performToolAction()/destroy(). These are hardcoded in C#, not in any data asset file. Drop chances are computed from the nested probability branches in the game code.",
+  "breakables": [
+    {
+      "id": "mine-container",
+      "name": "Mine Barrel / Crate",
+      "subtype": "mine-container",
+      "tool": "Any weapon or pickaxe",
+      "toolMinLevel": null,
+      "locations": ["map-mines", "map-skull-cavern"],
+      "_dropNotes": "Combined drops across all barrel variants (118/120/122/124) and dangerous mines. Chance shown is the highest across variants. All pass through a 20% early-exit gate first (80% base). Dangerous mines has its own separate loot table (additionalDifficulty > 0).",
+      "drops": [
+        { "gameId": 78,  "chance": 0.078, "note": "Cave Carrot — 3/4 uncommon slots in all barrels" },
+        { "gameId": 388, "chance": 0.0924, "note": "Wood — barrel 118 common (2/9 slots)" },
+        { "gameId": 390, "chance": 0.0924, "note": "Stone — barrel 118/120 common (2/9 slots)" },
+        { "gameId": 382, "chance": 0.052, "note": "Coal — common branch all barrels" },
+        { "gameId": 378, "chance": 0.052, "note": "Copper Ore — common branch all barrels" },
+        { "gameId": 380, "chance": 0.0462, "note": "Iron Ore — barrels 120/122" },
+        { "gameId": 384, "chance": 0.052, "note": "Gold Ore — barrels 122/124" },
+        { "gameId": 770, "chance": 0.0462, "note": "Mixed Seeds — barrels 118/120" },
+        { "gameId": 881, "chance": 0.052, "note": "Bone Fragment — barrel 122 only" },
+        { "gameId": 535, "chance": 0.0484, "note": "Geode — barrel 118 uncommon + rare" },
+        { "gameId": 536, "chance": 0.0484, "note": "Frozen Geode — barrel 120 uncommon + rare" },
+        { "gameId": 537, "chance": 0.026, "note": "Magma Geode — barrel 122 uncommon" },
+        { "gameId": 66,  "chance": 0.0224, "note": "Amethyst — barrel 118 rare" },
+        { "gameId": 68,  "chance": 0.0224, "note": "Topaz — barrel 118 rare" },
+        { "gameId": 62,  "chance": 0.0224, "note": "Aquamarine — barrel 120 rare" },
+        { "gameId": 70,  "chance": 0.0224, "note": "Jade — barrel 120 rare" },
+        { "gameId": 60,  "chance": 0.0187, "note": "Emerald — barrel 122 rare" },
+        { "gameId": 64,  "chance": 0.0187, "note": "Ruby — barrel 122 rare" },
+        { "gameId": 709, "chance": 0.0224, "note": "Hardwood — rare branch all barrels" },
+        { "gameId": 749, "chance": 0.0187, "note": "Omni Geode — barrel 122 rare" },
+        { "gameId": 688, "chance": 0.0187, "note": "Warp Totem: Farm — barrel 122 rare" },
+        { "gameId": 80,  "chance": 0.04, "note": "Quartz — dangerous mines only (1/17)" },
+        { "gameId": 286, "chance": 0.04, "note": "Cherry Bomb — dangerous mines only (1/17)" },
+        { "gameId": 287, "chance": 0.04, "note": "Bomb — dangerous mines only (1/17)" },
+        { "gameId": 858, "chance": 0.0054, "note": "Qi Seasoning — dangerous mines independent (0.8%)" },
+        { "gameId": 386, "chance": 0.0068, "note": "Iridium Ore — dangerous mines independent (1%)" },
+        { "gameId": 918, "chance": 0.0023, "note": "Hyper Speed-Gro — dangerous mines (1% × 1/3)" },
+        { "gameId": 919, "chance": 0.0023, "note": "Deluxe Fertilizer — dangerous mines (1% × 1/3)" },
+        { "gameId": 920, "chance": 0.0023, "note": "Deluxe Retaining Soil — dangerous mines (1% × 1/3)" }
+      ]
+    },
+    {
+      "id": "volcano-container",
+      "name": "Volcano Barrel",
+      "subtype": "mine-container",
+      "tool": "Any weapon or pickaxe",
+      "toolMinLevel": null,
+      "locations": ["map-volcano-dungeon"],
+      "_dropNotes": "Passes through the same 20% early-exit gate (80% base). Then 75% → common/uncommon, else 40% → rare, else DwarvishSentry.",
+      "drops": [
+        { "gameId": 382, "chance": 0.0686, "note": "Coal — common (1/7)" },
+        { "gameId": 384, "chance": 0.0686, "note": "Gold Ore — common (1/7)" },
+        { "gameId": 380, "chance": 0.0686, "note": "Iron Ore — common (1/7)" },
+        { "gameId": 378, "chance": 0.0686, "note": "Copper Ore — common (1/7)" },
+        { "gameId": 66,  "chance": 0.0686, "note": "Amethyst — common (1/7)" },
+        { "gameId": 709, "chance": 0.0686, "note": "Hardwood — common (1/7)" },
+        { "gameId": 78,  "chance": 0.024, "note": "Cave Carrot — uncommon (1/5)" },
+        { "gameId": 749, "chance": 0.0329, "note": "Omni Geode — uncommon (1/5) + rare (1/9)" },
+        { "gameId": 60,  "chance": 0.024, "note": "Emerald — uncommon (1/5)" },
+        { "gameId": 64,  "chance": 0.024, "note": "Ruby — uncommon (1/5)" },
+        { "gameId": 68,  "chance": 0.024, "note": "Topaz — uncommon (1/5)" },
+        { "gameId": 72,  "chance": 0.0089, "note": "Diamond — rare (1/9)" },
+        { "gameId": 831, "chance": 0.0089, "note": "Taro Tuber — rare (1/9)" },
+        { "gameId": 833, "chance": 0.0089, "note": "Pineapple Seeds — rare (1/9)" },
+        { "gameId": 386, "chance": 0.0089, "note": "Iridium Ore — rare (1/9)" },
+        { "gameId": 848, "chance": 0.0089, "note": "Cinder Shard — rare (1/9)" },
+        { "gameId": 856, "chance": 0.0089, "note": "Curiosity Lure — rare (1/9)" },
+        { "gameId": 886, "chance": 0.0089, "note": "Warp Totem: Island — rare (1/9)" },
+        { "gameId": 688, "chance": 0.0089, "note": "Warp Totem: Farm — rare (1/9)" }
+      ]
+    },
+    {
+      "id": "large-stump",
+      "name": "Large Stump",
+      "subtype": "resource-clump",
+      "tool": "Axe",
+      "toolMinLevel": 1,
+      "locations": ["map-farm", "map-secret-woods"],
+      "drops": [
+        { "gameId": 709, "chance": 1.0, "note": "Hardwood — always drops 2 (3 with Forester)" },
+        { "gameId": 292, "chance": 0.1, "note": "Mahogany Seed — 10% chance" }
+      ]
+    },
+    {
+      "id": "large-log",
+      "name": "Large Log",
+      "subtype": "resource-clump",
+      "tool": "Axe",
+      "toolMinLevel": 2,
+      "locations": ["map-farm", "map-secret-woods"],
+      "drops": [
+        { "gameId": 709, "chance": 1.0, "note": "Hardwood — always drops 8 (10 with Forester)" },
+        { "gameId": 292, "chance": 0.1, "note": "Mahogany Seed — 10% chance" }
+      ]
+    },
+    {
+      "id": "large-boulder",
+      "name": "Large Boulder",
+      "subtype": "resource-clump",
+      "tool": "Pickaxe",
+      "toolMinLevel": 2,
+      "locations": ["map-farm", "map-mines"],
+      "drops": [
+        { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 15" }
+      ]
+    },
+    {
+      "id": "meteorite",
+      "name": "Meteorite",
+      "subtype": "resource-clump",
+      "tool": "Pickaxe",
+      "toolMinLevel": 3,
+      "locations": ["map-farm"],
+      "drops": [
+        { "gameId": 386, "chance": 1.0, "note": "Iridium Ore — always drops 10" },
+        { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 8" },
+        { "gameId": 749, "chance": 1.0, "note": "Omni Geode — always drops 2" },
+        { "gameId": 74,  "chance": 0.25, "note": "Prismatic Shard — 25% chance" }
+      ]
+    },
+    {
+      "id": "mine-boulder",
+      "name": "Mine Boulder",
+      "subtype": "resource-clump",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "locations": ["map-mines"],
+      "drops": [
+        { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 10" }
+      ]
+    }
+  ]
+}

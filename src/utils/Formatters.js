@@ -36,6 +36,34 @@ export function formatLocationNames(locations) {
 }
 
 /**
+ * Derive unique, sorted location names from an entity's sources array.
+ * If findById is provided, resolves names via locationId entity lookup.
+ * Falls back to source.location string if no entity found.
+ */
+export function getLocationNames(entity, findById) {
+  const sources = entity?.sources || []
+  const seen = new Set()
+  const names = []
+  for (const s of sources) {
+    const name = (s.locationId && findById ? findById(s.locationId)?.name : null) || s.location
+    if (name && !seen.has(name)) {
+      seen.add(name)
+      names.push(name)
+    }
+  }
+  return names.sort()
+}
+
+/**
+ * Derive unique location IDs from an entity's sources array.
+ * Returns only sources that have a locationId.
+ */
+export function getLocationIds(entity) {
+  const sources = entity?.sources || []
+  return [...new Set(sources.filter(s => s.locationId).map(s => s.locationId))]
+}
+
+/**
  * Format military time (e.g., 600, 2600) to 12-hour display (e.g., "6am", "2am")
  */
 export function formatTime(militaryTime) {
@@ -90,7 +118,7 @@ export function getDifficultyColor(difficulty) {
  * Format a price value with gold suffix
  */
 export function formatPrice(price) {
-  return `${price}g`
+  return `${Number(price).toLocaleString()}g`
 }
 
 /**
@@ -157,16 +185,14 @@ export function getCategoryName(category, type) {
 // Canonical entity type label (used by GlobalSearch and UniversalModal subtitle)
 // ---------------------------------------------------------------------------
 
-const ENTITY_TYPE_LABELS = {
+// Type-level labels (top tier, formerly "category")
+const TYPE_LABELS = {
   'fish': 'Fish',
   'artisan': 'Artisan Goods',
   'forage': 'Forage',
-  'fruit': 'Fruit',
-  'vegetable': 'Vegetable',
-  'flower': 'Flower',
+  'crop': 'Crop',
   'seed': 'Seed',
   'mineral': 'Mineral',
-  'geode-mineral': 'Geode Mineral',
   'metal-bar': 'Metal Bar',
   'monster-loot': 'Monster Loot',
   'resource': 'Resource',
@@ -200,81 +226,108 @@ const ENTITY_TYPE_LABELS = {
   'building': 'Building',
   'animal': 'Farm Animal',
   'monster': 'Monster',
+  'breakable': 'Breakable',
   'bundle': 'Bundle',
 }
 
+// Subtype-level labels (distinct subtypes within a type)
+const SUBTYPE_LABELS = {
+  // crop subtypes
+  'fruit': 'Fruit',
+  'vegetable': 'Vegetable',
+  'flower': 'Flower',
+  // mineral subtypes
+  'gem': 'Gem',
+  'crystal': 'Crystal',
+  'geode-mineral': 'Geode Mineral',
+  // weapon subtypes
+  'sword': 'Sword',
+  'dagger': 'Dagger',
+  'club': 'Club',
+  'slingshot': 'Slingshot',
+  // tool subtypes
+  'axe': 'Axe',
+  'pickaxe': 'Pickaxe',
+  'hoe': 'Hoe',
+  'fishing-rod': 'Fishing Rod',
+  'watering-can': 'Watering Can',
+  'milk-pail': 'Milk Pail',
+  'shears': 'Shears',
+  'pan': 'Pan',
+  'wand': 'Wand',
+  'generic-tool': 'Tool',
+  // animal product subtypes
+  'egg': 'Egg',
+  'milk': 'Milk',
+  // breakable subtypes
+  'mine-container': 'Mine Container',
+  'resource-clump': 'Resource Clump',
+  // location subtypes
+  'shop': 'Shop',
+  'region': 'Region',
+  'map-area': 'Area',
+  'zone': 'Zone',
+}
+
 /**
- * Returns the canonical base label for an entity — used in GlobalSearch chips
- * and as the foundation for getEntitySubtitle.
+ * Returns { type, subtype } labels for an entity.
+ * `subtype` is null when there's no distinct subtype.
+ */
+export function getEntityLabels(entity) {
+  if (!entity) return { type: 'Item', subtype: null }
+  const typeLabel = TYPE_LABELS[entity.type || entity.entityType] || 'Item'
+  // Only show subtype when it's distinct from the type
+  // Also suppress when the subtype label resolves to the same text as the type label
+  const rawSubtypeLabel = (entity.subtype && entity.subtype !== entity.type)
+    ? (SUBTYPE_LABELS[entity.subtype] || null)
+    : null
+  const subtypeLabel = (rawSubtypeLabel && rawSubtypeLabel !== typeLabel) ? rawSubtypeLabel : null
+  return { type: typeLabel, subtype: subtypeLabel }
+}
+
+/**
+ * Returns a single display label for an entity — prefers subtype over type.
  */
 export function getEntityLabel(entity) {
-  if (!entity) return ''
-  const key = entity.category || entity.type || entity.entityType
-  return ENTITY_TYPE_LABELS[key] || ENTITY_TYPE_LABELS[entity.type] || 'Item'
+  const { type, subtype } = getEntityLabels(entity)
+  return subtype || type
 }
 
 /**
  * Returns the full subtitle for an entity — used in the UniversalModal header.
- * Builds on getEntityLabel but adds specifics (weapon type, tool level, etc.).
+ * Shows "Type - Subtype" when the entity has a distinct subtype.
  */
 export function getEntitySubtitle(entity) {
   if (!entity) return ''
-  const category = entity.category
-  const type = entity.type || entity.entityType
+  const type = entity.type
 
-  if (category === 'festival') return 'Festival'
-  if (category === 'location') return entity.festival ? 'Festival Location' : 'Location'
-  if (category === 'bundle') return 'Community Center Bundle'
+  if (type === 'festival') return 'Festival'
+  if (type === 'bundle') return entity.room ? `${entity.room} Bundle` : 'Community Center Bundle'
 
-  if (type === 'buff' || category === 'buff') return entity.isDebuff ? 'Debuff' : 'Buff'
+  if (type === 'location' && entity.id?.startsWith('cc-')) return 'Community Center Room'
 
-  if (type === 'event' || category === 'event') {
+  if (type === 'buff') return entity.isDebuff ? 'Debuff' : 'Buff'
+
+  if (type === 'event') {
     const base = entity.heartLevel ? `${entity.heartLevel} Heart Event` : 'Event'
     return entity.npc ? `${entity.npc} — ${base}` : base
   }
 
-  if (type === 'villager' || category === 'villager') {
-    return entity.canBeRomanced ? 'Villager (Romanceable)' : 'Villager'
+  if (type === 'villager') {
+    return 'Villager'
   }
 
-  if (type === 'weapon' || category === 'weapon') {
-    const WEAPON_TYPE_LABELS = { sword: 'Sword', club: 'Club', dagger: 'Dagger', slingshot: 'Slingshot' }
-    return WEAPON_TYPE_LABELS[entity.weaponType] || entity.weaponType || 'Weapon'
-  }
-
-  if (type === 'boot' || category === 'boot') return 'Boots'
-  if (type === 'trinket' || category === 'trinket') return 'Trinket'
-
-  if (type === 'tool' || category === 'tool') {
-    const LEVEL_NAMES = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
-    const TOOL_CLASS_LABELS = {
-      FishingRod: 'Fishing Rod', WateringCan: 'Watering Can',
-      GenericTool: 'Tool', MilkPail: 'Milk Pail',
-    }
-    const levelName = LEVEL_NAMES[entity.upgradeLevel] ?? ''
-    const toolClass = TOOL_CLASS_LABELS[entity.toolClass] || entity.toolClass || 'Tool'
-    return levelName ? `${levelName} ${toolClass}` : toolClass
-  }
-
-  if (type === 'animal' || category === 'animal') {
+  if (type === 'animal') {
     return entity.houseType ? `${entity.houseType} Animal` : 'Farm Animal'
   }
 
-  if (type === 'building' || category === 'building') {
+  if (type === 'building') {
     return entity.magical ? 'Magical Building' : 'Farm Building'
   }
 
-  // Items — derive from game category + type
-  const subtitleCategory = entity.displayGameCategory !== undefined
-    ? entity.displayGameCategory
-    : entity.gameCategory
-  const categoryName = getCategoryName(subtitleCategory, type)
-  const baseLabel = getEntityLabel(entity)
-
-  if (baseLabel !== 'Item' && baseLabel !== categoryName && categoryName !== 'Item') {
-    return `${baseLabel} (${categoryName})`
-  }
-  return baseLabel !== 'Item' ? baseLabel : categoryName
+  // General case: "Type - Subtype" when distinct subtype exists
+  const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(entity)
+  return subtypeLabel ? `${typeLabel} - ${subtypeLabel}` : typeLabel
 }
 
 // ---------------------------------------------------------------------------

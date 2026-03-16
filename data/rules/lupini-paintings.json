@@ -1,7 +1,7 @@
 {
   "_comment": "Famous Painter Lupini's Night Market paintings. Not in Shops.json — hardcoded in game C#. 9 paintings on a 3-year cycle, one per night (Winter 15/16/17). All cost 1200g.",
   "price": 1200,
-  "storeId": "store-night-market-lupini",
+  "storeId": "loc-night-market-lupini",
   "storeName": "Famous Painter Lupini",
   "paintings": [
     { "gameId": 1838, "day": 15, "yearCycle": 1 },

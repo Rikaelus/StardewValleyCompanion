@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import DataTable from '../common/DataTable'
 import { useEntities } from '../../contexts/EntityContext'
 import { useOpenModal } from '../../contexts/ModalContext'
-import { formatLocationNames } from '../../utils/Formatters'
+import { formatLocationNames, getLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
   createNameColumn,
@@ -13,7 +13,7 @@ import {
 } from '../common/ItemTableFactory.jsx'
 
 function ForageTable({ data, allData }) {
-  const { villagers: { all: villagers }, ...relationalData } = useEntities()
+  const { villagers: { all: villagers }, findById, ...relationalData } = useEntities()
   const openModal = useOpenModal()
 
   const handleRowClick = openModal
@@ -34,10 +34,11 @@ function ForageTable({ data, allData }) {
         )
       }),
       {
-        accessorKey: 'locations',
+        id: 'locations',
         header: 'Locations',
-        cell: ({ row }) => {
-          const locations = row.original.locations || []
+        accessorFn: row => getLocationNames(row, findById),
+        cell: ({ getValue }) => {
+          const locations = getValue() || []
           if (locations.length === 0) return <span style={{ color: '#999' }}>Unknown</span>
           return formatLocationNames(locations).join(', ')
         },

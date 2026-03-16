@@ -62,7 +62,7 @@ export function EntityProvider({ children }) {
 
     const allEntities = rawData.items || []
     const gameIdIndex = rawData.gameIdIndex || {}
-    const allBundles = rawData.bundles || []
+    const allBundles = allEntities.filter(i => i.type === 'bundle')
     const allVillagers = rawData.villagers || []
     const allBuffs = rawData.buffs || []
     const relationships = rawData.relationships || []
@@ -70,25 +70,25 @@ export function EntityProvider({ children }) {
     // ── Entity collections ───────────────────────────────────────────────────
     const collectionPredicates = {
       'fish':           entity => entity.type === 'fish',
-      'artisan':        entity => entity.category === 'artisan',
+      'artisan':        entity => entity.type === 'artisan',
       'crop':           entity => entity.sources?.some(s => s.type === 'seed'),
       'forage':         entity => entity.type === 'forage',
-      'tree-fruit':     entity => entity.category === 'tree-fruit',
-      'mineral':        entity => entity.category === 'mineral',
-      'metal-bar':      entity => entity.category === 'metal-bar',
-      'monster-loot':   entity => entity.category === 'monster-loot',
-      'resource':       entity => entity.category === 'resource',
-      'seed':           entity => entity.category === 'seed' || entity.id === 'coffee-bean',
-      'big-craftable':  entity => entity.category === 'big-craftable',
-      'animal-product': entity => entity.category === 'animal-product',
-      'furniture':      entity => entity.category === 'furniture',
-      'hat':            entity => entity.category === 'hat',
-      'weapon':         entity => entity.category === 'weapon',
-      'boot':           entity => entity.category === 'boot',
-      'trinket':        entity => entity.category === 'trinket',
-      'tool':           entity => entity.category === 'tool',
-      'building':       entity => entity.category === 'building',
-      'animal':         entity => entity.category === 'animal',
+      'tree-fruit':     entity => entity.type === 'tree-fruit',
+      'mineral':        entity => entity.type === 'mineral',
+      'metal-bar':      entity => entity.type === 'metal-bar',
+      'monster-loot':   entity => entity.type === 'monster-loot',
+      'resource':       entity => entity.type === 'resource',
+      'seed':           entity => entity.type === 'seed' || entity.id === 'coffee-bean',
+      'big-craftable':  entity => entity.type === 'big-craftable',
+      'animal-product': entity => entity.type === 'animal-product',
+      'furniture':      entity => entity.type === 'furniture',
+      'hat':            entity => entity.type === 'hat',
+      'weapon':         entity => entity.type === 'weapon',
+      'boot':           entity => entity.type === 'boot',
+      'trinket':        entity => entity.type === 'trinket',
+      'tool':           entity => entity.type === 'tool',
+      'building':       entity => entity.type === 'building',
+      'animal':         entity => entity.type === 'animal',
     }
 
     const byType = {}
@@ -102,7 +102,7 @@ export function EntityProvider({ children }) {
     const buffsById = new Map(allBuffs.map(b => [b.id, b]))
 
     // Events live in allEntities (category: 'event'); build a secondary index by eventKey
-    const allEvents = allEntities.filter(i => i.category === 'event')
+    const allEvents = allEntities.filter(i => i.type === 'event')
     const eventsByKey = new Map(allEvents.map(e => [e.eventKey, e]))
     // eventNames map for condition formatter: { eventKey → name }
     const eventNames = Object.fromEntries(allEvents.map(e => [e.eventKey, e.name]))

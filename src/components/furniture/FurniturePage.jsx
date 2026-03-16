@@ -33,7 +33,7 @@ function FurniturePage() {
 
   const filterOptions = useMemo(() => {
     if (!data.items) return {}
-    const types = [...new Set(data.items.map(f => f.type).filter(Boolean))].sort()
+    const types = [...new Set(data.items.map(f => f.subtype).filter(Boolean))].sort()
     return { types }
   }, [data.items])
 
@@ -46,7 +46,7 @@ function FurniturePage() {
         if (!item.name.toLowerCase().includes(q)) return false
       }
 
-      if (filters.type && item.type !== filters.type) return false
+      if (filters.type && item.subtype !== filters.type) return false
 
       return true
     })

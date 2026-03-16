@@ -2,12 +2,15 @@ import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useFishData } from '../../hooks/useData'
 import { useDebounce } from '../../hooks/useDebounce'
+import { useEntities } from '../../contexts/EntityContext'
+import { getLocationNames } from '../../utils/Formatters'
 import PagePanel from '../common/PagePanel'
 import FishTable from './FishTable'
 import './FishPage.css'
 
 function FishPage() {
   const { data, loading, error } = useFishData()
+  const { findById } = useEntities()
   const [searchParams, setSearchParams] = useSearchParams()
 
   // Get state from URL
@@ -64,7 +67,7 @@ function FishPage() {
     if (!data.fish) return {}
 
     // Extract unique locations from fish data
-    const locations = [...new Set(data.fish.flatMap(f => f.locations || []))].sort()
+    const locations = [...new Set(data.fish.flatMap(f => getLocationNames(f, findById)))].sort()
 
     // Extract unique bundles from fish bundleDetails
     const bundleMap = new Map()
@@ -108,7 +111,7 @@ function FishPage() {
       }
 
       if (filters.location) {
-        if (!fish.locations?.includes(filters.location)) return false
+        if (!getLocationNames(fish, findById).includes(filters.location)) return false
       }
 
       if (filters.bundle) {

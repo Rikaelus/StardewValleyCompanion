@@ -1,0 +1,329 @@
+{
+  "_comment": "Monsters not in Monsters.json game export — hardcoded C# variants. Stats from wiki/decompiled source. Drop format: 'gameId chance gameId chance ...' with bare numeric IDs. Optional 'icon' field overrides default toIconFilename(name).",
+
+  "_comment_mutants": "Mutant Bug Lair and Skull Cavern hardcoded variants",
+
+  "Mutant Grub": {
+    "hp": 60, "resilience": 4, "damageToFarmer": 8, "speed": 3,
+    "drops": "684 .6 273 .05 157 .02 114 .005 96 .005 99 .001",
+    "debuffs": [{ "name": "Slimed", "chance": 0.005 }],
+    "locations": [{ "locationId": "map-mutant-bug-lair" }]
+  },
+  "Mutant Fly": {
+    "hp": 90, "resilience": 6, "damageToFarmer": 14, "speed": 13,
+    "isGlider": true,
+    "drops": "684 .9 157 .02 114 .005 96 .005 99 .001",
+    "debuffs": [{ "name": "Slimed", "chance": 0.005 }],
+    "locations": [
+      { "locationId": "map-mutant-bug-lair" },
+      { "locationId": "map-skull-cavern", "qualifier": "Prehistoric Floors" }
+    ]
+  },
+  "Armored Bug": {
+    "hp": 10, "resilience": 8, "damageToFarmer": 12, "speed": 1,
+    "drops": "684 .76 157 .02 114 .005 96 .005 99 .001",
+    "locations": [{ "locationId": "map-skull-cavern" }],
+    "notes": "Invulnerable from the front — must be struck from behind or sides"
+  },
+
+  "_comment_unique": "Unique monsters missing from game exports",
+
+  "Haunted Skull": {
+    "hp": 160, "resilience": 1, "damageToFarmer": 15, "speed": 3,
+    "isGlider": true,
+    "drops": "531 .013 534 .013 86 .013 288 .013 725 .013 581 .013 582 .013 768 .013 769 .013 279 .0013 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-quarry-mine" },
+      { "locationId": "map-mines", "qualifier": "Dungeon floors" }
+    ]
+  },
+  "Stick Bug": {
+    "hp": 700, "resilience": 2, "damageToFarmer": 20, "speed": 3,
+    "drops": "829 1.0 858 1.0 858 .5 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" }
+    ],
+    "notes": "Disguises as pieces of wood. Dangerous Mines exclusive."
+  },
+
+  "_comment_slimes": "Slime color variants — runtime palette swaps not in Monsters.json",
+
+  "Purple Slime": {
+    "hp": 410, "resilience": 5, "damageToFarmer": 16, "speed": 2,
+    "drops": "766 .8 92 .5 382 .1 72 .01 386 .005 337 .004 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-skull-cavern" },
+      { "locationId": "map-farm-wilderness" }
+    ]
+  },
+  "Copper Slime": {
+    "hp": 102, "resilience": 5, "damageToFarmer": 16, "speed": 4,
+    "drops": "766 .75 92 .15 378 .33 334 .1 157 .1 72 .01 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-quarry-mine" },
+      { "locationId": "map-mines", "qualifier": "Dungeon floors" }
+    ]
+  },
+  "Iron Slime": {
+    "hp": 205, "resilience": 5, "damageToFarmer": 16, "speed": 1,
+    "drops": "766 .75 92 .15 380 .33 335 .1 157 .1 72 .01 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-quarry-mine" },
+      { "locationId": "map-mines", "qualifier": "Dungeon floors" }
+    ]
+  },
+  "Yellow Slime": {
+    "hp": 72, "resilience": 5, "damageToFarmer": 2, "speed": 2,
+    "drops": "766 .75 92 .15 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-mines" },
+      { "locationId": "map-skull-cavern" }
+    ],
+    "notes": "0.1% chance to recolor any slime. Has 3× base HP and 2× base damage of the slime it replaced."
+  },
+  "Black Slime": {
+    "hp": 24, "resilience": 5, "damageToFarmer": 1, "speed": 2,
+    "drops": "766 .75 92 .15 96 .005 99 .001",
+    "locations": [
+      { "locationId": "slime-hutch" }
+    ],
+    "notes": "Created by the Witch's fly-over event transforming Slime Hutch slimes. Drops Neptunite and Bixite."
+  },
+  "Prismatic Slime": {
+    "hp": 1000, "resilience": 5, "damageToFarmer": 35, "speed": 2,
+    "icon": "GreenSlime.png",
+    "drops": "876 1.0",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Quest only" },
+      { "locationId": "map-skull-cavern", "qualifier": "Quest only" }
+    ],
+    "notes": "Only spawns during the Prismatic Jelly special order. Guaranteed to drop Prismatic Jelly."
+  },
+
+  "_comment_big_slimes": "Big Slime color variants — game export only has one generic Big Slime entry",
+
+  "Big Green Slime": {
+    "hp": 60, "resilience": 5, "damageToFarmer": 6, "speed": 2,
+    "icon": "BigSlime.png",
+    "drops": "766 .99 766 .9 766 .4 99 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 1–39" },
+      { "locationId": "map-secret-woods" }
+    ],
+    "notes": "75% chance to split into 2–4 Green Slimes when killed."
+  },
+  "Big Blue Slime": {
+    "hp": 120, "resilience": 7, "damageToFarmer": 5, "speed": 2,
+    "drops": "766 .99 766 .9 766 .4 99 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 40–79" },
+      { "locationId": "map-secret-woods" }
+    ],
+    "notes": "75% chance to split into 2–4 Blue Slimes when killed."
+  },
+  "Big Red Slime": {
+    "hp": 180, "resilience": 16, "damageToFarmer": 10, "speed": 2,
+    "drops": "766 .99 766 .9 766 .4 99 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+    ],
+    "notes": "75% chance to split into 2–4 Red Slimes when killed."
+  },
+  "Big Purple Slime": {
+    "hp": 240, "resilience": 5, "damageToFarmer": 15, "speed": 2,
+    "drops": "766 .99 766 .9 766 .4 99 .001",
+    "locations": [
+      { "locationId": "map-skull-cavern" }
+    ],
+    "notes": "75% chance to split into 2–4 Purple Slimes when killed."
+  },
+
+  "_comment_dangerous": "Dangerous mode variants — stat-boosted versions activated by Shrine of Challenge. Icon field reuses base monster sprite.",
+
+  "Green Slime (dangerous)": {
+    "hp": 48, "resilience": 5, "damageToFarmer": 10, "speed": 2,
+    "icon": "GreenSlime.png",
+    "drops": "766 .75 766 .05 153 .1 66 .015 92 .15 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 1–29 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Bug (dangerous)": {
+    "hp": 250, "resilience": 0, "damageToFarmer": 15, "speed": 2,
+    "icon": "Bug.png",
+    "drops": "684 .76 157 .02 114 .005 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 1–39 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Cave Fly (dangerous)": {
+    "hp": 266, "resilience": 2, "damageToFarmer": 14, "speed": 2,
+    "isGlider": true,
+    "icon": "Fly.png",
+    "drops": "684 .9 157 .02 114 .005 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Duggy (dangerous)": {
+    "hp": 280, "resilience": 0, "damageToFarmer": 8, "speed": 2,
+    "icon": "Duggy.png",
+    "drops": "286 .25 535 .25 86 .1 280 .03 96 .005 99 .001 72 .01 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 1–29 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Grub (dangerous)": {
+    "hp": 265, "resilience": 0, "damageToFarmer": 12, "speed": 1,
+    "icon": "Grub.png",
+    "drops": "684 .6 273 .1 157 .02 114 .005 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Pupates into Cave Fly (dangerous) when critically damaged."
+  },
+  "Rock Crab (dangerous)": {
+    "hp": 272, "resilience": 2, "damageToFarmer": 13, "speed": 2,
+    "icon": "RockCrab.png",
+    "drops": "286 .4 717 .15 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 1–29 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Disguises as stone; invulnerable when immobile."
+  },
+  "Bat (dangerous)": {
+    "hp": 268, "resilience": 1, "damageToFarmer": 13, "speed": 3,
+    "isGlider": true,
+    "icon": "Bat.png",
+    "drops": "767 .9 767 .4 108 .001 287 .02 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 31–39 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Stone Golem (dangerous)": {
+    "hp": 283, "resilience": 28, "damageToFarmer": 13, "speed": 2,
+    "icon": "StoneGolem.png",
+    "drops": "390 .9 382 .1 380 .1 80 .1 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 31–39 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Extremely high defense."
+  },
+  "Dust Sprite (dangerous)": {
+    "hp": 280, "resilience": 6, "damageToFarmer": 14, "speed": 3,
+    "icon": "DustSprite.png",
+    "drops": "382 .5 414 .02 84 .02 433 .01 97 .005 99 .001 336 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Frost Bat (dangerous)": {
+    "hp": 277, "resilience": 1, "damageToFarmer": 14, "speed": 3,
+    "isGlider": true,
+    "icon": "FrostBat.png",
+    "drops": "767 .95 767 .4 287 .02 97 .005 99 .001 108 .001",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 41–79 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Lava Crab (dangerous)": {
+    "hp": 340, "resilience": 8, "damageToFarmer": 22, "speed": 3,
+    "icon": "LavaCrab.png",
+    "drops": "287 .4 717 .25 98 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 81–119 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Disguises as Gold Node."
+  },
+  "Metal Head (dangerous)": {
+    "hp": 280, "resilience": 24, "damageToFarmer": 22, "speed": 2,
+    "icon": "MetalHead.png",
+    "drops": "768 .65 382 .1 378 .1 380 .1 98 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 81–119 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Very high defense."
+  },
+  "Shadow Brute (dangerous)": {
+    "hp": 370, "resilience": 6, "damageToFarmer": 27, "speed": 3,
+    "icon": "ShadowBrute.png",
+    "drops": "769 .75 769 .1 382 .1 203 .04 334 .04 335 .02 336 .01 98 .005 108 .003 337 .002 99 .001 74 .0005 72 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 81–119 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Shadow Shaman (dangerous)": {
+    "hp": 310, "resilience": 6, "damageToFarmer": 25, "speed": 3,
+    "icon": "ShadowShaman.png",
+    "drops": "769 .75 769 .2 382 .1 334 .04 335 .02 336 .01 98 .005 108 .003 337 .002 99 .001 74 .0005 72 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 81–119 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only. Heals self and allies for 250 HP (vs 60 HP normal)."
+  },
+  "Skeleton (dangerous)": {
+    "hp": 655, "resilience": 2, "damageToFarmer": 17, "speed": 2,
+    "icon": "Skeleton.png",
+    "drops": "881 .5 881 .4 881 .2 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 71–79 (Dangerous)" },
+      { "locationId": "map-quarry-mine" }
+    ],
+    "notes": "Dangerous Mines only. Ranged bone-throwing attack."
+  },
+  "Squid Kid (dangerous)": {
+    "hp": 250, "resilience": 6, "damageToFarmer": 27, "speed": 3,
+    "icon": "SquidKid.png",
+    "drops": "768 .75 814 .2 287 .1 336 .05 288 .05 98 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 91–119 (Dangerous)" },
+      { "locationId": "map-skull-cavern", "qualifier": "Invasion" }
+    ],
+    "notes": "Dangerous Mines and Skull Cavern Invasion. Shoots 4 ricocheting fireballs."
+  },
+  "Haunted Skull (dangerous)": {
+    "hp": 310, "resilience": 2, "damageToFarmer": 22, "speed": 3,
+    "isGlider": true,
+    "icon": "HauntedSkull.png",
+    "drops": "531 .013 534 .013 288 .013 96 .005 99 .001 108 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-mines", "qualifier": "Floors 71–79 (Dangerous)" }
+    ],
+    "notes": "Dangerous Mines only"
+  },
+  "Mummy (dangerous)": {
+    "hp": 445, "resilience": 0, "damageToFarmer": 46, "speed": 2,
+    "icon": "Mummy.png",
+    "drops": "768 .99 768 .15 428 .2 428 .05 243 .04 856 .01 485 .002 99 .001 74 .001 74 .0005 72 .0005",
+    "locations": [
+      { "locationId": "map-skull-cavern", "qualifier": "Invasion" }
+    ],
+    "notes": "Skull Cavern Invasion only. Must be finished with bomb or Crusader enchantment."
+  },
+  "Armored Bug (dangerous)": {
+    "hp": 250, "resilience": 0, "damageToFarmer": 23, "speed": 2,
+    "icon": "ArmoredBug.png",
+    "drops": "684 .76 874 .1 157 .02 114 .005 96 .005 99 .001 72 .0005 74 .0005",
+    "locations": [
+      { "locationId": "map-skull-cavern", "qualifier": "Invasion" }
+    ],
+    "notes": "Skull Cavern Invasion only. Invincible except with Bug Killer enchantment."
+  },
+  "Purple Slime (dangerous)": {
+    "hp": 820, "resilience": 5, "damageToFarmer": 32, "speed": 2,
+    "icon": "PurpleSlime.png",
+    "drops": "766 .8 92 .5 382 .1 72 .01 386 .005 337 .004 96 .005 99 .001",
+    "locations": [
+      { "locationId": "map-skull-cavern", "qualifier": "Invasion" }
+    ],
+    "notes": "Skull Cavern Invasion only"
+  }
+}

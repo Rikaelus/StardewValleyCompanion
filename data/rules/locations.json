@@ -145,7 +145,11 @@
         "gameShopId": "Traveler"
       },
       "address": "Cindersap Forest",
-      "note": "Appears Fridays and Sundays in Cindersap Forest. Also visits the Night Market (Winter 15-17) and Desert Festival (Spring 15-17)."
+      "locations": [
+        { "id": "fest-night-market", "note": "Visits all 3 nights" },
+        { "id": "fest-desert-festival" }
+      ],
+      "note": "Appears Fridays and Sundays in Cindersap Forest."
     },
     "loc-island-trader": {
       "id": "loc-island-trader",
@@ -234,11 +238,6 @@
       "address": "Pelican Town",
       "note": "Appears on the 1st and 15th of each season."
     },
-    "loc-shipping-bin": {
-      "id": "loc-shipping-bin",
-      "name": "Shipping Bin",
-      "icon": "assets/objects/Chest.png"
-    },
     "loc-trash-can": {
       "id": "loc-trash-can",
       "name": "Trash Can",
@@ -251,8 +250,11 @@
       "shop": {
         "gameShopId": "Festival_EggFestival_Pierre"
       },
-      "address": "Pelican Town",
-      "festival": "fest-egg-festival"
+      "locations": [
+        {
+          "id": "fest-egg-festival"
+        }
+      ]
     },
     "loc-flower-dance": {
       "id": "loc-flower-dance",
@@ -261,8 +263,11 @@
       "shop": {
         "gameShopId": "Festival_FlowerDance_Pierre"
       },
-      "address": "Cindersap Forest",
-      "festival": "fest-flower-dance"
+      "locations": [
+        {
+          "id": "fest-flower-dance"
+        }
+      ]
     },
     "loc-luau": {
       "id": "loc-luau",
@@ -271,8 +276,11 @@
       "shop": {
         "gameShopId": "Festival_Luau_Pierre"
       },
-      "address": "Beach",
-      "festival": "fest-luau"
+      "locations": [
+        {
+          "id": "fest-luau"
+        }
+      ]
     },
     "loc-spirits-eve": {
       "id": "loc-spirits-eve",
@@ -281,8 +289,11 @@
       "shop": {
         "gameShopId": "Festival_SpiritsEve_Pierre"
       },
-      "address": "Pelican Town",
-      "festival": "fest-spirits-eve"
+      "locations": [
+        {
+          "id": "fest-spirits-eve"
+        }
+      ]
     },
     "loc-moonlight-jellies": {
       "id": "loc-moonlight-jellies",
@@ -291,8 +302,11 @@
       "shop": {
         "gameShopId": "Festival_DanceOfTheMoonlightJellies_Pierre"
       },
-      "address": "Beach",
-      "festival": "fest-moonlight-jellies"
+      "locations": [
+        {
+          "id": "fest-moonlight-jellies"
+        }
+      ]
     },
     "loc-winter-star": {
       "id": "loc-winter-star",
@@ -301,8 +315,11 @@
       "shop": {
         "gameShopId": "Festival_FeastOfTheWinterStar_Pierre"
       },
-      "address": "Pelican Town",
-      "festival": "fest-winter-star"
+      "locations": [
+        {
+          "id": "fest-winter-star"
+        }
+      ]
     },
     "loc-festival-of-ice": {
       "id": "loc-festival-of-ice",
@@ -311,8 +328,11 @@
       "shop": {
         "gameShopId": "Festival_FestivalOfIce_TravelingMerchant"
       },
-      "address": "Cindersap Forest",
-      "festival": "fest-festival-of-ice"
+      "locations": [
+        {
+          "id": "fest-festival-of-ice"
+        }
+      ]
     },
     "loc-stardew-valley-fair": {
       "id": "loc-stardew-valley-fair",
@@ -321,15 +341,11 @@
       "shop": {
         "gameShopId": "Festival_StardewValleyFair_StarTokens"
       },
-      "address": "Pelican Town",
-      "festival": "fest-stardew-valley-fair"
-    },
-    "loc-night-market": {
-      "id": "loc-night-market",
-      "name": "Night Market",
-      "icon": "assets/objects/MidnightCarp.png",
-      "address": "Beach",
-      "festival": "fest-night-market"
+      "locations": [
+        {
+          "id": "fest-stardew-valley-fair"
+        }
+      ]
     },
     "loc-night-market-decoration": {
       "id": "loc-night-market-decoration",
@@ -338,8 +354,11 @@
       "shop": {
         "gameShopId": "Festival_NightMarket_DecorationBoat"
       },
-      "address": "Beach",
-      "festival": "fest-night-market"
+      "locations": [
+        {
+          "id": "fest-night-market"
+        }
+      ]
     },
     "loc-night-market-magic": {
       "id": "loc-night-market-magic",
@@ -348,23 +367,22 @@
       "shop": {
         "gameShopId": "Festival_NightMarket_MagicBoat_Day1"
       },
-      "address": "Beach",
-      "festival": "fest-night-market"
+      "locations": [
+        {
+          "id": "fest-night-market"
+        }
+      ]
     },
     "loc-night-market-lupini": {
       "id": "loc-night-market-lupini",
       "name": "Night Market (Lupini's Paintings)",
       "icon": "assets/objects/MidnightCarp.png",
-      "address": "Beach",
-      "festival": "fest-night-market",
-      "note": "Sells 3 rotating paintings, one per night."
-    },
-    "loc-desert-festival": {
-      "id": "loc-desert-festival",
-      "name": "Desert Festival",
-      "icon": "assets/objects/CalicoEgg.png",
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival"
+      "note": "Sells 3 rotating paintings, one per night.",
+      "locations": [
+        {
+          "id": "fest-night-market"
+        }
+      ]
     },
     "loc-desert-festival-egg-shop": {
       "id": "loc-desert-festival-egg-shop",
@@ -373,8 +391,11 @@
       "shop": {
         "gameShopId": "DesertFestival_EggShop"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival"
+      "locations": [
+        {
+          "id": "fest-desert-festival"
+        }
+      ]
     },
     "loc-desert-festival-abigail": {
       "id": "loc-desert-festival-abigail",
@@ -383,9 +404,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Abigail"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-alex": {
       "id": "loc-desert-festival-alex",
@@ -394,9 +422,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Alex"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-caroline": {
       "id": "loc-desert-festival-caroline",
@@ -405,9 +440,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Caroline"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-clint": {
       "id": "loc-desert-festival-clint",
@@ -416,9 +458,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Clint"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-demetrius": {
       "id": "loc-desert-festival-demetrius",
@@ -427,9 +476,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Demetrius"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-elliott": {
       "id": "loc-desert-festival-elliott",
@@ -438,9 +494,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Elliott"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-emily": {
       "id": "loc-desert-festival-emily",
@@ -449,9 +512,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Emily"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-evelyn": {
       "id": "loc-desert-festival-evelyn",
@@ -460,9 +530,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Evelyn"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-george": {
       "id": "loc-desert-festival-george",
@@ -471,9 +548,16 @@
       "shop": {
         "gameShopId": "DesertFestival_George"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-gus": {
       "id": "loc-desert-festival-gus",
@@ -482,9 +566,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Gus"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-haley": {
       "id": "loc-desert-festival-haley",
@@ -493,9 +584,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Haley"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-harvey": {
       "id": "loc-desert-festival-harvey",
@@ -504,9 +602,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Harvey"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-jas": {
       "id": "loc-desert-festival-jas",
@@ -515,9 +620,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Jas"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-jodi": {
       "id": "loc-desert-festival-jodi",
@@ -526,9 +638,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Jodi"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-kent": {
       "id": "loc-desert-festival-kent",
@@ -537,9 +656,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Kent"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-leah": {
       "id": "loc-desert-festival-leah",
@@ -548,9 +674,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Leah"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-leo": {
       "id": "loc-desert-festival-leo",
@@ -559,9 +692,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Leo"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-marnie": {
       "id": "loc-desert-festival-marnie",
@@ -570,9 +710,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Marnie"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-maru": {
       "id": "loc-desert-festival-maru",
@@ -581,9 +728,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Maru"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-pam": {
       "id": "loc-desert-festival-pam",
@@ -592,9 +746,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Pam"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-penny": {
       "id": "loc-desert-festival-penny",
@@ -603,9 +764,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Penny"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-pierre": {
       "id": "loc-desert-festival-pierre",
@@ -614,9 +782,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Pierre"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-robin": {
       "id": "loc-desert-festival-robin",
@@ -625,9 +800,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Robin"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-sam": {
       "id": "loc-desert-festival-sam",
@@ -636,9 +818,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Sam"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-sebastian": {
       "id": "loc-desert-festival-sebastian",
@@ -647,9 +836,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Sebastian"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-shane": {
       "id": "loc-desert-festival-shane",
@@ -658,9 +854,16 @@
       "shop": {
         "gameShopId": "DesertFestival_Shane"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     },
     "loc-desert-festival-vincent": {
       "id": "loc-desert-festival-vincent",
@@ -669,26 +872,33 @@
       "shop": {
         "gameShopId": "DesertFestival_Vincent"
       },
-      "address": "Calico Desert",
-      "festival": "fest-desert-festival",
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year."
+      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
+      "locations": [
+        {
+          "id": "fest-desert-festival",
+          "rotation": {
+            "pool": "desert-festival-villager-stalls",
+            "countPerYear": 2
+          }
+        }
+      ]
     }
   },
   "categorySellingLocations": {
     "-17": [
       "loc-pierre",
-      "loc-shipping-bin"
+      "shipping-bin"
     ],
     "-20": [
       "loc-trash-can",
-      "loc-shipping-bin"
+      "shipping-bin"
     ],
     "-23": [
       "loc-willy",
-      "loc-shipping-bin"
+      "shipping-bin"
     ],
     "-27": [
-      "loc-shipping-bin"
+      "shipping-bin"
     ]
   }
 }

@@ -60,6 +60,8 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
           qualifiers.push(src.days.join('/'))
         if (src.dayParity)
           qualifiers.push(src.dayParity === 'odd' ? 'Odd days' : 'Even days')
+        if (src.yearCycle)
+          qualifiers.push(`Year ${src.yearCycle} cycle`)
         if (src.yearUnlock)
           qualifiers.push(src.yearUnlockBefore ? `Before Year ${src.yearUnlock}` : `Year ${src.yearUnlock}+`)
         if (src.rotating)
@@ -94,7 +96,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
             <ModalItemButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} />
           </>
         ) : (
-          price != null ? `${price}g` : '—'
+          price != null ? `${price.toLocaleString()}g` : '—'
         )
 
         return (

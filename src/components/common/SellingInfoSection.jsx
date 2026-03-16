@@ -469,9 +469,9 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
 
   if (!entity) return null
   if (entity.isGeneric) return null
-  if (entity.category === 'furniture') return null
+  if (entity.type === 'furniture') return null
 
-  if (entity.category === 'animal') {
+  if (entity.type === 'animal') {
     if (!entity.sellPrice) return null
     return <AnimalSellingCalculator entity={entity} />
   }
@@ -693,15 +693,15 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
 
             <div className="calculator-formula">
               {trashCanUpgrade !== null ? (
-                <>Base: {basePrice}g × {trashCanRefund * 100}%{(itemHasQuality && entity.maxQuality !== 0) ? ' (per quality tier)' : ''}</>
+                <>Base: {basePrice.toLocaleString()}g × {trashCanRefund * 100}%{(itemHasQuality && entity.maxQuality !== 0) ? ' (per quality tier)' : ''}</>
               ) : multiplier > 1 ? (
                 <>
-                  Base: {basePrice}g × {multiplier} (profession)
+                  Base: {basePrice.toLocaleString()}g × {multiplier} (profession)
                   {(itemHasQuality && entity.maxQuality !== 0 && !iridiumOnlyQuality) && ' (per quality tier)'}
                   {iridiumOnlyQuality && ' (Qi\'s Seasoning for iridium)'}
                 </>
               ) : (
-                <>Base: {basePrice}g</>
+                <>Base: {basePrice.toLocaleString()}g</>
               )}
             </div>
           </div>

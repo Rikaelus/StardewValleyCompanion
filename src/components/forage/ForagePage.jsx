@@ -1,12 +1,15 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useItemData } from '../../hooks/useData'
+import { useEntities } from '../../contexts/EntityContext'
 import PagePanel from '../common/PagePanel'
+import { getLocationNames } from '../../utils/Formatters'
 import ForageTable from './ForageTable'
 import './ForagePage.css'
 
 function ForagePage() {
   const { data, loading, error } = useItemData('forage')
+  const { findById } = useEntities()
   const [searchParams, setSearchParams] = useSearchParams()
 
   // Get state from URL
@@ -53,7 +56,7 @@ function ForagePage() {
     if (!data.items) return {}
 
     // Extract unique locations from forage data
-    const locations = [...new Set(data.items.flatMap(f => f.locations || []))].sort()
+    const locations = [...new Set(data.items.flatMap(f => getLocationNames(f, findById)))].sort()
 
     // Extract unique bundles from forage bundleDetails
     const bundleMap = new Map()
@@ -91,7 +94,7 @@ function ForagePage() {
 
       // Location filter
       if (filters.location) {
-        const itemLocations = item.locations || []
+        const itemLocations = getLocationNames(item, findById)
         if (!itemLocations.includes(filters.location)) {
           return false
         }

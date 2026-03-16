@@ -29,10 +29,10 @@
     "Festival_DanceOfTheMoonlightJellies_Pierre": "loc-moonlight-jellies",
     "Festival_FeastOfTheWinterStar_Pierre": "loc-winter-star",
     "Festival_FestivalOfIce_TravelingMerchant": "loc-festival-of-ice",
-    "Festival_NightMarket_MagicBoat_Day1": "loc-night-market",
-    "Festival_NightMarket_MagicBoat_Day2": "loc-night-market",
-    "Festival_NightMarket_MagicBoat_Day3": "loc-night-market",
-    "Festival_NightMarket_DecorationBoat": "loc-night-market",
+    "Festival_NightMarket_MagicBoat_Day1": "loc-night-market-magic",
+    "Festival_NightMarket_MagicBoat_Day2": "loc-night-market-magic",
+    "Festival_NightMarket_MagicBoat_Day3": "loc-night-market-magic",
+    "Festival_NightMarket_DecorationBoat": "loc-night-market-decoration",
     "Festival_StardewValleyFair_StarTokens": "loc-stardew-valley-fair",
     "DesertFestival_EggShop": "loc-desert-festival-egg-shop",
     "DesertFestival_Abigail": "loc-desert-festival-abigail",
@@ -143,10 +143,6 @@
     },
     "loc-bookseller": {
       "name": "Bookseller",
-      "npc": null
-    },
-    "loc-shipping-bin": {
-      "name": "Shipping Bin",
       "npc": null
     },
     "loc-egg-festival": {

@@ -86,7 +86,7 @@ function SeedsTable({ data, cropsById }) {
       cell: ({ getValue }) => {
         const price = getValue()
         if (!price) return '—'
-        return <span style={{ fontFamily: 'monospace' }}>{price}g</span>
+        return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
       },
       enableSorting: true,
       meta: { align: 'right' },

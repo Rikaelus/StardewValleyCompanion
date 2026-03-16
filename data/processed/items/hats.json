@@ -319,17 +319,17 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 2500
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 10000
       }
     ]

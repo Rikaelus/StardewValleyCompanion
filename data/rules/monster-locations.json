@@ -1,53 +1,161 @@
 {
-  "_comment": "Hand-curated monster location data. Keys are internal game monster names from Monsters.json.",
-  "Green Slime": ["Mines (Floors 1–39)", "Skull Cavern", "Farm (Wilderness)"],
-  "Frost Jelly": ["Mines (Floors 40–79)"],
-  "Sludge": ["Mines (Floors 80–119)", "Witch's Swamp"],
-  "Tiger Slime": ["Ginger Island (Volcano Dungeon)", "Skull Cavern (Dangerous)"],
-  "Big Slime": ["Mines", "Skull Cavern", "Witch's Swamp"],
-  "Dust Spirit": ["Mines (Floors 40–79)"],
-  "Bat": ["Mines (Floors 1–39)"],
-  "Frost Bat": ["Mines (Floors 40–79)"],
-  "Lava Bat": ["Mines (Floors 80–119)"],
-  "Iridium Bat": ["Skull Cavern"],
-  "Stone Golem": ["Mines (Floors 1–39)"],
-  "Wilderness Golem": ["Farm (Wilderness)"],
-  "Iridium Golem": ["Skull Cavern"],
-  "Grub": ["Mines (Floors 1–39)"],
-  "Fly": ["Mines (Floors 80–119)"],
-  "Bug": ["Mines (Floors 1–39)"],
-  "Shadow Guy": ["Mines (Floors 80–119)"],
-  "Shadow Brute": ["Mines (Floors 80–119)", "Witch's Swamp"],
-  "Shadow Shaman": ["Mines (Floors 80–119)", "Witch's Swamp"],
-  "Shadow Sniper": ["Witch's Swamp"],
-  "Spider": ["Witch's Swamp"],
-  "Ghost": ["Mines (Floors 60+)"],
-  "Carbon Ghost": ["Mines (Floors 80–119)"],
-  "Putrid Ghost": ["Witch's Swamp"],
-  "Duggy": ["Mines (Floors 1–39)"],
-  "Magma Duggy": ["Ginger Island (Volcano Dungeon)"],
-  "Rock Crab": ["Mines (Floors 1–39)", "Beach"],
-  "Lava Crab": ["Mines (Floors 80–119)"],
-  "Iridium Crab": ["Skull Cavern"],
-  "Truffle Crab": ["Ginger Island (Beach)"],
-  "Squid Kid": ["Mines (Floors 80–119)"],
-  "Blue Squid": ["Ginger Island (Volcano Dungeon)"],
-  "Skeleton Warrior": ["Mines (Floors 70–79)"],
-  "Skeleton": ["Skull Cavern"],
-  "Skeleton Mage": ["Skull Cavern"],
-  "Metal Head": ["Mines (Floors 80–119)"],
-  "Hot Head": ["Ginger Island (Volcano Dungeon)"],
-  "Spiker": ["Mines (Floors 40–79)"],
-  "Mummy": ["Skull Cavern"],
-  "Serpent": ["Skull Cavern"],
-  "Royal Serpent": ["Skull Cavern (Dangerous)"],
-  "Pepper Rex": ["Skull Cavern"],
-  "Lava Lurk": ["Ginger Island (Volcano Dungeon)"],
-  "Magma Sprite": ["Ginger Island (Volcano Dungeon)"],
-  "Magma Sparker": ["Ginger Island (Volcano Dungeon)"],
-  "False Magma Cap": ["Ginger Island (Volcano Dungeon)"],
-  "Dwarvish Sentry": ["Ginger Island (Volcano Dungeon)"],
-  "Fireball": ["Ginger Island (Volcano Dungeon)"],
+  "_comment": "Hand-curated monster location data. Keys are internal game monster names from Monsters.json. Each entry has a locationId (matching a map- entity) and optional qualifier.",
+  "Green Slime": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" },
+    { "locationId": "map-skull-cavern" },
+    { "locationId": "map-secret-woods" },
+    { "locationId": "map-farm-wilderness" }
+  ],
+  "Frost Jelly": [
+    { "locationId": "map-mines", "qualifier": "Floors 40–79" },
+    { "locationId": "map-secret-woods" }
+  ],
+  "Sludge": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" },
+    { "locationId": "map-witch-swamp" },
+    { "locationId": "map-farm-wilderness" }
+  ],
+  "Tiger Slime": [
+    { "locationId": "map-volcano-dungeon" },
+    { "locationId": "map-skull-cavern", "qualifier": "Dangerous" }
+  ],
+  "Big Slime": [
+    { "locationId": "map-mines" },
+    { "locationId": "map-skull-cavern" },
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Dust Spirit": [
+    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+  ],
+  "Bat": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+  ],
+  "Frost Bat": [
+    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+  ],
+  "Lava Bat": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Iridium Bat": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Stone Golem": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+  ],
+  "Wilderness Golem": [
+    { "locationId": "map-farm-wilderness" }
+  ],
+  "Iridium Golem": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Grub": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+  ],
+  "Fly": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Bug": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+  ],
+  "Shadow Guy": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Shadow Brute": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" },
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Shadow Shaman": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" },
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Shadow Sniper": [
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Spider": [
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Ghost": [
+    { "locationId": "map-mines", "qualifier": "Floors 60+" }
+  ],
+  "Carbon Ghost": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Putrid Ghost": [
+    { "locationId": "map-witch-swamp" }
+  ],
+  "Duggy": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+  ],
+  "Magma Duggy": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Rock Crab": [
+    { "locationId": "map-mines", "qualifier": "Floors 1–39" },
+    { "locationId": "map-beach" }
+  ],
+  "Lava Crab": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Iridium Crab": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Truffle Crab": [
+    { "locationId": "map-island-south" }
+  ],
+  "Squid Kid": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Blue Squid": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Skeleton Warrior": [
+    { "locationId": "map-mines", "qualifier": "Floors 70–79" }
+  ],
+  "Skeleton": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Skeleton Mage": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Metal Head": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+  ],
+  "Hot Head": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Spiker": [
+    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+  ],
+  "Mummy": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Serpent": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Royal Serpent": [
+    { "locationId": "map-skull-cavern", "qualifier": "Dangerous" }
+  ],
+  "Pepper Rex": [
+    { "locationId": "map-skull-cavern" }
+  ],
+  "Lava Lurk": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Magma Sprite": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Magma Sparker": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "False Magma Cap": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Dwarvish Sentry": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
+  "Fireball": [
+    { "locationId": "map-volcano-dungeon" }
+  ],
   "Crow": [],
   "Frog": [],
   "Cat": []

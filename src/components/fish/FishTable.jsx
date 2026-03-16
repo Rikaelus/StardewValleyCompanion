@@ -3,7 +3,7 @@ import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
 import { useOpenModal } from '../../contexts/ModalContext'
-import { formatTime, getDifficultyColor } from '../../utils/Formatters'
+import { formatTime, getDifficultyColor, getLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
   createNameColumn,
@@ -15,7 +15,7 @@ import {
 
 function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
-  const { villagers: { all: villagers }, ...relationalData } = useEntities()
+  const { villagers: { all: villagers }, findById, ...relationalData } = useEntities()
   const openModal = useOpenModal()
   const professionsRef = useRef(player.professions)
 
@@ -41,8 +41,9 @@ function FishTable({ fish, allFish }) {
         )
       }),
       {
-        accessorKey: 'locations',
+        id: 'locations',
         header: 'Location',
+        accessorFn: row => getLocationNames(row, findById),
         cell: ({ getValue }) => {
           const locations = getValue()
           if (!locations || locations.length === 0) return '—'

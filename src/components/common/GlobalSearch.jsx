@@ -2,8 +2,9 @@ import { useState, useEffect, useRef, useCallback, useMemo, useId } from 'react'
 import { createPortal } from 'react-dom'
 import { useEntities } from '../../contexts/EntityContext'
 import { useModalStack, useOpenModal } from '../../contexts/ModalContext'
+import { usePlayer } from '../../contexts/PlayerContext'
 import { useDebounce } from '../../hooks/useDebounce'
-import { getEntityLabel } from '../../utils/Formatters'
+import { getEntityLabels } from '../../utils/Formatters'
 import './GlobalSearch.css'
 
 function GlobalSearch({ isOpen, onClose }) {
@@ -11,6 +12,7 @@ function GlobalSearch({ isOpen, onClose }) {
   const { items } = useEntities()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
   const openModal = useOpenModal()
+  const { player, addRecentSearch } = usePlayer()
 
   const [query, setQuery] = useState('')
   const [highlightedIndex, setHighlightedIndex] = useState(0)
@@ -78,8 +80,8 @@ function GlobalSearch({ isOpen, onClose }) {
     const filtered = searchable.filter(item => {
       if (item.isGeneric || item.isHidden) return false
       if (item.name?.toLowerCase().includes(q)) return true
-      const label = getEntityLabel(item)
-      return label?.toLowerCase().includes(q)
+      const { type, subtype } = getEntityLabels(item)
+      return type?.toLowerCase().includes(q) || subtype?.toLowerCase().includes(q)
     })
 
     // Sort: name prefix > name substring > category match, then alphabetically within each tier
@@ -113,9 +115,10 @@ function GlobalSearch({ isOpen, onClose }) {
   }, [highlightedIndex])
 
   const openItem = useCallback((item) => {
+    if (query.trim()) addRecentSearch(query.trim())
     openModal(item)
     onClose()
-  }, [openModal, onClose])
+  }, [openModal, onClose, query, addRecentSearch])
 
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowDown') {
@@ -172,13 +175,30 @@ function GlobalSearch({ isOpen, onClose }) {
               )}
             </div>
 
+            {!query && player.recentSearches?.length > 0 && (
+              <div className="search-recent">
+                <span className="search-recent-label">Recent</span>
+                <div className="search-recent-badges">
+                  {player.recentSearches.map(s => (
+                    <button
+                      key={s}
+                      className="search-recent-badge"
+                      onClick={() => { setQuery(s); inputRef.current?.focus() }}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {results.length > 0 && (
               <ul className="search-results" ref={resultsRef} role="listbox">
                 {results.map((item, idx) => {
                   const iconPath = item.icon
                     ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
                     : null
-                  const categoryLabel = getEntityLabel(item)
+                  const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(item)
 
                   return (
                     <li
@@ -196,9 +216,10 @@ function GlobalSearch({ isOpen, onClose }) {
                         }
                       </div>
                       <span className="search-result-name">{item.name}</span>
-                      {categoryLabel && (
-                        <span className="search-result-category">{categoryLabel}</span>
-                      )}
+                      <span className="search-result-badges">
+                        {typeLabel && <span className="search-result-category">{typeLabel}</span>}
+                        {subtypeLabel && <span className="search-result-type">{subtypeLabel}</span>}
+                      </span>
                     </li>
                   )
                 })}

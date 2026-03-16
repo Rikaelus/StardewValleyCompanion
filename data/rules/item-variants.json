@@ -80,31 +80,31 @@
       "notes": "Hedge — craftable fence-like item but has no wiki image as standalone item."
     },
     "(BC)48": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Decor — stored as BigCraftable in game data but is functionally decorative furniture placed indoors."
     },
     "(BC)184": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 1 — stored as BigCraftable but is functionally decorative furniture."
     },
     "(BC)188": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 2 — stored as BigCraftable but is functionally decorative furniture."
     },
     "(BC)192": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 3 — stored as BigCraftable but is functionally decorative furniture."
     },
     "(BC)196": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 4 — stored as BigCraftable but is functionally decorative furniture."
     },
     "(BC)200": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 5 — stored as BigCraftable but is functionally decorative furniture."
     },
     "(BC)204": {
-      "category": "furniture",
+      "type": "furniture",
       "notes": "Seasonal Plant variant 6 — stored as BigCraftable but is functionally decorative furniture."
     }
   }

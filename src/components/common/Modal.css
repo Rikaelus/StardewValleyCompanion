@@ -54,11 +54,8 @@
 
 
 .modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 1rem 1.5rem;
+  padding-right: 3.5rem; /* room for absolute-positioned close button */
   border-bottom: 3px solid #8b6f47;
   background: linear-gradient(180deg, #e8d4b0 0%, #d4c4a8 100%);
   position: relative;
@@ -118,6 +115,9 @@
 }
 
 .modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
   background: none;
   border: none;
   font-size: 32px;

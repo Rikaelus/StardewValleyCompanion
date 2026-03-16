@@ -50,7 +50,7 @@ const sourceData = {
   hats:           loadJson(path.join(SOURCE_DIR, 'items/hats.json')),
   food:           loadJson(path.join(SOURCE_DIR, 'items/food.json')),
   ores:           loadJson(path.join(SOURCE_DIR, 'items/ores.json')),
-  geodeMinerals:  loadJson(path.join(SOURCE_DIR, 'items/geode-minerals.json')),
+  geodeMinerals:  loadJson(path.join(SOURCE_DIR, 'items/geode-minerals.json')),  // merged into mineral category
   crafted:        loadJson(path.join(SOURCE_DIR, 'items/crafted.json')),
   fertilizers:    loadJson(path.join(SOURCE_DIR, 'items/fertilizers.json')),
   bait:           loadJson(path.join(SOURCE_DIR, 'items/bait.json')),
@@ -294,7 +294,7 @@ const taggedFurniture      = tagEntities(sourceData.furniture,      'furniture',
 const taggedHats           = tagEntities(sourceData.hats,           'hat',            'H');
 const taggedFood           = tagEntities(sourceData.food,           'food',           'O');
 const taggedOres           = tagEntities(sourceData.ores,           'ore',            'O');
-const taggedGeodeMinerals  = tagEntities(sourceData.geodeMinerals,  'geode-mineral',  'O');
+const taggedGeodeMinerals  = tagEntities(sourceData.geodeMinerals,  'mineral',        'O');
 const taggedCrafted        = tagEntities(sourceData.crafted,        'crafted',        'O');
 const taggedFertilizers    = tagEntities(sourceData.fertilizers,    'fertilizer',     'O');
 const taggedBait           = tagEntities(sourceData.bait,           'bait',           'O');
@@ -353,10 +353,6 @@ for (const loc of taggedLocations) {
   if (buysByLocation[loc.id]?.length > 0) loc.buys = buysByLocation[loc.id];
 }
 
-// Derive locationIds for each festival from the festival's own locations array
-for (const fest of taggedFestivals) {
-  fest.locationIds = (fest.locations || []).map(l => l.id);
-}
 
 console.log(`  ✓ Tagged all entity types`);
 
@@ -369,8 +365,6 @@ const ALL_SEASONS = ['spring', 'summer', 'fall', 'winter'];
 taggedFish.forEach(fish => {
   const fishSources = (fish.sources || []).filter(s => s.type === 'fish');
   if (fishSources.length === 0) return;
-
-  fish.locations = [...new Set(fishSources.map(s => s.location).filter(Boolean))].sort();
 
   const srcSeasonSets = fishSources.map(s => {
     if (s.seasons) return new Set(s.seasons);
@@ -393,13 +387,6 @@ console.log('\n🌿 Deriving forage locations/seasons...');
 function deriveForageLocationsSeasons(item) {
   const forageSources = (item.sources || []).filter(s => s.type === 'forage');
   if (forageSources.length === 0) return;
-
-  item.locations = [...new Set(forageSources.flatMap(s => {
-    // Location names may include river suffix; strip to base area name
-    const loc = s.location || '';
-    if (loc.endsWith(' River')) return [loc.replace(' River', '')];
-    return [loc];
-  }))].filter(Boolean).sort();
 
   const srcSeasonSets = forageSources.map(s => {
     if (s.seasons) return new Set(s.seasons);
@@ -439,7 +426,7 @@ const CATEGORY_PRIORITY = {
   'hat': 14,
   'food': 15,
   'ore': 16,
-  'geode-mineral': 17,
+  // geode-mineral merged into mineral (type='geode-mineral' under category='mineral')
   'crafted': 18,
   'fertilizer': 19,
   'bait': 20,
@@ -574,12 +561,6 @@ console.log('\n🌿 Re-deriving forage locations for merged items...');
 allCompiledEntities.forEach(item => {
   const forageSources = (item.sources || []).filter(s => s.type === 'forage');
   if (forageSources.length === 0) return;
-
-  item.locations = [...new Set(forageSources.flatMap(s => {
-    const loc = s.location || '';
-    if (loc.endsWith(' River')) return [loc.replace(' River', '')];
-    return [loc];
-  }))].filter(Boolean).sort();
 
   const srcSeasonSets = forageSources.map(s => {
     if (s.seasons) return new Set(s.seasons);

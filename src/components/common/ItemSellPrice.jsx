@@ -146,10 +146,10 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
         <div className={`item-sell-price-container ${className}`}>
           <div className="item-sell-price item-sell-price-qualities">
             <span className="price-regular" title="Regular Quality">
-              {regularPrice}g
+              {regularPrice.toLocaleString()}g
             </span>
             <span className="price-silver" title="Silver Quality (with Deluxe Bait)">
-              {Math.floor(basePrice * 1.25 * multiplier)}g
+              {Math.floor(basePrice * 1.25 * multiplier).toLocaleString()}g
             </span>
           </div>
           {appliedProfession && (
@@ -168,10 +168,10 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
         <div className={`item-sell-price-container ${className}`}>
           <div className="item-sell-price item-sell-price-qualities">
             <span className="price-regular" title="Regular Quality">
-              {regularPrice}g
+              {regularPrice.toLocaleString()}g
             </span>
             <span className="price-iridium" title="Iridium Quality (Qi's Seasoning)">
-              {Math.floor(basePrice * 2.0 * multiplier)}g
+              {Math.floor(basePrice * 2.0 * multiplier).toLocaleString()}g
             </span>
           </div>
           {appliedProfession && (
@@ -190,16 +190,16 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
         <div className={`item-sell-price-container ${className}`}>
           <div className="item-sell-price item-sell-price-qualities">
             <span className="price-regular" title="Regular Quality">
-              {regularPrice}g
+              {regularPrice.toLocaleString()}g
             </span>
             <span className="price-silver" title="Silver Quality">
-              {Math.floor(item.prices.silver * multiplier)}g
+              {Math.floor(item.prices.silver * multiplier).toLocaleString()}g
             </span>
             <span className="price-gold" title="Gold Quality">
-              {Math.floor(item.prices.gold * multiplier)}g
+              {Math.floor(item.prices.gold * multiplier).toLocaleString()}g
             </span>
             <span className="price-iridium" title="Iridium Quality">
-              {Math.floor(item.prices.iridium * multiplier)}g
+              {Math.floor(item.prices.iridium * multiplier).toLocaleString()}g
             </span>
           </div>
           {appliedProfession && (
@@ -217,16 +217,16 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
       <div className={`item-sell-price-container ${className}`}>
         <div className="item-sell-price item-sell-price-qualities">
           <span className="price-regular" title="Regular Quality">
-            {regularPrice}g
+            {regularPrice.toLocaleString()}g
           </span>
           <span className="price-silver" title="Silver Quality">
-            {Math.floor(basePrice * 1.25 * multiplier)}g
+            {Math.floor(basePrice * 1.25 * multiplier).toLocaleString()}g
           </span>
           <span className="price-gold" title="Gold Quality">
-            {Math.floor(basePrice * 1.5 * multiplier)}g
+            {Math.floor(basePrice * 1.5 * multiplier).toLocaleString()}g
           </span>
           <span className="price-iridium" title="Iridium Quality">
-            {Math.floor(basePrice * 2.0 * multiplier)}g
+            {Math.floor(basePrice * 2.0 * multiplier).toLocaleString()}g
           </span>
         </div>
         {appliedProfession && (
@@ -244,7 +244,7 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
     <div className={`item-sell-price-container ${className}`}>
       <div className="item-sell-price item-sell-price-qualities">
         <span className="price-regular" title="Regular Quality">
-          {regularPrice}g
+          {regularPrice.toLocaleString()}g
         </span>
       </div>
       {appliedProfession && (

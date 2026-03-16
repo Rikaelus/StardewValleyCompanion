@@ -121,7 +121,10 @@ function ModalItemButton({
           ? <img src={iconSrc} alt="" width={16} height={16} onError={() => setImageError(true)} style={{ imageRendering: 'pixelated', flexShrink: 0 }} />
           : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
         }
-        <span style={{ position: 'relative', top: '2px' }}>{label ?? (plural ? pluralize(item.name) : item.name)}</span>
+        <span style={{ position: 'relative', top: '2px' }}>
+          {label ?? (plural ? pluralize(item.name) : item.name)}
+          {item.contextTags?.includes('fish_legendary') && <span title="Legendary Fish"> ⭐</span>}
+        </span>
       </button>
     )
   }

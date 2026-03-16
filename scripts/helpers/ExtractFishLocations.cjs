@@ -2,7 +2,7 @@
 
 /**
  * Extract fish spawn locations from Data/Locations.json
- * Maps game location IDs to user-friendly names
+ * Maps game location IDs to user-friendly names and entity IDs
  */
 
 const fs = require('fs');
@@ -15,14 +15,29 @@ function loadJson(filePath) {
 
 // Load rules location mappings
 const CURATED_DIR = path.join(__dirname, '../../data/rules');
-const locationData = loadJson(path.join(CURATED_DIR, 'locations.json')).locations;
 const mineFloorsData = loadJson(path.join(CURATED_DIR, 'mine-floors.json'));
+const locationNamesData = loadJson(path.join(CURATED_DIR, 'location-names.json')).locations;
 
-// Convert location data to simple map for backward compatibility
+// Build displayName lookup from location-names.json (game location ID → display name)
 const LOCATION_NAME_MAP = {};
-for (const [key, data] of Object.entries(locationData)) {
+for (const [key, data] of Object.entries(locationNamesData)) {
   LOCATION_NAME_MAP[key] = data.displayName;
 }
+
+// Build displayName → entityId lookup from location-names.json
+const DISPLAY_NAME_TO_ENTITY_ID = {};
+for (const [, data] of Object.entries(locationNamesData)) {
+  if (data.displayName && data.entityId) {
+    DISPLAY_NAME_TO_ENTITY_ID[data.displayName] = data.entityId;
+  }
+}
+
+// Mine floor entity IDs
+const MINE_FLOOR_ENTITY_IDS = {
+  20: 'map-mines-f20',
+  60: 'map-mines-f60',
+  100: 'map-mines-f100',
+};
 
 const SEASON_INTS = { 0: 'spring', 1: 'summer', 2: 'fall', 3: 'winter' };
 
@@ -59,6 +74,11 @@ function mapLocationName(locationKey) {
 
   // Unmapped locations are likely interiors/temp locations - exclude them
   return null;
+}
+
+// Map a display name to its entity ID (null for pseudo-locations like crab pot)
+function mapLocationEntityId(displayName) {
+  return DISPLAY_NAME_TO_ENTITY_ID[displayName] || null;
 }
 
 // Parse seasons from a spawn rule's Season int and/or Condition string
@@ -101,27 +121,30 @@ function extractFishLocations() {
   const locationsData = JSON.parse(fs.readFileSync(locationsPath, 'utf8'));
   const fishData = JSON.parse(fs.readFileSync(fishPath, 'utf8'));
 
-  // fishLocations: Map<fishId, Map<locationName, Set<season> | null>>
-  // null season set = all seasons; Set = specific seasons seen for this location
+  // fishLocations: Map<fishId, Map<locationName, { seasons: Set<season>|null, locationId: string|null }>>
   const fishLocations = new Map();
   const fishMinLevels = new Map(); // MinFishingLevel requirements
 
   // Helper: record a (fish, location, seasons) tuple, merging seasons across multiple spawn rules
-  function addFishLocation(fishId, locationName, seasons) {
+  function addFishLocation(fishId, locationName, seasons, locationId) {
     if (!fishLocations.has(fishId)) fishLocations.set(fishId, new Map());
     const locMap = fishLocations.get(fishId);
 
     if (!locMap.has(locationName)) {
-      // First rule for this location: store seasons as a Set (or null for all)
-      locMap.set(locationName, seasons ? new Set(seasons) : null);
+      locMap.set(locationName, {
+        seasons: seasons ? new Set(seasons) : null,
+        locationId: locationId || null,
+      });
     } else {
       const existing = locMap.get(locationName);
-      if (existing === null || seasons === null) {
-        // Either side says "all seasons" → result is all seasons
-        locMap.set(locationName, null);
+      if (existing.seasons === null || seasons === null) {
+        existing.seasons = null;
       } else {
-        // Merge season sets
-        for (const s of seasons) existing.add(s);
+        for (const s of seasons) existing.seasons.add(s);
+      }
+      // Keep locationId if we didn't have one
+      if (!existing.locationId && locationId) {
+        existing.locationId = locationId;
       }
     }
   }
@@ -132,6 +155,8 @@ function extractFishLocations() {
 
     // Skip unmapped locations (interiors, temp areas, etc.)
     if (!friendlyName) return;
+
+    const entityId = mapLocationEntityId(friendlyName);
 
     // Check if this location has fish spawns
     if (!locationData.Fish || locationData.Fish.length === 0) {
@@ -146,7 +171,7 @@ function extractFishLocations() {
       if (!fishId) return;
 
       const seasons = parseSeasonsFromRule(spawnRule);
-      addFishLocation(fishId, friendlyName, seasons);
+      addFishLocation(fishId, friendlyName, seasons, entityId);
 
       // Capture MinFishingLevel if present
       if (spawnRule.MinFishingLevel && spawnRule.MinFishingLevel > 0) {
@@ -176,10 +201,11 @@ function extractFishLocations() {
 
       const fishId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
 
+      // Crab pot pseudo-locations don't get entity IDs
       if (waterType === 'ocean') {
-        addFishLocation(fishId, 'Ocean (Crab Pot)', null);
+        addFishLocation(fishId, 'Ocean (Crab Pot)', null, null);
       } else if (waterType === 'freshwater') {
-        addFishLocation(fishId, 'Freshwater (Crab Pot)', null);
+        addFishLocation(fishId, 'Freshwater (Crab Pot)', null, null);
       }
 
       console.log(`  ✓ ${fishName}: ${waterType} crab pot`);
@@ -197,11 +223,6 @@ function extractFishLocations() {
 
       if (minLevel > 0 || isFreshwaterFish) {
         const fishId = isNaN(gameId) ? gameId : parseInt(gameId, 10);
-
-        // MinLevel can mean two things:
-        // 1. For mines fish with no other locations: actual mine floor spawn requirement
-        // 2. For other fish: fishing skill level requirement (not a location)
-        // Only add mines location if fish has no locations OR already has a mines-related location
 
         const existingLocMap = fishLocations.get(fishId);
         const hasNoLocation = !existingLocMap || existingLocMap.size === 0;
@@ -238,11 +259,12 @@ function extractFishLocations() {
           if (floors) {
             floors.forEach(floor => {
               const floorDescription = `Mines (F${floor})`;
-              addFishLocation(fishId, floorDescription, null);
+              const floorEntityId = MINE_FLOOR_ENTITY_IDS[floor] || null;
+              addFishLocation(fishId, floorDescription, null, floorEntityId);
               console.log(`  ✓ ${fishName}: F${floor}`);
             });
           } else {
-            addFishLocation(fishId, 'Mines', null);
+            addFishLocation(fishId, 'Mines', null, 'map-mines');
             console.log(`  ✓ ${fishName}: MinLevel ${minLevel} → Mines`);
           }
         }
@@ -254,7 +276,7 @@ function extractFishLocations() {
   console.log(`✅ Extracted fishing level requirements for ${fishMinLevels.size} fish`);
 
   // Convert to serialisable structure:
-  // locations: { fishId: [ { location, seasons } ] }
+  // locations: { fishId: [ { location, locationId, seasons } ] }
   // seasons: null = all seasons, array = specific seasons
   const result = {
     locations: {},
@@ -263,9 +285,10 @@ function extractFishLocations() {
 
   fishLocations.forEach((locMap, fishId) => {
     result.locations[fishId] = Array.from(locMap.entries())
-      .map(([location, seasonSet]) => ({
+      .map(([location, data]) => ({
         location,
-        seasons: seasonSet ? Array.from(seasonSet).sort() : null
+        locationId: data.locationId,
+        seasons: data.seasons ? Array.from(data.seasons).sort() : null
       }))
       .sort((a, b) => a.location.localeCompare(b.location));
   });
@@ -284,8 +307,8 @@ function extractFishLocations() {
   console.log('Sample extracted locations:');
   const samples = Array.from(fishLocations.entries()).slice(0, 5);
   samples.forEach(([fishId, locMap]) => {
-    const locs = Array.from(locMap.entries()).map(([loc, seasons]) =>
-      seasons ? `${loc} (${Array.from(seasons).join('/')})` : loc
+    const locs = Array.from(locMap.entries()).map(([loc, data]) =>
+      data.seasons ? `${loc} (${Array.from(data.seasons).join('/')})` : loc
     );
     console.log(`  Game ID ${fishId}: ${locs.join(', ')}`);
   });

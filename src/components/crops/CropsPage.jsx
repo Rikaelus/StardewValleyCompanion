@@ -51,7 +51,7 @@ function CropsPage() {
   const filterOptions = useMemo(() => {
     if (!data.items || relationalLoading) return {}
 
-    const types = [...new Set(data.items.map(c => c.type).filter(Boolean))].sort()
+    const types = [...new Set(data.items.map(c => c.subtype).filter(Boolean))].sort()
 
     // Get unique bundles that crops belong to
     const bundleIds = new Set()
@@ -76,7 +76,7 @@ function CropsPage() {
         return false
       }
 
-      if (filters.type && item.type !== filters.type) {
+      if (filters.type && item.subtype !== filters.type) {
         return false
       }
 

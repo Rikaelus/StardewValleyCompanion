@@ -1,39 +1,71 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Mapping of internal location names from Locations.json to user-friendly display names. Unmapped locations are filtered out (interior locations, temp locations, etc.)",
+  "description": "Mapping of internal location names from Locations.json to user-friendly display names and entity hierarchy. Unmapped locations are filtered out (interior locations, temp locations, etc.)",
   "source": "Game data and https://stardewvalleywiki.com/Fish",
   "locations": {
     "Mountain": {
       "displayName": "Mountain Lake",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-mountain-lake",
+      "mapName": "Mountains",
+      "mapEntityId": "map-mountains",
+      "parentRegion": "map-valley"
     },
     "Forest": {
       "displayName": "Forest River",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-forest-river",
+      "mapName": "Cindersap Forest",
+      "mapEntityId": "map-forest",
+      "parentRegion": "map-valley"
     },
     "Town": {
       "displayName": "Town River",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-town-river",
+      "mapName": "Pelican Town",
+      "mapEntityId": "map-town",
+      "parentRegion": "map-valley"
     },
     "Beach": {
       "displayName": "Ocean",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-ocean",
+      "mapName": "Pelican Beach",
+      "mapEntityId": "map-beach",
+      "parentRegion": "map-valley"
     },
     "UndergroundMine": {
       "displayName": "Mines",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-mines",
+      "mapName": "The Mines",
+      "mapEntityId": "map-mines",
+      "parentRegion": "map-valley"
     },
     "Woods": {
       "displayName": "Secret Woods",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-secret-woods",
+      "mapName": "Secret Woods",
+      "mapEntityId": "map-secret-woods",
+      "parentRegion": "map-valley"
     },
     "Sewer": {
       "displayName": "Sewers",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-sewers",
+      "mapName": "Sewers",
+      "mapEntityId": "map-sewers",
+      "parentRegion": "map-valley"
     },
     "Desert": {
       "displayName": "Desert",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-desert-area",
+      "mapName": "Calico Desert",
+      "mapEntityId": "map-desert",
+      "parentRegion": "map-desert"
     },
     "Backwoods": {
       "displayName": null,
@@ -42,105 +74,213 @@
     },
     "Railroad": {
       "displayName": "Railroad",
-      "type": "valley"
+      "type": "valley",
+      "entityId": "map-railroad",
+      "mapName": "Railroad",
+      "mapEntityId": "map-railroad",
+      "parentRegion": "map-valley"
     },
     "Farm_Standard": {
       "displayName": "Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_Beach": {
       "displayName": "Beach Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-beach",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_Forest": {
       "displayName": "Forest Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-forest",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_FourCorners": {
       "displayName": "Four Corners Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-fourcorners",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_Hilltop": {
       "displayName": "Hilltop Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-hilltop",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_Riverland": {
       "displayName": "Riverland Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-riverland",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_Wilderness": {
       "displayName": "Wilderness Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-wilderness",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "Farm_MeadowlandsFarm": {
       "displayName": "Meadowlands Farm",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-meadowlands",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     },
     "BugLand": {
       "displayName": "Mutant Bug Lair",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-mutant-bug-lair",
+      "mapName": "Sewers",
+      "mapEntityId": "map-sewers",
+      "parentRegion": "map-valley"
     },
     "WitchSwamp": {
       "displayName": "Witch's Swamp",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-witch-swamp",
+      "mapName": "Witch's Swamp",
+      "mapEntityId": "map-witch-swamp",
+      "parentRegion": "map-valley"
     },
     "Submarine": {
       "displayName": "Night Market",
       "type": "special",
+      "entityId": "map-night-market",
+      "mapName": "Pelican Beach",
+      "mapEntityId": "map-beach",
+      "parentRegion": "map-valley",
       "notes": "Winter event only"
     },
     "BeachNightMarket": {
       "displayName": "Night Market",
       "type": "special",
+      "entityId": "map-night-market",
+      "mapName": "Pelican Beach",
+      "mapEntityId": "map-beach",
+      "parentRegion": "map-valley",
       "notes": "Alternative name for Submarine location"
     },
     "IslandWest": {
       "displayName": "Ginger Island West",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-west",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "IslandSouth": {
       "displayName": "Ginger Island South",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-south",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "IslandNorth": {
       "displayName": "Ginger Island North",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-north",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "IslandSouthEast": {
       "displayName": "Ginger Island Southeast",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-southeast",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "IslandSouthEastCave": {
       "displayName": "Ginger Island Pirate Cove",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-pirate-cove",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "IslandFishing": {
       "displayName": "Ginger Island Ocean",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-island-ocean",
+      "mapName": "Ginger Island",
+      "mapEntityId": "map-island",
+      "parentRegion": "map-island"
     },
     "Caldera": {
       "displayName": "Volcano Caldera",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-volcano-caldera",
+      "mapName": "Volcano",
+      "mapEntityId": "map-volcano",
+      "parentRegion": "map-island"
     },
     "Mine": {
       "displayName": "Mines",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-mines",
+      "mapName": "The Mines",
+      "mapEntityId": "map-mines",
+      "parentRegion": "map-valley"
+    },
+    "QuarryMine": {
+      "displayName": "Quarry Mine",
+      "type": "special",
+      "entityId": "map-quarry-mine",
+      "mapName": "Quarry Mine",
+      "mapEntityId": "map-quarry-mine",
+      "parentRegion": "map-valley"
     },
     "SkullCave": {
       "displayName": "Skull Cavern",
-      "type": "special"
+      "type": "special",
+      "entityId": "map-skull-cavern",
+      "mapName": "Skull Cavern",
+      "mapEntityId": "map-skull-cavern",
+      "parentRegion": "map-desert"
     },
     "Volcano": {
       "displayName": "Volcano",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-volcano",
+      "mapName": "Volcano",
+      "mapEntityId": "map-volcano",
+      "parentRegion": "map-island"
     },
     "IslandNorthCave1": {
       "displayName": "Volcano Dungeon",
-      "type": "island"
+      "type": "island",
+      "entityId": "map-volcano-dungeon",
+      "mapName": "Volcano",
+      "mapEntityId": "map-volcano",
+      "parentRegion": "map-island"
     },
     "FarmCave": {
       "displayName": "Farm Cave",
-      "type": "farm"
+      "type": "farm",
+      "entityId": "map-farm-cave",
+      "mapName": "The Farm",
+      "mapEntityId": "map-farm",
+      "parentRegion": "map-valley"
     }
   }
 }

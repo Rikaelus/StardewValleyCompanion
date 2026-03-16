@@ -230,7 +230,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       }
     ]
@@ -357,7 +357,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 200
       }
     ]
@@ -377,7 +377,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 200
       }
     ]
@@ -397,7 +397,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 200
       }
     ]
@@ -417,7 +417,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 200
       }
     ]
@@ -437,7 +437,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 200
       }
     ]
@@ -481,7 +481,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       }
     ]
@@ -501,7 +501,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 200
       },
       {
@@ -532,7 +532,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
@@ -552,7 +552,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 500
       }
     ]
@@ -572,7 +572,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 500
       }
     ]
@@ -592,7 +592,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 500
       }
     ]
@@ -1172,7 +1172,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1185,7 +1185,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1198,7 +1198,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1226,7 +1226,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1239,7 +1239,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1252,7 +1252,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-magic",
         "price": 5000,
         "condition": {
           ">=": [
@@ -1636,7 +1636,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
@@ -1662,7 +1662,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
@@ -1688,7 +1688,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
@@ -1709,7 +1709,7 @@
     "sources": [
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       },
       {
@@ -1740,7 +1740,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
@@ -1766,7 +1766,7 @@
       },
       {
         "type": "shop",
-        "id": "loc-night-market",
+        "id": "loc-night-market-decoration",
         "price": 500
       }
     ]
