@@ -1,0 +1,17 @@
+{
+  "$description": "Interior locations that are accessed through another location rather than directly from the overworld. Maps child location ID to parent location ID. These relationships aren't in the game exports (they're encoded in map warp tiles).",
+  "overrides": {
+    "map-sunroom": "map-seedshop",
+    "map-harveyroom": "map-hospital",
+    "map-lewisbasement": "map-manorhouse",
+    "map-sebastianroom": "map-sciencehouse",
+    "map-club": "map-sandyhouse",
+    "map-wizardhousebasement": "map-wizardhouse",
+    "map-bathhouse-menslocker": "map-bathhouse-entry",
+    "map-bathhouse-womenslocker": "map-bathhouse-entry",
+    "map-bathhouse-pool": "map-bathhouse-entry",
+    "map-mermaidhouse": "map-night-market",
+    "map-witchhut": "map-witch-swamp",
+    "map-witchwarpcave": "map-witch-swamp"
+  }
+}

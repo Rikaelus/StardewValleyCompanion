@@ -64,6 +64,37 @@
   border-radius: 3px;
 }
 
+.item-button-icon-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.item-button-icon-char i {
+  font-size: 60%;
+}
+
+/* Inline icon badge (used in ModalItemButton inline variant) */
+.inline-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
+
+.inline-icon-badge i {
+  font-size: 0.55rem;
+}
+
 .item-button-label {
   font-size: 14px;
   font-weight: 500;

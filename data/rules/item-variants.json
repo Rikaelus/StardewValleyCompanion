@@ -39,6 +39,10 @@
       "skip": true,
       "notes": "Lost Axe — quest-only item (Linus's quest), no wiki image as standalone item."
     },
+    "(O)71": {
+      "skip": true,
+      "notes": "Trimmed Lucky Purple Shorts — exists as (P)15 in Pants.json, which is the proper clothing entity."
+    },
     "(O)789": {
       "skip": true,
       "notes": "Lucky Purple Shorts — quest-only item, no wiki image as standalone item."

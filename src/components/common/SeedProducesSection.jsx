@@ -9,7 +9,7 @@ function SeedProducesSection({ entity, cropItems, forageItems, onNavigate }) {
   if (!produces || produces.length === 0) return null
 
   return (
-    <ModalSection id="section-produces" title="Produces">
+    <ModalSection id="section-produces" title="Produces" navLabel="Produces">
       <div className="produces-table">
         {produces.map((p, idx) => {
           const crop = cropItems.find(c => c.id === p.cropId)

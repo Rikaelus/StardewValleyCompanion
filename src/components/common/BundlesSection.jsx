@@ -17,7 +17,7 @@ function BundlesSection({ entity, getBundle, onNavigate }) {
   if (bundleDetails.length === 0) return null
 
   return (
-    <ModalSection id="section-bundles" title="Bundles">
+    <ModalSection id="section-bundles" title="Bundles" navLabel="Bundles">
       <div className="bundle-badges-list">
         {bundleDetails.map(bundle => (
           <BundleBadge

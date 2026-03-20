@@ -1,6 +1,7 @@
 import ModalItemButton from './ModalItemButton'
+import ModalSection from './ModalSection'
 
-function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id, onNavigate }) {
+function ModalGiftPreferences({ giftDetails, giftsClass, id, onNavigate }) {
   if (!giftDetails || giftDetails.length === 0) {
     return null
   }
@@ -15,8 +16,7 @@ function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id, onNav
   })
 
   return (
-    <div id={id} className={sectionClass}>
-      <h4>Gift Preferences</h4>
+    <ModalSection id={id} title="Gift Preferences" navLabel="Gift Preferences">
       <div className={giftsClass}>
         {sortedGifts.map(gift => (
           <div
@@ -35,7 +35,7 @@ function ModalGiftPreferences({ giftDetails, sectionClass, giftsClass, id, onNav
           </div>
         ))}
       </div>
-    </div>
+    </ModalSection>
   )
 }
 

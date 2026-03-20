@@ -78,7 +78,7 @@ function FoodBuffsSection({ entity, findById, onNavigate }) {
   if (meaningfulBuffs.length === 0) return null
 
   return (
-    <ModalSection id="section-buffs" title="Effects">
+    <ModalSection id="section-buffs" title="Effects" navLabel="Effects">
       <div className="food-buffs">
         {meaningfulBuffs.map((buff, i) => {
           const namedIcon = buff.name ? NAMED_BUFF_ICONS[buff.name] : null

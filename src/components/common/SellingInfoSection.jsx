@@ -121,9 +121,9 @@ function getAvailableProfessions(entity, artisanItems) {
   return professions
 }
 
-function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality, setInputQuality, trashCanUpgrade, findById, onNavigate }) {
+function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality, setInputQuality, showTrashRefund, findById, onNavigate }) {
   if (!inputDetails || inputDetails.length === 0) return null
-  if (trashCanUpgrade !== null) return null
+  if (showTrashRefund) return null
 
   const baseOutputPrice = entity.prices?.regular || entity.price || 0
   const qualityMultipliers = { regular: 1.0, silver: 1.25, gold: 1.5, iridium: 2.0 }
@@ -213,7 +213,7 @@ function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality,
   )
 }
 
-function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputInputQuality, setOutputInputQuality, trashCanUpgrade, onNavigate }) {
+function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputInputQuality, setOutputInputQuality, showTrashRefund, onNavigate }) {
   const actualCategory = entity.originalGameCategory !== undefined
     ? entity.originalGameCategory
     : entity.gameCategory
@@ -271,7 +271,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
   }
 
   if (outputs.length === 0) return null
-  if (trashCanUpgrade !== null) return null
+  if (showTrashRefund) return null
 
   const inputBasePrice = entity.prices?.regular || entity.price || 0
   const hasQuality = entity.type !== 'artisan' && entity.gameCategory !== -26 && entity.gameCategory !== -23
@@ -382,7 +382,7 @@ function AnimalSellingCalculator({ entity }) {
   const multiplierDisplay = Math.round(multiplier * 100) / 100
 
   return (
-    <ModalSection id="section-calculator" title="Selling Calculator">
+    <ModalSection id="section-calculator" title="Selling Calculator" navLabel="Calculator">
       <div className="profit-section">
         <div className="calculator-box">
           <div className="calculator-controls">
@@ -446,7 +446,10 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
     blacksmith: player.professions.blacksmith || false,
     gemologist: player.professions.gemologist || false
   })
-  const [trashCanUpgrade, setTrashCanUpgrade] = useState(null)
+  const [trashCanUpgrade, setTrashCanUpgrade] = useState(() => {
+    const locs = getSellingLocations(entity, findById)
+    return locs.length === 0 ? 'normal' : null
+  })
   const [inputQuality, setInputQuality] = useState('regular')
   const [outputInputQuality, setOutputInputQuality] = useState('regular')
 
@@ -464,7 +467,8 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
     })
     setInputQuality('regular')
     setOutputInputQuality('regular')
-    setTrashCanUpgrade(null)
+    const locs = getSellingLocations(entity, findById)
+    setTrashCanUpgrade(locs.length === 0 ? 'normal' : null)
   }, [entity?.id, player.professions])
 
   if (!entity) return null
@@ -485,15 +489,17 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
   const iridiumOnlyQuality = type === 'food'
 
   const sellingLocations = getSellingLocations(entity, findById)
+  const trashOnly = sellingLocations.length === 0
   const availableProfessions = getAvailableProfessions(entity, artisanItems)
 
   const multiplier = calculateProfessionMultiplier(entity, activeProfessions)
   const trashCanRefund = getTrashCanRefund(trashCanUpgrade)
+  const showTrashRefund = trashCanUpgrade !== null
 
   return (
-    <ModalSection id="section-calculator" title="Selling Calculator">
+    <ModalSection id="section-calculator" title="Selling Calculator" navLabel="Calculator">
       {/* Selling Locations */}
-      {sellingLocations.length > 0 && (
+      {sellingLocations.length > 0 ? (
         <div className="sell-locations">
           <span className="modal-label">Sell At:</span>
           <div className="tag-list tag-list-location">
@@ -507,6 +513,8 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
             ))}
           </div>
         </div>
+      ) : (
+        <ModalNote>This item cannot be sold at any shop. It can only be disposed of via trash can.</ModalNote>
       )}
 
       {/* Price Calculator */}
@@ -551,7 +559,7 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
             </div>
           )}
 
-          {/* Trash Can Upgrade Checkboxes */}
+          {/* Trash Can Upgrade */}
           <div className="calculator-controls calculator-controls--trash">
             <span className="modal-label">Trash Can:</span>
             {[
@@ -563,9 +571,16 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
             ].map(option => (
               <label key={option.value} className="checkbox-label">
                 <input
-                  type="checkbox"
+                  type={trashOnly ? 'radio' : 'checkbox'}
+                  name={trashOnly ? `trash-can-${entity.id}` : undefined}
                   checked={trashCanUpgrade === option.value}
-                  onChange={() => setTrashCanUpgrade(trashCanUpgrade === option.value ? null : option.value)}
+                  onChange={() => {
+                    if (trashOnly) {
+                      setTrashCanUpgrade(option.value)
+                    } else {
+                      setTrashCanUpgrade(trashCanUpgrade === option.value ? null : option.value)
+                    }
+                  }}
                 />
                 <span className="profession-name">{option.label}</span>
               </label>
@@ -576,10 +591,10 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
           <div className="calculator-results">
             <div className="calculator-prices">
               <span style={{ fontWeight: 600 }}>
-                {trashCanUpgrade !== null ? 'Trash Refund:' : 'Sell Price:'}
+                {showTrashRefund ? 'Trash Refund:' : 'Sell Price:'}
               </span>
 
-              {trashCanUpgrade !== null ? (
+              {showTrashRefund ? (
                 <>
                   <div>
                     <span className="quality-symbol quality-symbol--sell quality-symbol--regular">●</span>
@@ -692,7 +707,7 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
             </div>
 
             <div className="calculator-formula">
-              {trashCanUpgrade !== null ? (
+              {showTrashRefund ? (
                 <>Base: {basePrice.toLocaleString()}g × {trashCanRefund * 100}%{(itemHasQuality && entity.maxQuality !== 0) ? ' (per quality tier)' : ''}</>
               ) : multiplier > 1 ? (
                 <>
@@ -730,7 +745,7 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
                 activeProfessions={activeProfessions}
                 inputQuality={inputQuality}
                 setInputQuality={setInputQuality}
-                trashCanUpgrade={trashCanUpgrade}
+                showTrashRefund={showTrashRefund}
                 findById={findById}
                 onNavigate={onNavigate}
               />
@@ -744,7 +759,7 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
             activeProfessions={activeProfessions}
             outputInputQuality={outputInputQuality}
             setOutputInputQuality={setOutputInputQuality}
-            trashCanUpgrade={trashCanUpgrade}
+            showTrashRefund={showTrashRefund}
             onNavigate={onNavigate}
           />
         </div>

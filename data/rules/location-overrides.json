@@ -146,7 +146,7 @@
     "map-farm-meadowlandsfarm": "assets/objects/WarpTotemFarm.png",
     "map-farm-cave": "assets/objects/CaveCarrot.png",
     "map-greenhouse": "assets/objects/AncientFruit.png",
-    "slime-hutch": "assets/objects/SlimeHutch.png",
+    "map-slime-hutch": "assets/objects/SlimeHutch.png",
 
     "map-mines": "assets/objects/Pickaxe.png",
     "map-mines-f20": "assets/objects/Pickaxe.png",

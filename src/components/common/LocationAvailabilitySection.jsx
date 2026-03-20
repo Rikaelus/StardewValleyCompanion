@@ -39,6 +39,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const hasSeasons = entity.seasons && entity.seasons.length > 0
   const hasTimes = entity.times && entity.times.length > 0
   const hasWeather = entity.weather
+  const hasYearParity = entity.yearParity != null
 
   const isSeed = entity.type === 'seed'
   const allSources = entity.sources || []
@@ -57,9 +58,12 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const fishSources = allSources.filter(s => s.type === 'fish')
   const forageSources = allSources.filter(s => s.type === 'forage')
   const breakableDropSources = allSources.filter(s => s.type === 'breakable-drop')
+  const tailoringSources = allSources.filter(s => s.type === 'tailoring')
+  const geodeSources = allSources.filter(s => s.type === 'geode')
   const otherSources = allSources.filter(s => s.type === 'other')
   const mailSources = allSources.filter(s => s.type === 'mail')
   const rewardSources = allSources.filter(s => s.type === 'reward')
+  const craneGameSources = allSources.filter(s => s.type === 'crane-game')
   // Sources with no type (freeform description + optional condition — e.g. ??? hat)
   const freeformSources = allSources.filter(s => !s.type && s.description)
   const hasBuyingInfo = shopSources.length > 0
@@ -68,20 +72,28 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
     animalSources.length > 0 || hatchSources.length > 0 || pregnancySources.length > 0 ||
     tapperSources.length > 0 || machineSources.length > 0 ||
     seedSources.length > 0 || fishSources.length > 0 || forageSources.length > 0 ||
-    breakableDropSources.length > 0 ||
-    otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 || freeformSources.length > 0
+    breakableDropSources.length > 0 || tailoringSources.length > 0 || geodeSources.length > 0 ||
+    otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 ||
+    craneGameSources.length > 0 || freeformSources.length > 0
 
-  if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasBuyingInfo && !hasOtherSources) return null
+  if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasYearParity && !hasBuyingInfo && !hasOtherSources) return null
 
   return (
-    <ModalSection id="section-location" title="Location & Availability">
+    <ModalSection id="section-location" title="Location & Availability" navLabel="Location & Availability">
       {(hasSeasons && !isSeed && !fishSources.length && !forageSources.length ||
-        hasTimes || hasWeather || entity.isFlower) && (
+        hasTimes || hasWeather || hasYearParity || entity.isFlower) && (
         <ModalGrid>
           {hasSeasons && !isSeed && !fishSources.length && !forageSources.length && (
             <ModalGridItem label="Seasons:">
               <SeasonBadges seasons={entity.seasons} />
             </ModalGridItem>
+          )}
+
+          {hasYearParity && (
+            <ModalGridItem
+              label="Year:"
+              value={entity.yearParity === 'even' ? 'Even years (2, 4, 6…)' : 'Odd years (1, 3, 5…)'}
+            />
           )}
 
           {hasTimes && (
@@ -146,13 +158,29 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Fish Pond:</span>
           <div className="source-list">
-            {fishPondSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name source-name--indented">{formatFishTag(src.fishTag)} Pond</span>
-                <span className="source-qualifiers"><span className="source-qualifier">Population: {src.minPopulation}+</span></span>
-                <span className="source-detail">{formatChance(src.chance)}</span>
-              </span>
-            ))}
+            {fishPondSources.map((src, i) => {
+              const rolls = src.rolls || [{ chance: src.chance, quantity: 1 }]
+              const multiRoll = rolls.length > 1
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name source-name--indented">{formatFishTag(src.fishTag)} Pond</span>
+                  <span className="source-qualifiers"><span className="source-qualifier">Population: {src.minPopulation}+</span></span>
+                  <span className="source-detail">
+                    {multiRoll ? (
+                      <>
+                        {rolls.map(({ chance, quantity }, j) => (
+                          <span key={j}>{j > 0 ? ' / ' : ''}×{quantity} {formatChance(chance)}</span>
+                        ))}
+                        {' '}
+                        <InfoTooltip text="Each roll is an independent check. Multiple quantities can drop from the same pond on the same day." />
+                      </>
+                    ) : (
+                      <>{rolls[0].quantity > 1 ? `×${rolls[0].quantity} ` : ''}{formatChance(rolls[0].chance)}</>
+                    )}
+                  </span>
+                </span>
+              )
+            })}
           </div>
         </div>
       )}
@@ -308,6 +336,56 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                     })
                   )}
                 </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {tailoringSources.map((src, i) => (
+        <div key={i} className="source-group">
+          <span className="modal-label">
+            {tailoringSources.length > 1 ? `Tailoring (Recipe ${i + 1}):` : 'Tailoring:'}
+          </span>
+          <div className="source-list">
+            {(src.ingredientDetails || []).map((ing, j) => {
+              const ingItem = (ing.id ? findById(ing.id) : null)
+                ?? (ing.gameId != null ? (findByGameId(ing.gameId) ?? findByGameId(`(O)${ing.gameId}`)) : null)
+              const isTag = ingItem?.type === 'tag'
+              return (
+                <span key={j} className="source-entry">
+                  <span className={`source-name${ingItem ? '' : ' source-name--indented'}`}>
+                    {ingItem ? (
+                      <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} label={isTag ? ingItem.rawTag : undefined} />
+                    ) : (
+                      ing.name || `Item #${ing.gameId}`
+                    )}
+                  </span>
+                  <span />
+                  <span className="source-detail">×{ing.amount}</span>
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      ))}
+
+      {geodeSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Found In:</span>
+          <div className="source-list">
+            {geodeSources.map((src, i) => {
+              const geodeItem = src.geodeGameId ? (findByGameId(`(O)${src.geodeGameId}`) ?? findByGameId(src.geodeGameId)) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className={`source-name${geodeItem ? '' : ' source-name--indented'}`}>
+                    {geodeItem ? (
+                      <ModalItemButton item={geodeItem} variant="inline" onNavigate={onNavigate} />
+                    ) : (
+                      src.geodeName || `Geode #${src.geodeGameId}`
+                    )}
+                  </span>
+                </span>
               )
             })}
           </div>
@@ -576,14 +654,64 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Reward From:</span>
           <div className="source-list">
-            {rewardSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name source-name--indented">{src.rewardSourceName}</span>
-                {src.condition && (
-                  <span className="source-qualifiers">
-                    <span className="source-qualifier">{src.condition}</span>
+            {rewardSources.map((src, i) => {
+              const rewardLocation = src.id ? findById(src.id) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {rewardLocation
+                      ? <ModalItemButton item={rewardLocation} variant="inline" onNavigate={onNavigate} label={src.rewardSourceName} />
+                      : src.rewardSourceName
+                    }
                   </span>
-                )}
+                  {src.condition && (
+                    <span className="source-qualifiers">
+                      <span className="source-qualifier">{src.condition}</span>
+                    </span>
+                  )}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {craneGameSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Crane Game:</span>
+          <div className="source-list">
+            {craneGameSources.map((src, i) => {
+              const movieEntity = src.movieId ? findById(src.movieId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {movieEntity
+                      ? <ModalItemButton item={movieEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.movieName}
+                  </span>
+                  <span className="source-qualifiers">
+                    <span className="source-qualifier">{src.yearParity === 'even' ? 'Even years' : 'Odd years'}</span>
+                    {src.rarity > 1 && <span className="source-qualifier">Rare</span>}
+                  </span>
+                  {src.seasons?.length > 0 && (
+                    <span className="source-seasons">
+                      <SeasonBadges seasons={src.seasons} compact />
+                    </span>
+                  )}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {otherSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">How to Obtain:</span>
+          <div className="source-list">
+            {otherSources.map((src, i) => (
+              <span key={i} className="source-entry">
+                <span className="source-name source-name--indented">{src.name}</span>
               </span>
             ))}
           </div>

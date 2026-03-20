@@ -110,6 +110,7 @@ function ModalItemButton({
           display: 'inline-flex',
           alignItems: 'center',
           gap: '0.25rem',
+          textAlign: 'left',
           transition: 'color 0.15s ease'
         }}
         onMouseEnter={(e) => e.currentTarget.style.color = '#8b7355'}
@@ -119,7 +120,11 @@ function ModalItemButton({
       >
         {iconSrc && !imageError
           ? <img src={iconSrc} alt="" width={16} height={16} onError={() => setImageError(true)} style={{ imageRendering: 'pixelated', flexShrink: 0 }} />
-          : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
+          : (item.iconChar || item.iconClass)
+            ? <span className="inline-icon-badge" style={{ backgroundColor: item.iconColor || '#7f8c8d' }}>
+                {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
+              </span>
+            : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
         }
         <span style={{ position: 'relative', top: '2px' }}>
           {label ?? (plural ? pluralize(item.name) : item.name)}

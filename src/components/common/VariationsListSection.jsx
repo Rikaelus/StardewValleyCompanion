@@ -11,7 +11,7 @@ function VariationsListSection({ entity, artisanItems, findById, onNavigate }) {
   if (variationItems.length === 0) return null
 
   return (
-    <ModalSection id="section-variations" title={`Variations (${variationItems.length})`}>
+    <ModalSection id="section-variations" title={`Variations (${variationItems.length})`} navLabel="Variations">
       <div className="variations-list">
         {variationItems.map(variation => {
           const varMachineSource = variation.sources?.find(s => s.type === 'machine')

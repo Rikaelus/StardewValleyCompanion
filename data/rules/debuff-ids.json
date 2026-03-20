@@ -1,0 +1,6 @@
+{
+  "_comment": "Maps negative item IDs (used as debuff indices in monster drop lists) to human-readable debuff names. These are hardcoded in the game engine, not in any data export.",
+  "-4": "Slimed",
+  "-5": "Slimed",
+  "-6": "Darkness"
+}

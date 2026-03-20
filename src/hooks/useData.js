@@ -42,7 +42,7 @@ const TYPE_MAP = {
   resources: 'resource',
   seeds: 'seed',
   furniture: 'furniture',
-  hats: 'hat',
+  clothing: 'clothing',
   'animal-products': 'animal-product',
   'big-craftables': 'big-craftable',
   'tree-fruits': 'tree-fruit',

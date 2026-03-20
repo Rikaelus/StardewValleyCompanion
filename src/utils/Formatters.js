@@ -200,7 +200,6 @@ const TYPE_LABELS = {
   'animal-product': 'Animal Product',
   'tree-fruit': 'Tree Fruit',
   'tree-seed': 'Tree Seed',
-  'hat': 'Hat',
   'ring': 'Ring',
   'book': 'Book',
   'food': 'Food',
@@ -227,7 +226,16 @@ const TYPE_LABELS = {
   'animal': 'Farm Animal',
   'monster': 'Monster',
   'breakable': 'Breakable',
+  'achievement': 'Achievement',
+  'quest': 'Quest',
+  'power': 'Power',
+  'concession': 'Concession',
+  'movie': 'Movie',
+  'clothing': 'Clothing',
+  'tag': 'Context Tag',
+  'type': 'Type',
   'bundle': 'Bundle',
+  'museum-reward': 'Museum Reward',
 }
 
 // Subtype-level labels (distinct subtypes within a type)
@@ -239,7 +247,7 @@ const SUBTYPE_LABELS = {
   // mineral subtypes
   'gem': 'Gem',
   'crystal': 'Crystal',
-  'geode-mineral': 'Geode Mineral',
+  'geode-mineral': 'Geode',
   // weapon subtypes
   'sword': 'Sword',
   'dagger': 'Dagger',
@@ -262,11 +270,18 @@ const SUBTYPE_LABELS = {
   // breakable subtypes
   'mine-container': 'Mine Container',
   'resource-clump': 'Resource Clump',
+  // power subtypes
+  'mastery': 'Mastery',
+  'unlock': 'Unlock',
   // location subtypes
   'shop': 'Shop',
   'region': 'Region',
   'map-area': 'Area',
   'zone': 'Zone',
+  // clothing subtypes
+  'hat': 'Hat',
+  'pants': 'Pants',
+  'shirt': 'Shirt',
 }
 
 /**
@@ -315,6 +330,47 @@ export function getEntitySubtitle(entity) {
 
   if (type === 'villager') {
     return 'Villager'
+  }
+
+  if (type === 'quest') {
+    return entity.isSecret ? 'Secret Quest' : 'Quest'
+  }
+
+  if (type === 'achievement') {
+    return entity.isSecret ? 'Secret Achievement' : 'Achievement'
+  }
+
+  if (type === 'power') {
+    return entity.subtype === 'mastery' ? 'Skill Mastery' : 'Unlock'
+  }
+
+  if (type === 'concession') {
+    return 'Movie Theater Concession'
+  }
+
+  if (type === 'movie') {
+    const genres = entity.genres || []
+    return genres.length > 0
+      ? `Movie Theater — ${genres.map(g => g.charAt(0).toUpperCase() + g.slice(1)).join(', ')}`
+      : 'Movie Theater'
+  }
+
+  if (type === 'clothing') {
+    if (entity.subtype === 'hat') return 'Hat'
+    if (entity.subtype === 'pants') return 'Pants'
+    return 'Shirt'
+  }
+
+  if (type === 'tag') {
+    return 'Context Tag'
+  }
+
+  if (type === 'type') {
+    return 'Item Type'
+  }
+
+  if (type === 'museum-reward') {
+    return 'Museum Reward'
   }
 
   if (type === 'animal') {
@@ -545,6 +601,18 @@ export function formatChance(p) {
   if (pct >= 1) return `${parseFloat(pct.toFixed(1))}%`
   if (pct >= 0.1) return `${parseFloat(pct.toFixed(2))}%`
   return `${parseFloat(pct.toFixed(3))}%`
+}
+
+/**
+ * Formats a raw game unlock condition string into human-readable text.
+ * e.g. "YEAR 2" → "Year 2+", "PLAYER_HAS_MAIL Host addedParrotBoy" → "Unlocked via story progression"
+ */
+export function formatUnlockCondition(raw) {
+  if (!raw) return null
+  const yearMatch = raw.match(/^YEAR\s+(\d+)$/i)
+  if (yearMatch) return `Year ${yearMatch[1]}+`
+  if (/PLAYER_HAS_MAIL/i.test(raw)) return 'Unlocked via story progression'
+  return raw
 }
 
 export function computeDropCountDistribution(rolls) {

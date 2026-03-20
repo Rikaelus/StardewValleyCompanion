@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
     "json-logic-js": "^2.0.5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

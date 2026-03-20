@@ -1,6 +1,0 @@
-{
-  "$schema": "building-limits-schema",
-  "description": "Per-building construction limits not derivable from game exports. Keyed by building name as it appears in Buildings.json.",
-  "limits": {
-  }
-}

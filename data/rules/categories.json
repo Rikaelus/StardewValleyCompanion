@@ -18,5 +18,10 @@
       "type": "flower",
       "notes": "Used for flower crops, can flavor honey"
     }
+  },
+  "gems": ["Diamond", "Ruby", "Emerald", "Aquamarine", "Amethyst", "Topaz", "Jade", "Prismatic Shard"],
+  "monsterLootRarity": {
+    "rare": ["Prismatic Shard", "Diamond", "Ancient Seed", "Dwarf Scroll I", "Dwarf Scroll II", "Dwarf Scroll III", "Dwarf Scroll IV", "Void Essence", "Solar Essence"],
+    "uncommon": ["Slime", "Bat Wing", "Bug Meat", "Coal"]
   }
 }

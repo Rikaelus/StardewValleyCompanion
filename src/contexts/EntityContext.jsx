@@ -63,8 +63,8 @@ export function EntityProvider({ children }) {
     const allEntities = rawData.items || []
     const gameIdIndex = rawData.gameIdIndex || {}
     const allBundles = allEntities.filter(i => i.type === 'bundle')
-    const allVillagers = rawData.villagers || []
-    const allBuffs = rawData.buffs || []
+    const allVillagers = allEntities.filter(i => i.type === 'villager')
+    const allBuffs = allEntities.filter(i => i.type === 'buff')
     const relationships = rawData.relationships || []
 
     // ── Entity collections ───────────────────────────────────────────────────
@@ -82,7 +82,7 @@ export function EntityProvider({ children }) {
       'big-craftable':  entity => entity.type === 'big-craftable',
       'animal-product': entity => entity.type === 'animal-product',
       'furniture':      entity => entity.type === 'furniture',
-      'hat':            entity => entity.type === 'hat',
+      'clothing':       entity => entity.type === 'clothing',
       'weapon':         entity => entity.type === 'weapon',
       'boot':           entity => entity.type === 'boot',
       'trinket':        entity => entity.type === 'trinket',
@@ -106,7 +106,8 @@ export function EntityProvider({ children }) {
     const eventsByKey = new Map(allEvents.map(e => [e.eventKey, e]))
     // eventNames map for condition formatter: { eventKey → name }
     const eventNames = Object.fromEntries(allEvents.map(e => [e.eventKey, e.name]))
-    const achievementNames = rawData.achievementNames || {}
+    const allAchievements = allEntities.filter(i => i.type === 'achievement')
+    const achievementNames = Object.fromEntries(allAchievements.map(a => [String(a.gameId), a.name]))
 
     // Gift indexes
     const giftsByItem = new Map()

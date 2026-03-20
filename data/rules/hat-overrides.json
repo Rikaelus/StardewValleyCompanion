@@ -1,17 +1,161 @@
 {
   "$schema": "hat-overrides-schema",
-  "description": "Per-hat overrides keyed by Hats.json gameId. Used when the hat's internal name ('???') differs from its display identity, or when its source cannot be parsed from game exports.",
+  "description": "Per-hat overrides keyed by Hats.json gameId. Sources here are for hats not covered by Shops.json, TailoringRecipes.json, or MonsterSlayerQuests.json.",
   "overrides": {
+    "2": {
+      "sources": [{ "description": "Casino (500 Qi Coins)" }]
+    },
+    "36": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)305", "name": "Void Egg", "amount": 1 }
+      ]}]
+    },
+    "37": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)258", "name": "Blueberry", "amount": 1 }
+      ]}]
+    },
+    "38": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)420", "name": "Red Mushroom", "amount": 1 }
+      ]}]
+    },
+    "40": {
+      "sources": [{ "description": "Rare drop from weeds (0.001% chance)" }]
+    },
+    "41": {
+      "sources": [{ "description": "Emily's 14-heart event" }]
+    },
+    "42": {
+      "sources": [{ "description": "Rare drop from Mushroom Trees in Fall" }]
+    },
+    "51": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)117", "name": "Rusty Cog", "amount": 1 }
+      ]}]
+    },
+    "57": {
+      "sources": [{ "description": "Feast of the Winter Star gift from a villager" }]
+    },
+    "58": {
+      "sources": [{ "description": "Feast of the Winter Star gift from a villager" }]
+    },
+    "59": {
+      "sources": [{ "description": "Feast of the Winter Star gift from a villager" }]
+    },
+    "66": {
+      "sources": [{ "description": "Check garbage cans 20 times" }]
+    },
+    "75": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)373", "name": "Golden Pumpkin", "amount": 1 }
+      ]}]
+    },
+    "76": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)275", "name": "Artifact Trove", "amount": 1 }
+      ]}]
+    },
+    "78": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)FrogEgg", "name": "Frog Egg", "amount": 1 }
+      ]}]
+    },
+    "83": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)769", "name": "Void Essence", "amount": 1 }
+      ]}]
+    },
+    "90": {
+      "sources": [{ "description": "Mastery: Foraging" }]
+    },
+    "91": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)857", "name": "Tiger Slime Egg", "amount": 1 }
+      ]}]
+    },
     "92": {
-      "id":          "concerned-ape-mask-hat",
-      "icon":        "ConcernedApeHat.png",
-      "notes":       "Internal name is '???'. Icon is ConcernedApe_Hat.png on the wiki.",
+      "id": "concerned-ape-mask-hat",
+      "icon": "ConcernedApeHat.png",
+      "notes": "Internal name is '???'.",
       "sources": [
         {
           "description": "Interact with a monkey in the Volcano Caldera",
           "condition": { "in": ["Farm_Eternal", { "var": "player.mail" }] }
         }
       ]
+    },
+    "AbigailsBow": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)66", "name": "Amethyst", "amount": 1 }
+      ]}]
+    },
+    "BucketHat": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)CopperPan", "name": "Copper Pan", "amount": 1 }
+      ]}]
+    },
+    "DarkBallcap": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)382", "name": "Coal", "amount": 1 }
+      ]}]
+    },
+    "GilsHat": {
+      "sources": [{ "description": "Complete all Monster Eradication Goals" }]
+    },
+    "GoldPanHat": {
+      "sources": [{ "description": "Upgrade pan at Clint's (Gold)" }]
+    },
+    "IridiumPanHat": {
+      "sources": [{ "description": "Upgrade pan at Clint's (Iridium)" }]
+    },
+    "JojaCap": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)167", "name": "Joja Cola", "amount": 1 }
+      ]}]
+    },
+    "LaurelWreathCrown": {
+      "sources": [{ "description": "Mastery: all five skills" }]
+    },
+    "LeprechuanHat": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)397", "name": "Sea Urchin", "amount": 1 }
+      ]}]
+    },
+    "MysteryHat": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)MysteryBox", "name": "Mystery Box", "amount": 1 }
+      ]}]
+    },
+    "SquidHat": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)151", "name": "Squid", "amount": 1 }
+      ]}]
+    },
+    "SteelPanHat": {
+      "sources": [{ "description": "Upgrade pan at Clint's (Steel)" }]
+    },
+    "TricornHat": {
+      "sources": [{ "type": "tailoring", "ingredientDetails": [
+        { "gameId": "(O)428", "name": "Cloth", "amount": 1 },
+        { "gameId": "(O)SnakeSkull", "name": "Snake Skull", "amount": 1 }
+      ]}]
     }
   },
   "iconOverrides": {

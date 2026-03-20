@@ -46,6 +46,18 @@
   font-size: 0.8rem;
 }
 
+.tag-list-context .tag--clickable {
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tag-list-context .tag--clickable:hover {
+  background-color: #e8e0d5;
+  border-color: #c4b89c;
+  color: #2d1b00;
+}
+
 /* Season tags (colorful) */
 .tag-list-season .tag {
   font-weight: 600;

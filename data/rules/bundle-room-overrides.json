@@ -1,0 +1,4 @@
+{
+  "$description": "Bundle rooms that are NOT part of the Community Center. Maps the room name (from Bundles.json keys) to the location entity ID where the bundle is actually located.",
+  "Abandoned Joja Mart": "map-abandonedjojamart"
+}

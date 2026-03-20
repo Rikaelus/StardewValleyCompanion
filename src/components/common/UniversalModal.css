@@ -369,9 +369,27 @@
   border-radius: 3px;
   padding: 0.05rem 0.3rem;
   white-space: nowrap;
-  margin-left: 0.25rem;
+  margin-right: 0.25rem;
   position: relative;
   top: -2px;
+}
+.source-qualifier.reaction-love {
+  color: #c2185b;
+  background: #ffe3e3;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.source-qualifier.reaction-like {
+  color: #388e3c;
+  background: #e8f5e9;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.source-qualifier.reaction-dislike {
+  color: #f57c00;
+  background: #fff3e0;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 .source-detail {
   font-family: monospace;

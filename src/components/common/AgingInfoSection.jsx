@@ -6,7 +6,7 @@ function AgingInfoSection({ entity }) {
   const { agingDaysToIridium, agingDaysPerTier } = entity
 
   return (
-    <ModalSection id="section-aging" title="Cask Aging">
+    <ModalSection id="section-aging" title="Cask Aging" navLabel="Cask Aging">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         <div style={{ fontSize: '0.875rem', color: '#5c4a32' }}>
           This item can be aged in a cask to improve its quality and value.

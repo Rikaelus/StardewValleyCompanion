@@ -11,7 +11,7 @@ function BundleRequirementsSection({ entity, entityType, findByGameId, onNavigat
   const requiredCount = entity.minItemsRequired || realItems.length
 
   return (
-    <ModalSection id="section-required" title="Required Items">
+    <ModalSection id="section-required" title="Required Items" navLabel="Required Items">
       <div className="bundle-items-list">
         {realItems.map((bundleItem, idx) => {
           const qualifiedId = typeof bundleItem.gameId === 'number' ? `(O)${bundleItem.gameId}` : bundleItem.gameId

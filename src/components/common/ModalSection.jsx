@@ -1,18 +1,16 @@
+import { useRegisterSection } from '../../contexts/SectionNavContext'
 import './ModalSection.css'
 
 /**
- * Reusable modal section component with title and content
+ * Reusable modal section component with title and content.
  *
- * Usage:
- *   <ModalSection title="Fishing Info">
- *     <div>Content here</div>
- *   </ModalSection>
- *
- *   <ModalSection title="Location & Time" className="custom-class">
- *     <ModalGrid>...</ModalGrid>
- *   </ModalSection>
+ * If `navLabel` is provided (along with `id`), the section registers itself
+ * in the modal's section nav so users can jump to it. Sections without
+ * navLabel render normally but don't appear in the nav.
  */
-function ModalSection({ title, id, children, className = '' }) {
+function ModalSection({ title, id, navLabel, children, className = '' }) {
+  useRegisterSection(id, navLabel)
+
   return (
     <div id={id} className={`modal-section ${className}`}>
       {title && <h4>{title}</h4>}

@@ -3,10 +3,10 @@ import ModalItemButton from './ModalItemButton'
 import ConditionBadge from './ConditionBadge'
 import SeasonBadges from './SeasonBadges'
 
-const CATEGORY_ORDER = ['furniture', 'hat', 'fish', 'crop', 'seed', 'artisan', 'animal-product', 'forage', 'tree-fruit', 'mineral', 'metal-bar', 'ore', 'resource', 'big-craftable', 'monster-loot', 'ring', 'weapon', 'boot', 'food', 'bait', 'tackle', 'fertilizer', 'flooring', 'crafted', 'book', 'artifact', 'tree-seed', 'tool', 'trinket', 'trash', 'misc', 'other']
+const CATEGORY_ORDER = ['furniture', 'clothing', 'fish', 'crop', 'seed', 'artisan', 'animal-product', 'forage', 'tree-fruit', 'mineral', 'metal-bar', 'ore', 'resource', 'big-craftable', 'monster-loot', 'ring', 'weapon', 'boot', 'food', 'bait', 'tackle', 'fertilizer', 'flooring', 'crafted', 'book', 'artifact', 'tree-seed', 'tool', 'trinket', 'trash', 'misc', 'other']
 
 const CATEGORY_LABELS = {
-  furniture: 'Furniture', hat: 'Hats', fish: 'Fish', crop: 'Crops', seed: 'Seeds',
+  furniture: 'Furniture', clothing: 'Clothing', fish: 'Fish', crop: 'Crops', seed: 'Seeds',
   artisan: 'Artisan Goods', 'animal-product': 'Animal Products', forage: 'Forage',
   'tree-fruit': 'Tree Fruits', mineral: 'Minerals',
   'metal-bar': 'Metal Bars', ore: 'Ores', resource: 'Resources',
@@ -49,7 +49,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
   })
 
   return (
-    <ModalSection id="section-store-items" title={childStalls.length > 0 ? `Villager Stalls (${childStalls.length})` : `Available Items (${totalRows})`}>
+    <ModalSection id="section-store-items" title={childStalls.length > 0 ? `Villager Stalls (${childStalls.length})` : `Available Items (${totalRows})`} navLabel={childStalls.length > 0 ? 'Stalls' : 'Items'}>
       {childStalls.length > 0 && (
         <div className="store-items-grid">
           {childStalls.map(stall => (

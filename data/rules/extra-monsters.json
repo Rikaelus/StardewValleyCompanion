@@ -1,6 +1,18 @@
 {
   "_comment": "Monsters not in Monsters.json game export — hardcoded C# variants. Stats from wiki/decompiled source. Drop format: 'gameId chance gameId chance ...' with bare numeric IDs. Optional 'icon' field overrides default toIconFilename(name).",
 
+  "_meta": {
+    "skip": ["Crow", "Frog", "Cat", "Fireball", "Big Slime"],
+    "nameOverrides": {
+      "Sludge": "Red Slime (Sludge)",
+      "Frost Jelly": "Blue Slime (Frost Jelly)"
+    },
+    "iconOverrides": {
+      "Sludge": "RedSlime.png",
+      "Frost Jelly": "FrostJelly.png"
+    }
+  },
+
   "_comment_mutants": "Mutant Bug Lair and Skull Cavern hardcoded variants",
 
   "Mutant Grub": {
@@ -85,7 +97,7 @@
     "hp": 24, "resilience": 5, "damageToFarmer": 1, "speed": 2,
     "drops": "766 .75 92 .15 96 .005 99 .001",
     "locations": [
-      { "locationId": "slime-hutch" }
+      { "locationId": "map-slime-hutch" }
     ],
     "notes": "Created by the Witch's fly-over event transforming Slime Hutch slimes. Drops Neptunite and Bixite."
   },

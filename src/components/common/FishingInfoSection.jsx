@@ -8,7 +8,7 @@ function FishingInfoSection({ entity }) {
 
   if (entity.isTrapFish) {
     return (
-      <ModalSection id="section-fishing" title="Fishing Info">
+      <ModalSection id="section-fishing" title="Fishing Info" navLabel="Fishing Info">
         <ModalGrid>
           <ModalGridItem
             label="Method:"
@@ -23,7 +23,7 @@ function FishingInfoSection({ entity }) {
   }
 
   return (
-    <ModalSection id="section-fishing" title="Fishing Info">
+    <ModalSection id="section-fishing" title="Fishing Info" navLabel="Fishing Info">
       <ModalGrid>
         <ModalGridItem label="Difficulty:">
           <span className="value difficulty" style={{ color: getDifficultyColor(entity.difficulty) }}>

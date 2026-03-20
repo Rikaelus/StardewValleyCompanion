@@ -34,6 +34,16 @@ function ItemButton({
     const fallbackText = item.name?.slice(0, 2).toUpperCase() || '??'
 
     if (imageError || !item.icon) {
+      if (item.iconChar || item.iconClass) {
+        return (
+          <span
+            className="item-button-icon-char"
+            style={{ width: iconSize, height: iconSize, backgroundColor: item.iconColor || '#7f8c8d' }}
+          >
+            {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
+          </span>
+        )
+      }
       return (
         <span
           className="item-button-icon-fallback"

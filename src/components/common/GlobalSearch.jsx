@@ -212,7 +212,11 @@ function GlobalSearch({ isOpen, onClose }) {
                       <div className="search-result-icon">
                         {iconPath
                           ? <img src={iconPath} alt="" width={24} height={24} />
-                          : <span className="search-result-icon-placeholder" />
+                          : (item.iconChar || item.iconClass)
+                            ? <span className="search-result-icon-char" style={{ backgroundColor: item.iconColor || '#7f8c8d' }}>
+                                {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
+                              </span>
+                            : <span className="search-result-icon-placeholder" />
                         }
                       </div>
                       <span className="search-result-name">{item.name}</span>

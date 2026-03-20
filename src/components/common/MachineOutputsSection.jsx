@@ -5,7 +5,7 @@ import { formatProcessingTime } from '../../utils/Formatters'
 function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
   const machineId = entity.id
   const outputItems = allItems.filter(item =>
-    !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop')
+    !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop' && s.type !== 'reward')
   ).sort((a, b) => a.name.localeCompare(b.name))
 
   // Animal-specific harvest context
@@ -23,7 +23,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
   return (
     <>
       {outputItems.length > 0 && (
-        <ModalSection id="section-machine-outputs" title={`Produces (${outputItems.length})`}>
+        <ModalSection id="section-machine-outputs" title={`Produces (${outputItems.length})`} navLabel="Produces">
           <div className="source-list">
             {outputItems.flatMap(item => {
               const src = item.sources?.find(s => s.id === machineId)

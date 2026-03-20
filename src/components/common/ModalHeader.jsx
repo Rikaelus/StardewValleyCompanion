@@ -8,7 +8,7 @@ import './ModalHeader.css'
  * Usage:
  *   <ModalHeader icon={item.icon} name={item.name} subtitle="Category Name" />
  */
-function ModalHeader({ icon, name, subtitle, children, className = '' }) {
+function ModalHeader({ icon, iconChar, iconClass, iconColor, name, subtitle, children, className = '' }) {
   const [iconError, setIconError] = useState(false)
 
   useEffect(() => {
@@ -17,7 +17,11 @@ function ModalHeader({ icon, name, subtitle, children, className = '' }) {
 
   return (
     <div className={`modal-item-header ${className}`}>
-      {!icon || iconError ? (
+      {(iconChar || iconClass) ? (
+        <div className="modal-item-header-icon-char" style={{ backgroundColor: iconColor || '#7f8c8d' }}>
+          {iconClass ? <i className={iconClass} /> : iconChar}
+        </div>
+      ) : !icon || iconError ? (
         <div className="modal-item-header-icon-fallback" title={`${name} (icon not found)`}>
           {(() => {
           const words = name.split(/\s+/)

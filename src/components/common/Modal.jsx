@@ -1,14 +1,16 @@
 import { useEffect, useId, useLayoutEffect, useState, useRef, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useModalStack } from '../../contexts/ModalContext'
+import { useSectionNav } from '../../contexts/SectionNavContext'
 import './Modal.css'
 
-function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
+function Modal({ isOpen, onClose, title, breadcrumb, children }) {
   const modalId = useId()
   const { pushModal, popModal, getModalIndex, isTopModal } = useModalStack()
   const [isClosing, setIsClosing] = useState(false)
   const [shouldRender, setShouldRender] = useState(isOpen)
   const bodyRef = useRef(null)
+  const sections = useSectionNav()
 
   useEffect(() => {
     if (bodyRef.current) bodyRef.current.scrollTop = 0
@@ -113,7 +115,7 @@ function Modal({ isOpen, onClose, title, breadcrumb, sections, children }) {
             ×
           </button>
           {breadcrumb && breadcrumb}
-          {sections && sections.length > 0 && (
+          {sections.length > 1 && (
             <nav className="modal-section-nav">
               {sections.map(({ id, label }) => (
                 <button

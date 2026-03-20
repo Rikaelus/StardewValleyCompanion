@@ -28,7 +28,11 @@
       "shop": {
         "gameShopId": "Joja"
       },
-      "address": "Pelican Town"
+      "address": "Pelican Town",
+      "hours": {
+        "open": 900,
+        "close": 2300
+      }
     },
     "loc-willy": {
       "id": "loc-willy",
@@ -126,7 +130,12 @@
       "shop": {
         "gameShopId": "Sandy"
       },
-      "address": "Calico Desert"
+      "address": "Calico Desert",
+      "hours": {
+        "open": 900,
+        "close": 2350,
+        "note": "Requires Bus to be repaired"
+      }
     },
     "loc-desert-trade": {
       "id": "loc-desert-trade",
@@ -135,7 +144,12 @@
       "shop": {
         "gameShopId": "DesertTrade"
       },
-      "address": "Calico Desert"
+      "address": "Calico Desert",
+      "hours": {
+        "open": 900,
+        "close": 2350,
+        "note": "Requires Bus to be repaired"
+      }
     },
     "loc-traveling-merchant": {
       "id": "loc-traveling-merchant",
@@ -149,6 +163,11 @@
         { "id": "fest-night-market", "note": "Visits all 3 nights" },
         { "id": "fest-desert-festival" }
       ],
+      "hours": {
+        "open": 600,
+        "close": 2000,
+        "days": ["Friday", "Sunday"]
+      },
       "note": "Appears Fridays and Sundays in Cindersap Forest."
     },
     "loc-island-trader": {
@@ -158,7 +177,12 @@
       "shop": {
         "gameShopId": "IslandTrade"
       },
-      "address": "Ginger Island"
+      "address": "Ginger Island",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Always available once Ginger Island is unlocked"
+      }
     },
     "loc-dwarf": {
       "id": "loc-dwarf",
@@ -167,7 +191,12 @@
       "shop": {
         "gameShopId": "Dwarf"
       },
-      "address": "Mines"
+      "address": "Mines",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Requires breaking the boulder with a Steel Pickaxe and donating all 4 Dwarf Scrolls"
+      }
     },
     "loc-hat-mouse": {
       "id": "loc-hat-mouse",
@@ -176,7 +205,12 @@
       "shop": {
         "gameShopId": "HatMouse"
       },
-      "address": "Cindersap Forest"
+      "address": "Cindersap Forest",
+      "hours": {
+        "open": 600,
+        "close": 2400,
+        "note": "Located in the Abandoned House"
+      }
     },
     "loc-qi-gem-shop": {
       "id": "loc-qi-gem-shop",
@@ -186,7 +220,12 @@
       "shop": {
         "gameShopId": "QiGemShop"
       },
-      "address": "Ginger Island"
+      "address": "Ginger Island",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Requires 100 Golden Walnuts"
+      }
     },
     "loc-volcano-shop": {
       "id": "loc-volcano-shop",
@@ -195,7 +234,12 @@
       "shop": {
         "gameShopId": "VolcanoShop"
       },
-      "address": "Volcano Dungeon"
+      "address": "Volcano Dungeon",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Located on Volcano Dungeon Floor 5"
+      }
     },
     "loc-raccoon": {
       "id": "loc-raccoon",
@@ -204,7 +248,12 @@
       "shop": {
         "gameShopId": "Raccoon"
       },
-      "address": "Cindersap Forest"
+      "address": "Cindersap Forest",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Available after completing the Giant Stump request"
+      }
     },
     "loc-krobus": {
       "id": "loc-krobus",
@@ -226,7 +275,12 @@
       "shop": {
         "gameShopId": "ResortBar"
       },
-      "address": "Ginger Island Resort"
+      "address": "Ginger Island Resort",
+      "hours": {
+        "open": 0,
+        "close": 2400,
+        "note": "Available after opening the Island Resort"
+      }
     },
     "loc-bookseller": {
       "id": "loc-bookseller",
@@ -236,6 +290,12 @@
         "gameShopId": "Bookseller"
       },
       "address": "Pelican Town",
+      "hours": {
+        "open": 600,
+        "close": 2000,
+        "days": ["1st", "15th"],
+        "note": "Appears on the 1st and 15th of each season"
+      },
       "note": "Appears on the 1st and 15th of each season."
     },
     "loc-trash-can": {
@@ -885,20 +945,26 @@
     }
   },
   "categorySellingLocations": {
-    "-17": [
-      "loc-pierre",
-      "shipping-bin"
-    ],
-    "-20": [
-      "loc-trash-can",
-      "shipping-bin"
-    ],
-    "-23": [
-      "loc-willy",
-      "shipping-bin"
-    ],
-    "-27": [
-      "shipping-bin"
-    ]
+    "_comment": "Maps game item categories to locations where players can sell those items",
+    "-2": ["loc-clint", "shipping-bin"],
+    "-4": ["loc-willy", "shipping-bin"],
+    "-5": ["shipping-bin"],
+    "-6": ["shipping-bin"],
+    "-7": ["loc-gus", "shipping-bin"],
+    "-12": ["loc-clint", "shipping-bin"],
+    "-15": ["loc-clint", "shipping-bin"],
+    "-16": ["loc-robin", "shipping-bin"],
+    "-17": ["loc-pierre", "shipping-bin"],
+    "-18": ["shipping-bin"],
+    "-20": ["loc-trash-can", "shipping-bin"],
+    "-23": ["loc-willy", "shipping-bin"],
+    "-26": ["shipping-bin"],
+    "-27": ["shipping-bin"],
+    "-28": ["loc-marlon", "shipping-bin"],
+    "-74": ["loc-pierre", "shipping-bin"],
+    "-75": ["loc-pierre", "shipping-bin"],
+    "-79": ["loc-pierre", "shipping-bin"],
+    "-80": ["loc-pierre", "shipping-bin"],
+    "-81": ["loc-pierre", "shipping-bin"]
   }
 }
