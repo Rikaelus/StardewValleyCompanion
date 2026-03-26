@@ -172,6 +172,48 @@
   height: 56px;
 }
 
+.bundle-slot-container.filled {
+  border-color: #2e7d32;
+}
+
+.bundle-slot-icon {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* Gold-only bundles (Vault) */
+.bundle-gold-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+
+.bundle-gold-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #b8860b;
+}
+
+.bundle-gold-paid {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.bundle-complete-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
 /* Legacy styles - keep for backwards compatibility if needed */
 .bundle-item-name {
   font-weight: 600;
@@ -331,7 +373,18 @@
 .source-entry:nth-child(odd) { background-color: #fdfbf7; }
 .source-entry:nth-child(even) { background-color: #f9f6f0; }
 .source-entry > * { display: table-cell; vertical-align: middle; }
-.source-detail { width: 1%; white-space: nowrap; }
+.source-detail { width: 1%; white-space: nowrap; padding: 0.15rem 0.35rem; }
+
+/* Bundle use status badges (in Uses section) */
+.source-qualifier.bundle-use-provided {
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+}
+
+.source-qualifier.bundle-use-needed {
+  color: #e65100;
+  background: rgba(230, 81, 0, 0.1);
+}
 .source-name { font-weight: 600; padding-top: 0.1rem; }
 .source-name--indented { padding-left: 1.25rem; }
 .source-name--link {

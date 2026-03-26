@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react'
+import { mapProfessionIds } from '../utils/SaveFileParser'
 
 const PlayerContext = createContext(null)
 
@@ -25,7 +26,8 @@ const DEFAULT_PLAYER = {
     // Mining Level 10
     blacksmith: false, // Bars worth 50% more
     gemologist: false, // Gems worth 30% more
-  }
+  },
+  saveData: null,
 }
 
 export function PlayerProvider({ children }) {
@@ -36,7 +38,13 @@ export function PlayerProvider({ children }) {
       if (stored) {
         const parsed = JSON.parse(stored)
         // Merge with defaults to handle new fields
-        return { ...DEFAULT_PLAYER, ...parsed, professions: { ...DEFAULT_PLAYER.professions, ...parsed.professions }, jojaMember: parsed.jojaMember ?? false }
+        return {
+          ...DEFAULT_PLAYER,
+          ...parsed,
+          professions: { ...DEFAULT_PLAYER.professions, ...parsed.professions },
+          jojaMember: parsed.jojaMember ?? false,
+          saveData: parsed.saveData ?? null,
+        }
       }
     } catch (error) {
       console.error('Error loading player data:', error)
@@ -79,13 +87,39 @@ export function PlayerProvider({ children }) {
     })
   }, [])
 
+  const importSaveData = useCallback((parsedData) => {
+    setPlayerState(prev => {
+      const professions = mapProfessionIds(parsedData.professionIds || [])
+      const jojaMember = (parsedData.mailReceived || []).includes('JojaMember')
+
+      return {
+        ...prev,
+        name: parsedData.name || prev.name,
+        farmName: parsedData.farmName || prev.farmName,
+        jojaMember,
+        professions: { ...prev.professions, ...professions },
+        saveData: {
+          ...parsedData,
+          importedAt: new Date().toISOString(),
+        },
+      }
+    })
+  }, [])
+
+  const clearSaveData = useCallback(() => {
+    setPlayerState(prev => ({
+      ...prev,
+      saveData: null,
+    }))
+  }, [])
+
   const resetPlayer = useCallback(() => {
     setPlayerState(DEFAULT_PLAYER)
   }, [])
 
   const value = useMemo(
-    () => ({ player, setPlayer, setProfession, addRecentSearch, resetPlayer }),
-    [player, setPlayer, setProfession, addRecentSearch, resetPlayer]
+    () => ({ player, setPlayer, setProfession, addRecentSearch, importSaveData, clearSaveData, resetPlayer }),
+    [player, setPlayer, setProfession, addRecentSearch, importSaveData, clearSaveData, resetPlayer]
   )
 
   return (

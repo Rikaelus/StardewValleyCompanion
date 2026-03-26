@@ -1,6 +1,121 @@
 import { useState, useEffect, useRef } from 'react'
 import { usePlayer } from '../../contexts/PlayerContext'
+import { parseSaveFile } from '../../utils/SaveFileParser'
 import './CharacterBar.css'
+
+const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
+
+function ImportSection() {
+  const { player, importSaveData, clearSaveData } = usePlayer()
+  const fileInputRef = useRef(null)
+  const [importState, setImportState] = useState('idle') // idle | loading | error
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleFileSelect = async (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setImportState('loading')
+    setErrorMessage('')
+
+    try {
+      const text = await file.text()
+      const parsed = parseSaveFile(text)
+      importSaveData(parsed)
+      setImportState('idle')
+    } catch (err) {
+      setImportState('error')
+      setErrorMessage(err.message || 'Failed to parse save file.')
+    }
+
+    // Reset input so the same file can be re-selected
+    e.target.value = ''
+  }
+
+  const saveData = player.saveData
+
+  if (saveData) {
+    const fishCount = Object.keys(saveData.fishCaught || {}).length
+    const friendCount = Object.keys(saveData.friendships || {}).length
+    const season = SEASON_LABELS[saveData.date?.season] || saveData.date?.season
+    const dateStr = `Year ${saveData.date?.year}, ${season} ${saveData.date?.day}`
+    const hasBundles = saveData.source === 'SaveGame'
+
+    return (
+      <div className="character-section import-section">
+        <h3>Save File Import</h3>
+        <div className="import-summary">
+          <div className="import-summary-line">{dateStr}</div>
+          <div className="import-summary-details">
+            {Object.entries(saveData.skills || {}).map(([skill, level]) => (
+              <span key={skill} className="import-stat">
+                {skill.charAt(0).toUpperCase() + skill.slice(1)} {level}
+              </span>
+            ))}
+          </div>
+          <div className="import-summary-details">
+            <span className="import-stat">{fishCount} fish caught</span>
+            <span className="import-stat">{friendCount} friendships</span>
+            {hasBundles && <span className="import-stat">Bundles imported</span>}
+          </div>
+          <div className="import-meta">
+            Imported from {saveData.source === 'SaveGame' ? 'full save' : 'SaveGameInfo'}
+          </div>
+        </div>
+        <div className="import-actions">
+          <button
+            className="import-btn import-btn-secondary"
+            onClick={() => fileInputRef.current?.click()}
+          >
+            Re-import
+          </button>
+          <button
+            className="import-btn import-btn-clear"
+            onClick={clearSaveData}
+          >
+            Clear Import
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            className="import-file-input"
+            onChange={handleFileSelect}
+          />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="character-section import-section">
+      <h3>Save File Import</h3>
+      <p className="import-description">
+        Upload your save file to auto-fill character info, professions, and track progress.
+      </p>
+      <div className="import-actions">
+        <button
+          className="import-btn"
+          onClick={() => fileInputRef.current?.click()}
+          disabled={importState === 'loading'}
+        >
+          {importState === 'loading' ? 'Parsing...' : 'Choose Save File'}
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          className="import-file-input"
+          onChange={handleFileSelect}
+        />
+      </div>
+      {importState === 'error' && (
+        <div className="import-error">{errorMessage}</div>
+      )}
+      <p className="import-privacy">
+        Your save file is processed locally and never uploaded.
+      </p>
+    </div>
+  )
+}
 
 function CharacterBar() {
   const { player, setPlayer, setProfession } = usePlayer()
@@ -86,6 +201,8 @@ function CharacterBar() {
 
       {isExpanded && (
         <div className={`character-details ${isClosing ? 'closing' : ''}`}>
+          <ImportSection />
+
           <div className="character-section">
             <h3>Character Information</h3>
             <div className="character-fields">

@@ -13,7 +13,7 @@ import FishingInfoSection from './FishingInfoSection'
 import AgingInfoSection from './AgingInfoSection'
 import ContextTagsSection from './ContextTagsSection'
 import LocationAvailabilitySection from './LocationAvailabilitySection'
-import BundlesSection from './BundlesSection'
+import { useProgress } from '../../hooks/UseProgress'
 import VariationsListSection from './VariationsListSection'
 import SeedProducesSection from './SeedProducesSection'
 import BundleRequirementsSection from './BundleRequirementsSection'
@@ -159,6 +159,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Load unified entity data (fetched once for the whole app via EntityContext)
   const entityData = useEntities()
+  const { hasSaveData, getBundleProgress } = useProgress()
   const { byType: itemsByType, items: allItems, findById, findByGameId, findEntity, loading: entitiesLoading, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
@@ -1782,26 +1783,73 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   </>
                 )}
 
-                {displayEntity.usedInRecipes?.length > 0 && (() => {
-                  const cooking = displayEntity.usedInRecipes.filter(r => r.type === 'cooking')
-                  const crafting = displayEntity.usedInRecipes.filter(r => r.type === 'crafting')
-                  const tailoring = displayEntity.usedInRecipes.filter(r => r.type === 'tailoring').sort((a, b) => a.recipeName.localeCompare(b.recipeName))
-                  const groups = [
+                {(() => {
+                  const recipes = displayEntity.usedInRecipes || []
+                  const cooking = recipes.filter(r => r.type === 'cooking')
+                  const crafting = recipes.filter(r => r.type === 'crafting')
+                  const tailoring = recipes.filter(r => r.type === 'tailoring').sort((a, b) => a.recipeName.localeCompare(b.recipeName))
+
+                  const bundleIds = displayEntity.bundles || []
+                  const bundleDetails = bundleIds
+                    .map(id => entityData.getBundle(id))
+                    .filter(Boolean)
+
+                  const recipeGroups = [
                     { items: cooking, label: 'Ingredient For' },
                     { items: crafting, label: 'Used to Craft' },
                     { items: tailoring, label: 'Used in Tailoring' },
                   ].filter(g => g.items.length > 0)
-                  const sectionTitle = groups.length === 1 ? groups[0].label : 'Uses'
+
+                  const hasRecipes = recipeGroups.length > 0
+                  const hasBundles = bundleDetails.length > 0
+                  if (!hasRecipes && !hasBundles) return null
+
+                  const totalGroups = recipeGroups.length + (hasBundles ? 1 : 0)
+                  const sectionTitle = totalGroups === 1
+                    ? (hasBundles ? 'Needed for Bundles' : recipeGroups[0].label)
+                    : 'Uses'
+
                   return (
                     <ModalSection id="section-uses" title={sectionTitle} navLabel={sectionTitle}>
-                      {groups.map(({ items, label }, gi) => (
+                      {recipeGroups.map(({ items, label }, gi) => (
                         <div key={gi} className="source-group">
-                          {groups.length > 1 && <span className="modal-label">{label}:</span>}
+                          {totalGroups > 1 && <span className="modal-label">{label}:</span>}
                           <div className="source-list">
                             <RecipeEntryList recipes={items} subject={displayEntity} onNavigate={handleNavigate} />
                           </div>
                         </div>
                       ))}
+                      {hasBundles && (
+                        <div className="source-group">
+                          {totalGroups > 1 && <span className="modal-label">Needed for Bundles:</span>}
+                          <div className="source-list">
+                            {bundleDetails.map(bundle => {
+                              const bundleItem = bundle.items?.find(bi => bi.gameId === displayEntity.gameId)
+                              const qty = bundleItem?.quantity ?? 1
+                              const progress = hasSaveData ? getBundleProgress(bundle.bundleNumber, bundle.items?.length ?? 0) : null
+                              const bundleComplete = progress?.complete ?? false
+                              const itemIdx = bundle.items?.indexOf(bundleItem) ?? -1
+                              const itemSubmitted = itemIdx >= 0 && (progress?.items[itemIdx] ?? false)
+
+                              return (
+                                <span key={bundle.id} className="source-entry">
+                                  <span className="source-name">
+                                    <ModalItemButton item={bundle} variant="inline" onNavigate={handleNavigate} />
+                                  </span>
+                                  <span className="source-qualifiers">
+                                    {qty > 1 && <span className="source-qualifier">×{qty}</span>}
+                                    {hasSaveData && !bundleComplete && (
+                                      itemSubmitted
+                                        ? <span className="source-qualifier bundle-use-provided">Provided</span>
+                                        : <span className="source-qualifier bundle-use-needed">Needed</span>
+                                    )}
+                                  </span>
+                                </span>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
                     </ModalSection>
                   )
                 })()}
@@ -1821,7 +1869,6 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     onNavigate={handleNavigate}
                   />
                 )}
-                <BundlesSection entity={displayEntity} getBundle={entityData.getBundle} onNavigate={handleNavigate} />
                 <ModalGiftPreferences
                   id="section-gifts"
                   giftDetails={entityData.getGiftPreferences(displayEntity.id)}

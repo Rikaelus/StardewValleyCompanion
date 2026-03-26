@@ -3784,7 +3784,8 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
   if (typeof bundleInfo !== 'string') continue;
 
   // bundleKey format: "Room/BundleNumber" (e.g., "Pantry/0", "Crafts Room/13")
-  const roomName = bundleKey.split('/')[0];
+  const [roomName, bundleNumberStr] = bundleKey.split('/');
+  const bundleNumber = parseInt(bundleNumberStr, 10);
 
   // Bundle format: "Name/Reward/Items/Color/MinItems"
   const parts = bundleInfo.split('/');
@@ -3802,6 +3803,7 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
 
   // Parse items
   const items = [];
+  let goldCost = null;
   if (itemsString) {
     // Items are space-separated triplets: "itemId quantity quality itemId quantity quality..."
     const itemParts = itemsString.split(' ');
@@ -3810,79 +3812,41 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
       const quantity = parseInt(itemParts[i + 1], 10) || 1;
       const quality = parseInt(itemParts[i + 2], 10) || 0;
 
+      // itemId -1 means gold (used by Vault bundles)
+      if (itemId === -1) {
+        goldCost = quantity;
+        continue;
+      }
+
       const itemObject = gameData.objects[itemId];
       if (itemObject) {
         items.push({
           id: toKebabCase(itemObject.Name),
-          gameId: itemId,
+          gameId: `(O)${itemId}`,
           quantity: quantity,
           quality: quality
         });
 
-        // Add bundle reference to fish if it's a fish
-        const fish = fishData.find(f => f.gameId === itemId);
-        if (fish && !fish.bundles.includes(friendlyId)) {
-          fish.bundles.push(friendlyId);
+        // Add bundle cross-references using qualified ID
+        // Some data arrays store gameId as qualified "(O)767", others as bare 767
+        const qualifiedItemId = `(O)${itemId}`;
+        const matchesGameId = (gid) => gid === qualifiedItemId || gid === itemId;
+
+        const allCollections = [
+          fishData, cropData, artisanData, animalProductData, forageData,
+          treeFruitsData, mineralData, metalBarData, monsterLootData, resourceData,
+        ];
+        for (const collection of allCollections) {
+          const match = collection.find(e => matchesGameId(e.gameId));
+          if (match && !match.bundles.includes(friendlyId)) {
+            match.bundles.push(friendlyId);
+          }
         }
 
-        // Add bundle reference to crops
-        const crop = cropData.find(c => c.gameId === itemId);
-        if (crop && !crop.bundles.includes(friendlyId)) {
-          crop.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to artisan items
-        const artisan = artisanData.find(a => a.gameId === itemId);
-        if (artisan && !artisan.bundles.includes(friendlyId)) {
-          artisan.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to animal products
-        const animalProduct = animalProductData.find(a => a.gameId === itemId);
-        if (animalProduct && !animalProduct.bundles.includes(friendlyId)) {
-          animalProduct.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to forage items
-        const forage = forageData.find(f => f.gameId === itemId);
-        if (forage && !forage.bundles.includes(friendlyId)) {
-          forage.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to fruit tree items (searches by fruit output ID)
+        // Fruit trees match by fruitGameId (bare, from parseItemId)
         const fruitTree = fruitTreeData.find(f => f.fruitGameId === itemId);
         if (fruitTree && !fruitTree.bundles.includes(friendlyId)) {
           fruitTree.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to tree fruits (the fruit items themselves)
-        const treeFruit = treeFruitsData.find(f => f.gameId === itemId);
-        if (treeFruit && !treeFruit.bundles.includes(friendlyId)) {
-          treeFruit.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to minerals
-        const mineral = mineralData.find(m => m.gameId === itemId);
-        if (mineral && !mineral.bundles.includes(friendlyId)) {
-          mineral.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to metal bars
-        const metalBar = metalBarData.find(m => m.gameId === itemId);
-        if (metalBar && !metalBar.bundles.includes(friendlyId)) {
-          metalBar.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to monster loot
-        const monsterLoot = monsterLootData.find(m => m.gameId === itemId);
-        if (monsterLoot && !monsterLoot.bundles.includes(friendlyId)) {
-          monsterLoot.bundles.push(friendlyId);
-        }
-
-        // Add bundle reference to resources
-        const resource = resourceData.find(r => r.gameId === itemId);
-        if (resource && !resource.bundles.includes(friendlyId)) {
-          resource.bundles.push(friendlyId);
         }
       }
     }
@@ -3892,16 +3856,21 @@ for (const [bundleKey, bundleInfo] of Object.entries(gameData.bundles)) {
   const iconColor = bundleIcons[friendlyId] || 'green';
   const icon = `assets/bundles/Bundle_${iconColor.charAt(0).toUpperCase() + iconColor.slice(1)}.png`;
 
-  bundleData.push({
+  const bundleEntry = {
     id: friendlyId,
     name: bundleName,
+    bundleNumber: bundleNumber,
     icon: icon,
     room: roomName,
     roomId: roomId,
     reward: reward,
     items: items,
     minItemsRequired: minItems
-  });
+  };
+  if (goldCost != null) {
+    bundleEntry.goldCost = goldCost;
+  }
+  bundleData.push(bundleEntry);
 }
 
 console.log(`  Processed ${bundleData.length} bundles`);

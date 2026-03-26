@@ -3,6 +3,7 @@ import DataTable from '../common/DataTable'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
 import { useOpenModal } from '../../contexts/ModalContext'
+import { useProgress } from '../../hooks/UseProgress'
 import { formatTime, getDifficultyColor, getLocationNames } from '../../utils/Formatters'
 import ModalItemButton from '../common/ModalItemButton'
 import {
@@ -17,6 +18,7 @@ function FishTable({ fish, allFish }) {
   const { player } = usePlayer()
   const { villagers: { all: villagers }, findById, ...relationalData } = useEntities()
   const openModal = useOpenModal()
+  const { hasSaveData, isFishCaught } = useProgress()
   const professionsRef = useRef(player.professions)
 
   // Update ref when professions actually change
@@ -34,6 +36,14 @@ function FishTable({ fish, allFish }) {
       createNameColumn({
         cellRenderer: ({ row }) => (
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+            {hasSaveData && (
+              <span
+                className={`caught-indicator ${isFishCaught(row.original.gameId) ? 'caught' : 'not-caught'}`}
+                title={isFishCaught(row.original.gameId) ? 'Caught' : 'Not caught'}
+              >
+                {isFishCaught(row.original.gameId) ? '✓' : '○'}
+              </span>
+            )}
             <ModalItemButton item={row.original} showIcon={true} showLabel={true} iconSize={24} stopPropagation={true} onNavigate={openModal} />
             {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐</span>}
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
@@ -127,7 +137,7 @@ function FishTable({ fish, allFish }) {
     const villagerColumns = createVillagerGiftColumns(villagers, relationalData)
 
     return [...baseColumns, ...villagerColumns]
-  }, [villagers, relationalData])
+  }, [villagers, relationalData, hasSaveData, isFishCaught])
 
   // Show loading state while data loads
   if (relationalData.loading || columns.length === 0) {

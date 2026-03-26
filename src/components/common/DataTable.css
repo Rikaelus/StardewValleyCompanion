@@ -230,6 +230,23 @@
   line-height: 1.5;
 }
 
+/* Save data caught/completion indicators */
+.caught-indicator {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.caught-indicator.caught {
+  color: #2e7d32;
+}
+
+.caught-indicator.not-caught {
+  color: #ccc;
+  font-weight: 400;
+}
+
 /* Empty results state */
 .empty-results {
   text-align: center;

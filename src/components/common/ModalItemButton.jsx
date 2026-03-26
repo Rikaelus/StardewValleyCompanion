@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Tooltip } from 'react-tooltip'
 import ItemButton from './ItemButton'
 import { useOpenModal } from '../../contexts/ModalContext'
+import { useProgress } from '../../hooks/UseProgress'
 import { pluralize } from '../../utils/Pluralize'
 import 'react-tooltip/dist/react-tooltip.css'
 // TODO: rename ModalItemButton → ModalEntityButton and item prop → entity (high churn, cosmetic)
@@ -30,6 +31,8 @@ function ModalItemButton({
   showSlotBackground = false // Show bundle slot background (bundle-item variant only)
 }) {
   const openModal = useOpenModal()
+  const { getEntityCompletion } = useProgress()
+  const completion = getEntityCompletion(item)
   const [imageError, setImageError] = useState(false)
 
   if (!item) return null
@@ -96,6 +99,9 @@ function ModalItemButton({
   // Render inline variant (small icon + text link)
   if (variant === 'inline' || variant === 'icon-inline') {
     const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
+    const isComplete = completion?.completed
+    const baseColor = isComplete ? '#2e7d32' : '#2d1b00'
+    const hoverColor = isComplete ? '#1b5e20' : '#8b7355'
     return (
       <button
         onClick={handleClick}
@@ -104,7 +110,7 @@ function ModalItemButton({
           border: 'none',
           padding: 0,
           fontWeight: 600,
-          color: '#2d1b00',
+          color: baseColor,
           fontSize: '0.875rem',
           cursor: 'pointer',
           display: 'inline-flex',
@@ -113,8 +119,8 @@ function ModalItemButton({
           textAlign: 'left',
           transition: 'color 0.15s ease'
         }}
-        onMouseEnter={(e) => e.currentTarget.style.color = '#8b7355'}
-        onMouseLeave={(e) => e.currentTarget.style.color = '#2d1b00'}
+        onMouseEnter={(e) => e.currentTarget.style.color = hoverColor}
+        onMouseLeave={(e) => e.currentTarget.style.color = baseColor}
         aria-label={`View ${item.name} details`}
         type="button"
       >
@@ -126,8 +132,9 @@ function ModalItemButton({
               </span>
             : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
         }
-        <span style={{ position: 'relative', top: '2px' }}>
+        <span style={{ position: 'relative' }}>
           {label ?? (plural ? pluralize(item.name) : item.name)}
+          {isComplete && <span title={completion.label}> ✓</span>}
           {item.contextTags?.includes('fish_legendary') && <span title="Legendary Fish"> ⭐</span>}
         </span>
       </button>
