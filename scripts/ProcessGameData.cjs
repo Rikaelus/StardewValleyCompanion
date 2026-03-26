@@ -590,6 +590,12 @@ const rules = {
   debuffIds: loadJson(path.join(RULES_DIR, 'debuff-ids.json')),
   bundleRoomOverrides: loadJson(path.join(RULES_DIR, 'bundle-room-overrides.json')),
   locationNesting: loadJson(path.join(RULES_DIR, 'location-nesting.json')).overrides,
+  typePriority: loadJson(path.join(RULES_DIR, 'type-priority.json')).priorities,
+  geodeItems: loadJson(path.join(RULES_DIR, 'geode-items.json')).gameIds,
+  professionRules: loadJson(path.join(RULES_DIR, 'profession-rules.json')).rules,
+  categoryNames: loadJson(path.join(RULES_DIR, 'category-names.json')).categories,
+  qualityTiers: loadJson(path.join(RULES_DIR, 'quality-tiers.json')),
+  clothingIconOverrides: loadJson(path.join(RULES_DIR, 'icon-overrides.json')).clothingIconOverrides || {},
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
@@ -670,11 +676,10 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
     const source = { type: 'shop', id: storeId };
 
     // Non-gold shop currency (Currency field: 1=StarTokens, 2=QiCoins, 4=QiGems)
-    const SHOP_CURRENCIES = { 1: 'star-tokens', 2: 'qi-coins', 4: 'qi-gems' };
-    const SHOP_CURRENCY_GAME_IDS = { 1: 'StarToken', 2: 'QiCoin', 4: 858 };
-    if (shopData.Currency && SHOP_CURRENCIES[shopData.Currency]) {
-      source.shopCurrency = SHOP_CURRENCIES[shopData.Currency];
-      source.shopCurrencyGameId = SHOP_CURRENCY_GAME_IDS[shopData.Currency];
+    const currencyDef = rules.shops.currencies?.[String(shopData.Currency)];
+    if (shopData.Currency && currencyDef) {
+      source.shopCurrency = currencyDef.id;
+      source.shopCurrencyGameId = currencyDef.gameId;
     }
 
     // Price: -1 means use item's default price × shop markup (default 2×)
@@ -1532,8 +1537,7 @@ console.log(`  ✓ Tailoring reverse index: ${tailoringUsedInByGameId.size} ingr
 // Parsed from GeodeDrops on Objects.json — geodes, troves, golden coconuts
 const geodeSourcesByGameId = new Map();
 {
-  const GEODE_ITEMS = ['535', '536', '537', '749', '275', '791']; // Geode, Frozen, Magma, Omni, Artifact Trove, Golden Coconut
-  for (const geodeId of GEODE_ITEMS) {
+  for (const geodeId of rules.geodeItems) {
     const obj = gameData.objects[geodeId];
     if (!obj?.GeodeDrops) continue;
     const geodeName = resolveLocalizedText(obj.DisplayName) || obj.Name;
@@ -3522,14 +3526,11 @@ console.log(`  ✅ Added selling locations to ${artisanData.length} artisan item
 console.log('\nProcessing villagers...');
 const villagerData = [];
 
-// Canonical list of 34 social villagers (Characters.json has 48 entries including monsters/animals)
-const villagerNames = [
-  'Abigail', 'Alex', 'Elliott', 'Emily', 'Haley', 'Harvey', 'Leah', 'Maru',
-  'Penny', 'Sam', 'Sebastian', 'Shane', 'Caroline', 'Clint', 'Demetrius',
-  'Dwarf', 'Evelyn', 'George', 'Gus', 'Jas', 'Jodi', 'Kent', 'Krobus',
-  'Leo', 'Lewis', 'Linus', 'Marnie', 'Pam', 'Pierre', 'Robin', 'Sandy',
-  'Vincent', 'Willy', 'Wizard'
-];
+// Derive social villagers from Characters.json (CanSocialize !== 'FALSE' and valid name)
+const villagerNames = Object.entries(gameData.characters)
+  .filter(([name, data]) => name !== '???' && data.CanSocialize !== 'FALSE')
+  .map(([name]) => name)
+  .sort();
 
 // Mappings for numeric enum fields in Characters.json
 const BIRTH_SEASON_MAP = { 0: 'spring', 1: 'summer', 2: 'fall', 3: 'winter' };
@@ -5464,9 +5465,7 @@ console.log(`  ✓ Processed ${movieData.length} movies`);
 console.log('\n👔 Processing clothing...');
 
 const clothingData = [];
-const CLOTHING_ICON_OVERRIDES = {
-  '(P)15': 'assets/objects/LuckyPurpleShorts.png',  // Trimmed Lucky Purple Shorts
-};
+const CLOTHING_ICON_OVERRIDES = rules.clothingIconOverrides;
 
 // Parse pants
 for (const [rawId, pantsObj] of Object.entries(gameData.pants || {})) {
@@ -5571,13 +5570,8 @@ function camelToWords(str) {
 const eventRules = loadJson(path.join(RULES_DIR, 'events.json')).events || [];
 const eventRulesById = new Map(eventRules.map(e => [e.id, e]));
 
-// Known NPC names for matching against descriptions
-const knownNpcNames = new Set([
-  'Abigail','Alex','Caroline','Clint','Demetrius','Dwarf','Elliott','Emily',
-  'Evelyn','George','Gus','Haley','Harvey','Jas','Jodi','Kent','Krobus',
-  'Leah','Leo','Lewis','Linus','Marnie','Maru','Pam','Penny','Pierre',
-  'Robin','Sam','Sandy','Sebastian','Shane','Vincent','Willy','Wizard',
-]);
+// Reuse villager names derived from Characters.json (computed earlier in villager processing)
+const knownNpcNames = new Set(villagerNames);
 
 // Collect data from all Events_*.json files
 const gameEventFiles = fs.readdirSync(GAME_EXPORTS_DIR)
@@ -6449,18 +6443,7 @@ taggedForage.forEach(item => deriveForageLocationsSeasons(item));
 // ---------------------------------------------------------------------------
 console.log('\n🔗 Merging cross-collection items...');
 
-const TYPE_PRIORITY = {
-  'fish': 1, 'artisan': 2, 'crop': 3, 'forage': 4, 'tree-fruit': 5,
-  'mineral': 6, 'metal-bar': 7, 'monster-loot': 8, 'resource': 9,
-  'big-craftable': 10, 'animal-product': 11, 'seed': 12, 'furniture': 13,
-  'food': 15, 'ore': 16, 'crafted': 18, 'fertilizer': 19,
-  'bait': 20, 'tackle': 21, 'flooring': 22, 'trash': 23, 'book': 24,
-  'artifact': 25, 'ring': 26, 'tree-seed': 27, 'misc': 28, 'buff': 29,
-  'event': 30, 'villager': 31, 'weapon': 32, 'boot': 33, 'tool': 34,
-  'trinket': 35, 'building': 36, 'animal': 37, 'monster': 38,
-  'bundle': 39, 'breakable': 39.5, 'achievement': 39.6, 'quest': 39.7, 'power': 39.8, 'concession': 39.9, 'movie': 39.95, 'clothing': 39.96,
-  'location': 40, 'festival': 41, 'tag': 42,
-};
+const TYPE_PRIORITY = rules.typePriority;
 
 const allTypedEntities = [
   ...taggedFish, ...compiledArtisan, ...taggedCrops, ...taggedForage,
@@ -7382,6 +7365,91 @@ for (const item of allCompiledEntities) {
   if (item.gameId !== undefined && item.gameId !== null) {
     gameIdIndex[item.gameId] = item.id;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Post-merge: compute derived fields (professionCategory, categoryName, qualityTiers)
+// ---------------------------------------------------------------------------
+console.log('\n🏷️  Computing derived fields...');
+{
+  const noQualityTypes = new Set(rules.qualityTiers.noQualityTypes);
+  const noQualityCategories = new Set(rules.qualityTiers.noQualityCategories);
+  let profCount = 0, catCount = 0, qualCount = 0;
+
+  for (const entity of allCompiledEntities) {
+    // --- professionCategory ---
+    // Determines which sell-price profession applies to this item
+    const actualCategory = entity.originalGameCategory !== undefined
+      ? entity.originalGameCategory : entity.gameCategory;
+    // Detect animal-sourced artisan goods by checking machine input categories (-5=Egg, -6=Milk)
+    const ANIMAL_INPUT_CATEGORIES = [-5, -6];
+    const hasAnimalInput = entity.sources?.some(s =>
+      s.type === 'machine' && s.inputDetails?.some(d =>
+        ANIMAL_INPUT_CATEGORIES.includes(d.inputGameCategory)
+      )
+    );
+
+    for (const rule of rules.professionRules) {
+      const m = rule.match;
+      let matched = false;
+
+      if (m.gameCategories && typeof actualCategory === 'number') {
+        matched = m.gameCategories.includes(actualCategory);
+      }
+      if (!matched && m.types && entity.type) {
+        matched = m.types.includes(entity.type);
+      }
+      if (!matched && m.subtypes && entity.subtype) {
+        matched = m.subtypes.includes(entity.subtype);
+      }
+
+      // Exclusion filters for artisan subtypes
+      if (matched && m.excludeAnimalInputCategories && hasAnimalInput) matched = false;
+      if (matched && m.excludeContextTags) {
+        if (m.excludeContextTags.some(tag => entity.contextTags?.includes(tag))) matched = false;
+      }
+      if (matched && m.requireAnimalInputCategories && !hasAnimalInput) matched = false;
+      if (matched && m.requireContextTags) {
+        if (!m.requireContextTags.every(tag => entity.contextTags?.includes(tag))) matched = false;
+      }
+
+      if (matched) {
+        entity.professionCategory = rule.professionCategory;
+        profCount++;
+        break;
+      }
+    }
+
+    // --- categoryName ---
+    if (typeof entity.gameCategory === 'number' && entity.gameCategory !== 0) {
+      const name = rules.categoryNames[String(entity.gameCategory)];
+      if (name) {
+        entity.categoryName = name;
+        catCount++;
+      }
+    } else if (typeof entity.gameCategory === 'string') {
+      entity.categoryName = entity.gameCategory;
+      catCount++;
+    }
+
+    // --- qualityTiers ---
+    if (noQualityTypes.has(entity.type) || noQualityCategories.has(entity.gameCategory)) {
+      // No quality variants — omit field (default to regular-only)
+    } else if (entity.isTrapFish) {
+      entity.qualityTiers = rules.qualityTiers.overrides.trapFish.tiers;
+      qualCount++;
+    } else if (entity.type === 'food') {
+      entity.qualityTiers = rules.qualityTiers.overrides.food.tiers;
+      qualCount++;
+    } else if (entity.price != null || entity.prices != null) {
+      entity.qualityTiers = rules.qualityTiers.default;
+      qualCount++;
+    }
+  }
+
+  console.log(`  ✓ Assigned professionCategory to ${profCount} entities`);
+  console.log(`  ✓ Assigned categoryName to ${catCount} entities`);
+  console.log(`  ✓ Assigned qualityTiers to ${qualCount} entities`);
 }
 
 // ---------------------------------------------------------------------------

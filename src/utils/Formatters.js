@@ -122,36 +122,6 @@ export function formatPrice(price) {
 }
 
 /**
- * Map a numeric category ID to a display name
- */
-const CATEGORY_MAP = {
-  '-4': 'Fish',
-  '-5': 'Egg',
-  '-6': 'Milk',
-  '-7': 'Cooking',
-  '-12': 'Minerals',
-  '-15': 'Metal Resources',
-  '-16': 'Building Resources',
-  '-17': "Sell at Pierre's",
-  '-18': "Sell at Pierre's and Marnie's",
-  '-19': 'Fertilizer',
-  '-20': 'Junk',
-  '-21': 'Bait',
-  '-22': 'Tackle',
-  '-23': 'Sell at Fish Shop',
-  '-24': 'Furniture',
-  '-25': 'Ingredients',
-  '-26': 'Artisan Goods',
-  '-27': 'Syrup',
-  '-28': 'Monster Loot',
-  '-74': 'Seeds',
-  '-75': 'Vegetables',
-  '-79': 'Fruit',
-  '-80': 'Flower',
-  '-81': 'Forage'
-}
-
-/**
  * Get trash can refund percentage based on upgrade level
  */
 export function getTrashCanRefund(trashCanUpgrade) {
@@ -172,13 +142,6 @@ export function getProfitColor(profit) {
   if (profit < 0) return '#d32f2f'
   if (profit >= 100) return '#2e7d32'
   return '#5c4a32'
-}
-
-export function getCategoryName(category, type) {
-  if (type === 'artisan' && typeof category === 'string') {
-    return category
-  }
-  return CATEGORY_MAP[String(category)] || 'Item'
 }
 
 // ---------------------------------------------------------------------------

@@ -2,60 +2,62 @@ import { usePlayer } from '../../contexts/PlayerContext'
 import InfoTooltip from './InfoTooltip'
 import './ItemSellPrice.css'
 
+// Profession key → multiplier (from profession-rules.json, kept here for runtime calculation)
+const PROFESSION_MULTIPLIERS = {
+  crop:       { tiller: 1.1 },
+  fishing:    { angler: 1.5, fisher: 1.25 },
+  artisan:    { artisan: 1.4 },
+  rancher:    { rancher: 1.2 },
+  tapper:     { tapper: 1.25 },
+  blacksmith: { blacksmith: 1.5 },
+  gemologist: { gemologist: 1.3 },
+}
+
+// Profession display labels
+const PROFESSION_LABELS = {
+  tiller: 'Tiller', fisher: 'Fisher', angler: 'Angler',
+  artisan: 'Artisan', rancher: 'Rancher', tapper: 'Tapper',
+  blacksmith: 'Blacksmith', gemologist: 'Gemologist',
+}
+
+// Fallback: derive professionCategory from gameCategory for synthetic items
+// (e.g. input items in profit analysis that only have a gameCategory field)
+const CATEGORY_TO_PROFESSION = {
+  '-75': 'crop', '-79': 'crop',
+  '-4': 'fishing',
+  '-15': 'blacksmith',
+  '-2': 'gemologist',
+}
+
 /**
- * Calculate profession multiplier for an item's sell price
- * @param {Object} item - The item to calculate multiplier for
+ * Calculate profession multiplier for an item's sell price.
+ * Uses pre-computed professionCategory when available, falls back to gameCategory lookup.
+ * @param {Object} item - The item (or synthetic { gameCategory } object)
  * @param {Object} professions - Player professions object
  * @returns {number} Multiplier to apply to base price
  */
 export function calculateProfessionMultiplier(item, professions) {
   if (!item || !professions) return 1.0
 
-  // Get actual game category (some items have originalGameCategory set)
-  const actualCategory = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory
+  // Use pre-computed professionCategory when available, else derive from gameCategory
+  const profCat = item.professionCategory
+    || CATEGORY_TO_PROFESSION[String(item.originalGameCategory ?? item.gameCategory)]
 
-  // Farming professions (crops)
-  if (actualCategory === -75 || actualCategory === -79) {
-    if (professions.tiller) return 1.1  // Tiller +10%
+  if (!profCat) return 1.0
+
+  const multipliers = PROFESSION_MULTIPLIERS[profCat]
+  if (!multipliers) return 1.0
+
+  // Check professions in priority order (higher multiplier first)
+  for (const [key, mult] of Object.entries(multipliers)) {
+    if (professions[key]) return mult
   }
 
-  // Fishing professions (Angler replaces Fisher, doesn't stack)
-  // Check both type and category - items can be forage type but Fish category
-  if (item.type === 'fish' || actualCategory === -4) {
-    if (professions.angler) return 1.5  // Angler +50%
-    if (professions.fisher) return 1.25  // Fisher +25%
-  }
-
-  // Artisan goods (check if it's an artisan good and not an animal product)
-  if (item.type === 'artisan') {
-    const isAnimalProduct = item.source && ['Cow', 'Goat', 'Chicken', 'Duck', 'Sheep', 'Rabbit', 'Pig', 'Fish Pond'].includes(item.source)
-    const isSyrup = item.contextTags && item.contextTags.includes('syrup_item')
-
-    if (professions.tapper && isSyrup) {
-      return 1.25  // Tapper +25%
-    }
-    if (professions.artisan && !isAnimalProduct && !isSyrup) {
-      return 1.4  // Artisan +40%
-    }
-    if (professions.rancher && isAnimalProduct) {
-      return 1.2  // Rancher +20%
-    }
-  }
-
-  // Mining professions
-  if (item.gameCategory === 'Bars' && professions.blacksmith) {
-    return 1.5  // Blacksmith +50%
-  }
-  if (item.gameCategory === 'Gems' && professions.gemologist) {
-    return 1.3  // Gemologist +30%
-  }
-
-  return 1.0  // No modifier
+  return 1.0
 }
 
 /**
  * Sorting function for item prices with profession modifiers
- * Usage in column definition: sortingFn: (rowA, rowB) => createPriceSortingFn(professions)(rowA, rowB)
  * @param {Object} professions - Player professions object
  * @returns {Function} Sorting function for react-table
  */
@@ -67,7 +69,6 @@ export function createPriceSortingFn(professions) {
     const multiplierA = calculateProfessionMultiplier(itemA, professions)
     const multiplierB = calculateProfessionMultiplier(itemB, professions)
 
-    // Get base price - handle both simple price and prices object
     const basePriceA = itemA.prices?.iridium || itemA.prices?.regular || itemA.price || 0
     const basePriceB = itemB.prices?.iridium || itemB.prices?.regular || itemB.price || 0
 
@@ -80,38 +81,32 @@ export function createPriceSortingFn(professions) {
 
 /**
  * Get the name of the applied profession for an item
- * @param {Object} item - The item to check
- * @param {Object} professions - Player professions object
- * @returns {string|null} Profession name or null if no profession applies
+ * Uses pre-computed professionCategory field.
  */
 function getAppliedProfession(item, professions) {
   if (!item || !professions) return null
 
-  // Check both type and category - items can be forage type but Fish category
-  const actualCategory = item.originalGameCategory !== undefined ? item.originalGameCategory : item.gameCategory
+  const profCat = item.professionCategory
+    || CATEGORY_TO_PROFESSION[String(item.originalGameCategory ?? item.gameCategory)]
 
-  // Crops
-  if (actualCategory === -75 || actualCategory === -79) {
-    if (professions.tiller) return 'Tiller'
+  if (!profCat) return null
+
+  const multipliers = PROFESSION_MULTIPLIERS[profCat]
+  if (!multipliers) return null
+
+  for (const key of Object.keys(multipliers)) {
+    if (professions[key]) return PROFESSION_LABELS[key]
   }
-
-  if (item.type === 'fish' || actualCategory === -4) {
-    if (professions.angler) return 'Angler'
-    if (professions.fisher) return 'Fisher'
-  }
-
-  if (item.type === 'artisan') {
-    const isAnimalProduct = item.source && ['Cow', 'Goat', 'Chicken', 'Duck', 'Sheep', 'Rabbit', 'Pig', 'Fish Pond'].includes(item.source)
-    const isSyrup = item.contextTags && item.contextTags.includes('syrup_item')
-    if (professions.tapper && isSyrup) return 'Tapper'
-    if (professions.artisan && !isAnimalProduct && !isSyrup) return 'Artisan'
-    if (professions.rancher && isAnimalProduct) return 'Rancher'
-  }
-
-  if (item.gameCategory === 'Bars' && professions.blacksmith) return 'Blacksmith'
-  if (item.gameCategory === 'Gems' && professions.gemologist) return 'Gemologist'
 
   return null
+}
+
+// Quality tier rendering helpers
+const QUALITY_MULTIPLIERS = { silver: 1.25, gold: 1.5, iridium: 2.0 }
+const QUALITY_LABELS = { regular: 'Regular Quality', silver: 'Silver Quality', gold: 'Gold Quality', iridium: 'Iridium Quality' }
+const QUALITY_EXTRA_LABELS = {
+  silver: { trapFish: ' (with Deluxe Bait)' },
+  iridium: { food: " (Qi's Seasoning)" },
 }
 
 /**
@@ -131,128 +126,55 @@ function ItemSellPrice({ item, showQualities = true, showProfession = false, cla
   const multiplier = calculateProfessionMultiplier(item, player.professions)
   const appliedProfession = showProfession ? getAppliedProfession(item, player.professions) : null
 
-  // Get base price or prices object
   const hasQualityPrices = item.prices && typeof item.prices === 'object'
   const basePrice = hasQualityPrices ? item.prices.regular : (item.price || 0)
-
-  // Apply profession multiplier
   const regularPrice = Math.floor(basePrice * multiplier)
 
-  // If we should show quality variants
-  if (showQualities) {
-    // Crab pot fish can only be normal or silver quality (with Deluxe Bait)
-    if (item.isTrapFish) {
-      return (
-        <div className={`item-sell-price-container ${className}`}>
-          <div className="item-sell-price item-sell-price-qualities">
-            <span className="price-regular" title="Regular Quality">
-              {regularPrice.toLocaleString()}g
-            </span>
-            <span className="price-silver" title="Silver Quality (with Deluxe Bait)">
-              {Math.floor(basePrice * 1.25 * multiplier).toLocaleString()}g
-            </span>
-          </div>
-          {appliedProfession && (
-            <div className="profession-badge">
-              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
-              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
-            </div>
-          )}
-        </div>
-      )
-    }
+  // Determine which quality tiers to show
+  const tiers = showQualities && item.qualityTiers ? item.qualityTiers : ['regular']
 
-    // Cooked food can only be normal or iridium quality (via Qi's Seasoning)
-    if (item.type === 'food') {
-      return (
-        <div className={`item-sell-price-container ${className}`}>
-          <div className="item-sell-price item-sell-price-qualities">
-            <span className="price-regular" title="Regular Quality">
-              {regularPrice.toLocaleString()}g
-            </span>
-            <span className="price-iridium" title="Iridium Quality (Qi's Seasoning)">
-              {Math.floor(basePrice * 2.0 * multiplier).toLocaleString()}g
-            </span>
-          </div>
-          {appliedProfession && (
-            <div className="profession-badge">
-              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
-              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
-            </div>
-          )}
-        </div>
-      )
-    }
+  const professionBadge = appliedProfession && (
+    <div className="profession-badge">
+      +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
+      <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
+    </div>
+  )
 
-    // If item has explicit quality prices, use those
-    if (hasQualityPrices && item.prices.silver) {
-      return (
-        <div className={`item-sell-price-container ${className}`}>
-          <div className="item-sell-price item-sell-price-qualities">
-            <span className="price-regular" title="Regular Quality">
-              {regularPrice.toLocaleString()}g
-            </span>
-            <span className="price-silver" title="Silver Quality">
-              {Math.floor(item.prices.silver * multiplier).toLocaleString()}g
-            </span>
-            <span className="price-gold" title="Gold Quality">
-              {Math.floor(item.prices.gold * multiplier).toLocaleString()}g
-            </span>
-            <span className="price-iridium" title="Iridium Quality">
-              {Math.floor(item.prices.iridium * multiplier).toLocaleString()}g
-            </span>
-          </div>
-          {appliedProfession && (
-            <div className="profession-badge">
-              +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
-              <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
-            </div>
-          )}
-        </div>
-      )
-    }
-
-    // Otherwise calculate quality variants using standard multipliers
+  if (tiers.length === 1) {
     return (
       <div className={`item-sell-price-container ${className}`}>
         <div className="item-sell-price item-sell-price-qualities">
           <span className="price-regular" title="Regular Quality">
             {regularPrice.toLocaleString()}g
           </span>
-          <span className="price-silver" title="Silver Quality">
-            {Math.floor(basePrice * 1.25 * multiplier).toLocaleString()}g
-          </span>
-          <span className="price-gold" title="Gold Quality">
-            {Math.floor(basePrice * 1.5 * multiplier).toLocaleString()}g
-          </span>
-          <span className="price-iridium" title="Iridium Quality">
-            {Math.floor(basePrice * 2.0 * multiplier).toLocaleString()}g
-          </span>
         </div>
-        {appliedProfession && (
-          <div className="profession-badge">
-            +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
-            <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
-          </div>
-        )}
+        {professionBadge}
       </div>
     )
   }
 
-  // Simple single price
   return (
     <div className={`item-sell-price-container ${className}`}>
       <div className="item-sell-price item-sell-price-qualities">
-        <span className="price-regular" title="Regular Quality">
-          {regularPrice.toLocaleString()}g
-        </span>
+        {tiers.map(tier => {
+          const price = tier === 'regular'
+            ? regularPrice
+            : hasQualityPrices && item.prices[tier]
+              ? Math.floor(item.prices[tier] * multiplier)
+              : Math.floor(basePrice * QUALITY_MULTIPLIERS[tier] * multiplier)
+
+          const extraLabel = item.isTrapFish && QUALITY_EXTRA_LABELS[tier]?.trapFish
+            || item.type === 'food' && QUALITY_EXTRA_LABELS[tier]?.food
+            || ''
+
+          return (
+            <span key={tier} className={`price-${tier}`} title={`${QUALITY_LABELS[tier]}${extraLabel}`}>
+              {price.toLocaleString()}g
+            </span>
+          )
+        })}
       </div>
-      {appliedProfession && (
-        <div className="profession-badge">
-          +{Math.round((multiplier - 1) * 100)}% {appliedProfession}
-          <InfoTooltip text="Applied from your character's professions (configure in Settings)" />
-        </div>
-      )}
+      {professionBadge}
     </div>
   )
 }

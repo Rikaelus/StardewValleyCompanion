@@ -1,0 +1,12 @@
+{
+  "_comment": "Game IDs of items that contain geode drops (parsed from GeodeDrops field on Objects.json). Includes geodes, troves, and golden coconuts.",
+  "gameIds": ["535", "536", "537", "749", "275", "791"],
+  "labels": {
+    "535": "Geode",
+    "536": "Frozen Geode",
+    "537": "Magma Geode",
+    "749": "Omni Geode",
+    "275": "Artifact Trove",
+    "791": "Golden Coconut"
+  }
+}

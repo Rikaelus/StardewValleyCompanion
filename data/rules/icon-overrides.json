@@ -52,5 +52,8 @@
     "shirt-tropical-sunrise-shirt":   "Tropical Sunrise Shirt",
     "shirt-island-bikini":            "Island Bikini",
     "shirt-mystery-shirt":            "Mystery Shirt"
+  },
+  "clothingIconOverrides": {
+    "(P)15": "assets/objects/LuckyPurpleShorts.png"
   }
 }

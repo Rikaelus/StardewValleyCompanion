@@ -1,0 +1,62 @@
+{
+  "_comment": "Maps item properties to the profession that affects their sell price. Used to pre-compute professionCategory on each entity during processing.",
+  "rules": [
+    {
+      "professionCategory": "crop",
+      "professions": [
+        { "key": "tiller", "label": "Tiller", "bonus": 1.1 }
+      ],
+      "match": { "gameCategories": [-75, -79] },
+      "description": "Vegetables and fruits (crops)"
+    },
+    {
+      "professionCategory": "fishing",
+      "professions": [
+        { "key": "fisher", "label": "Fisher", "bonus": 1.25 },
+        { "key": "angler", "label": "Angler", "bonus": 1.5, "replaces": "fisher" }
+      ],
+      "match": { "types": ["fish"], "gameCategories": [-4] },
+      "description": "Fish (by type or game category)"
+    },
+    {
+      "professionCategory": "artisan",
+      "professions": [
+        { "key": "artisan", "label": "Artisan", "bonus": 1.4 }
+      ],
+      "match": { "types": ["artisan"], "excludeAnimalInputCategories": true, "excludeContextTags": ["syrup_item"] },
+      "description": "Artisan goods (not animal-sourced, not syrup)"
+    },
+    {
+      "professionCategory": "rancher",
+      "professions": [
+        { "key": "rancher", "label": "Rancher", "bonus": 1.2 }
+      ],
+      "match": { "types": ["artisan"], "requireAnimalInputCategories": true },
+      "description": "Artisan goods from animal products (input categories: Egg -5, Milk -6)"
+    },
+    {
+      "professionCategory": "tapper",
+      "professions": [
+        { "key": "tapper", "label": "Tapper", "bonus": 1.25 }
+      ],
+      "match": { "types": ["artisan"], "requireContextTags": ["syrup_item"] },
+      "description": "Tree syrups (tapper products)"
+    },
+    {
+      "professionCategory": "blacksmith",
+      "professions": [
+        { "key": "blacksmith", "label": "Blacksmith", "bonus": 1.5 }
+      ],
+      "match": { "types": ["metal-bar"], "gameCategories": [-15] },
+      "description": "Metal bars (type metal-bar or game category -15)"
+    },
+    {
+      "professionCategory": "gemologist",
+      "professions": [
+        { "key": "gemologist", "label": "Gemologist", "bonus": 1.3 }
+      ],
+      "match": { "subtypes": ["gem"], "gameCategories": [-2] },
+      "description": "Gems (subtype gem or game category -2)"
+    }
+  ]
+}

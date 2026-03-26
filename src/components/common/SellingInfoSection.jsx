@@ -15,107 +15,69 @@ function getSellingLocations(entity, findById) {
   })
 }
 
+// Profession definitions keyed by professionCategory (matches profession-rules.json)
+const PROFESSION_DEFS = {
+  crop:       [{ key: 'tiller', label: 'Tiller', bonus: '+10%', replaces: null }],
+  fishing:    [{ key: 'fisher', label: 'Fisher', bonus: '+25%', replaces: null },
+               { key: 'angler', label: 'Angler', bonus: '+50%', replaces: 'Fisher' }],
+  artisan:    [{ key: 'artisan', label: 'Artisan', bonus: '+40%', replaces: null }],
+  rancher:    [{ key: 'rancher', label: 'Rancher', bonus: '+20%', replaces: null }],
+  tapper:     [{ key: 'tapper', label: 'Tapper', bonus: '+25%', replaces: null }],
+  blacksmith: [{ key: 'blacksmith', label: 'Blacksmith', bonus: '+50%', replaces: null }],
+  gemologist: [{ key: 'gemologist', label: 'Gemologist', bonus: '+30%', replaces: null }],
+}
+
+// Input category → professionCategory for profit analysis (input items affect which professions show)
+const INPUT_CATEGORY_PROFESSIONS = {
+  '-4': 'fishing',
+  '-5': 'rancher', '-6': 'rancher',
+  '-75': 'crop', '-79': 'crop',
+}
+
 function getAvailableProfessions(entity, artisanItems) {
   const professions = []
   const professionKeys = new Set()
 
-  const actualCategory = entity.originalGameCategory !== undefined
-    ? entity.originalGameCategory
-    : entity.gameCategory
-
-  if (actualCategory === -75 || actualCategory === -79) {
-    professions.push({ key: 'tiller', label: 'Tiller', bonus: '+10%', replaces: null })
-    professionKeys.add('tiller')
-  }
-
-  if (entity.type === 'fish' || actualCategory === -4) {
-    professions.push(
-      { key: 'fisher', label: 'Fisher', bonus: '+25%', replaces: null },
-      { key: 'angler', label: 'Angler', bonus: '+50%', replaces: 'Fisher' }
-    )
-    professionKeys.add('fisher')
-    professionKeys.add('angler')
-  }
-
-  if (entity.type === 'artisan') {
-    const isAnimalProduct = entity.sources?.some(s => s.type === 'animal')
-    const isSyrup = entity.contextTags && entity.contextTags.includes('syrup_item')
-
-    if (isSyrup) {
-      professions.push({ key: 'tapper', label: 'Tapper', bonus: '+25%', replaces: null })
-      professionKeys.add('tapper')
-    } else if (isAnimalProduct) {
-      professions.push({ key: 'rancher', label: 'Rancher', bonus: '+20%', replaces: null })
-      professionKeys.add('rancher')
-    } else {
-      professions.push({ key: 'artisan', label: 'Artisan', bonus: '+40%', replaces: null })
-      professionKeys.add('artisan')
+  function addProfession(profCat) {
+    const defs = PROFESSION_DEFS[profCat]
+    if (!defs) return
+    for (const def of defs) {
+      if (!professionKeys.has(def.key)) {
+        professions.push(def)
+        professionKeys.add(def.key)
+      }
     }
   }
 
-  if (entity.gameCategory === 'Bars') {
-    professions.push({ key: 'blacksmith', label: 'Blacksmith', bonus: '+50%', replaces: null })
-    professionKeys.add('blacksmith')
+  // Primary profession from pre-computed field
+  if (entity.professionCategory) {
+    addProfession(entity.professionCategory)
   }
 
-  if (entity.gameCategory === 'Gems') {
-    professions.push({ key: 'gemologist', label: 'Gemologist', bonus: '+30%', replaces: null })
-    professionKeys.add('gemologist')
-  }
-
-  const inputCategories = new Set()
+  // Input-based professions (for items that are processed into artisan goods)
   const machineSource = entity.sources?.find(s => s.type === 'machine')
+  const inputCategories = new Set()
   if (machineSource?.inputDetails?.length > 0) {
     machineSource.inputDetails.forEach(i => { if (i.inputGameCategory) inputCategories.add(i.inputGameCategory) })
   } else if (machineSource?.inputGameCategory) {
     inputCategories.add(machineSource.inputGameCategory)
   }
 
-  if (inputCategories.size > 0) {
-    if (inputCategories.has(-4) && !professionKeys.has('fisher')) {
-      professions.push(
-        { key: 'fisher', label: 'Fisher', bonus: '+25%', replaces: null },
-        { key: 'angler', label: 'Angler', bonus: '+50%', replaces: 'Fisher' }
-      )
-      professionKeys.add('fisher')
-      professionKeys.add('angler')
-    }
-
-    if ((inputCategories.has(-5) || inputCategories.has(-6)) && !professionKeys.has('rancher')) {
-      professions.push({ key: 'rancher', label: 'Rancher', bonus: '+20%', replaces: null })
-      professionKeys.add('rancher')
-    }
-
-    if ((inputCategories.has(-75) || inputCategories.has(-79)) && !professionKeys.has('tiller')) {
-      professions.push({ key: 'tiller', label: 'Tiller', bonus: '+10%', replaces: null })
-      professionKeys.add('tiller')
-    }
+  for (const cat of inputCategories) {
+    const profCat = INPUT_CATEGORY_PROFESSIONS[String(cat)]
+    if (profCat) addProfession(profCat)
   }
 
+  // Output-based professions (for items that can be turned into artisan goods)
   if (artisanItems.length > 0) {
-    artisanItems.forEach(artisan => {
+    for (const artisan of artisanItems) {
       const artisanSrc = artisan.sources?.find(s => s.type === 'machine')
-      if (artisanSrc?.inputDetails) {
-        artisanSrc.inputDetails.forEach(inputDetail => {
-          if (inputDetail.inputId === entity.id) {
-            const isAnimalProduct = artisan.source &&
-              ['Cow', 'Goat', 'Chicken', 'Duck', 'Sheep', 'Rabbit', 'Pig', 'Fish Pond'].includes(artisan.source)
-            const isSyrup = artisan.contextTags && artisan.contextTags.includes('syrup_item')
-
-            if (isSyrup && !professionKeys.has('tapper')) {
-              professions.push({ key: 'tapper', label: 'Tapper', bonus: '+25%', replaces: null })
-              professionKeys.add('tapper')
-            } else if (isAnimalProduct && !professionKeys.has('rancher')) {
-              professions.push({ key: 'rancher', label: 'Rancher', bonus: '+20%', replaces: null })
-              professionKeys.add('rancher')
-            } else if (!isAnimalProduct && !isSyrup && !professionKeys.has('artisan')) {
-              professions.push({ key: 'artisan', label: 'Artisan', bonus: '+40%', replaces: null })
-              professionKeys.add('artisan')
-            }
-          }
-        })
+      if (artisanSrc?.inputDetails?.some(d => d.inputId === entity.id)) {
+        if (artisan.professionCategory) {
+          addProfession(artisan.professionCategory)
+        }
       }
-    })
+    }
   }
 
   return professions
@@ -274,7 +236,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
   if (showTrashRefund) return null
 
   const inputBasePrice = entity.prices?.regular || entity.price || 0
-  const hasQuality = entity.type !== 'artisan' && entity.gameCategory !== -26 && entity.gameCategory !== -23
+  const hasQuality = entity.qualityTiers && entity.qualityTiers.length > 1
   const qualityMultipliers = { regular: 1.0, silver: 1.25, gold: 1.5, iridium: 2.0 }
   const inputMultiplier = hasQuality ? qualityMultipliers[outputInputQuality] : 1.0
   const inputProfessionMultiplier = calculateProfessionMultiplier(entity, activeProfessions)

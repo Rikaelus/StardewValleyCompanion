@@ -1,0 +1,30 @@
+{
+  "_comment": "Maps numeric game category IDs to human-readable display names. Used to pre-compute categoryName on each entity.",
+  "categories": {
+    "-2": "Gem",
+    "-4": "Fish",
+    "-5": "Egg",
+    "-6": "Milk",
+    "-7": "Cooking",
+    "-12": "Minerals",
+    "-15": "Metal Resources",
+    "-16": "Building Resources",
+    "-17": "Sell at Pierre's",
+    "-18": "Sell at Pierre's and Marnie's",
+    "-19": "Fertilizer",
+    "-20": "Junk",
+    "-21": "Bait",
+    "-22": "Tackle",
+    "-23": "Sell at Fish Shop",
+    "-24": "Furniture",
+    "-25": "Ingredients",
+    "-26": "Artisan Goods",
+    "-27": "Syrup",
+    "-28": "Monster Loot",
+    "-74": "Seeds",
+    "-75": "Vegetables",
+    "-79": "Fruit",
+    "-80": "Flower",
+    "-81": "Forage"
+  }
+}

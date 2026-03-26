@@ -1,5 +1,10 @@
 {
   "_comment": "Maps game shop IDs to friendly store IDs used throughout the app. Shops not listed here are ignored during source parsing (festival-only, UI catalogues, etc.).",
+  "currencies": {
+    "1": { "id": "star-tokens", "gameId": "StarToken", "label": "Star Tokens" },
+    "2": { "id": "qi-coins", "gameId": "QiCoin", "label": "Qi Coins" },
+    "4": { "id": "qi-gems", "gameId": 858, "label": "Qi Gems" }
+  },
   "shopMap": {
     "SeedShop": "loc-pierre",
     "Joja": "loc-joja",

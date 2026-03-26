@@ -1,0 +1,20 @@
+{
+  "_comment": "Defines which quality tiers are available for different item types. Used to pre-compute qualityTiers on each entity.",
+  "default": ["regular", "silver", "gold", "iridium"],
+  "overrides": {
+    "trapFish": {
+      "tiers": ["regular", "silver"],
+      "description": "Crab pot fish: regular or silver (with Deluxe Bait) only"
+    },
+    "food": {
+      "tiers": ["regular", "iridium"],
+      "description": "Cooked food: regular or iridium (via Qi's Seasoning) only"
+    },
+    "noQuality": {
+      "tiers": ["regular"],
+      "description": "Items that cannot have quality (artisan goods, seeds, etc.)"
+    }
+  },
+  "noQualityTypes": ["artisan", "seed", "bait", "tackle", "fertilizer", "crafted", "big-craftable", "ring", "book", "buff", "event", "villager", "location", "festival", "bundle", "monster", "building", "breakable", "achievement", "quest", "power", "concession", "movie", "clothing", "tag"],
+  "noQualityCategories": [-26, -23]
+}
