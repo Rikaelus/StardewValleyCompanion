@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useCallback, useMemo } from 'react'
 
 // Separate contexts so that opening/closing the modal (activeEntity change) does not
-// re-render every ModalItemButton on the page (they only need openModal, which is stable).
+// re-render every UniversalModalButton on the page (they only need openModal, which is stable).
 const ModalActionsContext = createContext()  // stable: openModal, closeModal
 const ModalStateContext = createContext()    // changes on open/close: activeEntity
 const ModalStackContext = createContext()    // changes on push/pop: stack state
@@ -36,7 +36,7 @@ export function ModalProvider({ children }) {
     setActiveEntity(null)
   }, [])
 
-  // Stable actions — never changes after mount, so ModalItemButton never re-renders
+  // Stable actions — never changes after mount, so UniversalModalButton never re-renders
   const actionsValue = useMemo(() => ({ openModal, closeModal }), [openModal, closeModal])
 
   // State — changes on open/close, consumed only by UniversalModal host + App

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import ModalSection from './ModalSection'
 import ModalNote from './ModalNote'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import QualitySelector from './QualitySelector'
 import InfoTooltip from './InfoTooltip'
 import { calculateProfessionMultiplier } from './ItemSellPrice'
@@ -126,7 +126,7 @@ function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality,
           return (
             <div key={idx} className="processing-row processing-row--input">
               <div style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center' }}>
-                <ModalItemButton
+                <UniversalModalButton
                   item={findById(input.inputId)}
                   variant="inline"
                   onNavigate={onNavigate}
@@ -293,7 +293,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
               </span>
 
               <div style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                <ModalItemButton
+                <UniversalModalButton
                   item={output.outputItem}
                   variant="inline"
                   onNavigate={onNavigate}
@@ -466,7 +466,7 @@ function SellingInfoSection({ entity, artisanItems, findById, onNavigate }) {
           <span className="modal-label">Sell At:</span>
           <div className="tag-list tag-list-location">
             {sellingLocations.map((loc) => (
-              <ModalItemButton
+              <UniversalModalButton
                 key={loc.id}
                 item={loc}
                 variant="inline"

@@ -5,14 +5,71 @@ import './CharacterBar.css'
 
 const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
 
+// Full skill tree: each skill has two level-5 choices, each branching into two level-10 choices
+const PROF_ICON = (name) => `/assets/icons/professions/${name}.png`
+const SKILL_ICON = (name) => `/assets/icons/skills/${name}SkillIcon.png`
+
+const SKILL_TREES = [
+  { skill: 'Farming', icon: SKILL_ICON('Farming'), branches: [
+    { key: 'rancher', label: 'Rancher', icon: PROF_ICON('Rancher'), desc: 'Animal products worth 20% more', children: [
+      { key: 'coopmaster', label: 'Coopmaster', icon: PROF_ICON('Coopmaster'), desc: 'Befriend coop animals faster, incubation halved' },
+      { key: 'shepherd', label: 'Shepherd', icon: PROF_ICON('Shepherd'), desc: 'Befriend barn animals faster, sheep produce faster' },
+    ]},
+    { key: 'tiller', label: 'Tiller', icon: PROF_ICON('Tiller'), desc: 'Crops worth 10% more', children: [
+      { key: 'artisan', label: 'Artisan', icon: PROF_ICON('Artisan'), desc: 'Artisan goods worth 40% more' },
+      { key: 'agriculturist', label: 'Agriculturist', icon: PROF_ICON('Agriculturist'), desc: 'Crops grow 10% faster' },
+    ]},
+  ]},
+  { skill: 'Fishing', icon: SKILL_ICON('Fishing'), branches: [
+    { key: 'fisher', label: 'Fisher', icon: PROF_ICON('Fisher'), desc: 'Fish worth 25% more', children: [
+      { key: 'angler', label: 'Angler', icon: PROF_ICON('Angler'), desc: 'Fish worth 50% more' },
+      { key: 'pirate', label: 'Pirate', icon: PROF_ICON('Pirate'), desc: 'Chance to find treasure doubled' },
+    ]},
+    { key: 'trapper', label: 'Trapper', icon: PROF_ICON('Trapper'), desc: 'Resources needed to craft crab pots reduced', children: [
+      { key: 'mariner', label: 'Mariner', icon: PROF_ICON('Mariner'), desc: 'Crab pots no longer produce junk' },
+      { key: 'luremaster', label: 'Luremaster', icon: PROF_ICON('Luremaster'), desc: 'Crab pots no longer require bait' },
+    ]},
+  ]},
+  { skill: 'Foraging', icon: SKILL_ICON('Foraging'), branches: [
+    { key: 'forester', label: 'Forester', icon: PROF_ICON('Forester'), desc: '25% more wood from trees', children: [
+      { key: 'lumberjack', label: 'Lumberjack', icon: PROF_ICON('Lumberjack'), desc: 'All trees have a chance to drop hardwood' },
+      { key: 'tapper', label: 'Tapper', icon: PROF_ICON('Tapper'), desc: 'Syrups worth 25% more' },
+    ]},
+    { key: 'gatherer', label: 'Gatherer', icon: PROF_ICON('Gatherer'), desc: 'Chance for double harvest of forage', children: [
+      { key: 'botanist', label: 'Botanist', icon: PROF_ICON('Botanist'), desc: 'Forage is always highest quality' },
+      { key: 'tracker', label: 'Tracker', icon: PROF_ICON('Tracker'), desc: 'Location of forageable items revealed' },
+    ]},
+  ]},
+  { skill: 'Mining', icon: SKILL_ICON('Mining'), branches: [
+    { key: 'miner', label: 'Miner', icon: PROF_ICON('Miner'), desc: '+1 ore per vein', children: [
+      { key: 'blacksmith', label: 'Blacksmith', icon: PROF_ICON('Blacksmith'), desc: 'Bars worth 50% more' },
+      { key: 'prospector', label: 'Prospector', icon: PROF_ICON('Prospector'), desc: 'Chance to find coal doubled' },
+    ]},
+    { key: 'geologist', label: 'Geologist', icon: PROF_ICON('Geologist'), desc: 'Chance for gems to appear in pairs', children: [
+      { key: 'excavator', label: 'Excavator', icon: PROF_ICON('Excavator'), desc: 'Geode find chance doubled' },
+      { key: 'gemologist', label: 'Gemologist', icon: PROF_ICON('Gemologist'), desc: 'Gems worth 30% more' },
+    ]},
+  ]},
+  { skill: 'Combat', icon: SKILL_ICON('Combat'), branches: [
+    { key: 'fighter', label: 'Fighter', icon: PROF_ICON('Fighter'), desc: '+10% damage, +15 HP', children: [
+      { key: 'brute', label: 'Brute', icon: PROF_ICON('Brute'), desc: '+15% damage' },
+      { key: 'defender', label: 'Defender', icon: PROF_ICON('Defender'), desc: '+25 HP' },
+    ]},
+    { key: 'scout', label: 'Scout', icon: PROF_ICON('Scout'), desc: '+50% crit chance', children: [
+      { key: 'acrobat', label: 'Acrobat', icon: PROF_ICON('Acrobat'), desc: 'Cooldown on special moves halved' },
+      { key: 'desperado', label: 'Desperado', icon: PROF_ICON('Desperado'), desc: 'Critical strikes are deadlier' },
+    ]},
+  ]},
+]
+
 function ImportSection() {
   const { player, importSaveData, clearSaveData } = usePlayer()
   const fileInputRef = useRef(null)
   const [importState, setImportState] = useState('idle') // idle | loading | error
   const [errorMessage, setErrorMessage] = useState('')
+  const [isDragOver, setIsDragOver] = useState(false)
 
-  const handleFileSelect = async (e) => {
-    const file = e.target.files?.[0]
+  const handleFile = async (file) => {
     if (!file) return
 
     setImportState('loading')
@@ -27,9 +84,27 @@ function ImportSection() {
       setImportState('error')
       setErrorMessage(err.message || 'Failed to parse save file.')
     }
+  }
 
-    // Reset input so the same file can be re-selected
+  const handleFileSelect = (e) => {
+    handleFile(e.target.files?.[0])
     e.target.value = ''
+  }
+
+  const handleDrop = (e) => {
+    e.preventDefault()
+    setIsDragOver(false)
+    handleFile(e.dataTransfer.files?.[0])
+  }
+
+  const handleDragOver = (e) => {
+    e.preventDefault()
+    setIsDragOver(true)
+  }
+
+  const handleDragLeave = (e) => {
+    e.preventDefault()
+    setIsDragOver(false)
   }
 
   const saveData = player.saveData
@@ -42,39 +117,41 @@ function ImportSection() {
     const hasBundles = saveData.source === 'SaveGame'
 
     return (
-      <div className="character-section import-section">
-        <h3>Save File Import</h3>
-        <div className="import-summary">
-          <div className="import-summary-line">{dateStr}</div>
-          <div className="import-summary-details">
-            {Object.entries(saveData.skills || {}).map(([skill, level]) => (
-              <span key={skill} className="import-stat">
-                {skill.charAt(0).toUpperCase() + skill.slice(1)} {level}
-              </span>
-            ))}
+      <div className="character-section import-section import-section--loaded">
+        <h3>Save Upload</h3>
+        <div
+          className={`import-dropzone import-dropzone--loaded ${isDragOver ? 'import-dropzone--active' : ''}`}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onClick={() => fileInputRef.current?.click()}
+        >
+          <div className="import-dropzone-icon-col">
+            <i className="fa-solid fa-file-arrow-up" />
           </div>
-          <div className="import-summary-details">
-            <span className="import-stat">{fishCount} fish caught</span>
-            <span className="import-stat">{friendCount} friendships</span>
-            {hasBundles && <span className="import-stat">Bundles imported</span>}
+          <div className="import-loaded-content">
+            <div className="import-loaded-layout">
+              <div className="import-identity">
+                <div className="import-identity-name">
+                  {player.name}{player.farmName ? ` — ${player.farmName} Farm` : ''}
+                </div>
+                <div className="import-date">{dateStr}</div>
+              </div>
+              <div className="import-skills">
+                {Object.entries(saveData.skills || {}).map(([skill, level]) => (
+                  <div key={skill} className="import-skill">
+                    <span className="import-skill-label">{skill.charAt(0).toUpperCase() + skill.slice(1)}</span>
+                    <span className="import-skill-level">{level}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="import-stats-row">
+              <span className="import-stat">{fishCount} fish caught</span>
+              <span className="import-stat">{friendCount} friendships</span>
+              {hasBundles && <span className="import-stat">Bundles imported</span>}
+            </div>
           </div>
-          <div className="import-meta">
-            Imported from {saveData.source === 'SaveGame' ? 'full save' : 'SaveGameInfo'}
-          </div>
-        </div>
-        <div className="import-actions">
-          <button
-            className="import-btn import-btn-secondary"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            Re-import
-          </button>
-          <button
-            className="import-btn import-btn-clear"
-            onClick={clearSaveData}
-          >
-            Clear Import
-          </button>
           <input
             ref={fileInputRef}
             type="file"
@@ -82,24 +159,54 @@ function ImportSection() {
             onChange={handleFileSelect}
           />
         </div>
+        <div className="import-footer">
+          <div className="import-actions">
+            <button
+              className="import-btn import-btn-clear"
+              onClick={clearSaveData}
+            >
+              Clear Character Data
+            </button>
+          </div>
+          <span className="import-meta">
+            From {saveData.source === 'SaveGame' ? 'full save' : 'SaveGameInfo'}
+          </span>
+        </div>
       </div>
     )
   }
 
   return (
     <div className="character-section import-section">
-      <h3>Save File Import</h3>
-      <p className="import-description">
-        Upload your save file to auto-fill character info, professions, and track progress.
-      </p>
-      <div className="import-actions">
-        <button
-          className="import-btn"
-          onClick={() => fileInputRef.current?.click()}
-          disabled={importState === 'loading'}
-        >
-          {importState === 'loading' ? 'Parsing...' : 'Choose Save File'}
-        </button>
+      <h3>Save Upload</h3>
+      <p className="import-section-desc">Upload your save file to set character info, professions, and unlock progress tracking for fish, bundles, collections, and more.</p>
+      <div
+        className={`import-dropzone ${isDragOver ? 'import-dropzone--active' : ''} ${importState === 'loading' ? 'import-dropzone--loading' : ''}`}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onClick={() => importState !== 'loading' && fileInputRef.current?.click()}
+      >
+        <div className="import-dropzone-icon-col">
+          <i className={`fa-solid ${importState === 'loading' ? 'fa-spinner fa-spin' : 'fa-file-arrow-up'}`} />
+        </div>
+        <div className="import-dropzone-content">
+          <span className="import-dropzone-text">
+            {importState === 'loading'
+              ? 'Parsing save file...'
+              : 'Drop save file here or click to browse'}
+          </span>
+          <span className="import-dropzone-hint">
+            Processed locally — never uploaded
+          </span>
+          <span className="import-dropzone-hint">
+            Upload the full save file — named like <b>CharName_123456789</b> (no extension).
+          </span>
+          <span className="import-dropzone-hint">
+            <b>Windows:</b> %AppData%/StardewValley/Saves &nbsp;
+            <b>Mac/Linux:</b> ~/.config/StardewValley/Saves
+          </span>
+        </div>
         <input
           ref={fileInputRef}
           type="file"
@@ -110,65 +217,94 @@ function ImportSection() {
       {importState === 'error' && (
         <div className="import-error">{errorMessage}</div>
       )}
-      <p className="import-privacy">
-        Your save file is processed locally and never uploaded.
-      </p>
     </div>
   )
 }
 
-function CharacterBar() {
-  const { player, setPlayer, setProfession } = usePlayer()
-  const [isExpanded, setIsExpanded] = useState(false)
+function CharacterBar({ isOpen, onClose }) {
+  const { player, setProfession, setPlayer } = usePlayer()
+  const [shouldRender, setShouldRender] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
+  const [activeTab, setActiveTab] = useState('professions')
   const containerRef = useRef(null)
 
-  const closeDropdown = () => {
-    setIsClosing(true)
-    setTimeout(() => {
-      setIsExpanded(false)
-      setIsClosing(false)
-    }, 220) // Slightly longer than 200ms animation to prevent flicker
-  }
-
-  const toggleDropdown = () => {
-    if (isExpanded) {
-      closeDropdown()
-    } else {
-      setIsExpanded(true)
-    }
-  }
-
-  const handleNameChange = (e) => {
-    setPlayer({ name: e.target.value })
-  }
-
-  const handleFarmNameChange = (e) => {
-    setPlayer({ farmName: e.target.value })
-  }
-
-  const toggleProfession = (profession) => {
-    const newValue = !player.professions[profession]
-
-    // Handle profession dependencies
-    if (profession === 'angler' && newValue) {
-      // Angler requires Fisher, so enable Fisher too
-      setProfession('fisher', true)
-    } else if (profession === 'fisher' && !newValue) {
-      // If disabling Fisher, must disable Angler too
-      setProfession('angler', false)
-    }
-
-    setProfession(profession, newValue)
-  }
-
-  // Close dropdown when clicking outside
+  // Handle open/close with animation
   useEffect(() => {
-    if (!isExpanded || isClosing) return
+    if (isOpen) {
+      setShouldRender(true)
+      setIsClosing(false)
+    } else if (shouldRender) {
+      setIsClosing(true)
+      const timer = setTimeout(() => {
+        setShouldRender(false)
+        setIsClosing(false)
+      }, 220)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen])
+
+  const hasSaveData = !!player.saveData
+
+  const toggleProfession = (key) => {
+    if (hasSaveData) return
+
+    const newValue = !player.professions[key]
+
+    for (const { branches } of SKILL_TREES) {
+      const [branchA, branchB] = branches
+
+      // Is it a level-5 profession?
+      for (const branch of branches) {
+        if (branch.key !== key) continue
+        const sibling = branch === branchA ? branchB : branchA
+
+        if (newValue) {
+          // Deactivate the other level-5 branch and all its children
+          setProfession(sibling.key, false)
+          for (const child of sibling.children) {
+            setProfession(child.key, false)
+          }
+        } else {
+          // Deactivate this branch's children
+          for (const child of branch.children) {
+            setProfession(child.key, false)
+          }
+        }
+        setProfession(key, newValue)
+        return
+      }
+
+      // Is it a level-10 profession?
+      for (const branch of branches) {
+        for (const child of branch.children) {
+          if (child.key !== key) continue
+          const siblingChild = branch.children.find(c => c.key !== key)
+
+          if (newValue) {
+            // Activate parent branch, deactivate sibling branch + its children
+            const sibling = branch === branchA ? branchB : branchA
+            setProfession(branch.key, true)
+            setProfession(sibling.key, false)
+            for (const sc of sibling.children) {
+              setProfession(sc.key, false)
+            }
+            // Deactivate the other level-10 under same parent
+            if (siblingChild) setProfession(siblingChild.key, false)
+          }
+          setProfession(key, newValue)
+          return
+        }
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (!isOpen || isClosing) return
 
     const handleClickOutside = (event) => {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
-        closeDropdown()
+        if (event.target.closest('.header-btn-character')) return
+        onClose()
       }
     }
 
@@ -176,197 +312,135 @@ function CharacterBar() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isExpanded, isClosing])
+  }, [isOpen, isClosing, onClose])
+
+  if (!shouldRender) return null
 
   return (
     <div className="character-bar" ref={containerRef}>
-      <button
-        className="character-bar-toggle"
-        onClick={toggleDropdown}
-        aria-expanded={isExpanded}
-      >
-        <div className="character-bar-summary">
-          <span className="character-icon">👤</span>
-          <div className="character-info">
-            <span className="character-name">
-              {player.name || 'Set Character Info'}
-            </span>
-            {player.farmName && (
-              <span className="farm-name">{player.farmName} Farm</span>
-            )}
-          </div>
-        </div>
-        <span className={`expand-icon ${isExpanded ? 'expanded' : ''}`}>▼</span>
-      </button>
+      <div className={`character-details ${isClosing ? 'closing' : ''}`}>
+        <button className="character-close-btn" onClick={onClose} type="button" aria-label="Close">×</button>
+        <ImportSection />
 
-      {isExpanded && (
-        <div className={`character-details ${isClosing ? 'closing' : ''}`}>
-          <ImportSection />
-
-          <div className="character-section">
-            <h3>Character Information</h3>
-            <div className="character-fields">
-              <div className="field">
-                <label>Character Name</label>
-                <input
-                  type="text"
-                  value={player.name}
-                  onChange={handleNameChange}
-                  placeholder="Enter your character name..."
-                />
-              </div>
-              <div className="field">
-                <label>Farm Name</label>
-                <input
-                  type="text"
-                  value={player.farmName}
-                  onChange={handleFarmNameChange}
-                  placeholder="Enter your farm name..."
-                />
-              </div>
+          <div className="character-tabs">
+            <div className="character-tab-bar">
+              <button
+                className={`character-tab ${activeTab === 'professions' ? 'character-tab--active' : ''}`}
+                onClick={() => setActiveTab('professions')}
+                type="button"
+              >Professions</button>
+              <button
+                className={`character-tab ${activeTab === 'other' ? 'character-tab--active' : ''}`}
+                onClick={() => setActiveTab('other')}
+                type="button"
+              >Other</button>
             </div>
-          </div>
 
-          <div className="character-section">
-            <h3>Memberships & Affiliations</h3>
-            <div className="professions-grid">
-              <label className="profession-checkbox">
-                <input
-                  type="checkbox"
-                  checked={player.jojaMember}
-                  onChange={() => setPlayer({ jojaMember: !player.jojaMember })}
-                />
-                <div className="profession-info">
-                  <span className="profession-name">Joja Member</span>
-                  <span className="profession-bonus">JojaMart prices are 20% lower</span>
+            <div className="character-tab-content">
+              {activeTab === 'professions' && (
+                <div className="skill-trees">
+                  {hasSaveData && (
+                    <p className="tab-save-notice">Selections reflect your uploaded save file.</p>
+                  )}
+                  {SKILL_TREES.map(({ skill, icon, branches }) => {
+                    const skillLevel = player.saveData?.skills?.[skill.toLowerCase()] ?? 0
+                    const maxLevel = 10
+                    return (
+                    <div key={skill} className="skill-tree">
+                      <h4 className="skill-tree-header">
+                        <img src={icon} alt="" className="skill-tree-icon" />
+                        {skill}
+                        {player.saveData?.skills && (
+                        <span className="skill-level-stars">
+                          {Array.from({ length: maxLevel }, (_, i) => (
+                            <span key={i} className={`skill-star ${i < skillLevel ? 'skill-star--filled' : ''}`}>★</span>
+                          ))}
+                          <span className="skill-level-num">{skillLevel}/10</span>
+                        </span>
+                        )}
+                      </h4>
+                      <div className="skill-tree-branches">
+                        {branches.map((branch, branchIdx) => {
+                          const branchActive = player.professions[branch.key]
+                          const siblingBranch = branches[1 - branchIdx]
+                          const siblingActive = player.professions[siblingBranch.key]
+                          const branchLocked = siblingActive && !branchActive
+                          return (
+                            <div key={branch.key} className={`skill-branch ${branchLocked ? 'skill-branch--locked' : ''}`}>
+                              <label className={`profession-node profession-node--lv5 ${branchActive ? 'profession-node--active' : ''} ${hasSaveData ? 'profession-node--readonly' : ''}`}>
+                                <input
+                                  type="checkbox"
+                                  checked={branchActive}
+                                  onChange={() => toggleProfession(branch.key)}
+                                  disabled={hasSaveData}
+                                />
+                                <img src={branch.icon} alt="" className="profession-node-icon profession-node-icon--lv5" />
+                                <div className="profession-node-info">
+                                  <span className="profession-node-name">{branch.label}</span>
+                                  <span className="profession-node-desc">{branch.desc}</span>
+                                </div>
+                              </label>
+                              <div className={`skill-branch-children ${branchActive ? '' : 'skill-branch-children--disabled'}`}>
+                                {branch.children.map((child, childIdx) => {
+                                  const childActive = player.professions[child.key]
+                                  const siblingChild = branch.children[1 - childIdx]
+                                  const siblingChildActive = player.professions[siblingChild.key]
+                                  const childLocked = siblingChildActive && !childActive
+                                  return (
+                                    <label key={child.key} className={`profession-node profession-node--lv10 ${childActive ? 'profession-node--active' : ''} ${childLocked ? 'profession-node--locked' : ''} ${hasSaveData ? 'profession-node--readonly' : ''}`}>
+                                      <input
+                                        type="checkbox"
+                                        checked={childActive}
+                                        onChange={() => toggleProfession(child.key)}
+                                        disabled={hasSaveData || !branchActive}
+                                      />
+                                      <img src={child.icon} alt="" className="profession-node-icon profession-node-icon--lv10" />
+                                      <div className="profession-node-info">
+                                        <span className="profession-node-name">{child.label}</span>
+                                        <span className="profession-node-desc">{child.desc}</span>
+                                      </div>
+                                    </label>
+                                  )
+                                })}
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    )
+                  })}
                 </div>
-              </label>
-            </div>
-          </div>
+              )}
 
-          <div className="character-section">
-            <h3>Professions (Price Modifiers)</h3>
-
-            <div className="profession-category">
-              <h4>Farming</h4>
-              <div className="professions-grid">
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.tiller}
-                    onChange={() => toggleProfession('tiller')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Tiller</span>
-                    <span className="profession-bonus">Crops worth 10% more</span>
+              {activeTab === 'other' && (
+                <div className="character-other-tab">
+                  {hasSaveData && (
+                    <p className="tab-save-notice">Selections reflect your uploaded save file.</p>
+                  )}
+                  <h4 className="character-other-heading">Memberships</h4>
+                  <div className="professions-grid">
+                    <label className={`profession-checkbox ${hasSaveData ? 'profession-checkbox--readonly' : ''}`}>
+                      <input
+                        type="checkbox"
+                        checked={player.jojaMember}
+                        onChange={() => !hasSaveData && setPlayer({ jojaMember: !player.jojaMember })}
+                        disabled={hasSaveData}
+                      />
+                      <div className="profession-info">
+                        <span className="profession-name">Joja Member</span>
+                        <span className="profession-bonus">JojaMart prices are 20% lower</span>
+                      </div>
+                    </label>
                   </div>
-                </label>
-
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.rancher}
-                    onChange={() => toggleProfession('rancher')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Rancher</span>
-                    <span className="profession-bonus">Animal products worth 20% more</span>
-                  </div>
-                </label>
-
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.artisan}
-                    onChange={() => toggleProfession('artisan')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Artisan</span>
-                    <span className="profession-bonus">Artisan goods worth 40% more</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div className="profession-category">
-              <h4>Fishing</h4>
-              <div className="professions-grid">
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.fisher}
-                    onChange={() => toggleProfession('fisher')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Fisher</span>
-                    <span className="profession-bonus">Fish worth 25% more</span>
-                  </div>
-                </label>
-
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.angler}
-                    onChange={() => toggleProfession('angler')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Angler</span>
-                    <span className="profession-bonus">Fish worth 50% more (requires Fisher, replaces bonus)</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div className="profession-category">
-              <h4>Foraging</h4>
-              <div className="professions-grid">
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.tapper}
-                    onChange={() => toggleProfession('tapper')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Tapper</span>
-                    <span className="profession-bonus">Syrups worth 25% more</span>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <div className="profession-category">
-              <h4>Mining</h4>
-              <div className="professions-grid">
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.blacksmith}
-                    onChange={() => toggleProfession('blacksmith')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Blacksmith</span>
-                    <span className="profession-bonus">Bars worth 50% more</span>
-                  </div>
-                </label>
-
-                <label className="profession-checkbox">
-                  <input
-                    type="checkbox"
-                    checked={player.professions.gemologist}
-                    onChange={() => toggleProfession('gemologist')}
-                  />
-                  <div className="profession-info">
-                    <span className="profession-name">Gemologist</span>
-                    <span className="profession-bonus">Gems worth 30% more</span>
-                  </div>
-                </label>
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
   )
 }
 
 export default CharacterBar
+

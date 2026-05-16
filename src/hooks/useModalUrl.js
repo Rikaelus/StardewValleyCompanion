@@ -96,11 +96,13 @@ export function useModalUrl({ enabled, history, setHistory, onOpen, findEntity, 
     // Already canonical — nothing to do
     if (trail === canonicalTrail.current) return
 
-    const isDeeper = canonicalTrail.current !== null &&
+    // Push a new history entry when opening (null → trail) or navigating deeper.
+    // Replace when navigating back within the modal (shallower trail).
+    const shouldPush = canonicalTrail.current === null ||
       history.length > canonicalTrail.current.split(SEP).length
 
     canonicalTrail.current = trail
-    writeModalParam(trail, isDeeper ? 'push' : 'replace')
+    writeModalParam(trail, shouldPush ? 'push' : 'replace')
   }, [enabled, history, isOpen])
 
   // ── Close → URL: clear param when modal closes ────────────────────────────

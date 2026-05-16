@@ -47,6 +47,12 @@
       "gameId": "SmokedFish",
       "displayName": "Smoked Fish",
       "notes": "1.6+ exclusive. Made from fish in fish smokers."
+    },
+    "Bait": {
+      "gameId": "SpecificBait",
+      "displayName": "Targeted Bait",
+      "variantSuffix": "Bait",
+      "notes": "1.6+ exclusive. Made from any fish in the Bait Maker."
     }
   }
 }

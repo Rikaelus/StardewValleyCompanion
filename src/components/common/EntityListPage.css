@@ -1,0 +1,16 @@
+.entity-page {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.entity-page h2 {
+  margin: 0;
+  color: #5c4a32;
+}
+
+.entity-page .error {
+  color: #c62828;
+  padding: 1rem;
+  background: #ffebee;
+  border-radius: 4px;
+}

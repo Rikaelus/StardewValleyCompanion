@@ -41,6 +41,50 @@
   vertical-align: middle; /* Align button with surrounding text */
 }
 
+@keyframes owned-needed-pulse {
+  0%, 100% { background-color: #ffd5d5; }
+  50% { background-color: #d4edda; }
+}
+
+@keyframes owned-needed-gradient-sweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.inline-owned {
+  color: #1b5e20;
+}
+
+.inline-needed {
+  color: #b71c1c;
+}
+
+.inline-owned-needed {
+  background: linear-gradient(90deg, #b71c1c, #1b5e20, #b71c1c);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: owned-needed-gradient-sweep 2s linear infinite;
+}
+
+.item-button-icon-box.item-button--owned {
+  background-color: #d4edda;
+}
+
+.item-button:has(.item-button--owned) {
+  border-color: #5a9e4a;
+}
+
+.item-button-icon-box.item-button--needed {
+  background-color: #ffd5d5;
+}
+
+.item-button-icon-box.item-button--owned.item-button--needed {
+  background-color: unset;
+  animation: owned-needed-pulse 2s ease-in-out infinite;
+}
+
 .item-button:not(.item-button--with-label):hover {
   background: #e3f2fd;
 }
@@ -77,7 +121,7 @@
   font-size: 60%;
 }
 
-/* Inline icon badge (used in ModalItemButton inline variant) */
+/* Inline icon badge (used in UniversalModalButton inline variant) */
 .inline-icon-badge {
   display: inline-flex;
   align-items: center;

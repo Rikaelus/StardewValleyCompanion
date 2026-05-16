@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 
 function VariationsListSection({ entity, artisanItems, findById, onNavigate }) {
   if (!entity?.isGeneric || !entity.variations) return null
@@ -22,7 +22,7 @@ function VariationsListSection({ entity, artisanItems, findById, onNavigate }) {
 
           return (
             <div key={variation.id} className="variation-row">
-              <ModalItemButton
+              <UniversalModalButton
                 item={variation}
                 variant="inline"
                 onNavigate={onNavigate}

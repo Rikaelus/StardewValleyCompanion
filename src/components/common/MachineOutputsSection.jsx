@@ -1,12 +1,20 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
+import SeasonBadges from './SeasonBadges'
 import { formatProcessingTime } from '../../utils/Formatters'
 
 function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
   const machineId = entity.id
-  const outputItems = allItems.filter(item =>
-    !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop' && s.type !== 'reward')
-  ).sort((a, b) => a.name.localeCompare(b.name))
+  const isTapper = machineId === 'tapper' || machineId === 'heavy-tapper'
+  const isHeavy = machineId === 'heavy-tapper'
+
+  const outputItems = isTapper
+    ? allItems.filter(item =>
+        !item.isGeneric && item.sources?.some(s => s.type === 'tapper')
+      ).sort((a, b) => a.name.localeCompare(b.name))
+    : allItems.filter(item =>
+        !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop' && s.type !== 'reward')
+      ).sort((a, b) => a.name.localeCompare(b.name))
 
   // Animal-specific harvest context
   let harvestToolItem = null
@@ -26,6 +34,36 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
         <ModalSection id="section-machine-outputs" title={`Produces (${outputItems.length})`} navLabel="Produces">
           <div className="source-list">
             {outputItems.flatMap(item => {
+              // Tapper-specific rendering: show tree as qualifier with days
+              if (isTapper) {
+                const tapSources = item.sources.filter(s => s.type === 'tapper')
+                return tapSources.map((src, idx) => {
+                  const treeEntity = src.treeId ? findById(`tree-${src.treeId}`) : null
+                  const days = isHeavy && src.daysToHarvest
+                    ? Math.ceil(src.daysToHarvest / 2)
+                    : src.daysToHarvest
+                  return (
+                    <span key={`${item.id}-${src.treeId}-${idx}`} className="source-entry">
+                      <UniversalModalButton item={item} variant="inline" onNavigate={onNavigate} />
+                      <span className="source-qualifiers">
+                        {src.note && (
+                          <span className="source-qualifier source-condition">{src.note}</span>
+                        )}
+                        {days && (
+                          <span className="source-qualifier">{days}d</span>
+                        )}
+                        <SeasonBadges seasons={src.seasons || ['spring', 'summer', 'fall', 'winter']} compact />
+                      </span>
+                      {treeEntity && (
+                        <span className="source-detail">
+                          from <UniversalModalButton item={treeEntity} variant="inline" onNavigate={onNavigate} />
+                        </span>
+                      )}
+                    </span>
+                  )
+                })
+              }
+
               const src = item.sources?.find(s => s.id === machineId)
               const processingTime = src?.processingTimeMinutes || item.processingTimeMinutes
               const multipleInputs = src?.inputDetails?.length > 1
@@ -34,7 +72,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
               const headerRow = (
                 <span key={item.id} className={`source-entry${multipleInputs ? ' source-entry--subrow' : ''}`}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                    <ModalItemButton item={item} variant="inline" onNavigate={onNavigate} />
+                    <UniversalModalButton item={item} variant="inline" onNavigate={onNavigate} />
                   </span>
                   {!multipleInputs && (() => {
                     const inputDetail = src?.inputDetails?.[0]
@@ -48,7 +86,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
                         <span className="source-qualifiers">
                           <span className="source-qualifier">
                             {count > 1 && <><span className="output-count" style={{ marginRight: '0.2rem' }}>×{count}</span>{' '}</>}
-                            from <ModalItemButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
+                            from <UniversalModalButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
                           </span>
                         </span>
                       )}
@@ -62,7 +100,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
                           <span className="source-qualifier">
                             {harvestFrequency && `harvestable ${harvestFrequency}`}
                             {harvestToolItem && (
-                              <> with <ModalItemButton item={harvestToolItem} variant="inline" onNavigate={onNavigate} /></>
+                              <> with <UniversalModalButton item={harvestToolItem} variant="inline" onNavigate={onNavigate} /></>
                             )}
                           </span>
                         </span>
@@ -94,7 +132,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
                       <span className="source-qualifier">
                         {count > 1 && <><span className="output-count" style={{ marginRight: '0.2rem' }}>×{count}</span>{' '}</>}
                         from {inputItem
-                          ? <ModalItemButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
+                          ? <UniversalModalButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
                           : detail.inputName
                         }
                       </span>

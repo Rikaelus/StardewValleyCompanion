@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import { useProgress } from '../../hooks/UseProgress'
 
 function BundleRequirementsSection({ entity, entityType, findByGameId, onNavigate }) {
@@ -50,7 +50,7 @@ function BundleRequirementsSection({ entity, entityType, findByGameId, onNavigat
           const item = findByGameId(bundleItem.gameId)
 
           return item ? (
-            <ModalItemButton
+            <UniversalModalButton
               key={idx}
               item={item}
               variant="bundle-item"

@@ -12,17 +12,18 @@ import InfoTooltip from './InfoTooltip'
 import FishingInfoSection from './FishingInfoSection'
 import AgingInfoSection from './AgingInfoSection'
 import ContextTagsSection from './ContextTagsSection'
-import LocationAvailabilitySection from './LocationAvailabilitySection'
+import LocationAvailabilitySection, { InventorySection } from './LocationAvailabilitySection'
 import { useProgress } from '../../hooks/UseProgress'
 import VariationsListSection from './VariationsListSection'
 import SeedProducesSection from './SeedProducesSection'
+import TreeConnectionsSection from './TreeConnectionsSection'
 import BundleRequirementsSection from './BundleRequirementsSection'
 import BundleRewardSection from './BundleRewardSection'
 import StoreContentsSection from './StoreContentsSection'
 import MachineOutputsSection from './MachineOutputsSection'
 import SellingInfoSection from './SellingInfoSection'
 import FoodBuffsSection, { BuffIcon, formatDuration } from './FoodBuffsSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import RecipeEntryList from './RecipeEntryList'
 import ConditionBadge from './ConditionBadge'
 import ModalSection from './ModalSection'
@@ -125,7 +126,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
   // The currently displayed entity is the last item in history
   const currentEntity = history.length > 0 ? history[history.length - 1] : null
 
-  // Navigate to a new entity (called by child ModalItemButtons/BundleBadges)
+  // Navigate to a new entity (called by child UniversalModalButtons/BundleBadges)
   const handleNavigate = useCallback((newEntity) => {
     setHistory(prev => {
       // If the new entity is the previous item in the breadcrumb, go back instead of deeper
@@ -159,7 +160,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Load unified entity data (fetched once for the whole app via EntityContext)
   const entityData = useEntities()
-  const { hasSaveData, getBundleProgress } = useProgress()
+  const { hasSaveData, getBundleProgress, isMuseumDonated } = useProgress()
   const { byType: itemsByType, items: allItems, findById, findByGameId, findEntity, loading: entitiesLoading, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
@@ -306,8 +307,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
         <div className="modal-item-content">
           <ModalHeader icon={iconPath} iconChar={displayEntity.iconChar} iconClass={displayEntity.iconClass} iconColor={displayEntity.iconColor} name={headerName} subtitle={subtitle}>
-            {/* Price display for items only (not bundles, locations, machines, or furniture) */}
-            {entityType !== 'bundle' && entityType !== 'location' && entityType !== 'machine' && entityType !== 'festival' && displayEntity.type !== 'furniture' && entityType !== 'weapon' && entityType !== 'boot' && entityType !== 'trinket' && entityType !== 'tool' && entityType !== 'building' && (displayEntity.price || displayEntity.prices) && (
+            {displayEntity.capabilities?.hasSellingPrice && (
               <div className="modal-price">
                 <ItemSellPrice
                   item={displayEntity}
@@ -328,10 +328,90 @@ function UniversalModal({ entity, isOpen, onClose }) {
             <VariationsListSection entity={displayEntity} artisanItems={artisanItems} findById={findById} onNavigate={handleNavigate} />
           )}
 
+          {entityType === 'breakable' && (() => {
+            const toolLevelNames = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
+            return (
+              <ModalSection id="section-breakable-info" title="Info" navLabel="Info">
+                <div className="entity-detail-grid">
+                  {displayEntity.tool && (
+                    <><span className="label">Tool</span><span>{displayEntity.tool}</span></>
+                  )}
+                  {displayEntity.toolMinLevel != null && (
+                    <><span className="label">Min Quality</span><span>{toolLevelNames[displayEntity.toolMinLevel] || displayEntity.toolMinLevel}</span></>
+                  )}
+                  {(displayEntity.xp > 0 || displayEntity.xpMin > 0) && (
+                    <><span className="label">XP</span><span>{displayEntity.xpMin != null ? `${displayEntity.xpMin}–${displayEntity.xpMax}` : displayEntity.xp} {displayEntity.xpSkill}</span></>
+                  )}
+                </div>
+              </ModalSection>
+            )
+          })()}
+
+          {entityType === 'monster' && (
+            <ModalSection id="section-monster-info" title="Info" navLabel="Info">
+              <div className="entity-detail-grid">
+                {displayEntity.hp > 0 && (
+                  <><span className="label">HP</span><span>{displayEntity.hp}</span></>
+                )}
+                {displayEntity.damageToFarmer > 0 && (
+                  <><span className="label">Damage</span><span>{displayEntity.damageToFarmer}</span></>
+                )}
+                {displayEntity.resilience > 0 && (
+                  <><span className="label">Defense</span><span>{displayEntity.resilience}</span></>
+                )}
+                {displayEntity.speed > 0 && (
+                  <><span className="label">Speed</span><span>{displayEntity.speed}</span></>
+                )}
+                {displayEntity.isGlider && (
+                  <><span className="label">Movement</span><span>Flying</span></>
+                )}
+                {displayEntity.missChance > 0 && (
+                  <><span className="label">Miss Chance</span><span>{formatChance(displayEntity.missChance)}</span></>
+                )}
+                {displayEntity.coins && (
+                  <><span className="label">Gold Drop</span><span>{displayEntity.coins.min === displayEntity.coins.max ? displayEntity.coins.min : `${displayEntity.coins.min}–${displayEntity.coins.max}`}g</span></>
+                )}
+                {displayEntity.debuffs?.length > 0 && (
+                  <><span className="label">Debuffs</span><span>{displayEntity.debuffs.map(d => `${d.name} (${formatChance(d.chance)})`).join(', ')}</span></>
+                )}
+              </div>
+              {displayEntity.slayerQuest && (
+                <div className="source-group">
+                  <span className="modal-label">Adventure Guild Rewards:</span>
+                  <div className="source-list">
+                    <span className="source-entry">
+                      <span className="source-name">
+                        {displayEntity.slayerQuest.rewardItemGameId && (() => {
+                          const reward = findByGameId(displayEntity.slayerQuest.rewardItemGameId)
+                          return reward ? <UniversalModalButton item={reward} variant="inline" onNavigate={handleNavigate} /> : null
+                        })()}
+                      </span>
+                      <span />
+                      <span className="source-detail">Kill {displayEntity.slayerQuest.killCount}</span>
+                    </span>
+                  </div>
+                </div>
+              )}
+            </ModalSection>
+          )}
+
+          {hasSaveData && displayEntity?.gameId && (
+            <ModalSection id="section-inventory" title="Inventory" navLabel="Inventory">
+              <InventorySection entity={displayEntity} />
+            </ModalSection>
+          )}
+
           <LocationAvailabilitySection
             entity={displayEntity}
             findById={findById}
             findByGameId={findByGameId}
+            onNavigate={handleNavigate}
+          />
+
+          <TreeConnectionsSection
+            entity={displayEntity}
+            findById={findById}
+            allItems={allItems}
             onNavigate={handleNavigate}
           />
 
@@ -407,7 +487,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         const villagerId = `vil-${displayEntity.targetNpc.toLowerCase()}`
                         const villager = findById(villagerId)
                         return villager
-                          ? <ModalItemButton item={villager} variant="inline" onNavigate={handleNavigate} />
+                          ? <UniversalModalButton item={villager} variant="inline" onNavigate={handleNavigate} />
                           : displayEntity.targetNpc
                       })()}</span>
                     </>
@@ -418,7 +498,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       <span>{(() => {
                         const item = findByGameId(displayEntity.requiredItem)
                         return item
-                          ? <><ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />{displayEntity.requiredItemAmount > 1 ? ` ×${displayEntity.requiredItemAmount}` : ''}</>
+                          ? <><UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />{displayEntity.requiredItemAmount > 1 ? ` ×${displayEntity.requiredItemAmount}` : ''}</>
                           : `Item ${displayEntity.requiredItem}`
                       })()}</span>
                     </>
@@ -440,7 +520,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       <span>{(() => {
                         const next = findById(displayEntity.nextQuestId)
                         return next
-                          ? <ModalItemButton item={next} variant="inline" onNavigate={handleNavigate} />
+                          ? <UniversalModalButton item={next} variant="inline" onNavigate={handleNavigate} />
                           : displayEntity.nextQuestId
                       })()}</span>
                     </>
@@ -458,7 +538,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   {(() => {
                     const prereq = findById(displayEntity.prerequisiteId)
                     return prereq
-                      ? <ModalItemButton item={prereq} variant="inline" onNavigate={handleNavigate} />
+                      ? <UniversalModalButton item={prereq} variant="inline" onNavigate={handleNavigate} />
                       : displayEntity.prerequisiteId
                   })()}
                 </span>
@@ -486,7 +566,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   <ModalSection id="section-location-run-by" title="Run By" navLabel="Run By">
                     <div className="source-list">
                       <span className="source-entry">
-                        <ModalItemButton item={v} variant="inline" onNavigate={handleNavigate} />
+                        <UniversalModalButton item={v} variant="inline" onNavigate={handleNavigate} />
                       </span>
                     </div>
                   </ModalSection>
@@ -499,7 +579,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   <ModalSection id="section-location-parent" title="Part Of">
                     <div className="source-list">
                       <span className="source-entry">
-                        <ModalItemButton item={parent} variant="inline" onNavigate={handleNavigate} />
+                        <UniversalModalButton item={parent} variant="inline" onNavigate={handleNavigate} />
                       </span>
                     </div>
                   </ModalSection>
@@ -515,7 +595,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     <div className="source-list">
                       {parentEntities.map(parent => (
                         <span key={parent.id} className="source-entry">
-                          <ModalItemButton item={parent} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={parent} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       ))}
                     </div>
@@ -533,7 +613,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     <div className="source-list">
                       {residentEntities.map(v => (
                         <span key={v.id} className="source-entry">
-                          <ModalItemButton item={v} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={v} variant="inline" onNavigate={handleNavigate} />
                           {v.unlockConditions && <span className="source-qualifiers"><span className="source-qualifier">{formatUnlockCondition(v.unlockConditions)}</span></span>}
                         </span>
                       ))}
@@ -560,7 +640,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <div className="source-list">
                           {mapChildren.map(child => (
                             <span key={child.id} className="source-entry">
-                              <ModalItemButton item={child} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={child} variant="inline" onNavigate={handleNavigate} />
                             </span>
                           ))}
                         </div>
@@ -571,7 +651,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <div className="source-list">
                           {shopChildren.map(child => (
                             <span key={child.id} className="source-entry">
-                              <ModalItemButton item={child} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={child} variant="inline" onNavigate={handleNavigate} />
                               <span className="source-qualifiers">
                                 {child.hours && (
                                   <span className="source-qualifier">
@@ -591,7 +671,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <div className="source-list">
                           {otherChildren.map(child => (
                             <span key={child.id} className="source-entry">
-                              <ModalItemButton item={child} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={child} variant="inline" onNavigate={handleNavigate} />
                             </span>
                           ))}
                         </div>
@@ -624,7 +704,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         return bundle ? (
                           <span key={bundleId} className="source-entry">
                             <span className="source-name">
-                              <ModalItemButton item={bundle} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={bundle} variant="inline" onNavigate={handleNavigate} />
                             </span>
                           </span>
                         ) : null
@@ -645,7 +725,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     {items.map(r => (
                       <span key={r.id} className="source-entry">
                         <span className="source-name">
-                          <ModalItemButton item={r} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={r} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       </span>
                     ))}
@@ -689,7 +769,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                               return (
                                 <span key={`${item.id}-${src.locationId}`} className="source-entry">
                                   <span className="source-name">
-                                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                    <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                                     {subLocName && <span className="source-qualifier">({subLocName})</span>}
                                   </span>
                                   <span className="source-qualifiers">
@@ -717,7 +797,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                               return (
                                 <span key={`${item.id}-${src.locationId}`} className="source-entry">
                                   <span className="source-name">
-                                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                    <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                                     {subLocName && <span className="source-qualifier">({subLocName})</span>}
                                   </span>
                                   <span />
@@ -736,7 +816,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           {monsterEntries.map(({ item, qualifier }) => (
                             <span key={item.id} className="source-entry">
                               <span className="source-name">
-                                <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                               </span>
                               <span />
                               {qualifier && (
@@ -755,7 +835,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                             .map(({ item, src, subLocName }) => (
                               <span key={`${item.id}-${src.locationId}`} className="source-entry">
                                 <span className="source-name">
-                                  <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                  <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                                   {subLocName && <span className="source-qualifier">({subLocName})</span>}
                                 </span>
                                 <span />
@@ -772,7 +852,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <div className="source-list">
                           {otherList.map(item => (
                             <span key={item.id} className="source-entry">
-                              <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                             </span>
                           ))}
                         </div>
@@ -815,14 +895,14 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   {cc && (
                     <span className="source-entry">
                       <span className="source-name">
-                        <ModalItemButton item={cc} variant="inline" onNavigate={handleNavigate} />
+                        <UniversalModalButton item={cc} variant="inline" onNavigate={handleNavigate} />
                       </span>
                     </span>
                   )}
                   {room && (
                     <span className="source-entry">
                       <span className="source-name source-name--indented">
-                        <ModalItemButton item={room} variant="inline" onNavigate={handleNavigate} />
+                        <UniversalModalButton item={room} variant="inline" onNavigate={handleNavigate} />
                       </span>
                     </span>
                   )}
@@ -848,7 +928,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       <span key={i} className="source-entry">
                         <span className="source-name">
                           {reqItem
-                            ? <ModalItemButton item={reqItem} variant="inline" onNavigate={handleNavigate} />
+                            ? <UniversalModalButton item={reqItem} variant="inline" onNavigate={handleNavigate} />
                             : req.name}
                         </span>
                       </span>
@@ -923,7 +1003,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       if (!item) return null
                       return (
                         <span key={itemId} className="source-entry">
-                          <ModalItemButton
+                          <UniversalModalButton
                             item={item}
                             variant="inline"
                             onNavigate={handleNavigate}
@@ -951,7 +1031,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                             const loc = findById(id)
                             return loc ? (
                               <span key={id} className="source-entry">
-                                <ModalItemButton item={loc} variant="inline" onNavigate={handleNavigate} />
+                                <UniversalModalButton item={loc} variant="inline" onNavigate={handleNavigate} />
                               </span>
                             ) : null
                           })}
@@ -972,7 +1052,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <span key={npc} className="source-entry">
                           <span className="source-name">
                             {villager
-                              ? <ModalItemButton item={villager} variant="inline" onNavigate={handleNavigate} />
+                              ? <UniversalModalButton item={villager} variant="inline" onNavigate={handleNavigate} />
                               : npc}
                           </span>
                           <span className="source-qualifiers">
@@ -993,7 +1073,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <span key={npcName} className="source-entry">
                           <span className="source-name">
                             {villager
-                              ? <ModalItemButton item={villager} variant="inline" onNavigate={handleNavigate} />
+                              ? <UniversalModalButton item={villager} variant="inline" onNavigate={handleNavigate} />
                               : npcName}
                           </span>
                         </span>
@@ -1011,7 +1091,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         <span key={eventKey} className="source-entry">
                           <span className="source-name">
                             {prereq
-                              ? <ModalItemButton item={prereq} variant="inline" onNavigate={handleNavigate} />
+                              ? <UniversalModalButton item={prereq} variant="inline" onNavigate={handleNavigate} />
                               : `Event ${eventKey}`}
                           </span>
                         </span>
@@ -1086,7 +1166,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           {displayEntity.mutuallyExclusive.map(eventKey => {
                             const ev = entityData.getEvent(eventKey)
                             return ev
-                              ? <span key={eventKey} className="source-entry"><ModalItemButton item={ev} variant="inline" onNavigate={handleNavigate} /></span>
+                              ? <span key={eventKey} className="source-entry"><UniversalModalButton item={ev} variant="inline" onNavigate={handleNavigate} /></span>
                               : <span key={eventKey} className="source-entry value">Event #{eventKey}</span>
                           })}
                         </div>
@@ -1103,7 +1183,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       if (!item) return null
                       return (
                         <span key={itemId} className="source-entry">
-                          <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       )
                     })}
@@ -1123,7 +1203,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   {displayEntity.homeLocation ? (() => {
                     const homeLoc = findById(displayEntity.homeLocation)
                     return homeLoc
-                      ? <><span className="label">Home</span><ModalItemButton item={homeLoc} variant="inline" onNavigate={handleNavigate} /></>
+                      ? <><span className="label">Home</span><UniversalModalButton item={homeLoc} variant="inline" onNavigate={handleNavigate} /></>
                       : displayEntity.homeRegion ? <><span className="label">Home</span><span>{displayEntity.homeRegion}</span></> : null
                   })() : displayEntity.homeRegion ? <><span className="label">Home</span><span>{displayEntity.homeRegion}</span></> : null}
                   {displayEntity.age && <><span className="label">Age</span><span>{capitalize(displayEntity.age)}</span></>}
@@ -1131,7 +1211,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   {displayEntity.canBeRomanced && <><span className="label">Romanceable</span><span>Yes</span></>}
                   {displayEntity.loveInterest && (() => {
                     const li = entityData.getVillager(displayEntity.loveInterest)
-                    return li ? <><span className="label">Love Interest</span><ModalItemButton item={li} variant="inline" onNavigate={handleNavigate} /></> : null
+                    return li ? <><span className="label">Love Interest</span><UniversalModalButton item={li} variant="inline" onNavigate={handleNavigate} /></> : null
                   })()}
                 </div>
               </ModalSection>
@@ -1143,7 +1223,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     <div className="source-list">
                       {runsLocations.map(loc => (
                         <span key={loc.id} className="source-entry">
-                          <ModalItemButton item={loc} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={loc} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       ))}
                     </div>
@@ -1199,7 +1279,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     <div className="source-list">
                       {villagerQuests.map(q => (
                         <span key={q.id} className="source-entry">
-                          <ModalItemButton item={q} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={q} variant="inline" onNavigate={handleNavigate} />
                           {q.moneyReward > 0 && <span className="source-detail">{q.moneyReward.toLocaleString()}g</span>}
                         </span>
                       ))}
@@ -1223,7 +1303,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           <span key={r.movieId} className="source-entry">
                             <span className="source-name">
                               {movie
-                                ? <ModalItemButton item={movie} variant="inline" onNavigate={handleNavigate} />
+                                ? <UniversalModalButton item={movie} variant="inline" onNavigate={handleNavigate} />
                                 : r.movieName}
                             </span>
                             <span className="source-qualifiers">
@@ -1266,7 +1346,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                               <div key={ci} className="villager-gift-column">
                                 {col.map(item => (
                                   <div key={item.id} className="villager-gift-entry">
-                                    <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
+                                    <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                                   </div>
                                 ))}
                               </div>
@@ -1350,10 +1430,10 @@ function UniversalModal({ entity, isOpen, onClose }) {
                 <div className="source-list">
                   {rows.map(({ produceItem, animal, freq, key }) => (
                     <span key={key} className="source-entry">
-                      <ModalItemButton item={produceItem} variant="inline" onNavigate={handleNavigate} />
+                      <UniversalModalButton item={produceItem} variant="inline" onNavigate={handleNavigate} />
                       <span className="source-qualifiers">
                         <span className="source-qualifier">
-                          {freq} from <ModalItemButton item={animal} variant="inline" onNavigate={handleNavigate} />
+                          {freq} from <UniversalModalButton item={animal} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       </span>
                     </span>
@@ -1372,7 +1452,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   return prev ? (
                     <span className="source-entry">
                       <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades from</span>
-                      <ModalItemButton item={prev} variant="inline" onNavigate={handleNavigate} />
+                      <UniversalModalButton item={prev} variant="inline" onNavigate={handleNavigate} />
                     </span>
                   ) : null
                 })()}
@@ -1381,7 +1461,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   return next ? (
                     <span className="source-entry">
                       <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades to</span>
-                      <ModalItemButton item={next} variant="inline" onNavigate={handleNavigate} />
+                      <UniversalModalButton item={next} variant="inline" onNavigate={handleNavigate} />
                     </span>
                   ) : null
                 })()}
@@ -1398,7 +1478,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   <span>{(() => {
                     const builderVillager = entityData.getVillager(displayEntity.builder)
                     return builderVillager
-                      ? <ModalItemButton item={builderVillager} variant="inline" onNavigate={handleNavigate} />
+                      ? <UniversalModalButton item={builderVillager} variant="inline" onNavigate={handleNavigate} />
                       : displayEntity.builder
                   })()}</span>
                   <span className="label">Cost</span>
@@ -1421,7 +1501,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       return (
                         <span key={i} className="source-entry">
                           {matItem
-                            ? <ModalItemButton item={matItem} variant="inline" onNavigate={handleNavigate} />
+                            ? <UniversalModalButton item={matItem} variant="inline" onNavigate={handleNavigate} />
                             : <span className="source-name">{mat.gameId}</span>
                           }
                           <span className="source-qualifiers">
@@ -1441,7 +1521,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       return prev ? (
                         <span className="source-entry">
                           <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades from</span>
-                          <ModalItemButton item={prev} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={prev} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       ) : null
                     })()}
@@ -1450,7 +1530,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       return next ? (
                         <span className="source-entry">
                           <span className="label" style={{ paddingRight: '0.5rem' }}>Upgrades to</span>
-                          <ModalItemButton item={next} variant="inline" onNavigate={handleNavigate} />
+                          <UniversalModalButton item={next} variant="inline" onNavigate={handleNavigate} />
                         </span>
                       ) : null
                     })()}
@@ -1488,7 +1568,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           <div className="label">{col.label}</div>
                           <div className="bundle-items-list">
                             {col.animals.map(animal => (
-                              <ModalItemButton key={animal.id} item={animal} variant="bundle-item" onNavigate={handleNavigate} />
+                              <UniversalModalButton key={animal.id} item={animal} variant="bundle-item" onNavigate={handleNavigate} />
                             ))}
                           </div>
                         </div>
@@ -1520,7 +1600,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         const building = findByGameId(bgid)
                         return building ? (
                           <span key={bgid} className="source-entry">
-                            <ModalItemButton item={building} variant="inline" onNavigate={handleNavigate} />
+                            <UniversalModalButton item={building} variant="inline" onNavigate={handleNavigate} />
                           </span>
                         ) : null
                       })}
@@ -1532,63 +1612,48 @@ function UniversalModal({ entity, isOpen, onClose }) {
           )}
 
           {entityType === 'breakable' && (() => {
-            const toolLevelNames = ['Basic', 'Copper', 'Steel', 'Gold', 'Iridium']
             const dropItems = allItems.filter(item =>
               item.sources?.some(s => s.type === 'breakable-drop' && s.breakableId === displayEntity.id)
             ).map(item => {
               const src = item.sources.find(s => s.type === 'breakable-drop' && s.breakableId === displayEntity.id)
               return { item, chance: src?.chance }
             }).sort((a, b) => (b.chance ?? 0) - (a.chance ?? 0))
-            return (
-              <>
-                <ModalSection id="section-breakable-info" title="Info" navLabel="Info">
-                  <div className="entity-detail-grid">
-                    {displayEntity.tool && (
-                      <><span className="label">Tool</span><span>{displayEntity.tool}</span></>
-                    )}
-                    {displayEntity.toolMinLevel != null && (
-                      <><span className="label">Min Quality</span><span>{toolLevelNames[displayEntity.toolMinLevel] || displayEntity.toolMinLevel}</span></>
-                    )}
-                  </div>
-                  {displayEntity.locations?.length > 0 && (
-                    <div className="source-group">
-                      <span className="modal-label">Found At:</span>
-                      <div className="source-list">
-                        {displayEntity.locations.map((locId, i) => {
-                          const locEntity = findById(locId)
-                          return (
-                            <span key={i} className="source-entry">
-                              <span className="source-name">
-                                {locEntity
-                                  ? <ModalItemButton item={locEntity} variant="inline" onNavigate={handleNavigate} />
-                                  : locId}
-                              </span>
-                            </span>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </ModalSection>
-                {dropItems.length > 0 && (
-                  <ModalSection id="section-breakable-drops" title={`Drops (${dropItems.length})`} navLabel="Drops">
-                    <div className="source-list">
-                      {dropItems.map(({ item, chance }) => (
-                        <span key={item.id} className="source-entry">
-                          <span className="source-name">
-                            <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
-                          </span>
-                          <span />
-                          {chance != null && (
-                            <span className="source-detail">{formatChance(chance)}</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  </ModalSection>
-                )}
-              </>
-            )
+            return dropItems.length > 0 ? (
+              <ModalSection id="section-breakable-drops" title={`Drops (${dropItems.length})`} navLabel="Drops">
+                <div className="source-list">
+                  {dropItems.map(({ item, chance }) => (
+                    <span key={item.id} className="source-entry">
+                      <span className="source-name">
+                        <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                      </span>
+                      <span />
+                      {chance != null && (
+                        <span className="source-detail">{formatChance(chance)}</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </ModalSection>
+            ) : null
+          })()}
+
+          {entityType === 'geode' && (() => {
+            const contentItems = allItems.filter(item =>
+              item.sources?.some(s => s.type === 'geode' && s.geodeGameId === displayEntity.gameId)
+            ).sort((a, b) => a.name.localeCompare(b.name))
+            return contentItems.length > 0 ? (
+              <ModalSection id="section-geode-contents" title={`Contents (${contentItems.length})`} navLabel="Contents">
+                <div className="source-list">
+                  {contentItems.map(item => (
+                    <span key={item.id} className="source-entry">
+                      <span className="source-name">
+                        <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </ModalSection>
+            ) : null
           })()}
 
           {entityType === 'monster' && (() => {
@@ -1601,110 +1666,38 @@ function UniversalModal({ entity, isOpen, onClose }) {
               const bChance = dropChance(b.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id))
               return bChance - aChance
             })
-            return (
-              <>
-                <ModalSection id="section-monster-info" title="Info" navLabel="Info">
-                  <div className="entity-detail-grid">
-                    {displayEntity.hp > 0 && (
-                      <><span className="label">HP</span><span>{displayEntity.hp}</span></>
-                    )}
-                    {displayEntity.damageToFarmer > 0 && (
-                      <><span className="label">Damage</span><span>{displayEntity.damageToFarmer}</span></>
-                    )}
-                    {displayEntity.resilience > 0 && (
-                      <><span className="label">Defense</span><span>{displayEntity.resilience}</span></>
-                    )}
-                    {displayEntity.speed > 0 && (
-                      <><span className="label">Speed</span><span>{displayEntity.speed}</span></>
-                    )}
-                    {displayEntity.isGlider && (
-                      <><span className="label">Movement</span><span>Flying</span></>
-                    )}
-                    {displayEntity.missChance > 0 && (
-                      <><span className="label">Miss Chance</span><span>{formatChance(displayEntity.missChance)}</span></>
-                    )}
-                    {displayEntity.coins && (
-                      <><span className="label">Gold Drop</span><span>{displayEntity.coins.min === displayEntity.coins.max ? displayEntity.coins.min : `${displayEntity.coins.min}–${displayEntity.coins.max}`}g</span></>
-                    )}
-                    {displayEntity.debuffs?.length > 0 && (
-                      <><span className="label">Debuffs</span><span>{displayEntity.debuffs.map(d => `${d.name} (${formatChance(d.chance)})`).join(', ')}</span></>
-                    )}
-                  </div>
-                  {displayEntity.locations?.length > 0 && (
-                    <div className="source-group">
-                      <span className="modal-label">Found At:</span>
-                      <div className="source-list">
-                        {displayEntity.locations.map((loc, i) => {
-                          const locEntity = loc.locationId ? findById(loc.locationId) : null
-                          return (
-                            <span key={i} className="source-entry">
-                              <span className="source-name">
-                                {locEntity
-                                  ? <ModalItemButton item={locEntity} variant="inline" onNavigate={handleNavigate} />
-                                  : loc.locationId}
-                              </span>
-                              <span />
-                              {loc.qualifier && (
-                                <span className="source-detail">{loc.qualifier}</span>
-                              )}
-                            </span>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  )}
-                  {displayEntity.slayerQuest && (
-                    <div className="source-group">
-                      <span className="modal-label">Adventure Guild Rewards:</span>
-                      <div className="source-list">
-                        <span className="source-entry">
-                          <span className="source-name">
-                            {displayEntity.slayerQuest.rewardItemGameId && (() => {
-                              const reward = findByGameId(displayEntity.slayerQuest.rewardItemGameId)
-                              return reward ? <ModalItemButton item={reward} variant="inline" onNavigate={handleNavigate} /> : null
-                            })()}
-                          </span>
-                          <span />
-                          <span className="source-detail">Kill {displayEntity.slayerQuest.killCount}</span>
+            return dropItems.length > 0 ? (
+              <ModalSection id="section-monster-drops" title={`Drops (${dropItems.length})`} navLabel="Drops">
+                <div className="source-list">
+                  {dropItems.map(item => {
+                    const src = item.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id)
+                    const multiRoll = src?.rolls?.length > 1
+                    const dist = multiRoll ? computeDropCountDistribution(src.rolls) : null
+                    return (
+                      <span key={item.id} className="source-entry">
+                        <span className="source-name">
+                          <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
                         </span>
-                      </div>
-                    </div>
-                  )}
-                </ModalSection>
-                {dropItems.length > 0 && (
-                  <ModalSection id="section-monster-drops" title={`Drops (${dropItems.length})`} navLabel="Drops">
-                    <div className="source-list">
-                      {dropItems.map(item => {
-                        const src = item.sources.find(s => s.type === 'monster-drop' && s.monsterId === displayEntity.id)
-                        const multiRoll = src?.rolls?.length > 1
-                        const dist = multiRoll ? computeDropCountDistribution(src.rolls) : null
-                        return (
-                          <span key={item.id} className="source-entry">
-                            <span className="source-name">
-                              <ModalItemButton item={item} variant="inline" onNavigate={handleNavigate} />
-                            </span>
-                            <span />
-                            <span className="source-detail">
-                              {multiRoll ? (
-                                <>
-                                  {dist.map(({ count, chance }, j) => (
-                                    <span key={count}>{j > 0 ? ' / ' : ''}×{count} {formatChance(chance)}</span>
-                                  ))}
-                                  {' '}
-                                  <InfoTooltip text="Each roll is independent and fires on every kill. Percentages show the chance of receiving exactly that many." />
-                                </>
-                              ) : (
-                                formatChance(src?.rolls?.[0] ?? 0)
-                              )}
-                            </span>
-                          </span>
-                        )
-                      })}
-                    </div>
-                  </ModalSection>
-                )}
-              </>
-            )
+                        <span />
+                        <span className="source-detail">
+                          {multiRoll ? (
+                            <>
+                              {dist.map(({ count, chance }, j) => (
+                                <span key={count}>{j > 0 ? ' / ' : ''}×{count} {formatChance(chance)}</span>
+                              ))}
+                              {' '}
+                              <InfoTooltip text="Each roll is independent and fires on every kill. Percentages show the chance of receiving exactly that many." />
+                            </>
+                          ) : (
+                            formatChance(src?.rolls?.[0] ?? 0)
+                          )}
+                        </span>
+                      </span>
+                    )
+                  })}
+                </div>
+              </ModalSection>
+            ) : null
           })()}
 
           {/* Produces / Crafting Sections (any entity that acts as a machine or building) */}
@@ -1743,7 +1736,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           {displayEntity.cranePrizes.map((prize, i) => (
                             <span key={i} className="source-entry">
                               {prize.resolvedId ? (
-                                <ModalItemButton item={findById(prize.resolvedId)} variant="inline" onNavigate={handleNavigate} />
+                                <UniversalModalButton item={findById(prize.resolvedId)} variant="inline" onNavigate={handleNavigate} />
                               ) : prize.itemId}
                               {prize.rarity > 1 && <span className="detail-note"> (Rare)</span>}
                             </span>
@@ -1768,7 +1761,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                               return (
                                 <div key={r.villagerId || r.villager} className={`gift-item gift-${r.reaction}`}>
                                   {v ? (
-                                    <ModalItemButton item={v} iconSize={32} onNavigate={handleNavigate} />
+                                    <UniversalModalButton item={v} iconSize={32} onNavigate={handleNavigate} />
                                   ) : null}
                                   <div className="gift-info">
                                     <div className="gift-name">{r.villager}</div>
@@ -1794,6 +1787,11 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     .map(id => entityData.getBundle(id))
                     .filter(Boolean)
 
+                  const museumRewards = (displayEntity.museumRewardIds || [])
+                    .map(id => findById(id))
+                    .filter(Boolean)
+                  const isMuseumDonatable = displayEntity.museumDonatable
+
                   const recipeGroups = [
                     { items: cooking, label: 'Ingredient For' },
                     { items: crafting, label: 'Used to Craft' },
@@ -1802,11 +1800,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
                   const hasRecipes = recipeGroups.length > 0
                   const hasBundles = bundleDetails.length > 0
-                  if (!hasRecipes && !hasBundles) return null
+                  const hasMuseum = isMuseumDonatable
+                  if (!hasRecipes && !hasBundles && !hasMuseum) return null
 
-                  const totalGroups = recipeGroups.length + (hasBundles ? 1 : 0)
+                  const totalGroups = recipeGroups.length + (hasBundles ? 1 : 0) + (hasMuseum ? 1 : 0)
                   const sectionTitle = totalGroups === 1
-                    ? (hasBundles ? 'Needed for Bundles' : recipeGroups[0].label)
+                    ? (hasBundles ? 'Needed for Bundles' : hasMuseum ? 'Museum Donation' : recipeGroups[0].label)
                     : 'Uses'
 
                   return (
@@ -1834,7 +1833,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                               return (
                                 <span key={bundle.id} className="source-entry">
                                   <span className="source-name">
-                                    <ModalItemButton item={bundle} variant="inline" onNavigate={handleNavigate} />
+                                    <UniversalModalButton item={bundle} variant="inline" onNavigate={handleNavigate} />
                                   </span>
                                   <span className="source-qualifiers">
                                     {qty > 1 && <span className="source-qualifier">×{qty}</span>}
@@ -1847,6 +1846,34 @@ function UniversalModal({ entity, isOpen, onClose }) {
                                 </span>
                               )
                             })}
+                          </div>
+                        </div>
+                      )}
+                      {hasMuseum && (
+                        <div className="source-group">
+                          {totalGroups > 1 && <span className="modal-label">Museum Donation:</span>}
+                          <div className="source-list">
+                            <span className="source-entry">
+                              <span className="source-name">
+                                {findById('map-archaeologyhouse')
+                                  ? <UniversalModalButton item={findById('map-archaeologyhouse')} variant="inline" onNavigate={handleNavigate} />
+                                  : "Gunther's Museum"}
+                              </span>
+                              <span className="source-qualifiers">
+                                {hasSaveData && (
+                                  isMuseumDonated(displayEntity.gameId)
+                                    ? <span className="source-qualifier bundle-use-provided">Donated</span>
+                                    : <span className="source-qualifier bundle-use-needed">Not Donated</span>
+                                )}
+                              </span>
+                            </span>
+                            {museumRewards.map(reward => (
+                              <span key={reward.id} className="source-entry">
+                                <span className="source-name source-name--indented">
+                                  <UniversalModalButton item={reward} variant="inline" onNavigate={handleNavigate} />
+                                </span>
+                              </span>
+                            ))}
                           </div>
                         </div>
                       )}
@@ -1884,7 +1911,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         return memberItem ? (
                           <span key={memberId} className="source-entry">
                             <span className="source-name">
-                              <ModalItemButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
+                              <UniversalModalButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
                             </span>
                           </span>
                         ) : null
@@ -1904,7 +1931,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                             return memberItem ? (
                               <span key={memberId} className="source-entry">
                                 <span className="source-name">
-                                  <ModalItemButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
+                                  <UniversalModalButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
                                 </span>
                               </span>
                             ) : null
@@ -1923,7 +1950,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                             return memberItem ? (
                               <span key={memberId} className="source-entry">
                                 <span className="source-name">
-                                  <ModalItemButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
+                                  <UniversalModalButton item={memberItem} variant="inline" onNavigate={handleNavigate} />
                                 </span>
                               </span>
                             ) : null

@@ -1,0 +1,16 @@
+{
+  "_comment": "Maps WildTrees.json IDs to tree names. Some IDs are variants of the same tree type — 'mergeInto' collapses them into one entity.",
+  "trees": {
+    "1":  { "name": "Oak Tree" },
+    "2":  { "name": "Maple Tree" },
+    "3":  { "name": "Pine Tree" },
+    "6":  { "name": "Palm Tree" },
+    "7":  { "name": "Mushroom Tree" },
+    "8":  { "name": "Mahogany Tree" },
+    "9":  { "name": "Palm Tree", "mergeInto": "6" },
+    "10": { "name": "Green Rain Tree" },
+    "11": { "name": "Green Rain Tree", "mergeInto": "10" },
+    "12": { "name": "Green Rain Tree", "mergeInto": "10" },
+    "13": { "name": "Mystic Tree" }
+  }
+}

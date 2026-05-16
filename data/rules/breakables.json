@@ -1,13 +1,15 @@
 {
-  "_comment": "Breakable world objects and their drops. Sourced from decompiled game code: BreakableContainer.releaseContents(), ResourceClump.performToolAction()/destroy(). These are hardcoded in C#, not in any data asset file. Drop chances are computed from the nested probability branches in the game code.",
+  "_comment": "Breakable world objects and their drops. Sourced from decompiled game code: BreakableContainer.releaseContents(), ResourceClump.performToolAction()/destroy(), MineShaft.checkStoneForItems(), GameLocation.breakStone()/OnStoneDestroyed(). These are hardcoded in C#, not in any data asset file. Drop chances are computed from the nested probability branches in the game code.",
   "breakables": [
     {
       "id": "mine-container",
       "name": "Mine Barrel / Crate",
+      "icon": null,
       "subtype": "mine-container",
       "tool": "Any weapon or pickaxe",
       "toolMinLevel": null,
       "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 0,
       "_dropNotes": "Combined drops across all barrel variants (118/120/122/124) and dangerous mines. Chance shown is the highest across variants. All pass through a 20% early-exit gate first (80% base). Dangerous mines has its own separate loot table (additionalDifficulty > 0).",
       "drops": [
         { "gameId": 78,  "chance": 0.078, "note": "Cave Carrot — 3/4 uncommon slots in all barrels" },
@@ -44,10 +46,12 @@
     {
       "id": "volcano-container",
       "name": "Volcano Barrel",
+      "icon": "VolcanoBarrel.png",
       "subtype": "mine-container",
       "tool": "Any weapon or pickaxe",
       "toolMinLevel": null,
       "locations": ["map-volcano-dungeon"],
+      "xp": 0,
       "_dropNotes": "Passes through the same 20% early-exit gate (80% base). Then 75% → common/uncommon, else 40% → rare, else DwarvishSentry.",
       "drops": [
         { "gameId": 382, "chance": 0.0686, "note": "Coal — common (1/7)" },
@@ -71,13 +75,500 @@
         { "gameId": 688, "chance": 0.0089, "note": "Warp Totem: Farm — rare (1/9)" }
       ]
     },
+
     {
+      "_sectionComment": "=== Stone Nodes (mine rocks) ===",
+      "id": "stone-node-regular",
+      "name": "Stone (Floors 1-39)",
+      "icon": "StoneIndex34.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [32, 34, 36, 38, 40, 42],
+      "locations": ["map-mines"],
+      "xp": 0,
+      "_dropNotes": "Standard mine rocks on floors 1-39. Processed by checkStoneForItems(). Stones 40/42 have 1.2x ore modifier (6% base), others have 0.8x (4% base). Geode type determined by getMineArea(). Omni Geode bonus only on floor 21+.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,   "note": "Stone — always drops" },
+        { "gameId": 535, "chance": 0.022, "note": "Geode — 2.2% base (Geologist doubles)" },
+        { "gameId": 749, "chance": 0.005, "note": "Omni Geode — 0.5% base on floor 21+ (Geologist doubles)" },
+        { "gameId": 378, "chance": 0.036, "note": "Copper Ore — from 4-6% ore chance, 75% copper on these floors" },
+        { "gameId": 380, "chance": 0.004, "note": "Iron Ore — 10% of ore rolls on floor 20+" },
+        { "gameId": 382, "chance": 0.0125, "note": "Coal — 25% sub-chance of ore roll (Prospector doubles to 50%)" }
+      ]
+    },
+    {
+      "id": "stone-node-frozen",
+      "name": "Stone (Floors 40-79)",
+      "icon": "StoneIndex50.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [48, 50, 52, 54, 56, 58],
+      "locations": ["map-mines"],
+      "xp": 0,
+      "_dropNotes": "Snowy/frozen mine rocks on floors 40-79. All use oreModifier 0.8 (4% base ore chance). Area geode is Frozen Geode.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,   "note": "Stone — always drops" },
+        { "gameId": 536, "chance": 0.022, "note": "Frozen Geode — 2.2% base (Geologist doubles)" },
+        { "gameId": 749, "chance": 0.005, "note": "Omni Geode — 0.5% base (Geologist doubles)" },
+        { "gameId": 380, "chance": 0.024, "note": "Iron Ore — from 4% ore chance, 75% iron on these floors" },
+        { "gameId": 378, "chance": 0.008, "note": "Copper Ore — 25% of ore rolls" },
+        { "gameId": 384, "chance": 0.003, "note": "Gold Ore — 10% of ore rolls on floor 60+" },
+        { "gameId": 382, "chance": 0.01,  "note": "Coal — 25% sub-chance of ore roll (Prospector doubles to 50%)" }
+      ]
+    },
+    {
+      "id": "stone-node-lava",
+      "name": "Stone (Floors 80-119)",
+      "icon": "StoneIndex760.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [760, 762, 55, 56, 57],
+      "locations": ["map-mines"],
+      "xp": 0,
+      "_dropNotes": "Lava area mine rocks on floors 80-119. All use oreModifier 0.8 (4% base ore chance). Area geode is Magma Geode.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,   "note": "Stone — always drops" },
+        { "gameId": 537, "chance": 0.022, "note": "Magma Geode — 2.2% base (Geologist doubles)" },
+        { "gameId": 749, "chance": 0.005, "note": "Omni Geode — 0.5% base (Geologist doubles)" },
+        { "gameId": 384, "chance": 0.024, "note": "Gold Ore — from 4% ore chance, 75% gold on these floors" },
+        { "gameId": 380, "chance": 0.006, "note": "Iron Ore — ~18.75% of ore rolls (75% of remaining 25%)" },
+        { "gameId": 378, "chance": 0.002, "note": "Copper Ore — ~6.25% of ore rolls (25% of remaining 25%)" },
+        { "gameId": 382, "chance": 0.01,  "note": "Coal — 25% sub-chance of ore roll (Prospector doubles to 50%)" }
+      ]
+    },
+    {
+      "id": "stone-node-skull-cavern",
+      "name": "Stone (Skull Cavern)",
+      "icon": "StoneIndex40.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [32, 38, 40, 42],
+      "locations": ["map-skull-cavern"],
+      "xp": 0,
+      "_dropNotes": "Skull Cavern rocks (floor 121+). Stones 40/42 have 1.2x ore modifier (6% base), others 0.8x (4%). Area geode is Omni Geode. Iridium chance from ore rolls scales with depth: 1% + (floor-120)/2000.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,   "note": "Stone — always drops" },
+        { "gameId": 749, "chance": 0.027, "note": "Omni Geode — 2.2% area geode + 0.5% bonus (Geologist doubles both)" },
+        { "gameId": 384, "chance": 0.024, "note": "Gold Ore — from 4-6% ore chance, 75% gold" },
+        { "gameId": 386, "chance": 0.001, "note": "Iridium Ore — scales with depth (1% + (floor-120)/2000 of ore roll)" },
+        { "gameId": 380, "chance": 0.006, "note": "Iron Ore — ~18.75% of ore rolls (fallback)" },
+        { "gameId": 378, "chance": 0.002, "note": "Copper Ore — ~6.25% of ore rolls (fallback)" },
+        { "gameId": 382, "chance": 0.0125, "note": "Coal — 25% sub-chance of ore roll (Prospector doubles to 50%)" }
+      ]
+    },
+    {
+      "id": "coal-node",
+      "name": "Coal Rock",
+      "icon": "StoneIndex668.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [668, 670],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 3, "xpSkill": "Mining",
+      "_xpNotes": "Base 3 XP; becomes 4 if coal drops (coal drop sets num=4 overriding the initial 3)",
+      "_dropNotes": "10% of regular mine stones become coal rocks. Handled by breakStone() which returns true, so these SKIP geode/ore drops from checkStoneForItems(). Only drop stone + 8% coal.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,  "note": "Stone — always drops 1-2+" },
+        { "gameId": 382, "chance": 0.08, "note": "Coal — 8% chance" }
+      ]
+    },
+    {
+      "id": "volcano-coal-node",
+      "name": "Volcano Coal Rock",
+      "icon": "StoneIndex845.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [845, 846, 847],
+      "locations": ["map-volcano-dungeon"],
+      "xp": 3, "xpSkill": "Mining",
+      "_xpNotes": "Base 3 XP; becomes 4 if coal drops",
+      "_dropNotes": "Volcano Dungeon stones. Same as coal rocks (8% coal, skip geode/ore). VolcanoDungeon.breakStone() adds 0.5% Lucky Ring chance.",
+      "drops": [
+        { "gameId": 390, "chance": 1.0,   "note": "Stone — always drops 1-2+" },
+        { "gameId": 382, "chance": 0.08,  "note": "Coal — 8% chance" },
+        { "gameId": 827, "chance": 0.005, "note": "Lucky Ring — 0.5% Volcano Dungeon exclusive" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Ore Nodes ===",
+      "id": "copper-node",
+      "name": "Copper Node",
+      "icon": "CopperNode.png",
+      "subtype": "ore-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [751, 849],
+      "locations": ["map-mines"],
+      "xp": 5, "xpSkill": "Mining",
+      "_dropNotes": "Spawns on floors 1-39 at 2.9% per stone. Sprite 849 is the dangerous mines variant. breakStone returns true for ore nodes. Miner profession (+1 ore). Mining level adds extra ore chance.",
+      "drops": [
+        { "gameId": 378, "chance": 1.0,  "note": "Copper Ore — always drops 1-3+" },
+        { "gameId": 382, "chance": 0.05, "note": "Coal — 5% base (doubled by Prospector)" }
+      ]
+    },
+    {
+      "id": "iron-node",
+      "name": "Iron Node",
+      "icon": "IronNode.png",
+      "subtype": "ore-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [290, 850],
+      "locations": ["map-mines"],
+      "xp": 12, "xpSkill": "Mining",
+      "_dropNotes": "Spawns on floors 40-79 at 2.9% per stone. Sprite 850 is the dangerous mines variant.",
+      "drops": [
+        { "gameId": 380, "chance": 1.0,  "note": "Iron Ore — always drops 1-3+" },
+        { "gameId": 382, "chance": 0.05, "note": "Coal — 5% base (doubled by Prospector)" }
+      ]
+    },
+    {
+      "id": "gold-node",
+      "name": "Gold Node",
+      "icon": "GoldNode.png",
+      "subtype": "ore-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [764],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 18, "xpSkill": "Mining",
+      "_dropNotes": "Spawns on floors 80-119 at 2.9% per stone. Also in Skull Cavern as fallback ore.",
+      "drops": [
+        { "gameId": 384, "chance": 1.0,  "note": "Gold Ore — always drops 1-3+" },
+        { "gameId": 382, "chance": 0.05, "note": "Coal — 5% base (doubled by Prospector)" }
+      ]
+    },
+    {
+      "id": "iridium-node",
+      "name": "Iridium Node",
+      "icon": "IridiumNode.png",
+      "subtype": "ore-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [765],
+      "locations": ["map-skull-cavern"],
+      "xp": 50, "xpSkill": "Mining",
+      "_dropNotes": "Skull Cavern exclusive. Spawn chance scales with depth. Prismatic Shard chance is 3.5% in 1.6 (was 4% in 1.5).",
+      "drops": [
+        { "gameId": 386, "chance": 1.0,   "note": "Iridium Ore — always drops 1-3+" },
+        { "gameId": 74,  "chance": 0.035, "note": "Prismatic Shard — 3.5% chance" },
+        { "gameId": 382, "chance": 0.05,  "note": "Coal — 5% base (doubled by Prospector)" }
+      ]
+    },
+    {
+      "id": "radioactive-node",
+      "name": "Radioactive Node",
+      "icon": "RadioactiveNode.png",
+      "subtype": "ore-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [95],
+      "locations": ["map-mines"],
+      "xp": 18, "xpSkill": "Mining",
+      "_dropNotes": "Dangerous mines only. Very rare, luck-dependent spawn.",
+      "drops": [
+        { "gameId": 909, "chance": 1.0, "note": "Radioactive Ore — always drops 1-2+" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Geode Nodes ===",
+      "id": "geode-node",
+      "name": "Geode Node",
+      "icon": "GeodeNode.png",
+      "subtype": "geode-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [75],
+      "locations": ["map-mines"],
+      "xp": 8, "xpSkill": "Mining",
+      "_dropNotes": "Pre-placed on certain mine floors. breakStone returns true — guaranteed geode drop, no secondary ore/coal.",
+      "drops": [
+        { "gameId": 535, "chance": 1.0, "note": "Geode — always drops" }
+      ]
+    },
+    {
+      "id": "frozen-geode-node",
+      "name": "Frozen Geode Node",
+      "icon": "FrozenGeodeNode.png",
+      "subtype": "geode-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [76],
+      "locations": ["map-mines"],
+      "xp": 16, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 536, "chance": 1.0, "note": "Frozen Geode — always drops" }
+      ]
+    },
+    {
+      "id": "magma-geode-node",
+      "name": "Magma Geode Node",
+      "icon": "MagmaGeodeNode.png",
+      "subtype": "geode-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [77],
+      "locations": ["map-mines"],
+      "xp": 32, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 537, "chance": 1.0, "note": "Magma Geode — always drops" }
+      ]
+    },
+    {
+      "id": "omni-geode-node",
+      "name": "Omni Geode Node",
+      "icon": "OmniGeodeNode.png",
+      "subtype": "geode-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [819],
+      "locations": ["map-mines", "map-skull-cavern", "map-volcano-dungeon"],
+      "xp": 64, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 749, "chance": 1.0, "note": "Omni Geode — always drops" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Gem Nodes ===",
+      "id": "diamond-node",
+      "name": "Diamond Node",
+      "icon": "DiamondNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [2],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 150, "xpSkill": "Mining",
+      "_dropNotes": "Very rare. Floor 50+ in mines. Geologist gives 50% chance to double gem. Mining Mastery (1.6) always doubles.",
+      "drops": [
+        { "gameId": 72, "chance": 1.0, "note": "Diamond — always drops (Geologist 50% double, Mastery always double)" }
+      ]
+    },
+    {
+      "id": "ruby-node",
+      "name": "Ruby Node",
+      "icon": "RubyNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [4],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 80, "xpSkill": "Mining",
+      "_dropNotes": "Floor 80+ or any floor after reaching bottom.",
+      "drops": [
+        { "gameId": 64, "chance": 1.0, "note": "Ruby — always drops" }
+      ]
+    },
+    {
+      "id": "jade-node",
+      "name": "Jade Node",
+      "icon": "JadeNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [6],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 40, "xpSkill": "Mining",
+      "_dropNotes": "Floor 40+ or any floor after reaching bottom.",
+      "drops": [
+        { "gameId": 70, "chance": 1.0, "note": "Jade — always drops" }
+      ]
+    },
+    {
+      "id": "amethyst-node",
+      "name": "Amethyst Node",
+      "icon": "AmethystNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [8],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 16, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 66, "chance": 1.0, "note": "Amethyst — always drops" }
+      ]
+    },
+    {
+      "id": "topaz-node",
+      "name": "Topaz Node",
+      "icon": "TopazNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [10],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 16, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 68, "chance": 1.0, "note": "Topaz — always drops" }
+      ]
+    },
+    {
+      "id": "emerald-node",
+      "name": "Emerald Node",
+      "icon": "EmeraldNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [12],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 80, "xpSkill": "Mining",
+      "_dropNotes": "Floor 80+ or any floor after reaching bottom.",
+      "drops": [
+        { "gameId": 60, "chance": 1.0, "note": "Emerald — always drops" }
+      ]
+    },
+    {
+      "id": "aquamarine-node",
+      "name": "Aquamarine Node",
+      "icon": "AquamarineNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [14],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xp": 40, "xpSkill": "Mining",
+      "_dropNotes": "Floor 40+ or any floor after reaching bottom.",
+      "drops": [
+        { "gameId": 62, "chance": 1.0, "note": "Aquamarine — always drops" }
+      ]
+    },
+    {
+      "id": "gem-node",
+      "name": "Gem Node",
+      "icon": "GemNode.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [44],
+      "locations": ["map-mines", "map-skull-cavern"],
+      "xpMin": 16, "xpMax": 150, "xpSkill": "Mining",
+      "_xpNotes": "XP depends on which gem rolls: Amethyst/Topaz 16, Jade/Aquamarine 40, Emerald/Ruby 80, Diamond 150.",
+      "_dropNotes": "Drops a random gem. Floor-restricted before reaching bottom: <40 only Amethyst/Topaz, <80 excludes Diamond/Emerald/Ruby.",
+      "drops": [
+        { "gameId": 66, "chance": 0.167, "note": "Amethyst — any floor" },
+        { "gameId": 68, "chance": 0.167, "note": "Topaz — any floor" },
+        { "gameId": 62, "chance": 0.167, "note": "Aquamarine — floor 40+" },
+        { "gameId": 70, "chance": 0.167, "note": "Jade — floor 40+" },
+        { "gameId": 60, "chance": 0.167, "note": "Emerald — floor 80+" },
+        { "gameId": 64, "chance": 0.167, "note": "Ruby — floor 80+" },
+        { "gameId": 72, "chance": 0.033, "note": "Diamond — floor 50+ (rarer weight)" }
+      ]
+    },
+    {
+      "id": "mystic-stone",
+      "name": "Mystic Stone",
+      "icon": "MysticStone.png",
+      "subtype": "gem-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [46],
+      "locations": ["map-mines", "map-skull-cavern", "map-quarry"],
+      "xp": 150, "xpSkill": "Mining",
+      "_dropNotes": "Floor 100+ in mines. Very rare spawn. Drops gold ore + iridium ore + 25% Prismatic Shard.",
+      "drops": [
+        { "gameId": 384, "chance": 1.0,  "note": "Gold Ore — always drops 1-4" },
+        { "gameId": 386, "chance": 1.0,  "note": "Iridium Ore — always drops 1-3" },
+        { "gameId": 74,  "chance": 0.25, "note": "Prismatic Shard — 25% chance" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Special Nodes ===",
+      "id": "mussel-node",
+      "name": "Mussel Node",
+      "icon": "MusselNode.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [25],
+      "locations": ["map-beach", "map-island"],
+      "xp": 5, "xpSkill": "Mining",
+      "_dropNotes": "Found on beaches. 10% Golden Walnut chance on Ginger Island.",
+      "drops": [
+        { "gameId": 719, "chance": 1.0, "note": "Mussel — always drops 2-4" }
+      ]
+    },
+    {
+      "id": "fossil-node",
+      "name": "Fossil Node",
+      "icon": "BoneNode1.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [816, 817],
+      "locations": ["map-island"],
+      "xp": 6, "xpSkill": "Mining",
+      "_dropNotes": "Ginger Island dig sites. Drops bone fragments, fossils, and (per wiki) a chance of any prehistoric/skeletal/fossil museum artifact at ~0.8% each.",
+      "drops": [
+        { "gameId": 881, "chance": 1.0,  "note": "Bone Fragment — always drops 1-2+" },
+        { "gameId": 820, "chance": 0.1,  "note": "Fossilized Leg — 10% chance" },
+        { "gameId": 821, "chance": 0.015, "note": "Fossilized Ribs — 1.5% chance" },
+        { "gameId": 823, "chance": 0.01, "note": "Fossilized Skull — random fossil artifact (1%)" },
+        { "gameId": 824, "chance": 0.01, "note": "Fossilized Spine — random fossil artifact (1%)" },
+        { "gameId": 825, "chance": 0.01, "note": "Fossilized Tail — random fossil artifact (1%)" },
+        { "gameId": 826, "chance": 0.01, "note": "Snake Skull — random fossil artifact (1%)" },
+        { "gameId": 827, "chance": 0.01, "note": "Snake Vertebrae — random fossil artifact (1%)" },
+        { "gameId": 579, "chance": 0.008, "note": "Prehistoric Scapula — rare bone-node artifact" },
+        { "gameId": 580, "chance": 0.008, "note": "Prehistoric Tibia — rare bone-node artifact" },
+        { "gameId": 581, "chance": 0.008, "note": "Prehistoric Skull — rare bone-node artifact" },
+        { "gameId": 582, "chance": 0.008, "note": "Skeletal Hand — rare bone-node artifact" },
+        { "gameId": 583, "chance": 0.008, "note": "Prehistoric Rib — rare bone-node artifact" },
+        { "gameId": 584, "chance": 0.008, "note": "Prehistoric Vertebra — rare bone-node artifact" },
+        { "gameId": 585, "chance": 0.008, "note": "Skeletal Tail — rare bone-node artifact" },
+        { "gameId": 586, "chance": 0.008, "note": "Nautilus Fossil — rare bone-node artifact" },
+        { "gameId": 587, "chance": 0.008, "note": "Amphibian Fossil — rare bone-node artifact" },
+        { "gameId": 588, "chance": 0.008, "note": "Palm Fossil — rare bone-node artifact" },
+        { "gameId": 589, "chance": 0.008, "note": "Trilobite — rare bone-node artifact" }
+      ]
+    },
+    {
+      "id": "clay-node",
+      "name": "Clay Node",
+      "icon": "ClayNode.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [818],
+      "locations": ["map-island"],
+      "xp": 6, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 330, "chance": 1.0, "note": "Clay — always drops 1-2+" }
+      ]
+    },
+    {
+      "id": "cinder-shard-node",
+      "name": "Cinder Shard Node",
+      "icon": "CinderShardNode1.png",
+      "subtype": "stone-node",
+      "tool": "Pickaxe",
+      "toolMinLevel": null,
+      "spriteIds": [843, 844],
+      "locations": ["map-volcano-dungeon"],
+      "xp": 12, "xpSkill": "Mining",
+      "drops": [
+        { "gameId": 848, "chance": 1.0, "note": "Cinder Shard — always drops 1-2+" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Resource Clumps ===",
       "id": "large-stump",
       "name": "Large Stump",
+      "icon": "LargeStump.png",
       "subtype": "resource-clump",
       "tool": "Axe",
       "toolMinLevel": 1,
       "locations": ["map-farm", "map-secret-woods"],
+      "xp": 25, "xpSkill": "Foraging",
       "drops": [
         { "gameId": 709, "chance": 1.0, "note": "Hardwood — always drops 2 (3 with Forester)" },
         { "gameId": 292, "chance": 0.1, "note": "Mahogany Seed — 10% chance" }
@@ -86,10 +577,12 @@
     {
       "id": "large-log",
       "name": "Large Log",
+      "icon": "LargeLog.png",
       "subtype": "resource-clump",
       "tool": "Axe",
       "toolMinLevel": 2,
       "locations": ["map-farm", "map-secret-woods"],
+      "xp": 25, "xpSkill": "Foraging",
       "drops": [
         { "gameId": 709, "chance": 1.0, "note": "Hardwood — always drops 8 (10 with Forester)" },
         { "gameId": 292, "chance": 0.1, "note": "Mahogany Seed — 10% chance" }
@@ -98,10 +591,12 @@
     {
       "id": "large-boulder",
       "name": "Large Boulder",
+      "icon": "FarmBoulder.png",
       "subtype": "resource-clump",
       "tool": "Pickaxe",
       "toolMinLevel": 2,
       "locations": ["map-farm", "map-mines"],
+      "xp": 0,
       "drops": [
         { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 15" }
       ]
@@ -109,10 +604,12 @@
     {
       "id": "meteorite",
       "name": "Meteorite",
+      "icon": "Meteorite.png",
       "subtype": "resource-clump",
       "tool": "Pickaxe",
       "toolMinLevel": 3,
       "locations": ["map-farm"],
+      "xp": 0,
       "drops": [
         { "gameId": 386, "chance": 1.0, "note": "Iridium Ore — always drops 10" },
         { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 8" },
@@ -123,10 +620,12 @@
     {
       "id": "mine-boulder",
       "name": "Mine Boulder",
+      "icon": "MineBoulder1.png",
       "subtype": "resource-clump",
       "tool": "Pickaxe",
       "toolMinLevel": null,
       "locations": ["map-mines"],
+      "xp": 0,
       "drops": [
         { "gameId": 390, "chance": 1.0, "note": "Stone — always drops 10" }
       ]

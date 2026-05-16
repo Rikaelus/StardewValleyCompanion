@@ -1,4 +1,4 @@
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import { useEntities } from '../../contexts/EntityContext'
 
 /**
@@ -33,7 +33,7 @@ function RecipeEntryList({ recipes, subject, onNavigate }) {
       <span key={i} className="source-entry">
         <span className="source-name">
           {recipeItem
-            ? <ModalItemButton item={recipeItem} variant="inline" onNavigate={onNavigate} />
+            ? <UniversalModalButton item={recipeItem} variant="inline" onNavigate={onNavigate} />
             : r.recipeName}
         </span>
         <span className="source-qualifiers">
@@ -44,7 +44,7 @@ function RecipeEntryList({ recipes, subject, onNavigate }) {
             return (
               <span key={j} className="source-qualifier source-qualifier--ingredient">
                 with {ingItem
-                  ? <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} label={label} />
+                  ? <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} label={label} />
                   : <>{ing.name}{ing.amount > 1 ? ` ×${ing.amount}` : ''}</>
                 }
               </span>

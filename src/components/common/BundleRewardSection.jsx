@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 
 function BundleRewardSection({ entity, entityType, findById, findByGameId, onNavigate }) {
   if (entityType !== 'bundle' && entityType !== 'museum-reward') return null
@@ -37,7 +37,7 @@ function BundleRewardSection({ entity, entityType, findById, findByGameId, onNav
       <div className="bundle-reward">
         {rewardItem ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <ModalItemButton
+            <UniversalModalButton
               item={rewardItem}
               variant="bundle-item"
               quantity={quantity}

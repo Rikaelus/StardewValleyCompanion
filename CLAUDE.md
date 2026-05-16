@@ -4,6 +4,17 @@
 
 A web application for tracking progress in Stardew Valley. Users can view fish, bundles, and other collectibles, with plans to support save file uploads for automatic progress tracking.
 
+## ⚠ Read these living docs before doing data-related work
+
+These files capture decisions, discoveries, and known game-data quirks. They exist specifically so each session doesn't re-derive the same conclusions. **Append to them as you learn things.**
+
+- [`docs/DATA_MODEL_REFACTOR_PLAN.md`](docs/DATA_MODEL_REFACTOR_PLAN.md) — the in-flight plan to normalize source rows and replace type-based capability checks. Status of each phase, open questions, decision log.
+- [`docs/PIPELINE_NOTES.md`](docs/PIPELINE_NOTES.md) — full inventory of source-extraction paths, hardcoded-in-source mechanisms (panning, fishing chests, bone nodes), known game-data inconsistencies (ID namespaces, type-field overlap), discoveries log, and audit pattern.
+- [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md) — vocabulary of `entity.capabilities` flags. Read before adding a new flag or replacing a `type === X` check.
+- [`docs/DATA_MODEL_AUDIT.md`](docs/DATA_MODEL_AUDIT.md) — Phase 1 audit results. Contains the per-file punch list of type checks to migrate.
+
+When working on the data pipeline or entity model: start by skimming PIPELINE_NOTES, especially the "Source extraction paths" inventory and the "Discoveries log" at the bottom.
+
 ## Core Architectural Decisions
 
 ### Data Architecture: Compiled Page-Specific JSON

@@ -1,5 +1,5 @@
 import GiftCell from './GiftCell'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import SeasonBadges from './SeasonBadges'
 import ItemSellPrice, { createPriceSortingFn } from './ItemSellPrice'
 import BundleList from './BundleList'
@@ -18,7 +18,7 @@ export function createIconColumn() {
     accessorKey: 'icon',
     header: '',
     cell: ({ row }) => (
-      <ModalItemButton
+      <UniversalModalButton
         item={row.original}
         iconSize={24}
         stopPropagation={true}
@@ -37,7 +37,7 @@ export function createIconColumn() {
  */
 export function createNameColumn(options = {}) {
   const defaultRenderer = ({ row }) => (
-    <ModalItemButton
+    <UniversalModalButton
       item={row.original}
       showIcon={true}
       showLabel={true}
@@ -164,13 +164,13 @@ export function createVillagerGiftColumns(villagers, relationalData) {
  * Helper to create a season badges column
  * Used by fish, crops, forage, etc.
  */
-export function createSeasonColumn() {
+export function createSeasonColumn({ greenhouse = false, gingerIsland = false } = {}) {
   return {
     accessorKey: 'seasons',
     header: 'Season',
     cell: ({ getValue }) => {
       const seasons = getValue() || []
-      return <SeasonBadges seasons={seasons} />
+      return <SeasonBadges seasons={seasons} greenhouse={greenhouse} gingerIsland={gingerIsland} />
     },
   }
 }

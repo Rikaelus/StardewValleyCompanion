@@ -11,21 +11,21 @@ const DEFAULT_PLAYER = {
   jojaMember: false,
   recentSearches: [],
   professions: {
-    // Farming Level 5 & 10
-    tiller: false,     // Crops worth 10% more
-    artisan: false,    // Artisan goods worth 40% more
-    rancher: false,    // Animal products worth 20% more
-
-    // Fishing Level 5 & 10
-    fisher: false,     // Fish worth 25% more
-    angler: false,     // Fish worth 50% more (requires Fisher)
-
-    // Foraging Level 5
-    tapper: false,     // Syrups worth 25% more
-
-    // Mining Level 10
-    blacksmith: false, // Bars worth 50% more
-    gemologist: false, // Gems worth 30% more
+    // Farming
+    rancher: false, tiller: false,
+    coopmaster: false, shepherd: false, artisan: false, agriculturist: false,
+    // Fishing
+    fisher: false, trapper: false,
+    angler: false, pirate: false, mariner: false, luremaster: false,
+    // Foraging
+    forester: false, gatherer: false,
+    lumberjack: false, tapper: false, botanist: false, tracker: false,
+    // Mining
+    miner: false, geologist: false,
+    blacksmith: false, prospector: false, excavator: false, gemologist: false,
+    // Combat
+    fighter: false, scout: false,
+    brute: false, defender: false, acrobat: false, desperado: false,
   },
   saveData: null,
 }
@@ -109,6 +109,8 @@ export function PlayerProvider({ children }) {
   const clearSaveData = useCallback(() => {
     setPlayerState(prev => ({
       ...prev,
+      name: '',
+      farmName: '',
       saveData: null,
     }))
   }, [])

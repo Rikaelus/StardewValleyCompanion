@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import ConditionBadge from './ConditionBadge'
 import SeasonBadges from './SeasonBadges'
 
@@ -54,7 +54,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
         <div className="store-items-grid">
           {childStalls.map(stall => (
             <span key={stall.id} className="source-entry">
-              <ModalItemButton item={stall} variant="inline" onNavigate={onNavigate} />
+              <UniversalModalButton item={stall} variant="inline" onNavigate={onNavigate} />
             </span>
           ))}
         </div>
@@ -81,7 +81,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                       </span>
                     )}
                     {currencyItem ? (
-                      <ModalItemButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
+                      <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
                     ) : (
                       <>
                         {src.tradeItemIcon && (
@@ -117,7 +117,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                     {(badge, clauseElements, open) => (
                       <>
                         <span className="source-entry">
-                          <ModalItemButton item={item} variant="inline" onNavigate={onNavigate} />
+                          <UniversalModalButton item={item} variant="inline" onNavigate={onNavigate} />
                           <span className="source-qualifiers">
                             {qualifiers.map((q, qi) => <span key={qi} className="source-qualifier">{q}</span>)}
                             {badge}

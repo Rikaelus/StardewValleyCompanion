@@ -1,6 +1,6 @@
 @import './GiftPreference.css';
 
-/* ItemModal - Unified styles for all item type modals */
+/* EntityModal - Unified styles for all entity type modals */
 
 /* Shared label style - use for any label/heading in modals */
 .modal-label {
@@ -104,6 +104,7 @@
   color: #5c4a32;
   opacity: 0.85;
 }
+
 
 .building-animals-grid {
   display: flex;
@@ -406,6 +407,10 @@
   white-space: nowrap;
   width: 1%;
   text-align: right;
+  vertical-align: middle;
+}
+.source-qualifiers > * {
+  vertical-align: middle;
 }
 .source-seasons {
   display: table-cell;
@@ -423,8 +428,7 @@
   padding: 0.05rem 0.3rem;
   white-space: nowrap;
   margin-right: 0.25rem;
-  position: relative;
-  top: -2px;
+  vertical-align: middle;
 }
 .source-qualifier.reaction-love {
   color: #c2185b;
@@ -451,6 +455,12 @@
   color: #5c4a32;
   text-align: right;
   white-space: nowrap;
+  vertical-align: middle;
+}
+.source-detail-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
 }.source-trade-icon { width: 16px; height: 16px; image-rendering: pixelated; }
 .source-condition--expandable {
   background: none;

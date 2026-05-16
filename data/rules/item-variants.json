@@ -2,6 +2,43 @@
   "$schema": "item-variants-schema",
   "description": "Items that share the same Name but have different gameIds and sprites. Maps fully-qualified gameIds to unique IDs and icon filenames. Only needed when DisplayName extraction doesn't provide correct sprite name.",
   "variants": {
+    "(O)113": {
+      "name": "Chicken Statue (Artifact)",
+      "uniqueId": "chicken-statue-artifact",
+      "notes": "Donatable artifact dug up from artifact spots; shares the name 'Chicken Statue' with the big-craftable (BC)31 and furniture variants"
+    },
+    "(T)Pan": {
+      "name": "Copper Pan",
+      "uniqueId": "copper-pan-tool",
+      "notes": "Tool entity for the Copper Pan. The pan also has a Hats.json entry (worn visually) that collides on kebab-id 'copper-pan'; this variant gives the tool form a distinct id so both survive the merge. Save files reference this as itemId='Pan' under xsi:type='Pan'."
+    },
+    "(T)SteelPan": {
+      "name": "Steel Pan",
+      "uniqueId": "steel-pan-tool",
+      "notes": "Tool entity for the Steel Pan; see (T)Pan note. Save files use itemId='SteelPan' under xsi:type='Pan'."
+    },
+    "(T)GoldPan": {
+      "name": "Gold Pan",
+      "uniqueId": "gold-pan-tool",
+      "notes": "Tool entity for the Gold Pan; see (T)Pan note. Save files use itemId='GoldPan' under xsi:type='Pan'."
+    },
+    "(T)IridiumPan": {
+      "name": "Iridium Pan",
+      "uniqueId": "iridium-pan-tool",
+      "notes": "Tool entity for the Iridium Pan; see (T)Pan note. Save files use itemId='IridiumPan' under xsi:type='Pan'."
+    },
+    "(O)126": {
+      "name": "Strange Doll (Green)",
+      "uniqueId": "strange-doll-green",
+      "iconFilename": "StrangeDollGreen.png",
+      "notes": "Green-colored Strange Doll artifact; shares display name with (O)127 — disambiguated by color_green context tag"
+    },
+    "(O)127": {
+      "name": "Strange Doll (Yellow)",
+      "uniqueId": "strange-doll-yellow",
+      "iconFilename": "StrangeDollYellow.png",
+      "notes": "Yellow-colored Strange Doll artifact; shares display name with (O)126 — disambiguated by color_yellow context tag"
+    },
     "(O)176": {
       "name": "Egg (White)",
       "uniqueId": "egg-white",

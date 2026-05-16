@@ -13,7 +13,9 @@ function ItemButton({
   showLabel = false,
   iconSize = 32,
   className = '',
-  stopPropagation = false
+  stopPropagation = false,
+  owned = false,
+  needed = false
 }) {
   const [imageError, setImageError] = useState(false)
 
@@ -58,9 +60,8 @@ function ItemButton({
       <img
         src={item.icon.startsWith('/') ? item.icon : `/${item.icon}`}
         alt={item.name || 'Item'}
-        width={iconSize}
-        height={iconSize}
         className="item-button-icon"
+        style={{ maxWidth: iconSize, maxHeight: iconSize, width: 'auto', height: 'auto' }}
         onError={() => setImageError(true)}
       />
     )
@@ -71,23 +72,25 @@ function ItemButton({
     return <span className="item-button-label">{item.name}</span>
   }
 
+  const ownedClass = owned ? 'item-button--owned' : ''
+  const neededClass = needed ? 'item-button--needed' : ''
+
   // If showing both icon and label, render as a single unified button
   // The border box wraps only the icon; the label sits outside it.
   if (showIcon && showLabel) {
     return (
       <button
-        className={`item-button item-button--with-label ${className}`}
+        className={`item-button item-button--with-label ${ownedClass} ${neededClass} ${className}`}
         onClick={handleClick}
         title={item.name}
         type="button"
       >
-        <span className="item-button-icon-box">{renderIcon()}</span>
+        <span className={`item-button-icon-box ${ownedClass} ${neededClass}`} style={{ minWidth: iconSize, minHeight: iconSize }}>{renderIcon()}</span>
         {renderLabel()}
       </button>
     )
   }
 
-  // Otherwise, render button as before (icon or label only)
   return (
     <button
       className={`item-button ${className}`}
@@ -95,7 +98,7 @@ function ItemButton({
       title={item.name}
       type="button"
     >
-      {renderIcon()}
+      <span className={`item-button-icon-box item-button-icon-box--state ${ownedClass} ${neededClass}`}>{renderIcon()}</span>
       {renderLabel()}
     </button>
   )

@@ -1,4 +1,4 @@
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import ModalSection from './ModalSection'
 
 function ModalGiftPreferences({ giftDetails, giftsClass, id, onNavigate }) {
@@ -23,7 +23,7 @@ function ModalGiftPreferences({ giftDetails, giftsClass, id, onNavigate }) {
             key={gift.villager.id}
             className={`gift-item gift-${gift.preference}`}
           >
-            <ModalItemButton
+            <UniversalModalButton
               item={gift.villager}
               iconSize={32}
               onNavigate={onNavigate}

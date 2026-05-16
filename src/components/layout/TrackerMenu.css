@@ -1,0 +1,70 @@
+.tracker-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgb(21, 71, 148);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  z-index: 190;
+  animation: trackerMenuSlideDown 0.2s ease-out;
+}
+
+.tracker-menu--closing {
+  animation: trackerMenuSlideUp 0.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes trackerMenuSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trackerMenuSlideUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+.tracker-menu-items {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 2rem 1.25rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.tracker-menu-item {
+  display: block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+.tracker-menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tracker-menu-item--active {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+.tracker-menu-item--disabled {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+.tracker-menu-item--disabled:hover {
+  background: none;
+}
+
+@media (max-width: 700px) {
+  .tracker-menu-items {
+    padding: 0.75rem 1rem;
+  }
+}

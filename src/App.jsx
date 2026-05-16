@@ -1,139 +1,19 @@
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useState, useEffect, useRef, memo } from 'react'
-import FishPage from './components/fish/FishPage'
-import ArtisanPage from './components/artisan/ArtisanPage'
-import ForagePage from './components/forage/ForagePage'
-import CropsPage from './components/crops/CropsPage'
-import SeedsPage from './components/seeds/SeedsPage'
-import FurniturePage from './components/furniture/FurniturePage'
-import HatsPage from './components/hats/HatsPage'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useState, useEffect, memo } from 'react'
+import HomePage from './components/home/HomePage'
+import EntityListPage from './components/common/EntityListPage'
+import ShrinePage from './components/tracker/ShrinePage'
+import MuseumPage from './components/tracker/MuseumPage'
 import Footer from './components/layout/Footer'
+import AppHeader from './components/layout/AppHeader'
+import MegaMenu from './components/layout/MegaMenu'
+import TrackerMenu from './components/layout/TrackerMenu'
 import CharacterBar from './components/common/CharacterBar'
 import GlobalSearch from './components/common/GlobalSearch'
 import UniversalModal from './components/common/UniversalModal'
 import { ModalProvider, useModal } from './contexts/ModalContext'
 import { PlayerProvider } from './contexts/PlayerContext'
 import { EntityProvider } from './contexts/EntityContext'
-
-const NAV_ITEMS = [
-  {
-    label: 'Farming',
-    children: [
-      { label: 'Crops', path: '/crops' },
-      { label: 'Seeds', path: '/seeds' },
-      { label: 'Trees', disabled: true },
-      { label: 'Tree Fruit', disabled: true },
-      { label: 'Artisan Goods', path: '/artisan' },
-    ]
-  },
-  {
-    label: 'Fishing',
-    children: [
-      { label: 'Fish', path: '/fish' },
-      { label: 'Bait', disabled: true },
-      { label: 'Tackle', disabled: true },
-    ]
-  },
-  { label: 'Foraging', path: '/forage' },
-  {
-    label: 'Clothing & Décor',
-    children: [
-      { label: 'Hats', path: '/hats' },
-      { label: 'Furniture', path: '/furniture' },
-    ]
-  },
-  { label: 'Bundles', path: '/bundles' },
-  { label: 'Villagers', path: '/villagers' },
-]
-
-function Navigation({ onSearchOpen }) {
-  const location = useLocation()
-  const [openDropdown, setOpenDropdown] = useState(null)
-  const navRef = useRef(null)
-
-  const isActive = (path) => {
-    return location.pathname === path || location.pathname.startsWith(path + '/')
-  }
-
-  const isDropdownActive = (children) => {
-    return children.some(child => child.path && isActive(child.path))
-  }
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setOpenDropdown(null)
-      }
-    }
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [])
-
-  return (
-    <header className="app-header">
-      <div className="header-content">
-        <div className="header-branding">
-          <img src="/assets/branding/stardew_logo.png" alt="Stardew Valley" className="header-logo" />
-          <span className="header-companion">COMPANION</span>
-        </div>
-        <nav ref={navRef} className="header-nav-wrapper">
-          <ul className="header-nav">
-            {NAV_ITEMS.map((item) => {
-              if (item.children) {
-                const active = isDropdownActive(item.children)
-                const isOpen = openDropdown === item.label
-                return (
-                  <li key={item.label} className="nav-dropdown">
-                    <button
-                      className={`nav-dropdown-trigger${active ? ' active' : ''}${isOpen ? ' open' : ''}`}
-                      onClick={() => setOpenDropdown(isOpen ? null : item.label)}
-                    >
-                      {item.label}
-                    </button>
-                    {isOpen && (
-                      <ul className="nav-dropdown-menu">
-                        {item.children.map((child) => (
-                          <li key={child.label}>
-                            {child.disabled ? (
-                              <span className="nav-dropdown-disabled">{child.label}</span>
-                            ) : (
-                              <Link
-                                to={child.path}
-                                className={isActive(child.path) ? 'active' : ''}
-                                onClick={() => setOpenDropdown(null)}
-                              >
-                                {child.label}
-                              </Link>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                )
-              }
-              return (
-                <li key={item.label}>
-                  <Link to={item.path} className={isActive(item.path) ? 'active' : ''}>
-                    {item.label}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-          <button
-            className="search-trigger"
-            onClick={onSearchOpen}
-            aria-label="Search items (Ctrl+K)"
-            title="Search items (Ctrl+K)"
-          >
-            &#128269;
-          </button>
-        </nav>
-      </div>
-    </header>
-  )
-}
 
 const MainContent = memo(function MainContent() {
   const location = useLocation()
@@ -144,14 +24,32 @@ const MainContent = memo(function MainContent() {
         <div className="main-padding">
           <main>
             <Routes>
-              <Route path="/" element={<FishPage />} />
-              <Route path="/fish" element={<FishPage />} />
-              <Route path="/artisan/*" element={<ArtisanPage />} />
-              <Route path="/forage" element={<ForagePage />} />
-              <Route path="/crops" element={<CropsPage />} />
-              <Route path="/seeds" element={<SeedsPage />} />
-              <Route path="/furniture" element={<FurniturePage />} />
-              <Route path="/hats" element={<HatsPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/tracker/shrine" element={<ShrinePage />} />
+              <Route path="/tracker/museum" element={<MuseumPage />} />
+              <Route path="/fish" element={<EntityListPage pageType="fish" />} />
+              <Route path="/artisan/*" element={<EntityListPage pageType="artisan" />} />
+              <Route path="/forage" element={<EntityListPage pageType="forage" />} />
+              <Route path="/crops" element={<EntityListPage pageType="crops" />} />
+              <Route path="/seeds" element={<EntityListPage pageType="seeds" />} />
+              <Route path="/furniture" element={<EntityListPage pageType="furniture" />} />
+              <Route path="/hats" element={<EntityListPage pageType="hats" />} />
+              <Route path="/animal-products" element={<EntityListPage pageType="animal-products" />} />
+              <Route path="/tree-fruits" element={<EntityListPage pageType="tree-fruits" />} />
+              <Route path="/trees" element={<EntityListPage pageType="trees" />} />
+              <Route path="/bait" element={<EntityListPage pageType="bait" />} />
+              <Route path="/tackle" element={<EntityListPage pageType="tackle" />} />
+              <Route path="/minerals" element={<EntityListPage pageType="minerals" />} />
+              <Route path="/resources" element={<EntityListPage pageType="resources" />} />
+              <Route path="/monsters" element={<EntityListPage pageType="monsters" />} />
+              <Route path="/weapons" element={<EntityListPage pageType="weapons" />} />
+              <Route path="/boots" element={<EntityListPage pageType="boots" />} />
+              <Route path="/rings" element={<EntityListPage pageType="rings" />} />
+              <Route path="/artifacts" element={<EntityListPage pageType="artifacts" />} />
+              <Route path="/breakables" element={<EntityListPage pageType="breakables" />} />
+              <Route path="/geodes" element={<EntityListPage pageType="geodes" />} />
+              <Route path="/clothing" element={<EntityListPage pageType="clothing" />} />
+              <Route path="/villagers" element={<EntityListPage pageType="villagers" />} />
             </Routes>
           </main>
         </div>
@@ -162,13 +60,55 @@ const MainContent = memo(function MainContent() {
 })
 
 function AppShell({ searchOpen, setSearchOpen }) {
-  const { activeEntity, openModal, closeModal } = useModal()
+  const { activeEntity, closeModal } = useModal()
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false)
+  const [trackerMenuOpen, setTrackerMenuOpen] = useState(false)
+  const [characterBarOpen, setCharacterBarOpen] = useState(false)
+
+  const toggleMegaMenu = () => {
+    setMegaMenuOpen(prev => !prev)
+    setTrackerMenuOpen(false)
+    setCharacterBarOpen(false)
+  }
+
+  const toggleTrackerMenu = () => {
+    setTrackerMenuOpen(prev => !prev)
+    setMegaMenuOpen(false)
+    setCharacterBarOpen(false)
+  }
+
+  const toggleCharacterBar = () => {
+    setCharacterBarOpen(prev => !prev)
+    setMegaMenuOpen(false)
+    setTrackerMenuOpen(false)
+  }
 
   return (
     <div className="app">
-      <Navigation onSearchOpen={() => setSearchOpen(true)} />
-      <CharacterBar />
-      <MainContent />
+      <AppHeader
+        onSearchOpen={() => setSearchOpen(true)}
+        onToggleMegaMenu={toggleMegaMenu}
+        onToggleTrackerMenu={toggleTrackerMenu}
+        onToggleCharacterBar={toggleCharacterBar}
+        megaMenuOpen={megaMenuOpen}
+        trackerMenuOpen={trackerMenuOpen}
+        characterBarOpen={characterBarOpen}
+      />
+      <div className="app-body">
+        <MegaMenu
+          isOpen={megaMenuOpen}
+          onClose={() => setMegaMenuOpen(false)}
+        />
+        <TrackerMenu
+          isOpen={trackerMenuOpen}
+          onClose={() => setTrackerMenuOpen(false)}
+        />
+        <CharacterBar
+          isOpen={characterBarOpen}
+          onClose={() => setCharacterBarOpen(false)}
+        />
+        <MainContent />
+      </div>
       <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
       <UniversalModal
         entity={activeEntity}

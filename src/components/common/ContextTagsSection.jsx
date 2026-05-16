@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import { useEntities } from '../../contexts/EntityContext'
 import './TagList.css'
 
@@ -16,7 +16,7 @@ function ContextTagsSection({ entity, onNavigate }) {
           if (tagEntity && onNavigate) {
             return (
               <span key={i} className="tag tag--clickable">
-                <ModalItemButton item={tagEntity} variant="inline" onNavigate={onNavigate} />
+                <UniversalModalButton item={tagEntity} variant="inline" onNavigate={onNavigate} />
               </span>
             )
           }

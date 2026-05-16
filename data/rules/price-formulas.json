@@ -44,6 +44,11 @@
       "multiplier": 2,
       "addition": 100,
       "notes": "Price = (Flower Price × 2) + 100g. Wild Honey (no flower) = 100g base."
+    },
+    "Targeted Bait": {
+      "multiplier": 0,
+      "addition": 5,
+      "notes": "Flat price of 5g regardless of input fish. Made in Bait Maker."
     }
   }
 }

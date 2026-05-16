@@ -96,7 +96,8 @@
     "Mine": "Mountain",
     "UndergroundMine": "Mountain",
     "QuarryMine": "Mountain",
-    "BoatTunnel": "Beach"
+    "BoatTunnel": "Beach",
+    "BugLand": "Sewer"
   },
   "farmVariants": {
     "_comment": "Farm variants all map to a single Farm area. Listed here so they're not skipped but collapsed.",

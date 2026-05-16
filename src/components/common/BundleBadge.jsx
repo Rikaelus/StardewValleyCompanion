@@ -1,37 +1,27 @@
-import { useState } from 'react'
-import { useOpenModal } from '../../contexts/ModalContext'
+import UniversalModalButton from './UniversalModalButton'
 import './BundleBadge.css'
 
 function BundleBadge({ bundle, showModal = false, onNavigate = null }) {
-  const openModal = useOpenModal()
-  const [isHovered, setIsHovered] = useState(false)
-
   if (!bundle) return null
 
-  const handleClick = (e) => {
-    if (!showModal) return
-    e.stopPropagation()
-    if (onNavigate) {
-      onNavigate(bundle)
-    } else {
-      openModal(bundle)
-    }
+  if (!showModal) {
+    return (
+      <span className="bundle-badge">
+        <span className="bundle-badge-name">{bundle.name}</span>
+      </span>
+    )
   }
 
   return (
-    <div
-      className={`bundle-badge ${showModal ? 'bundle-badge-clickable' : ''}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
-    >
-      {showModal && (
-        <span className="bundle-badge-icon" style={{ opacity: isHovered ? 1 : 0.4 }}>
-          🔍
-        </span>
-      )}
-      <span className="bundle-badge-name">{bundle.name}</span>
-    </div>
+    <span className="bundle-badge bundle-badge-clickable">
+      <UniversalModalButton
+        item={bundle}
+        variant="inline"
+        stopPropagation
+        onNavigate={onNavigate}
+        label={bundle.name}
+      />
+    </span>
   )
 }
 

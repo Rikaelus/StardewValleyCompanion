@@ -596,6 +596,9 @@ const rules = {
   categoryNames: loadJson(path.join(RULES_DIR, 'category-names.json')).categories,
   qualityTiers: loadJson(path.join(RULES_DIR, 'quality-tiers.json')),
   clothingIconOverrides: loadJson(path.join(RULES_DIR, 'icon-overrides.json')).clothingIconOverrides || {},
+  weaponSources: loadJson(path.join(RULES_DIR, 'weapon-sources.json')),
+  fishingChestDrops: loadJson(path.join(RULES_DIR, 'fishing-chest-drops.json')).drops,
+  secretNoteRewards: loadJson(path.join(RULES_DIR, 'secret-note-rewards.json')).rewards,
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
@@ -977,6 +980,13 @@ const villagerHomeLocation = {}; // villagerId -> locationEntityId (reverse of l
           mapName = wmInfo.areaId;
         }
       }
+
+      // Allow parentOverrides to override even WorldMap-derived parents
+      const wmParentOverride = locOverrides.parentOverrides[gameLocId];
+      if (wmParentOverride) {
+        mapEntityId = toLocationEntityId(wmParentOverride);
+        mapName = resolveDisplayName(wmParentOverride) || wmParentOverride;
+      }
     } else {
       // Not in WorldMap — use parent overrides
       entityId = toLocationEntityId(gameLocId);
@@ -1196,6 +1206,26 @@ for (const [monsterName, rawData] of Object.entries(gameData.monsters)) {
   }
 }
 
+// Also populate monsterDropsByGameId from extra monsters (C# hardcoded variants)
+for (const [monsterName, extra] of Object.entries(rules.extraMonsters)) {
+  if (monsterName.startsWith('_')) continue;
+  const dropsStr = extra.drops || '';
+  const dropParts = dropsStr.trim().split(/\s+/).filter(Boolean);
+  for (let i = 0; i + 1 < dropParts.length; i += 2) {
+    const rawId = parseInt(dropParts[i], 10);
+    const chance = parseFloat(dropParts[i + 1]);
+    if (isNaN(rawId) || isNaN(chance) || chance <= 0 || rawId < 0) continue;
+    const gameId = `(O)${rawId}`;
+    if (!monsterDropsByGameId.has(gameId)) monsterDropsByGameId.set(gameId, []);
+    const existing = monsterDropsByGameId.get(gameId).find(d => d.monster === monsterName);
+    if (existing) {
+      existing.rolls.push(chance);
+    } else {
+      monsterDropsByGameId.get(gameId).push({ type: 'monster-drop', monster: monsterName, rolls: [chance] });
+    }
+  }
+}
+
 // fishPondSourcesByGameId: produces gameId -> [{ type:'fish-pond', fishTag, minPopulation, rolls }]
 // rolls is an array of { chance, quantity } for independent drop checks from the same pond+population.
 const fishPondSourcesByGameId = new Map();
@@ -1293,6 +1323,24 @@ const tillingSourcesByGameId = new Map();
       if (!existing.find(s => s.location === displayName)) {
         existing.push({ type: 'tilling', location: displayName, locationId: tillingLocEntityId(locId), chance: entry.Chance });
       }
+    }
+  }
+
+  // Second pass: items can also declare their own ArtifactSpotChances on
+  // Objects.json (1.6 generic mechanism — Strange Doll, Chicken Statue, etc).
+  // Map is { LocationName → chance }. Skip locations we already discovered
+  // via the per-location pass to avoid double-counting.
+  for (const [rawId, obj] of Object.entries(gameData.objects)) {
+    const chances = obj.ArtifactSpotChances;
+    if (!chances) continue;
+    const gameId = `(O)${rawId}`;
+    if (!tillingSourcesByGameId.has(gameId)) tillingSourcesByGameId.set(gameId, []);
+    const existing = tillingSourcesByGameId.get(gameId);
+    for (const [locId, chance] of Object.entries(chances)) {
+      if (SKIP_TILLING.has(locId)) continue;
+      const displayName = tillingLocName(locId);
+      if (existing.find(s => s.location === displayName)) continue;
+      existing.push({ type: 'tilling', location: displayName, locationId: tillingLocEntityId(locId), chance });
     }
   }
 }
@@ -1571,7 +1619,92 @@ for (const [key, sources] of geodeSourcesByGameId) {
 }
 console.log(`  ✓ Geode/trove sources: ${geodeSourcesByGameId.size} items`);
 
-// tapperSourcesByGameId: gameId -> [{ type:'tapper', treeName, treeId, daysToHarvest }]
+// fishingChestSourcesByGameId: gameId -> [{ type:'fishing-chest', chance, note }]
+// Hand-curated from rules/fishing-chest-drops.json since the game's fishing
+// treasure logic is hardcoded in source (not data-driven).
+const fishingChestSourcesByGameId = new Map();
+for (const drop of rules.fishingChestDrops) {
+  if (!drop.gameId) continue;
+  if (!fishingChestSourcesByGameId.has(drop.gameId)) {
+    fishingChestSourcesByGameId.set(drop.gameId, []);
+  }
+  fishingChestSourcesByGameId.get(drop.gameId).push({
+    type: 'fishing-chest',
+    chance: drop.chance,
+    note: drop.note,
+  });
+}
+console.log(`  ✓ Fishing chest sources: ${fishingChestSourcesByGameId.size} items`);
+
+// secretNoteSourcesByGameId: gameId -> [{ type:'secret-note-reward', noteNumber, note }]
+// Hand-curated from rules/secret-note-rewards.json. These are deterministic
+// puzzle solutions (image-puzzle dig spots, mermaid show, etc.) — hardcoded
+// in C# source, not data-driven.
+const secretNoteSourcesByGameId = new Map();
+for (const reward of rules.secretNoteRewards) {
+  if (!reward.gameId) continue;
+  if (!secretNoteSourcesByGameId.has(reward.gameId)) {
+    secretNoteSourcesByGameId.set(reward.gameId, []);
+  }
+  secretNoteSourcesByGameId.get(reward.gameId).push({
+    type: 'secret-note-reward',
+    noteNumber: reward.noteNumber,
+    note: reward.note,
+  });
+}
+console.log(`  ✓ Secret note sources: ${secretNoteSourcesByGameId.size} items`);
+
+// Parse tap item conditions into human-readable qualifier strings
+const TAP_SEASON_NAMES = { 0: 'Spring', 1: 'Summer', 2: 'Fall', 3: 'Winter' };
+const TAP_SEASON_LOOKUP = { 0: 'spring', 1: 'summer', 2: 'fall', 3: 'winter' };
+function parseTapConditions(tapItem) {
+  const seasons = [];
+  const notes = [];
+
+  // Season field (numeric)
+  if (tapItem.Season != null) {
+    seasons.push(TAP_SEASON_LOOKUP[tapItem.Season]);
+  }
+
+  // Condition string — parse known patterns
+  if (tapItem.Condition) {
+    const cond = tapItem.Condition;
+    // DAY_OF_MONTH X Y ...
+    const dayMatch = cond.match(/DAY_OF_MONTH\s+([\d\s]+)/);
+    if (dayMatch) {
+      const days = dayMatch[1].trim().split(/\s+/);
+      const ordinals = days.map(d => {
+        const n = parseInt(d);
+        const s = ['th', 'st', 'nd', 'rd'];
+        const v = n % 100;
+        return n + (s[(v - 20) % 10] || s[v] || s[0]);
+      });
+      notes.push(`only on the ${ordinals.join(' and ')}`);
+    }
+    // LOCATION_SEASON exclusions (not winter = spring/summer/fall)
+    if (/!LOCATION_SEASON\s+Target\s+Winter/i.test(cond) && seasons.length === 0) {
+      seasons.push('spring', 'summer', 'fall');
+    }
+  }
+
+  // PreviousItemId — indicates this output follows a specific prior output
+  if (tapItem.PreviousItemId && tapItem.PreviousItemId.length > 0 && tapItem.PreviousItemId[0] !== '') {
+    const prevIds = tapItem.PreviousItemId.map(pid => {
+      const id = parseItemId(pid);
+      const obj = id && typeof id === 'number' ? gameData.objects[id] : null;
+      return obj ? obj.Name : pid;
+    });
+    notes.push(`after harvesting ${prevIds.join(' or ')}`);
+  }
+
+  if (seasons.length === 0 && notes.length === 0) return null;
+  const result = {};
+  if (seasons.length > 0) result.seasons = seasons;
+  if (notes.length > 0) result.note = notes.join(', ');
+  return result;
+}
+
+// tapperSourcesByGameId: gameId -> [{ type:'tapper', treeName, treeId, daysToHarvest, condition? }]
 // Parsed from WildTrees.json — each tree's TapItems list points to the item produced.
 const tapperSourcesByGameId = new Map();
 
@@ -1583,16 +1716,24 @@ for (const [treeNumId, treeData] of Object.entries(gameData.wildTrees)) {
     if (!tapItem.ItemId || tapItem.ItemId === 'PREVIOUS_OUTPUT_ID') continue;
     if (!tapItem.ItemId.startsWith('(O)')) continue;
     const gameId = tapItem.ItemId;
+
+    // Parse season and condition into human-readable qualifiers
+    const qualifiers = parseTapConditions(tapItem);
+
     const source = {
       type: 'tapper',
       treeName: treeInfo.name,
       treeId: treeInfo.id,
       daysToHarvest: tapItem.DaysUntilReady || null,
     };
+    if (qualifiers?.seasons) source.seasons = qualifiers.seasons;
+    if (qualifiers?.note) source.note = qualifiers.note;
+
     if (!tapperSourcesByGameId.has(gameId)) tapperSourcesByGameId.set(gameId, []);
-    // Deduplicate: same tree can appear multiple times in TapItems with PREVIOUS_OUTPUT_ID chaining
     const existing = tapperSourcesByGameId.get(gameId);
-    if (!existing.find(s => s.treeId === treeInfo.id)) {
+    // Allow duplicates when conditions differ (e.g. Mushroom Tree produces Red Mushroom in different contexts)
+    const sourceKey = JSON.stringify([treeInfo.id, qualifiers]);
+    if (!existing.find(s => JSON.stringify([s.treeId, { seasons: s.seasons, note: s.note }]) === sourceKey)) {
       existing.push(source);
     }
   }
@@ -1814,6 +1955,20 @@ for (const [, quest] of Object.entries(gameData.monsterSlayerQuests)) {
 // Populated later during breakable processing; applied as a post-processing enrichment pass.
 const breakableDropsByGameId = new Map();
 
+// mineChestSourcesByGameId: gameId -> [{ description }]
+// Weapons found in mine chests, parsed from Weapons.json MineBaseLevel field.
+const mineChestSourcesByGameId = new Map();
+for (const [rawId, weaponObj] of Object.entries(gameData.weapons)) {
+  const mineBaseLevel = weaponObj.MineBaseLevel ?? -1;
+  if (mineBaseLevel < 0) continue;
+  const gameId = `(W)${rawId}`;
+  const description = mineBaseLevel >= 121
+    ? `Mine chest (Skull Cavern, floors ${mineBaseLevel}+)`
+    : `Mine chest (floors ${mineBaseLevel}+)`;
+  if (!mineChestSourcesByGameId.has(gameId)) mineChestSourcesByGameId.set(gameId, []);
+  mineChestSourcesByGameId.get(gameId).push({ type: 'mine-chest', description, mineFloor: mineBaseLevel });
+}
+
 function buildAcquisitionSources(gameId) {
   const sources = [];
   for (const map of [
@@ -1821,7 +1976,8 @@ function buildAcquisitionSources(gameId) {
     fishPondSourcesByGameId, garbageCanSourcesByGameId, tillingSourcesByGameId,
     craftingSourcesByGameId, cookingSourcesByGameId, tapperSourcesByGameId,
     mailSourcesByGameId, museumRewardSourcesByGameId, islandFieldOfficeRewardsByGameId,
-    slayerRewardSourcesByGameId, geodeSourcesByGameId,
+    slayerRewardSourcesByGameId, geodeSourcesByGameId, fishingChestSourcesByGameId,
+    secretNoteSourcesByGameId,
   ]) {
     if (map.has(gameId)) sources.push(...map.get(gameId));
   }
@@ -2007,7 +2163,8 @@ for (const mineForage of mineForageRules.items) {
 for (const [gameId, objectData] of Object.entries(gameData.objects)) {
   const itemGameId = `(O)${gameId}`;
   const isForageItem = objectData.ContextTags?.includes('forage_item');
-  const isSpecialForage = gameId === '416'; // Snow Yam (lacks forage_item tag but is forage)
+  const isSpecialForage = gameId === '416' // Snow Yam (lacks forage_item tag but is forage)
+    || gameId === '296'; // Salmonberry (bush fruit, not a plantable fruit tree)
 
   if (!isForageItem && !isSpecialForage) continue;
 
@@ -2119,27 +2276,33 @@ for (const [treeId, treeInfo] of Object.entries(fruitTreesData)) {
     continue;
   }
 
-  const treeGameId = parseGameId(treeId);
   const fruitName = fruitObject.Name;
 
   // Map season numbers to names
   const seasons = (treeInfo.Seasons || []).map(s => seasonMap[s]).filter(Boolean);
 
+  // Find the matching sapling item in Objects.json (category -74)
+  const saplingEntry = Object.entries(gameData.objects).find(([id, obj]) =>
+    obj.Category === -74 && obj.Name === `${fruitName} Sapling`
+  );
+  const saplingGameId = saplingEntry ? parseGameId(saplingEntry[0]) : null;
+  const saplingObject = saplingEntry ? saplingEntry[1] : null;
+
   // Fruit trees take 28 days to mature
   const daysToMature = 28;
 
   fruitTreeData.push({
-    subtype: 'fruit-tree',
-    id: toKebabCase(fruitName),
-    gameId: treeGameId,
-    name: `${fruitName} Tree`,
+    subtype: 'fruit-tree-sapling',
+    id: `${toKebabCase(fruitName)}-sapling`,
+    gameId: saplingGameId ? `(O)${saplingGameId}` : null,
+    name: `${fruitName} Sapling`,
     fruitGameId: fruitGameId,
+    fruitId: toKebabCase(fruitName),
     fruitName: fruitName,
-    icon: `assets/objects/${toIconFilename(fruitName)}`,
-    price: fruitObject.Price || 0,
-    edibility: fruitObject.Edibility || -300,
-    gameCategory: fruitObject.Category || 0,
-    contextTags: fruitObject.ContextTags || [],
+    icon: `assets/objects/${toIconFilename(`${fruitName} Sapling`)}`,
+    price: saplingObject?.Price || 0,
+    gameCategory: -74,
+    contextTags: saplingObject?.ContextTags || [],
     seasons: seasons,
     daysToMature: daysToMature,
     bundles: [],
@@ -2148,6 +2311,189 @@ for (const [treeId, treeInfo] of Object.entries(fruitTreesData)) {
 }
 
 console.log(`  Processed ${fruitTreeData.length} fruit tree items`);
+
+// Add selling locations and acquisition sources to fruit tree saplings
+fruitTreeData.forEach(item => {
+  item.sellingLocations = getSellingLocations(item.gameCategory, shopSellingLocations);
+  item.sources = buildAcquisitionSources(item.gameId);
+});
+
+// ============================================================================
+// Process Wild Trees (the trees themselves, not their seeds)
+// ============================================================================
+console.log('\nProcessing wild trees...');
+const wildTreeData = [];
+
+let wildTreesExport = {};
+try {
+  wildTreesExport = loadJson(path.join(GAME_EXPORTS_DIR, 'WildTrees.json'));
+} catch (e) {
+  console.warn('  Warning: Could not load WildTrees.json');
+}
+
+const wildTreeRules = loadJson(path.join(RULES_DIR, 'wild-trees.json'));
+const mergedWildTrees = new Map(); // canonical ID → merged tree data
+
+for (const [treeId, treeInfo] of Object.entries(wildTreesExport)) {
+  const rule = wildTreeRules.trees[treeId];
+  if (!rule) {
+    console.warn(`  Warning: No name mapping for wild tree ID ${treeId}`);
+    continue;
+  }
+
+  // If this is a variant, merge tap items into the canonical tree
+  const canonicalId = rule.mergeInto || treeId;
+  const canonicalRule = wildTreeRules.trees[canonicalId];
+
+  if (!mergedWildTrees.has(canonicalId)) {
+    const canonicalInfo = wildTreesExport[canonicalId] || treeInfo;
+    const seedId = parseItemId(canonicalInfo.SeedItemId);
+    const seedObj = seedId ? gameData.objects[seedId] : null;
+
+    mergedWildTrees.set(canonicalId, {
+      treeId: canonicalId,
+      name: canonicalRule.name,
+      seedGameId: seedId ? `(O)${seedId}` : null,
+      seedId: seedObj ? toKebabCase(seedObj.Name) : null,
+      seedName: seedObj?.Name || null,
+      tapItems: [],
+      chopDrops: [],
+      dropsWood: canonicalInfo.DropWoodOnChop,
+      seedOnChopChance: canonicalInfo.SeedOnChopChance || 0,
+    });
+  }
+
+  const merged = mergedWildTrees.get(canonicalId);
+
+  // Collect tap items from this variant
+  for (const tapItem of (treeInfo.TapItems || [])) {
+    const itemId = parseItemId(tapItem.ItemId);
+    if (!itemId || tapItem.ItemId === 'PREVIOUS_OUTPUT_ID') continue;
+    const itemObj = gameData.objects[itemId];
+    if (!itemObj) continue;
+    const qualifiers = parseTapConditions(tapItem);
+    // Allow duplicates when conditions differ (e.g. Mushroom Tree seasonal variants)
+    const tapKey = JSON.stringify([`(O)${itemId}`, qualifiers]);
+    if (merged.tapItems.some(t => JSON.stringify([t.gameId, { seasons: t.seasons, note: t.note }]) === tapKey)) continue;
+    merged.tapItems.push({
+      gameId: `(O)${itemId}`,
+      id: toKebabCase(itemObj.Name),
+      name: itemObj.Name,
+      daysUntilReady: tapItem.DaysUntilReady || null,
+      seasons: qualifiers?.seasons || undefined,
+      note: qualifiers?.note || undefined,
+    });
+  }
+
+  // Collect chop items from this variant
+  for (const chopItem of (treeInfo.ChopItems || [])) {
+    const itemId = parseItemId(chopItem.ItemId);
+    if (!itemId) continue;
+    // Resolve item name — could be object or hat
+    const isHat = chopItem.ItemId.startsWith('(H)');
+    let itemName;
+    let friendlyId;
+    if (isHat) {
+      const hatNumId = chopItem.ItemId.replace(/^\(H\)/, '');
+      const hatStr = gameData.hats[hatNumId];
+      const hatParts = hatStr ? hatStr.split('/') : [];
+      itemName = hatParts[5] || hatParts[0] || `Hat ${hatNumId}`;
+      friendlyId = toKebabCase(itemName);
+    } else {
+      const itemObj = gameData.objects[itemId];
+      itemName = itemObj?.Name || chopItem.ObjectDisplayName || `Item ${itemId}`;
+      friendlyId = toKebabCase(itemName);
+    }
+    const qualifiedId = chopItem.ItemId; // already qualified e.g. (O)92, (H)42
+    // Avoid duplicates from merged variants
+    if (merged.chopDrops.some(c => c.gameId === qualifiedId && c.forStump === (chopItem.ForStump || false))) continue;
+    merged.chopDrops.push({
+      gameId: qualifiedId,
+      id: friendlyId,
+      name: itemName,
+      chance: chopItem.Chance ?? 1.0,
+      minStack: chopItem.MinStack > 0 ? chopItem.MinStack : 1,
+      maxStack: chopItem.MaxStack > 0 ? chopItem.MaxStack : null,
+      forStump: chopItem.ForStump || false,
+      minSize: chopItem.MinSize || null,
+    });
+  }
+}
+
+// Convert merged trees into entities
+for (const [treeId, tree] of mergedWildTrees) {
+  const friendlyId = `tree-${toKebabCase(tree.name)}`;
+
+  // Consolidate trunk + stump drops for the same item into a single entry
+  const consolidatedDrops = [];
+  for (const drop of tree.chopDrops) {
+    const existing = consolidatedDrops.find(c => c.gameId === drop.gameId);
+    if (existing) {
+      // Merge: add stump stack to trunk stack range
+      existing.minStack = (existing.minStack || 1) + (drop.minStack || 1);
+      if (existing.maxStack || drop.maxStack) {
+        existing.maxStack = (existing.maxStack || existing.minStack - (drop.minStack || 1)) + (drop.maxStack || drop.minStack || 1);
+      }
+      // Take the higher chance (both are usually 1.0)
+      existing.chance = Math.max(existing.chance, drop.chance);
+    } else {
+      consolidatedDrops.push({ ...drop });
+    }
+  }
+
+  wildTreeData.push({
+    subtype: 'wild-tree',
+    id: friendlyId,
+    name: tree.name,
+    icon: tree.seedGameId ? `assets/objects/${toIconFilename(tree.seedName)}` : null,
+    seedId: tree.seedId,
+    seedGameId: tree.seedGameId,
+    tapItems: tree.tapItems,
+    chopDrops: consolidatedDrops.length > 0
+      ? consolidatedDrops.map(({ forStump, minSize, ...rest }) => rest)
+      : undefined,
+    dropsWood: tree.dropsWood,
+    seedOnChopChance: tree.seedOnChopChance > 0 ? tree.seedOnChopChance : undefined,
+    bundles: [],
+    gifts: {},
+    sources: [],
+  });
+}
+
+wildTreeData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${wildTreeData.length} wild trees`);
+
+// Now build fruit tree entities (the tree itself, not the sapling)
+console.log('  Processing fruit trees as tree entities...');
+const fruitTreeEntityData = [];
+
+for (const sapling of fruitTreeData) {
+  const fruitObj = gameData.objects[sapling.fruitGameId];
+  const friendlyId = `tree-${sapling.fruitId}`;
+
+  fruitTreeEntityData.push({
+    subtype: 'fruit-tree',
+    id: friendlyId,
+    name: `${sapling.fruitName} Tree`,
+    icon: `assets/objects/${toIconFilename(sapling.fruitName)}`,
+    saplingId: sapling.id,
+    saplingGameId: sapling.gameId,
+    fruitId: sapling.fruitId,
+    fruitGameId: sapling.fruitGameId ? `(O)${sapling.fruitGameId}` : null,
+    fruitName: sapling.fruitName,
+    seasons: sapling.seasons,
+    daysToMature: sapling.daysToMature,
+    bundles: [],
+    gifts: {},
+    sources: [],
+  });
+}
+
+fruitTreeEntityData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${fruitTreeEntityData.length} fruit trees`);
+
+// Combine into one array for tagging
+const treeEntityData = [...wildTreeData, ...fruitTreeEntityData];
 
 // ============================================================================
 // Process Tree Fruits (outputs from fruit trees)
@@ -2165,7 +2511,8 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
 
   // Get the season from the fruit tree data (where this fruit comes from)
   const sourceTree = fruitTreeData.find(t => t.fruitGameId === itemGameId);
-  const seasons = sourceTree ? sourceTree.seasons : [];
+  if (!sourceTree) continue; // Skip fruits not from a plantable fruit tree (e.g. Salmonberry)
+  const seasons = sourceTree.seasons || [];
 
   treeFruitsData.push({
     subtype: 'tree-fruit',
@@ -2363,7 +2710,6 @@ for (const [internalName, rawData] of Object.entries(gameData.monsters)) {
   const locations = rules.monsterLocations[internalName] || [];
   const dropsStr = parts[6] || '';
   const dropParts = dropsStr.trim().split(/\s+/).filter(Boolean);
-  const dropsMap = new Map();
   const debuffs = [];
   for (let i = 0; i + 1 < dropParts.length; i += 2) {
     const rawId = parseInt(dropParts[i], 10);
@@ -2376,10 +2722,7 @@ for (const [internalName, rawData] of Object.entries(gameData.monsters)) {
       }
       continue;
     }
-    if (!dropsMap.has(rawId)) dropsMap.set(rawId, []);
-    dropsMap.get(rawId).push(chance);
   }
-  const drops = Array.from(dropsMap.entries()).map(([gameId, rolls]) => ({ gameId, rolls }));
 
   monsterData.push({
     subtype: 'monster',
@@ -2396,7 +2739,7 @@ for (const [internalName, rawData] of Object.entries(gameData.monsters)) {
     ...(minCoins > 0 || maxCoins > 0 ? { coins: { min: minCoins, max: maxCoins } } : {}),
     ...(locations.length > 0 ? { locations } : {}),
     ...(debuffs.length > 0 ? { debuffs } : {}),
-    drops,
+    sources: locations.map(loc => ({ type: 'location', locationId: loc.locationId, ...(loc.qualifier ? { qualifier: loc.qualifier } : {}) })),
   });
 }
 
@@ -2404,20 +2747,6 @@ for (const [internalName, rawData] of Object.entries(gameData.monsters)) {
 for (const [internalName, extra] of Object.entries(rules.extraMonsters)) {
   if (internalName.startsWith('_')) continue; // skip comments
   const friendlyId = `monster-${toKebabCase(internalName)}`;
-
-  // Parse drops string same as main loop
-  const dropsStr = extra.drops || '';
-  const dropParts = dropsStr.trim().split(/\s+/).filter(Boolean);
-  const dropsMap = new Map();
-  for (let i = 0; i + 1 < dropParts.length; i += 2) {
-    const rawId = parseInt(dropParts[i], 10);
-    const chance = parseFloat(dropParts[i + 1]);
-    if (isNaN(rawId) || isNaN(chance) || chance <= 0) continue;
-    if (rawId < 0) continue; // debuffs handled separately for extra monsters
-    if (!dropsMap.has(rawId)) dropsMap.set(rawId, []);
-    dropsMap.get(rawId).push(chance);
-  }
-  const drops = Array.from(dropsMap.entries()).map(([gameId, rolls]) => ({ gameId, rolls }));
 
   monsterData.push({
     subtype: 'monster',
@@ -2433,7 +2762,7 @@ for (const [internalName, extra] of Object.entries(rules.extraMonsters)) {
     ...(extra.locations ? { locations: extra.locations } : {}),
     ...(extra.debuffs ? { debuffs: extra.debuffs } : {}),
     ...(extra.notes ? { notes: extra.notes } : {}),
-    drops,
+    sources: (extra.locations || []).map(loc => ({ type: 'location', locationId: loc.locationId, ...(loc.qualifier ? { qualifier: loc.qualifier } : {}) })),
   });
 }
 
@@ -2485,9 +2814,14 @@ for (const rule of breakableRules.breakables) {
   breakableData.push({
     id: rule.id,
     name: rule.name,
+    ...(rule.icon ? { icon: `assets/breakables/${rule.icon}` } : {}),
     subtype: rule.subtype,
     tool: rule.tool,
     toolMinLevel: rule.toolMinLevel ?? null,
+    ...(rule.xp != null ? { xp: rule.xp } : {}),
+    ...(rule.xpMin != null ? { xpMin: rule.xpMin } : {}),
+    ...(rule.xpMax != null ? { xpMax: rule.xpMax } : {}),
+    ...(rule.xpSkill ? { xpSkill: rule.xpSkill } : {}),
     locations: rule.locations,
     sources: rule.locations.map(locId => ({ type: 'location', locationId: locId })),
     drops: drops.map(d => ({ gameId: d.gameId, ...(d.chance != null ? { chance: d.chance } : {}) })),
@@ -2799,9 +3133,11 @@ console.log(`  Parsed ${animalProducts.size} unique animal products`);
 // Map of flavored item names to their gameIds and display names (from curated data)
 const flavoredItemIds = {};
 const flavoredDisplayNames = {};
+const flavoredVariantSuffixes = {};
 for (const [key, data] of Object.entries(rules.flavoredItems)) {
   flavoredItemIds[key] = data.gameId;
   flavoredDisplayNames[key] = data.displayName;
+  if (data.variantSuffix) flavoredVariantSuffixes[data.displayName] = data.variantSuffix;
 }
 
 for (const recipe of machineRecipes) {
@@ -2897,7 +3233,7 @@ for (const recipe of machineRecipes) {
 
     const artisanItem = {
       subtype: 'artisan',
-      id: toKebabCase(recipe.outputName),
+      id: toKebabCase(displayName),
       gameId: `(O)${outputItemId}`,
       name: displayName,
       gameCategory: objectData.Category || -26,
@@ -3149,10 +3485,7 @@ for (const [gameId, tapSources] of tapperSourcesByGameId.entries()) {
     price: objectData.Price || 0,
     edibility: objectData.Edibility || -300,
     icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
-    sources: [
-      ...tapSources,
-      ...buildAcquisitionSources(gameId),
-    ],
+    sources: buildAcquisitionSources(gameId), // tapper sources included via tapperSourcesByGameId
     contextTags: objectData.ContextTags || [],
     bundles: [],
     gifts: {},
@@ -4196,9 +4529,13 @@ for (const [rawKey, hatStr] of Object.entries(gameData.hats)) {
 
   const sources = override.sources
     ? override.sources.map(src => {
-        if (!src.condition) return src;
-        const itemNames = collectItemConditionNames(src.condition, gameData.objects);
-        return itemNames ? { ...src, conditionItemNames: itemNames } : src;
+        // Hand-curated hat overrides in hat-overrides.json carry only
+        // {description, condition?} — give them an explicit type so they
+        // survive the Phase 2 normalization pass without a warning.
+        const typed = src.type ? src : { type: 'other', ...src };
+        if (!typed.condition) return typed;
+        const itemNames = collectItemConditionNames(typed.condition, gameData.objects);
+        return itemNames ? { ...typed, conditionItemNames: itemNames } : typed;
       })
     : [];
   const qualifiedHId = `(H)${rawKey}`;
@@ -4233,12 +4570,18 @@ const alreadyProcessedGameIds = new Set();
 const allExistingObjectArrays = [
   fishData, artisanData, animalProductData, cropData, seedData, forageData,
   fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
-  resourceData, bigCraftableData,
-  // furnitureData and hatData are explicitly excluded (different ID namespace)
+  resourceData,
+  // bigCraftableData, furnitureData, and hatData excluded (different ID namespaces — BC, F, H)
 ];
 for (const arr of allExistingObjectArrays) {
   for (const item of arr) {
-    if (item.gameId !== undefined) alreadyProcessedGameIds.add(String(item.gameId));
+    if (item.gameId !== undefined) {
+      const gid = String(item.gameId);
+      alreadyProcessedGameIds.add(gid);
+      // Also add bare numeric ID so dedup works for both "(O)69" and "69" formats
+      const bare = gid.replace(/^\([A-Z]+\)/, '');
+      if (bare !== gid) alreadyProcessedGameIds.add(bare);
+    }
   }
 }
 
@@ -4246,11 +4589,13 @@ for (const arr of allExistingObjectArrays) {
 function makeBaseItem(gameId, objectData, subtype) {
   const buffs = parseItemBuffs(objectData);
   const resolvedName = getVariantName(gameId, resolveLocalizedText(objectData.DisplayName) || objectData.Name);
+  const description = resolveLocalizedText(objectData.Description) || '';
   const item = {
     subtype,
     id: getUniqueItemId(gameId, objectData.Name),
     gameId,
     name: resolvedName,
+    description: description || undefined,
     icon: `assets/objects/${getIconFilename(gameId, objectData.Name, objectData)}`,
     price: objectData.Price || 0,
     edibility: objectData.Edibility ?? -300,
@@ -4384,6 +4729,13 @@ for (const [rawId, objectData] of Object.entries(gameData.objects)) {
   const gameId = `(O)${rawId}`;
   const item = makeBaseItem(gameId, objectData, 'bait');
   item.sources = buildAcquisitionSources(gameId);
+
+  // Skip Specific Bait template — per-fish variants are generated as flavored artisan items
+  if (rawId === 'SpecificBait') {
+    alreadyProcessedGameIds.add(rawId);
+    continue;
+  }
+
   baitData.push(item);
   alreadyProcessedGameIds.add(rawId);
 }
@@ -4543,6 +4895,38 @@ treeSeedData.sort((a, b) => a.name.localeCompare(b.name));
 console.log(`  Processed ${treeSeedData.length} tree seeds`);
 
 // ============================================================================
+// Process Geode Items (items with GeodeDrops — cracked open at Blacksmith or Geode Crusher)
+// ============================================================================
+console.log('\nProcessing geode items...');
+const geodeItemData = [];
+
+for (const geodeId of rules.geodeItems) {
+  if (alreadyProcessedGameIds.has(geodeId)) continue;
+  const objectData = gameData.objects[geodeId];
+  if (!objectData) continue;
+
+  const gameId = `(O)${geodeId}`;
+  const item = makeBaseItem(gameId, objectData, 'geode');
+  item.sources = buildAcquisitionSources(gameId);
+
+  // Collect qualified game IDs of items that can be found inside this geode
+  const contents = [];
+  for (const [dropGameId, sources] of geodeSourcesByGameId) {
+    if (sources.some(s => s.geodeGameId === gameId)) {
+      contents.push(dropGameId);
+    }
+  }
+  item.geodeContents = contents;
+
+  geodeItemData.push(item);
+  alreadyProcessedGameIds.add(geodeId);
+}
+
+deduplicateIds(geodeItemData);
+geodeItemData.sort((a, b) => a.name.localeCompare(b.name));
+console.log(`  Processed ${geodeItemData.length} geode items`);
+
+// ============================================================================
 // Process Remaining Misc Items (everything not yet processed)
 // Includes: crafting ingredients, quest items, special items, etc.
 // Excludes: category -999 (litter/stones), furniture, hats (different json)
@@ -4584,6 +4968,7 @@ console.log('\nProcessing weapons...');
 const weaponData = [];
 
 const WEAPON_TYPE_NAMES = { 0: 'sword', 1: 'dagger', 2: 'club', 3: 'sword', 4: 'slingshot' };
+const weaponOverrides = rules.weaponSources.overrides || {};
 
 for (const [rawId, weaponObj] of Object.entries(gameData.weapons)) {
   const gameId = `(W)${rawId}`;
@@ -4592,6 +4977,19 @@ for (const [rawId, weaponObj] of Object.entries(gameData.weapons)) {
   const iconName = name.replace(/[^a-zA-Z0-9]/g, '');
 
   const weaponType = WEAPON_TYPE_NAMES[weaponObj.Type] || 'sword';
+
+  // Merge sources: curated overrides → mine chest drops → standard acquisition sources
+  const override = weaponOverrides[rawId] || {};
+  // Hand-curated weapon overrides in weapon-sources.json carry only
+  // {description}. Default to type 'other' so they survive normalization.
+  const sources = override.sources
+    ? override.sources.map(s => s.type ? s : { type: 'other', ...s })
+    : [];
+  if (mineChestSourcesByGameId.has(gameId)) {
+    sources.push(...mineChestSourcesByGameId.get(gameId));
+  }
+  sources.push(...buildAcquisitionSources(gameId));
+
   weaponData.push({
     subtype: weaponType,
     id: toKebabCase(name),
@@ -4608,7 +5006,7 @@ for (const [rawId, weaponObj] of Object.entries(gameData.weapons)) {
     knockback: weaponObj.Knockback ?? 1,
     areaOfEffect: weaponObj.AreaOfEffect ?? 0,
     canBeLostOnDeath: weaponObj.CanBeLostOnDeath ?? false,
-    sources: buildAcquisitionSources(gameId),
+    sources,
   });
 }
 
@@ -4672,7 +5070,7 @@ for (const [rawId, toolObj] of Object.entries(gameData.tools)) {
   const toolType = toolClass.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
   toolData.push({
     subtype: toolType,
-    id: toKebabCase(name),
+    id: getUniqueItemId(gameId, name),
     gameId,
     name,
     description,
@@ -4876,7 +5274,7 @@ const objectNamespaceIds = new Set([
   fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
   resourceData, bigCraftableData, foodData, oreData, geodeMineralData, bombData,
   fertilizerData, baitData, tackleData, flooringData, bookData, artifactData,
-  ringData, treeSeedData, miscData,
+  ringData, treeSeedData, geodeItemData, miscData,
 ].flatMap(arr => arr.map(i => i.id)));
 
 let crossNamespaceDisambiguated = 0;
@@ -4897,7 +5295,7 @@ console.log('\nProcessing gift tastes for new item types...');
 const newItemArrays = [
   foodData, oreData, geodeMineralData, bombData, fertilizerData,
   baitData, tackleData, flooringData, bookData, artifactData,
-  ringData, treeSeedData, miscData,
+  ringData, treeSeedData, geodeItemData, miscData,
 ];
 for (const arr of newItemArrays) {
   for (const item of arr) {
@@ -4946,7 +5344,7 @@ const allItemTypes = [
   mineralData, metalBarData, monsterLootData, resourceData, bigCraftableData, cropData,
   foodData, oreData, geodeMineralData, bombData, fertilizerData,
   baitData, tackleData, flooringData, bookData, artifactData,
-  ringData, treeSeedData, miscData,
+  ringData, treeSeedData, geodeItemData, miscData,
 ];
 
 let totalItemsWithGifts = 0;
@@ -5653,7 +6051,7 @@ const allProcessedArrays = [
   fruitTreeData, treeFruitsData, mineralData, metalBarData, monsterLootData,
   resourceData, bigCraftableData, foodData, oreData, geodeMineralData, bombData,
   fertilizerData, baitData, tackleData, flooringData, bookData, artifactData,
-  ringData, treeSeedData, miscData, furnitureData, hatData,
+  ringData, treeSeedData, geodeItemData, miscData, furnitureData, hatData,
 ];
 
 // Build eventId → itemIds map by scanning all sources
@@ -5898,14 +6296,23 @@ artisanData.forEach(artisan => {
         };
         if (artisan.agingDaysToIridium) genericItem.agingDaysToIridium = artisan.agingDaysToIridium;
 
+        // Targeted Bait: override generic type
+        if (artisan.gameId === '(O)SpecificBait') {
+          genericItem.type = 'bait';
+          genericItem.subtype = 'targeted';
+          genericItem.description = 'Increases your chance to catch a specific fish. Created by placing any fish in a Bait Maker.';
+        }
+
         inputDetails.forEach(inputDetail => {
           let variantName;
+          const suffix = flavoredVariantSuffixes[artisan.name] || artisan.name;
           if (namingRule?.pattern === 'prefix') {
             variantName = namingRule.format.replace('{input}', inputDetail.inputName);
           } else {
-            variantName = `${inputDetail.inputName} ${artisan.name}`;
+            variantName = `${inputDetail.inputName} ${suffix}`;
           }
-          const variantId = `${inputDetail.inputId}-${artisan.id}`;
+          const idSuffix = flavoredVariantSuffixes[artisan.name] ? toKebabCase(flavoredVariantSuffixes[artisan.name]) : artisan.id;
+          const variantId = `${inputDetail.inputId}-${idSuffix}`;
           const basePrice = inputDetail.outputPrice;
           const qualityPrices = calculateQualityPrices(basePrice, artisan.canBeAged, artisan.hasQuality, qualityMultipliers);
 
@@ -5943,6 +6350,13 @@ artisanData.forEach(artisan => {
           if (artisan.canBeAged) {
             variant.canBeAged = true;
             if (artisan.agingDaysToIridium) variant.agingDaysToIridium = artisan.agingDaysToIridium;
+          }
+
+          // Targeted Bait: override type to bait and set description
+          if (artisan.gameId === '(O)SpecificBait') {
+            variant.type = 'bait';
+            variant.subtype = 'targeted';
+            variant.description = `Increases your chance to catch ${inputDetail.inputName}.`;
           }
 
           genericItem.variations.push(variantId);
@@ -6047,7 +6461,10 @@ const taggedTrash          = tagEntities(trashData,          'trash',          '
 const taggedBooks          = tagEntities(bookData,           'book',           'O');
 const taggedArtifacts      = tagEntities(artifactData,       'artifact',       'O');
 const taggedRings          = tagEntities(ringData,           'ring',           'O');
+const taggedFruitTreeSaplings = tagEntities(fruitTreeData,   'fruit-tree-sapling', 'O');
+const taggedTrees          = treeEntityData.map(t => ({ ...t, type: t.type || 'tree' }));
 const taggedTreeSeeds      = tagEntities(treeSeedData,       'tree-seed',      'O');
+const taggedGeodeItems     = tagEntities(geodeItemData,      'geode',          'O');
 const taggedMisc           = tagEntities(miscData,           'misc',           'O');
 const taggedWeapons        = tagEntities(weaponData,         'weapon',         'W');
 const taggedBoots          = tagEntities(bootsData,          'boot',           'B');
@@ -6416,12 +6833,12 @@ const TYPE_PRIORITY = rules.typePriority;
 
 const allTypedEntities = [
   ...taggedFish, ...compiledArtisan, ...taggedCrops, ...taggedForage,
-  ...taggedTreeFruits, ...taggedMinerals, ...taggedMetalBars, ...taggedMonsterLoot,
+  ...taggedTreeFruits, ...taggedFruitTreeSaplings, ...taggedTrees, ...taggedMinerals, ...taggedMetalBars, ...taggedMonsterLoot,
   ...taggedResources, ...taggedBigCraftables, ...taggedAnimalProducts, ...taggedSeeds,
   ...taggedFurniture, ...taggedHats, ...taggedFood, ...taggedOres,
   ...taggedGeodeMinerals, ...taggedCrafted, ...taggedFertilizers, ...taggedBait,
   ...taggedTackle, ...taggedFlooring, ...taggedTrash, ...taggedBooks,
-  ...taggedArtifacts, ...taggedRings, ...taggedTreeSeeds, ...taggedMisc,
+  ...taggedArtifacts, ...taggedRings, ...taggedTreeSeeds, ...taggedGeodeItems, ...taggedMisc,
   ...taggedWeapons, ...taggedBoots, ...taggedTools, ...taggedTrinkets,
   ...taggedBuildings, ...taggedAnimals, ...taggedMonsters, ...taggedBreakables,
   ...bundleData.map(b => ({ ...b, type: 'bundle', sources: [] })),
@@ -6665,6 +7082,46 @@ console.log('\n🏛️  Generating museum reward entities...');
   } else {
     console.log('  ⚠ Museum entity or MuseumRewards data not found');
   }
+}
+
+// ---------------------------------------------------------------------------
+// Post-merge: enrich donatable items with museum donation info
+// ---------------------------------------------------------------------------
+console.log('\n🏛️  Enriching museum-donatable items...');
+{
+  // Build reverse map: item gameId → museum reward entity IDs that require it
+  const itemToRewardIds = new Map();
+  for (const entity of allCompiledEntities) {
+    if (entity.type !== 'museum-reward') continue;
+    for (const req of (entity.requirements || [])) {
+      if (req.type === 'item' && req.gameId) {
+        if (!itemToRewardIds.has(req.gameId)) itemToRewardIds.set(req.gameId, []);
+        itemToRewardIds.get(req.gameId).push(entity.id);
+      }
+    }
+  }
+
+  // Build a set of museum-donatable gameIds from raw game data so we don't
+  // depend on entity-type classifications (e.g. Dinosaur Egg is type=animal-product
+  // but Type=Arch in Objects.json, and is donatable in-game).
+  const donatableGameIds = new Set();
+  for (const [rawId, obj] of Object.entries(gameData.objects)) {
+    if (obj.Type === 'Arch' || obj.Type === 'Minerals') {
+      donatableGameIds.add(`(O)${rawId}`);
+    }
+  }
+
+  let enriched = 0;
+  for (const entity of allCompiledEntities) {
+    if (!entity.gameId || !donatableGameIds.has(entity.gameId)) continue;
+    entity.museumDonatable = true;
+    const specificRewards = itemToRewardIds.get(entity.gameId) || [];
+    if (specificRewards.length > 0) {
+      entity.museumRewardIds = specificRewards;
+    }
+    enriched++;
+  }
+  console.log(`  ✓ Marked ${enriched} items as museum-donatable (${itemToRewardIds.size} linked to specific rewards, ${donatableGameIds.size} in raw game data)`);
 }
 
 // ---------------------------------------------------------------------------
@@ -7134,6 +7591,8 @@ const TYPE_DISPLAY_NAMES = {
   'seed': 'Seed',
   'tree-fruit': 'Tree Fruit',
   'tree-seed': 'Tree Seed',
+  'fruit-tree-sapling': 'Fruit Tree Sapling',
+  'tree': 'Tree',
   'crafted': 'Crafted Item',
   'big-craftable': 'Big Craftable',
   'ring': 'Ring',
@@ -7201,7 +7660,7 @@ const SUBTYPE_DISPLAY_NAMES = {
   'metal-bar': 'Metal Bar', 'ring': 'Ring', 'boot': 'Boots', 'trinket': 'Trinket',
   'building': 'Building', 'monster': 'Monster', 'monster-loot': 'Monster Loot',
   'artifact': 'Artifact', 'book': 'Book', 'crafted': 'Crafted Item',
-  'tree-fruit': 'Tree Fruit', 'tree-seed': 'Tree Seed', 'villager': 'Villager',
+  'tree-fruit': 'Tree Fruit', 'tree-seed': 'Tree Seed', 'fruit-tree-sapling': 'Fruit Tree Sapling', 'tree': 'Tree', 'villager': 'Villager',
   'mineral': 'Mineral',
 };
 
@@ -7218,6 +7677,8 @@ const typeIconConfig = {
   'seed':           { icon: 'fa-solid fa-seedling',     color: '#6b8e23' },
   'tree-fruit':     { icon: 'fa-solid fa-apple-whole',  color: '#e74c3c' },
   'tree-seed':      { icon: 'fa-solid fa-tree',         color: '#8b6f47' },
+  'fruit-tree-sapling': { icon: 'fa-solid fa-tree', color: '#e74c3c' },
+  'tree':               { icon: 'fa-solid fa-tree', color: '#2d8b4e' },
   'crafted':        { icon: 'fa-solid fa-hammer',       color: '#d4a017' },
   'big-craftable':  { icon: 'fa-solid fa-cube',         color: '#b8860b' },
   'ring':           { icon: 'fa-solid fa-ring',         color: '#daa520' },
@@ -7419,6 +7880,255 @@ console.log('\n🏷️  Computing derived fields...');
   console.log(`  ✓ Assigned professionCategory to ${profCount} entities`);
   console.log(`  ✓ Assigned categoryName to ${catCount} entities`);
   console.log(`  ✓ Assigned qualityTiers to ${qualCount} entities`);
+}
+
+// ---------------------------------------------------------------------------
+// Phase 2 — Source row normalization
+// ---------------------------------------------------------------------------
+// Every source row gets a canonical { type, entityId, entityGameId, qualifiers }
+// shape, while preserving original fields under qualifiers for back-compat
+// (existing consumers continue to work; new consumers can use the normalized
+// fields). See docs/DATA_MODEL_REFACTOR_PLAN.md Phase 2.
+console.log('\n🔗 Normalizing source rows (Phase 2)...');
+{
+  // Per-source-type rule: which existing field maps to entityId / entityGameId.
+  // entityIdFn(s) → string|null  (returns the friendly id of the entity this
+  //                               source links to, or null if no link)
+  // entityGameIdFn(s) → string|null  (qualified game id when no friendly id
+  //                                   is available; preferred only as a fallback)
+  const RULES = {
+    'monster-drop':       { entityId: s => s.monsterId ?? null },
+    'breakable-drop':     { entityId: s => s.breakableId ?? null },
+    'geode':              { entityId: () => null, entityGameId: s => s.geodeGameId ?? null },
+    'tilling':            { entityId: s => s.locationId ?? null },
+    'forage':             { entityId: s => s.locationId ?? null },
+    'garbage-can':        { entityId: s => s.locationId ?? null },
+    'shop':               { entityId: s => s.id ?? null },
+    'fish':               { entityId: s => s.locationId ?? null },
+    'fish-pond':          { entityId: () => null },  // fishTag is a tag, not an id
+    'tapper':             { entityId: s => s.treeId ? `tree-${s.treeId}` : null },
+    'animal':             { entityId: s => s.id ?? null },
+    'machine':            { entityId: s => s.id ?? null },  // input is secondary, stays in qualifiers
+    'hatch':              { entityId: s => s.id ?? null },
+    'pregnancy':          { entityId: s => s.id ?? null },  // pregnancy may carry a parent animal id
+    'seed':               { entityId: s => s.seedId ?? null, entityGameId: s => s.seedGameId ?? null },
+    'reward':             { entityId: s => s.id ?? null },
+    'museum-reward':      { entityId: s => s.id ?? null },
+    'location':           { entityId: s => s.locationId ?? null },
+    'quest-requirement':  { entityId: s => s.questId ?? null },
+    'mail':               { entityId: () => null },  // mailKey is not an entity in our model
+    'crafting':           { entityId: () => null },
+    'cooking':            { entityId: () => null },
+    'tailoring':          { entityId: () => null },
+    'fishing-chest':      { entityId: () => null },
+    'secret-note-reward': { entityId: () => null },
+    'crane-game':         { entityId: () => null },
+    'mine-chest':         { entityId: () => null },
+    'other':              { entityId: () => null },
+  }
+
+  let normalized = 0
+  let unknownTypes = new Map()
+  for (const entity of allCompiledEntities) {
+    if (!entity.sources?.length) continue
+    for (const s of entity.sources) {
+      const rule = RULES[s.type]
+      if (!rule) {
+        unknownTypes.set(s.type ?? '<undefined>', (unknownTypes.get(s.type ?? '<undefined>') ?? 0) + 1)
+        // Still normalize to the new shape with nulls so consumers can rely on it
+        s.entityId = null
+        s.entityGameId = null
+        continue
+      }
+      s.entityId = rule.entityId(s)
+      s.entityGameId = rule.entityGameId ? rule.entityGameId(s) : null
+      normalized++
+    }
+  }
+  console.log(`  ✓ Normalized ${normalized} source rows`)
+  if (unknownTypes.size > 0) {
+    console.log(`  ⚠ ${unknownTypes.size} unknown source types encountered:`)
+    for (const [t, c] of unknownTypes) console.log(`    ${t}: ${c} rows`)
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Phase 4 — Precomputed inverse arrays
+// ---------------------------------------------------------------------------
+// Render-time inverse joins like "what items does this monster drop?" used to
+// filter the entire items[] array on every modal open. Precompute the inverse
+// once during the build so consumers can read entity.drops directly. Same for
+// breakables and geodes. Stored as arrays of { entityId, qualifiers } so the
+// renderer doesn't need to repeat the source lookup either.
+//
+// See docs/DATA_MODEL_REFACTOR_PLAN.md Phase 4.
+console.log('\n🔁 Precomputing inverse drop tables (Phase 4)...');
+{
+  // Build inverse maps in one pass
+  const monsterDrops = new Map()    // monsterId → [{ entityId, rolls }]
+  const breakableDrops = new Map()  // breakableId → [{ entityId, chance }]
+  const geodeDrops = new Map()      // geodeGameId → [{ entityId }]
+
+  for (const entity of allCompiledEntities) {
+    for (const s of (entity.sources || [])) {
+      if (s.type === 'monster-drop' && s.monsterId) {
+        if (!monsterDrops.has(s.monsterId)) monsterDrops.set(s.monsterId, [])
+        monsterDrops.get(s.monsterId).push({ entityId: entity.id, rolls: s.rolls })
+      } else if (s.type === 'breakable-drop' && s.breakableId) {
+        if (!breakableDrops.has(s.breakableId)) breakableDrops.set(s.breakableId, [])
+        breakableDrops.get(s.breakableId).push({ entityId: entity.id, chance: s.chance })
+      } else if (s.type === 'geode' && s.geodeGameId) {
+        if (!geodeDrops.has(s.geodeGameId)) geodeDrops.set(s.geodeGameId, [])
+        geodeDrops.get(s.geodeGameId).push({ entityId: entity.id })
+      }
+    }
+  }
+
+  // Attach to the corresponding source entity. Skip if the entity already
+  // has a `drops` field (some, like fossil-node, define drops in rule files).
+  let attached = 0
+  for (const entity of allCompiledEntities) {
+    if (entity.type === 'monster' && monsterDrops.has(entity.id)) {
+      entity.computedDrops = monsterDrops.get(entity.id)
+      attached++
+    } else if (entity.type === 'breakable' && breakableDrops.has(entity.id)) {
+      entity.computedDrops = breakableDrops.get(entity.id)
+      attached++
+    } else if (entity.type === 'geode' && geodeDrops.has(entity.gameId)) {
+      entity.computedDrops = geodeDrops.get(entity.gameId)
+      attached++
+    }
+  }
+  console.log(`  ✓ Attached computedDrops to ${attached} entities (${monsterDrops.size} monsters, ${breakableDrops.size} breakables, ${geodeDrops.size} geodes)`)
+}
+
+// ---------------------------------------------------------------------------
+// Phase 3 — Capabilities derivation
+// ---------------------------------------------------------------------------
+// Each entity gets a `capabilities` object: a flat namespace of boolean flags
+// describing what the entity CAN do, derived from raw game data + presence of
+// source-row types + presence of recipe references. Replaces scattered
+// `entity.type === X` checks with `entity.capabilities.X` reads.
+//
+// See docs/CAPABILITIES.md for the vocabulary and rationale.
+console.log('\n🏷️  Deriving capabilities (Phase 3)...');
+{
+  // Gather indexes once for efficient capability derivation
+  const cookingOutputIds = new Set()        // gameIds output by a cooking recipe (= entities of type 'food')
+  const craftingOutputIds = new Set()       // gameIds output by a crafting recipe
+  const tailoringOutputIds = new Set()      // gameIds output by tailoring (= clothing with tailoring source)
+  const usableInCooking = new Set()         // gameIds USED AS an ingredient in cooking
+  const usableInCrafting = new Set()        // gameIds USED AS an ingredient in crafting
+  const usableInTailoring = new Set()       // gameIds USED AS an ingredient in tailoring
+  const giftedItemIds = new Set()           // itemIds appearing as a gift in relationships
+  const bundleItemIds = new Set()           // gameIds required by any bundle
+
+  // Pass 1: index direct categorical outputs
+  for (const entity of allCompiledEntities) {
+    if (entity.type === 'food') cookingOutputIds.add(entity.gameId)
+    if (entity.type === 'crafted') craftingOutputIds.add(entity.gameId)
+    for (const r of (entity.usedInRecipes || [])) {
+      if (r.type === 'cooking')   usableInCooking.add(entity.gameId)
+      if (r.type === 'crafting')  usableInCrafting.add(entity.gameId)
+      if (r.type === 'tailoring') usableInTailoring.add(entity.gameId)
+    }
+    if (entity.type === 'bundle') {
+      for (const it of (entity.items || [])) {
+        if (it.gameId) bundleItemIds.add(it.gameId)
+      }
+    }
+  }
+  for (const [itemId] of relationships) giftedItemIds.add(itemId)
+
+  // Pass 2: tailoring outputs. The output gameId is encoded in the recipeId
+  // suffix as `...(S)1234` or `...(P)5678`. Walk every tailoring recipe ref
+  // and extract the qualified id from the suffix.
+  const TAILORING_OUTPUT_RE = /\((S|P|H|B)\)([A-Za-z0-9_]+)$/
+  for (const entity of allCompiledEntities) {
+    for (const r of (entity.usedInRecipes || [])) {
+      if (r.type !== 'tailoring' || !r.recipeId) continue
+      const m = r.recipeId.match(TAILORING_OUTPUT_RE)
+      if (m) tailoringOutputIds.add(`(${m[1]})${m[2]}`)
+    }
+  }
+
+  // Source-type presence cheats: a Set of source types per entity
+  function sourceTypes(entity) {
+    const set = new Set()
+    for (const s of (entity.sources || [])) if (s.type) set.add(s.type)
+    return set
+  }
+
+  // Equippable types — kept as a single set rather than 5 separate flags
+  // since callers usually just want to know "is this an equippable thing"
+  const EQUIPPABLE_TYPES = new Set(['weapon', 'boot', 'ring', 'trinket', 'tool', 'clothing', 'hat'])
+
+  // Types that legitimately have no sell price at all (rather than just an
+  // entity that happens to be missing one). Drives `hasSellingPrice`.
+  const NEVER_SELLABLE = new Set(['bundle', 'location', 'machine', 'festival', 'villager',
+    'event', 'achievement', 'quest', 'tag', 'type', 'building', 'movie', 'concession',
+    'buff', 'power', 'museum-reward', 'reward', 'tree', 'animal', 'monster',
+    'tool', 'weapon', 'boot', 'trinket', 'furniture'])
+
+  let derived = 0
+  for (const entity of allCompiledEntities) {
+    const sTypes = sourceTypes(entity)
+    const id = entity.id
+    const gameId = entity.gameId
+
+    const caps = {
+      // Acquisition / sourcing — derived from sources[]. "obtainableFrom*"
+      // means "this item can be acquired via that mechanism."
+      obtainableFromGeode:        sTypes.has('geode'),
+      obtainableFromMonsters:     sTypes.has('monster-drop'),
+      obtainableFromBreakables:   sTypes.has('breakable-drop'),
+      obtainableFromTilling:      sTypes.has('tilling'),
+      obtainableFromFishing:      sTypes.has('fish'),
+      obtainableFromFishingChest: sTypes.has('fishing-chest'),
+      obtainableFromForage:       sTypes.has('forage'),
+      obtainableFromShop:         sTypes.has('shop'),
+      obtainableFromMail:         sTypes.has('mail'),
+      obtainableFromGarbage:      sTypes.has('garbage-can'),
+      obtainableFromAnimal:       sTypes.has('animal') || sTypes.has('hatch') || sTypes.has('pregnancy'),
+      obtainableFromTapping:      sTypes.has('tapper'),
+      obtainableFromQuest:        sTypes.has('quest-requirement') || sTypes.has('reward'),
+      obtainableFromSecretNote:   sTypes.has('secret-note-reward'),
+      obtainableFromMachine:      sTypes.has('machine'),
+      // *Output by* a recipe — i.e. the player makes this item via the recipe.
+      // Not "this item is an ingredient." Use usableIn* below for the inverse.
+      cookable:                   sTypes.has('cooking')   || cookingOutputIds.has(gameId),
+      craftable:                  sTypes.has('crafting')  || craftingOutputIds.has(gameId),
+      tailorable:                 sTypes.has('tailoring') || tailoringOutputIds.has(gameId),
+      obtainableFromSeed:         sTypes.has('seed'),
+
+      // Used as an ingredient in a recipe (the inverse of cookable/craftable/tailorable)
+      usableInCooking:   gameId != null && usableInCooking.has(gameId),
+      usableInCrafting:  gameId != null && usableInCrafting.has(gameId),
+      usableInTailoring: gameId != null && usableInTailoring.has(gameId),
+
+      // Use capabilities — what the player can do with this item
+      donatable:    !!entity.museumDonatable,
+      giftable:     !!entity.canBeGifted || (id != null && giftedItemIds.has(id)),
+      edible:       (entity.edibility ?? -300) > -300,
+      equippable:   EQUIPPABLE_TYPES.has(entity.type),
+      bundleSlot:   gameId != null && bundleItemIds.has(gameId),
+
+      // Pricing — replaces the 10-clause negation in UniversalModal.jsx:311
+      hasSellingPrice: !NEVER_SELLABLE.has(entity.type)
+        && (entity.price != null && entity.price > 0
+            || entity.prices != null && Object.keys(entity.prices).length > 0),
+
+      // Quality
+      hasQualityTiers: Array.isArray(entity.qualityTiers) && entity.qualityTiers.length > 1,
+
+      // Subtype-disguised hat check (clothing+hat is a Stardew quirk)
+      isHat:        entity.type === 'clothing' && entity.subtype === 'hat',
+    }
+
+    entity.capabilities = caps
+    derived++
+  }
+  console.log(`  ✓ Derived capabilities for ${derived} entities`)
 }
 
 // ---------------------------------------------------------------------------

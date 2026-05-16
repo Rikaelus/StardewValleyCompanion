@@ -46,6 +46,18 @@ const TYPE_MAP = {
   'animal-products': 'animal-product',
   'big-craftables': 'big-craftable',
   'tree-fruits': 'tree-fruit',
+  hats: 'hat',
+  trees: 'tree',
+  bait: 'bait',
+  tackle: 'tackle',
+  monsters: 'monster',
+  weapons: 'weapon',
+  boots: 'boot',
+  rings: 'ring',
+  artifacts: 'artifact',
+  breakables: 'breakable',
+  geodes: 'geode',
+  villagers: 'villager',
 }
 
 // Legacy itemsKey map (used for backward-compat data shape { [itemsKey]: items, items, gameIdIndex })
@@ -64,6 +76,18 @@ const ITEMS_KEY_MAP = {
   'animal-products': 'animalProducts',
   'big-craftables': 'bigCraftables',
   'tree-fruits': 'treeFruits',
+  trees: 'trees',
+  bait: 'bait',
+  tackle: 'tackle',
+  monsters: 'monsters',
+  weapons: 'weapons',
+  boots: 'boots',
+  rings: 'rings',
+  artifacts: 'artifacts',
+  breakables: 'breakables',
+  geodes: 'geodes',
+  clothing: 'clothing',
+  villagers: 'villagers',
 }
 
 /**

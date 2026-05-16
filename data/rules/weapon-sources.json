@@ -1,0 +1,75 @@
+{
+  "$schema": "weapon-sources-schema",
+  "description": "Per-weapon source overrides keyed by Weapons.json raw ID. For weapons whose acquisition sources are hardcoded in C# and not in any game data export. All entries verified against stardewvalleywiki.com.",
+  "overrides": {
+    "2": {
+      "sources": [{ "description": "Dropped by Haunted Skulls in the Quarry Mine or dungeon floors in the Mines" }]
+    },
+    "3": {
+      "sources": [{ "description": "Found in the Mines starting from floor 80" }]
+    },
+    "14": {
+      "sources": [{ "description": "Fishing treasure chest (requires Fishing level 2)" }]
+    },
+    "15": {
+      "sources": [{ "description": "Breaking boxes/barrels or monster drop on floors 20–59 of the Mines" }]
+    },
+    "22": {
+      "sources": [
+        { "description": "Breaking boxes/barrels or monster drop on floors 20–39 of the Mines" },
+        { "description": "Remixed mine rewards: chest on floor 10" }
+      ]
+    },
+    "45": {
+      "sources": [
+        { "description": "Monster drop or breaking crates/barrels in Skull Cavern or Quarry Mine" },
+        { "description": "Remixed mine rewards: chest on floor 90" }
+      ]
+    },
+    "47": {
+      "sources": [{ "description": "Starting tool (given at the beginning of the game)" }]
+    },
+    "48": {
+      "sources": [{ "description": "Breaking boxes/barrels on floors 80–99 of the Mines" }]
+    },
+    "51": {
+      "sources": [{ "description": "Fishing treasure chest (requires Fishing level 2)" }]
+    },
+    "53": {
+      "sources": [{ "description": "Found at the Grim Reaper statue in the Quarry Mine" }]
+    },
+    "54": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "55": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "56": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "57": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "58": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "59": {
+      "sources": [{ "description": "Volcano Dungeon chest" }]
+    },
+    "61": {
+      "sources": [{ "description": "14% drop from special Slimes in the Mines during Danger In The Deep or after activating the Shrine of Challenge" }]
+    },
+    "62": {
+      "sources": [{ "description": "Forge at Volcano Forge: Galaxy Sword + 3× (1 Galaxy Soul + 20 Cinder Shards)" }]
+    },
+    "63": {
+      "sources": [{ "description": "Forge at Volcano Forge: Galaxy Hammer + 3× (1 Galaxy Soul + 20 Cinder Shards)" }]
+    },
+    "64": {
+      "sources": [{ "description": "Forge at Volcano Forge: Galaxy Dagger + 3× (1 Galaxy Soul + 20 Cinder Shards)" }]
+    },
+    "66": {
+      "sources": [{ "description": "Farming Mastery reward" }]
+    }
+  }
+}

@@ -163,6 +163,8 @@ const TYPE_LABELS = {
   'animal-product': 'Animal Product',
   'tree-fruit': 'Tree Fruit',
   'tree-seed': 'Tree Seed',
+  'tree': 'Tree',
+  'fruit-tree-sapling': 'Fruit Tree Sapling',
   'ring': 'Ring',
   'book': 'Book',
   'food': 'Food',
@@ -232,10 +234,17 @@ const SUBTYPE_LABELS = {
   'milk': 'Milk',
   // breakable subtypes
   'mine-container': 'Mine Container',
+  'stone-node': 'Stone Node',
+  'ore-node': 'Ore Node',
+  'geode-node': 'Geode Node',
+  'gem-node': 'Gem Node',
   'resource-clump': 'Resource Clump',
   // power subtypes
   'mastery': 'Mastery',
   'unlock': 'Unlock',
+  // tree subtypes
+  'wild-tree': 'Wild Tree',
+  'fruit-tree': 'Fruit Tree',
   // location subtypes
   'shop': 'Shop',
   'region': 'Region',

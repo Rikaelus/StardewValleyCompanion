@@ -1,14 +1,12 @@
 .bundle-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0;
   padding: 2px 6px;
   background: #e3f2fd;
-  color: #1976d2;
   border-radius: 3px;
   font-size: 11px;
   white-space: nowrap;
-  transition: all 0.15s ease;
+  transition: background 0.15s ease;
 }
 
 .bundle-badge-clickable {
@@ -20,11 +18,21 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* When the inner UniversalModalButton marks it complete, tint the badge green */
+.bundle-badge:has(span[title="Complete"]) {
+  background: #e8f5e9;
+}
+
+.bundle-badge:has(span[title="Complete"]):hover {
+  background: #c8e6c9;
+}
+
 .bundle-badge-name {
   white-space: nowrap;
 }
 
-.bundle-badge-icon {
-  font-size: 0.75rem;
-  transition: opacity 0.15s ease;
+/* Override UniversalModalButton inline variant sizing to match badge context */
+.bundle-badge button {
+  font-size: 11px !important;
+  font-weight: 500 !important;
 }

@@ -1,11 +1,55 @@
 import ModalSection from './ModalSection'
 import { ModalGrid, ModalGridItem } from './ModalGrid'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import SeasonBadges from './SeasonBadges'
 import ShopSourceList from './ShopSourceList'
 import { formatTime, formatProcessingTime, computeDropCountDistribution, formatChance } from '../../utils/Formatters'
 import ConditionBadge from './ConditionBadge'
 import InfoTooltip from './InfoTooltip'
+import { useProgress } from '../../hooks/UseProgress'
+
+const EQUIPPED_LABELS = {
+  hat: 'Hat slot', shirtItem: 'Shirt slot', pantsItem: 'Pants slot',
+  boots: 'Boots slot', leftRing: 'Left ring', rightRing: 'Right ring',
+}
+
+export function InventorySection({ entity }) {
+  const { hasSaveData, getOwnedCount, getOwnedLocations } = useProgress()
+  if (!hasSaveData || !entity?.gameId) return null
+  const total = getOwnedCount(entity.gameId)
+  const locations = getOwnedLocations(entity.gameId)
+
+  const byLocation = new Map()
+  for (const loc of locations) {
+    let key
+    if (loc.container === 'player') key = 'Backpack'
+    else if (EQUIPPED_LABELS[loc.container]) key = EQUIPPED_LABELS[loc.container]
+    else key = `${loc.container} (${loc.location})`
+    byLocation.set(key, (byLocation.get(key) || 0) + loc.count)
+  }
+
+  return (
+    <>
+      <ModalGrid>
+        <ModalGridItem label="Total:" value={total > 0 ? total : 'None'} />
+      </ModalGrid>
+      {byLocation.size > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Locations:</span>
+          <div className="source-list">
+            {[...byLocation.entries()].map(([loc, count]) => (
+              <span key={loc} className="source-entry">
+                <span className="source-name source-name--indented">{loc}</span>
+                <span />
+                <span className="source-detail">×{count}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 const FISH_TAG_LABELS = {
   'fish_ocean': 'Any Ocean Fish',
@@ -64,10 +108,11 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const mailSources = allSources.filter(s => s.type === 'mail')
   const rewardSources = allSources.filter(s => s.type === 'reward')
   const craneGameSources = allSources.filter(s => s.type === 'crane-game')
+  const locationSources = allSources.filter(s => s.type === 'location')
   // Sources with no type (freeform description + optional condition — e.g. ??? hat)
   const freeformSources = allSources.filter(s => !s.type && s.description)
   const hasBuyingInfo = shopSources.length > 0
-  const hasOtherSources = monsterDropSources.length > 0 || fishPondSources.length > 0 ||
+  const hasOtherSources = locationSources.length > 0 || monsterDropSources.length > 0 || fishPondSources.length > 0 ||
     tillingSources.length > 0 || craftingSources.length > 0 || cookingSources.length > 0 ||
     animalSources.length > 0 || hatchSources.length > 0 || pregnancySources.length > 0 ||
     tapperSources.length > 0 || machineSources.length > 0 ||
@@ -85,7 +130,11 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <ModalGrid>
           {hasSeasons && !isSeed && !fishSources.length && !forageSources.length && (
             <ModalGridItem label="Seasons:">
-              <SeasonBadges seasons={entity.seasons} />
+              <SeasonBadges
+                seasons={entity.seasons}
+                greenhouse={['crop', 'tree-fruit', 'fruit-tree-sapling'].includes(entity.type) || (entity.type === 'tree' && entity.subtype === 'fruit-tree')}
+                gingerIsland={['crop', 'tree-fruit', 'fruit-tree-sapling'].includes(entity.type) || (entity.type === 'tree' && entity.subtype === 'fruit-tree')}
+              />
             </ModalGridItem>
           )}
 
@@ -120,6 +169,30 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         </ModalGrid>
       )}
 
+      {locationSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Found At:</span>
+          <div className="source-list">
+            {locationSources.map((src, i) => {
+              const locEntity = src.locationId ? findById(src.locationId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {locEntity
+                      ? <UniversalModalButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.locationId}
+                  </span>
+                  <span />
+                  {src.qualifier && (
+                    <span className="source-detail">{src.qualifier}</span>
+                  )}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
       {shopSources.length > 0 && (
         <div className="source-group">
           <span className="modal-label">Where to Buy:</span>
@@ -142,7 +215,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {locEntity
-                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={locEntity} variant="inline" onNavigate={onNavigate} />
                       : src.location}
                   </span>
                   <span />
@@ -197,7 +270,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {monsterEntity
-                      ? <ModalItemButton item={monsterEntity} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={monsterEntity} variant="inline" onNavigate={onNavigate} />
                       : src.monster}
                   </span>
                   <span />
@@ -223,7 +296,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
 
       {breakableDropSources.length > 0 && (
         <div className="source-group">
-          <span className="modal-label">Breakable Containers:</span>
+          <span className="modal-label">Breakable Sources:</span>
           <div className="source-list">
             {breakableDropSources.map((src, i) => {
               const breakableEntity = src.breakableId ? findById(src.breakableId) : null
@@ -231,7 +304,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {breakableEntity
-                      ? <ModalItemButton item={breakableEntity} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={breakableEntity} variant="inline" onNavigate={onNavigate} />
                       : src.breakableId}
                   </span>
                   <span />
@@ -282,7 +355,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                         <span key={j} className="source-entry source-entry--subrow">
                           <span className="source-name">
                             {ingItem ? (
-                              <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} />
                             ) : (
                               ing.name || `Item #${ing.gameId}`
                             )}
@@ -324,7 +397,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                         <span key={j} className="source-entry source-entry--subrow">
                           <span className="source-name">
                             {ingItem ? (
-                              <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} />
                             ) : (
                               ing.name || `Item #${ing.gameId}`
                             )}
@@ -356,7 +429,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={j} className="source-entry">
                   <span className={`source-name${ingItem ? '' : ' source-name--indented'}`}>
                     {ingItem ? (
-                      <ModalItemButton item={ingItem} variant="inline" onNavigate={onNavigate} label={isTag ? ingItem.rawTag : undefined} />
+                      <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} label={isTag ? ingItem.rawTag : undefined} />
                     ) : (
                       ing.name || `Item #${ing.gameId}`
                     )}
@@ -380,7 +453,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className={`source-name${geodeItem ? '' : ' source-name--indented'}`}>
                     {geodeItem ? (
-                      <ModalItemButton item={geodeItem} variant="inline" onNavigate={onNavigate} />
+                      <UniversalModalButton item={geodeItem} variant="inline" onNavigate={onNavigate} />
                     ) : (
                       src.geodeName || `Geode #${src.geodeGameId}`
                     )}
@@ -406,14 +479,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               return (
                 <span key={i} className="source-entry">
                   {animalEntity
-                    ? <ModalItemButton item={animalEntity} variant="inline" onNavigate={onNavigate} />
+                    ? <UniversalModalButton item={animalEntity} variant="inline" onNavigate={onNavigate} />
                     : <span className="source-name">{src.id}</span>
                   }
                   {(freq || toolEntity) && (
                     <span className="source-qualifiers">
                       <span className="source-qualifier">
                         {freq}
-                        {toolEntity && <> with <ModalItemButton item={toolEntity} variant="inline" onNavigate={onNavigate} /></>}
+                        {toolEntity && <> with <UniversalModalButton item={toolEntity} variant="inline" onNavigate={onNavigate} /></>}
                       </span>
                     </span>
                   )}
@@ -433,13 +506,13 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               return (src.inputDetails || []).map((inputDetail, j) => {
                 const inputItem = inputDetail.inputGameId ? findByGameId(inputDetail.inputGameId) : null
                 const inputDisplay = inputItem
-                  ? <ModalItemButton item={inputItem} variant="inline" onNavigate={onNavigate} />
+                  ? <UniversalModalButton item={inputItem} variant="inline" onNavigate={onNavigate} />
                   : inputDetail.inputName || null
                 return (
                   <span key={`${i}-${j}`} className="source-entry">
                     <span className="source-name">
                       {incubatorEntity
-                        ? <ModalItemButton item={incubatorEntity} variant="inline" onNavigate={onNavigate} />
+                        ? <UniversalModalButton item={incubatorEntity} variant="inline" onNavigate={onNavigate} />
                         : src.id}
                     </span>
                     {(inputDisplay || src.processingTimeMinutes) && (
@@ -473,13 +546,55 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         <div className="source-group">
           <span className="modal-label">Produced By:</span>
           <div className="source-list">
-            {tapperSources.map((src, i) => (
-              <span key={i} className="source-entry">
-                <span className="source-name">Tapper on {src.treeName}</span>
-                <span />
-                <span className="source-detail">{src.daysToHarvest}d</span>
-              </span>
-            ))}
+            {tapperSources.flatMap((src, i) => {
+              const tapperEntity = findById('tapper')
+              const heavyTapperEntity = findById('heavy-tapper')
+              const treeEntity = src.treeId ? findById(`tree-${src.treeId}`) : null
+              const treeDisplay = treeEntity
+                ? <UniversalModalButton item={treeEntity} variant="inline" onNavigate={onNavigate} />
+                : src.treeName
+              const heavyDays = src.daysToHarvest ? Math.ceil(src.daysToHarvest / 2) : null
+              return [
+                <span key={`${i}-tapper`} className="source-entry">
+                  <span className="source-name">
+                    {tapperEntity
+                      ? <UniversalModalButton item={tapperEntity} variant="inline" onNavigate={onNavigate} />
+                      : 'Tapper'}
+                  </span>
+                  <span className="source-qualifiers">
+                    {src.note && (
+                      <span className="source-qualifier source-condition">{src.note}</span>
+                    )}
+                    {src.daysToHarvest && (
+                      <span className="source-qualifier">{src.daysToHarvest}d</span>
+                    )}
+                    <SeasonBadges seasons={src.seasons || ['spring', 'summer', 'fall', 'winter']} compact />
+                  </span>
+                  <span className="source-detail">
+                    from {treeDisplay}
+                  </span>
+                </span>,
+                <span key={`${i}-heavy`} className="source-entry">
+                  <span className="source-name">
+                    {heavyTapperEntity
+                      ? <UniversalModalButton item={heavyTapperEntity} variant="inline" onNavigate={onNavigate} />
+                      : 'Heavy Tapper'}
+                  </span>
+                  <span className="source-qualifiers">
+                    {src.note && (
+                      <span className="source-qualifier source-condition">{src.note}</span>
+                    )}
+                    {heavyDays && (
+                      <span className="source-qualifier">{heavyDays}d</span>
+                    )}
+                    <SeasonBadges seasons={src.seasons || ['spring', 'summer', 'fall', 'winter']} compact />
+                  </span>
+                  <span className="source-detail">
+                    from {treeDisplay}
+                  </span>
+                </span>,
+              ]
+            })}
           </div>
         </div>
       )}
@@ -495,7 +610,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               const inputLabel = inputDetail?.inputName && inputItem && inputDetail.inputName !== inputItem.name
                 ? inputDetail.inputName : null
               const inputDisplay = inputItem
-                ? <ModalItemButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
+                ? <UniversalModalButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
                 : src.inputName || inputDetail?.inputName || (src.inputType && src.inputType !== 'specific'
                   ? src.inputType.charAt(0).toUpperCase() + src.inputType.slice(1)
                   : null)
@@ -504,7 +619,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {machineEntity ? (
-                      <ModalItemButton item={machineEntity} variant="inline" onNavigate={onNavigate} />
+                      <UniversalModalButton item={machineEntity} variant="inline" onNavigate={onNavigate} />
                     ) : (
                       src.id
                     )}
@@ -534,7 +649,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {seedItem
-                      ? <ModalItemButton item={seedItem} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={seedItem} variant="inline" onNavigate={onNavigate} />
                       : src.seedName}
                   </span>
                   <span className="source-qualifiers">
@@ -542,7 +657,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                       {src.growthDays}d{src.regrowDays ? ` (+${src.regrowDays}d)` : ''}
                     </span>
                     {seedItem?.seasons?.length > 0 && (
-                      <SeasonBadges seasons={seedItem.seasons} compact />
+                      <SeasonBadges seasons={seedItem.seasons} compact greenhouse gingerIsland />
                     )}
                   </span>
                 </span>
@@ -562,7 +677,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {locEntity
-                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={locEntity} variant="inline" onNavigate={onNavigate} />
                       : src.location}
                   </span>
                   <span className="source-qualifiers">
@@ -586,8 +701,8 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {locEntity
-                      ? <ModalItemButton item={locEntity} variant="inline" onNavigate={onNavigate} />
-                      : src.location}
+                      ? <UniversalModalButton item={locEntity} variant="inline" onNavigate={onNavigate} />
+                      : <span className="source-name--indented">{src.location}</span>}
                   </span>
                   <span className="source-qualifiers">
                     <SeasonBadges seasons={seasons} compact />
@@ -604,10 +719,12 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
           <span className="modal-label">Mail:</span>
           <div className="source-list">
             {mailSources.map((src, i) => {
-              const senderVillager = src.sender ? findById(src.sender.toLowerCase()) : null
+              const senderVillager = src.sender
+                ? (findById(src.sender.toLowerCase()) || findById(`vil-${src.sender.toLowerCase()}`))
+                : null
               const senderNode = src.sender
                 ? <>{senderVillager
-                    ? <><span style={{ marginRight: '0.25em' }}>From</span><ModalItemButton item={senderVillager} variant="inline" onNavigate={onNavigate} /></>
+                    ? <><span style={{ marginRight: '0.25em' }}>From</span><UniversalModalButton item={senderVillager} variant="inline" onNavigate={onNavigate} /></>
                     : `From ${src.sender}`
                   }</>
                 : src.mailKey
@@ -660,7 +777,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {rewardLocation
-                      ? <ModalItemButton item={rewardLocation} variant="inline" onNavigate={onNavigate} label={src.rewardSourceName} />
+                      ? <UniversalModalButton item={rewardLocation} variant="inline" onNavigate={onNavigate} label={src.rewardSourceName} />
                       : src.rewardSourceName
                     }
                   </span>
@@ -686,7 +803,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={i} className="source-entry">
                   <span className="source-name">
                     {movieEntity
-                      ? <ModalItemButton item={movieEntity} variant="inline" onNavigate={onNavigate} />
+                      ? <UniversalModalButton item={movieEntity} variant="inline" onNavigate={onNavigate} />
                       : src.movieName}
                   </span>
                   <span className="source-qualifiers">

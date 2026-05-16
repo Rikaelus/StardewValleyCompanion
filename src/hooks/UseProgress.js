@@ -67,6 +67,12 @@ export function useProgress() {
       return key != null && key in saveData.mineralsFound
     }
 
+    function isMuseumDonated(gameId) {
+      if (!saveData?.museumPieces) return false
+      const key = normalizeGameId(gameId)
+      return key != null && saveData.museumPieces.includes(key)
+    }
+
     function isRecipeKnown(recipeName) {
       if (!saveData?.cookingRecipes) return false
       return recipeName in saveData.cookingRecipes
@@ -106,13 +112,13 @@ export function useProgress() {
       const raw = saveData.bundleProgress[String(bundleNumber)]
       if (!raw) return null
 
-      // If itemCount provided, collapse quality slots into per-item booleans
+      // Collapse quality slots into per-item booleans.
+      // Layout is transposed: [item0q0, item1q0, ..., itemNq0, item0q1, item1q1, ...]
       if (itemCount && itemCount > 0 && raw.length > itemCount) {
-        const slotsPerItem = Math.floor(raw.length / itemCount)
+        const qualityLevels = Math.floor(raw.length / itemCount)
         const items = []
         for (let i = 0; i < itemCount; i++) {
-          const base = i * slotsPerItem
-          const turnedIn = raw.slice(base, base + slotsPerItem).some(Boolean)
+          const turnedIn = Array.from({ length: qualityLevels }, (_, q) => raw[q * itemCount + i]).some(Boolean)
           items.push(turnedIn)
         }
         return {
@@ -141,22 +147,44 @@ export function useProgress() {
           const progress = getBundleProgress(entity.bundleNumber, itemCount)
           return progress?.complete ? { completed: true, label: 'Complete' } : null
         }
-        case 'fish':
-          return isFishCaught(entity.gameId) ? { completed: true, label: 'Caught' } : null
         case 'artifact':
-          return isArtifactFound(entity.gameId) ? { completed: true, label: 'Found' } : null
+          return isMuseumDonated(entity.gameId) ? { completed: true, label: 'Donated' } : null
         case 'mineral':
-          return isMineralFound(entity.gameId) ? { completed: true, label: 'Found' } : null
+          return isMuseumDonated(entity.gameId) ? { completed: true, label: 'Donated' } : null
         default:
           return null
       }
     }
+
+    function getOwnedRecord(gameId) {
+      if (!saveData?.inventory?.byGameId) return null
+      const key = normalizeGameId(gameId)
+      if (key == null) return null
+      return saveData.inventory.byGameId[key] ?? saveData.inventory.byGameId[gameId] ?? null
+    }
+
+    function getOwnedCount(gameId) {
+      return getOwnedRecord(gameId)?.totalCount ?? 0
+    }
+
+    function isOwned(gameId) {
+      return getOwnedCount(gameId) > 0
+    }
+
+    function getOwnedLocations(gameId) {
+      return getOwnedRecord(gameId)?.locations ?? []
+    }
+
+    const isJojaRoute = hasSaveData && (saveData.mailReceived ?? []).includes('JojaMember')
+    const isMissingBundleAvailable = hasSaveData && !isJojaRoute && (saveData.mailReceived ?? []).includes('communityCenter')
 
     return {
       hasSaveData,
       saveDate: saveData?.date ?? null,
       skills: saveData?.skills ?? null,
       grandpaScore: saveData?.grandpaScore ?? null,
+      isJojaRoute,
+      isMissingBundleAvailable,
 
       isFishCaught,
       getFishCaughtCount,
@@ -166,6 +194,7 @@ export function useProgress() {
       getFriendshipStatus,
       isArtifactFound,
       isMineralFound,
+      isMuseumDonated,
       isRecipeKnown,
       isRecipeCooked,
       isCraftingRecipeKnown,
@@ -173,6 +202,11 @@ export function useProgress() {
       hasAchievement,
       getBundleProgress,
       getEntityCompletion,
+
+      // Inventory
+      isOwned,
+      getOwnedCount,
+      getOwnedLocations,
     }
   }, [saveData])
 }

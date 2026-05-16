@@ -1,0 +1,325 @@
+.shrine-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.shrine-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.shrine-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.5rem;
+}
+
+.shrine-subtitle {
+  font-size: 0.9rem;
+  color: #6b5d4f;
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 0 auto 1.5rem;
+}
+
+.shrine-score-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 8px;
+}
+
+.shrine-score-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.shrine-score-total {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5c4a32;
+  line-height: 1;
+}
+
+.shrine-score-divider {
+  font-size: 1.5rem;
+  color: #b39c7a;
+}
+
+.shrine-score-max {
+  font-size: 1.5rem;
+  color: #8b6f47;
+}
+
+.shrine-score-label {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 0.4rem;
+}
+
+.shrine-candles {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+}
+
+.shrine-candle {
+  display: inline-block;
+  width: 1.6rem;
+  text-align: center;
+  font-variant-emoji: text;
+  filter: grayscale(1) opacity(0.4);
+  transition: filter 0.15s;
+}
+
+.shrine-candle--lit {
+  filter: none;
+}
+
+.shrine-candle-count {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  font-weight: 600;
+}
+
+.shrine-game-score-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #8b6f47;
+  font-style: italic;
+}
+
+.shrine-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1rem;
+}
+
+.shrine-category {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.shrine-category-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.shrine-category-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5c4a32;
+  margin: 0;
+}
+
+.shrine-category-score {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8b6f47;
+}
+
+.shrine-category-summary {
+  font-size: 0.78rem;
+  color: #8b6f47;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.shrine-rule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.shrine-rule {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.45rem 0.55rem;
+  border-radius: 4px;
+  background: #faf4e8;
+  border: 1px solid transparent;
+}
+
+.shrine-rule--earned {
+  background: #ecf5e2;
+  border-color: #c5dba0;
+}
+
+.shrine-rule-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #b39c7a;
+  background: white;
+  border: 1.5px solid #d9c4a0;
+}
+
+.shrine-rule--earned .shrine-rule-icon {
+  color: white;
+  background: #6a9a3a;
+  border-color: #6a9a3a;
+}
+
+.shrine-rule-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.shrine-rule-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5c4a32;
+}
+
+.shrine-rule-detail {
+  font-size: 0.75rem;
+  color: #8b6f47;
+  line-height: 1.3;
+}
+
+.shrine-rule-points {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8b6f47;
+  white-space: nowrap;
+}
+
+.shrine-rule--earned .shrine-rule-points {
+  color: #4a7228;
+}
+
+.shrine-group-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.shrine-group {
+  padding: 0.55rem 0.7rem;
+  border: 1px dashed #d9c4a0;
+  border-radius: 5px;
+  background: #fcf8ef;
+}
+
+.shrine-group--active {
+  border-style: solid;
+  border-color: #c5a875;
+  background: #fdf6e3;
+}
+
+.shrine-group--inactive {
+  opacity: 0.55;
+}
+
+.shrine-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.shrine-group-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5c4a32;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.shrine-group-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+  background: #8b6f47;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+}
+
+.shrine-group-note {
+  font-size: 0.78rem;
+  color: #8b6f47;
+  font-style: italic;
+  padding: 0.2rem 0;
+}
+
+.shrine-group-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.shrine-group-divider::before,
+.shrine-group-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d9c4a0;
+}
+
+.shrine-group-divider span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #8b6f47;
+  padding: 0 0.6rem;
+}
+
+.shrine-empty {
+  max-width: 540px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.shrine-empty-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.shrine-empty-text {
+  font-size: 0.95rem;
+  color: #6b5d4f;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+}
+
+.shrine-empty-link {
+  color: #8b6f47;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shrine-empty-link:hover {
+  text-decoration: underline;
+}

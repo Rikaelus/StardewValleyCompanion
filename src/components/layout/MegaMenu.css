@@ -1,0 +1,110 @@
+.mega-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgb(21, 71, 148);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  z-index: 190;
+  animation: megaMenuSlideDown 0.2s ease-out;
+}
+
+.mega-menu--closing {
+  animation: megaMenuSlideUp 0.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes megaMenuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes megaMenuSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.mega-menu-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.mega-menu-group-heading {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mega-menu-group-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.mega-menu-item {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+.mega-menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.mega-menu-item--active {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+.mega-menu-item--disabled {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
+.mega-menu-item--disabled:hover {
+  background: none;
+}
+
+/* Responsive: collapse columns on smaller screens */
+@media (max-width: 1100px) {
+  .mega-menu-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .mega-menu-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+}

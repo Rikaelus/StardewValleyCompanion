@@ -1,4 +1,4 @@
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 
 function SpecialCases({ items }) {
   const specialItems = items.filter(item => item.notes)
@@ -12,7 +12,7 @@ function SpecialCases({ items }) {
         {specialItems.map(item => (
           <div key={item.id} className="special-case-item">
             <div className="special-case-header">
-              <ModalItemButton
+              <UniversalModalButton
                 item={item}
                 showIcon={true}
                 showLabel={true}

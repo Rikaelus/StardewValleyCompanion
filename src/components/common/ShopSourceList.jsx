@@ -1,5 +1,4 @@
-import ModalItemButton from './ModalItemButton'
-import TagList from './TagList'
+import UniversalModalButton from './UniversalModalButton'
 import { usePlayer } from '../../contexts/PlayerContext'
 import ConditionBadge from './ConditionBadge'
 import SeasonBadges from './SeasonBadges'
@@ -7,7 +6,7 @@ import SeasonBadges from './SeasonBadges'
 /**
  * Renders shop sources in two modes:
  *
- * compact — deduplicated by storeId, renders as TagList chips (for table cells)
+ * compact — deduplicated by storeId, renders as clickable buttons (for table cells)
  * full    — one row per source with qualifiers and price detail (for modals)
  *
  * Props:
@@ -28,14 +27,21 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
     for (const src of shopSources) {
       if (!seen.has(src.id)) seen.set(src.id, src)
     }
-    const tags = [...seen.values()].map(src => {
-      const storeEntity = findEntityById ? findEntityById(src.id) : null
-      const key = storeEntity?.name ?? src.id
-      return src.seasons?.length
-        ? `${key} (${src.seasons.map(s => s[0].toUpperCase() + s.slice(1)).join('/')})`
-        : key
-    })
-    return <TagList items={tags} variant="location" />
+    const unique = [...seen.values()]
+    return (
+      <span className="cell-location-list">
+        {unique.map((src, i) => {
+          const storeEntity = findEntityById ? findEntityById(src.id) : null
+          return (
+            <span key={src.id} className="cell-location-item">
+              {storeEntity
+                ? <UniversalModalButton item={storeEntity} variant="table-inline" stopPropagation />
+                : (storeEntity?.name ?? src.id)}
+            </span>
+          )
+        })}
+      </span>
+    )
   }
 
   // ── Full mode ────────────────────────────────────────────────────────────────
@@ -71,14 +77,14 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
         // condition rendered separately via ConditionBadge below
 
         const priceDetail = isBarter ? (
-          <>
+          <span className="source-detail-inner">
             {(src.quantity > 1 || src.tradeItemAmount > 1) && (
               <span className="source-qualifier">
                 {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? `×${src.tradeItemAmount}` : ''}
               </span>
             )}
             {currencyItem ? (
-              <ModalItemButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
+              <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
             ) : (
               <>
                 {src.tradeItemIcon && (
@@ -87,16 +93,18 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
                 {src.tradeItemName}
               </>
             )}
-          </>
+          </span>
         ) : shopCurrencyItem ? (
-          <>
+          <span className="source-detail-inner">
             <span className="source-qualifier">
               {src.quantity > 1 ? `${src.quantity} for ` : ''}{price > 1 ? `×${price}` : ''}
             </span>
-            <ModalItemButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} />
-          </>
+            <UniversalModalButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} />
+          </span>
         ) : (
-          price != null ? `${price.toLocaleString()}g` : '—'
+          price != null
+            ? (src.quantity > 1 ? `${src.quantity} for ${price.toLocaleString()}g` : `${price.toLocaleString()}g`)
+            : '—'
         )
 
         return (
@@ -106,7 +114,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
                 <span className="source-entry">
                   <span className="source-name">
                     {storeEntity && onNavigate ? (
-                      <ModalItemButton item={storeEntity} variant="inline" onNavigate={onNavigate} />
+                      <UniversalModalButton item={storeEntity} variant="inline" onNavigate={onNavigate} />
                     ) : (
                       storeName
                     )}

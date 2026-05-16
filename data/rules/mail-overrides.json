@@ -7,7 +7,8 @@
     "Beat_PK":    { "condition": "Beat Journey of the Prairie King" },
     "JunimoKart": { "condition": "Beat all levels of Junimo Kart" },
     "MSB_Pierre": { "condition": "Pierre's friendship event (3+ hearts)" },
-    "Sandy":      { "condition": "3+ hearts with Sandy" }
+    "Sandy":      { "condition": "3+ hearts with Sandy" },
+    "Wizard":     { "condition": "Friendship with the Wizard" }
   },
 
   "senders": {
@@ -20,6 +21,7 @@
     "dad2": "Dad",
     "dad3": "Dad",
     "dad4": "Dad",
-    "dad5": "Dad"
+    "dad5": "Dad",
+    "Wizard": "Wizard"
   }
 }

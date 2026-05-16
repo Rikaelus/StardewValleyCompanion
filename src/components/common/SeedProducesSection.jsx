@@ -1,5 +1,5 @@
 import ModalSection from './ModalSection'
-import ModalItemButton from './ModalItemButton'
+import UniversalModalButton from './UniversalModalButton'
 import SeasonBadges from './SeasonBadges'
 import ItemSellPrice from './ItemSellPrice'
 
@@ -20,12 +20,12 @@ function SeedProducesSection({ entity, cropItems, forageItems, onNavigate }) {
               <span className="processing-arrow">{idx === produces.length - 1 ? '└→' : '├→'}</span>
               <div className="processing-row__name">
                 {crop
-                  ? <ModalItemButton item={crop} variant="inline" onNavigate={onNavigate} />
+                  ? <UniversalModalButton item={crop} variant="inline" onNavigate={onNavigate} />
                   : <strong>{p.cropName}</strong>
                 }
               </div>
               <div className="processing-row__seasons">
-                {cropSeasons.length > 0 && <SeasonBadges seasons={cropSeasons} />}
+                {cropSeasons.length > 0 && <SeasonBadges seasons={cropSeasons} greenhouse gingerIsland />}
               </div>
               <div className="processing-row__growth">
                 {p.growthDays && `${p.growthDays}d${p.regrowDays ? ` (+${p.regrowDays}d)` : ''}`}
