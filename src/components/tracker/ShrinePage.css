@@ -4,6 +4,29 @@
   padding: 1rem 0;
 }
 
+.shrine-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.shrine-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
 .shrine-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -157,6 +180,43 @@
   border-radius: 4px;
   background: #faf4e8;
   border: 1px solid transparent;
+}
+
+.shrine-rule-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.shrine-rule-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #8b6f47;
+  text-decoration: none;
+  background: #f0e6d0;
+  border: 1px solid #d9c4a0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.shrine-rule-link:hover {
+  background: #e0ccaa;
+  color: #5c4a32;
+}
+
+.shrine-rule--earned .shrine-rule-link {
+  color: #4a7228;
+  background: #daf0c4;
+  border-color: #b0d88a;
+}
+
+.shrine-rule--earned .shrine-rule-link:hover {
+  background: #c8e8a8;
 }
 
 .shrine-rule--earned {

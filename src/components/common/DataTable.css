@@ -45,6 +45,10 @@
   white-space: nowrap;
 }
 
+.data-table td.cell-wrap {
+  white-space: normal;
+}
+
 .data-table th {
   background: linear-gradient(180deg, #e8d4b0 0%, #d4c4a8 100%);
   font-weight: 600;

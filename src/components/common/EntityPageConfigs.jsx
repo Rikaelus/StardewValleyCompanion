@@ -13,6 +13,23 @@ import { formatTime, getDifficultyColor, getLocationNames, getEntityLabels } fro
 
 // ─── Shared helpers ────────────────────────────────────────────────────────────
 
+function createOwnedColumn(progress, { entity } = {}) {
+  return {
+    id: 'owned',
+    header: 'Owned',
+    accessorFn: row => progress.getOwnedCount(row.gameId, entity ? row : undefined),
+    cell: ({ getValue }) => {
+      const count = getValue()
+      return (
+        <span style={{ fontWeight: count > 0 ? 700 : 400, color: count > 0 ? '#3d6b1a' : '#aaa' }}>
+          {count > 0 ? count : '0'}
+        </span>
+      )
+    },
+    meta: { align: 'center' },
+  }
+}
+
 function nuanceNameColumn(ctx) {
   return createNameColumn({
     cellRenderer: ({ row }) => (
@@ -181,20 +198,30 @@ const FISH_CONFIG = {
       createNameColumn({
         cellRenderer: ({ row }) => (
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            {progress.hasSaveData && (
-              <span
-                className={`caught-indicator ${progress.isFishCaught(row.original.gameId) ? 'caught' : 'not-caught'}`}
-                title={progress.isFishCaught(row.original.gameId) ? 'Caught' : 'Not caught'}
-              >
-                {progress.isFishCaught(row.original.gameId) ? '✓' : '○'}
-              </span>
-            )}
             <UniversalModalButton item={row.original} showIcon showLabel iconSize={24} stopPropagation onNavigate={openModal} />
             {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐</span>}
             {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
           </span>
         ),
       }),
+      ...(progress.hasSaveData ? [{
+        id: 'caught',
+        header: 'Caught',
+        accessorFn: row => progress.isFishCaught(row.gameId) ? 1 : 0,
+        cell: ({ row }) => {
+          const caught = progress.isFishCaught(row.original.gameId)
+          return (
+            <span
+              className={`caught-indicator ${caught ? 'caught' : 'not-caught'}`}
+              title={caught ? 'Caught' : 'Not caught'}
+            >
+              {caught ? '✓' : '○'}
+            </span>
+          )
+        },
+        meta: { align: 'center' },
+      }] : []),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       locationColumn(ctx),
       createSeasonColumn(),
       {
@@ -290,13 +317,14 @@ const CROPS_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { villagers: { all: villagers }, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       createSeasonColumn({ greenhouse: true, gingerIsland: true }),
       {
         accessorKey: 'growthDays',
@@ -365,11 +393,12 @@ const SEEDS_CONFIG = {
     return { cropsById: map }
   },
   getColumns: (ctx, extraData) => {
-    const { professionsRef } = ctx
+    const { professionsRef, progress } = ctx
     const { cropsById } = extraData
 
     return [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       {
         accessorKey: 'produces',
         header: 'Crop',
@@ -536,7 +565,7 @@ const ARTISAN_CONFIG = {
     },
   ],
   getColumns: (ctx, _extra, filters) => {
-    const { entities, professionsRef, data } = ctx
+    const { entities, professionsRef, data, progress } = ctx
     const { villagers: { all: villagers }, findById, ...relationalData } = entities
     const allArtisan = data.items || []
     const isGenerics = filters?.category === 'generics'
@@ -560,6 +589,7 @@ const ARTISAN_CONFIG = {
     if (isGenerics) {
       return [
         createNameColumn(),
+        ...(progress.hasSaveData ? [createOwnedColumn(progress, { entity: true })] : []),
         {
           id: 'machine',
           accessorFn: (row) => row.sources?.find(s => s.type === 'machine')?.id,
@@ -608,6 +638,7 @@ const ARTISAN_CONFIG = {
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress, { entity: true })] : []),
       {
         id: 'source',
         accessorFn: (row) => {
@@ -675,13 +706,14 @@ const FORAGE_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, openModal } = ctx
+    const { entities, openModal, progress } = ctx
     const { villagers: { all: villagers }, findById, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       nuanceNameColumn(ctx),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       {
         id: 'locations',
         header: 'Locations',
@@ -731,34 +763,38 @@ const FURNITURE_CONFIG = {
       filterFn: subtypeFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'type',
-      header: 'Type',
-      cell: ({ getValue }) => {
-        const t = getValue()
-        if (!t) return '—'
-        return t.charAt(0).toUpperCase() + t.slice(1)
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'type',
+        header: 'Type',
+        cell: ({ getValue }) => {
+          const t = getValue()
+          if (!t) return '—'
+          return t.charAt(0).toUpperCase() + t.slice(1)
+        },
       },
-    },
-    {
-      accessorKey: 'price',
-      header: 'Buy Price',
-      cell: ({ getValue }) => {
-        const price = getValue()
-        if (!price) return '—'
-        return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+      {
+        accessorKey: 'price',
+        header: 'Buy Price',
+        cell: ({ getValue }) => {
+          const price = getValue()
+          if (!price) return '—'
+          return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+        },
+        meta: { align: 'right' },
       },
-      meta: { align: 'right' },
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Buy',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'sources',
+        header: 'Where to Buy',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Hats ──────────────────────────────────────────────────────────────────────
@@ -824,13 +860,14 @@ const ANIMAL_PRODUCTS_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { villagers: { all: villagers }, findById, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       {
         accessorKey: 'subtype',
         header: 'Type',
@@ -897,13 +934,14 @@ const TREE_FRUIT_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { villagers: { all: villagers }, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       createSeasonColumn({ greenhouse: true, gingerIsland: true }),
       createPriceColumn(professionsRef),
       createBundleColumn(relationalData),
@@ -1024,31 +1062,35 @@ const BAIT_CONFIG = {
       filterFn: searchFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'description',
-      header: 'Description',
-      cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
-      enableSorting: false,
-    },
-    {
-      accessorKey: 'price',
-      header: 'Price',
-      cell: ({ getValue }) => {
-        const price = getValue()
-        if (!price) return '—'
-        return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
       },
-      meta: { align: 'right' },
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Get',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'price',
+        header: 'Price',
+        cell: ({ getValue }) => {
+          const price = getValue()
+          if (!price) return '—'
+          return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+        },
+        meta: { align: 'right' },
+      },
+      {
+        accessorKey: 'sources',
+        header: 'Where to Get',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Tackle ───────────────────────────────────────────────────────────────────
@@ -1063,31 +1105,35 @@ const TACKLE_CONFIG = {
       filterFn: searchFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'description',
-      header: 'Description',
-      cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
-      enableSorting: false,
-    },
-    {
-      accessorKey: 'price',
-      header: 'Price',
-      cell: ({ getValue }) => {
-        const price = getValue()
-        if (!price) return '—'
-        return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
       },
-      meta: { align: 'right' },
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Get',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'price',
+        header: 'Price',
+        cell: ({ getValue }) => {
+          const price = getValue()
+          if (!price) return '—'
+          return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+        },
+        meta: { align: 'right' },
+      },
+      {
+        accessorKey: 'sources',
+        header: 'Where to Get',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Minerals ─────────────────────────────────────────────────────────────────
@@ -1117,13 +1163,14 @@ const MINERALS_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { villagers: { all: villagers }, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       {
         accessorKey: 'subtype',
         header: 'Type',
@@ -1158,13 +1205,14 @@ const RESOURCES_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     return [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       createPriceColumn(professionsRef),
       createBundleColumn(relationalData),
     ]
@@ -1291,18 +1339,21 @@ const WEAPONS_CONFIG = {
       filterFn: subtypeFilterFn,
     },
   ],
-  getColumns: () => [
-    createNameColumn(),
-    {
-      accessorKey: 'subtype',
-      header: 'Type',
-      cell: ({ getValue }) => {
-        const t = getValue()
-        return t ? t.charAt(0).toUpperCase() + t.slice(1) : '—'
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'subtype',
+        header: 'Type',
+        cell: ({ getValue }) => {
+          const t = getValue()
+          return t ? t.charAt(0).toUpperCase() + t.slice(1) : '—'
+        },
       },
-    },
-    {
-      id: 'damage',
+      {
+        id: 'damage',
       header: 'Damage',
       accessorFn: row => row.minDamage ?? 0,
       cell: ({ row }) => {
@@ -1350,7 +1401,8 @@ const WEAPONS_CONFIG = {
       },
       meta: { align: 'center' },
     },
-  ],
+    ]
+  },
 }
 
 // ─── Boots ────────────────────────────────────────────────────────────────────
@@ -1365,39 +1417,43 @@ const BOOTS_CONFIG = {
       filterFn: searchFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'description',
-      header: 'Description',
-      cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
-      enableSorting: false,
-    },
-    {
-      accessorKey: 'defense',
-      header: 'Defense',
-      cell: ({ getValue }) => {
-        const v = getValue()
-        return v != null ? `+${v}` : '—'
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
       },
-      meta: { align: 'center' },
-    },
-    {
-      accessorKey: 'immunity',
-      header: 'Immunity',
-      cell: ({ getValue }) => {
-        const v = getValue()
-        return v != null ? `+${v}` : '—'
+      {
+        accessorKey: 'defense',
+        header: 'Defense',
+        cell: ({ getValue }) => {
+          const v = getValue()
+          return v != null ? `+${v}` : '—'
+        },
+        meta: { align: 'center' },
       },
-      meta: { align: 'center' },
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Get',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'immunity',
+        header: 'Immunity',
+        cell: ({ getValue }) => {
+          const v = getValue()
+          return v != null ? `+${v}` : '—'
+        },
+        meta: { align: 'center' },
+      },
+      {
+        accessorKey: 'sources',
+        header: 'Where to Get',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Rings ────────────────────────────────────────────────────────────────────
@@ -1412,31 +1468,35 @@ const RINGS_CONFIG = {
       filterFn: searchFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'description',
-      header: 'Description',
-      cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
-      enableSorting: false,
-    },
-    {
-      accessorKey: 'price',
-      header: 'Price',
-      cell: ({ getValue }) => {
-        const price = getValue()
-        if (!price) return '—'
-        return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
       },
-      meta: { align: 'right' },
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Get',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'price',
+        header: 'Price',
+        cell: ({ getValue }) => {
+          const price = getValue()
+          if (!price) return '—'
+          return <span style={{ fontFamily: 'monospace' }}>{price.toLocaleString()}g</span>
+        },
+        meta: { align: 'right' },
+      },
+      {
+        accessorKey: 'sources',
+        header: 'Where to Get',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Artifacts ────────────────────────────────────────────────────────────────
@@ -1457,13 +1517,14 @@ const ARTIFACTS_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities, professionsRef } = ctx
+    const { entities, professionsRef, progress } = ctx
     const { villagers: { all: villagers }, ...relationalData } = entities
 
     if (relationalData.loading) return []
 
     const base = [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       createPriceColumn(professionsRef),
       createBundleColumn(relationalData),
     ]
@@ -1493,29 +1554,33 @@ const CLOTHING_CONFIG = {
       filterFn: subtypeFilterFn,
     },
   ],
-  getColumns: (ctx) => [
-    createNameColumn(),
-    {
-      accessorKey: 'subtype',
-      header: 'Type',
-      cell: ({ getValue }) => {
-        const t = getValue()
-        return t ? t.charAt(0).toUpperCase() + t.slice(1) : '—'
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'subtype',
+        header: 'Type',
+        cell: ({ getValue }) => {
+          const t = getValue()
+          return t ? t.charAt(0).toUpperCase() + t.slice(1) : '—'
+        },
       },
-    },
-    {
-      accessorKey: 'description',
-      header: 'Description',
-      cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
-      enableSorting: false,
-    },
-    {
-      accessorKey: 'sources',
-      header: 'Where to Get',
-      cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
-      enableSorting: false,
-    },
-  ],
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+      {
+        accessorKey: 'sources',
+        header: 'Where to Get',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
 }
 
 // ─── Villagers ────────────────────────────────────────────────────────────────
@@ -1542,10 +1607,54 @@ const VILLAGERS_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities } = ctx
+    const { entities, progress } = ctx
 
     return [
       createNameColumn(),
+      ...(progress.hasSaveData ? [{
+        id: 'hearts',
+        header: 'Hearts',
+        accessorFn: row => {
+          const hearts = progress.getFriendshipHearts(row.name)
+          const max = row.canBeRomanced ? 14 : 10
+          return hearts * 100 + max
+        },
+        cell: ({ row }) => {
+          const hearts = progress.getFriendshipHearts(row.original.name)
+          const status = progress.getFriendshipStatus(row.original.name)
+          const canBeRomanced = row.original.canBeRomanced
+          const max = canBeRomanced ? 14 : 10
+          const filled = Math.min(hearts, max)
+          const STATUS_ICON = {
+            Dating:   'assets/objects/Bouquet.png',
+            Engaged:  'assets/objects/WeddingRing.png',
+            Married:  'assets/objects/MermaidsPendant.png',
+            Divorced: 'assets/objects/WiltedBouquet.png',
+            Roommate: 'assets/objects/Farmhouse.png',
+          }
+          const statusIcon = STATUS_ICON[status]
+          const title = status ? `${hearts}♥ — ${status}` : `${hearts} hearts`
+          const isRomantic = status === 'Dating' || status === 'Engaged' || status === 'Married' || status === 'Roommate'
+          const getColor = (i) => {
+            if (i < filled) return canBeRomanced && isRomantic && i >= 8 ? '#f4a7b9' : '#e05c6a'
+            if (canBeRomanced && i >= 8 && !isRomantic) return '#aaa'
+            if (canBeRomanced && i >= 10 && status !== 'Married' && status !== 'Roommate') return '#aaa'
+            return '#ddd'
+          }
+          return (
+            <span title={title} style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '0.8rem', lineHeight: 1 }}>
+              {Array.from({ length: max }, (_, i) => (
+                <span key={i} style={{ color: getColor(i) }}>♥</span>
+              ))}
+              {statusIcon && (
+                <img src={statusIcon} alt={status} style={{ width: 16, height: 16, imageRendering: 'pixelated', marginLeft: 2 }} />
+              )}
+            </span>
+          )
+        },
+        sortingFn: 'basic',
+        meta: { align: 'left' },
+      }] : []),
       {
         id: 'birthday',
         header: 'Birthday',
@@ -1592,7 +1701,7 @@ const VILLAGERS_CONFIG = {
           return (
             <span style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '0.2rem' }}>
               {loved.map(item => {
-                const owned = showOwnership ? ctx.progress.getOwnedCount(item.gameId) : 0
+                const owned = showOwnership ? ctx.progress.getOwnedCount(item.gameId, item) : 0
                 return (
                   <span
                     key={item.id}
@@ -1736,9 +1845,10 @@ const GEODES_CONFIG = {
     },
   ],
   getColumns: (ctx) => {
-    const { entities } = ctx
+    const { entities, progress } = ctx
     return [
       createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
       createPriceColumn(),
       {
         id: 'contents',
@@ -1768,6 +1878,106 @@ const GEODES_CONFIG = {
   },
 }
 
+// ─── Buildings ───────────────────────────────────────────────────────────────
+
+const BUILDINGS_CONFIG = {
+  title: 'Farm Buildings',
+  dataType: 'buildings',
+  itemsPerPage: 50,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Building name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'builder', type: 'select', label: 'Builder', allLabel: 'All Builders',
+      options: [
+        { value: 'robin', label: 'Robin' },
+        { value: 'wizard', label: 'Wizard' },
+      ],
+      filterFn: (item, value) => {
+        if (!value) return true
+        if (value === 'robin') return item.builder === 'vil-robin'
+        if (value === 'wizard') return item.magical === true
+        return true
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { entities, progress } = ctx
+
+    const cols = [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+        meta: { wrap: true },
+      },
+      {
+        id: 'builder',
+        header: 'Builder',
+        accessorFn: row => {
+          if (row.magical) return 'Wizard'
+          const builder = row.builder ? entities.findById(row.builder) : null
+          return builder?.name ?? '—'
+        },
+        cell: ({ row }) => {
+          if (row.original.magical) {
+            const wiz = entities.findById('vil-wizard')
+            return wiz
+              ? <UniversalModalButton item={wiz} variant="table-inline" stopPropagation />
+              : 'Wizard'
+          }
+          const builder = row.original.builder ? entities.findById(row.original.builder) : null
+          if (!builder) return '—'
+          return <UniversalModalButton item={builder} variant="table-inline" stopPropagation />
+        },
+      },
+      {
+        id: 'cost',
+        header: 'Cost',
+        accessorFn: row => row.buildCost ?? 0,
+        cell: ({ row }) => {
+          const { buildCost, buildMaterials } = row.original
+          const parts = []
+          if (buildCost > 0) parts.push(<span key="gold" style={{ fontFamily: 'monospace' }}>{buildCost.toLocaleString()}g</span>)
+          if (buildMaterials?.length > 0) {
+            buildMaterials.forEach(m => {
+              const item = entities.findByGameId(m.gameId)
+              parts.push(
+                <span key={m.gameId}>
+                  {item
+                    ? <><UniversalModalButton item={item} variant="table-inline" stopPropagation />{` ×${m.amount}`}</>
+                    : `${m.gameId} ×${m.amount}`
+                  }
+                </span>
+              )
+            })
+          }
+          if (parts.length === 0) return <span className="cell-muted">—</span>
+          return <span style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>{parts}</span>
+        },
+        enableSorting: true,
+      },
+      {
+        id: 'buildDays',
+        header: 'Days',
+        accessorFn: row => row.buildDays ?? 0,
+        cell: ({ getValue }) => {
+          const d = getValue()
+          return d > 0 ? d : <span className="cell-muted">—</span>
+        },
+        meta: { align: 'center' },
+      },
+    ]
+
+    return cols
+  },
+}
+
 // ─── Export ────────────────────────────────────────────────────────────────────
 
 export const PAGE_CONFIGS = {
@@ -1794,4 +2004,5 @@ export const PAGE_CONFIGS = {
   geodes: GEODES_CONFIG,
   clothing: CLOTHING_CONFIG,
   villagers: VILLAGERS_CONFIG,
+  buildings: BUILDINGS_CONFIG,
 }

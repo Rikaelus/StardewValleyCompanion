@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePlayer } from '../../contexts/PlayerContext'
+import HeaderSaveZone from './HeaderSaveZone'
 import './AppHeader.css'
 
 function AppHeader({ onSearchOpen, onToggleMegaMenu, onToggleTrackerMenu, onToggleCharacterBar, megaMenuOpen, trackerMenuOpen, characterBarOpen }) {
@@ -7,6 +8,7 @@ function AppHeader({ onSearchOpen, onToggleMegaMenu, onToggleTrackerMenu, onTogg
 
   return (
     <header className="app-header">
+      <HeaderSaveZone />
       <div className="header-content">
         <Link to="/" className="header-branding">
           <img src="/assets/branding/stardew_logo.png" alt="Stardew Valley" className="header-logo" />
@@ -53,6 +55,7 @@ function AppHeader({ onSearchOpen, onToggleMegaMenu, onToggleTrackerMenu, onTogg
             <i className="fa-solid fa-user" />
             {player.name && <span className="header-character-name">{player.name}</span>}
           </button>
+
         </div>
       </div>
     </header>

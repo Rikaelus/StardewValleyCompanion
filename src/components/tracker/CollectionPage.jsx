@@ -1,0 +1,166 @@
+import PagePanel from '../common/PagePanel'
+import { useOpenModal } from '../../contexts/ModalContext'
+import CollectionTile from './CollectionTile'
+import './CollectionPage.css'
+
+/**
+ * Shared shell for tracker collection pages.
+ *
+ * Props:
+ *   title        — page heading
+ *   groups       — [{ id, title, items: [{ entity, state, count, badge, tileTitle }] }]
+ *   totals       — { done, total }
+ *   milestones   — [{ label, reached }]  optional
+ *   legend       — [{ state: 'complete'|'partial'|'missing', label }]  optional
+ *   filterTabs   — [{ id, label, count }]  optional (defaults to All / Still Needed)
+ *   activeFilter — current filter id
+ *   onFilter     — (id) => void
+ *   noSaveMessage — string shown when no save loaded
+ */
+function CollectionPage({
+  title,
+  groups,
+  totals,
+  milestones = [],
+  legend = [],
+  filterTabs,
+  activeFilter,
+  onFilter,
+  noSaveMessage,
+  hasSaveData,
+  keepGroups = false,
+}) {
+  const openModal = useOpenModal()
+
+  const tabs = filterTabs ?? [
+    { id: 'all', label: 'All Items', count: totals.total },
+    ...(hasSaveData ? [{ id: 'needed', label: 'Still Needed', count: totals.total - totals.done }] : []),
+  ]
+
+  const isNeededView = hasSaveData && activeFilter === 'needed'
+
+  // keepGroups: preserve seasonal/category grouping in "Still Needed" view,
+  // filtering out complete items but keeping the group structure.
+  const filteredGroups = isNeededView && keepGroups
+    ? groups.map(g => ({ ...g, items: g.items.filter(i => i.state !== 'complete') })).filter(g => g.items.length > 0)
+    : null
+
+  // Default "Still Needed": flatten and sort alphabetically.
+  const neededItems = isNeededView && !keepGroups
+    ? groups.flatMap(g => g.items).filter(i => i.state !== 'complete').sort((a, b) => a.entity.name.localeCompare(b.entity.name))
+    : null
+
+  return (
+    <PagePanel>
+      <div className="collection-page">
+        <header className="collection-header">
+          <h1 className="collection-title">{title}</h1>
+          {hasSaveData && (
+            <div className="collection-score-block">
+              <div className="collection-score-numbers">
+                <span className="collection-score-done">{totals.done}</span>
+                <span className="collection-score-divider">/</span>
+                <span className="collection-score-max">{totals.total}</span>
+                {totals.label && <span className="collection-score-label">{totals.label}</span>}
+              </div>
+              {milestones.length > 0 && (
+                <div className="collection-milestones">
+                  {milestones.map((m, i) => (
+                    <span key={i} className={`collection-milestone ${m.reached ? 'collection-milestone--reached' : ''}`}>
+                      {m.label}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </header>
+
+        {!hasSaveData && noSaveMessage && (
+          <button
+            type="button"
+            className="collection-upload-nudge"
+            onClick={() => window.dispatchEvent(new Event('open-character-bar'))}
+          >
+            {noSaveMessage}
+          </button>
+        )}
+
+        <div className="collection-filter-toggle" role="tablist">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              aria-selected={activeFilter === tab.id}
+              className={`collection-filter-btn ${activeFilter === tab.id ? 'collection-filter-btn--active' : ''}`}
+              onClick={() => onFilter(tab.id)}
+            >
+              {tab.label}
+              <span className="collection-filter-count">{tab.count}</span>
+            </button>
+          ))}
+        </div>
+
+        {hasSaveData && legend.length > 0 && (
+          <div className="collection-legend">
+            {legend.map(entry => (
+              <span key={entry.state} className="collection-legend-item">
+                <span className={`collection-legend-swatch collection-legend-swatch--${entry.state}`} />
+                {entry.label}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {neededItems ? (
+          <section className="collection-group">
+            <div className="collection-grid">
+              {neededItems.map(({ entity, state, count, badge, tileTitle }) => (
+                <CollectionTile
+                  key={entity.id}
+                  item={entity}
+                  state={state}
+                  count={count}
+                  badge={badge}
+                  onClick={openModal}
+                  title={tileTitle}
+                />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className="collection-groups">
+            {(filteredGroups ?? groups).map(group => (
+              <section key={group.id} className="collection-group">
+                <header className="collection-group-header">
+                  <h2 className="collection-group-name">{group.title}</h2>
+                  {hasSaveData && (
+                    <span className="collection-group-score">
+                      {group.items.filter(i => i.state !== 'missing').length} / {group.items.length}
+                    </span>
+                  )}
+                </header>
+                <div className="collection-grid">
+                  {group.items.map(({ entity, state, count, badge, tileTitle }) => (
+                    <CollectionTile
+                      key={entity.id}
+                      item={entity}
+                      state={hasSaveData ? state : 'neutral'}
+                      count={hasSaveData ? count : null}
+                      badge={hasSaveData ? badge : null}
+                      onClick={openModal}
+                      title={hasSaveData ? tileTitle : entity.name}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        )}
+      </div>
+    </PagePanel>
+  )
+}
+
+export default CollectionPage

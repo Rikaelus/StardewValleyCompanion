@@ -11,45 +11,9 @@ import { useProgress } from '../../hooks/UseProgress'
 const EQUIPPED_LABELS = {
   hat: 'Hat slot', shirtItem: 'Shirt slot', pantsItem: 'Pants slot',
   boots: 'Boots slot', leftRing: 'Left ring', rightRing: 'Right ring',
+  trinketItem: 'Trinket slot',
 }
 
-export function InventorySection({ entity }) {
-  const { hasSaveData, getOwnedCount, getOwnedLocations } = useProgress()
-  if (!hasSaveData || !entity?.gameId) return null
-  const total = getOwnedCount(entity.gameId)
-  const locations = getOwnedLocations(entity.gameId)
-
-  const byLocation = new Map()
-  for (const loc of locations) {
-    let key
-    if (loc.container === 'player') key = 'Backpack'
-    else if (EQUIPPED_LABELS[loc.container]) key = EQUIPPED_LABELS[loc.container]
-    else key = `${loc.container} (${loc.location})`
-    byLocation.set(key, (byLocation.get(key) || 0) + loc.count)
-  }
-
-  return (
-    <>
-      <ModalGrid>
-        <ModalGridItem label="Total:" value={total > 0 ? total : 'None'} />
-      </ModalGrid>
-      {byLocation.size > 0 && (
-        <div className="source-group">
-          <span className="modal-label">Locations:</span>
-          <div className="source-list">
-            {[...byLocation.entries()].map(([loc, count]) => (
-              <span key={loc} className="source-entry">
-                <span className="source-name source-name--indented">{loc}</span>
-                <span />
-                <span className="source-detail">×{count}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-    </>
-  )
-}
 
 const FISH_TAG_LABELS = {
   'fish_ocean': 'Any Ocean Fish',
@@ -79,6 +43,7 @@ function formatUnlockCondition(condition) {
 
 function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigate }) {
   if (!entity) return null
+  const { hasSaveData, getOwnedCount, getOwnedLocations } = useProgress()
 
   const hasSeasons = entity.seasons && entity.seasons.length > 0
   const hasTimes = entity.times && entity.times.length > 0
@@ -121,7 +86,19 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
     otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 ||
     craneGameSources.length > 0 || freeformSources.length > 0
 
-  if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasYearParity && !hasBuyingInfo && !hasOtherSources) return null
+  const ownedTotal = hasSaveData && entity.gameId ? getOwnedCount(entity.gameId, entity) : 0
+  const ownedByLocation = new Map()
+  if (ownedTotal > 0) {
+    for (const loc of getOwnedLocations(entity.gameId, entity)) {
+      let key
+      if (loc.container === 'player') key = 'Backpack'
+      else if (EQUIPPED_LABELS[loc.container]) key = EQUIPPED_LABELS[loc.container]
+      else key = `${loc.container} (${loc.location})`
+      ownedByLocation.set(key, (ownedByLocation.get(key) || 0) + loc.count)
+    }
+  }
+
+  if (!(hasSeasons && !isSeed) && !hasTimes && !hasWeather && !hasYearParity && !hasBuyingInfo && !hasOtherSources && ownedTotal === 0) return null
 
   return (
     <ModalSection id="section-location" title="Location & Availability" navLabel="Location & Availability">
@@ -167,6 +144,21 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
             />
           )}
         </ModalGrid>
+      )}
+
+      {ownedTotal > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Owned ({ownedTotal}):</span>
+          <div className="source-list">
+            {[...ownedByLocation.entries()].map(([loc, count]) => (
+              <span key={loc} className="source-entry">
+                <span className="source-name source-name--indented">{loc}</span>
+                <span />
+                <span className="source-detail">×{count}</span>
+              </span>
+            ))}
+          </div>
+        </div>
       )}
 
       {locationSources.length > 0 && (
@@ -234,9 +226,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
             {fishPondSources.map((src, i) => {
               const rolls = src.rolls || [{ chance: src.chance, quantity: 1 }]
               const multiRoll = rolls.length > 1
+              const pondEntity = src.entityId ? findById(src.entityId) : null
               return (
                 <span key={i} className="source-entry">
-                  <span className="source-name source-name--indented">{formatFishTag(src.fishTag)} Pond</span>
+                  <span className={`source-name${pondEntity ? '' : ' source-name--indented'}`}>
+                    {pondEntity
+                      ? <UniversalModalButton item={pondEntity} variant="inline" onNavigate={onNavigate} />
+                      : `${formatFishTag(src.fishTag)} Pond`}
+                  </span>
                   <span className="source-qualifiers"><span className="source-qualifier">Population: {src.minPopulation}+</span></span>
                   <span className="source-detail">
                     {multiRoll ? (
@@ -859,6 +856,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
           </div>
         </div>
       )}
+
 
     </ModalSection>
   )

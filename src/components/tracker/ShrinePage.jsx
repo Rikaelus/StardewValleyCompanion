@@ -5,6 +5,8 @@ import { usePlayer } from '../../contexts/PlayerContext'
 import { computeShrineScore } from '../../utils/ShrineScore'
 import './ShrinePage.css'
 
+const RUBRIC = computeShrineScore({})
+
 function CandleRow({ count }) {
   return (
     <div className="shrine-candles" aria-label={`${count} of 4 candles lit`}>
@@ -27,9 +29,14 @@ function ScoreRule({ rule }) {
         <div className="shrine-rule-label">{rule.label}</div>
         {rule.detail && <div className="shrine-rule-detail">{rule.detail}</div>}
       </div>
-      <span className="shrine-rule-points">
-        {rule.earned ? `+${rule.maxPoints}` : `${rule.maxPoints}pt`}
-      </span>
+      <div className="shrine-rule-actions">
+        <span className="shrine-rule-points">
+          {rule.earned ? `+${rule.maxPoints}` : `${rule.maxPoints}pt`}
+        </span>
+        {rule.linkPath && (
+          <Link to={rule.linkPath} className="shrine-rule-link" title="View detail page">→</Link>
+        )}
+      </div>
     </li>
   )
 }
@@ -76,34 +83,15 @@ function Category({ category }) {
   )
 }
 
-function EmptyState() {
-  return (
-    <div className="shrine-empty">
-      <h1 className="shrine-empty-title">Grandpa's Shrine</h1>
-      <p className="shrine-empty-text">
-        Upload your save file to see how you measure up to Grandpa's expectations.
-        We'll show your current score, what you've already earned, and what's left
-        to do for each of the four candles.
-      </p>
-      <Link to="/" className="shrine-empty-link">Go to home →</Link>
-    </div>
-  )
-}
-
 function ShrinePage() {
   const { player } = usePlayer()
   const score = useMemo(() => computeShrineScore(player.saveData), [player.saveData])
+  const hasSaveData = !!score
 
-  if (!score) {
-    return (
-      <PagePanel>
-        <EmptyState />
-      </PagePanel>
-    )
-  }
+  const displayed = score ?? RUBRIC
 
-  const candleLabel = score.candles === 1 ? 'candle' : 'candles'
-  const gameScoreNote = score.gameScore != null
+  const candleLabel = score?.candles === 1 ? 'candle' : 'candles'
+  const gameScoreNote = score?.gameScore != null
     ? (score.gameScore === score.computedTotal
         ? "Matches the game's evaluation."
         : `Game reports ${score.gameScore} — discrepancies usually mean we're missing a rule or a mail flag.`)
@@ -118,23 +106,37 @@ function ShrinePage() {
             At the start of Year 3, Grandpa returns to judge your accomplishments.
             Each candle requires more dedication — 4 candles is the gold standard.
           </p>
-          <div className="shrine-score-block">
-            <div className="shrine-score-numbers">
-              <span className="shrine-score-total">{score.computedTotal}</span>
-              <span className="shrine-score-divider">/</span>
-              <span className="shrine-score-max">{score.maxTotal}</span>
-              <span className="shrine-score-label">points</span>
-            </div>
-            <CandleRow count={score.candles} />
-            <div className="shrine-candle-count">
-              {score.candles} {candleLabel} lit
-            </div>
-          </div>
-          <div className="shrine-game-score-note">{gameScoreNote}</div>
+          {hasSaveData && (
+            <>
+              <div className="shrine-score-block">
+                <div className="shrine-score-numbers">
+                  <span className="shrine-score-total">{score.computedTotal}</span>
+                  <span className="shrine-score-divider">/</span>
+                  <span className="shrine-score-max">{score.maxTotal}</span>
+                  <span className="shrine-score-label">points</span>
+                </div>
+                <CandleRow count={score.candles} />
+                <div className="shrine-candle-count">
+                  {score.candles} {candleLabel} lit
+                </div>
+              </div>
+              <div className="shrine-game-score-note">{gameScoreNote}</div>
+            </>
+          )}
         </header>
 
+        {!hasSaveData && (
+          <button
+            type="button"
+            className="shrine-upload-nudge"
+            onClick={() => window.dispatchEvent(new Event('open-character-bar'))}
+          >
+            Upload your save file to see your score and track what you've earned toward each candle.
+          </button>
+        )}
+
         <div className="shrine-categories">
-          {score.categories.map(c => <Category key={c.id} category={c} />)}
+          {displayed.categories.map(c => <Category key={c.id} category={c} />)}
         </div>
       </div>
     </PagePanel>

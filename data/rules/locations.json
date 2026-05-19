@@ -212,6 +212,21 @@
         "note": "Located in the Abandoned House"
       }
     },
+    "loc-casino": {
+      "id": "loc-casino",
+      "name": "Casino",
+      "operator": "Mr. Qi",
+      "icon": "assets/objects/QiCoin.png",
+      "shop": {
+        "gameShopId": "Casino"
+      },
+      "address": "Calico Desert",
+      "hours": {
+        "open": 900,
+        "close": 2300,
+        "note": "Requires Club Card from completing Qi's quest"
+      }
+    },
     "loc-qi-gem-shop": {
       "id": "loc-qi-gem-shop",
       "name": "Qi's Walnut Room",

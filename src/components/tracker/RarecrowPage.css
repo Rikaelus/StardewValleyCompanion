@@ -1,0 +1,297 @@
+.rarecrow-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.rarecrow-empty {
+  max-width: 540px;
+  margin: 4rem auto;
+  text-align: center;
+  color: #6b5d4f;
+}
+
+.rarecrow-empty-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.rarecrow-empty-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.rarecrow-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.rarecrow-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+.rarecrow-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rarecrow-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.rarecrow-score-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.rarecrow-score-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.rarecrow-score-total {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5c4a32;
+  line-height: 1;
+}
+
+.rarecrow-score-divider {
+  font-size: 1.5rem;
+  color: #b39c7a;
+}
+
+.rarecrow-score-max {
+  font-size: 1.5rem;
+  color: #8b6f47;
+}
+
+.rarecrow-score-label {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 0.4rem;
+}
+
+.rarecrow-milestone-row {
+  font-size: 0.78rem;
+  color: #8b6f47;
+}
+
+.rarecrow-milestone--reached {
+  color: #4a7228;
+  font-weight: 700;
+}
+
+.rarecrow-mode-toggle {
+  display: flex;
+  width: max-content;
+  margin: 0 auto 1.5rem;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.rarecrow-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.rarecrow-mode-btn:hover:not(.rarecrow-mode-btn--active) {
+  color: #5c4a32;
+  background: rgba(139, 111, 71, 0.08);
+}
+
+.rarecrow-mode-btn--active {
+  background: #8b6f47;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.rarecrow-mode-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.2rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(139, 111, 71, 0.15);
+  color: #5c4a32;
+}
+
+.rarecrow-mode-btn--active .rarecrow-mode-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.rarecrow-group {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.rarecrow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 0.5rem;
+}
+
+.rarecrow-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.15s, background 0.15s;
+}
+
+.rarecrow-tile:hover {
+  border-color: #8b6f47;
+  transform: scale(1.05);
+}
+
+.rarecrow-tile--owned {
+  background: #ecf5e2;
+  border-color: #c5dba0;
+}
+
+.rarecrow-tile--missing .rarecrow-tile-icon {
+  filter: grayscale(1) opacity(0.45);
+}
+
+/* neutral — no save data; full color, no progress indication */
+.rarecrow-tile--neutral {
+  background: #faf4e8;
+  border-color: #d9c4a0;
+}
+
+.rarecrow-tile-icon {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  object-position: center;
+}
+
+.rarecrow-tile-fallback {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b6f47;
+}
+
+.rarecrow-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rarecrow-list-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #faf4e8;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.rarecrow-list-row:hover {
+  border-color: #8b6f47;
+  background: white;
+}
+
+.rarecrow-list-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.4rem 0.55rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: #5c4a32;
+}
+
+.rarecrow-list-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.rarecrow-list-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+}
+
+.rarecrow-source-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0.55rem 0 0.4rem;
+}

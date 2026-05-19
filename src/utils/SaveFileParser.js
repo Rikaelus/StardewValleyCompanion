@@ -132,6 +132,17 @@ function extractCraftingRecipes(playerEl) {
   return parseDictionaryOfInts(dictEl)
 }
 
+function extractRecipesCooked(playerEl) {
+  const dictEl = playerEl.querySelector(':scope > recipesCooked')
+  const raw = parseDictionaryOfInts(dictEl)
+  // Keys are bare numeric gameIds — normalize to (O)N for consistency
+  const result = {}
+  for (const [key, count] of Object.entries(raw)) {
+    result[`(O)${key}`] = count
+  }
+  return result
+}
+
 function extractFriendships(playerEl) {
   const dictEl = playerEl.querySelector(':scope > friendshipData')
   const result = {}
@@ -154,6 +165,16 @@ function extractAchievements(playerEl) {
 function extractMailReceived(playerEl) {
   const el = playerEl.querySelector(':scope > mailReceived')
   return parseStringArray(el)
+}
+
+function extractSecretNotesSeen(playerEl) {
+  const el = playerEl.querySelector(':scope > secretNotesSeen')
+  return parseIntArray(el)
+}
+
+function extractEventsSeen(playerEl) {
+  const el = playerEl.querySelector(':scope > eventsSeen')
+  return parseIntArray(el)
 }
 
 function extractArchaeologyFound(playerEl) {
@@ -194,6 +215,13 @@ function extractStats(playerEl) {
     }
   }
   return result
+}
+
+function extractMonstersKilled(playerEl) {
+  const statsEl = playerEl.querySelector(':scope > stats')
+  if (!statsEl) return {}
+  const dictEl = statsEl.querySelector(':scope > specificMonstersKilled')
+  return parseDictionaryOfInts(dictEl)
 }
 
 // ---------------------------------------------------------------------------
@@ -311,6 +339,7 @@ const XSI_TYPE_TO_PREFIX = {
   Slingshot: '(W)',
   Boots: '(B)',
   Hat: '(H)',
+  Trinket: '(TR)',
   Furniture: '(F)',
   BedFurniture: '(F)',
   FishTankFurniture: '(F)',
@@ -356,13 +385,31 @@ function extractItemRecord(itemEl) {
     prefix = '(BC)'
   }
 
-  const itemId = childText(itemEl, 'itemId')
-  if (!itemId) return null
+  // 1.6+: itemId field (may already be qualified like "(O)420")
+  // 1.5:  fall back to type-specific index fields
+  let rawId = childText(itemEl, 'itemId')
+  if (rawId == null) {
+    // Tools and weapons use initialParentTileIndex; everything else uses parentSheetIndex
+    const isTool = prefix === '(T)' || prefix === '(W)'
+    rawId = isTool
+      ? childText(itemEl, 'initialParentTileIndex')
+      : (childText(itemEl, 'parentSheetIndex') ?? childText(itemEl, 'indexInTileSheet') ?? childText(itemEl, 'which'))
+  }
+  if (rawId == null) return null
 
-  const qualified = itemId.startsWith('(') ? itemId : `${prefix}${itemId}`
-  const stack = childInt(itemEl, 'stack') ?? 1
-  const quality = childInt(itemEl, 'quality') ?? 0
-  return { gameId: qualified, count: stack, quality }
+  const qualified = rawId.startsWith('(') ? rawId : `${prefix}${rawId}`
+  const stack = childInt(itemEl, 'stack') ?? childInt(itemEl, 'Stack') ?? 1
+  const quality = childInt(itemEl, 'quality') ?? childInt(itemEl, 'Quality') ?? 0
+
+  // Flavored artisan goods (juice, wine, pickle, etc.) store their input item ID
+  // and preserve type so we can identify the specific variant (e.g. Pumpkin Juice).
+  const preserveType = childText(itemEl, 'preserveType')
+  const rawPreservedId = childText(itemEl, 'preservedParentSheetIndex')
+  const preservedParentSheetIndex = rawPreservedId
+    ? (rawPreservedId.startsWith('(') ? rawPreservedId : `(O)${rawPreservedId}`)
+    : null
+
+  return { gameId: qualified, count: stack, quality, preserveType, preservedParentSheetIndex }
 }
 
 /**
@@ -395,6 +442,86 @@ function extractItemsFromContainer(parentEl) {
  * Cask outputs, Crab Pot held items, and similar transient containers are
  * skipped — they belong to the machine, not "storage".
  */
+/**
+ * Extract BigCraftable items placed in the world across all game locations.
+ * These live in each location's <objects> dictionary but are skipped by
+ * extractChestContents (which only processes Chest-type objects).
+ * Each record: { gameId, count, quality, location, container: 'placed' }
+ */
+function extractPlacedBigCraftables(doc) {
+  const locations = doc.documentElement.querySelector(':scope > locations')
+  if (!locations) return []
+  const out = []
+
+  function scanObjects(objectsEl, locName) {
+    for (const item of objectsEl.querySelectorAll(':scope > item')) {
+      const value = item.querySelector(':scope > value')
+      const obj = value?.querySelector(':scope > Object')
+      if (!obj) continue
+      if (childText(obj, 'bigCraftable') !== 'true') continue
+      let rawId = childText(obj, 'itemId') ?? childText(obj, 'parentSheetIndex')
+      if (rawId == null) continue
+      const qualified = rawId.startsWith('(') ? rawId : `(BC)${rawId}`
+      const stack = childInt(obj, 'stack') ?? childInt(obj, 'Stack') ?? 1
+      const quality = childInt(obj, 'quality') ?? childInt(obj, 'Quality') ?? 0
+      out.push({ gameId: qualified, count: stack, quality, location: locName, container: 'Placed' })
+    }
+  }
+
+  for (const loc of locations.children) {
+    const locName = childText(loc, 'name') || 'Unknown'
+
+    // Direct objects on the location
+    const objects = loc.querySelector(':scope > objects')
+    if (objects) scanObjects(objects, locName)
+
+    // Objects inside buildings (Barn, Coop, Shed, etc. have their own <objects>)
+    for (const building of loc.querySelectorAll(':scope > buildings > Building')) {
+      const buildingName = childText(building, 'buildingType') || 'Building'
+      const indoorObjects = building.querySelector(':scope > indoors > objects')
+      if (indoorObjects) scanObjects(indoorObjects, `${locName} (${buildingName})`)
+      const directObjects = building.querySelector(':scope > objects')
+      if (directObjects) scanObjects(directObjects, `${locName} (${buildingName})`)
+    }
+  }
+  return out
+}
+
+function extractBuildings(doc) {
+  const locations = doc.documentElement.querySelector(':scope > locations')
+  if (!locations) return []
+  const out = []
+
+  for (const loc of locations.children) {
+    const locName = childText(loc, 'name') || 'Unknown'
+    for (const building of loc.querySelectorAll(':scope > buildings > Building')) {
+      const btype = childText(building, 'buildingType')
+      if (!btype) continue
+
+      let gameId
+      if (btype === 'Fish Pond') {
+        const fishInt = building.querySelector(':scope > fishType > int')?.textContent?.trim()
+        if (fishInt && fishInt !== '-1') {
+          // Emit the species-specific variant for modal/detail use
+          out.push({ gameId: `(BLD)Fish Pond:(O)${fishInt}`, count: 1, quality: 0, location: locName, container: 'Building' })
+          // Also emit the fish themselves as owned
+          const occupants = childInt(building, 'currentOccupants') ?? 0
+          if (occupants > 0) {
+            out.push({ gameId: `(O)${fishInt}`, count: occupants, quality: 0, location: locName, container: 'Fish Pond' })
+          }
+        }
+        // Always emit the base Fish Pond record so getOwnedCount('(BLD)Fish Pond') counts all ponds
+        gameId = '(BLD)Fish Pond'
+      } else {
+        gameId = `(BLD)${btype}`
+      }
+
+      out.push({ gameId, count: 1, quality: 0, location: locName, container: 'Building' })
+    }
+  }
+  return out
+}
+
 function extractChestContents(doc) {
   const locations = doc.documentElement.querySelector(':scope > locations')
   if (!locations) return []
@@ -440,8 +567,39 @@ function extractChestContents(doc) {
         }
       }
     }
+
+    // 3. Farmhouse built-in fridge — lives at FarmHouse > fridge, not in <objects>
+    if (locName === 'FarmHouse') {
+      const fridgeEl = loc.querySelector(':scope > fridge')
+      if (fridgeEl) emitChest(fridgeEl, locName, 'Fridge')
+    }
   }
   return out
+}
+
+/**
+ * Derive a qualified gameId from a legacy equipped slot element that predates
+ * the 1.6 itemId field. Each slot type uses a known namespace prefix and a
+ * specific index field name.
+ */
+function extractEquippedLegacy(slotName, el) {
+  const SLOT_LEGACY = {
+    hat:        { prefix: '(H)', field: 'which' },
+    shirtItem:  { prefix: '(S)', field: 'parentSheetIndex' },
+    pantsItem:  { prefix: '(P)', field: 'parentSheetIndex' },
+    boots:      { prefix: '(B)', field: 'indexInTileSheet' },
+    leftRing:   { prefix: '(O)', field: 'parentSheetIndex' },
+    rightRing:  { prefix: '(O)', field: 'parentSheetIndex' },
+    trinketItem:{ prefix: '(TR)', field: 'itemId' },
+  }
+  const cfg = SLOT_LEGACY[slotName]
+  if (!cfg) return null
+  const rawId = childText(el, cfg.field)
+    ?? childText(el, 'indexInTileSheet')
+    ?? childText(el, 'parentSheetIndex')
+  if (rawId == null) return null
+  const qualified = rawId.startsWith('(') ? rawId : `${cfg.prefix}${rawId}`
+  return { gameId: qualified, count: 1, quality: childInt(el, 'quality') ?? 0 }
 }
 
 /**
@@ -454,15 +612,31 @@ function extractPlayerInventory(playerEl) {
   for (const r of extractItemsFromContainer(playerEl)) {
     out.push({ ...r, location: 'inventory', container: 'player' })
   }
-  // Equipped slots — each holds at most one item
-  const equipSlots = ['hat', 'shirtItem', 'pantsItem', 'boots', 'leftRing', 'rightRing']
+  // Equipped slots — each holds at most one item.
+  // Saves may use either the modern itemId field or legacy index fields
+  // depending on whether the item was migrated to 1.6 format.
+  const equipSlots = ['hat', 'shirtItem', 'pantsItem', 'boots', 'leftRing', 'rightRing', 'trinketItem']
   for (const slotName of equipSlots) {
     const slot = playerEl.querySelector(`:scope > ${slotName}`)
     if (!slot) continue
-    // Slot is a single <Item>-shaped element, not a wrapper around <Item>
-    if (childText(slot, 'itemId') == null) continue
-    // Treat the slot itself as if it were an <Item> element
-    const rec = extractItemRecord(slot)
+
+    // If the slot element has an xsi:type, it IS the item — use generic extraction.
+    // If not, it's either a wrapper around a typed child, or a slot-specific
+    // format (like trinketItem in 1.6) that needs slot-aware handling.
+    let rec = null
+    const slotType = slot.getAttribute('xsi:type') || slot.getAttribute('type')
+    if (slotType) {
+      rec = extractItemRecord(slot)
+    } else {
+      const child = slot.children[0]
+      const childType = child?.getAttribute('xsi:type') || child?.getAttribute('type')
+      if (childType) {
+        rec = extractItemRecord(child)
+      } else {
+        // No xsi:type anywhere — use slot-name-aware legacy extraction
+        rec = extractEquippedLegacy(slotName, slot)
+      }
+    }
     if (rec) out.push({ ...rec, location: 'equipped', container: slotName })
   }
   return out
@@ -472,20 +646,30 @@ function extractPlayerInventory(playerEl) {
  * Build the inventory aggregate exposed via parsedSave.inventory:
  *   { items: Array, byGameId: { [gameId]: { totalCount, locations: Array } } }
  */
-function buildInventoryAggregate(playerInv, chestInv) {
-  const all = [...playerInv, ...chestInv]
+function buildInventoryAggregate(playerInv, chestInv, placedInv = [], buildingsInv = []) {
+  const all = [...playerInv, ...chestInv, ...placedInv, ...buildingsInv]
   const byGameId = {}
   for (const rec of all) {
-    if (!byGameId[rec.gameId]) {
-      byGameId[rec.gameId] = { totalCount: 0, locations: [] }
-    }
-    byGameId[rec.gameId].totalCount += rec.count
-    byGameId[rec.gameId].locations.push({
+    const locationEntry = {
       location: rec.location,
       container: rec.container,
       count: rec.count,
       quality: rec.quality,
-    })
+    }
+
+    // Index by base gameId
+    if (!byGameId[rec.gameId]) byGameId[rec.gameId] = { totalCount: 0, locations: [] }
+    byGameId[rec.gameId].totalCount += rec.count
+    byGameId[rec.gameId].locations.push(locationEntry)
+
+    // Also index flavored artisan variants by compound key: "gameId:preserveType:inputGameId"
+    // This lets isOwned() distinguish Pumpkin Juice from Tomato Juice even though both are (O)350.
+    if (rec.preserveType && rec.preservedParentSheetIndex) {
+      const compoundKey = `${rec.gameId}:${rec.preserveType}:${rec.preservedParentSheetIndex}`
+      if (!byGameId[compoundKey]) byGameId[compoundKey] = { totalCount: 0, locations: [] }
+      byGameId[compoundKey].totalCount += rec.count
+      byGameId[compoundKey].locations.push(locationEntry)
+    }
   }
   return { items: all, byGameId }
 }
@@ -563,14 +747,19 @@ function parseSaveGameInfo(doc) {
     itemsShipped: extractItemsShipped(player),
     cookingRecipes: extractCookingRecipes(player),
     craftingRecipes: extractCraftingRecipes(player),
+    recipesCooked: extractRecipesCooked(player),
     friendships: extractFriendships(player),
     achievements: extractAchievements(player),
     mailReceived: extractMailReceived(player),
+    secretNotesSeen: extractSecretNotesSeen(player),
+    eventsSeen: extractEventsSeen(player),
     archaeologyFound: extractArchaeologyFound(player),
     mineralsFound: extractMineralsFound(player),
     date: extractDateFromSaveGameInfo(player),
     stats: extractStats(player),
+    monstersKilled: extractMonstersKilled(player),
     totalMoneyEarned: childInt(player, 'totalMoneyEarned') ?? 0,
+    money: childInt(player, 'money') ?? 0,
     houseUpgradeLevel: childInt(player, 'houseUpgradeLevel') ?? 0,
     spouse: childText(player, 'spouse'),
   }
@@ -592,19 +781,24 @@ function parseMainSave(doc) {
     itemsShipped: extractItemsShipped(player),
     cookingRecipes: extractCookingRecipes(player),
     craftingRecipes: extractCraftingRecipes(player),
+    recipesCooked: extractRecipesCooked(player),
     friendships: extractFriendships(player),
     achievements: extractAchievements(player),
     mailReceived: extractMailReceived(player),
+    secretNotesSeen: extractSecretNotesSeen(player),
+    eventsSeen: extractEventsSeen(player),
     archaeologyFound: extractArchaeologyFound(player),
     mineralsFound: extractMineralsFound(player),
     date: extractDateFromMainSave(doc),
     stats: extractStats(player),
+    monstersKilled: extractMonstersKilled(player),
     // Main save extras
     bundleProgress: extractBundleProgress(doc),
     museumPieces: extractMuseumPieces(doc),
     grandpaScore: childInt(doc.documentElement, 'grandpaScore') ?? null,
     goldenWalnuts: childInt(doc.documentElement, 'goldenWalnutsFound') ?? null,
     totalMoneyEarned: childInt(player, 'totalMoneyEarned') ?? 0,
+    money: childInt(player, 'money') ?? 0,
     houseUpgradeLevel: childInt(player, 'houseUpgradeLevel') ?? 0,
     spouse: childText(player, 'spouse'),
     childCount: countChildren(doc),
@@ -612,6 +806,8 @@ function parseMainSave(doc) {
     inventory: buildInventoryAggregate(
       extractPlayerInventory(player),
       extractChestContents(doc),
+      extractPlacedBigCraftables(doc),
+      extractBuildings(doc),
     ),
   }
 }

@@ -163,7 +163,10 @@ function DataTable({
                 {row.getVisibleCells().map((cell, index) => (
                   <td
                     key={cell.id}
-                    className={index < pinnedColumns ? 'pinned' : ''}
+                    className={[
+                      index < pinnedColumns ? 'pinned' : '',
+                      cell.column.columnDef.meta?.wrap ? 'cell-wrap' : '',
+                    ].filter(Boolean).join(' ') || undefined}
                     data-pinned-index={index < pinnedColumns ? index : undefined}
                     style={{
                       textAlign: cell.column.columnDef.meta?.align || 'left',

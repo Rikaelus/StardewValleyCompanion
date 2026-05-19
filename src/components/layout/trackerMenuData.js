@@ -1,4 +1,16 @@
 export const TRACKER_MENU_ITEMS = [
+  { label: 'Bundles', path: '/tracker/bundles' },
   { label: "Grandpa's Shrine", path: '/tracker/shrine' },
   { label: 'Museum Collection', path: '/tracker/museum' },
+  { label: 'Achievements', path: '/tracker/achievements' },
+  { label: 'Fish Caught', path: '/tracker/fishing' },
+  { label: 'Crops Shipped', path: '/tracker/shipping' },
+  { label: 'Full Shipment', path: '/tracker/full-shipment' },
+  { label: 'Cooking Recipes', path: '/tracker/cooking' },
+  { label: 'Crafting Recipes', path: '/tracker/crafting' },
+  { label: 'Monster Slayer', path: '/tracker/slayer' },
+  { label: 'Rarecrow Collection', path: '/tracker/rarecrows' },
+  { label: 'Secret Notes', path: '/tracker/secret-notes' },
+  { label: 'Farmhouse', path: '/tracker/farmhouse' },
+  { label: 'Farm Buildings', path: '/buildings' },
 ]

@@ -2,7 +2,7 @@
   "_comment": "Monsters not in Monsters.json game export — hardcoded C# variants. Stats from wiki/decompiled source. Drop format: 'gameId chance gameId chance ...' with bare numeric IDs. Optional 'icon' field overrides default toIconFilename(name).",
 
   "_meta": {
-    "skip": ["Crow", "Frog", "Cat", "Fireball", "Big Slime"],
+    "skip": ["Crow", "Frog", "Cat", "Fireball", "Big Slime", "Shadow Guy"],
     "nameOverrides": {
       "Sludge": "Red Slime (Sludge)",
       "Frost Jelly": "Blue Slime (Frost Jelly)"

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { usePlayer } from '../../contexts/PlayerContext'
-import { parseSaveFile } from '../../utils/SaveFileParser'
+import { useSaveFileImport } from '../../hooks/UseSaveFileImport'
 import './CharacterBar.css'
 
 const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
@@ -8,6 +8,42 @@ const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter
 // Full skill tree: each skill has two level-5 choices, each branching into two level-10 choices
 const PROF_ICON = (name) => `/assets/icons/professions/${name}.png`
 const SKILL_ICON = (name) => `/assets/icons/skills/${name}SkillIcon.png`
+
+// Mastery system (1.6): skills maxed at 10, then XP flows into mastery pool
+// Cumulative XP thresholds per level (hardcoded in game source)
+const MASTERY_THRESHOLDS = [0, 10000, 25000, 45000, 70000, 100000]
+const MASTERY_PERKS = [
+  { index: 0, skill: 'Farming',  label: 'Farming Mastery'  },
+  { index: 1, skill: 'Fishing',  label: 'Fishing Mastery'  },
+  { index: 2, skill: 'Foraging', label: 'Foraging Mastery' },
+  { index: 3, skill: 'Mining',   label: 'Mining Mastery'   },
+  { index: 4, skill: 'Combat',   label: 'Combat Mastery'   },
+]
+
+function getMasteryData(saveData) {
+  if (!saveData) return null
+  const stats = saveData.stats || {}
+  // Game stores total XP as "MasteryExp" in stats.Values
+  const masteryExp = stats['MasteryExp'] ?? stats['masteryExp'] ?? 0
+  if (masteryExp === 0) {
+    // Only show mastery section if all 5 skills are maxed out
+    const skills = saveData.skills || {}
+    const allMaxed = MASTERY_PERKS.every(p => (skills[p.skill.toLowerCase()] ?? 0) >= 10)
+    if (!allMaxed) return null
+  }
+  const masteryLevel = MASTERY_THRESHOLDS.filter(t => masteryExp >= t).length - 1
+  const xpIntoLevel = masteryExp - MASTERY_THRESHOLDS[masteryLevel]
+  const xpToNext = masteryLevel < MASTERY_THRESHOLDS.length - 1
+    ? MASTERY_THRESHOLDS[masteryLevel + 1] - MASTERY_THRESHOLDS[masteryLevel]
+    : null
+  const perks = MASTERY_PERKS.map(p => ({
+    ...p,
+    claimed: (stats[`mastery_${p.index}`] ?? 0) >= 1,
+  }))
+  const claimedCount = perks.filter(p => p.claimed).length
+  const claimable = Math.max(0, masteryLevel - claimedCount)
+  return { masteryExp, masteryLevel, xpIntoLevel, xpToNext, perks, claimedCount, claimable }
+}
 
 const SKILL_TREES = [
   { skill: 'Farming', icon: SKILL_ICON('Farming'), branches: [
@@ -63,58 +99,17 @@ const SKILL_TREES = [
 ]
 
 function ImportSection() {
-  const { player, importSaveData, clearSaveData } = usePlayer()
-  const fileInputRef = useRef(null)
-  const [importState, setImportState] = useState('idle') // idle | loading | error
-  const [errorMessage, setErrorMessage] = useState('')
-  const [isDragOver, setIsDragOver] = useState(false)
-
-  const handleFile = async (file) => {
-    if (!file) return
-
-    setImportState('loading')
-    setErrorMessage('')
-
-    try {
-      const text = await file.text()
-      const parsed = parseSaveFile(text)
-      importSaveData(parsed)
-      setImportState('idle')
-    } catch (err) {
-      setImportState('error')
-      setErrorMessage(err.message || 'Failed to parse save file.')
-    }
-  }
-
-  const handleFileSelect = (e) => {
-    handleFile(e.target.files?.[0])
-    e.target.value = ''
-  }
-
-  const handleDrop = (e) => {
-    e.preventDefault()
-    setIsDragOver(false)
-    handleFile(e.dataTransfer.files?.[0])
-  }
-
-  const handleDragOver = (e) => {
-    e.preventDefault()
-    setIsDragOver(true)
-  }
-
-  const handleDragLeave = (e) => {
-    e.preventDefault()
-    setIsDragOver(false)
-  }
+  const { player, clearSaveData } = usePlayer()
+  const {
+    fileInputRef, importState, errorMessage, isDragOver,
+    handleFileSelect, handleDrop, handleDragOver, handleDragLeave,
+  } = useSaveFileImport()
 
   const saveData = player.saveData
 
   if (saveData) {
-    const fishCount = Object.keys(saveData.fishCaught || {}).length
-    const friendCount = Object.keys(saveData.friendships || {}).length
     const season = SEASON_LABELS[saveData.date?.season] || saveData.date?.season
     const dateStr = `Year ${saveData.date?.year}, ${season} ${saveData.date?.day}`
-    const hasBundles = saveData.source === 'SaveGame'
 
     return (
       <div className="character-section import-section import-section--loaded">
@@ -130,26 +125,11 @@ function ImportSection() {
             <i className="fa-solid fa-file-arrow-up" />
           </div>
           <div className="import-loaded-content">
-            <div className="import-loaded-layout">
-              <div className="import-identity">
-                <div className="import-identity-name">
-                  {player.name}{player.farmName ? ` — ${player.farmName} Farm` : ''}
-                </div>
-                <div className="import-date">{dateStr}</div>
+            <div className="import-identity">
+              <div className="import-identity-name">
+                {player.name}{player.farmName ? ` — ${player.farmName} Farm` : ''}
               </div>
-              <div className="import-skills">
-                {Object.entries(saveData.skills || {}).map(([skill, level]) => (
-                  <div key={skill} className="import-skill">
-                    <span className="import-skill-label">{skill.charAt(0).toUpperCase() + skill.slice(1)}</span>
-                    <span className="import-skill-level">{level}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="import-stats-row">
-              <span className="import-stat">{fishCount} fish caught</span>
-              <span className="import-stat">{friendCount} friendships</span>
-              {hasBundles && <span className="import-stat">Bundles imported</span>}
+              <div className="import-date">{dateStr}</div>
             </div>
           </div>
           <input
@@ -225,7 +205,7 @@ function CharacterBar({ isOpen, onClose }) {
   const { player, setProfession, setPlayer } = usePlayer()
   const [shouldRender, setShouldRender] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
-  const [activeTab, setActiveTab] = useState('professions')
+  const [activeTab, setActiveTab] = useState('character')
   const containerRef = useRef(null)
 
   // Handle open/close with animation
@@ -318,12 +298,18 @@ function CharacterBar({ isOpen, onClose }) {
 
   return (
     <div className="character-bar" ref={containerRef}>
+      <div className={`character-backdrop ${isClosing ? 'closing' : ''}`} onClick={onClose} />
       <div className={`character-details ${isClosing ? 'closing' : ''}`}>
         <button className="character-close-btn" onClick={onClose} type="button" aria-label="Close">×</button>
         <ImportSection />
 
           <div className="character-tabs">
             <div className="character-tab-bar">
+              <button
+                className={`character-tab ${activeTab === 'character' ? 'character-tab--active' : ''}`}
+                onClick={() => setActiveTab('character')}
+                type="button"
+              >Character</button>
               <button
                 className={`character-tab ${activeTab === 'professions' ? 'character-tab--active' : ''}`}
                 onClick={() => setActiveTab('professions')}
@@ -337,19 +323,116 @@ function CharacterBar({ isOpen, onClose }) {
             </div>
 
             <div className="character-tab-content">
+              {activeTab === 'character' && (
+                <div className="character-character-tab">
+                  {hasSaveData ? (() => {
+                    const mastery = getMasteryData(player.saveData)
+                    return (
+                    <>
+                      <div className="character-module">
+                        <div className="character-module-title">Skills</div>
+                      <div className="character-skills-grid">
+                        {Object.entries(player.saveData.skills || {}).map(([skill, level]) => {
+                          const perk = mastery?.perks.find(p => p.skill.toLowerCase() === skill)
+                          const isMastered = perk?.claimed
+                          const isMaxed = level >= 10
+                          return (
+                            <div key={skill} className="character-skill-row">
+                              <img
+                                src={SKILL_ICON(skill.charAt(0).toUpperCase() + skill.slice(1))}
+                                alt={skill}
+                                className="character-skill-icon"
+                              />
+                              <span className="character-skill-name">{skill.charAt(0).toUpperCase() + skill.slice(1)}</span>
+                              <div className="character-skill-stars">
+                                {Array.from({ length: 10 }, (_, i) => (
+                                  <span key={i} className={`skill-star ${i < level ? 'skill-star--filled' : ''}`}>★</span>
+                                ))}
+                              </div>
+                              <span className={`character-skill-level ${isMaxed ? 'character-skill-level--maxed' : ''}`}>{level}</span>
+                              {mastery && (
+                                <span className={`character-skill-mastery-badge ${isMastered ? 'character-skill-mastery-badge--claimed' : isMaxed ? 'character-skill-mastery-badge--available' : 'character-skill-mastery-badge--locked'}`}
+                                  title={isMastered ? 'Mastery claimed' : isMaxed ? 'Mastery available' : 'Skill not maxed'}
+                                >
+                                  {isMastered ? '✦' : '◇'}
+                                </span>
+                              )}
+                            </div>
+                          )
+                        })}
+                        {mastery && (
+                          <div className="character-mastery-row">
+                            <span className="character-mastery-row-label">Mastery Lv.{mastery.masteryLevel}</span>
+                            <div className="character-mastery-row-bar">
+                              <div
+                                className="character-mastery-row-fill"
+                                style={{ width: mastery.xpToNext ? `${(mastery.xpIntoLevel / mastery.xpToNext) * 100}%` : '100%' }}
+                              />
+                            </div>
+                            <span className="character-mastery-row-xp">
+                              {mastery.xpToNext
+                                ? `${mastery.xpIntoLevel.toLocaleString()}/${mastery.xpToNext.toLocaleString()}`
+                                : 'Max'}
+                            </span>
+                            {mastery.claimable > 0 && (
+                              <span className="character-mastery-row-claimable" title={`${mastery.claimable} perk${mastery.claimable !== 1 ? 's' : ''} ready to claim`}>+{mastery.claimable}</span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                      </div>
+                      <div className="character-stats-grid">
+                        <div className="character-stat">
+                          <span className="character-stat-value">{Object.keys(player.saveData.fishCaught || {}).length}</span>
+                          <span className="character-stat-label">Fish Caught</span>
+                        </div>
+                        <div className="character-stat">
+                          <span className="character-stat-value">{Object.keys(player.saveData.friendships || {}).length}</span>
+                          <span className="character-stat-label">Friendships</span>
+                        </div>
+                        <div className="character-stat">
+                          <span className="character-stat-value">{(player.saveData.achievements || []).length}</span>
+                          <span className="character-stat-label">Achievements</span>
+                        </div>
+                        {player.saveData.grandpaScore != null && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{player.saveData.grandpaScore}</span>
+                            <span className="character-stat-label">Grandpa Score</span>
+                          </div>
+                        )}
+                      </div>
+                    </>
+                    )
+                  })() : (
+                    <p className="character-no-save">Upload your save file to see character stats.</p>
+                  )}
+                </div>
+              )}
+
               {activeTab === 'professions' && (
                 <div className="skill-trees">
                   {hasSaveData && (
                     <p className="tab-save-notice">Selections reflect your uploaded save file.</p>
                   )}
-                  {SKILL_TREES.map(({ skill, icon, branches }) => {
+                  {(() => {
+                    const mastery = hasSaveData ? getMasteryData(player.saveData) : null
+                    return SKILL_TREES.map(({ skill, icon, branches }) => {
                     const skillLevel = player.saveData?.skills?.[skill.toLowerCase()] ?? 0
                     const maxLevel = 10
+                    const masteryPerk = mastery?.perks.find(p => p.skill === skill)
                     return (
                     <div key={skill} className="skill-tree">
                       <h4 className="skill-tree-header">
                         <img src={icon} alt="" className="skill-tree-icon" />
                         {skill}
+                        {masteryPerk && (
+                          <span
+                            className={`skill-tree-mastery-badge ${masteryPerk.claimed ? 'skill-tree-mastery-badge--claimed' : 'skill-tree-mastery-badge--available'}`}
+                            title={masteryPerk.claimed ? 'Mastery claimed' : 'Mastery: skill maxed, perk available'}
+                          >
+                            {masteryPerk.claimed ? '✦' : '◇'} Mastery
+                          </span>
+                        )}
                         {player.saveData?.skills && (
                         <span className="skill-level-stars">
                           {Array.from({ length: maxLevel }, (_, i) => (
@@ -409,7 +492,8 @@ function CharacterBar({ isOpen, onClose }) {
                       </div>
                     </div>
                     )
-                  })}
+                  })
+                  })()}
                 </div>
               )}
 

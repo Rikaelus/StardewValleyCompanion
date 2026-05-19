@@ -24,12 +24,14 @@ function ItemTile({ item, donated, onClick }) {
   const iconSrc = item.icon
     ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
     : null
+  const tileClass = donated == null ? 'museum-tile--neutral' : donated ? 'museum-tile--donated' : 'museum-tile--missing'
+  const tileTitle = donated == null ? item.name : `${item.name} — ${donated ? 'Donated' : 'Not donated'}`
   return (
     <button
       type="button"
       onClick={() => onClick(item)}
-      className={`museum-tile ${donated ? 'museum-tile--donated' : 'museum-tile--missing'}`}
-      title={`${item.name} — ${donated ? 'Donated' : 'Not donated'}`}
+      className={`museum-tile ${tileClass}`}
+      title={tileTitle}
     >
       {iconSrc ? (
         <img src={iconSrc} alt="" className="museum-tile-icon" />
@@ -145,21 +147,10 @@ function MuseumPage() {
     return { total, donated, missing: total - donated }
   }, [groups])
 
+  const hasSaveData = progress.hasSaveData
+
   if (loading) {
     return <PagePanel><div className="museum-loading">Loading museum data…</div></PagePanel>
-  }
-
-  if (!progress.hasSaveData) {
-    return (
-      <PagePanel>
-        <div className="museum-empty">
-          <h1 className="museum-empty-title">Museum Collection</h1>
-          <p className="museum-empty-text">
-            Upload your save file to track which artifacts and minerals you've donated to Gunther.
-          </p>
-        </div>
-      </PagePanel>
-    )
   }
 
   return (
@@ -167,26 +158,38 @@ function MuseumPage() {
       <div className="museum-page">
         <header className="museum-header">
           <h1 className="museum-title">Museum Collection</h1>
-          <div className="museum-score-block">
-            <div className="museum-score-numbers">
-              <span className="museum-score-total">{totals.donated}</span>
-              <span className="museum-score-divider">/</span>
-              <span className="museum-score-max">{totals.total}</span>
-              <span className="museum-score-label">donated</span>
+          {hasSaveData && (
+            <div className="museum-score-block">
+              <div className="museum-score-numbers">
+                <span className="museum-score-total">{totals.donated}</span>
+                <span className="museum-score-divider">/</span>
+                <span className="museum-score-max">{totals.total}</span>
+                <span className="museum-score-label">donated</span>
+              </div>
+              <div className="museum-milestones">
+                <span className={totals.donated >= 40 ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
+                  40 — Treasure Trove
+                </span>
+                <span className={totals.donated >= 60 ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
+                  60 — Rusty Key (grandpa point)
+                </span>
+                <span className={totals.donated >= totals.total ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
+                  {totals.total} — Stardrop + A Complete Collection
+                </span>
+              </div>
             </div>
-            <div className="museum-milestones">
-              <span className={totals.donated >= 40 ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
-                40 — Treasure Trove
-              </span>
-              <span className={totals.donated >= 60 ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
-                60 — Rusty Key (grandpa point)
-              </span>
-              <span className={totals.donated >= totals.total ? 'museum-milestone museum-milestone--reached' : 'museum-milestone'}>
-                {totals.total} — Stardrop + A Complete Collection
-              </span>
-            </div>
-          </div>
+          )}
         </header>
+
+        {!hasSaveData && (
+          <button
+            type="button"
+            className="museum-upload-nudge"
+            onClick={() => window.dispatchEvent(new Event('open-character-bar'))}
+          >
+            Upload your save file to track which artifacts and minerals you've donated to Gunther.
+          </button>
+        )}
 
         <div className="museum-mode-toggle" role="tablist" aria-label="Display mode">
           <button
@@ -199,19 +202,21 @@ function MuseumPage() {
             All Items
             <span className="museum-mode-count">{totals.total}</span>
           </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={showOnlyNeeded}
-            className={`museum-mode-btn ${showOnlyNeeded ? 'museum-mode-btn--active' : ''}`}
-            onClick={() => setShowOnlyNeeded(true)}
-          >
-            Still Needed
-            <span className="museum-mode-count">{totals.missing}</span>
-          </button>
+          {hasSaveData && (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={showOnlyNeeded}
+              className={`museum-mode-btn ${showOnlyNeeded ? 'museum-mode-btn--active' : ''}`}
+              onClick={() => setShowOnlyNeeded(true)}
+            >
+              Still Needed
+              <span className="museum-mode-count">{totals.missing}</span>
+            </button>
+          )}
         </div>
 
-        {showOnlyNeeded ? (
+        {hasSaveData && showOnlyNeeded ? (
           <section className="museum-group">
             <ul className="museum-list">
               {groups
@@ -229,16 +234,18 @@ function MuseumPage() {
               <section key={group.id} className="museum-group">
                 <header className="museum-group-header">
                   <h2 className="museum-group-name">{group.title}</h2>
-                  <span className="museum-group-score">
-                    {group.donatedCount} / {group.total}
-                  </span>
+                  {hasSaveData && (
+                    <span className="museum-group-score">
+                      {group.donatedCount} / {group.total}
+                    </span>
+                  )}
                 </header>
                 <div className="museum-grid">
                   {group.items.map(it => (
                     <ItemTile
                       key={it.id}
                       item={it}
-                      donated={progress.isMuseumDonated(it.gameId)}
+                      donated={hasSaveData ? progress.isMuseumDonated(it.gameId) : null}
                       onClick={openModal}
                     />
                   ))}

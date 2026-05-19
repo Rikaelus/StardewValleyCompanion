@@ -444,6 +444,7 @@ const gameData = {
   moviesReactions: loadJson(path.join(GAME_EXPORTS_DIR, 'MoviesReactions.json')),
   pants: loadJson(path.join(GAME_EXPORTS_DIR, 'Pants.json')),
   shirts: loadJson(path.join(GAME_EXPORTS_DIR, 'Shirts.json')),
+  secretNotes: loadJson(path.join(GAME_EXPORTS_DIR, 'SecretNotes.json')),
 };
 
 // ---------------------------------------------------------------------------
@@ -2782,6 +2783,7 @@ for (const monster of monsterData) {
     monster.slayerQuest = {
       killCount: quest.Count,
       ...(quest.RewardItemId ? { rewardItemGameId: quest.RewardItemId } : {}),
+      ...(quest.RewardItemPrice > 0 ? { rewardGold: quest.RewardItemPrice } : {}),
     };
     slayerCount++;
   }
@@ -2971,6 +2973,11 @@ for (const [rawId, bigCraftable] of Object.entries(gameData.bigCraftables)) {
   // Attach mail sources (some big-craftables are received via mail, e.g. Sewing Machine)
   if (bigCraftableMailSourcesByGameId.has(id)) {
     sources.push(...bigCraftableMailSourcesByGameId.get(id));
+  }
+
+  // Attach museum reward sources (e.g. Rarecrows for artifact/donation milestones)
+  if (museumRewardSourcesByGameId.has(qualifiedBCId)) {
+    sources.push(...museumRewardSourcesByGameId.get(qualifiedBCId));
   }
 
   const bcVariant = rules.itemVariants[qualifiedBCId];
@@ -3244,7 +3251,8 @@ for (const recipe of machineRecipes) {
       ...(parseItemBuffs(objectData) && { buffs: parseItemBuffs(objectData) }),
       sources: [machineSource, ...buildAcquisitionSources(`(O)${outputItemId}`)],
       bundles: [],
-      gifts: {}
+      gifts: {},
+      preserveType: recipe.outputName,
     };
 
     // Keep top-level processingTimeMinutes for table sorting convenience
@@ -3646,6 +3654,127 @@ if (locationsMerged < fishData.length) {
   missingLocations.forEach(f => console.warn(`    - ${f.name} (Game ID: ${f.gameId})`));
 }
 
+// ============================================================================
+// Build fish pond variant entities (one per fish with a FishPondData match)
+// ============================================================================
+console.log('\nBuilding fish pond variant entities...');
+
+const fishPondVariantData = [];
+
+{
+  // The game auto-generates an "item_<name_lower_underscored>" context tag for every object.
+  // FishPondData entries use RequiredTags with these auto-generated tags (and generic group tags)
+  // to match fish. We replicate that logic here.
+  function autoItemTag(name) {
+    return 'item_' + name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+  }
+
+  function matchFishPondEntry(fishContextTags, autoTag) {
+    const allTags = [...fishContextTags, autoTag];
+    let best = null;
+    for (const entry of gameData.fishPondData) {
+      const reqTags = entry.RequiredTags || [];
+      if (reqTags.length === 0) continue;
+      if (!reqTags.every(t => allTags.includes(t))) continue;
+      if (!best) { best = entry; continue; }
+      if (entry.Precedence < best.Precedence) { best = entry; continue; }
+      if (entry.Precedence === best.Precedence && reqTags.length > (best.RequiredTags || []).length) {
+        best = entry; continue;
+      }
+    }
+    return best;
+  }
+
+  // Parse a gate item string like "(O)709 10" or "(O)404 2 3" into a structured object.
+  // Format: "<qualifiedId> [minQty [maxQty]]"
+  function parseGateItem(str) {
+    const parts = str.trim().split(/\s+/);
+    const gameId = parts[0];
+    const rawId = gameId.replace(/^\(O\)/, '');
+    const obj = gameData.objects[rawId];
+    const minQty = parts[1] ? parseInt(parts[1], 10) : 1;
+    const maxQty = parts[2] ? parseInt(parts[2], 10) : minQty;
+    return {
+      gameId,
+      name: obj?.Name || rawId,
+      icon: obj ? `assets/objects/${toIconFilename(obj.Name)}` : null,
+      minQty,
+      maxQty,
+    };
+  }
+
+  let variantsBuilt = 0;
+  for (const fish of fishData) {
+    const rawId = fish.gameId.replace(/^\(O\)/, '');
+    const rawObj = gameData.objects[rawId];
+    if (!rawObj) continue;
+
+    const fishAutoTag = autoItemTag(rawObj.Name);
+    const pondEntry = matchFishPondEntry(fish.contextTags || [], fishAutoTag);
+    if (!pondEntry) continue;
+
+    // Parse produces
+    const produces = [];
+    for (const produced of (pondEntry.ProducedItems || [])) {
+      const itemId = produced.ItemId;
+      if (!itemId || !itemId.startsWith('(O)')) continue;
+      const rawProdId = itemId.replace(/^\(O\)/, '');
+      const prodObj = gameData.objects[rawProdId];
+      if (!prodObj) continue;
+      const minQty = produced.MinStack > 0 ? produced.MinStack : 1;
+      const maxQty = produced.MaxStack > 0 ? produced.MaxStack : minQty;
+      produces.push({
+        gameId: itemId,
+        name: prodObj.Name,
+        icon: `assets/objects/${toIconFilename(prodObj.Name)}`,
+        minPopulation: produced.RequiredPopulation || 1,
+        chance: produced.Chance,
+        minQty,
+        maxQty,
+      });
+    }
+    produces.sort((a, b) => a.minPopulation - b.minPopulation || b.chance - a.chance);
+
+    // Parse population gates into structured tiers
+    // PopulationGates: { "4": ["(O)709 10", ...], "6": [...] }
+    // null means population can never increase (e.g. legendary fish, Tiger Trout)
+    const rawGates = pondEntry.PopulationGates;
+    const tiers = rawGates
+      ? Object.entries(rawGates)
+          .map(([popStr, optionStrs]) => ({
+            population: parseInt(popStr, 10),
+            options: (optionStrs || []).map(parseGateItem),
+          }))
+          .sort((a, b) => a.population - b.population)
+      : [];
+
+    const variantId = `${fish.id}-pond`;
+    const variantEntity = {
+      id: variantId,
+      name: `${fish.name} Pond`,
+      type: 'building',
+      subtype: 'fish-pond-variant',
+      gameId: `(BLD)Fish Pond:${fish.gameId}`,  // synthetic: fish pond containing this fish species
+      icon: 'assets/objects/FishPond.png',
+      fishId: fish.id,
+      fishName: fish.name,
+      parentBuildingId: 'fish-pond',
+      maxPopulation: pondEntry.MaxPopulation === -1 ? null : pondEntry.MaxPopulation,
+      tiers,
+      produces,
+      sources: [],
+    };
+
+    fishPondVariantData.push(variantEntity);
+
+    // Set backref on the fish entity
+    fish.pondEntityId = variantId;
+
+    variantsBuilt++;
+  }
+
+  console.log(`  ✅ Built ${variantsBuilt} fish pond variant entities`);
+}
 
 // ============================================================================
 // Curate dual-role items (items that appear in both fish and forage contexts)
@@ -3719,6 +3848,7 @@ const roeItem = {
   edibility: roeObjectData?.Edibility || 20,
   icon: 'assets/objects/Roe.png',
   contextTags: roeObjectData?.ContextTags || [],
+  preserveType: 'Roe',
   sources: [
     {
       type: 'machine',
@@ -3776,6 +3906,7 @@ const agedRoeItem = {
   edibility: agedRoeObjectData?.Edibility || 40,
   icon: 'assets/objects/AgedRoe.png',
   contextTags: agedRoeObjectData?.ContextTags || [],
+  preserveType: 'AgedRoe',
   sources: [
     {
       type: 'machine',
@@ -5445,7 +5576,6 @@ for (const [gameKey, b] of Object.entries(gameData.buffs)) {
 
   buffData.push({
     id,
-    gameId: gameKey,
     name,
     description,
     entityType: 'buff',
@@ -5477,7 +5607,7 @@ for (const [gameKey, raw] of Object.entries(gameData.achievements)) {
 
   achievementData.push({
     id,
-    gameId: parseInt(gameKey),
+    achievementId: parseInt(gameKey),
     name,
     description,
     entityType: 'achievement',
@@ -5489,7 +5619,7 @@ for (const [gameKey, raw] of Object.entries(gameData.achievements)) {
 }
 
 // Resolve prerequisite gameIds → friendly IDs
-const achievementByGameId = new Map(achievementData.map(a => [a.gameId, a]));
+const achievementByGameId = new Map(achievementData.map(a => [a.achievementId, a]));
 for (const achievement of achievementData) {
   if (achievement.prerequisite != null) {
     const prereq = achievementByGameId.get(achievement.prerequisite);
@@ -5611,7 +5741,7 @@ for (const [gameKey, raw] of Object.entries(gameData.quests || {})) {
 
   questData.push({
     id,
-    gameId: parseInt(gameKey),
+    questId: parseInt(gameKey),
     name,
     description,
     objective,
@@ -5633,7 +5763,7 @@ for (const [gameKey, raw] of Object.entries(gameData.quests || {})) {
 deduplicateIds(questData);
 
 // Resolve next quest gameIds → friendly IDs
-const questByGameId = new Map(questData.map(q => [q.gameId, q]));
+const questByGameId = new Map(questData.map(q => [q.questId, q]));
 for (const quest of questData) {
   if (quest.nextQuestGameId != null) {
     const next = questByGameId.get(quest.nextQuestGameId);
@@ -5669,7 +5799,7 @@ for (const [mailKey, content] of Object.entries(gameData.mail)) {
 }
 
 for (const quest of questData) {
-  const trigger = questTriggersByGameId.get(quest.gameId);
+  const trigger = questTriggersByGameId.get(quest.questId);
   if (trigger) {
     quest.trigger = trigger;
   }
@@ -5715,7 +5845,6 @@ for (const [gameKey, p] of Object.entries(gameData.powers)) {
 
   powerData.push({
     id,
-    gameId: gameKey,
     name,
     description,
     entityType: 'power',
@@ -5811,7 +5940,6 @@ for (const m of (gameData.movies || [])) {
 
   movieData.push({
     id,
-    gameId: m.Id,
     name,
     description,
     entityType: 'movie',
@@ -5825,6 +5953,81 @@ for (const m of (gameData.movies || [])) {
 }
 
 console.log(`  ✓ Processed ${movieData.length} movies`);
+
+// ---------------------------------------------------------------------------
+// Process SecretNotes.json → secret note + journal scrap entities
+// ---------------------------------------------------------------------------
+console.log('\n📜 Processing secret notes...');
+
+// Build reward lookup: noteNumber → reward entry
+const secretNoteRewardsByNote = new Map();
+for (const reward of (rules.secretNoteRewards || [])) {
+  secretNoteRewardsByNote.set(reward.noteNumber, reward);
+}
+
+// Parse %revealtaste tokens: %revealtaste:NPCName:itemId
+function parseRevealTasteTokens(text) {
+  const tokens = [];
+  const re = /%revealtaste:([^:]+):(\d+)/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    tokens.push({ npc: m[1], itemId: `(O)${m[2]}` });
+  }
+  return tokens;
+}
+
+// Clean display text: strip %revealtaste tokens, replace ^^ with newlines, trim
+function cleanNoteText(raw) {
+  return raw
+    .replace(/%revealtaste:[^%\s]+/g, '')
+    .replace(/\^\^/g, '\n')
+    .replace(/\^/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+const secretNoteData = [];
+for (const [rawKey, rawText] of Object.entries(gameData.secretNotes || {})) {
+  const noteNumber = parseInt(rawKey, 10);
+  if (isNaN(noteNumber)) continue;
+
+  const isJournalScrap = noteNumber >= 1000;
+  // Notes 16-21 show image-based dig-spot maps; note 11 is a photo with no actionable content
+  const MAP_NOTE_NUMBERS = new Set([16, 17, 18, 19, 20, 21]);
+  const isMap = MAP_NOTE_NUMBERS.has(noteNumber);
+  const hasRevealTaste = rawText.includes('%revealtaste');
+  const subtype = isMap ? 'map' : hasRevealTaste ? 'gift-taste' : 'text';
+  const displayNumber = isJournalScrap ? noteNumber - 1000 : noteNumber;
+  const prefix = isJournalScrap ? 'journal-scrap' : 'secret-note';
+  const id = `${prefix}-${noteNumber}`;
+  const name = isJournalScrap
+    ? `Journal Scrap #${displayNumber}`
+    : `Secret Note #${noteNumber}`;
+
+  const reward = secretNoteRewardsByNote.get(noteNumber) ?? null;
+  const revealTasteTokens = hasRevealTaste ? parseRevealTasteTokens(rawText) : [];
+  const isImageNote = rawText.startsWith('!image');
+  const imageIndex = isImageNote ? parseInt(rawText.replace('!image', '').trim(), 10) : null;
+  const displayText = isImageNote ? null : cleanNoteText(rawText);
+
+  secretNoteData.push({
+    id,
+    noteNumber,
+    name,
+    entityType: isJournalScrap ? 'journal-scrap' : 'secret-note',
+    subtype,
+    icon: isJournalScrap ? 'assets/objects/JournalScrap.png' : 'assets/objects/SecretNote.png',
+    displayText,
+    imageIndex,
+    revealTasteTokens,
+    reward: reward ? { mailFlag: reward.mailFlag, eventId: reward.eventId ?? null, gameId: reward.gameId ?? null, itemName: reward.itemName ?? null, note: reward.note } : null,
+    sources: [],
+  });
+}
+
+// Sort by noteNumber for consistent output
+secretNoteData.sort((a, b) => a.noteNumber - b.noteNumber);
+console.log(`  ✓ Processed ${secretNoteData.length} secret notes / journal scraps`);
 
 // ---------------------------------------------------------------------------
 // Process Pants.json + Shirts.json → clothing entities
@@ -6197,7 +6400,6 @@ for (const eventId of [...allEventIds].sort((a, b) => {
 
   eventData.push({
     id: `event-${eventId}`,
-    gameId: /^\d+$/.test(eventId) ? parseInt(eventId) : null,
     eventKey: eventId,
     name,
     description,
@@ -6330,12 +6532,17 @@ artisanData.forEach(artisan => {
             sellingLocations: artisan.sellingLocations,
             bundles: artisan.bundles,
             genericId: artisan.id,
+            ...(artisan.preserveType && { preserveType: artisan.preserveType }),
             sources: artisan.sources.filter(s => s.type !== 'fish-pond').map(s => {
               if (s.type !== 'machine') return s;
               const isRoeInput = s.inputType === 'roe';
+              // Roe is produced by the specific fish's pond variant, not the generic fish-pond building
+              const machineId = s.id === 'fish-pond' && !isRoeInput
+                ? `${inputDetail.inputId}-pond`
+                : s.id;
               return {
                 type: s.type,
-                id: s.id,
+                id: machineId,
                 inputType: s.inputType,
                 processingTimeMinutes: s.processingTimeMinutes,
                 valueFormula: s.valueFormula,
@@ -6471,6 +6678,7 @@ const taggedBoots          = tagEntities(bootsData,          'boot',           '
 const taggedTools          = tagEntities(toolData,           'tool',           'T');
 const taggedTrinkets       = tagEntities(trinketData,        'trinket',        'TR');
 const taggedBuildings      = tagEntities(buildingData,       'building',       'BLD');
+const taggedFishPondVariants = fishPondVariantData.map(v => ({ ...v }));
 const taggedAnimals        = tagEntities(animalData,         'animal',         'FA');
 const taggedMonsters       = monsterData.map(m => ({ ...m, type: 'monster' }));
 const taggedBreakables     = breakableData.map(b => ({ ...b, type: 'breakable' }));
@@ -6483,6 +6691,7 @@ const taggedMovies         = movieData.map(m => ({ ...m, type: 'movie' }));
 const taggedClothing       = clothingData.map(c => ({ ...c, type: 'clothing' }));
 const taggedEvents         = eventData.map(e => ({ ...e, type: 'event' }));
 const taggedVillagers      = villagerData.map(v => ({ ...v, type: 'villager' }));
+const taggedSecretNotes    = secretNoteData.map(n => ({ ...n, type: n.entityType }));
 
 // Normalize any legacy store- prefixes in villager storeIds
 for (const v of villagerData) {
@@ -6840,10 +7049,11 @@ const allTypedEntities = [
   ...taggedTackle, ...taggedFlooring, ...taggedTrash, ...taggedBooks,
   ...taggedArtifacts, ...taggedRings, ...taggedTreeSeeds, ...taggedGeodeItems, ...taggedMisc,
   ...taggedWeapons, ...taggedBoots, ...taggedTools, ...taggedTrinkets,
-  ...taggedBuildings, ...taggedAnimals, ...taggedMonsters, ...taggedBreakables,
+  ...taggedBuildings, ...taggedFishPondVariants, ...taggedAnimals, ...taggedMonsters, ...taggedBreakables,
   ...bundleData.map(b => ({ ...b, type: 'bundle', sources: [] })),
   ...taggedBuffs, ...taggedAchievements, ...taggedQuests, ...taggedPowers, ...taggedConcessions, ...taggedMovies, ...taggedClothing, ...taggedEvents, ...taggedVillagers,
   ...taggedLocations, ...taggedFestivals,
+  ...taggedSecretNotes,
 ];
 
 const mergedEntitiesById = new Map();
@@ -7905,7 +8115,17 @@ console.log('\n🔗 Normalizing source rows (Phase 2)...');
     'garbage-can':        { entityId: s => s.locationId ?? null },
     'shop':               { entityId: s => s.id ?? null },
     'fish':               { entityId: s => s.locationId ?? null },
-    'fish-pond':          { entityId: () => null },  // fishTag is a tag, not an id
+    'fish-pond':          { entityId: s => {
+      // item_<name> tags resolve to the specific fish's pond variant entity
+      if (s.fishTag?.startsWith('item_')) {
+        const fishId = fishPondVariantData.find(v => {
+          const tag = 'item_' + v.fishName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+          return tag === s.fishTag;
+        })?.fishId;
+        return fishId ? `${fishId}-pond` : null;
+      }
+      return null;  // group tags (fish_ocean, fish_river, etc.) can't resolve to a single variant
+    }},
     'tapper':             { entityId: s => s.treeId ? `tree-${s.treeId}` : null },
     'animal':             { entityId: s => s.id ?? null },
     'machine':            { entityId: s => s.id ?? null },  // input is secondary, stays in qualifiers
@@ -8162,6 +8382,8 @@ const entitiesData = {
     totalMovies: movieData.length,
     totalClothing: clothingData.length,
     totalEvents: eventData.length,
+    totalSecretNotes: secretNoteData.filter(n => n.entityType === 'secret-note').length,
+    totalJournalScraps: secretNoteData.filter(n => n.entityType === 'journal-scrap').length,
     totalRelationships: relationships.length,
     mergedDuplicates,
   }

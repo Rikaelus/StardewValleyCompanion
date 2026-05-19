@@ -58,6 +58,7 @@ const TYPE_MAP = {
   breakables: 'breakable',
   geodes: 'geode',
   villagers: 'villager',
+  buildings: 'building',
 }
 
 // Legacy itemsKey map (used for backward-compat data shape { [itemsKey]: items, items, gameIdIndex })

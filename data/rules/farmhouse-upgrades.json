@@ -1,0 +1,116 @@
+{
+  "upgrades": [
+    {
+      "id": "upgrade-1",
+      "name": "First Upgrade",
+      "description": "Adds a kitchen with a cooking stove and mini-fridge, plus a bedroom with a double bed.",
+      "goldCost": 10000,
+      "materials": [
+        { "gameId": "(O)388", "name": "Wood", "count": 450 },
+        { "gameId": "(O)390", "name": "Stone", "count": 150 }
+      ],
+      "requiredUpgradeLevel": 0,
+      "grantsUpgradeLevel": 1,
+      "daysToComplete": 3
+    },
+    {
+      "id": "upgrade-2",
+      "name": "Second Upgrade",
+      "description": "Expands the house with more rooms and adds a children's room. Unlocks the renovation menu.",
+      "goldCost": 65000,
+      "materials": [
+        { "gameId": "(O)709", "name": "Hardwood", "count": 100 }
+      ],
+      "requiredUpgradeLevel": 1,
+      "grantsUpgradeLevel": 2,
+      "daysToComplete": 3
+    },
+    {
+      "id": "upgrade-3",
+      "name": "Cellar",
+      "description": "Adds a cellar beneath the farmhouse for aging artisan goods in casks.",
+      "goldCost": 100000,
+      "materials": [],
+      "requiredUpgradeLevel": 2,
+      "grantsUpgradeLevel": 3,
+      "daysToComplete": 3
+    }
+  ],
+  "renovations": [
+    {
+      "id": "open_bedroom",
+      "name": "Open Bedroom",
+      "description": "Removes the wall between the master bedroom and the main room, opening up the space.",
+      "goldCost": 10000,
+      "mailFlag": "renovation_bedroom_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "add_southern_room",
+      "name": "Southern Room",
+      "description": "Adds a large room to the south of the farmhouse.",
+      "goldCost": 30000,
+      "mailFlag": "renovation_southern_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "add_corner_room",
+      "name": "Corner Room",
+      "description": "Adds a room in the upper-right corner of the farmhouse.",
+      "goldCost": 20000,
+      "mailFlag": "renovation_corner_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "add_extendedcorner",
+      "name": "Extended Corner Room",
+      "description": "Extends the corner room further. Requires the Corner Room to be built first.",
+      "goldCost": 100000,
+      "mailFlag": "renovation_extendedcorner_open",
+      "requiredUpgradeLevel": 2,
+      "requiredMailFlags": ["renovation_corner_open"],
+      "reversible": true
+    },
+    {
+      "id": "add_dining_room",
+      "name": "Dining Room",
+      "description": "Adds a dining room to the left side of the farmhouse.",
+      "goldCost": 150000,
+      "mailFlag": "renovation_dining_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "add_cubby",
+      "name": "Cubby",
+      "description": "Adds a small cubby nook near the children's room.",
+      "goldCost": 10000,
+      "mailFlag": "renovation_cubby_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "add_farupperroom",
+      "name": "Attic",
+      "description": "Adds an attic room above the upper floor of the farmhouse.",
+      "goldCost": 60000,
+      "mailFlag": "renovation_farupperroom_open",
+      "requiredUpgradeLevel": 2,
+      "reversible": true
+    },
+    {
+      "id": "remove_crib",
+      "name": "Remove Crib",
+      "description": "Removes the crib from the children's room. The crib can be rebuilt at no cost.",
+      "goldCost": 0,
+      "mailFlag": null,
+      "cribKey": "remove",
+      "requiredUpgradeLevel": 2,
+      "reversible": true,
+      "note": "Free. Requires a crib to already be present. Toggle via the renovation menu."
+    }
+  ]
+}

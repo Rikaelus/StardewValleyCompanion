@@ -27,8 +27,8 @@ const ACHIEVEMENTS = {
 // Wiki note: the 8-heart check uses 1975 points (≈7.9 hearts), not 2000.
 const EIGHT_HEART_POINTS = 1975
 
-function rule(id, label, earned, points, detail) {
-  return { id, label, earned, points: earned ? points : 0, maxPoints: points, detail }
+function rule(id, label, earned, points, detail, linkPath) {
+  return { id, label, earned, points: earned ? points : 0, maxPoints: points, detail, linkPath }
 }
 
 // ---------------------------------------------------------------------------
@@ -85,13 +85,16 @@ function scoreAchievements(save) {
     rules: [
       rule('ach-museum',     'A Complete Collection — complete the museum',
         got.has(ACHIEVEMENTS.COMPLETE_COLLECTION), 1,
-        got.has(ACHIEVEMENTS.COMPLETE_COLLECTION) ? 'Earned' : 'Donate every artifact and mineral to the museum'),
+        got.has(ACHIEVEMENTS.COMPLETE_COLLECTION) ? 'Earned' : 'Donate every artifact and mineral to the museum',
+        '/tracker/museum'),
       rule('ach-fish',       'Master Angler — catch every fish',
         got.has(ACHIEVEMENTS.MASTER_ANGLER), 1,
-        got.has(ACHIEVEMENTS.MASTER_ANGLER) ? 'Earned' : 'Catch every fish at least once'),
+        got.has(ACHIEVEMENTS.MASTER_ANGLER) ? 'Earned' : 'Catch every fish at least once',
+        '/tracker/fishing'),
       rule('ach-shipment',   'Full Shipment — ship every item',
         got.has(ACHIEVEMENTS.FULL_SHIPMENT), 1,
-        got.has(ACHIEVEMENTS.FULL_SHIPMENT) ? 'Earned' : 'Ship every shippable item at least once'),
+        got.has(ACHIEVEMENTS.FULL_SHIPMENT) ? 'Earned' : 'Ship every shippable item at least once',
+        '/tracker/full-shipment'),
     ],
   }
 }
@@ -128,23 +131,27 @@ function scoreFriendship(save) {
     name: 'Friendship',
     rules: [
       rule('fr-marry', 'Married + house upgraded twice (kitchen + nursery)',
-        marriageOK, 1, marriageDetail),
+        marriageOK, 1, marriageDetail, '/villagers'),
       rule('fr-five',  '8❤️ with at least 5 villagers',
-        fiveAtEight, 1, `${eightHeartCount} / 5 villagers at 8+ hearts`),
+        fiveAtEight, 1, `${eightHeartCount} / 5 villagers at 8+ hearts`, '/villagers'),
       rule('fr-ten',   '8❤️ with at least 10 villagers',
-        tenAtEight, 1, `${eightHeartCount} / 10 villagers at 8+ hearts`),
+        tenAtEight, 1, `${eightHeartCount} / 10 villagers at 8+ hearts`, '/villagers'),
       rule('fr-pet',   'Pet friendship at maximum (999+)',
         petOK, 1, petDetail),
     ],
   }
 }
 
+// Event ID for the CC completion ceremony cutscene (stored in eventsSeen, not mailReceived)
+const CC_CEREMONY_EVENT_ID = 191393
+
 function scoreCommunity(save) {
   const mail = new Set(save.mailReceived ?? [])
+  const events = new Set(save.eventsSeen ?? [])
   const isJoja = mail.has('JojaMember')
 
   const ccComplete = mail.has('ccIsComplete')
-  const ccCeremony = mail.has('CF_Complete')
+  const ccCeremony = events.has(CC_CEREMONY_EVENT_ID)
 
   // CC points are forfeit on the Joja path. We render the alternative as a
   // dimmed informational group so the player sees what was given up.
@@ -155,7 +162,8 @@ function scoreCommunity(save) {
     rules: [
       rule('cc-complete', 'Community Center complete',
         !isJoja && ccComplete, 1,
-        isJoja ? 'Forfeit — chose the Joja path' : (ccComplete ? 'Earned' : 'Complete all bundles')),
+        isJoja ? 'Forfeit — chose the Joja path' : (ccComplete ? 'Earned' : 'Complete all bundles'),
+        '/tracker/museum'),
       rule('cc-ceremony', 'Community Center completion ceremony (2 pts)',
         !isJoja && ccCeremony, 2,
         isJoja ? 'Forfeit — chose the Joja path' : (ccCeremony ? 'Earned' : 'Attend the ceremony cutscene after completion')),
@@ -191,7 +199,8 @@ function scoreKeys(save) {
       rule('key-skull', 'Skull Key (reach Mines floor 120)',
         skull, 1, skull ? 'Earned' : 'Reach the bottom of the Mines'),
       rule('key-rusty', 'Rusty Key (donate 60 items to museum)',
-        rusty, 1, rusty ? 'Earned' : 'Donate 60 items to the museum'),
+        rusty, 1, rusty ? 'Earned' : 'Donate 60 items to the museum',
+        '/tracker/museum'),
     ],
   }
 }

@@ -350,6 +350,7 @@ export function getEntitySubtitle(entity) {
   }
 
   if (type === 'building') {
+    if (entity.subtype === 'fish-pond-variant') return 'Fish Pond'
     return entity.magical ? 'Magical Building' : 'Farm Building'
   }
 

@@ -97,7 +97,7 @@ export function EntityProvider({ children }) {
       'villager':       entity => entity.type === 'villager',
       'trinket':        entity => entity.type === 'trinket',
       'tool':           entity => entity.type === 'tool',
-      'building':       entity => entity.type === 'building',
+      'building':       entity => entity.type === 'building' && entity.subtype === 'building',
       'animal':         entity => entity.type === 'animal',
     }
 
@@ -117,7 +117,7 @@ export function EntityProvider({ children }) {
     // eventNames map for condition formatter: { eventKey → name }
     const eventNames = Object.fromEntries(allEvents.map(e => [e.eventKey, e.name]))
     const allAchievements = allEntities.filter(i => i.type === 'achievement')
-    const achievementNames = Object.fromEntries(allAchievements.map(a => [String(a.gameId), a.name]))
+    const achievementNames = Object.fromEntries(allAchievements.map(a => [String(a.achievementId), a.name]))
 
     // Gift indexes
     const giftsByItem = new Map()

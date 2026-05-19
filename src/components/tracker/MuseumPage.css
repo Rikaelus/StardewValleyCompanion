@@ -25,6 +25,29 @@
   line-height: 1.6;
 }
 
+.museum-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.museum-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
 .museum-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -219,6 +242,11 @@
 
 .museum-tile--missing .museum-tile-icon {
   filter: grayscale(1) opacity(0.45);
+}
+
+.museum-tile--neutral {
+  background: #faf4e8;
+  border-color: #d9c4a0;
 }
 
 .museum-tile-icon {

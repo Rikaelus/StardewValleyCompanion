@@ -1,0 +1,269 @@
+.slayer-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.slayer-empty {
+  max-width: 540px;
+  margin: 4rem auto;
+  text-align: center;
+  color: #6b5d4f;
+}
+
+.slayer-empty-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.slayer-empty-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.slayer-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.slayer-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+.slayer-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.slayer-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.slayer-score-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.slayer-score-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.slayer-score-done {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5c4a32;
+  line-height: 1;
+}
+
+.slayer-score-divider {
+  font-size: 1.5rem;
+  color: #b39c7a;
+}
+
+.slayer-score-max {
+  font-size: 1.5rem;
+  color: #8b6f47;
+}
+
+.slayer-score-label {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 0.4rem;
+}
+
+.slayer-filter-toggle {
+  display: flex;
+  width: max-content;
+  margin: 0 auto 1.5rem;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.slayer-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.slayer-filter-btn:hover:not(.slayer-filter-btn--active) {
+  color: #5c4a32;
+  background: rgba(139, 111, 71, 0.08);
+}
+
+.slayer-filter-btn--active {
+  background: #8b6f47;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.slayer-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.2rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(139, 111, 71, 0.15);
+  color: #5c4a32;
+}
+
+.slayer-filter-btn--active .slayer-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+/* Cards grid */
+.slayer-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.slayer-card {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.slayer-card--done {
+  border-color: #c5dba0;
+  background: #f4fbee;
+}
+
+.slayer-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.slayer-card-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #5c4a32;
+}
+
+.slayer-card--done .slayer-card-label {
+  color: #4a7228;
+}
+
+.slayer-card-count {
+  font-size: 0.82rem;
+  color: #8b6f47;
+  white-space: nowrap;
+}
+
+.slayer-card--done .slayer-card-count {
+  color: #4a7228;
+  font-weight: 700;
+}
+
+.slayer-bar {
+  height: 6px;
+  background: #e8d4b0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.slayer-bar-fill {
+  height: 100%;
+  background: #8b6f47;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.slayer-bar-fill--done {
+  background: #5a9e4a;
+}
+
+.slayer-card-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.1rem;
+}
+
+.slayer-card-reward {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #e8d4b0;
+  margin-top: 0.1rem;
+}
+
+.slayer-card--done .slayer-card-reward {
+  border-top-color: #c5dba0;
+}
+
+.slayer-reward-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  flex-shrink: 0;
+}
+
+.slayer-reward-gold {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #8b6f47;
+}
+
+.slayer-reward-none {
+  font-size: 0.8rem;
+  color: #b39c7a;
+}

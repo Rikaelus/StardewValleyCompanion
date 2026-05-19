@@ -254,12 +254,94 @@ namespace DataExporter
                 }
 
                 Monitor.Log($"Data export complete! Exported {successCount}/{assetsToExport.Length} assets to {exportPath}", LogLevel.Info);
+
+                // Discovery pass: enumerate all Data/*.xnb files on disk and attempt to export
+                // anything not already in the hardcoded list above.
+                var alreadyExported = new HashSet<string>(assetsToExport, StringComparer.OrdinalIgnoreCase);
+                DiscoverAndExport(exportPath, alreadyExported);
+
                 Monitor.Log("You can now close the game and use the exported JSON files!", LogLevel.Alert);
             }
             catch (Exception ex)
             {
                 Monitor.Log($"Error exporting data: {ex.Message}", LogLevel.Error);
                 Monitor.Log($"Stack trace: {ex.StackTrace}", LogLevel.Error);
+            }
+        }
+
+        private void DiscoverAndExport(string exportPath, HashSet<string> alreadyExported)
+        {
+            try
+            {
+                // Find the game's Content directory: it sits next to the game executable.
+                // StardewValley.exe is in the game folder; SMAPI's DirectoryPath is the mod folder
+                // (e.g. .../Mods/DataExporter), so we walk up to find the game root.
+                string modDir = Helper.DirectoryPath;
+                string gameRoot = modDir;
+                while (gameRoot != null && !File.Exists(Path.Combine(gameRoot, "StardewValley.exe"))
+                                        && !File.Exists(Path.Combine(gameRoot, "Stardew Valley.exe")))
+                {
+                    gameRoot = Path.GetDirectoryName(gameRoot);
+                }
+
+                if (gameRoot == null)
+                {
+                    Monitor.Log("Discovery: could not locate game root directory (StardewValley.exe not found in parent paths)", LogLevel.Warn);
+                    return;
+                }
+
+                string contentDataDir = Path.Combine(gameRoot, "Content", "Data");
+                if (!Directory.Exists(contentDataDir))
+                {
+                    Monitor.Log($"Discovery: Content/Data directory not found at {contentDataDir}", LogLevel.Warn);
+                    return;
+                }
+
+                Monitor.Log($"Discovery: scanning {contentDataDir} for unknown assets...", LogLevel.Info);
+
+                var discoveryLog = new List<string>();
+                int newSuccess = 0, newFail = 0, skipped = 0;
+
+                // Recursively find all .xnb files under Content/Data/
+                // contentDataDir is e.g. ".../Stardew Valley/Content/Data"
+                // We want asset paths relative to Content/, so strip contentDataDir and prepend "Data/"
+                foreach (var xnbPath in Directory.EnumerateFiles(contentDataDir, "*.xnb", SearchOption.AllDirectories))
+                {
+                    // Convert absolute path to SMAPI asset path: strip contentDataDir prefix, normalize, strip .xnb
+                    // e.g. ".../Content/Data/Foo/Bar.xnb" -> "Data/Foo/Bar"
+                    string relative = xnbPath.Substring(contentDataDir.Length).TrimStart(Path.DirectorySeparatorChar, '/');
+                    string assetPath = ("Data/" + relative).Replace(Path.DirectorySeparatorChar, '/').Replace(".xnb", "");
+
+                    if (alreadyExported.Contains(assetPath))
+                    {
+                        skipped++;
+                        continue;
+                    }
+
+                    // Attempt export
+                    if (ExportAsset(assetPath, exportPath))
+                    {
+                        newSuccess++;
+                        discoveryLog.Add($"  NEW: {assetPath}");
+                    }
+                    else
+                    {
+                        newFail++;
+                        discoveryLog.Add($"  FAIL: {assetPath}");
+                    }
+                }
+
+                Monitor.Log($"Discovery complete: {newSuccess} new assets exported, {newFail} failed, {skipped} already covered", LogLevel.Info);
+
+                // Write a summary log file so you can review what was found without scrolling SMAPI output
+                string logPath = Path.Combine(exportPath, "_discovery_log.txt");
+                File.WriteAllLines(logPath, discoveryLog);
+                Monitor.Log($"Discovery log written to {logPath}", LogLevel.Info);
+            }
+            catch (Exception ex)
+            {
+                Monitor.Log($"Discovery error: {ex.Message}", LogLevel.Warn);
+                Monitor.Log($"Stack trace: {ex.StackTrace}", LogLevel.Warn);
             }
         }
 

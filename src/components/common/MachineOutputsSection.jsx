@@ -28,10 +28,12 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
     else if (entity.daysToProduce > 1) harvestFrequency = `every ${entity.daysToProduce} days`
   }
 
+  const totalOutputCount = outputItems.length
+
   return (
     <>
       {outputItems.length > 0 && (
-        <ModalSection id="section-machine-outputs" title={`Produces (${outputItems.length})`} navLabel="Produces">
+        <ModalSection id="section-machine-outputs" title={`Produces (${totalOutputCount})`} navLabel="Produces">
           <div className="source-list">
             {outputItems.flatMap(item => {
               // Tapper-specific rendering: show tree as qualifier with days

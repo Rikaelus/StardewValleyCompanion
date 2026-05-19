@@ -57,6 +57,7 @@ function BundleRequirementsSection({ entity, entityType, findByGameId, onNavigat
               quality={bundleItem.quality}
               quantity={bundleItem.quantity}
               onNavigate={onNavigate}
+              noDoubleFrame
             />
           ) : (
             <span key={idx} className="bundle-item-name">{bundleItem.id}</span>

@@ -61,7 +61,7 @@ function ItemButton({
         src={item.icon.startsWith('/') ? item.icon : `/${item.icon}`}
         alt={item.name || 'Item'}
         className="item-button-icon"
-        style={{ maxWidth: iconSize, maxHeight: iconSize, width: 'auto', height: 'auto' }}
+        style={{ width: iconSize, height: iconSize }}
         onError={() => setImageError(true)}
       />
     )
@@ -75,8 +75,7 @@ function ItemButton({
   const ownedClass = owned ? 'item-button--owned' : ''
   const neededClass = needed ? 'item-button--needed' : ''
 
-  // If showing both icon and label, render as a single unified button
-  // The border box wraps only the icon; the label sits outside it.
+  // If showing both icon and label, the icon is inset; label sits outside.
   if (showIcon && showLabel) {
     return (
       <button
@@ -85,7 +84,7 @@ function ItemButton({
         title={item.name}
         type="button"
       >
-        <span className={`item-button-icon-box ${ownedClass} ${neededClass}`} style={{ minWidth: iconSize, minHeight: iconSize }}>{renderIcon()}</span>
+        <span className="item-button-icon-box">{renderIcon()}</span>
         {renderLabel()}
       </button>
     )
@@ -93,12 +92,12 @@ function ItemButton({
 
   return (
     <button
-      className={`item-button ${className}`}
+      className={`item-button ${ownedClass} ${neededClass} ${className}`}
       onClick={handleClick}
       title={item.name}
       type="button"
     >
-      <span className={`item-button-icon-box item-button-icon-box--state ${ownedClass} ${neededClass}`}>{renderIcon()}</span>
+      <span className="item-button-icon-box">{renderIcon()}</span>
       {renderLabel()}
     </button>
   )

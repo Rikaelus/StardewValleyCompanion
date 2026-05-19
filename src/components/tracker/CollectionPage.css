@@ -1,0 +1,273 @@
+.collection-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.collection-empty {
+  max-width: 540px;
+  margin: 4rem auto;
+  text-align: center;
+  color: #6b5d4f;
+}
+
+.collection-empty-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.collection-empty-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.collection-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.collection-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+.collection-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.collection-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 1rem;
+}
+
+.collection-score-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.collection-score-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.collection-score-done {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5c4a32;
+  line-height: 1;
+}
+
+.collection-score-divider {
+  font-size: 1.5rem;
+  color: #b39c7a;
+}
+
+.collection-score-max {
+  font-size: 1.5rem;
+  color: #8b6f47;
+}
+
+.collection-score-label {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 0.4rem;
+}
+
+.collection-milestones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: #8b6f47;
+}
+
+.collection-milestone--reached {
+  color: #4a7228;
+  font-weight: 700;
+}
+
+.collection-filter-toggle {
+  display: flex;
+  align-self: center;
+  width: max-content;
+  margin: 0 auto 1.5rem;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.collection-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.collection-filter-btn:hover:not(.collection-filter-btn--active) {
+  color: #5c4a32;
+  background: rgba(139, 111, 71, 0.08);
+}
+
+.collection-filter-btn--active {
+  background: #8b6f47;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.collection-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.2rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(139, 111, 71, 0.15);
+  color: #5c4a32;
+}
+
+.collection-filter-btn--active .collection-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.collection-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collection-group {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+
+.collection-group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.collection-group-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5c4a32;
+  margin: 0;
+}
+
+.collection-group-score {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8b6f47;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+  gap: 0.4rem;
+}
+
+/* Legend */
+.collection-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 0.78rem;
+  color: #8b6f47;
+}
+
+.collection-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.collection-legend-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #d9c4a0;
+  flex-shrink: 0;
+}
+
+.collection-legend-swatch--complete {
+  background: #ecf5e2;
+  border-color: #c5dba0;
+}
+
+.collection-legend-swatch--partial {
+  background: #faf4e8;
+  border-color: #d9c4a0;
+}
+
+.collection-legend-swatch--missing {
+  background: #faf4e8;
+  border-color: #d9c4a0;
+  opacity: 0.45;
+}
+
+/* Progress bar variant used by Monster Slayer */
+.collection-progress-bar {
+  height: 6px;
+  background: #e8d4b0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.35rem;
+}
+
+.collection-progress-bar-fill {
+  height: 100%;
+  background: #5a9e4a;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}

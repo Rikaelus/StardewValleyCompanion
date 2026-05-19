@@ -33,6 +33,10 @@
   padding: 0;
 }
 
+button, input, select, textarea {
+  font: inherit;
+}
+
 /* Global checkbox-label pattern */
 .checkbox-label {
   display: flex;

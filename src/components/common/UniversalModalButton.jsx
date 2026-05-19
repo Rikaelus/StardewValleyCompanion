@@ -5,8 +5,10 @@ import { useOpenModal } from '../../contexts/ModalContext'
 import { useEntities } from '../../contexts/EntityContext'
 import { useProgress } from '../../hooks/UseProgress'
 import { pluralize } from '../../utils/Pluralize'
+import { getEntityLabels } from '../../utils/Formatters'
 import 'react-tooltip/dist/react-tooltip.css'
 // TODO: rename UniversalModalButton → UniversalModalButton and item prop → entity (high churn, cosmetic)
+
 
 /**
  * Item button that opens the global UniversalModal when clicked.
@@ -23,34 +25,22 @@ function UniversalModalButton({
   iconSize = 32,
   className = '',
   stopPropagation = false,
-  variant = 'default', // 'default' | 'inline' | 'bundle-item'
+  variant = 'default', // 'default' | 'inline' | 'bundle-item' | 'row'
   onNavigate = null, // Optional override (e.g. for breadcrumb navigation within modal)
   plural = false, // Display the item name in plural form (inline variant only)
   label = null, // Override the displayed name (inline variant only)
   quality = 0, // Quality level: 0=normal, 1=silver, 2=gold, 4=iridium (bundle-item variant only)
   quantity = 1, // Stack quantity (bundle-item variant only)
-  showSlotBackground = false // Show bundle slot background (bundle-item variant only)
+  showSlotBackground = false, // Show bundle slot background (bundle-item variant only)
+  noDoubleFrame = false, // Opt out of inner state-color frame (bundle-item variant only)
+  highlighted = false, // row variant: highlight state (mirrors :hover)
+  onMouseEnter = null // row variant: hover callback
 }) {
   const openModal = useOpenModal()
   const entities = useEntities()
-  const { getEntityCompletion, getBundleProgress, hasSaveData, isOwned, isMuseumDonated, isJojaRoute, isMissingBundleAvailable } = useProgress()
-  const completion = getEntityCompletion(item)
-  const owned = hasSaveData && !!item?.gameId && isOwned(item.gameId)
-
-  const needed = hasSaveData && !!item?.gameId && (() => {
-    if (item?.capabilities?.donatable && !isMuseumDonated(item.gameId)) return true
-    if (item?.capabilities?.bundleSlot && item?.bundles?.length && !isJojaRoute) {
-      return item.bundles.some(bundleId => {
-        const bundle = entities.findById(bundleId)
-        if (!bundle) return false
-        if (bundleId === 'bundle-the-missing' && !isMissingBundleAvailable) return false
-        const itemCount = bundle.goldCost ? 1 : (bundle.items?.length ?? 0)
-        const progress = getBundleProgress(bundle.bundleNumber, itemCount)
-        return !progress?.complete
-      })
-    }
-    return false
-  })()
+  const { hasSaveData, isOwned, isNeeded } = useProgress()
+  const owned = hasSaveData && !!item?.gameId && isOwned(item.gameId, item)
+  const needed = isNeeded(item, entities.findById)
   const [imageError, setImageError] = useState(false)
 
   if (!item) return null
@@ -78,25 +68,33 @@ function UniversalModalButton({
   if (variant === 'bundle-item') {
     const starColor = getQualityStarColor(quality)
     const tooltipId = `bundle-item-${item.id}`
+    const stateClass = !noDoubleFrame
+      ? (owned && needed ? 'bundle-item--owned bundle-item--needed'
+        : owned ? 'bundle-item--owned'
+        : needed ? 'bundle-item--needed'
+        : '')
+      : ''
     return (
       <>
         <button
-          className={`bundle-item-button ${showSlotBackground ? 'bundle-item-with-slot' : ''}`}
+          className={`bundle-item-button ${showSlotBackground ? 'bundle-item-with-slot' : ''} ${stateClass}`}
           onClick={handleClick}
           data-tooltip-id={tooltipId}
           data-tooltip-content={item.name}
           type="button"
         >
-          {item.icon && !imageError ? (
-            <img
-              src={item.icon.startsWith('/') ? item.icon : `/${item.icon}`}
-              alt={item.name}
-              className="bundle-item-icon"
-              onError={() => setImageError(true)}
-            />
-          ) : (
-            <span className="bundle-item-icon-fallback">{item.name?.slice(0, 2).toUpperCase() || '??'}</span>
-          )}
+          <span className={`bundle-item-icon-frame ${stateClass}`}>
+            {item.icon && !imageError ? (
+              <img
+                src={item.icon.startsWith('/') ? item.icon : `/${item.icon}`}
+                alt={item.name}
+                className="bundle-item-icon"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <span className="bundle-item-icon-fallback">{item.name?.slice(0, 2).toUpperCase() || '??'}</span>
+            )}
+          </span>
 
           {/* Quality star overlay (top-right) */}
           {quality > 0 && starColor && (
@@ -114,12 +112,46 @@ function UniversalModalButton({
     )
   }
 
+  // Render row variant (search result row: icon + name + category badges, full-width clickable)
+  if (variant === 'row') {
+    const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
+    const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(item)
+    const nameLabelClass = owned && needed ? 'inline-owned-needed'
+      : owned ? 'inline-owned'
+      : needed ? 'inline-needed'
+      : ''
+    return (
+      <li
+        className={`search-result-row${highlighted ? ' highlighted' : ''}`}
+        role="option"
+        aria-selected={highlighted}
+        onMouseEnter={onMouseEnter}
+        onClick={() => handleClick({})}
+      >
+        <div className="search-result-icon">
+          {iconSrc
+            ? <img src={iconSrc} alt="" width={24} height={24} style={{ objectFit: 'contain', imageRendering: 'pixelated', display: 'block' }} onError={() => setImageError(true)} />
+            : (item.iconChar || item.iconClass)
+              ? <span className="search-result-icon-char" style={{ backgroundColor: item.iconColor || '#7f8c8d' }}>
+                  {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
+                </span>
+              : <span className="search-result-icon-placeholder" />
+          }
+        </div>
+        <span className={`search-result-name ${nameLabelClass}`}>{item.name}</span>
+        <span className="search-result-badges">
+          {typeLabel && <span className="search-result-category">{typeLabel}</span>}
+          {subtypeLabel && <span className="search-result-type">{subtypeLabel}</span>}
+        </span>
+      </li>
+    )
+  }
+
   // Render inline variants
   if (variant === 'inline' || variant === 'icon-inline' || variant === 'table-inline') {
     const isTableInline = variant === 'table-inline'
     const inlineIconSize = isTableInline ? 16 : (iconSize !== 32 ? iconSize : 16)
     const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
-    const isComplete = completion?.completed
     const inlineLabelClass = owned && needed ? 'inline-owned-needed'
       : owned ? 'inline-owned'
       : needed ? 'inline-needed'
@@ -159,7 +191,6 @@ function UniversalModalButton({
         )}
         <span style={{ position: 'relative' }} className={inlineLabelClass}>
           {label ?? (plural ? pluralize(item.name) : item.name)}
-          {isComplete && <span title={completion.label}> ✓</span>}
           {item.contextTags?.includes('fish_legendary') && <span title="Legendary Fish"> ⭐</span>}
         </span>
       </button>

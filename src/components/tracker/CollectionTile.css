@@ -1,0 +1,91 @@
+.collection-tile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.15s, background 0.15s;
+}
+
+.collection-tile:hover {
+  border-color: #8b6f47;
+  transform: scale(1.05);
+}
+
+/* States */
+.collection-tile--complete {
+  background: #ecf5e2;
+  border-color: #c5dba0;
+}
+
+.collection-tile--partial {
+  background: #faf4e8;
+  border-color: #d9c4a0;
+}
+
+.collection-tile--missing .collection-tile-icon {
+  filter: grayscale(1) opacity(0.4);
+}
+
+/* neutral — no save data loaded; full color, no progress indication */
+.collection-tile--neutral {
+  background: #faf4e8;
+  border-color: #d9c4a0;
+}
+
+.collection-tile-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.collection-tile-fallback {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8b6f47;
+}
+
+/* Bottom-left badge — secondary state (known but not yet cooked/crafted) */
+.collection-tile-badge {
+  position: absolute;
+  bottom: 1px;
+  left: 2px;
+  font-size: 10px;
+  line-height: 1;
+  pointer-events: none;
+  font-weight: 700;
+}
+
+.collection-tile-badge--check {
+  color: #4a7228;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+}
+
+.collection-tile-badge--star {
+  color: #c8960c;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff;
+}
+
+/* Bottom count overlay — spans full width like bundle-item-quantity */
+.collection-tile-count {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 1px 3px 0;
+  border-radius: 0 0 3px 3px;
+  line-height: 1.3;
+  text-align: center;
+  pointer-events: none;
+  font-family: 'Stardew Valley', sans-serif;
+}

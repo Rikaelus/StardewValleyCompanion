@@ -51,6 +51,7 @@ export const MEGA_MENU_GROUPS = [
     domain: 'Social & Other',
     items: [
       { label: 'Villagers', path: '/villagers' },
+      { label: 'Farm Buildings', path: '/buildings' },
       { label: 'Furniture', path: '/furniture' },
       { label: 'Hats', path: '/hats' },
       { label: 'Clothing', path: '/clothing' },

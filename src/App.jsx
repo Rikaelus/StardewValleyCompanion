@@ -4,6 +4,17 @@ import HomePage from './components/home/HomePage'
 import EntityListPage from './components/common/EntityListPage'
 import ShrinePage from './components/tracker/ShrinePage'
 import MuseumPage from './components/tracker/MuseumPage'
+import CookingPage from './components/tracker/CookingPage'
+import CraftingPage from './components/tracker/CraftingPage'
+import FishingPage from './components/tracker/FishingPage'
+import ShippingPage from './components/tracker/ShippingPage'
+import FullShipmentPage from './components/tracker/FullShipmentPage'
+import SlayerPage from './components/tracker/SlayerPage'
+import RarecrowPage from './components/tracker/RarecrowPage'
+import AchievementsPage from './components/tracker/AchievementsPage'
+import SecretNotesPage from './components/tracker/SecretNotesPage'
+import BundlesPage from './components/tracker/BundlesPage'
+import FarmhousePage from './components/tracker/FarmhousePage'
 import Footer from './components/layout/Footer'
 import AppHeader from './components/layout/AppHeader'
 import MegaMenu from './components/layout/MegaMenu'
@@ -25,8 +36,19 @@ const MainContent = memo(function MainContent() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/tracker/bundles" element={<BundlesPage />} />
               <Route path="/tracker/shrine" element={<ShrinePage />} />
               <Route path="/tracker/museum" element={<MuseumPage />} />
+              <Route path="/tracker/cooking" element={<CookingPage />} />
+              <Route path="/tracker/crafting" element={<CraftingPage />} />
+              <Route path="/tracker/fishing" element={<FishingPage />} />
+              <Route path="/tracker/shipping" element={<ShippingPage />} />
+              <Route path="/tracker/full-shipment" element={<FullShipmentPage />} />
+              <Route path="/tracker/slayer" element={<SlayerPage />} />
+              <Route path="/tracker/rarecrows" element={<RarecrowPage />} />
+              <Route path="/tracker/achievements" element={<AchievementsPage />} />
+              <Route path="/tracker/secret-notes" element={<SecretNotesPage />} />
+              <Route path="/tracker/farmhouse" element={<FarmhousePage />} />
               <Route path="/fish" element={<EntityListPage pageType="fish" />} />
               <Route path="/artisan/*" element={<EntityListPage pageType="artisan" />} />
               <Route path="/forage" element={<EntityListPage pageType="forage" />} />
@@ -50,6 +72,7 @@ const MainContent = memo(function MainContent() {
               <Route path="/geodes" element={<EntityListPage pageType="geodes" />} />
               <Route path="/clothing" element={<EntityListPage pageType="clothing" />} />
               <Route path="/villagers" element={<EntityListPage pageType="villagers" />} />
+              <Route path="/buildings" element={<EntityListPage pageType="buildings" />} />
             </Routes>
           </main>
         </div>
@@ -64,6 +87,12 @@ function AppShell({ searchOpen, setSearchOpen }) {
   const [megaMenuOpen, setMegaMenuOpen] = useState(false)
   const [trackerMenuOpen, setTrackerMenuOpen] = useState(false)
   const [characterBarOpen, setCharacterBarOpen] = useState(false)
+
+  const openCharacterBar = () => {
+    setCharacterBarOpen(true)
+    setMegaMenuOpen(false)
+    setTrackerMenuOpen(false)
+  }
 
   const toggleMegaMenu = () => {
     setMegaMenuOpen(prev => !prev)
@@ -82,6 +111,12 @@ function AppShell({ searchOpen, setSearchOpen }) {
     setMegaMenuOpen(false)
     setTrackerMenuOpen(false)
   }
+
+  useEffect(() => {
+    const handler = () => openCharacterBar()
+    window.addEventListener('open-character-bar', handler)
+    return () => window.removeEventListener('open-character-bar', handler)
+  }, [])
 
   return (
     <div className="app">

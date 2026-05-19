@@ -1,39 +1,49 @@
-/* Unified button + label layout — the whole thing is one clickable button */
+/* with-label variant: borderless button, label sits next to the icon */
 .item-button--with-label {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: none;
   padding: 0;
+  border: none;
   border-radius: 0;
 }
 .item-button--with-label:hover {
   background: none;
   color: #5a3e1b;
 }
-/* Border box wraps only the icon, not the label */
+.item-button--with-label .item-button-icon-box {
+  border: 3px solid #d8d8d8;
+  border-radius: 4px;
+}
+.item-button--with-label.item-button--owned .item-button-icon-box {
+  border-color: #4caf50;
+}
+.item-button--with-label.item-button--needed .item-button-icon-box {
+  border-color: #e57373;
+}
+.item-button--with-label:hover .item-button-icon-box {
+  background: #e3f2fd;
+}
+
+/* Icon box — sits inside the button border, provides padding around the icon image */
 .item-button-icon-box {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #8b6f47;
-  border-radius: 4px;
   padding: 2px;
   flex-shrink: 0;
-}
-.item-button--with-label:hover .item-button-icon-box {
-  background: #e3f2fd;
 }
 
 .item-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid #8b6f47;
+  border: 3px solid #d8d8d8;
   border-radius: 4px;
   padding: 2px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
   background: transparent;
   font: inherit;
   color: inherit;
@@ -41,9 +51,21 @@
   vertical-align: middle; /* Align button with surrounding text */
 }
 
+.item-button.item-button--owned {
+  border-color: #4caf50;
+}
+
+.item-button.item-button--needed {
+  border-color: #e57373;
+}
+
 @keyframes owned-needed-pulse {
-  0%, 100% { background-color: #ffd5d5; }
-  50% { background-color: #d4edda; }
+  0%, 100% { border-color: #e57373; }
+  50% { border-color: #4caf50; }
+}
+
+.item-button.item-button--owned.item-button--needed {
+  animation: owned-needed-pulse 2s ease-in-out infinite;
 }
 
 @keyframes owned-needed-gradient-sweep {
@@ -68,33 +90,20 @@
   animation: owned-needed-gradient-sweep 2s linear infinite;
 }
 
-.item-button-icon-box.item-button--owned {
-  background-color: #d4edda;
-}
-
-.item-button:has(.item-button--owned) {
-  border-color: #5a9e4a;
-}
-
-.item-button-icon-box.item-button--needed {
-  background-color: #ffd5d5;
-}
-
-.item-button-icon-box.item-button--owned.item-button--needed {
-  background-color: unset;
-  animation: owned-needed-pulse 2s ease-in-out infinite;
-}
-
 .item-button:not(.item-button--with-label):hover {
   background: #e3f2fd;
 }
 
-.item-button--with-label {
+.item-button.item-button--with-label {
   border: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .item-button-icon {
   display: block;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .item-button-icon-fallback {
@@ -153,7 +162,7 @@
 .bundle-item-button {
   position: relative;
   display: inline-block;
-  border: 2px solid #8b6f47;
+  border: 2px solid #d8d8d8;
   border-radius: 6px;
   padding: 4px;
   cursor: pointer;
@@ -171,6 +180,33 @@
   border-color: #5c8ec9;
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Inner frame creates the double-border gap; gap color comes from button background */
+.bundle-item-icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d8d8d8;
+  border-radius: 3px;
+  background: #f9f6f0;
+}
+
+.bundle-item-button.bundle-item--owned {
+  background-color: #4caf50;
+}
+
+.bundle-item-button.bundle-item--needed {
+  background-color: #e57373;
+}
+
+@keyframes bundle-owned-needed-pulse {
+  0%, 100% { background-color: #e57373; }
+  50% { background-color: #4caf50; }
+}
+
+.bundle-item-button.bundle-item--owned.bundle-item--needed {
+  animation: bundle-owned-needed-pulse 2s ease-in-out infinite;
 }
 
 .bundle-item-icon {

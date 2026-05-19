@@ -5,6 +5,7 @@ import { useModalStack, useOpenModal } from '../../contexts/ModalContext'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useDebounce } from '../../hooks/useDebounce'
 import { getEntityLabels } from '../../utils/Formatters'
+import UniversalModalButton from './UniversalModalButton'
 import './GlobalSearch.css'
 
 function GlobalSearch({ isOpen, onClose }) {
@@ -194,39 +195,16 @@ function GlobalSearch({ isOpen, onClose }) {
 
             {results.length > 0 && (
               <ul className="search-results" ref={resultsRef} role="listbox">
-                {results.map((item, idx) => {
-                  const iconPath = item.icon
-                    ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
-                    : null
-                  const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(item)
-
-                  return (
-                    <li
-                      key={item.id}
-                      className={`search-result-row${idx === highlightedIndex ? ' highlighted' : ''}`}
-                      role="option"
-                      aria-selected={idx === highlightedIndex}
-                      onMouseEnter={() => setHighlightedIndex(idx)}
-                      onClick={() => openItem(item)}
-                    >
-                      <div className="search-result-icon">
-                        {iconPath
-                          ? <img src={iconPath} alt="" width={24} height={24} />
-                          : (item.iconChar || item.iconClass)
-                            ? <span className="search-result-icon-char" style={{ backgroundColor: item.iconColor || '#7f8c8d' }}>
-                                {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
-                              </span>
-                            : <span className="search-result-icon-placeholder" />
-                        }
-                      </div>
-                      <span className="search-result-name">{item.name}</span>
-                      <span className="search-result-badges">
-                        {typeLabel && <span className="search-result-category">{typeLabel}</span>}
-                        {subtypeLabel && <span className="search-result-type">{subtypeLabel}</span>}
-                      </span>
-                    </li>
-                  )
-                })}
+                {results.map((item, idx) => (
+                  <UniversalModalButton
+                    key={item.id}
+                    item={item}
+                    variant="row"
+                    highlighted={idx === highlightedIndex}
+                    onMouseEnter={() => setHighlightedIndex(idx)}
+                    onNavigate={openItem}
+                  />
+                ))}
               </ul>
             )}
 

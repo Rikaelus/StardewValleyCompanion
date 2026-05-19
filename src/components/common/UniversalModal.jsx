@@ -12,7 +12,7 @@ import InfoTooltip from './InfoTooltip'
 import FishingInfoSection from './FishingInfoSection'
 import AgingInfoSection from './AgingInfoSection'
 import ContextTagsSection from './ContextTagsSection'
-import LocationAvailabilitySection, { InventorySection } from './LocationAvailabilitySection'
+import LocationAvailabilitySection from './LocationAvailabilitySection'
 import { useProgress } from '../../hooks/UseProgress'
 import VariationsListSection from './VariationsListSection'
 import SeedProducesSection from './SeedProducesSection'
@@ -29,6 +29,7 @@ import ConditionBadge from './ConditionBadge'
 import ModalSection from './ModalSection'
 import { SectionNavProvider } from '../../contexts/SectionNavContext'
 import './UniversalModal.css'
+
 
 /** Convert game time integer (e.g. 900, 1430, 2200) to "9:00 AM" / "10:30 PM" */
 function formatGameTime(t) {
@@ -160,7 +161,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Load unified entity data (fetched once for the whole app via EntityContext)
   const entityData = useEntities()
-  const { hasSaveData, getBundleProgress, isMuseumDonated } = useProgress()
+  const { hasSaveData, getBundleProgress, isMuseumDonated, hasSecretNote, hasSecretNoteReward, getFriendshipHearts, getFriendshipStatus } = useProgress()
   const { byType: itemsByType, items: allItems, findById, findByGameId, findEntity, loading: entitiesLoading, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
@@ -303,7 +304,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
       <div className="modal-item-wrapper">
 
         {/* Context tabs for dual-role items (items only) */}
-        {entityType !== 'bundle' && entityType !== 'location' && entityType !== 'machine' && entityType !== 'festival' && renderContextTabs()}
+        {entityType !== 'bundle' && entityType !== 'location' && entityType !== 'machine' && entityType !== 'festival' && entityType !== 'secret-note' && entityType !== 'journal-scrap' && renderContextTabs()}
 
         <div className="modal-item-content">
           <ModalHeader icon={iconPath} iconChar={displayEntity.iconChar} iconClass={displayEntity.iconClass} iconColor={displayEntity.iconColor} name={headerName} subtitle={subtitle}>
@@ -392,12 +393,6 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   </div>
                 </div>
               )}
-            </ModalSection>
-          )}
-
-          {hasSaveData && displayEntity?.gameId && (
-            <ModalSection id="section-inventory" title="Inventory" navLabel="Inventory">
-              <InventorySection entity={displayEntity} />
             </ModalSection>
           )}
 
@@ -544,6 +539,103 @@ function UniversalModal({ entity, isOpen, onClose }) {
                 </span>
               </div>
             </ModalSection>
+          )}
+
+          {/* Secret Note / Journal Scrap sections */}
+          {(entityType === 'secret-note' || entityType === 'journal-scrap') && (
+            <>
+              {hasSaveData && (() => {
+                const seen = hasSecretNote(displayEntity.noteNumber)
+                const completed = displayEntity.reward ? hasSecretNoteReward(displayEntity.reward) : null
+                return (
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
+                      fontSize: '0.8rem', fontWeight: 700, padding: '3px 10px',
+                      borderRadius: 999, border: '1.5px solid',
+                      borderColor: seen ? '#5a9e4a' : '#d9c4a0',
+                      color: seen ? '#3a7228' : '#8b6f47',
+                      background: seen ? '#e8f5e0' : '#f5f0e8',
+                    }}>
+                      {seen ? '✓ Found' : '✗ Not Found'}
+                    </span>
+                    {completed !== null && (
+                      <span style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
+                        fontSize: '0.8rem', fontWeight: 700, padding: '3px 10px',
+                        borderRadius: 999, border: '1.5px solid',
+                        borderColor: completed ? '#5a9e4a' : '#e0a030',
+                        color: completed ? '#3a7228' : '#8b5800',
+                        background: completed ? '#e8f5e0' : '#fff8e8',
+                      }}>
+                        {completed ? '☑ Completed' : '☐ Not Completed'}
+                      </span>
+                    )}
+                  </div>
+                )
+              })()}
+              {displayEntity.displayText && (
+                <ModalSection title="Contents">
+                  <p style={{ margin: 0, whiteSpace: 'pre-line', fontSize: '0.88rem', color: '#5c4a32', lineHeight: 1.6 }}>
+                    {displayEntity.displayText}
+                  </p>
+                </ModalSection>
+              )}
+              {displayEntity.subtype === 'map' && (
+                <ModalSection title="Contents">
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: '#8b6f47', fontStyle: 'italic' }}>
+                    This note contains a treasure map. Find the marked dig spot to claim the reward.
+                  </p>
+                </ModalSection>
+              )}
+              {displayEntity.reward && (displayEntity.reward.itemName || displayEntity.reward.note) && (
+                <ModalSection title="Reward">
+                  <div className="entity-detail-grid">
+                    {displayEntity.reward.itemName && (
+                      <>
+                        <span className="label">Item</span>
+                        <span>{(() => {
+                          const item = displayEntity.reward.gameId ? findByGameId(displayEntity.reward.gameId) : null
+                          return item
+                            ? <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                            : displayEntity.reward.itemName
+                        })()}</span>
+                      </>
+                    )}
+                    {displayEntity.reward.note && (
+                      <>
+                        <span className="label">How</span>
+                        <span style={{ fontSize: '0.85rem' }}>{displayEntity.reward.note}</span>
+                      </>
+                    )}
+                  </div>
+                </ModalSection>
+              )}
+              {displayEntity.revealTasteTokens?.length > 0 && (
+                <ModalSection title="Gift Hints">
+                  <div className="entity-detail-grid">
+                    {displayEntity.revealTasteTokens.map((token, i) => {
+                      const villagerId = `vil-${token.npc.toLowerCase()}`
+                      const villager = findById(villagerId)
+                      const item = findByGameId(token.itemId)
+                      return (
+                        <span key={i} className="source-entry" style={{ gridColumn: '1 / -1', display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                          {villager
+                            ? <UniversalModalButton item={villager} variant="inline" onNavigate={handleNavigate} />
+                            : <span>{token.npc}</span>
+                          }
+                          <span style={{ color: '#8b6f47' }}>loves</span>
+                          {item
+                            ? <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                            : <span>{token.itemId}</span>
+                          }
+                        </span>
+                      )
+                    })}
+                  </div>
+                </ModalSection>
+              )}
+            </>
           )}
 
           {/* Power-Specific Sections */}
@@ -1215,6 +1307,49 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   })()}
                 </div>
               </ModalSection>
+              {hasSaveData && (() => {
+                const hearts = getFriendshipHearts(displayEntity.name)
+                const status = getFriendshipStatus(displayEntity.name)
+                const canBeRomanced = displayEntity.canBeRomanced
+                const max = canBeRomanced ? 14 : 10
+                const filled = Math.min(hearts, max)
+                const STATUS_ICON = {
+                  Dating:   'assets/objects/Bouquet.png',
+                  Engaged:  'assets/objects/WeddingRing.png',
+                  Married:  'assets/objects/MermaidsPendant.png',
+                  Divorced: 'assets/objects/WiltedBouquet.png',
+                  Roommate: 'assets/objects/Farmhouse.png',
+                }
+                const statusIcon = STATUS_ICON[status]
+                const isRomantic = status === 'Dating' || status === 'Engaged' || status === 'Married' || status === 'Roommate'
+                const getColor = (i) => {
+                  if (i < filled) return canBeRomanced && isRomantic && i >= 8 ? '#f4a7b9' : '#e05c6a'
+                  if (canBeRomanced && i >= 8 && !isRomantic) return '#aaa'
+                  if (canBeRomanced && i >= 10 && status !== 'Married' && status !== 'Roommate') return '#aaa'
+                  return '#ddd'
+                }
+                return (
+                  <ModalSection id="section-villager-relationship" title="Relationship" navLabel="Relationship">
+                    <div className="entity-detail-grid">
+                      <span className="label">Hearts</span>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '1px', fontSize: '0.9rem', lineHeight: 1 }}>
+                        {Array.from({ length: max }, (_, i) => (
+                          <span key={i} style={{ color: getColor(i) }}>♥</span>
+                        ))}
+                      </span>
+                      {status && status !== 'Friendly' && (
+                        <>
+                          <span className="label">Status</span>
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                            {statusIcon && <img src={statusIcon} alt={status} style={{ width: 18, height: 18, imageRendering: 'pixelated' }} />}
+                            {status}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </ModalSection>
+                )
+              })()}
               {(() => {
                 const runsLocations = allItems.filter(i => i.type === 'location' && i.operator === displayEntity.id)
                 if (!runsLocations.length) return null
@@ -1470,7 +1605,120 @@ function UniversalModal({ entity, isOpen, onClose }) {
           )}
 
           {/* Building Details */}
-          {entityType === 'building' && (
+          {entityType === 'building' && displayEntity.subtype === 'fish-pond-variant' && (() => {
+            const fishEntity = findById(displayEntity.fishId)
+            const parentPond = findById(displayEntity.parentBuildingId)
+            const popCap = displayEntity.maxPopulation == null
+              ? 'Unlimited'
+              : displayEntity.maxPopulation === 1
+                ? '1 (cannot increase)'
+                : `${displayEntity.maxPopulation}`
+            return (
+              <>
+                <ModalSection id="section-pond-fish" title="Fish" navLabel="Fish">
+                  <div className="source-list">
+                    <span className="source-entry">
+                      {fishEntity
+                        ? <UniversalModalButton item={fishEntity} variant="inline" onNavigate={handleNavigate} />
+                        : <span className="source-name">{displayEntity.fishName}</span>
+                      }
+                      {parentPond && (
+                        <span className="source-qualifiers">
+                          <span className="source-qualifier">
+                            in a <UniversalModalButton item={parentPond} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        </span>
+                      )}
+                      <span className="source-detail">pop. cap {popCap}</span>
+                    </span>
+                  </div>
+                </ModalSection>
+                {displayEntity.tiers?.length > 0 && (
+                  <ModalSection id="section-pond-upgrades" title="Population Gates" navLabel="Population Gates">
+                    <div className="source-list">
+                      {displayEntity.tiers.map((tier, i) => (
+                        <span key={i} className="source-entry">
+                          <span className="source-name" style={{ color: '#5c4a32', fontWeight: 600 }}>
+                            Pop. {tier.population}+
+                          </span>
+                          <span className="source-qualifiers">
+                            <span className="source-qualifier">
+                              {tier.options.map((opt, j) => {
+                                const optItem = findByGameId(opt.gameId)
+                                const qtyLabel = opt.minQty !== opt.maxQty ? `${opt.minQty}–${opt.maxQty}×` : opt.minQty > 1 ? `${opt.minQty}×` : ''
+                                return (
+                                  <span key={j}>
+                                    {j > 0 && <span style={{ color: '#b39c7a', margin: '0 0.3rem' }}>or</span>}
+                                    {qtyLabel && <span className="output-count" style={{ marginRight: '0.15rem' }}>{qtyLabel}</span>}
+                                    {optItem
+                                      ? <UniversalModalButton item={optItem} variant="inline" onNavigate={handleNavigate} />
+                                      : <span>{opt.name}</span>
+                                    }
+                                  </span>
+                                )
+                              })}
+                            </span>
+                          </span>
+                        </span>
+                      ))}
+                    </div>
+                  </ModalSection>
+                )}
+                {displayEntity.tiers?.length === 0 && (
+                  <ModalSection id="section-pond-upgrades" title="Population Gates" navLabel="Population Gates">
+                    <p style={{ margin: 0, fontSize: '0.85rem', color: '#8b6f47' }}>
+                      Population cannot be increased.
+                    </p>
+                  </ModalSection>
+                )}
+                {displayEntity.produces?.length > 0 && (() => {
+                  // Deduplicate roe entries (show only first occurrence per resolved entity)
+                  const seen = new Map()
+                  for (const prod of displayEntity.produces) {
+                    const isRoe = prod.gameId === '(O)812'
+                    const resolvedEntity = isRoe
+                      ? findById(`${displayEntity.fishId}-roe`)
+                      : findByGameId(prod.gameId)
+                    const key = resolvedEntity?.id ?? prod.gameId
+                    if (!seen.has(key) || prod.minPopulation < seen.get(key).minPopulation) {
+                      seen.set(key, { ...prod, resolvedEntity })
+                    }
+                  }
+                  const unique = Array.from(seen.values()).sort((a, b) => a.minPopulation - b.minPopulation)
+                  return (
+                    <ModalSection id="section-pond-produces" title={`Produces (${unique.length})`} navLabel="Produces">
+                      <div className="source-list">
+                        {unique.map((prod, i) => {
+                          const { resolvedEntity, name } = prod
+                          const qtyLabel = prod.minQty !== prod.maxQty
+                            ? `${prod.minQty}–${prod.maxQty}×`
+                            : prod.minQty > 1 ? `${prod.minQty}×` : null
+                          const chanceLabel = prod.chance < 1 ? `${Math.round(prod.chance * 100)}%` : null
+                          return (
+                            <span key={i} className="source-entry">
+                              {resolvedEntity
+                                ? <UniversalModalButton item={resolvedEntity} variant="inline" onNavigate={handleNavigate} />
+                                : <span className="source-name">{name}</span>
+                              }
+                              <span className="source-qualifiers">
+                                <span className="source-qualifier">
+                                  {qtyLabel && <><span className="output-count">{qtyLabel}</span>{' '}</>}
+                                  {chanceLabel && <>{chanceLabel}{' '}</>}
+                                  pop. {prod.minPopulation}+
+                                </span>
+                              </span>
+                            </span>
+                          )
+                        })}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+              </>
+            )
+          })()}
+
+          {entityType === 'building' && displayEntity.subtype !== 'fish-pond-variant' && (
             <>
               <ModalSection id="section-building-construction" title="Construction" navLabel="Construction">
                 <div className="entity-detail-grid">
@@ -1701,12 +1949,33 @@ function UniversalModal({ entity, isOpen, onClose }) {
           })()}
 
           {/* Produces / Crafting Sections (any entity that acts as a machine or building) */}
-          <MachineOutputsSection
-            entity={displayEntity}
-            allItems={allItems}
-            findById={findById}
-            onNavigate={handleNavigate}
-          />
+          {displayEntity.subtype !== 'fish-pond-variant' && (
+            <MachineOutputsSection
+              entity={displayEntity}
+              allItems={allItems}
+              findById={findById}
+              onNavigate={handleNavigate}
+            />
+          )}
+
+          {/* Fish Pond building: show all pond variants */}
+          {displayEntity.id === 'fish-pond' && (() => {
+            const variants = allItems
+              .filter(i => i.subtype === 'fish-pond-variant')
+              .sort((a, b) => a.fishName.localeCompare(b.fishName))
+            if (variants.length === 0) return null
+            return (
+              <ModalSection id="section-pond-variants" title={`Variants (${variants.length})`} navLabel="Variants">
+                <div className="source-list">
+                  {variants.map(v => (
+                    <span key={v.id} className="source-entry">
+                      <UniversalModalButton item={v} variant="inline" onNavigate={handleNavigate} />
+                    </span>
+                  ))}
+                </div>
+              </ModalSection>
+            )
+          })()}
 
           <StoreContentsSection
             entity={displayEntity}
@@ -1719,7 +1988,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
           {/* Item-Specific Sections */}
           {(() => {
             // Non-item entity types — skip all item sections
-            const NON_ITEM_TYPES = new Set(['bundle', 'location', 'machine', 'buff', 'event', 'villager', 'festival', 'building', 'monster'])
+            const NON_ITEM_TYPES = new Set(['bundle', 'location', 'machine', 'buff', 'event', 'villager', 'festival', 'building', 'monster', 'secret-note', 'journal-scrap'])
             if (NON_ITEM_TYPES.has(entityType)) return null
 
             // Combat/tool types — skip sell price, food buffs, aging, seed produce sections
@@ -1883,6 +2152,19 @@ function UniversalModal({ entity, isOpen, onClose }) {
                 {!isEquipment && (
                   <SeedProducesSection entity={displayEntity} cropItems={cropItems} forageItems={forageItems} onNavigate={handleNavigate} />
                 )}
+                {type === 'fish' && displayEntity.pondEntityId && (() => {
+                  const pondVariant = findById(displayEntity.pondEntityId)
+                  if (!pondVariant) return null
+                  return (
+                    <ModalSection id="section-fish-pond" title="Fish Pond" navLabel="Fish Pond">
+                      <div className="source-list">
+                        <span className="source-entry">
+                          <UniversalModalButton item={pondVariant} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
                 {!isEquipment && <AgingInfoSection entity={displayEntity} />}
                 {!isEquipment && (
                   <FoodBuffsSection entity={displayEntity} findById={entityData.findById} onNavigate={handleNavigate} />

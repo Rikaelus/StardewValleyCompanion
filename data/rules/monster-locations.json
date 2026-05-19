@@ -7,7 +7,7 @@
     { "locationId": "map-farm-wilderness" }
   ],
   "Frost Jelly": [
-    { "locationId": "map-mines", "qualifier": "Floors 40–79" },
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" },
     { "locationId": "map-secret-woods" }
   ],
   "Sludge": [
@@ -25,13 +25,13 @@
     { "locationId": "map-witch-swamp" }
   ],
   "Dust Spirit": [
-    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" }
   ],
   "Bat": [
-    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+    { "locationId": "map-mines", "qualifier": "Floors 31–39" }
   ],
   "Frost Bat": [
-    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" }
   ],
   "Lava Bat": [
     { "locationId": "map-mines", "qualifier": "Floors 80–119" }
@@ -40,7 +40,7 @@
     { "locationId": "map-skull-cavern" }
   ],
   "Stone Golem": [
-    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+    { "locationId": "map-mines", "qualifier": "Floors 31–39" }
   ],
   "Wilderness Golem": [
     { "locationId": "map-farm-wilderness" }
@@ -49,10 +49,10 @@
     { "locationId": "map-skull-cavern" }
   ],
   "Grub": [
-    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+    { "locationId": "map-mines", "qualifier": "Floors 1–29" }
   ],
   "Fly": [
-    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+    { "locationId": "map-mines", "qualifier": "Floors 1–29" }
   ],
   "Bug": [
     { "locationId": "map-mines", "qualifier": "Floors 1–39" }
@@ -69,28 +69,32 @@
     { "locationId": "map-witch-swamp" }
   ],
   "Shadow Sniper": [
+    { "locationId": "map-mines", "qualifier": "Floors 80–119 (Dangerous)" },
     { "locationId": "map-witch-swamp" }
   ],
   "Spider": [
+    { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" },
     { "locationId": "map-witch-swamp" }
   ],
   "Ghost": [
-    { "locationId": "map-mines", "qualifier": "Floors 60+" }
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" }
   ],
   "Carbon Ghost": [
-    { "locationId": "map-mines", "qualifier": "Floors 80–119" }
+    { "locationId": "map-mines", "qualifier": "Floors 31–39 (Dangerous)" },
+    { "locationId": "map-skull-cavern" }
   ],
   "Putrid Ghost": [
+    { "locationId": "map-mines", "qualifier": "Floors 41–69 (Dangerous)" },
     { "locationId": "map-witch-swamp" }
   ],
   "Duggy": [
-    { "locationId": "map-mines", "qualifier": "Floors 1–39" }
+    { "locationId": "map-mines", "qualifier": "Floors 1–29" }
   ],
   "Magma Duggy": [
     { "locationId": "map-volcano-dungeon" }
   ],
   "Rock Crab": [
-    { "locationId": "map-mines", "qualifier": "Floors 1–39" },
+    { "locationId": "map-mines", "qualifier": "Floors 1–29" },
     { "locationId": "map-beach" }
   ],
   "Lava Crab": [
@@ -109,13 +113,14 @@
     { "locationId": "map-volcano-dungeon" }
   ],
   "Skeleton Warrior": [
-    { "locationId": "map-mines", "qualifier": "Floors 70–79" }
+    { "locationId": "map-quarry-mine" }
   ],
   "Skeleton": [
-    { "locationId": "map-skull-cavern" }
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" }
   ],
   "Skeleton Mage": [
-    { "locationId": "map-skull-cavern" }
+    { "locationId": "map-mines", "qualifier": "Floors 71–79 (Dangerous)" },
+    { "locationId": "map-quarry-mine" }
   ],
   "Metal Head": [
     { "locationId": "map-mines", "qualifier": "Floors 80–119" }
@@ -124,7 +129,7 @@
     { "locationId": "map-volcano-dungeon" }
   ],
   "Spiker": [
-    { "locationId": "map-mines", "qualifier": "Floors 40–79" }
+    { "locationId": "map-mines", "qualifier": "Floors 41–79" }
   ],
   "Mummy": [
     { "locationId": "map-skull-cavern" }

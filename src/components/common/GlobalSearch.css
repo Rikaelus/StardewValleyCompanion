@@ -183,11 +183,16 @@
 .search-result-name {
   flex: 1;
   font-size: 0.9375rem;
+  font-weight: 600;
   color: #3c2f1e;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.search-result-name.inline-owned { color: #1b5e20; }
+.search-result-name.inline-needed { color: #b71c1c; }
+.search-result-name.inline-owned-needed { color: transparent; }
 
 .search-result-badges {
   display: flex;
