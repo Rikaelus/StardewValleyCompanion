@@ -388,6 +388,11 @@
 }
 .source-name { font-weight: 600; padding-top: 0.1rem; }
 .source-name--indented { padding-left: 1.25rem; }
+.source-entry--indented { padding-left: 1.25rem; font-style: italic; color: #6b5a3e; }
+
+.inline-buff-list { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; align-items: center; }
+.inline-buff-entry { display: inline-flex; align-items: center; gap: 0.2rem; }
+.buff-chance { color: #6b5a3e; font-size: 0.85em; }
 .source-name--link {
   background: none;
   border: none;

@@ -9,9 +9,30 @@ import {
   createVillagerGiftColumns,
 } from './ItemTableFactory'
 import SeasonBadges from './SeasonBadges'
+import InfoTooltip from './InfoTooltip'
 import { formatTime, getDifficultyColor, getLocationNames, getEntityLabels } from '../../utils/Formatters'
 
 // ─── Shared helpers ────────────────────────────────────────────────────────────
+
+function createDonatedColumn(progress) {
+  return {
+    id: 'donated',
+    header: 'Donated',
+    accessorFn: row => progress.isMuseumDonated(row.gameId) ? 1 : 0,
+    cell: ({ row }) => {
+      const donated = progress.isMuseumDonated(row.original.gameId)
+      return (
+        <span
+          className={`caught-indicator ${donated ? 'caught' : 'not-caught'}`}
+          title={donated ? 'Donated' : 'Not donated'}
+        >
+          {donated ? '✓' : '○'}
+        </span>
+      )
+    },
+    meta: { align: 'center' },
+  }
+}
 
 function createOwnedColumn(progress, { entity } = {}) {
   return {
@@ -30,26 +51,29 @@ function createOwnedColumn(progress, { entity } = {}) {
   }
 }
 
+function buildNuanceTooltip(entity) {
+  const fishSources = (entity.sources || []).filter(s => s.type === 'fish' && s.location)
+  if (fishSources.length === 0) return 'Availability varies by location'
+  const lines = fishSources.map(s => {
+    const seasons = s.seasons?.length
+      ? s.seasons.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')
+      : 'All seasons'
+    return `${s.location}: ${seasons}`
+  }).join('\n')
+  return `Seasons and locations shown are the full range of possibilities. Exact availability varies by location:\n\n${lines}`
+}
+
 function nuanceNameColumn(ctx) {
   return createNameColumn({
     cellRenderer: ({ row }) => (
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
         <UniversalModalButton item={row.original} showIcon showLabel iconSize={24} stopPropagation onNavigate={ctx.openModal} />
-        {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
+        {row.original.hasLocationNuance && <InfoTooltip text={buildNuanceTooltip(row.original)} />}
       </span>
     ),
   })
 }
 
-function nuanceFooter(filteredData, _allData, _ctx) {
-  const nuanced = filteredData.filter(f => f.hasLocationNuance)
-  if (nuanced.length === 0) return null
-  return (
-    <div className="nuance-note">
-      * Seasons and locations shown are the full range of possibilities. Click on an item marked with * to see exact availability per location.
-    </div>
-  )
-}
 
 
 function getLocationEntities(entity, findById) {
@@ -200,15 +224,16 @@ const FISH_CONFIG = {
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
             <UniversalModalButton item={row.original} showIcon showLabel iconSize={24} stopPropagation onNavigate={openModal} />
             {row.original.contextTags?.includes('fish_legendary') && <span title="Legendary Fish">⭐</span>}
-            {row.original.hasLocationNuance && <span className="nuance-indicator" title="Availability varies by location — click for details">*</span>}
+            {row.original.hasLocationNuance && <InfoTooltip text="Availability varies by location — click for details" />}
           </span>
         ),
       }),
       ...(progress.hasSaveData ? [{
         id: 'caught',
         header: 'Caught',
-        accessorFn: row => progress.isFishCaught(row.gameId) ? 1 : 0,
+        accessorFn: row => row.isTrapFish ? -1 : progress.isFishCaught(row.gameId) ? 1 : 0,
         cell: ({ row }) => {
+          if (row.original.isTrapFish) return <span className="caught-indicator not-applicable" title="Caught via crab pot, not rod">—</span>
           const caught = progress.isFishCaught(row.original.gameId)
           return (
             <span
@@ -286,7 +311,6 @@ const FISH_CONFIG = {
 
     return [...base, ...createVillagerGiftColumns(villagers, relationalData)]
   },
-  getFooter: nuanceFooter,
 }
 
 // ─── Crops ─────────────────────────────────────────────────────────────────────
@@ -743,7 +767,6 @@ const FORAGE_CONFIG = {
 
     return [...base, ...createVillagerGiftColumns(villagers, relationalData)]
   },
-  getFooter: nuanceFooter,
 }
 
 // ─── Furniture ─────────────────────────────────────────────────────────────────
@@ -1171,6 +1194,7 @@ const MINERALS_CONFIG = {
     const base = [
       createNameColumn(),
       ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      ...(progress.hasSaveData ? [createDonatedColumn(progress)] : []),
       {
         accessorKey: 'subtype',
         header: 'Type',
@@ -1525,6 +1549,7 @@ const ARTIFACTS_CONFIG = {
     const base = [
       createNameColumn(),
       ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      ...(progress.hasSaveData ? [createDonatedColumn(progress)] : []),
       createPriceColumn(professionsRef),
       createBundleColumn(relationalData),
     ]
@@ -1583,6 +1608,68 @@ const CLOTHING_CONFIG = {
   },
 }
 
+// ─── Villager hearts renderer ─────────────────────────────────────────────────
+
+export const STATUS_ICON = {
+  Dating:   'assets/objects/Bouquet.png',
+  Engaged:  'assets/objects/WeddingRing.png',
+  Married:  'assets/objects/MermaidsPendant.png',
+  Divorced: 'assets/objects/WiltedBouquet.png',
+  Roommate: 'assets/objects/Farmhouse.png',
+}
+
+export function renderVillagerHearts({ hearts, status, canBeRomanced, isKrobus, size = '0.8rem' }) {
+  const max = canBeRomanced || isKrobus ? 14 : 10
+  const filled = Math.min(hearts, max)
+  const isRomantic = status === 'Dating' || status === 'Engaged' || status === 'Married' || status === 'Roommate'
+  const statusIcon = STATUS_ICON[status]
+
+  const getColor = (i) => {
+    if (i < filled) return '#e05c6a'
+    if (canBeRomanced && i >= 8 && !isRomantic) return '#aaa'
+    if (canBeRomanced && i >= 10 && status !== 'Married' && status !== 'Roommate') return '#aaa'
+    if (isKrobus && i >= 10 && status !== 'Roommate') return '#aaa'
+    return '#ddd'
+  }
+
+  const segments = canBeRomanced
+    ? [
+        { hearts: Array.from({ length: 8 }, (_, i) => i),        underline: '#2e9e50' },
+        { hearts: Array.from({ length: 2 }, (_, i) => i + 8),    underline: '#e6b800' },
+        { hearts: Array.from({ length: 4 }, (_, i) => i + 10),   underline: '#d63a5a' },
+      ]
+    : isKrobus
+    ? [
+        { hearts: Array.from({ length: 10 }, (_, i) => i),       underline: '#2e9e50' },
+        { hearts: Array.from({ length: 4 }, (_, i) => i + 10),   underline: '#d63a5a' },
+      ]
+    : [
+        { hearts: Array.from({ length: max }, (_, i) => i),      underline: '#2e9e50' },
+      ]
+
+  return (
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: size, lineHeight: 1 }}>
+      {segments.map((seg, si) => (
+        <span
+          key={si}
+          style={{
+            display: 'inline-flex',
+            gap: '1px',
+            ...(seg.underline ? { borderBottom: `2px solid ${seg.underline}`, paddingBottom: '1px' } : {}),
+          }}
+        >
+          {seg.hearts.map(i => (
+            <span key={i} style={{ color: getColor(i) }}>♥</span>
+          ))}
+        </span>
+      ))}
+      {statusIcon && (
+        <img src={statusIcon} alt={status} style={{ width: size === '0.9rem' ? 18 : 16, height: size === '0.9rem' ? 18 : 16, imageRendering: 'pixelated', marginLeft: 2 }} />
+      )}
+    </span>
+  )
+}
+
 // ─── Villagers ────────────────────────────────────────────────────────────────
 
 const VILLAGERS_CONFIG = {
@@ -1616,39 +1703,21 @@ const VILLAGERS_CONFIG = {
         header: 'Hearts',
         accessorFn: row => {
           const hearts = progress.getFriendshipHearts(row.name)
-          const max = row.canBeRomanced ? 14 : 10
+          const max = row.canBeRomanced || row.name === 'Krobus' ? 14 : 10
           return hearts * 100 + max
         },
         cell: ({ row }) => {
           const hearts = progress.getFriendshipHearts(row.original.name)
           const status = progress.getFriendshipStatus(row.original.name)
-          const canBeRomanced = row.original.canBeRomanced
-          const max = canBeRomanced ? 14 : 10
-          const filled = Math.min(hearts, max)
-          const STATUS_ICON = {
-            Dating:   'assets/objects/Bouquet.png',
-            Engaged:  'assets/objects/WeddingRing.png',
-            Married:  'assets/objects/MermaidsPendant.png',
-            Divorced: 'assets/objects/WiltedBouquet.png',
-            Roommate: 'assets/objects/Farmhouse.png',
-          }
-          const statusIcon = STATUS_ICON[status]
           const title = status ? `${hearts}♥ — ${status}` : `${hearts} hearts`
-          const isRomantic = status === 'Dating' || status === 'Engaged' || status === 'Married' || status === 'Roommate'
-          const getColor = (i) => {
-            if (i < filled) return canBeRomanced && isRomantic && i >= 8 ? '#f4a7b9' : '#e05c6a'
-            if (canBeRomanced && i >= 8 && !isRomantic) return '#aaa'
-            if (canBeRomanced && i >= 10 && status !== 'Married' && status !== 'Roommate') return '#aaa'
-            return '#ddd'
-          }
           return (
-            <span title={title} style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '0.8rem', lineHeight: 1 }}>
-              {Array.from({ length: max }, (_, i) => (
-                <span key={i} style={{ color: getColor(i) }}>♥</span>
-              ))}
-              {statusIcon && (
-                <img src={statusIcon} alt={status} style={{ width: 16, height: 16, imageRendering: 'pixelated', marginLeft: 2 }} />
-              )}
+            <span title={title}>
+              {renderVillagerHearts({
+                hearts,
+                status,
+                canBeRomanced: row.original.canBeRomanced,
+                isKrobus: row.original.name === 'Krobus',
+              })}
             </span>
           )
         },
@@ -1950,7 +2019,7 @@ const BUILDINGS_CONFIG = {
               parts.push(
                 <span key={m.gameId}>
                   {item
-                    ? <><UniversalModalButton item={item} variant="table-inline" stopPropagation />{` ×${m.amount}`}</>
+                    ? <UniversalModalButton item={item} variant="table-inline" stopPropagation quantity={m.amount} />
                     : `${m.gameId} ×${m.amount}`
                   }
                 </span>
@@ -1975,6 +2044,629 @@ const BUILDINGS_CONFIG = {
     ]
 
     return cols
+  },
+}
+
+// ─── Food ─────────────────────────────────────────────────────────────────────
+
+const BUFF_EFFECT_LABELS = {
+  Attack: 'Attack',
+  Defense: 'Defense',
+  FarmingLevel: 'Farming',
+  FishingLevel: 'Fishing',
+  ForagingLevel: 'Foraging',
+  LuckLevel: 'Luck',
+  MagneticRadius: 'Magnetism',
+  MaxStamina: 'Max Energy',
+  MiningLevel: 'Mining',
+  Speed: 'Speed',
+}
+
+function formatBuffEffects(buffs) {
+  if (!buffs?.length) return null
+  const effects = buffs[0]?.effects || {}
+  return Object.entries(effects)
+    .map(([k, v]) => `${BUFF_EFFECT_LABELS[k] ?? k} +${v}`)
+    .join(', ')
+}
+
+function formatBuffDuration(buffs) {
+  if (!buffs?.length) return null
+  const secs = buffs[0]?.duration
+  if (!secs) return null
+  const mins = Math.floor(secs / 60)
+  const s = secs % 60
+  return s > 0 ? `${mins}m ${s}s` : `${mins}m`
+}
+
+const FOOD_CONFIG = {
+  title: 'Food',
+  dataType: 'food',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Food name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'buff', type: 'select', label: 'Buff', allLabel: 'All Food',
+      options: Object.entries(BUFF_EFFECT_LABELS).map(([k, v]) => ({ value: k, label: v })),
+      filterFn: (item, value) => {
+        if (!value) return true
+        return item.buffs?.some(b => b.effects && value in b.effects)
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { professionsRef, progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        id: 'energy',
+        header: 'Energy',
+        accessorFn: row => row.edibility > 0 ? Math.floor(row.edibility * 2.5) : null,
+        cell: ({ getValue }) => {
+          const v = getValue()
+          return v != null ? v : <span className="cell-muted">—</span>
+        },
+        meta: { align: 'center' },
+      },
+      {
+        id: 'buffs',
+        header: 'Buffs',
+        accessorFn: row => formatBuffEffects(row.buffs) ?? '',
+        cell: ({ row }) => {
+          const text = formatBuffEffects(row.original.buffs)
+          return text ?? <span className="cell-muted">—</span>
+        },
+        enableSorting: false,
+      },
+      {
+        id: 'duration',
+        header: 'Duration',
+        accessorFn: row => row.buffs?.[0]?.duration ?? 0,
+        cell: ({ row }) => {
+          const text = formatBuffDuration(row.original.buffs)
+          return text ?? <span className="cell-muted">—</span>
+        },
+        meta: { align: 'center' },
+      },
+      createPriceColumn(professionsRef),
+    ]
+  },
+}
+
+// ─── Cooking Recipes ───────────────────────────────────────────────────────────
+
+// Stardew category IDs that appear in cooking/crafting ingredients
+const INGREDIENT_CATEGORY_NAMES = {
+  '-4': 'Any Fish',
+  '-5': 'Any Egg',
+  '-6': 'Any Milk',
+  '-7': 'Any Vegetable',
+  '-75': 'Any Vegetable',
+  '-79': 'Any Fruit',
+}
+
+const UNLOCK_TYPE_LABELS = {
+  friendship: 'Friendship',
+  skill: 'Skill Level',
+  level: 'Other',
+}
+
+function getCookingSource(item) {
+  return item.sources?.find(s => s.type === 'cooking')
+}
+
+function formatUnlockCondition(cond) {
+  if (!cond) return '—'
+  if (cond.type === 'friendship') return `${cond.npc} (${cond.hearts}♥)`
+  if (cond.type === 'skill') return `${cond.skill?.charAt(0).toUpperCase() + cond.skill?.slice(1)} Lv. ${cond.level}`
+  if (cond.type === 'level') return cond.level >= 100 ? (cond.tvEntityId ? 'Queen of Sauce' : 'Special Unlock') : `Level ${cond.level}`
+  return '—'
+}
+
+const COOKING_CONFIG = {
+  title: 'Cooking Recipes',
+  dataType: 'food',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Recipe name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'unlock', type: 'select', label: 'How to Learn', allLabel: 'All Recipes',
+      options: [
+        { value: 'friendship', label: 'Friendship' },
+        { value: 'skill', label: 'Skill Level' },
+        { value: 'tv', label: 'Queen of Sauce' },
+        { value: 'shop', label: 'Shop' },
+      ],
+      filterFn: (item, value) => {
+        if (!value) return true
+        const src = getCookingSource(item)
+        if (value === 'tv') {
+          return !!(src?.unlockCondition?.tvEntityId ?? src?.tvEntityId)
+        }
+        if (value === 'shop') {
+          return item.sources?.some(s => s.type === 'shop' && s.isRecipe)
+        }
+        return src?.unlockCondition?.type === value
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { progress, entities } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [
+        {
+          id: 'known',
+          header: 'Known',
+          accessorFn: row => {
+            const recipeName = getCookingSource(row)?.recipeName
+            return recipeName && progress.isRecipeKnown(recipeName) ? 1 : 0
+          },
+          cell: ({ row }) => {
+            const src = getCookingSource(row.original)
+            const recipeName = src?.recipeName
+            const known = recipeName && progress.isRecipeKnown(recipeName)
+            return (
+              <span
+                className={`caught-indicator ${known ? 'caught' : 'not-caught'}`}
+                title={known ? 'Known' : 'Unknown'}
+              >
+                {known ? '✓' : '○'}
+              </span>
+            )
+          },
+          meta: { align: 'center' },
+        },
+        {
+          id: 'cooked',
+          header: 'Cooked',
+          accessorFn: row => row.gameId ? progress.getRecipeCookedCount(row.gameId) : 0,
+          cell: ({ row }) => {
+            const count = row.original.gameId ? progress.getRecipeCookedCount(row.original.gameId) : 0
+            return count > 0
+              ? <span className="caught-indicator caught">{count.toLocaleString()}</span>
+              : <span className="cell-muted">0</span>
+          },
+          meta: { align: 'center' },
+        },
+      ] : []),
+      {
+        id: 'ingredients',
+        header: 'Ingredients',
+        accessorFn: row => getCookingSource(row)?.ingredientDetails?.map(i => i.name ?? INGREDIENT_CATEGORY_NAMES[String(i.gameId)] ?? `Category ${i.gameId}`).join(', ') ?? '',
+        cell: ({ row }) => {
+          const src = getCookingSource(row.original)
+          const ingredients = src?.ingredientDetails
+          if (!ingredients?.length) return <span className="cell-muted">—</span>
+          return (
+            <span className="cell-location-list">
+              {ingredients.map((ing, i) => {
+                const entity = ing.id ? entities.findById(ing.id) : null
+                const catName = INGREDIENT_CATEGORY_NAMES[String(ing.gameId)]
+                return (
+                  <span key={i} className="cell-location-item">
+                    {entity
+                      ? <UniversalModalButton item={entity} variant="table-inline" stopPropagation quantity={ing.amount} />
+                      : <>{catName ?? ing.name ?? `Category ${ing.gameId}`}{ing.amount > 1 ? ` ×${ing.amount}` : ''}</>
+                    }
+                  </span>
+                )
+              })}
+            </span>
+          )
+        },
+        enableSorting: false,
+      },
+      {
+        id: 'unlock',
+        header: 'How to Learn',
+        accessorFn: row => formatUnlockCondition(getCookingSource(row)?.unlockCondition),
+        cell: ({ row }) => {
+          const item = row.original
+          const src = getCookingSource(item)
+          const cond = src?.unlockCondition
+          const tvId = cond?.tvEntityId ?? src?.tvEntityId
+          const tvShow = tvId ? entities.findById(tvId) : null
+          const recipeSources = (item.sources || []).filter(s => s.type === 'shop' && s.isRecipe)
+
+          const parts = []
+          if (cond?.type === 'friendship') {
+            const villager = entities.villagers.all.find(v => v.name === cond.npc)
+            parts.push(villager
+              ? <UniversalModalButton key="npc" item={villager} variant="table-inline" stopPropagation hearts={cond.hearts} />
+              : <span key="npc">{cond.npc} (♥×{cond.hearts})</span>
+            )
+          } else if (cond?.type === 'skill') {
+            parts.push(<span key="skill">{cond.skill.charAt(0).toUpperCase() + cond.skill.slice(1)} Lv. {cond.level}</span>)
+          }
+          if (tvShow) parts.push(<UniversalModalButton key="tv" item={tvShow} variant="table-inline" stopPropagation />)
+          recipeSources.forEach((s, i) => {
+            const store = entities.findById(s.id)
+            if (store) parts.push(<UniversalModalButton key={`rs${i}`} item={store} variant="table-inline" stopPropagation />)
+          })
+
+          if (!parts.length) return <span className="cell-muted">—</span>
+          if (parts.length === 1) return parts[0]
+          return <span className="cell-location-list">{parts.map((p, i) => <span key={i} className="cell-location-item">{p}</span>)}</span>
+        },
+      },
+    ]
+  },
+}
+
+// ─── Crafting Recipes ──────────────────────────────────────────────────────────
+
+function getCraftingSource(item) {
+  return item.sources?.find(s => s.type === 'crafting')
+}
+
+const CRAFTING_CONFIG = {
+  title: 'Crafting Recipes',
+  dataType: 'crafted',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Recipe name...',
+      filterFn: searchFilterFn,
+    },
+  ],
+  getColumns: (ctx) => {
+    const { professionsRef, progress, entities } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        id: 'ingredients',
+        header: 'Ingredients',
+        accessorFn: row => getCraftingSource(row)?.ingredientDetails?.map(i => i.name ?? INGREDIENT_CATEGORY_NAMES[String(i.gameId)] ?? `Category ${i.gameId}`).join(', ') ?? '',
+        cell: ({ row }) => {
+          const src = getCraftingSource(row.original)
+          const ingredients = src?.ingredientDetails
+          if (!ingredients?.length) return <span className="cell-muted">—</span>
+          return (
+            <span className="cell-location-list">
+              {ingredients.map((ing, i) => {
+                const entity = ing.id ? entities.findById(ing.id) : null
+                const catName = INGREDIENT_CATEGORY_NAMES[String(ing.gameId)]
+                return (
+                  <span key={i} className="cell-location-item">
+                    {entity
+                      ? <UniversalModalButton item={entity} variant="table-inline" stopPropagation quantity={ing.amount} />
+                      : <>{catName ?? ing.name ?? `Category ${ing.gameId}`}{ing.amount > 1 ? ` ×${ing.amount}` : ''}</>
+                    }
+                  </span>
+                )
+              })}
+            </span>
+          )
+        },
+        enableSorting: false,
+      },
+      {
+        id: 'unlock',
+        header: 'How to Learn',
+        accessorFn: row => {
+          const src = getCraftingSource(row)
+          if (!src?.unlockCondition) return '—'
+          const cond = src.unlockCondition
+          if (cond.type === 'skill') return `${cond.skill?.charAt(0).toUpperCase() + cond.skill?.slice(1)} Lv. ${cond.level}`
+          return '—'
+        },
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+      },
+      createPriceColumn(professionsRef),
+    ]
+  },
+}
+
+// ─── Trinkets ─────────────────────────────────────────────────────────────────
+
+const TRINKETS_CONFIG = {
+  title: 'Trinkets',
+  dataType: 'trinket',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Trinket name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'reforgeable', type: 'select', label: 'Reforgeable', allLabel: 'All Trinkets',
+      options: [
+        { value: 'yes', label: 'Reforgeable' },
+        { value: 'no', label: 'Not reforgeable' },
+      ],
+      filterFn: (item, value) => {
+        if (!value) return true
+        return value === 'yes' ? item.canBeReforged : !item.canBeReforged
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Effect',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+      {
+        id: 'reforgeable',
+        header: 'Reforgeable',
+        accessorFn: row => row.canBeReforged ? 'Yes' : 'No',
+        cell: ({ getValue }) => getValue(),
+        meta: { align: 'center' },
+      },
+    ]
+  },
+}
+
+function createReadColumn(progress) {
+  return {
+    id: 'read',
+    header: 'Read',
+    accessorFn: row => progress.isBookRead(row.gameId) ? 1 : 0,
+    cell: ({ row }) => {
+      const read = progress.isBookRead(row.original.gameId)
+      return (
+        <span
+          className={`caught-indicator ${read ? 'caught' : 'not-caught'}`}
+          title={read ? 'Read' : 'Not yet read'}
+        >
+          {read ? '✓' : '○'}
+        </span>
+      )
+    },
+    meta: { align: 'center' },
+  }
+}
+
+// ─── Books ────────────────────────────────────────────────────────────────────
+
+const BOOKS_CONFIG = {
+  title: 'Books',
+  dataType: 'book',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Book name...',
+      filterFn: (item, value) => {
+        if (!value) return true
+        const q = value.toLowerCase()
+        return item.name.toLowerCase().includes(q) || item.description?.toLowerCase().includes(q)
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { professionsRef, progress } = ctx
+    return [
+      createNameColumn(),
+      ...(progress.hasSaveData ? [createReadColumn(progress), createOwnedColumn(progress)] : []),
+      {
+        accessorKey: 'description',
+        header: 'Effect',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+      createPriceColumn(professionsRef),
+      {
+        accessorKey: 'sources',
+        header: 'Sources',
+        cell: ({ getValue }) => <ShopSourceList sources={getValue()} compact findEntityById={ctx.entities.findById} />,
+        enableSorting: false,
+      },
+    ]
+  },
+}
+
+// ─── Powers ───────────────────────────────────────────────────────────────────
+
+const POWERS_CONFIG = {
+  title: 'Powers',
+  dataType: 'power',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Power name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'subtype', type: 'select', label: 'Type', allLabel: 'All Powers',
+      options: [
+        { value: 'mastery', label: 'Mastery' },
+        { value: 'unlock', label: 'Unlock' },
+      ],
+      filterFn: subtypeFilterFn,
+    },
+  ],
+  getColumns: () => {
+    return [
+      createNameColumn(),
+      {
+        accessorKey: 'subtype',
+        header: 'Type',
+        cell: ({ getValue }) => {
+          const t = getValue()
+          return t ? t.charAt(0).toUpperCase() + t.slice(1) : '—'
+        },
+        meta: { align: 'center' },
+      },
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+    ]
+  },
+}
+
+// ─── Concessions ──────────────────────────────────────────────────────────────
+
+const CONCESSIONS_CONFIG = {
+  title: 'Concessions',
+  dataType: 'concession',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Concession name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'tag', type: 'select', label: 'Tag', allLabel: 'All Concessions',
+      getOptions: (items) => {
+        const tags = [...new Set(items.flatMap(i => i.tags || []))].sort()
+        return tags.map(t => ({ value: t, label: t }))
+      },
+      filterFn: (item, value) => {
+        if (!value) return true
+        return (item.tags || []).includes(value)
+      },
+    },
+  ],
+  getColumns: () => {
+    return [
+      createNameColumn(),
+      {
+        accessorKey: 'description',
+        header: 'Description',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+      {
+        id: 'tags',
+        header: 'Tags',
+        accessorFn: row => (row.tags || []).join(', '),
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+        enableSorting: false,
+      },
+      {
+        accessorKey: 'price',
+        header: 'Price',
+        cell: ({ getValue }) => {
+          const p = getValue()
+          return p != null ? <span style={{ fontFamily: 'monospace' }}>{p.toLocaleString()}g</span> : <span className="cell-muted">—</span>
+        },
+        meta: { align: 'right' },
+      },
+    ]
+  },
+}
+
+// ─── Bundles ──────────────────────────────────────────────────────────────────
+
+const BUNDLE_ROOMS = [
+  'Pantry', 'Crafts Room', 'Fish Tank', 'Boiler Room',
+  'Bulletin Board', 'Vault', 'Abandoned Joja Mart',
+]
+
+const BUNDLES_CONFIG = {
+  title: 'Bundles',
+  dataType: 'bundle',
+  itemsPerPage: 25,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Bundle name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'room', type: 'tabs', label: 'Room', default: 'all',
+      tabs: [
+        { id: 'all', label: 'All' },
+        ...BUNDLE_ROOMS.map(r => ({ id: r, label: r })),
+      ],
+      filterFn: (item, value) => {
+        if (!value || value === 'all') return true
+        return item.room === value
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { progress, entities, openModal } = ctx
+    return [
+      createNameColumn(),
+      {
+        accessorKey: 'room',
+        header: 'Room',
+        cell: ({ getValue }) => getValue() || <span className="cell-muted">—</span>,
+      },
+      {
+        id: 'itemsRequired',
+        header: 'Items Required',
+        accessorFn: row => row.minItemsRequired ?? row.items?.length ?? 0,
+        cell: ({ row }) => {
+          const min = row.original.minItemsRequired
+          const total = row.original.items?.length ?? 0
+          if (min != null && min < total) return `${min} of ${total}`
+          if (row.original.goldCost != null) return `${row.original.goldCost.toLocaleString()}g`
+          return total
+        },
+        meta: { align: 'center' },
+      },
+      {
+        accessorKey: 'reward',
+        header: 'Reward',
+        cell: ({ getValue }) => {
+          const r = getValue()
+          if (!r) return <span className="cell-muted">—</span>
+          // Format: "TYPE ID QTY" e.g. "O 220 3", "BO 10 1", "R 517 1"
+          const parts = r.trim().split(/\s+/)
+          if (parts.length >= 2) {
+            const type = parts[0]
+            const id = parts[1]
+            const qty = parseInt(parts[2], 10) || 1
+            const prefix = type === 'BO' ? '(BC)' : type === 'R' ? '(O)' : '(O)'
+            const gameId = `${prefix}${id}`
+            const item = entities.findByGameId(gameId)
+            if (item) {
+              return (
+                <UniversalModalButton
+                  item={item}
+                  variant="inline"
+                  quantity={qty}
+                  onNavigate={openModal}
+                />
+              )
+            }
+          }
+          return r
+        },
+        enableSorting: false,
+      },
+      ...(progress.hasSaveData ? [{
+        id: 'completed',
+        header: 'Completed',
+        accessorFn: row => {
+          const itemCount = row.goldCost ? 1 : (row.items?.length ?? 0)
+          const bp = progress.getBundleProgress(row.bundleNumber, itemCount)
+          return bp?.complete ? 1 : 0
+        },
+        cell: ({ row }) => {
+          const itemCount = row.original.goldCost ? 1 : (row.original.items?.length ?? 0)
+          const bp = progress.getBundleProgress(row.original.bundleNumber, itemCount)
+          const done = bp?.complete
+          return (
+            <span
+              className={`caught-indicator ${done ? 'caught' : 'not-caught'}`}
+              title={done ? 'Completed' : 'Incomplete'}
+            >
+              {done ? '✓' : '○'}
+            </span>
+          )
+        },
+        meta: { align: 'center' },
+      }] : []),
+    ]
   },
 }
 
@@ -2005,4 +2697,12 @@ export const PAGE_CONFIGS = {
   clothing: CLOTHING_CONFIG,
   villagers: VILLAGERS_CONFIG,
   buildings: BUILDINGS_CONFIG,
+  food: FOOD_CONFIG,
+  cooking: COOKING_CONFIG,
+  crafting: CRAFTING_CONFIG,
+  trinket: TRINKETS_CONFIG,
+  book: BOOKS_CONFIG,
+  power: POWERS_CONFIG,
+  concession: CONCESSIONS_CONFIG,
+  bundle: BUNDLES_CONFIG,
 }

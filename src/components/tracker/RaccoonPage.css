@@ -1,0 +1,282 @@
+.raccoon-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.raccoon-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.raccoon-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.75rem;
+}
+
+.raccoon-achievement-progress {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 0.75rem;
+}
+
+.raccoon-achievement-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.raccoon-achievement-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #5c4a32;
+}
+
+.raccoon-achievement-count {
+  font-size: 0.82rem;
+  color: #8b6f47;
+}
+
+.raccoon-achievement-done {
+  color: #4a7228;
+  font-weight: 700;
+}
+
+.raccoon-progress-bar {
+  position: relative;
+  height: 8px;
+  background: #e8d4b0;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.raccoon-progress-bar-fill {
+  height: 100%;
+  background: #8b6f47;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.raccoon-progress-bar-fill--done {
+  background: #5a9e4a;
+}
+
+.raccoon-progress-pip {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e8d4b0;
+  border: 2px solid #c9a87a;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.raccoon-progress-pip--reached {
+  background: #8b6f47;
+  border-color: #8b6f47;
+}
+
+.raccoon-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #a08060;
+  margin-top: 0.3rem;
+  padding: 0 1px;
+}
+
+.raccoon-intro {
+  font-size: 0.88rem;
+  color: #6b5c40;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.5;
+}
+
+.raccoon-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.raccoon-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+.raccoon-section {
+  margin-bottom: 2rem;
+}
+
+.raccoon-section-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.75rem;
+}
+
+/* Always-available items */
+.raccoon-always-items {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.raccoon-shop-row--flat {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #f0e4cc;
+}
+
+.raccoon-shop-row--flat:last-child {
+  border-bottom: none;
+}
+
+/* Milestone cards */
+.raccoon-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.raccoon-card {
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.raccoon-card--reached {
+  border-color: #c5dba0;
+  background: #f4fbee;
+}
+
+.raccoon-card--next {
+  border-color: #f0c87a;
+  background: #fdfaf0;
+}
+
+.raccoon-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.raccoon-milestone-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #5c4a32;
+}
+
+.raccoon-card--reached .raccoon-milestone-label {
+  color: #4a7228;
+}
+
+.raccoon-card-desc {
+  font-size: 0.8rem;
+  color: #8b6f47;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.raccoon-card--reached .raccoon-card-desc {
+  color: #5a7a40;
+}
+
+/* Shop rows inside cards */
+.raccoon-card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #e8d4b0;
+  margin-top: 0.1rem;
+}
+
+.raccoon-card--reached .raccoon-card-items {
+  border-top-color: #c5dba0;
+}
+
+.raccoon-shop-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.raccoon-shop-cost {
+  font-size: 0.78rem;
+  color: #8b6f47;
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.raccoon-mastery-note {
+  font-size: 0.72rem;
+  color: #7a5ca0;
+  margin-left: 0.25rem;
+}
+
+/* Status badges */
+.raccoon-badge,
+.raccoon-item-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.raccoon-badge--reached {
+  background: #e8f5d8;
+  color: #4a7228;
+}
+
+.raccoon-badge--locked {
+  background: #f0e8d8;
+  color: #8b6f47;
+}
+
+.raccoon-item-badge--available {
+  background: #e8f5d8;
+  color: #4a7228;
+}
+
+.raccoon-item-badge--locked {
+  background: #f0e8d8;
+  color: #8b6f47;
+}
+
+.raccoon-item-badge--mastery-locked {
+  background: #ede8f5;
+  color: #7a5ca0;
+}

@@ -201,6 +201,7 @@ const TYPE_LABELS = {
   'type': 'Type',
   'bundle': 'Bundle',
   'museum-reward': 'Museum Reward',
+  'tv-show': 'TV Show',
 }
 
 // Subtype-level labels (distinct subtypes within a type)
@@ -254,6 +255,8 @@ const SUBTYPE_LABELS = {
   'hat': 'Hat',
   'pants': 'Pants',
   'shirt': 'Shirt',
+  // tv-show subtypes
+  'queen-of-sauce': 'Queen of Sauce',
 }
 
 /**

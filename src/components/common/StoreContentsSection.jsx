@@ -75,15 +75,14 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                 const currencyItem = isBarter && findById ? findById(src.tradeItemId) : null
                 const priceDetail = isBarter ? (
                   <>
-                    {(src.quantity > 1 || src.tradeItemAmount > 1) && (
-                      <span className="source-qualifier">
-                        {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? `×${src.tradeItemAmount}` : ''}
-                      </span>
+                    {src.quantity > 1 && (
+                      <span className="source-qualifier">{src.quantity} for</span>
                     )}
                     {currencyItem ? (
-                      <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
+                      <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} quantity={src.tradeItemAmount} />
                     ) : (
                       <>
+                        {src.tradeItemAmount > 1 && <span className="source-qualifier">×{src.tradeItemAmount}</span>}
                         {src.tradeItemIcon && (
                           <img src={`/${src.tradeItemIcon}`} alt={src.tradeItemName} className="source-trade-icon" />
                         )}

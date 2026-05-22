@@ -40,11 +40,10 @@ export const MEGA_MENU_GROUPS = [
   {
     domain: 'Collections',
     items: [
-      { label: 'Bundles', disabled: true },
+      { label: 'Bundles', path: '/bundles' },
       { label: 'Artifacts', path: '/artifacts' },
-      { label: 'Museum', disabled: true },
-      { label: 'Cooking Recipes', disabled: true },
-      { label: 'Crafting Recipes', disabled: true },
+      { label: 'Cooking Recipes', path: '/cooking' },
+      { label: 'Crafting Recipes', path: '/crafting' },
     ]
   },
   {
@@ -55,6 +54,11 @@ export const MEGA_MENU_GROUPS = [
       { label: 'Furniture', path: '/furniture' },
       { label: 'Hats', path: '/hats' },
       { label: 'Clothing', path: '/clothing' },
+      { label: 'Food', path: '/food' },
+      { label: 'Books', path: '/books' },
+      { label: 'Powers', path: '/powers' },
+      { label: 'Trinkets', path: '/trinkets' },
+      { label: 'Concessions', path: '/concessions' },
     ]
   },
 ]

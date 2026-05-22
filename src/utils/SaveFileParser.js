@@ -277,12 +277,32 @@ function extractBundleProgress(doc) {
   const progress = {}
   for (const { key, valueElement } of parseDictionaryEntries(bundlesEl)) {
     const boolEls = valueElement?.querySelector('ArrayOfBoolean')
-    if (!boolEls) continue
-    const bools = Array.from(boolEls.querySelectorAll(':scope > boolean'))
-      .map(el => el.textContent?.trim() === 'true')
-    progress[key] = bools
+    if (boolEls) {
+      const bools = Array.from(boolEls.querySelectorAll(':scope > boolean'))
+        .map(el => el.textContent?.trim() === 'true')
+      progress[key] = bools
+      continue
+    }
   }
   return progress
+}
+
+// ---------------------------------------------------------------------------
+// Golden Walnut extraction (main save only)
+// ---------------------------------------------------------------------------
+
+function extractGoldenWalnutData(doc) {
+  const root = doc.documentElement
+
+  // collectedNutTracker — single source of truth for all individual walnut pickups
+  const cntEl = root.querySelector(':scope > collectedNutTracker')
+  const collectedNutTracker = parseStringArray(cntEl)
+
+  // limitedNutDrops — aggregate counters (fishing, farming, mining, etc.)
+  const lndEl = root.querySelector(':scope > limitedNutDrops')
+  const limitedNutDrops = parseDictionaryOfInts(lndEl)
+
+  return { collectedNutTracker, limitedNutDrops }
 }
 
 // ---------------------------------------------------------------------------
@@ -443,25 +463,30 @@ function extractItemsFromContainer(parentEl) {
  * skipped — they belong to the machine, not "storage".
  */
 /**
- * Extract BigCraftable items placed in the world across all game locations.
- * These live in each location's <objects> dictionary but are skipped by
- * extractChestContents (which only processes Chest-type objects).
- * Each record: { gameId, count, quality, location, container: 'placed' }
+ * Extract items placed in the world across all game locations (both BigCraftables
+ * and regular placed objects like CrabPots, Casks, Fences, etc.).
+ * Containers (Chest, ItemPedestal) are excluded.
+ * Each record: { gameId, count, quality, location, container: 'Placed' }
  */
 function extractPlacedBigCraftables(doc) {
   const locations = doc.documentElement.querySelector(':scope > locations')
   if (!locations) return []
   const out = []
 
+  // Object subclasses that are containers or structural — skip for ownership counting
+  const SKIP_TYPES = new Set(['Chest', 'ItemPedestal', 'Phone'])
+
   function scanObjects(objectsEl, locName) {
     for (const item of objectsEl.querySelectorAll(':scope > item')) {
       const value = item.querySelector(':scope > value')
       const obj = value?.querySelector(':scope > Object')
       if (!obj) continue
-      if (childText(obj, 'bigCraftable') !== 'true') continue
+      const xsiType = obj.getAttribute('xsi:type') ?? ''
+      if (SKIP_TYPES.has(xsiType)) continue
+      const isBigCraftable = childText(obj, 'bigCraftable') === 'true'
       let rawId = childText(obj, 'itemId') ?? childText(obj, 'parentSheetIndex')
       if (rawId == null) continue
-      const qualified = rawId.startsWith('(') ? rawId : `(BC)${rawId}`
+      const qualified = rawId.startsWith('(') ? rawId : isBigCraftable ? `(BC)${rawId}` : `(O)${rawId}`
       const stack = childInt(obj, 'stack') ?? childInt(obj, 'Stack') ?? 1
       const quality = childInt(obj, 'quality') ?? childInt(obj, 'Quality') ?? 0
       out.push({ gameId: qualified, count: stack, quality, location: locName, container: 'Placed' })
@@ -750,6 +775,7 @@ function parseSaveGameInfo(doc) {
     recipesCooked: extractRecipesCooked(player),
     friendships: extractFriendships(player),
     achievements: extractAchievements(player),
+
     mailReceived: extractMailReceived(player),
     secretNotesSeen: extractSecretNotesSeen(player),
     eventsSeen: extractEventsSeen(player),
@@ -784,6 +810,7 @@ function parseMainSave(doc) {
     recipesCooked: extractRecipesCooked(player),
     friendships: extractFriendships(player),
     achievements: extractAchievements(player),
+
     mailReceived: extractMailReceived(player),
     secretNotesSeen: extractSecretNotesSeen(player),
     eventsSeen: extractEventsSeen(player),
@@ -797,6 +824,8 @@ function parseMainSave(doc) {
     museumPieces: extractMuseumPieces(doc),
     grandpaScore: childInt(doc.documentElement, 'grandpaScore') ?? null,
     goldenWalnuts: childInt(doc.documentElement, 'goldenWalnutsFound') ?? null,
+    walnutData: extractGoldenWalnutData(doc),
+    timesFedRaccoons: childInt(doc.documentElement, 'timesFedRaccoons') ?? 0,
     totalMoneyEarned: childInt(player, 'totalMoneyEarned') ?? 0,
     money: childInt(player, 'money') ?? 0,
     houseUpgradeLevel: childInt(player, 'houseUpgradeLevel') ?? 0,

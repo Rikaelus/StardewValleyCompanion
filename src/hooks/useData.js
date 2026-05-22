@@ -59,6 +59,15 @@ const TYPE_MAP = {
   geodes: 'geode',
   villagers: 'villager',
   buildings: 'building',
+  food: 'food',
+  cooking: 'food',
+  crafting: 'crafted',
+  crafted: 'crafted',
+  trinket: 'trinket',
+  book: 'book',
+  power: 'power',
+  concession: 'concession',
+  bundle: 'bundle',
 }
 
 // Legacy itemsKey map (used for backward-compat data shape { [itemsKey]: items, items, gameIdIndex })
@@ -89,6 +98,15 @@ const ITEMS_KEY_MAP = {
   geodes: 'geodes',
   clothing: 'clothing',
   villagers: 'villagers',
+  food: 'food',
+  cooking: 'food',
+  crafting: 'crafted',
+  crafted: 'crafted',
+  trinket: 'trinket',
+  book: 'book',
+  power: 'power',
+  concession: 'concession',
+  bundle: 'bundle',
 }
 
 /**

@@ -11,6 +11,8 @@ export const TRACKER_MENU_ITEMS = [
   { label: 'Monster Slayer', path: '/tracker/slayer' },
   { label: 'Rarecrow Collection', path: '/tracker/rarecrows' },
   { label: 'Secret Notes', path: '/tracker/secret-notes' },
+  { label: 'Well-read', path: '/tracker/well-read' },
   { label: 'Farmhouse', path: '/tracker/farmhouse' },
-  { label: 'Farm Buildings', path: '/buildings' },
+  { label: 'Giant Stump Shop', path: '/tracker/raccoon-shop' },
+  { label: 'Golden Walnuts', path: '/tracker/golden-walnuts' },
 ]

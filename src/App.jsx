@@ -15,6 +15,9 @@ import AchievementsPage from './components/tracker/AchievementsPage'
 import SecretNotesPage from './components/tracker/SecretNotesPage'
 import BundlesPage from './components/tracker/BundlesPage'
 import FarmhousePage from './components/tracker/FarmhousePage'
+import RaccoonPage from './components/tracker/RaccoonPage'
+import WellReadPage from './components/tracker/WellReadPage'
+import GoldenWalnutPage from './components/tracker/GoldenWalnutPage'
 import Footer from './components/layout/Footer'
 import AppHeader from './components/layout/AppHeader'
 import MegaMenu from './components/layout/MegaMenu'
@@ -49,6 +52,9 @@ const MainContent = memo(function MainContent() {
               <Route path="/tracker/achievements" element={<AchievementsPage />} />
               <Route path="/tracker/secret-notes" element={<SecretNotesPage />} />
               <Route path="/tracker/farmhouse" element={<FarmhousePage />} />
+              <Route path="/tracker/raccoon-shop" element={<RaccoonPage />} />
+              <Route path="/tracker/well-read" element={<WellReadPage />} />
+              <Route path="/tracker/golden-walnuts" element={<GoldenWalnutPage />} />
               <Route path="/fish" element={<EntityListPage pageType="fish" />} />
               <Route path="/artisan/*" element={<EntityListPage pageType="artisan" />} />
               <Route path="/forage" element={<EntityListPage pageType="forage" />} />
@@ -73,6 +79,14 @@ const MainContent = memo(function MainContent() {
               <Route path="/clothing" element={<EntityListPage pageType="clothing" />} />
               <Route path="/villagers" element={<EntityListPage pageType="villagers" />} />
               <Route path="/buildings" element={<EntityListPage pageType="buildings" />} />
+              <Route path="/food" element={<EntityListPage pageType="food" />} />
+              <Route path="/cooking" element={<EntityListPage pageType="cooking" />} />
+              <Route path="/crafting" element={<EntityListPage pageType="crafting" />} />
+              <Route path="/trinkets" element={<EntityListPage pageType="trinket" />} />
+              <Route path="/books" element={<EntityListPage pageType="book" />} />
+              <Route path="/powers" element={<EntityListPage pageType="power" />} />
+              <Route path="/concessions" element={<EntityListPage pageType="concession" />} />
+              <Route path="/bundles" element={<EntityListPage pageType="bundle" />} />
             </Routes>
           </main>
         </div>

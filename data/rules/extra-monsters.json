@@ -10,6 +10,22 @@
     "iconOverrides": {
       "Sludge": "RedSlime.png",
       "Frost Jelly": "FrostJelly.png"
+    },
+    "debuffOverrides": {
+      "_comment": "Debuffs applied via C# special-attack logic, not drop lists. Keys are internal monster names (matching Monsters.json or extra-monster keys).",
+      "Lava Lurk":               [{ "name": "Burnt",     "chance": 1.0 }],
+      "Magma Sparker":           [{ "name": "Burnt",     "chance": 1.0 }],
+      "Magma Sprite":            [{ "name": "Burnt",     "chance": 1.0 }],
+      "Hot Head":                [{ "name": "Burnt",     "chance": 1.0 }],
+      "Skeleton Mage":           [{ "name": "Jinxed",    "chance": 1.0 }],
+      "Shadow Shaman":           [{ "name": "Jinxed",    "chance": 1.0 }],
+      "Shadow Shaman (dangerous)": [{ "name": "Jinxed",  "chance": 1.0 }],
+      "Frost Bat":               [{ "name": "Frozen",    "chance": 1.0 }],
+      "Frost Bat (dangerous)":   [{ "name": "Frozen",    "chance": 1.0 }],
+      "Putrid Ghost":            [{ "name": "Spooked",   "chance": 1.0 }],
+      "Serpent":                 [{ "name": "Nauseated", "chance": 1.0 }],
+      "Royal Serpent":           [{ "name": "Nauseated", "chance": 1.0 }],
+      "Blue Squid":              [{ "name": "Weakness",  "chance": 1.0 }]
     }
   },
 

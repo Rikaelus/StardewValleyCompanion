@@ -404,19 +404,35 @@ function CharacterBar({ isOpen, onClose }) {
                     </>
                     )
                   })() : (
-                    <p className="character-no-save">Upload your save file to see character stats.</p>
+                    <div className="character-no-save">
+                      <p className="character-no-save-lead">Upload your save file to unlock the full experience.</p>
+                      <ul className="character-no-save-list">
+                        <li>Track caught fish, completed bundles, and other collection progress</li>
+                        <li>Enable Tracker pages that show what's left to find or complete</li>
+                        <li>Apply your professions and skills to selling price calculators</li>
+                        <li>See your friendships, achievements, and character stats here</li>
+                      </ul>
+                    </div>
                   )}
                 </div>
               )}
 
               {activeTab === 'professions' && (
-                <div className="skill-trees">
+                <div>
                   {hasSaveData && (
                     <p className="tab-save-notice">Selections reflect your uploaded save file.</p>
                   )}
+                  <p className="tab-effect-notice">Selling professions (Tiller, Fisher, Angler, Artisan, etc.) adjust sell prices shown in item calculators.</p>
+                  <div className="skill-trees">
                   {(() => {
                     const mastery = hasSaveData ? getMasteryData(player.saveData) : null
-                    return SKILL_TREES.map(({ skill, icon, branches }) => {
+                    return (<>
+                    {mastery?.claimable > 0 && (
+                      <div className="mastery-cta">
+                        ✦ {mastery.claimable} Mastery Perk{mastery.claimable !== 1 ? 's' : ''} Available to Claim
+                      </div>
+                    )}
+                    {SKILL_TREES.map(({ skill, icon, branches }) => {
                     const skillLevel = player.saveData?.skills?.[skill.toLowerCase()] ?? 0
                     const maxLevel = 10
                     const masteryPerk = mastery?.perks.find(p => p.skill === skill)
@@ -425,12 +441,9 @@ function CharacterBar({ isOpen, onClose }) {
                       <h4 className="skill-tree-header">
                         <img src={icon} alt="" className="skill-tree-icon" />
                         {skill}
-                        {masteryPerk && (
-                          <span
-                            className={`skill-tree-mastery-badge ${masteryPerk.claimed ? 'skill-tree-mastery-badge--claimed' : 'skill-tree-mastery-badge--available'}`}
-                            title={masteryPerk.claimed ? 'Mastery claimed' : 'Mastery: skill maxed, perk available'}
-                          >
-                            {masteryPerk.claimed ? '✦' : '◇'} Mastery
+                        {masteryPerk?.claimed && (
+                          <span className="skill-tree-mastery-badge skill-tree-mastery-badge--claimed" title="Mastery claimed">
+                            ✦ Mastery
                           </span>
                         )}
                         {player.saveData?.skills && (
@@ -492,8 +505,10 @@ function CharacterBar({ isOpen, onClose }) {
                       </div>
                     </div>
                     )
-                  })
+                  })}
+                  </>)
                   })()}
+                  </div>
                 </div>
               )}
 
@@ -502,6 +517,7 @@ function CharacterBar({ isOpen, onClose }) {
                   {hasSaveData && (
                     <p className="tab-save-notice">Selections reflect your uploaded save file.</p>
                   )}
+                  <p className="tab-effect-notice">Joja membership shows JojaMart as a buy source with a 20% member discount.</p>
                   <h4 className="character-other-heading">Memberships</h4>
                   <div className="professions-grid">
                     <label className={`profession-checkbox ${hasSaveData ? 'profession-checkbox--readonly' : ''}`}>

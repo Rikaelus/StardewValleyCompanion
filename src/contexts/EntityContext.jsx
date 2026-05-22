@@ -99,6 +99,13 @@ export function EntityProvider({ children }) {
       'tool':           entity => entity.type === 'tool',
       'building':       entity => entity.type === 'building' && entity.subtype === 'building',
       'animal':         entity => entity.type === 'animal',
+      'food':           entity => entity.type === 'food',
+      'crafted':        entity => entity.type === 'crafted',
+      'book':           entity => entity.type === 'book',
+      'power':          entity => entity.type === 'power',
+      'concession':     entity => entity.type === 'concession',
+      'bundle':         entity => entity.type === 'bundle',
+      'tv-show':        entity => entity.type === 'tv-show',
     }
 
     const byType = {}

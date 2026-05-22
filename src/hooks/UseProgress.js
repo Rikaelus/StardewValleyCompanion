@@ -83,6 +83,10 @@ export function useProgress() {
       return (saveData.recipesCooked[gameId] ?? 0) > 0
     }
 
+    function getRecipeCookedCount(gameId) {
+      return saveData?.recipesCooked?.[gameId] ?? 0
+    }
+
     function isCraftingRecipeKnown(recipeName) {
       if (!saveData?.craftingRecipes) return false
       return recipeName in saveData.craftingRecipes
@@ -106,6 +110,14 @@ export function useProgress() {
     function hasAchievement(achievementId) {
       if (!saveData?.achievements) return false
       return saveData.achievements.includes(achievementId)
+    }
+
+    function isBookRead(gameId) {
+      if (!saveData?.stats) return false
+      // Books store their bare key in player stats with value 1 when read
+      // e.g. "Book_Speed", "PurpleBook", "SkillBook_0"
+      const bare = String(gameId).replace(/^\(O\)/, '')
+      return (saveData.stats[bare] ?? 0) >= 1
     }
 
     function hasSecretNote(noteNumber) {
@@ -260,6 +272,7 @@ export function useProgress() {
     const totalMoneyEarned = saveData?.totalMoneyEarned ?? 0
     const currentMoney = saveData?.money ?? 0
     const houseUpgradeLevel = saveData?.houseUpgradeLevel ?? 0
+    const timesFedRaccoons = saveData?.timesFedRaccoons ?? null
     const totalFishCaught = hasSaveData
       ? Object.values(saveData.fishCaught ?? {}).reduce((s, v) => s + (v.count ?? 0), 0)
       : 0
@@ -273,6 +286,7 @@ export function useProgress() {
       totalMoneyEarned,
       currentMoney,
       houseUpgradeLevel,
+      timesFedRaccoons,
       totalFishCaught,
       allFriendships,
       isJojaRoute,
@@ -289,11 +303,13 @@ export function useProgress() {
       isMuseumDonated,
       isRecipeKnown,
       isRecipeCooked,
+      getRecipeCookedCount,
       isCraftingRecipeKnown,
       isCraftingRecipeCrafted,
       getMonsterKills,
       hasMailFlag,
       hasAchievement,
+      isBookRead,
       hasSecretNote,
       hasSecretNoteReward,
       getBundleProgress,

@@ -200,6 +200,23 @@ export function computeAchievementProgress(items, progress) {
     entry(34, { linkPath: '/tracker/full-shipment' })
   }
 
+  // ----- Good Neighbors (ID 39) -----
+  if (progress.hasSaveData) {
+    const fed = progress.timesFedRaccoons ?? 0
+    entry(39, { done: fed, total: 9, label: 'feedings', linkPath: '/tracker/raccoon-shop' })
+  } else {
+    entry(39, { linkPath: '/tracker/raccoon-shop' })
+  }
+
+  // ----- Well-read (ID 35) -----
+  const allBooks = items.filter(i => i.type === 'book')
+  if (progress.hasSaveData) {
+    const booksRead = allBooks.filter(i => progress.isBookRead(i.gameId)).length
+    entry(35, { done: booksRead, total: allBooks.length, label: 'books read', linkPath: '/tracker/well-read' })
+  } else {
+    entry(35, { linkPath: '/tracker/well-read' })
+  }
+
   // ----- Friendship — social achievements -----
   if (progress.hasSaveData) {
     const friendships = progress.allFriendships ?? {}

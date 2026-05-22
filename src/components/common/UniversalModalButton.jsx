@@ -30,7 +30,8 @@ function UniversalModalButton({
   plural = false, // Display the item name in plural form (inline variant only)
   label = null, // Override the displayed name (inline variant only)
   quality = 0, // Quality level: 0=normal, 1=silver, 2=gold, 4=iridium (bundle-item variant only)
-  quantity = 1, // Stack quantity (bundle-item variant only)
+  quantity = 1, // Stack quantity (bundle-item and inline variants)
+  hearts = 0, // Friendship hearts to display after the label (inline variants)
   showSlotBackground = false, // Show bundle slot background (bundle-item variant only)
   noDoubleFrame = false, // Opt out of inner state-color frame (bundle-item variant only)
   highlighted = false, // row variant: highlight state (mirrors :hover)
@@ -38,10 +39,25 @@ function UniversalModalButton({
 }) {
   const openModal = useOpenModal()
   const entities = useEntities()
-  const { hasSaveData, isOwned, isNeeded } = useProgress()
+  const { hasSaveData, isOwned, isNeeded, getBundleProgress, hasAchievement } = useProgress()
   const owned = hasSaveData && !!item?.gameId && isOwned(item.gameId, item)
   const needed = isNeeded(item, entities.findById)
   const [imageError, setImageError] = useState(false)
+
+  // For bundle/achievement entities used as inline links, override label coloring
+  // to reflect the collection's own completion state rather than inventory ownership.
+  function getCollectionLabelClass() {
+    if (!hasSaveData) return ''
+    if (item?.type === 'bundle') {
+      const itemCount = item.goldCost ? 1 : (item.items?.length ?? 0)
+      const progress = getBundleProgress(item.bundleNumber, itemCount)
+      return progress?.complete ? 'inline-owned' : 'inline-needed'
+    }
+    if (item?.type === 'achievement') {
+      return hasAchievement(item.achievementId) ? 'inline-owned' : 'inline-needed'
+    }
+    return ''
+  }
 
   if (!item) return null
 
@@ -116,10 +132,11 @@ function UniversalModalButton({
   if (variant === 'row') {
     const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
     const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(item)
-    const nameLabelClass = owned && needed ? 'inline-owned-needed'
+    const nameLabelClass = getCollectionLabelClass()
+      || (owned && needed ? 'inline-owned-needed'
       : owned ? 'inline-owned'
       : needed ? 'inline-needed'
-      : ''
+      : '')
     return (
       <li
         className={`search-result-row${highlighted ? ' highlighted' : ''}`}
@@ -152,10 +169,11 @@ function UniversalModalButton({
     const isTableInline = variant === 'table-inline'
     const inlineIconSize = isTableInline ? 16 : (iconSize !== 32 ? iconSize : 16)
     const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
-    const inlineLabelClass = owned && needed ? 'inline-owned-needed'
+    const inlineLabelClass = getCollectionLabelClass()
+      || (owned && needed ? 'inline-owned-needed'
       : owned ? 'inline-owned'
       : needed ? 'inline-needed'
-      : ''
+      : '')
     return (
       <button
         onClick={handleClick}
@@ -191,6 +209,8 @@ function UniversalModalButton({
         )}
         <span style={{ position: 'relative' }} className={inlineLabelClass}>
           {label ?? (plural ? pluralize(item.name) : item.name)}
+          {quantity > 1 && <span className="inline-quantity"> ×{quantity}</span>}
+          {hearts > 0 && <span className="inline-hearts"> ♥×{hearts}</span>}
           {item.contextTags?.includes('fish_legendary') && <span title="Legendary Fish"> ⭐</span>}
         </span>
       </button>

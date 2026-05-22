@@ -33,18 +33,16 @@ function RecipeEntryList({ recipes, subject, onNavigate }) {
       <span key={i} className="source-entry">
         <span className="source-name">
           {recipeItem
-            ? <UniversalModalButton item={recipeItem} variant="inline" onNavigate={onNavigate} />
+            ? <UniversalModalButton item={recipeItem} variant="inline" onNavigate={onNavigate} quantity={r.amount} />
             : r.recipeName}
         </span>
         <span className="source-qualifiers">
-          {r.amount > 1 && <span className="source-qualifier">×{r.amount}</span>}
           {others.map((ing, j) => {
             const ingItem = findById(ing.id)
-            const label = ing.amount > 1 ? `${ing.name} ×${ing.amount}` : null
             return (
               <span key={j} className="source-qualifier source-qualifier--ingredient">
                 with {ingItem
-                  ? <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} label={label} />
+                  ? <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} />
                   : <>{ing.name}{ing.amount > 1 ? ` ×${ing.amount}` : ''}</>
                 }
               </span>

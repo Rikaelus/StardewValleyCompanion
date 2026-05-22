@@ -247,10 +247,16 @@
 }
 
 .tab-save-notice {
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.25rem 0;
   font-size: 0.8rem;
   color: #8b6f47;
   font-style: italic;
+}
+
+.tab-effect-notice {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.75rem;
+  color: #8b6f47;
 }
 
 .character-other-heading {
@@ -260,6 +266,17 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.mastery-cta {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background: #fff8e8;
+  border: 1px solid #a07800;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5c4400;
 }
 
 .skill-tree {
@@ -301,14 +318,11 @@
 .skill-tree-mastery-badge {
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 0.1rem 0.35rem;
-  border-radius: 3px;
   letter-spacing: 0.3px;
 }
 
 .skill-tree-mastery-badge--claimed {
-  color: #c0a020;
-  background: rgba(192, 160, 32, 0.12);
+  color: #8a6800;
 }
 
 .skill-tree-mastery-badge--available {
@@ -677,10 +691,26 @@
 }
 
 .character-no-save {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.character-no-save-lead {
   margin: 0;
   font-size: 0.85rem;
+  color: #5c4a32;
+  font-weight: 600;
+}
+
+.character-no-save-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.8rem;
   color: #8b6f47;
-  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .character-skills-grid {

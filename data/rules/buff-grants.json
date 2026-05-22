@@ -1,0 +1,31 @@
+{
+  "_comment": "Hardcoded item→buff links not derivable from Objects.json Buffs arrays. Add entries when the game applies a buff via C# logic rather than the data-driven Buffs[] field.",
+  "items": {
+    "monster-musk": ["buff-monster-musk"]
+  },
+  "bigCraftables": {
+    "statue-of-the-dwarf-king": [
+      "buff-statue-of-the-dwarf-king-0",
+      "buff-statue-of-the-dwarf-king-1",
+      "buff-statue-of-the-dwarf-king-2",
+      "buff-statue-of-the-dwarf-king-3",
+      "buff-statue-of-the-dwarf-king-4"
+    ],
+    "statue-of-blessings": [
+      "buff-blessing-of-speed",
+      "buff-blessing-of-luck",
+      "buff-blessing-of-energy",
+      "buff-blessing-of-waters",
+      "buff-blessing-of-friendship",
+      "buff-blessing-of-fangs",
+      "buff-blessing-of-the-butterfly"
+    ]
+  },
+  "mechanisms": {
+    "buff-full":            "Granted when the player eats any food item.",
+    "buff-quenched":        "Granted when the player drinks any drink item.",
+    "buff-warrior-energy":  "Granted by the Warrior enchantment on a sword (proc on kill).",
+    "buff-adrenaline-rush": "Granted by the Haymaker enchantment on a sword or scythe.",
+    "buff-yoba-s-blessing": "Granted by the Blessed enchantment on boots (proc on near-death)."
+  }
+}

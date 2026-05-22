@@ -1,0 +1,675 @@
+{
+  "_comment": "130 Golden Walnut sources. track_type: A=individually trackable, B=aggregate trackable (counter), C=not individually trackable (visible only in total)",
+  "sources": [
+    {
+      "id": "golden_coconut",
+      "label": "Golden Coconut",
+      "description": "Bring a Golden Coconut to Clint. The first one he opens contains a Golden Walnut.",
+      "count": 1,
+      "area": "general",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "mail:goldenCoconutHat"
+    },
+    {
+      "id": "island_fishing",
+      "label": "Island Fishing",
+      "description": "Fishing anywhere on Ginger Island gives a 15% chance per cast for a Golden Walnut, up to 5 total.",
+      "count": 5,
+      "area": "general",
+      "category": "fishing",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:IslandFishing"
+    },
+    {
+      "id": "east_bush_jungle",
+      "label": "Jungle Bush (path to Leo's hut)",
+      "description": "A walnut in a bush on the path toward Leo's hut in the jungle.",
+      "count": 1,
+      "area": "east",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "east_banana_shrine",
+      "label": "Banana Shrine Gorilla",
+      "description": "Place a Banana on the altar by the staircase to Leo's hut. A gorilla appears and gives 3 walnuts.",
+      "count": 3,
+      "area": "east",
+      "category": "puzzle",
+      "track_type": "A",
+      "save_key": "location:IslandEast.bananaShrineNutAwarded"
+    },
+    {
+      "id": "east_leo_hut_tree",
+      "label": "Leo's Hut Tree",
+      "description": "Hit the tree inside Leo's hut with an axe.",
+      "count": 1,
+      "area": "east",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "location:IslandHut.treeNutObtained"
+    },
+    {
+      "id": "east_gem_bird_path",
+      "label": "South of Gem Bird Shrine",
+      "description": "From Leo's hut stairs, follow the hidden eastern passage to the Gem Bird Shrine. A walnut sits south of the shrine.",
+      "count": 1,
+      "area": "east",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "east_gem_bird_puzzle",
+      "label": "Gem Birds Puzzle",
+      "description": "Complete the Gem Birds puzzle by placing all four gems on the pedestals at the Island Shrine.",
+      "count": 5,
+      "area": "east",
+      "category": "puzzle",
+      "track_type": "A",
+      "save_key": "location:IslandShrine.puzzleFinished"
+    },
+    {
+      "id": "west_farming",
+      "label": "Island Farm Crops",
+      "description": "Each crop harvested on Ginger Island has a 5% chance to yield a walnut (crops that don't regrow only). Up to 5 total.",
+      "count": 5,
+      "area": "west",
+      "category": "farming",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:IslandFarming"
+    },
+    {
+      "id": "west_gourmand_melon",
+      "label": "Gourmand Frog: Melon",
+      "description": "Talk to the Gourmand Frog in the cave south of the island farm. Grow a Melon and leave it for the frog to eat. Rewards 5 walnuts.",
+      "count": 5,
+      "area": "west",
+      "category": "quest",
+      "track_type": "A",
+      "save_key": "location:IslandFarmCave.gourmandRequestsFulfilled>=1"
+    },
+    {
+      "id": "west_gourmand_wheat",
+      "label": "Gourmand Frog: Wheat",
+      "description": "After the Melon, the Gourmand Frog asks for Wheat. Grow one and leave it. Rewards 5 walnuts.",
+      "count": 5,
+      "area": "west",
+      "category": "quest",
+      "track_type": "A",
+      "save_key": "location:IslandFarmCave.gourmandRequestsFulfilled>=2"
+    },
+    {
+      "id": "west_gourmand_garlic",
+      "label": "Gourmand Frog: Garlic",
+      "description": "After Wheat, the Gourmand Frog asks for Garlic. Grow one and leave it. Rewards 5 walnuts.",
+      "count": 5,
+      "area": "west",
+      "category": "quest",
+      "track_type": "A",
+      "save_key": "location:IslandFarmCave.gourmandRequestsFulfilled>=3"
+    },
+    {
+      "id": "west_buried_journal6",
+      "label": "Buried: SE Beach Corner",
+      "description": "Journal Scrap #6: Go south from the farm to the SE corner of the beach where there is a curved palm tree. Dig in the corner tile where the cliff meets the northern rock formation.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_62_76"
+    },
+    {
+      "id": "west_mussel_nodes",
+      "label": "Mussel Nodes",
+      "description": "Mining Mussel Nodes on the Island West beach has a 10% chance of yielding a walnut. Up to 5 total.",
+      "count": 5,
+      "area": "west",
+      "category": "mining",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:MusselStone"
+    },
+    {
+      "id": "west_shipwreck",
+      "label": "Inside Shipwreck",
+      "description": "Find the shipwreck at the SW side of the beach south of the farm. Follow the hidden path at the west corner into the ship interior.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_sand_duggy",
+      "label": "Sand Duggy (Mole)",
+      "description": "Find the mole at the SE side of the beach south of Birdie's hut. Cover three holes with placeable objects to trap it, then whack it.",
+      "count": 1,
+      "area": "west",
+      "category": "puzzle",
+      "track_type": "A",
+      "save_key": "location:IslandWest.sandDuggy.whacked"
+    },
+    {
+      "id": "west_buried_starfish_blue",
+      "label": "Buried: Blue Starfish Triangle",
+      "description": "Find the blue starfish triangle on the beach south of the farm. Dig up the center.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_21_81"
+    },
+    {
+      "id": "west_buried_starfish_diamond",
+      "label": "Buried: Starfish Diamond",
+      "description": "Find the starfish diamond near the tide pools (may be partially covered by a rock). Dig up the center.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_30_75"
+    },
+    {
+      "id": "west_buried_sand_x",
+      "label": "Buried: X in Sand (Tide Pools)",
+      "description": "Find the X marked in the sand in the tide pools. Dig up the center.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_43_74"
+    },
+    {
+      "id": "west_buried_sand_diamond",
+      "label": "Buried: Diamond Indents near Ocean",
+      "description": "Find a diamond of indents in the sand to the bottom-left of the tide pools, near the ocean. Dig up the center.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_39_24"
+    },
+    {
+      "id": "west_pond_tree",
+      "label": "Behind Coconut Tree (Pond)",
+      "description": "A walnut hidden behind a coconut tree by the pond west of the island farm.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_pirates_wife",
+      "label": "Pirate's Wife Quest (Birdie)",
+      "description": "Complete The Pirate's Wife quest by helping Birdie recover her husband's belongings. Rewards 5 walnuts.",
+      "count": 5,
+      "area": "west",
+      "category": "quest",
+      "track_type": "A",
+      "save_key": "limitedNutDrops:Birdie"
+    },
+    {
+      "id": "west_buried_journal4",
+      "label": "Buried: North of Birdie's Hut",
+      "description": "Journal Scrap #4: Dig in the sand north of Birdie's Hut to find a Quality Bobber and 1 Golden Walnut. (Digging yields nothing if you haven't read the journal scrap.)",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandWest_88_14"
+    },
+    {
+      "id": "west_coast_walnut_room",
+      "label": "Bush near Qi's Walnut Room",
+      "description": "Walk up the western coast toward Qi's Walnut Room. Find a walnut bush to the bottom-right near a cliff.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_ocean_past_walnut_room",
+      "label": "Bush in Ocean Past Qi's Room",
+      "description": "Walk up past Qi's Walnut Room through the ocean water to find a walnut bush.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_tiger_slime",
+      "label": "Tiger Slime Grove: Kill Slimes",
+      "description": "Killing slimes in the Tiger Slime Grove can yield one Golden Walnut total.",
+      "count": 1,
+      "area": "west",
+      "category": "combat",
+      "track_type": "A",
+      "save_key": "limitedNutDrops:TigerSlimeNut"
+    },
+    {
+      "id": "west_tiger_grove_mahogany",
+      "label": "Behind Mahogany Tree (Tiger Grove)",
+      "description": "Find the walnut behind a mahogany tree in the Tiger Slime Grove.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_buried_tiger_circle",
+      "label": "Buried: Grass Circle in Tiger Grove",
+      "description": "Find a circle of grass in the Tiger Slime Grove, likely hidden behind a Mahogany Tree. Dig up the center.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_parrot_bridge",
+      "label": "Bush West of Parrot Express Bridge",
+      "description": "From the farm's Parrot Express station, go west over the bridge across the river. Find a walnut bush partially hidden by the southern wall.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_simon_says",
+      "label": "Simon Says Cave Puzzle",
+      "description": "Complete the Simon Says puzzle in the cave north of Tiger Slime Grove. Rewards 3 walnuts.",
+      "count": 3,
+      "area": "west",
+      "category": "puzzle",
+      "track_type": "A",
+      "save_key": "location:IslandWestCave1.completed"
+    },
+    {
+      "id": "west_cliff_east",
+      "label": "Bush at Eastern Cliff Edge",
+      "description": "Go east from the Tiger Slime Grove and follow the cliff edge, destroying any rocks or weeds. A walnut bush is at the end of the path.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_buried_pebble_diamond",
+      "label": "Buried: Diamond Pebbles (Parrot Express East)",
+      "description": "East of the farm's Parrot Express station, dig the center of the diamond-shaped pebbles.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_hidden_path_east",
+      "label": "Bush at End of Eastern Hidden Path",
+      "description": "East of the farm's Parrot Express station, follow the hidden path that jogs east then north. A walnut bush is at the far end.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "west_south_cliff",
+      "label": "Bush on South Cliff (Farmhouse View)",
+      "description": "South of the farm's Parrot Express station, go south along the cliff and bend east overlooking the farmhouse. Walnut bush at the end.",
+      "count": 1,
+      "area": "west",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_buried_stone_circle_entrance",
+      "label": "Buried: Stone Circle at Entrance (West)",
+      "description": "Atop the stairs at Island North entrance, turn west and dig at the center of the stone circle.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_19_13"
+    },
+    {
+      "id": "north_hidden_grove",
+      "label": "Grove Bush (Hidden Passage West)",
+      "description": "Atop the stairs at Island North entrance, take the hidden western passage to reach a secluded grove with a walnut bush.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_buried_flower_circle_1",
+      "label": "Buried: First Flower Circle (NE of Entrance)",
+      "description": "Atop the Island North stairs, go northeast to the grassy area and dig at the center of the circle of flowers.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_26_81"
+    },
+    {
+      "id": "north_buried_flower_circle_2",
+      "label": "Buried: Second Flower Circle (Further East)",
+      "description": "From the first flower circle, go east to another grassy area and dig at the center of a second circle of flowers.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_42_77"
+    },
+    {
+      "id": "north_buried_sand_patch",
+      "label": "Buried: Sand Patch (SE of Field Office)",
+      "description": "Southeast of the Island Field Office, find the patch of sand with unusual texture and dig for the buried walnut.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_57_79"
+    },
+    {
+      "id": "north_buried_dig_site_stone",
+      "label": "Buried: Stone Circle at Dig Site",
+      "description": "Up the north steps of the dig site, dig at the center of the stone circle.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_62_54"
+    },
+    {
+      "id": "north_dig_site_plant_w",
+      "label": "Bush West of Dig Site",
+      "description": "Up the north steps of the dig site, cross the bridge west to find a walnut plant.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_dig_site_two_plants",
+      "label": "Two Bushes East of Dig Site",
+      "description": "Up the north steps of the dig site, go east through a hidden passage in the cliff. Cross the bridge and find two walnut plants beyond it.",
+      "count": 2,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_field_office_large_animal",
+      "label": "Field Office: Large Animal Collection",
+      "description": "Donate all Large Animal skeleton pieces to the Island Field Office (center skeleton, snake bones). Completing this collection rewards 6 walnuts.",
+      "count": 6,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "location:IslandFieldOffice.centerSkeletonRestored"
+    },
+    {
+      "id": "north_field_office_snake",
+      "label": "Field Office: Snake Collection",
+      "description": "Donate all snake skeleton pieces to the Island Field Office. Completing this collection rewards 3 walnuts.",
+      "count": 3,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "location:IslandFieldOffice.snakeRestored"
+    },
+    {
+      "id": "north_field_office_frog",
+      "label": "Field Office: Mummified Frog",
+      "description": "Donate a Mummified Frog to the Island Field Office.",
+      "count": 1,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "location:IslandFieldOffice.frogRestored"
+    },
+    {
+      "id": "north_field_office_bat",
+      "label": "Field Office: Mummified Bat",
+      "description": "Donate a Mummified Bat to the Island Field Office.",
+      "count": 1,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "location:IslandFieldOffice.batRestored"
+    },
+    {
+      "id": "north_field_office_survey_flowers",
+      "label": "Field Office: Purple Flowers Survey",
+      "description": "Complete the Purple Flowers Island Survey at the Field Office. The correct answer is 22.",
+      "count": 1,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "mail:fieldOfficeFinale"
+    },
+    {
+      "id": "north_field_office_survey_starfish",
+      "label": "Field Office: Purple Starfish Survey",
+      "description": "Complete the Purple Starfish Island Survey at the Field Office. The correct answer is 18.",
+      "count": 1,
+      "area": "north",
+      "category": "donation",
+      "track_type": "A",
+      "save_key": "mail:fieldOfficeFinale"
+    },
+    {
+      "id": "north_volcano_plant_se",
+      "label": "Bush SE of Volcano Entrance",
+      "description": "Southeast of the Volcano Dungeon's entrance, find the walnut plant hidden by a tree.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_buried_volcano_sand",
+      "label": "Buried: Sand Circle by Volcano",
+      "description": "Eastward from the Volcano Dungeon entrance, dig in the sand circled by two bushes and an arc of stones.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_54_21"
+    },
+    {
+      "id": "north_tree_slingshot",
+      "label": "Tree Nut (Slingshot Required)",
+      "description": "Northeast of the Volcano Dungeon entrance, find a curved tree protruding from the side of the Volcano. Knock down the walnut using a Slingshot.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "location:IslandNorth.treeNutShot"
+    },
+    {
+      "id": "north_buried_journal10",
+      "label": "Buried: Curved Palm (SW of Volcano)",
+      "description": "Journal Scrap #10: Southwest of the Volcano Dungeon's entrance, find a curved palm tree growing from the cliff's side. Dig the tile visible just inside the loop of the palm tree. (Yields nothing without the journal scrap.)",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandNorth_19_39"
+    },
+    {
+      "id": "north_buried_nw_stone",
+      "label": "Buried: Stone Circle at NW Corner",
+      "description": "Dig at the center of the circle of stones at the extreme northwest of the map, where Leo sometimes stands.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_hidden_nw_bush",
+      "label": "Bush in NW Hidden Passage",
+      "description": "At the extreme northwest of the map, west of the volcano, proceed west along the wall and north through a hidden passage. Find a walnut in the secluded bush.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "north_lava_watering_can",
+      "label": "Lava Secret Area (Watering Can)",
+      "description": "At the lava river at the Volcano Dungeon entrance, use a Watering Can to create a path westward and south to a landing near the river's end. Exit the lava and collect 2 walnuts from the landing.",
+      "count": 2,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "volcano_mining",
+      "label": "Volcano Dungeon: Mining",
+      "description": "Mine rocks inside the Volcano Dungeon for a chance to find Golden Walnuts. Up to 5 total.",
+      "count": 5,
+      "area": "volcano",
+      "category": "mining",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:VolcanoMining"
+    },
+    {
+      "id": "volcano_monsters",
+      "label": "Volcano Dungeon: Monster Drops",
+      "description": "Kill monsters inside the Volcano Dungeon for a chance to find Golden Walnuts. Up to 5 total.",
+      "count": 5,
+      "area": "volcano",
+      "category": "combat",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:VolcanoMonsterDrop"
+    },
+    {
+      "id": "volcano_barrels",
+      "label": "Volcano Dungeon: Barrels/Crates",
+      "description": "Break barrels and crates inside the Volcano Dungeon for a chance to find Golden Walnuts. Up to 5 total.",
+      "count": 5,
+      "area": "volcano",
+      "category": "exploration",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:VolcanoBarrel"
+    },
+    {
+      "id": "volcano_normal_chest",
+      "label": "Volcano Dungeon: Normal Chest",
+      "description": "Open the normal chest in the Volcano Dungeon.",
+      "count": 1,
+      "area": "volcano",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "limitedNutDrops:VolcanoNormalChest"
+    },
+    {
+      "id": "volcano_rare_chest",
+      "label": "Volcano Dungeon: Rare Chest",
+      "description": "Open the rare chest in the Volcano Dungeon.",
+      "count": 1,
+      "area": "volcano",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "limitedNutDrops:VolcanoRareChest"
+    },
+    {
+      "id": "volcano_forge_enter",
+      "label": "Forge Entrance Bush",
+      "description": "Find the walnut plant at the entrance to the Forge (top of Volcano Dungeon).",
+      "count": 1,
+      "area": "volcano",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "volcano_forge_exit",
+      "label": "Forge Exit Bush",
+      "description": "Find the walnut plant at the exit of the Forge.",
+      "count": 1,
+      "area": "volcano",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "south_upper_cliff",
+      "label": "Island South Upper Cliff",
+      "description": "Go up the stairs to Island North, immediately turn east, then go south through a hidden route behind a tree to access the walnut bush on the upper cliff of Island South.",
+      "count": 1,
+      "area": "south",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": null
+    },
+    {
+      "id": "southeast_fishing",
+      "label": "Island SE: Starfish Tide Pool Fishing",
+      "description": "Fish in the starfish-shaped tide pool on Island Southeast (requires beach resort to be built). The first cast here yields a Golden Walnut.",
+      "count": 1,
+      "area": "southeast",
+      "category": "fishing",
+      "track_type": "A",
+      "save_key": "location:IslandSouthEast.fishedWalnut"
+    },
+    {
+      "id": "southeast_buried_starfish",
+      "label": "Buried: Yellow Starfish Diamond (Island SE)",
+      "description": "On Island Southeast, find a diamond of yellow starfish and dig up the center.",
+      "count": 1,
+      "area": "southeast",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandSouthEast_25_17"
+    },
+    {
+      "id": "southeast_mermaid",
+      "label": "Mermaid Puzzle",
+      "description": "On a rainy day, go to Island Southeast. Place a Flute Block on each of the five rocks matching the notes indicated by the mermaid. Rewards 5 walnuts.",
+      "count": 5,
+      "area": "southeast",
+      "category": "puzzle",
+      "track_type": "A",
+      "save_key": "location:IslandSouthEast.mermaidPuzzleFinished"
+    },
+    {
+      "id": "pirate_cove_darts",
+      "label": "Pirate Cove: Darts",
+      "description": "Visit the Pirate Cove (accessible after beach resort) on a non-rainy night after 8 PM on an even day. Win a round of darts for a walnut prize, up to 3 times.",
+      "count": 3,
+      "area": "southeast",
+      "category": "puzzle",
+      "track_type": "B",
+      "save_key": "limitedNutDrops:Darts"
+    },
+    {
+      "id": "pirate_cove_buried_sand",
+      "label": "Buried: Pirate Cove Sand",
+      "description": "In the Pirate Cove, dig up the patch of exposed sand among the barrels east of the water.",
+      "count": 1,
+      "area": "southeast",
+      "category": "exploration",
+      "track_type": "A",
+      "save_key": "foundBuriedNuts:IslandSouthEastCave_36_26"
+    }
+  ]
+}

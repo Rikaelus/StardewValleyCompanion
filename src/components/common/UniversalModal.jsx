@@ -28,6 +28,8 @@ import RecipeEntryList from './RecipeEntryList'
 import ConditionBadge from './ConditionBadge'
 import ModalSection from './ModalSection'
 import { SectionNavProvider } from '../../contexts/SectionNavContext'
+import { renderVillagerHearts, STATUS_ICON } from './EntityPageConfigs'
+import { computeAchievementProgress, POLYCULTURE_TARGET, MONOCULTURE_TARGET } from '../../utils/AchievementProgress'
 import './UniversalModal.css'
 
 
@@ -161,7 +163,8 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Load unified entity data (fetched once for the whole app via EntityContext)
   const entityData = useEntities()
-  const { hasSaveData, getBundleProgress, isMuseumDonated, hasSecretNote, hasSecretNoteReward, getFriendshipHearts, getFriendshipStatus } = useProgress()
+  const progress = useProgress()
+  const { hasSaveData, getBundleProgress, isMuseumDonated, hasSecretNote, hasSecretNoteReward, getFriendshipHearts, getFriendshipStatus, hasAchievement, isItemShipped, getItemShippedCount, isFishCaught, isRecipeCooked, isCraftingRecipeCrafted } = progress
   const { byType: itemsByType, items: allItems, findById, findByGameId, findEntity, loading: entitiesLoading, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
@@ -373,7 +376,17 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   <><span className="label">Gold Drop</span><span>{displayEntity.coins.min === displayEntity.coins.max ? displayEntity.coins.min : `${displayEntity.coins.min}–${displayEntity.coins.max}`}g</span></>
                 )}
                 {displayEntity.debuffs?.length > 0 && (
-                  <><span className="label">Debuffs</span><span>{displayEntity.debuffs.map(d => `${d.name} (${formatChance(d.chance)})`).join(', ')}</span></>
+                  <><span className="label">Debuffs</span><span className="inline-buff-list">{displayEntity.debuffs.map(d => {
+                    const buffEntity = (itemsByType['buff'] || []).find(b => b.name === d.name)
+                    return (
+                      <span key={d.name} className="inline-buff-entry">
+                        {buffEntity
+                          ? <UniversalModalButton item={buffEntity} variant="inline" onNavigate={handleNavigate} />
+                          : d.name}
+                        {d.chance < 1 && <span className="buff-chance"> ({formatChance(d.chance)})</span>}
+                      </span>
+                    )
+                  })}</span></>
                 )}
               </div>
               {displayEntity.slayerQuest && (
@@ -493,7 +506,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       <span>{(() => {
                         const item = findByGameId(displayEntity.requiredItem)
                         return item
-                          ? <><UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />{displayEntity.requiredItemAmount > 1 ? ` ×${displayEntity.requiredItemAmount}` : ''}</>
+                          ? <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} quantity={displayEntity.requiredItemAmount} />
                           : `Item ${displayEntity.requiredItem}`
                       })()}</span>
                     </>
@@ -526,20 +539,51 @@ function UniversalModal({ entity, isOpen, onClose }) {
           )}
 
           {/* Achievement-Specific Sections */}
-          {entityType === 'achievement' && displayEntity.prerequisiteId && (
-            <ModalSection title="Prerequisite">
-              <div className="source-list">
-                <span className="source-entry">
-                  {(() => {
-                    const prereq = findById(displayEntity.prerequisiteId)
-                    return prereq
-                      ? <UniversalModalButton item={prereq} variant="inline" onNavigate={handleNavigate} />
-                      : displayEntity.prerequisiteId
-                  })()}
-                </span>
-              </div>
-            </ModalSection>
-          )}
+          {entityType === 'achievement' && (() => {
+            const progressMap = computeAchievementProgress(allItems, progress)
+            const p = progressMap.get(displayEntity.achievementId)
+            const earned = hasSaveData ? hasAchievement(displayEntity.achievementId) : null
+            const hasDone = p?.done != null && p?.total != null
+            return (
+              <>
+                {(earned !== null || hasDone) && (
+                  <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                    {earned !== null && (
+                      <span className={`source-qualifier ${earned ? 'bundle-use-provided' : 'bundle-use-needed'}`}>
+                        {earned ? 'Earned' : 'Not Earned'}
+                      </span>
+                    )}
+                    {hasDone && (
+                      <span style={{ fontSize: '0.82rem', color: '#6b5c40' }}>
+                        {p.format === 'gold'
+                          ? `${p.done.toLocaleString()}g / ${p.total.toLocaleString()}g`
+                          : `${p.done.toLocaleString()} / ${p.total.toLocaleString()} ${p.label ?? ''}`}
+                      </span>
+                    )}
+                    {p?.linkPath && (
+                      <a href={`#${p.linkPath}`} style={{ fontSize: '0.8rem', color: '#5a7fb5', textDecoration: 'underline' }}>
+                        View tracker →
+                      </a>
+                    )}
+                  </div>
+                )}
+                {displayEntity.prerequisiteId && (
+                  <ModalSection title="Prerequisite">
+                    <div className="source-list">
+                      <span className="source-entry">
+                        {(() => {
+                          const prereq = findById(displayEntity.prerequisiteId)
+                          return prereq
+                            ? <UniversalModalButton item={prereq} variant="inline" onNavigate={handleNavigate} />
+                            : displayEntity.prerequisiteId
+                        })()}
+                      </span>
+                    </div>
+                  </ModalSection>
+                )}
+              </>
+            )
+          })()}
 
           {/* Secret Note / Journal Scrap sections */}
           {(entityType === 'secret-note' || entityType === 'journal-scrap') && (
@@ -549,26 +593,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
                 const completed = displayEntity.reward ? hasSecretNoteReward(displayEntity.reward) : null
                 return (
                   <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
-                    <span style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
-                      fontSize: '0.8rem', fontWeight: 700, padding: '3px 10px',
-                      borderRadius: 999, border: '1.5px solid',
-                      borderColor: seen ? '#5a9e4a' : '#d9c4a0',
-                      color: seen ? '#3a7228' : '#8b6f47',
-                      background: seen ? '#e8f5e0' : '#f5f0e8',
-                    }}>
-                      {seen ? '✓ Found' : '✗ Not Found'}
+                    <span className={`source-qualifier ${seen ? 'bundle-use-provided' : 'bundle-use-needed'}`}>
+                      {seen ? 'Found' : 'Not Found'}
                     </span>
                     {completed !== null && (
-                      <span style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '0.35rem',
-                        fontSize: '0.8rem', fontWeight: 700, padding: '3px 10px',
-                        borderRadius: 999, border: '1.5px solid',
-                        borderColor: completed ? '#5a9e4a' : '#e0a030',
-                        color: completed ? '#3a7228' : '#8b5800',
-                        background: completed ? '#e8f5e0' : '#fff8e8',
-                      }}>
-                        {completed ? '☑ Completed' : '☐ Not Completed'}
+                      <span className={`source-qualifier ${completed ? 'bundle-use-provided' : 'bundle-use-needed'}`}>
+                        {completed ? 'Completed' : 'Not Completed'}
                       </span>
                     )}
                   </div>
@@ -1087,27 +1117,67 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   </span>
                 </ModalSection>
               )}
-              {displayEntity.grantedBy?.length > 0 && (
-                <ModalSection id="section-buff-granted-by" title="Granted By">
-                  <div className="source-list">
-                    {displayEntity.grantedBy.map(itemId => {
-                      const item = findById(itemId)
-                      if (!item) return null
-                      return (
-                        <span key={itemId} className="source-entry">
-                          <UniversalModalButton
-                            item={item}
-                            variant="inline"
-                            onNavigate={handleNavigate}
-                          />
-                        </span>
-                      )
-                    })}
-                  </div>
-                </ModalSection>
-              )}
+              {(() => {
+                const itemSources = (displayEntity.sources || []).filter(s => s.type === 'item')
+                const monsterSources = (displayEntity.sources || []).filter(s => s.type === 'monster')
+                const mechanism = displayEntity.mechanism
+                if (!itemSources.length && !monsterSources.length && !mechanism) return null
+                return (
+                  <ModalSection id="section-buff-granted-by" title="Granted By">
+                    <div className="source-list">
+                      {itemSources.map(s => {
+                        const item = findById(s.id)
+                        if (!item) return null
+                        return (
+                          <span key={s.id} className="source-entry">
+                            <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        )
+                      })}
+                      {monsterSources.map(s => {
+                        const monster = findById(s.id)
+                        if (!monster) return null
+                        return (
+                          <span key={s.id} className="source-entry">
+                            <UniversalModalButton item={monster} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        )
+                      })}
+                      {mechanism && (
+                        <span className="source-entry source-entry--indented">{mechanism}</span>
+                      )}
+                    </div>
+                  </ModalSection>
+                )
+              })()}
             </>
           )}
+
+          {/* TV Show-Specific Sections */}
+          {type === 'tv-show' && (() => {
+            const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
+            const food = displayEntity.taughtFoodGameId ? findByGameId(displayEntity.taughtFoodGameId) : null
+            return (
+              <>
+                <ModalSection id="section-tv-airdate" title="Airs">
+                  <div className="entity-detail-grid">
+                    <span className="label">Schedule</span>
+                    <span>
+                      Year {displayEntity.year}, {SEASON_LABELS[displayEntity.season]} {displayEntity.dayOfSeason}
+                      <span style={{ opacity: 0.6, fontSize: '0.85em' }}> (repeats every 2 years)</span>
+                    </span>
+                    <span className="label">Episode</span>
+                    <span>{displayEntity.episodeNumber} of 32</span>
+                  </div>
+                </ModalSection>
+                {food && (
+                  <ModalSection id="section-tv-recipe" title="Teaches Recipe">
+                    <UniversalModalButton item={food} variant="inline" onNavigate={handleNavigate} />
+                  </ModalSection>
+                )}
+              </>
+            )
+          })()}
 
           {/* Event-Specific Sections */}
           {entityType === 'event' && (
@@ -1310,38 +1380,25 @@ function UniversalModal({ entity, isOpen, onClose }) {
               {hasSaveData && (() => {
                 const hearts = getFriendshipHearts(displayEntity.name)
                 const status = getFriendshipStatus(displayEntity.name)
-                const canBeRomanced = displayEntity.canBeRomanced
-                const max = canBeRomanced ? 14 : 10
-                const filled = Math.min(hearts, max)
-                const STATUS_ICON = {
-                  Dating:   'assets/objects/Bouquet.png',
-                  Engaged:  'assets/objects/WeddingRing.png',
-                  Married:  'assets/objects/MermaidsPendant.png',
-                  Divorced: 'assets/objects/WiltedBouquet.png',
-                  Roommate: 'assets/objects/Farmhouse.png',
-                }
-                const statusIcon = STATUS_ICON[status]
-                const isRomantic = status === 'Dating' || status === 'Engaged' || status === 'Married' || status === 'Roommate'
-                const getColor = (i) => {
-                  if (i < filled) return canBeRomanced && isRomantic && i >= 8 ? '#f4a7b9' : '#e05c6a'
-                  if (canBeRomanced && i >= 8 && !isRomantic) return '#aaa'
-                  if (canBeRomanced && i >= 10 && status !== 'Married' && status !== 'Roommate') return '#aaa'
-                  return '#ddd'
-                }
+                const title = status ? `${hearts}♥ — ${status}` : `${hearts} hearts`
                 return (
                   <ModalSection id="section-villager-relationship" title="Relationship" navLabel="Relationship">
                     <div className="entity-detail-grid">
                       <span className="label">Hearts</span>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '1px', fontSize: '0.9rem', lineHeight: 1 }}>
-                        {Array.from({ length: max }, (_, i) => (
-                          <span key={i} style={{ color: getColor(i) }}>♥</span>
-                        ))}
+                      <span title={title}>
+                        {renderVillagerHearts({
+                          hearts,
+                          status,
+                          canBeRomanced: displayEntity.canBeRomanced,
+                          isKrobus: displayEntity.name === 'Krobus',
+                          size: '0.9rem',
+                        })}
                       </span>
                       {status && status !== 'Friendly' && (
                         <>
                           <span className="label">Status</span>
                           <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                            {statusIcon && <img src={statusIcon} alt={status} style={{ width: 18, height: 18, imageRendering: 'pixelated' }} />}
+                            {STATUS_ICON[status] && <img src={STATUS_ICON[status]} alt={status} style={{ width: 18, height: 18, imageRendering: 'pixelated' }} />}
                             {status}
                           </span>
                         </>
@@ -1749,12 +1806,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
                       return (
                         <span key={i} className="source-entry">
                           {matItem
-                            ? <UniversalModalButton item={matItem} variant="inline" onNavigate={handleNavigate} />
+                            ? <UniversalModalButton item={matItem} variant="inline" onNavigate={handleNavigate} quantity={mat.amount} />
                             : <span className="source-name">{mat.gameId}</span>
                           }
-                          <span className="source-qualifiers">
-                            <span className="source-qualifier">×{mat.amount}</span>
-                          </span>
                         </span>
                       )
                     })}
@@ -2061,6 +2115,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     .filter(Boolean)
                   const isMuseumDonatable = displayEntity.museumDonatable
 
+                  const MUSEUM_ACHIEVEMENT_IDS = new Set(['achievement-treasure-trove', 'achievement-a-complete-collection'])
+                  const achievementEntities = (displayEntity.achievements || [])
+                    .filter(id => !isMuseumDonatable || !MUSEUM_ACHIEVEMENT_IDS.has(id))
+                    .map(id => findById(id))
+                    .filter(Boolean)
+
                   const recipeGroups = [
                     { items: cooking, label: 'Ingredient For' },
                     { items: crafting, label: 'Used to Craft' },
@@ -2070,11 +2130,12 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   const hasRecipes = recipeGroups.length > 0
                   const hasBundles = bundleDetails.length > 0
                   const hasMuseum = isMuseumDonatable
-                  if (!hasRecipes && !hasBundles && !hasMuseum) return null
+                  const hasAchievements = achievementEntities.length > 0
+                  if (!hasRecipes && !hasBundles && !hasMuseum && !hasAchievements) return null
 
-                  const totalGroups = recipeGroups.length + (hasBundles ? 1 : 0) + (hasMuseum ? 1 : 0)
+                  const totalGroups = recipeGroups.length + (hasBundles ? 1 : 0) + (hasMuseum ? 1 : 0) + (hasAchievements ? 1 : 0)
                   const sectionTitle = totalGroups === 1
-                    ? (hasBundles ? 'Needed for Bundles' : hasMuseum ? 'Museum Donation' : recipeGroups[0].label)
+                    ? (hasBundles ? 'Needed for Bundles' : hasMuseum ? 'Museum Donation' : hasAchievements ? 'Achievements' : recipeGroups[0].label)
                     : 'Uses'
 
                   return (
@@ -2146,6 +2207,47 @@ function UniversalModal({ entity, isOpen, onClose }) {
                           </div>
                         </div>
                       )}
+                      {hasAchievements && (
+                        <div className="source-group">
+                          {totalGroups > 1 && <span className="modal-label">Achievements:</span>}
+                          <div className="source-list">
+                            {achievementEntities.map(achievement => {
+                              let itemProvided = null
+                              if (hasSaveData) {
+                                const id = achievement.achievementId
+                                const gid = displayEntity.gameId
+                                if (id === 24 || id === 25 || id === 26) itemProvided = isFishCaught(gid)
+                                else if (id === 15 || id === 16 || id === 17) itemProvided = isRecipeCooked(gid)
+                                else if (id === 20 || id === 21 || id === 22) {
+                                  const craftSrc = displayEntity.sources?.find(s => s.type === 'crafting')
+                                  itemProvided = craftSrc ? isCraftingRecipeCrafted(craftSrc.recipeName) : null
+                                }
+                                else if (id === 34) itemProvided = isItemShipped(gid)
+                                else if (id === 31) itemProvided = getItemShippedCount(gid) >= POLYCULTURE_TARGET
+                                else if (id === 32) itemProvided = getItemShippedCount(gid) >= MONOCULTURE_TARGET
+                              }
+                              const achEarned = hasSaveData ? hasAchievement(achievement.achievementId) : null
+                              return (
+                                <span key={achievement.id} className="source-entry">
+                                  <span className="source-name">
+                                    <UniversalModalButton item={achievement} variant="inline" onNavigate={handleNavigate} />
+                                  </span>
+                                  {itemProvided !== null && (
+                                    <span className="source-qualifiers">
+                                      {itemProvided
+                                        ? <span className="source-qualifier bundle-use-provided">Provided</span>
+                                        : achEarned
+                                          ? <span className="source-qualifier">Not Needed</span>
+                                          : <span className="source-qualifier bundle-use-needed">Needed</span>
+                                      }
+                                    </span>
+                                  )}
+                                </span>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
                     </ModalSection>
                   )
                 })()}
@@ -2166,9 +2268,70 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   )
                 })()}
                 {!isEquipment && <AgingInfoSection entity={displayEntity} />}
+                {!isEquipment && (() => {
+                  const cookingSrc = displayEntity.sources?.find(s => s.type === 'cooking')
+                  const recipeSources = (displayEntity.sources || []).filter(s => s.type === 'shop' && s.isRecipe)
+                  if (!cookingSrc && !recipeSources.length) return null
+                  const cond = cookingSrc?.unlockCondition
+                  const tvId = cond?.tvEntityId ?? cookingSrc?.tvEntityId
+                  const tvShow = tvId ? findById(tvId) : null
+                  const parts = []
+                  if (cond) {
+                    if (cond.type === 'friendship') {
+                      const villager = findById(
+                        itemsByType['villager']?.find(v => v.name === cond.npc)?.id
+                      )
+                      parts.push(villager
+                        ? <UniversalModalButton key="npc" item={villager} variant="inline" onNavigate={handleNavigate} hearts={cond.hearts} />
+                        : <span key="npc">{cond.npc} (♥×{cond.hearts})</span>
+                      )
+                    } else if (cond.type === 'skill') {
+                      parts.push(<span key="skill">{cond.skill.charAt(0).toUpperCase() + cond.skill.slice(1)} Lv. {cond.level}</span>)
+                    } else if (cond.type === 'level') {
+                      parts.push(<span key="level">Level {cond.level}</span>)
+                    }
+                  }
+                  if (tvShow) {
+                    parts.push(<UniversalModalButton key="tv" item={tvShow} variant="inline" onNavigate={handleNavigate} />)
+                  }
+                  recipeSources.forEach((src, i) => {
+                    const store = findById(src.id)
+                    if (store) parts.push(
+                      <span key={`recipe-shop-${i}`}>
+                        <UniversalModalButton item={store} variant="inline" onNavigate={handleNavigate} />
+                        {src.price != null && <span className="inline-quantity"> {src.price.toLocaleString()}g</span>}
+                      </span>
+                    )
+                  })
+                  if (!parts.length) return null
+                  return (
+                    <ModalSection id="section-food-learn" title="How to Learn">
+                      <div className="source-list">
+                        {parts.map((p, i) => <span key={i} className="source-entry">{p}</span>)}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
                 {!isEquipment && (
                   <FoodBuffsSection entity={displayEntity} findById={entityData.findById} onNavigate={handleNavigate} />
                 )}
+                {!isEquipment && (() => {
+                  const grantedBuffs = (itemsByType['buff'] || []).filter(b =>
+                    b.sources?.some(s => s.type === 'item' && s.id === displayEntity.id)
+                  )
+                  if (!grantedBuffs.length) return null
+                  return (
+                    <ModalSection id="section-grants-buff" title="Bestows">
+                      <div className="source-list">
+                        {grantedBuffs.map(b => (
+                          <span key={b.id} className="source-entry">
+                            <UniversalModalButton item={b} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        ))}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
                 {!isEquipment && (
                   <SellingInfoSection
                     key={displayEntity.id}

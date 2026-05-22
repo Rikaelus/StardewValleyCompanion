@@ -42,7 +42,7 @@
   font-size: 12px;
   font-style: normal;
   max-width: 280px;
-  white-space: normal;
+  white-space: pre-line;
   z-index: 9999;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   pointer-events: auto;

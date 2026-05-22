@@ -221,24 +221,7 @@
 }
 
 /* Nuance indicator (asterisk on items with location-specific availability) */
-.nuance-indicator {
-  color: #8b7355;
-  margin-left: 3px;
-  font-size: 0.8em;
-  cursor: help;
-  vertical-align: super;
-}
 
-.nuance-note {
-  margin-top: 0.75rem;
-  padding: 0.6rem 0.75rem;
-  background: #fff8e7;
-  border-left: 4px solid #c9a84c;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: #5c4a32;
-  line-height: 1.5;
-}
 
 
 /* Empty results state */
@@ -280,5 +263,10 @@
 
 .caught-indicator.not-caught {
   color: #ccc;
+  font-weight: 400;
+}
+
+.caught-indicator.not-applicable {
+  color: #ddd;
   font-weight: 400;
 }

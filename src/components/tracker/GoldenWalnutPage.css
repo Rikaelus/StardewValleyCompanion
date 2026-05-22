@@ -1,0 +1,315 @@
+.walnut-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.walnut-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.walnut-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.25rem;
+}
+
+.walnut-subtitle {
+  font-size: 0.85rem;
+  color: #8b6f47;
+  margin: 0 0 1rem;
+}
+
+/* Progress bar */
+.walnut-progress-wrap {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.walnut-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.88rem;
+  color: #5c4a32;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.walnut-qi-unlocked {
+  font-size: 0.78rem;
+  color: #4a7228;
+  font-weight: 600;
+}
+
+.walnut-progress-bar {
+  position: relative;
+  height: 10px;
+  background: #e8d4b0;
+  border-radius: 5px;
+  overflow: visible;
+}
+
+.walnut-progress-fill {
+  height: 100%;
+  background: #c9a01c;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.walnut-progress-fill--done {
+  background: #5a9e4a;
+}
+
+.walnut-progress-pip--100 {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e8d4b0;
+  border: 2px solid #c9a01c;
+}
+
+.walnut-tracking-note {
+  font-size: 0.75rem;
+  color: #a08060;
+  margin: 0.5rem 0 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Upload nudge */
+.walnut-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.walnut-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+/* Section title shared */
+.walnut-section-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.5rem;
+}
+
+/* Parrot upgrades */
+.walnut-parrot-section {
+  margin: 1.5rem 0;
+}
+
+.walnut-parrot-intro {
+  font-size: 0.85rem;
+  color: #6b5c40;
+  margin: 0 0 0.75rem;
+}
+
+.walnut-parrot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.5rem;
+}
+
+.walnut-parrot-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: white;
+  border: 1.5px solid #e8d4b0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.walnut-parrot-cost {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #c9a01c;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 3.5rem;
+}
+
+.walnut-parrot-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a3520;
+  line-height: 1.3;
+}
+
+.walnut-parrot-desc {
+  font-size: 0.75rem;
+  color: #8b6f47;
+  line-height: 1.3;
+  margin-top: 0.1rem;
+}
+
+/* Area sections */
+.walnut-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.walnut-area {
+  border: 1.5px solid #e8d4b0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.walnut-area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0.75rem;
+  background: #fdf7ed;
+  border-bottom: 1.5px solid #e8d4b0;
+}
+
+.walnut-area-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0;
+}
+
+.walnut-area-count {
+  font-size: 0.8rem;
+  color: #8b6f47;
+  font-weight: 600;
+}
+
+/* Source rows */
+.walnut-area-rows {
+  background: white;
+}
+
+.walnut-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #f0e4cc;
+}
+
+.walnut-row:last-child {
+  border-bottom: none;
+}
+
+.walnut-row--done {
+  background: #f4fbee;
+}
+
+.walnut-row--partial {
+  background: #fdf9f0;
+}
+
+.walnut-row-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.walnut-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #d0b880;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.walnut-check--done {
+  background: #5a9e4a;
+  border-color: #5a9e4a;
+  color: white;
+}
+
+.walnut-check--partial {
+  background: #c9a01c;
+  border-color: #c9a01c;
+  color: white;
+}
+
+.walnut-check--empty {
+  background: transparent;
+  color: transparent;
+}
+
+.walnut-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.walnut-row-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3a2a10;
+  line-height: 1.3;
+}
+
+.walnut-row--done .walnut-row-label {
+  color: #4a7228;
+}
+
+.walnut-row-desc {
+  font-size: 0.75rem;
+  color: #8b6f47;
+  line-height: 1.35;
+}
+
+.walnut-row-right {
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.walnut-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5c4a32;
+  white-space: nowrap;
+}
+
+.walnut-count--max {
+  color: #a08060;
+  font-weight: normal;
+}
+
+.walnut-row--done .walnut-count {
+  color: #4a7228;
+}

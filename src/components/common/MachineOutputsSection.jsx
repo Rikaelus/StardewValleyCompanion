@@ -13,7 +13,7 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
         !item.isGeneric && item.sources?.some(s => s.type === 'tapper')
       ).sort((a, b) => a.name.localeCompare(b.name))
     : allItems.filter(item =>
-        !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop' && s.type !== 'reward')
+        !item.isGeneric && item.sources?.some(s => s.id === machineId && s.type !== 'shop' && s.type !== 'reward' && s.type !== 'item' && s.type !== 'monster')
       ).sort((a, b) => a.name.localeCompare(b.name))
 
   // Animal-specific harvest context

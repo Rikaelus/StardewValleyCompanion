@@ -437,6 +437,8 @@ const gameData = {
   locationContexts: loadJson(path.join(GAME_EXPORTS_DIR, 'LocationContexts.json')),
   tailoringRecipes: loadJson(path.join(GAME_EXPORTS_DIR, 'TailoringRecipes.json')),
   achievements: loadJson(path.join(GAME_EXPORTS_DIR, 'Achievements.json')),
+  cookingRecipes: loadJson(path.join(GAME_EXPORTS_DIR, 'CookingRecipes.json')),
+  craftingRecipes: loadJson(path.join(GAME_EXPORTS_DIR, 'CraftingRecipes.json')),
   quests: loadJson(path.join(GAME_EXPORTS_DIR, 'Quests.json')),
   powers: loadJson(path.join(GAME_EXPORTS_DIR, 'Powers.json')),
   concessions: loadJson(path.join(GAME_EXPORTS_DIR, 'Concessions.json')),
@@ -589,6 +591,7 @@ const rules = {
   monsterLocations: loadJson(path.join(RULES_DIR, 'monster-locations.json')),
   extraMonsters: loadJson(path.join(RULES_DIR, 'extra-monsters.json')),
   debuffIds: loadJson(path.join(RULES_DIR, 'debuff-ids.json')),
+  buffGrants: loadJson(path.join(RULES_DIR, 'buff-grants.json')),
   bundleRoomOverrides: loadJson(path.join(RULES_DIR, 'bundle-room-overrides.json')),
   locationNesting: loadJson(path.join(RULES_DIR, 'location-nesting.json')).overrides,
   typePriority: loadJson(path.join(RULES_DIR, 'type-priority.json')).priorities,
@@ -636,7 +639,18 @@ for (const [shopId, shopData] of Object.entries(gameData.shops)) {
   for (const item of (shopData.Items || [])) {
     const itemId = item.ItemId;
     if (!itemId) continue;
-    if (item.IsRecipe) continue;
+    if (item.IsRecipe) {
+      // Recipe purchases: attach as a shop source on the food/crafted entity with isRecipe:true
+      const m = itemId.match(/^\(O\)(.+)$/) || (gameData.objects[itemId] !== undefined ? [null, itemId] : null);
+      if (m && storeId) {
+        const recipeGameId = `(O)${m[1]}`;
+        const recipeSource = { type: 'shop', id: storeId, isRecipe: true };
+        if (item.Price > 0) recipeSource.price = item.Price;
+        if (!shopSourcesByGameId.has(recipeGameId)) shopSourcesByGameId.set(recipeGameId, []);
+        shopSourcesByGameId.get(recipeGameId).push(recipeSource);
+      }
+      continue;
+    }
 
     // Determine item type prefix and which source map to use
     let rawId;
@@ -1408,6 +1422,11 @@ const craftingBigCraftableGameIds = new Set();
 // CookingRecipes.json format: "ingredients/unused/outputId/unlock/displayName"
 const cookingSourcesByGameId = new Map();
 
+// Pre-load TV schedule so cooking unlock parsing can suppress vestigial l N values
+const tvScheduleRecipes = new Set(
+  Object.values(loadJson(path.join(GAME_EXPORTS_DIR, 'TV_CookingChannel.json'))).map(v => v.split('/')[0])
+);
+
 {
   const cookingRecipes = loadJson(path.join(GAME_EXPORTS_DIR, 'CookingRecipes.json'));
   for (const [recipeName, val] of Object.entries(cookingRecipes)) {
@@ -1428,14 +1447,21 @@ const cookingSourcesByGameId = new Map();
       }
     }
 
-    // Parse unlock: 'default'=always known, 'l N'=player level, 'f NPC N'=friendship, 's Skill N'=skill
+    // Parse unlock: 'default'=always known, 'l N'=tv-only (l 100) or vestigial (ignored when in TV schedule),
+    // 'f NPC N'=friendship, 's Skill N'=skill level
     const unlockStr = parts[3]?.trim() || 'default';
     let unlockCondition = null;
     if (unlockStr.startsWith('s ')) {
       const tokens = unlockStr.split(' ');
       unlockCondition = { type: 'skill', skill: tokens[1].toLowerCase(), level: parseInt(tokens[2], 10) };
     } else if (unlockStr.startsWith('l ') && unlockStr !== 'l 0') {
-      unlockCondition = { type: 'level', level: parseInt(unlockStr.slice(2), 10) };
+      const lvl = parseInt(unlockStr.slice(2), 10);
+      // l 100 = Queen of Sauce (TV only). l N where recipe is in TV schedule = also TV-only;
+      // the l N value has no player-level meaning — it's vestigial game data.
+      if (!tvScheduleRecipes.has(recipeName)) {
+        unlockCondition = { type: 'level', level: lvl };
+      }
+      // else: TV schedule handles the unlock; no separate condition needed
     } else if (unlockStr.startsWith('f ')) {
       const tokens = unlockStr.split(' ');
       unlockCondition = { type: 'friendship', npc: tokens[1], hearts: parseInt(tokens[2], 10) };
@@ -2765,6 +2791,19 @@ for (const [internalName, extra] of Object.entries(rules.extraMonsters)) {
     ...(extra.notes ? { notes: extra.notes } : {}),
     sources: (extra.locations || []).map(loc => ({ type: 'location', locationId: loc.locationId, ...(loc.qualifier ? { qualifier: loc.qualifier } : {}) })),
   });
+}
+
+// Apply debuffOverrides: C# special-attack debuffs not in the drop-list system
+const debuffOverrides = monsterMeta.debuffOverrides || {};
+for (const monster of monsterData) {
+  const overrides = debuffOverrides[monster.internalName];
+  if (!overrides) continue;
+  const existing = monster.debuffs || [];
+  const merged = [...existing];
+  for (const d of overrides) {
+    if (!merged.some(e => e.name === d.name)) merged.push(d);
+  }
+  monster.debuffs = merged;
 }
 
 console.log(`  Processed ${monsterData.length} monsters (including ${Object.keys(rules.extraMonsters).filter(k => !k.startsWith('_')).length} extra)`);
@@ -5442,7 +5481,14 @@ const newItemsByGameId = new Map();
 for (const arr of newItemArrays) {
   for (const item of arr) {
     newItemsByGameId.set(item.gameId, item);
-    if (typeof item.gameId === 'number') newItemsByGameId.set(String(item.gameId), item);
+    if (typeof item.gameId === 'number') {
+      newItemsByGameId.set(String(item.gameId), item);
+    } else if (typeof item.gameId === 'string') {
+      // Index both "(O)228" and bare "228" / 228 so bundle lookups work regardless of format
+      const bare = item.gameId.replace(/^\([A-Z]+\)/, '');
+      newItemsByGameId.set(bare, item);
+      newItemsByGameId.set(parseInt(bare, 10), item);
+    }
   }
 }
 
@@ -5527,20 +5573,53 @@ const BUFF_ICON_MAP = {
   'Weakness':          'Weakness',
 };
 
-// Build grantedByMap: buffName → [itemId, ...]
-// Scan all processed item arrays for items with named buffs (buff.name set)
-const grantedByMap = new Map();
+// Build grantedByMap: buffId → [itemId, ...]
+// Pass 1: data-driven — scan all processed item arrays for items with named buffs (buff.buffId set)
+const grantedByMap = new Map(); // buffId → [itemId]
 allItemTypes.forEach(items => {
   items.forEach(item => {
     if (!item.buffs || !Array.isArray(item.buffs)) return;
     item.buffs.forEach(buff => {
-      if (!buff.name) return;
-      if (!grantedByMap.has(buff.name)) grantedByMap.set(buff.name, []);
-      const list = grantedByMap.get(buff.name);
+      if (!buff.buffId) return;
+      if (!grantedByMap.has(buff.buffId)) grantedByMap.set(buff.buffId, []);
+      const list = grantedByMap.get(buff.buffId);
       if (!list.includes(item.id)) list.push(item.id);
     });
   });
 });
+
+// Pass 2: hardcoded item grants from buff-grants.json rules file
+const buffGrantsRules = rules.buffGrants || {};
+for (const [itemId, buffIds] of Object.entries(buffGrantsRules.items || {})) {
+  for (const buffId of buffIds) {
+    if (!grantedByMap.has(buffId)) grantedByMap.set(buffId, []);
+    const list = grantedByMap.get(buffId);
+    if (!list.includes(itemId)) list.push(itemId);
+  }
+}
+for (const [itemId, buffIds] of Object.entries(buffGrantsRules.bigCraftables || {})) {
+  for (const buffId of buffIds) {
+    if (!grantedByMap.has(buffId)) grantedByMap.set(buffId, []);
+    const list = grantedByMap.get(buffId);
+    if (!list.includes(itemId)) list.push(itemId);
+  }
+}
+
+// Pass 3: monster-inflicted debuffs — scan monsterData for debuffs[] entries
+// Build debuffNameToMonsters: debuffName → [monsterId, ...]
+const debuffNameToMonsters = new Map();
+for (const monster of monsterData) {
+  if (!monster.debuffs || !Array.isArray(monster.debuffs)) continue;
+  for (const d of monster.debuffs) {
+    if (!d.name) continue;
+    if (!debuffNameToMonsters.has(d.name)) debuffNameToMonsters.set(d.name, []);
+    const list = debuffNameToMonsters.get(d.name);
+    if (!list.includes(monster.id)) list.push(monster.id);
+  }
+}
+
+// Mechanism descriptions for buffs granted by game logic (no granting item)
+const buffMechanisms = buffGrantsRules.mechanisms || {};
 
 const buffData = [];
 for (const [gameKey, b] of Object.entries(gameData.buffs)) {
@@ -5574,6 +5653,18 @@ for (const [gameKey, b] of Object.entries(gameData.buffs)) {
   const iconFile = BUFF_ICON_MAP[name];
   const description = resolveLocalizedText(b.Description) || null;
 
+  // Build sources from grantedByMap (items that grant this buff)
+  const grantingIds = grantedByMap.get(id) || [];
+  const sources = grantingIds.map(itemId => ({ type: 'item', id: itemId }));
+
+  // Monster-inflicted debuffs: add monster sources
+  const inflictingMonsters = debuffNameToMonsters.get(name) || [];
+  for (const monsterId of inflictingMonsters) {
+    sources.push({ type: 'monster', id: monsterId });
+  }
+
+  const mechanism = buffMechanisms[id] || null;
+
   buffData.push({
     id,
     name,
@@ -5583,7 +5674,9 @@ for (const [gameKey, b] of Object.entries(gameData.buffs)) {
     duration: Math.round(b.Duration / 1000),
     icon: iconFile ? `assets/buffs/${iconFile}.png` : null,
     effects: Object.keys(effects).length > 0 ? effects : null,
-    grantedBy: grantedByMap.get(name) || [],
+    grantedBy: grantingIds,
+    ...(mechanism ? { mechanism } : {}),
+    sources,
   });
 }
 
@@ -5631,6 +5724,131 @@ for (const achievement of achievementData) {
 }
 
 console.log(`  ✓ Processed ${achievementData.length} achievements`);
+
+// ---------------------------------------------------------------------------
+// Build achievement → eligible item gameIds map
+// ---------------------------------------------------------------------------
+// Maps achievementId → Set<qualifiedGameId> for item-linked achievements.
+// Used later to back-populate item.achievements[] and achievement.requiredItems[].
+{
+  const achievementById = new Map(achievementData.map(a => [a.achievementId, a]));
+
+  // FISHING chain: Fisherman(24), Ol'Mariner(25), MasterAngler(26)
+  // All fish with ExcludeFromFishingCollection=false (cat=-4)
+  const fishableGameIds = new Set(
+    Object.entries(gameData.objects)
+      .filter(([, obj]) => obj.Category === -4 && !obj.ExcludeFromFishingCollection)
+      .map(([id]) => `(O)${id}`)
+  );
+  for (const achId of [24, 25, 26]) {
+    const a = achievementById.get(achId);
+    if (a) a._eligibleGameIds = fishableGameIds;
+  }
+
+  // COOKING chain: Cook(15), SousChef(16), GourmetChef(17)
+  // All output items from CookingRecipes.json
+  const cookableGameIds = new Set(
+    Object.values(gameData.cookingRecipes)
+      .map(v => { const p = v.split('/'); return p[2] ? `(O)${p[2].split(' ')[0]}` : null; })
+      .filter(Boolean)
+  );
+  for (const achId of [15, 16, 17]) {
+    const a = achievementById.get(achId);
+    if (a) a._eligibleGameIds = cookableGameIds;
+  }
+
+  // CRAFTING chain: DIY(20), Artisan(21), CraftMaster(22)
+  // All output items from CraftingRecipes.json
+  const craftableGameIds = new Set(
+    Object.values(gameData.craftingRecipes)
+      .map(v => {
+        const p = v.split('/');
+        if (!p[2]) return null;
+        const out = p[2].split(' ');
+        const isBig = p[3]?.toLowerCase() === 'true';
+        return `${isBig ? '(BC)' : '(O)'}${out[0]}`;
+      })
+      .filter(Boolean)
+  );
+  for (const achId of [20, 21, 22]) {
+    const a = achievementById.get(achId);
+    if (a) a._eligibleGameIds = craftableGameIds;
+  }
+
+  // Name → qualified gameId lookup (used by all name-based achievement sets below)
+  const nameToGameId = {};
+  for (const [rawId, obj] of Object.entries(gameData.objects)) {
+    if (obj.Name) nameToGameId[obj.Name] = `(O)${rawId}`;
+  }
+
+  // POLYCULTURE(31): 28 specific crops — must stay in sync with POLYCULTURE_NAMES in AchievementProgress.js
+  const POLYCULTURE_NAMES = new Set([
+    'Cauliflower', 'Coffee Bean', 'Garlic', 'Green Bean', 'Kale', 'Parsnip', 'Potato', 'Rhubarb', 'Strawberry',
+    'Blueberry', 'Corn', 'Hops', 'Hot Pepper', 'Melon', 'Radish', 'Red Cabbage', 'Starfruit', 'Tomato', 'Wheat',
+    'Amaranth', 'Artichoke', 'Beet', 'Bok Choy', 'Cranberries', 'Eggplant', 'Grape', 'Pumpkin', 'Yam',
+  ]);
+  // MONOCULTURE(32): Polyculture crops + 5 more — must stay in sync with MONOCULTURE_ONLY_NAMES in AchievementProgress.js
+  const MONOCULTURE_ONLY_NAMES = new Set(['Ancient Fruit', 'Blue Jazz', 'Fairy Rose', 'Summer Spangle', 'Tulip']);
+
+  // SHIPPING: FullShipment(34)
+  // Curated name set — must stay in sync with FULL_SHIPMENT_NAMES in AchievementProgress.js
+  const FULL_SHIPMENT_NAMES = new Set([
+    'Parsnip', 'Green Bean', 'Cauliflower', 'Potato', 'Garlic', 'Kale', 'Rhubarb',
+    'Melon', 'Tomato', 'Blueberry', 'Hot Pepper', 'Wheat', 'Radish', 'Red Cabbage',
+    'Starfruit', 'Corn', 'Unmilled Rice', 'Eggplant', 'Artichoke', 'Pumpkin',
+    'Bok Choy', 'Yam', 'Cranberries', 'Beet', 'Amaranth', 'Hops', 'Poppy',
+    'Strawberry', 'Ancient Fruit', 'Tulip', 'Summer Spangle', 'Fairy Rose', 'Blue Jazz',
+    'Coffee Bean', 'Sweet Gem Berry', 'Tea Leaves', 'Ginger', 'Taro Root',
+    'Pineapple', 'Mango', 'Carrot', 'Summer Squash', 'Broccoli', 'Powdermelon',
+    'Wild Horseradish', 'Daffodil', 'Leek', 'Dandelion', 'Cave Carrot',
+    'Coconut', 'Cactus Fruit', 'Banana', 'Salmonberry', 'Morel',
+    'Fiddlehead Fern', 'Chanterelle', 'Holly', 'Ostrich Egg',
+    'Spring Onion', 'Sweet Pea', 'Common Mushroom', 'Wild Plum', 'Hazelnut',
+    'Blackberry', 'Winter Root', 'Crystal Fruit', 'Snow Yam', 'Crocus',
+    'Red Mushroom', 'Sunflower', 'Purple Mushroom', 'Grape', 'Spice Berry',
+    'Magma Cap', 'Green Tea',
+    "Egg (White)", 'Large Egg (White)', 'Egg (Brown)', 'Large Egg (Brown)',
+    'Milk', 'Large Milk', 'Void Egg', 'Duck Egg', 'Goat Milk', 'L. Goat Milk',
+    'Duck Feather', 'Wool', "Rabbit's Foot", 'Truffle',
+    'Mayonnaise', 'Duck Mayonnaise', 'Void Mayonnaise', 'Dinosaur Mayonnaise',
+    'Cheese', 'Goat Cheese', 'Cloth', 'Truffle Oil', 'Caviar',
+    'Honey', 'Pickles', 'Jelly', 'Beer', 'Pale Ale', 'Wine', 'Juice', 'Mead',
+    'Maple Syrup', 'Oak Resin', 'Pine Tar', 'Mystic Syrup',
+    'Roe', 'Aged Roe', 'Smoked Fish', 'Squid Ink',
+    'Raisins', 'Dried Fruit', 'Dried Mushrooms',
+    'Wood', 'Stone', 'Hardwood', 'Sap', 'Fiber', 'Clay', 'Coal', 'Moss',
+    'Copper Ore', 'Iron Ore', 'Gold Ore', 'Iridium Ore', 'Radioactive Ore',
+    'Copper Bar', 'Iron Bar', 'Gold Bar', 'Iridium Bar', 'Radioactive Bar', 'Refined Quartz',
+    'Battery Pack', 'Bone Fragment', 'Cinder Shard',
+    'Nautilus Shell', 'Coral', 'Rainbow Shell', 'Sea Urchin',
+    'Bug Meat', 'Slime', 'Bat Wing', 'Solar Essence', 'Void Essence',
+  ]);
+  const fullShipmentGameIds = new Set(
+    [...FULL_SHIPMENT_NAMES].map(n => nameToGameId[n]).filter(Boolean)
+  );
+  const fullShipment = achievementById.get(34);
+  if (fullShipment) fullShipment._eligibleGameIds = fullShipmentGameIds;
+
+  const polycultureGameIds = new Set(
+    [...POLYCULTURE_NAMES].map(n => nameToGameId[n]).filter(Boolean)
+  );
+  const monocultureGameIds = new Set(
+    [...POLYCULTURE_NAMES, ...MONOCULTURE_ONLY_NAMES].map(n => nameToGameId[n]).filter(Boolean)
+  );
+
+  const polyAch = achievementById.get(31);
+  if (polyAch) polyAch._eligibleGameIds = polycultureGameIds;
+  const monoAch = achievementById.get(32);
+  if (monoAch) monoAch._eligibleGameIds = monocultureGameIds;
+
+  // MUSEUM: TreasureTrove(28), ACompleteCollection(5)
+  // Handled separately via museumDonatable — skip here to avoid double work.
+
+  // WELL-READ(35): all books (type='book' or subtype='book')
+  // We'll resolve this post-merge via entity type rather than gameId set.
+  const wellRead = achievementById.get(35);
+  if (wellRead) wellRead._eligibleByType = new Set(['book']);
+}
 
 // ---------------------------------------------------------------------------
 // Process Quests.json → quest entities
@@ -6643,6 +6861,61 @@ function tagEntities(entities, type, gameIdPrefix, extraFields = {}) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// TV Shows (Queen of Sauce cooking channel)
+// ---------------------------------------------------------------------------
+console.log('\nProcessing TV shows...');
+const tvShowData = [];
+const tvCookingByRecipeName = {};  // recipeName -> tv-show entity id
+{
+  const SEASONS_TV = ['spring', 'summer', 'fall', 'winter'];
+  const tvCooking = loadJson(path.join(GAME_EXPORTS_DIR, 'TV_CookingChannel.json'));
+  for (const [weekStr, val] of Object.entries(tvCooking)) {
+    const week = parseInt(weekStr, 10);
+    const recipeName = val.split('/')[0];
+    const description = val.split('/')[1] || '';
+    // Map week (1-32) to in-game date in the 2-year cycle
+    const year = week <= 16 ? 1 : 2;
+    const weekInYear = (week - 1) % 16;
+    const seasonIndex = Math.floor(weekInYear / 4);
+    const weekInSeason = (weekInYear % 4) + 1;
+    const dayOfSeason = weekInSeason * 7; // Airs on Sunday = last day of each 7-day week
+    const id = `tv-queen-of-sauce-ep-${week}`;
+    const entity = {
+      id,
+      name: recipeName,
+      type: 'tv-show',
+      subtype: 'queen-of-sauce',
+      episodeNumber: week,
+      year,
+      season: SEASONS_TV[seasonIndex],
+      dayOfSeason,
+      description,
+      iconClass: 'fa-solid fa-tv',
+      iconColor: '#7b5ea7',
+      sources: [],
+    };
+    // Find the food gameId that this recipe produces and annotate its cooking source
+    for (const [foodGameId, sources] of cookingSourcesByGameId.entries()) {
+      for (const src of sources) {
+        if (src.recipeName === recipeName) {
+          entity.taughtFoodGameId = foodGameId;
+          // Attach tvEntityId to ALL recipes in the TV schedule, not just level:100
+          if (src.unlockCondition) {
+            src.unlockCondition.tvEntityId = id;
+          } else {
+            // Default unlock (no condition) — still aired on TV
+            src.tvEntityId = id;
+          }
+        }
+      }
+    }
+    tvShowData.push(entity);
+    tvCookingByRecipeName[recipeName] = id;
+  }
+  console.log(`  Processed ${tvShowData.length} Queen of Sauce episodes`);
+}
+
 const taggedFish           = tagEntities(fishData,           'fish',           'O');
 const taggedCrops          = tagEntities(cropData,           'crop',           'O');
 const taggedForage         = tagEntities(forageData,         'forage',         'O');
@@ -7054,6 +7327,7 @@ const allTypedEntities = [
   ...taggedBuffs, ...taggedAchievements, ...taggedQuests, ...taggedPowers, ...taggedConcessions, ...taggedMovies, ...taggedClothing, ...taggedEvents, ...taggedVillagers,
   ...taggedLocations, ...taggedFestivals,
   ...taggedSecretNotes,
+  ...tvShowData,
 ];
 
 const mergedEntitiesById = new Map();
@@ -7335,6 +7609,84 @@ console.log('\n🏛️  Enriching museum-donatable items...');
 }
 
 // ---------------------------------------------------------------------------
+// Post-merge: link items to achievements they contribute to
+// ---------------------------------------------------------------------------
+console.log('\n🏆 Linking items to achievements...');
+{
+  // Build index of all compiled entities for fast lookup (all three gameId forms)
+  const entityByGameId = new Map();
+  for (const entity of allCompiledEntities) {
+    if (!entity.gameId) continue;
+    const gid = entity.gameId;
+    entityByGameId.set(gid, entity);
+    const bare = gid.replace(/^\([A-Z]+\)/, '');
+    entityByGameId.set(bare, entity);
+    const num = parseInt(bare, 10);
+    if (!isNaN(num)) entityByGameId.set(num, entity);
+  }
+
+  // Build index: achievementId → achievement entity
+  const achievementEntityById = new Map();
+  for (const entity of allCompiledEntities) {
+    if (entity.type === 'achievement' && entity.achievementId != null) {
+      achievementEntityById.set(entity.achievementId, entity);
+      entity.requiredItems = [];
+    }
+  }
+
+  // Museum achievements: TreasureTrove(28), ACompleteCollection(5)
+  // Reuse the donatableGameIds already computed above — handled via museumDonatable flag.
+  // We cross-link these here using the same set rebuilt from game data.
+  const museumDonatableGameIds = new Set(
+    Object.entries(gameData.objects)
+      .filter(([, obj]) => obj.Type === 'Arch' || obj.Type === 'Minerals')
+      .map(([id]) => `(O)${id}`)
+  );
+
+  // All item-linked achievement chains: achId → { _eligibleGameIds?, _eligibleByType? }
+  // (populated earlier during achievement processing)
+  const allAchievements = [...achievementEntityById.values()];
+
+  let linkedItems = 0;
+  for (const entity of allCompiledEntities) {
+    if (!entity.gameId && entity.type !== 'book') continue;
+    const achievementIds = [];
+
+    for (const ach of allAchievements) {
+      if (!ach._eligibleGameIds && !ach._eligibleByType) continue;
+      let eligible = false;
+      if (ach._eligibleGameIds && entity.gameId) {
+        eligible = ach._eligibleGameIds.has(entity.gameId);
+      } else if (ach._eligibleByType) {
+        eligible = ach._eligibleByType.has(entity.type) || ach._eligibleByType.has(entity.subtype);
+      }
+      if (eligible) achievementIds.push(ach.id);
+    }
+
+    // Museum donations
+    if (entity.gameId && museumDonatableGameIds.has(entity.gameId)) {
+      const trove = achievementEntityById.get(28);
+      const collection = achievementEntityById.get(5);
+      if (trove && !achievementIds.includes(trove.id)) achievementIds.push(trove.id);
+      if (collection && !achievementIds.includes(collection.id)) achievementIds.push(collection.id);
+    }
+
+    if (achievementIds.length > 0) {
+      entity.achievements = achievementIds;
+      linkedItems++;
+    }
+  }
+
+  // Clean up temp fields
+  for (const ach of allAchievements) {
+    delete ach._eligibleGameIds;
+    delete ach._eligibleByType;
+  }
+
+  console.log(`  ✓ Linked ${linkedItems} items to achievements`);
+}
+
+// ---------------------------------------------------------------------------
 // Post-merge: re-derive forage locations/seasons for cross-collection items
 // ---------------------------------------------------------------------------
 console.log('\n🌿 Re-deriving forage locations for merged items...');
@@ -7443,9 +7795,42 @@ try {
   rawObjectsFallback = loadJson(path.join(GAME_EXPORTS_DIR, 'Objects.json'));
 } catch { /* optional */ }
 
+const CATEGORY_NAMES = {
+  '-2':  'Gem',
+  '-4':  'Any Fish',
+  '-5':  'Egg',
+  '-6':  'Milk',
+  '-7':  'Cooking',
+  '-8':  'Crafting',
+  '-12': 'Mineral',
+  '-14': 'Meat',
+  '-15': 'Metal Bar',
+  '-16': 'Resource',
+  '-17': 'Monster Loot',
+  '-18': 'Animal Product',
+  '-19': 'Fertilizer',
+  '-20': 'Trash',
+  '-21': 'Bait',
+  '-22': 'Tackle',
+  '-23': 'Shell',
+  '-24': 'Furniture',
+  '-25': 'Ingredient',
+  '-26': 'Artisan Good',
+  '-27': 'Syrup',
+  '-28': 'Monster Drop',
+  '-74': 'Seed',
+  '-75': 'Vegetable',
+  '-79': 'Fruit',
+  '-80': 'Flower',
+  '-81': 'Forage',
+  '-777': 'Wild Seeds (Any)',
+};
+
 function resolveIngredientNameFallback(gameId) {
+  const key = String(gameId);
+  if (CATEGORY_NAMES[key]) return CATEGORY_NAMES[key];
   if (rawObjectsFallback) {
-    const obj = rawObjectsFallback[String(gameId)];
+    const obj = rawObjectsFallback[key];
     if (obj?.Name) return obj.Name;
   }
   return null;
@@ -8145,6 +8530,8 @@ console.log('\n🔗 Normalizing source rows (Phase 2)...');
     'crane-game':         { entityId: () => null },
     'mine-chest':         { entityId: () => null },
     'other':              { entityId: () => null },
+    'item':               { entityId: s => s.id ?? null },
+    'monster':            { entityId: s => s.id ?? null },
   }
 
   let normalized = 0
@@ -8421,7 +8808,7 @@ console.log(`  ${'Type'.padEnd(18)} ${'Count'.padStart(5)}  ${'No Icon'.padStart
 console.log('  ' + '─'.repeat(56));
 
 const SKIP_ICON_TYPES = new Set(['event', 'buff', 'villager', 'bundle', 'tag']);
-const SKIP_SOURCE_TYPES = new Set(['event', 'buff', 'villager', 'location', 'festival', 'achievement', 'quest', 'power', 'concession', 'movie', 'clothing', 'tag']);
+const SKIP_SOURCE_TYPES = new Set(['event', 'villager', 'location', 'festival', 'achievement', 'quest', 'power', 'concession', 'movie', 'clothing', 'tag']);
 const SKIP_GAMEID_TYPES = new Set(['location', 'festival', 'tag']);
 const SKIP_PRICE_TYPES = new Set(['event', 'buff', 'villager', 'location', 'festival', 'bundle',
   'monster', 'building', 'animal', 'breakable', 'achievement', 'quest', 'power', 'movie', 'tag']);

@@ -73,6 +73,9 @@
   100% { background-position: 100% 50%; }
 }
 
+.inline-quantity { opacity: 0.95; }
+.inline-hearts { color: #e57373; font-size: 0.8em; opacity: 0.95; }
+
 .inline-owned {
   color: #1b5e20;
 }

@@ -17,7 +17,7 @@ import SeasonBadges from './SeasonBadges'
  */
 function ShopSourceList({ sources, compact = false, findEntity, findEntityById, onNavigate }) {
   const { player } = usePlayer()
-  const shopSources = (sources || []).filter(s => s.type === 'shop')
+  const shopSources = (sources || []).filter(s => s.type === 'shop' && !s.isRecipe)
   if (shopSources.length === 0) return <span style={{ color: '#999' }}>—</span>
 
   // ── Compact mode ────────────────────────────────────────────────────────────
@@ -78,15 +78,14 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
 
         const priceDetail = isBarter ? (
           <span className="source-detail-inner">
-            {(src.quantity > 1 || src.tradeItemAmount > 1) && (
-              <span className="source-qualifier">
-                {src.quantity > 1 ? `${src.quantity} for ` : ''}{src.tradeItemAmount > 1 ? `×${src.tradeItemAmount}` : ''}
-              </span>
+            {src.quantity > 1 && (
+              <span className="source-qualifier">{src.quantity} for</span>
             )}
             {currencyItem ? (
-              <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} />
+              <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} quantity={src.tradeItemAmount} />
             ) : (
               <>
+                {src.tradeItemAmount > 1 && <span className="source-qualifier">×{src.tradeItemAmount}</span>}
                 {src.tradeItemIcon && (
                   <img src={`/${src.tradeItemIcon}`} alt={src.tradeItemName} className="source-trade-icon" />
                 )}
@@ -96,10 +95,10 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
           </span>
         ) : shopCurrencyItem ? (
           <span className="source-detail-inner">
-            <span className="source-qualifier">
-              {src.quantity > 1 ? `${src.quantity} for ` : ''}{price > 1 ? `×${price}` : ''}
-            </span>
-            <UniversalModalButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} />
+            {src.quantity > 1 && (
+              <span className="source-qualifier">{src.quantity} for</span>
+            )}
+            <UniversalModalButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} quantity={price} />
           </span>
         ) : (
           price != null
