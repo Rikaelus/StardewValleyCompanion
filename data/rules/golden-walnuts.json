@@ -29,7 +29,7 @@
       "area": "east",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandEast_17_37"
     },
     {
       "id": "east_banana_shrine",
@@ -59,7 +59,7 @@
       "area": "east",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandShrine_23_34"
     },
     {
       "id": "east_gem_bird_puzzle",
@@ -119,7 +119,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_62_76"
+      "save_key": "limitedNutDrops:Island_W_BuriedTreasureNut2"
     },
     {
       "id": "west_mussel_nodes",
@@ -139,7 +139,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_CaptainRoom_2_4"
     },
     {
       "id": "west_sand_duggy",
@@ -159,7 +159,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_21_81"
+      "save_key": "collectedNutTracker:Buried_IslandWest_62_76"
     },
     {
       "id": "west_buried_starfish_diamond",
@@ -169,7 +169,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_30_75"
+      "save_key": "collectedNutTracker:Buried_IslandWest_43_74"
     },
     {
       "id": "west_buried_sand_x",
@@ -179,7 +179,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_43_74"
+      "save_key": "collectedNutTracker:Buried_IslandWest_30_75"
     },
     {
       "id": "west_buried_sand_diamond",
@@ -189,7 +189,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_39_24"
+      "save_key": "collectedNutTracker:Buried_IslandWest_21_81"
     },
     {
       "id": "west_pond_tree",
@@ -199,7 +199,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_38_56"
     },
     {
       "id": "west_pirates_wife",
@@ -219,7 +219,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandWest_88_14"
+      "save_key": "limitedNutDrops:Island_W_BuriedTreasureNut"
     },
     {
       "id": "west_coast_walnut_room",
@@ -229,7 +229,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_25_30"
     },
     {
       "id": "west_ocean_past_walnut_room",
@@ -239,7 +239,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_15_3"
     },
     {
       "id": "west_tiger_slime",
@@ -259,7 +259,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_31_24"
     },
     {
       "id": "west_buried_tiger_circle",
@@ -269,7 +269,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Buried_IslandWest_39_24"
     },
     {
       "id": "west_parrot_bridge",
@@ -279,7 +279,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_54_18"
     },
     {
       "id": "west_simon_says",
@@ -299,7 +299,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_64_30"
     },
     {
       "id": "west_buried_pebble_diamond",
@@ -309,7 +309,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Buried_IslandWest_88_14"
     },
     {
       "id": "west_hidden_path_east",
@@ -319,7 +319,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_104_3"
     },
     {
       "id": "west_south_cliff",
@@ -329,7 +329,7 @@
       "area": "west",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_IslandWest_75_29"
     },
     {
       "id": "north_buried_stone_circle_entrance",
@@ -339,7 +339,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_19_13"
+      "save_key": "foundBuriedNuts:IslandNorth_26_81"
     },
     {
       "id": "north_hidden_grove",
@@ -349,7 +349,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_9_84"
     },
     {
       "id": "north_buried_flower_circle_1",
@@ -359,7 +359,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_26_81"
+      "save_key": "foundBuriedNuts:IslandNorth_42_77"
     },
     {
       "id": "north_buried_flower_circle_2",
@@ -369,7 +369,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_42_77"
+      "save_key": "foundBuriedNuts:IslandNorth_57_79"
     },
     {
       "id": "north_buried_sand_patch",
@@ -379,7 +379,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_57_79"
+      "save_key": "foundBuriedNuts:IslandNorth_62_54"
     },
     {
       "id": "north_buried_dig_site_stone",
@@ -389,7 +389,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_62_54"
+      "save_key": "foundBuriedNuts:IslandNorth_19_39"
     },
     {
       "id": "north_dig_site_plant_w",
@@ -399,17 +399,27 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_4_42"
     },
     {
-      "id": "north_dig_site_two_plants",
-      "label": "Two Bushes East of Dig Site",
+      "id": "north_dig_site_two_plants_1",
+      "label": "Two Bushes East of Dig Site 1/2",
       "description": "Up the north steps of the dig site, go east through a hidden passage in the cliff. Cross the bridge and find two walnut plants beyond it.",
-      "count": 2,
+      "count": 1,
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_45_38"
+    },
+    {
+      "id": "north_dig_site_two_plants_2",
+      "label": "Two Bushes East of Dig Site 2/2",
+      "description": "Up the north steps of the dig site, go east through a hidden passage in the cliff. Cross the bridge and find two walnut plants beyond it.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": "foundBuriedNuts:IslandNorth_47_40"
     },
     {
       "id": "north_field_office_large_animal",
@@ -479,7 +489,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_56_27"
     },
     {
       "id": "north_buried_volcano_sand",
@@ -509,7 +519,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "foundBuriedNuts:IslandNorth_19_39"
+      "save_key": "limitedNutDrops:Island_N_BuriedTreasureNut"
     },
     {
       "id": "north_buried_nw_stone",
@@ -519,7 +529,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_19_13"
     },
     {
       "id": "north_hidden_nw_bush",
@@ -529,17 +539,27 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_20_26"
     },
     {
-      "id": "north_lava_watering_can",
-      "label": "Lava Secret Area (Watering Can)",
+      "id": "north_lava_watering_can_1",
+      "label": "Lava Secret Area (Watering Can) 1/2",
       "description": "At the lava river at the Volcano Dungeon entrance, use a Watering Can to create a path westward and south to a landing near the river's end. Exit the lava and collect 2 walnuts from the landing.",
-      "count": 2,
+      "count": 1,
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandNorth_13_33"
+    },
+    {
+      "id": "north_lava_watering_can_2",
+      "label": "Lava Secret Area (Watering Can) 2/2",
+      "description": "At the lava river at the Volcano Dungeon entrance, use a Watering Can to create a path westward and south to a landing near the river's end. Exit the lava and collect 2 walnuts from the landing.",
+      "count": 1,
+      "area": "north",
+      "category": "exploration",
+      "track_type": "C",
+      "save_key": "foundBuriedNuts:IslandNorth_5_30"
     },
     {
       "id": "volcano_mining",
@@ -599,7 +619,7 @@
       "area": "volcano",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_Caldera_28_36"
     },
     {
       "id": "volcano_forge_exit",
@@ -609,7 +629,7 @@
       "area": "volcano",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "collectedNutTracker:Bush_Caldera_9_34"
     },
     {
       "id": "south_upper_cliff",
@@ -619,7 +639,7 @@
       "area": "south",
       "category": "exploration",
       "track_type": "C",
-      "save_key": null
+      "save_key": "foundBuriedNuts:IslandSouth_31_5"
     },
     {
       "id": "southeast_fishing",

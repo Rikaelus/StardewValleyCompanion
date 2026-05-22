@@ -294,15 +294,58 @@ function extractBundleProgress(doc) {
 function extractGoldenWalnutData(doc) {
   const root = doc.documentElement
 
-  // collectedNutTracker — single source of truth for all individual walnut pickups
+  // collectedNutTracker — individual walnut pickups (Bush_*, Buried_*, named puzzles)
   const cntEl = root.querySelector(':scope > collectedNutTracker')
   const collectedNutTracker = parseStringArray(cntEl)
+
+  // foundBuriedNuts — buried walnut pickups (parallel to collectedNutTracker for some areas)
+  const fbnEl = root.querySelector(':scope > foundBuriedNuts')
+  const foundBuriedNuts = parseStringArray(fbnEl)
 
   // limitedNutDrops — aggregate counters (fishing, farming, mining, etc.)
   const lndEl = root.querySelector(':scope > limitedNutDrops')
   const limitedNutDrops = parseDictionaryOfInts(lndEl)
 
-  return { collectedNutTracker, limitedNutDrops }
+  // locationFlags — per-location boolean/integer fields used for walnut tracking
+  // Key format: "LocationName.flagName" or "LocationName.nested.field"
+  // Value: boolean (true/false) or integer
+  const locationFlags = {}
+  const WALNUT_LOCATIONS = new Set([
+    'IslandEast', 'IslandHut', 'IslandShrine', 'IslandFarmCave',
+    'IslandWest', 'IslandWestCave1', 'IslandFieldOffice',
+    'IslandNorth', 'IslandSouthEast',
+  ])
+  const locationsEl = root.querySelector(':scope > locations')
+  if (locationsEl) {
+    for (const loc of locationsEl.children) {
+      const locName = loc.querySelector(':scope > name')?.textContent?.trim()
+      if (!locName || !WALNUT_LOCATIONS.has(locName)) continue
+      for (const child of loc.children) {
+        const tag = child.tagName
+        // Handle nested: sandDuggy.whacked
+        for (const nested of child.children) {
+          const nestedTag = nested.tagName
+          const text = nested.textContent?.trim()
+          if (text === 'true') locationFlags[`${locName}.${tag}.${nestedTag}`] = true
+          else if (text === 'false') locationFlags[`${locName}.${tag}.${nestedTag}`] = false
+          else if (text != null && /^\d+$/.test(text)) locationFlags[`${locName}.${tag}.${nestedTag}`] = parseInt(text, 10)
+        }
+        // Handle direct boolean/integer: treeNutShot, fishedWalnut, gourmandRequestsFulfilled, etc.
+        // boolean wrapped in <boolean> child
+        const boolChild = child.querySelector(':scope > boolean')
+        if (boolChild) {
+          locationFlags[`${locName}.${tag}`] = boolChild.textContent?.trim() === 'true'
+          continue
+        }
+        const text = child.textContent?.trim()
+        if (text === 'true') locationFlags[`${locName}.${tag}`] = true
+        else if (text === 'false') locationFlags[`${locName}.${tag}`] = false
+        else if (text != null && /^\d+$/.test(text)) locationFlags[`${locName}.${tag}`] = parseInt(text, 10)
+      }
+    }
+  }
+
+  return { collectedNutTracker, foundBuriedNuts, limitedNutDrops, locationFlags }
 }
 
 // ---------------------------------------------------------------------------
