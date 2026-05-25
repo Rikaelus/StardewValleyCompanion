@@ -62,11 +62,14 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const hatchSources = allSources.filter(s => s.type === 'hatch')
   const pregnancySources = allSources.filter(s => s.type === 'pregnancy')
   const tapperSources = allSources.filter(s => s.type === 'tapper')
+  const chopTreeSources = allSources.filter(s => s.type === 'chop-tree')
+  const shakeTreeSources = allSources.filter(s => s.type === 'shake-tree')
   const machineSources = allSources.filter(s => s.type === 'machine').sort((a, b) => (a.machine ?? '').localeCompare(b.machine ?? ''))
   const seedSources = allSources.filter(s => s.type === 'seed')
   const fishSources = allSources.filter(s => s.type === 'fish')
   const forageSources = allSources.filter(s => s.type === 'forage')
   const breakableDropSources = allSources.filter(s => s.type === 'breakable-drop')
+  const chestDropSources = allSources.filter(s => s.type === 'chest-drop')
   const tailoringSources = allSources.filter(s => s.type === 'tailoring')
   const geodeSources = allSources.filter(s => s.type === 'geode')
   const otherSources = allSources.filter(s => s.type === 'other')
@@ -82,7 +85,8 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
     animalSources.length > 0 || hatchSources.length > 0 || pregnancySources.length > 0 ||
     tapperSources.length > 0 || machineSources.length > 0 ||
     seedSources.length > 0 || fishSources.length > 0 || forageSources.length > 0 ||
-    breakableDropSources.length > 0 || tailoringSources.length > 0 || geodeSources.length > 0 ||
+    breakableDropSources.length > 0 || chopTreeSources.length > 0 || shakeTreeSources.length > 0 ||
+    tailoringSources.length > 0 || geodeSources.length > 0 ||
     otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 ||
     craneGameSources.length > 0 || freeformSources.length > 0
 
@@ -315,6 +319,88 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
         </div>
       )}
 
+      {chopTreeSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Chopping Trees:</span>
+          <div className="source-list">
+            {chopTreeSources.map((src, i) => {
+              const treeEntity = src.treeId ? findById(src.treeId) : null
+              const qty = src.minStack == null ? null
+                : src.maxStack == null ? (src.minStack > 1 ? `×${src.minStack}+` : null)
+                : src.minStack === src.maxStack ? `×${src.minStack}`
+                : `×${src.minStack}–${src.maxStack}`
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {treeEntity
+                      ? <UniversalModalButton item={treeEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.treeName}
+                  </span>
+                  <span />
+                  <span className="source-detail">
+                    {qty && <span>{qty}</span>}
+                    {src.chance != null && src.chance < 1 && <span>{formatChance(src.chance)}</span>}
+                  </span>
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {shakeTreeSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Shaking Trees:</span>
+          <div className="source-list">
+            {shakeTreeSources.map((src, i) => {
+              const treeEntity = src.treeId ? findById(src.treeId) : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {treeEntity
+                      ? <UniversalModalButton item={treeEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.treeName}
+                  </span>
+                  <span className="source-qualifiers">
+                    {src.note && <span className="source-qualifier source-condition">{src.note}</span>}
+                    {src.seasons && <SeasonBadges seasons={src.seasons} compact />}
+                  </span>
+                  {src.chance != null && (
+                    <span className="source-detail">{formatChance(src.chance)}</span>
+                  )}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {chestDropSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Dungeon Chests:</span>
+          <div className="source-list">
+            {chestDropSources.map((src, i) => {
+              const chestEntity = src.chestId ? findById(src.chestId) : null
+              const drop = chestEntity?.drops?.find(d => d.gameId === entity.gameId)
+              const qty = drop?.quantityRange
+                ? `${drop.quantityRange[0]}–${drop.quantityRange[1]}`
+                : drop?.quantity > 1 ? drop.quantity : null
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name">
+                    {chestEntity
+                      ? <UniversalModalButton item={chestEntity} variant="inline" onNavigate={onNavigate} />
+                      : src.chestId}
+                  </span>
+                  <span />
+                  {drop?.chance != null && <span className="source-detail">{formatChance(drop.chance)}</span>}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
       {craftingSources.length > 0 && (
         <div className="source-group">
           <span className="modal-label">Crafting:</span>
@@ -352,13 +438,11 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                         <span key={j} className="source-entry source-entry--subrow">
                           <span className="source-name">
                             {ingItem ? (
-                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} />
                             ) : (
                               ing.name || `Item #${ing.gameId}`
                             )}
                           </span>
-                          <span />
-                          <span className="source-detail">×{ing.amount}</span>
                         </span>
                       )
                     })
@@ -394,13 +478,11 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                         <span key={j} className="source-entry source-entry--subrow">
                           <span className="source-name">
                             {ingItem ? (
-                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} />
+                              <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} />
                             ) : (
                               ing.name || `Item #${ing.gameId}`
                             )}
                           </span>
-                          <span />
-                          <span className="source-detail">×{ing.amount}</span>
                         </span>
                       )
                     })
@@ -426,13 +508,11 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                 <span key={j} className="source-entry">
                   <span className={`source-name${ingItem ? '' : ' source-name--indented'}`}>
                     {ingItem ? (
-                      <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} label={isTag ? ingItem.rawTag : undefined} />
+                      <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} label={isTag ? ingItem.rawTag : undefined} />
                     ) : (
                       ing.name || `Item #${ing.gameId}`
                     )}
                   </span>
-                  <span />
-                  <span className="source-detail">×{ing.amount}</span>
                 </span>
               )
             })}
@@ -476,7 +556,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
               return (
                 <span key={i} className="source-entry">
                   {animalEntity
-                    ? <UniversalModalButton item={animalEntity} variant="inline" onNavigate={onNavigate} />
+                    ? <span className="source-name"><UniversalModalButton item={animalEntity} variant="inline" onNavigate={onNavigate} /></span>
                     : <span className="source-name">{src.id}</span>
                   }
                   {(freq || toolEntity) && (
@@ -546,7 +626,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
             {tapperSources.flatMap((src, i) => {
               const tapperEntity = findById('tapper')
               const heavyTapperEntity = findById('heavy-tapper')
-              const treeEntity = src.treeId ? findById(`tree-${src.treeId}`) : null
+              const treeEntity = src.treeId ? findById(src.treeId) : null
               const treeDisplay = treeEntity
                 ? <UniversalModalButton item={treeEntity} variant="inline" onNavigate={onNavigate} />
                 : src.treeName

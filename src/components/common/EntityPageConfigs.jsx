@@ -1903,6 +1903,102 @@ const BREAKABLES_CONFIG = {
   },
 }
 
+// ─── Chests ──────────────────────────────────────────────────────────────────
+
+const CHESTS_CONFIG = {
+  title: 'Dungeon Chests',
+  dataType: 'chests',
+  itemsPerPage: 50,
+  filters: [
+    {
+      key: 'search', type: 'search', label: 'Search', placeholder: 'Chest name...',
+      filterFn: searchFilterFn,
+    },
+    {
+      key: 'type', type: 'select', label: 'Type', allLabel: 'All Types',
+      getOptions: (items) => {
+        const subtypes = [...new Set(items.map(i => i.subtype).filter(Boolean))]
+        return subtypes
+          .map(s => ({ value: s, label: getEntityLabels({ type: 'chest', subtype: s }).subtype || s }))
+          .sort((a, b) => a.label.localeCompare(b.label))
+      },
+      filterFn: subtypeFilterFn,
+    },
+    {
+      key: 'layout', type: 'select', label: 'Mine Layout', allLabel: 'All Layouts',
+      getOptions: (items) => {
+        const layouts = [...new Set(items.map(i => i.layout).filter(Boolean))]
+        return layouts.map(l => ({ value: l, label: l.charAt(0).toUpperCase() + l.slice(1) })).sort((a, b) => a.label.localeCompare(b.label))
+      },
+      filterFn: (item, value) => {
+        if (!value) return true
+        return item.layout === value
+      },
+    },
+  ],
+  getColumns: (ctx) => {
+    const { entities } = ctx
+    const { findById } = entities
+
+    return [
+      createNameColumn(),
+      {
+        accessorKey: 'subtype',
+        header: 'Type',
+        cell: ({ row }) => {
+          const { subtype: label } = getEntityLabels(row.original)
+          return label || '—'
+        },
+      },
+      {
+        id: 'location',
+        header: 'Location',
+        accessorFn: row => findById(row.location)?.name ?? row.location ?? '',
+        cell: ({ row }) => {
+          const loc = findById(row.original.location)
+          return loc
+            ? <UniversalModalButton item={loc} variant="table-inline" stopPropagation />
+            : (row.original.location ?? '—')
+        },
+      },
+      {
+        accessorKey: 'floor',
+        header: 'Floor',
+        cell: ({ row }) => row.original.floor != null ? `Floor ${row.original.floor}` : '—',
+      },
+      {
+        accessorKey: 'repeatable',
+        header: 'Repeatable',
+        cell: ({ row }) => row.original.repeatable ? 'Yes' : 'No',
+      },
+      {
+        id: 'drops',
+        header: 'Contents',
+        cell: ({ row }) => {
+          const chestId = row.original.id
+          const dropItems = (row.original.computedDrops || [])
+            .map(d => findById(d.entityId))
+            .filter(Boolean)
+            .slice(0, 5)
+          if (dropItems.length === 0) return '—'
+          const totalCount = (row.original.computedDrops || []).length
+          return (
+            <span className="cell-location-list">
+              {dropItems.map((item, i) => (
+                <span key={i} className="cell-location-item">
+                  <UniversalModalButton item={item} variant="table-inline" stopPropagation />
+                </span>
+              ))}
+              {totalCount > 5 && <span className="cell-muted">+{totalCount - 5} more</span>}
+            </span>
+          )
+        },
+        enableSorting: false,
+      },
+    ]
+  },
+}
+
 const GEODES_CONFIG = {
   title: 'Geodes',
   dataType: 'geodes',
@@ -2693,6 +2789,7 @@ export const PAGE_CONFIGS = {
   rings: RINGS_CONFIG,
   artifacts: ARTIFACTS_CONFIG,
   breakables: BREAKABLES_CONFIG,
+  chests: CHESTS_CONFIG,
   geodes: GEODES_CONFIG,
   clothing: CLOTHING_CONFIG,
   villagers: VILLAGERS_CONFIG,

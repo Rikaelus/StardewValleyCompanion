@@ -1,0 +1,449 @@
+{
+  "_comment": "Fixed treasure chests in dungeons. Contents are hardcoded in C# (MineShaft.cs, VolcanoDungeon.cs), not in any data asset file. Sourced from https://stardewvalleywiki.com/The_Mines, https://stardewvalleywiki.com/Skull_Cavern, https://stardewvalleywiki.com/Volcano_Dungeon. All chests are one-time rewards unless noted.",
+  "chests": [
+
+    {
+      "_sectionComment": "=== The Mines — Standard Layout ===",
+      "id": "mine-chest-floor-10",
+      "name": "Mine Chest (Floor 10)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 10,
+      "repeatable": false,
+      "_dropNotes": "Standard mine layout. Source: https://stardewvalleywiki.com/The_Mines#Treasure_Chests",
+      "drops": [
+        { "gameId": "(B)506", "note": "Leather Boots" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-20",
+      "name": "Mine Chest (Floor 20)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 20,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)11", "note": "Steel Smallsword" }
+      ]
+    },
+    {
+      "_sectionComment": "Floor 30 has no reward in either layout — no entity needed.",
+      "id": "mine-chest-floor-40",
+      "name": "Mine Chest (Floor 40)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 40,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)32", "note": "Slingshot" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-50",
+      "name": "Mine Chest (Floor 50)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 50,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)509", "note": "Tundra Boots" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-60",
+      "name": "Mine Chest (Floor 60)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 60,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)21", "note": "Crystal Dagger" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-70",
+      "name": "Mine Chest (Floor 70)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 70,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)33", "note": "Master Slingshot" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-80",
+      "name": "Mine Chest (Floor 80)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 80,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)512", "note": "Firewalker Boots" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-90",
+      "name": "Mine Chest (Floor 90)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 90,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)8", "note": "Obsidian Edge" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-100",
+      "name": "Mine Chest (Floor 100)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 100,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(O)434", "note": "Stardrop" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-110",
+      "name": "Mine Chest (Floor 110)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 110,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)514", "note": "Space Boots" }
+      ]
+    },
+    {
+      "id": "mine-chest-floor-120",
+      "name": "Mine Chest (Floor 120)",
+      "subtype": "mine-chest",
+      "layout": "standard",
+      "location": "map-mines",
+      "floor": 120,
+      "repeatable": false,
+      "_dropNotes": "Contains the Skull Key (a flag/event, not an item entity — not represented as a drop). Unlocks Skull Cavern.",
+      "drops": []
+    },
+
+    {
+      "_sectionComment": "=== The Mines — Remixed Layout ===",
+      "id": "mine-chest-remixed-floor-10",
+      "name": "Mine Chest (Floor 10, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 10,
+      "repeatable": false,
+      "_dropNotes": "Remixed mine layout (RandomizeMineStoneLadders setting). One of these is chosen at random. Source: https://stardewvalleywiki.com/The_Mines#Remixed_Rewards",
+      "drops": [
+        { "gameId": "(B)506",  "note": "Leather Boots" },
+        { "gameId": "(B)507",  "note": "Work Boots" },
+        { "gameId": "(W)12",   "note": "Wooden Blade" },
+        { "gameId": "(W)17",   "note": "Iron Dirk" },
+        { "gameId": "(W)22",   "note": "Wind Spire" },
+        { "gameId": "(W)31",   "note": "Femur" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-20",
+      "name": "Mine Chest (Floor 20, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 20,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)11",   "note": "Steel Smallsword" },
+        { "gameId": "(W)24",   "note": "Wood Club" },
+        { "gameId": "(W)20",   "note": "Elf Blade" },
+        { "gameId": "(O)517",  "note": "Glow Ring" },
+        { "gameId": "(O)519",  "note": "Magnet Ring" }
+      ]
+    },
+    {
+      "_sectionComment": "Floor 30 has no reward in either layout.",
+      "id": "mine-chest-remixed-floor-40",
+      "name": "Mine Chest (Floor 40, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 40,
+      "repeatable": false,
+      "_dropNotes": "Only reward is Slingshot (same as standard).",
+      "drops": [
+        { "gameId": "(W)32", "note": "Slingshot" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-50",
+      "name": "Mine Chest (Floor 50, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 50,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)509",  "note": "Tundra Boots" },
+        { "gameId": "(B)510",  "note": "Thermal Boots" },
+        { "gameId": "(B)508",  "note": "Combat Boots" },
+        { "gameId": "(W)1",    "note": "Silver Saber" },
+        { "gameId": "(W)43",   "note": "Pirate's Sword" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-60",
+      "name": "Mine Chest (Floor 60, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 60,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)21",   "note": "Crystal Dagger" },
+        { "gameId": "(W)44",   "note": "Cutlass" },
+        { "gameId": "(W)6",    "note": "Iron Edge" },
+        { "gameId": "(W)18",   "note": "Burglar's Shank" },
+        { "gameId": "(W)27",   "note": "Wood Mallet" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-70",
+      "name": "Mine Chest (Floor 70, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 70,
+      "repeatable": false,
+      "_dropNotes": "Only reward is Master Slingshot (same as standard).",
+      "drops": [
+        { "gameId": "(W)33", "note": "Master Slingshot" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-80",
+      "name": "Mine Chest (Floor 80, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 80,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)512",  "note": "Firewalker Boots" },
+        { "gameId": "(B)511",  "note": "Dark Boots" },
+        { "gameId": "(W)10",   "note": "Claymore" },
+        { "gameId": "(W)7",    "note": "Templar's Blade" },
+        { "gameId": "(W)46",   "note": "Kudgel" },
+        { "gameId": "(W)19",   "note": "Shadow Dagger" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-90",
+      "name": "Mine Chest (Floor 90, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 90,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(W)8",    "note": "Obsidian Edge" },
+        { "gameId": "(W)52",   "note": "Tempered Broadsword" },
+        { "gameId": "(W)45",   "note": "Wicked Kris" },
+        { "gameId": "(W)5",    "note": "Bone Sword" },
+        { "gameId": "(W)60",   "note": "Ossified Blade" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-100",
+      "name": "Mine Chest (Floor 100, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 100,
+      "repeatable": false,
+      "_dropNotes": "Only reward is Stardrop (same as standard).",
+      "drops": [
+        { "gameId": "(O)434", "note": "Stardrop" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-110",
+      "name": "Mine Chest (Floor 110, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 110,
+      "repeatable": false,
+      "drops": [
+        { "gameId": "(B)514",  "note": "Space Boots" },
+        { "gameId": "(B)878",  "note": "Crystal Shoes" },
+        { "gameId": "(W)50",   "note": "Steel Falchion" },
+        { "gameId": "(W)28",   "note": "The Slammer" }
+      ]
+    },
+    {
+      "id": "mine-chest-remixed-floor-120",
+      "name": "Mine Chest (Floor 120, Remixed)",
+      "subtype": "mine-chest",
+      "layout": "remixed",
+      "location": "map-mines",
+      "floor": 120,
+      "repeatable": false,
+      "_dropNotes": "Contains the Skull Key (same as standard — not represented as a drop).",
+      "drops": []
+    },
+
+    {
+      "_sectionComment": "=== Skull Cavern ===",
+      "id": "skull-cavern-chest",
+      "name": "Skull Cavern Treasure Chest",
+      "subtype": "skull-cavern-chest",
+      "location": "map-skull-cavern",
+      "floor": null,
+      "repeatable": true,
+      "_dropNotes": "Skull Cavern treasure rooms appear randomly on floors 10+. Floor 100 is guaranteed. One item chosen per chest from this pool. Chances sourced from https://stardewvalleywiki.com/Skull_Cavern#Treasure_Rooms",
+      "drops": [
+        { "gameId": "(O)GoldenAnimalCracker", "quantity": 1,     "chance": 0.02,   "note": "2%" },
+        { "gameId": "(TR)BasiliskPaw",        "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(TR)FairyBox",           "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(TR)FrogEgg",            "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(TR)IridiumSpur",        "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required (Golden Spur)" },
+        { "gameId": "(TR)IceRod",             "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(TR)MagicQuiver",        "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(TR)ParrotEgg",          "quantity": 1,     "chance": 0.0063, "note": "0.63% — Combat Mastery required" },
+        { "gameId": "(O)288",  "quantity": 5,              "chance": 0.036,  "note": "3.6% — Mega Bomb" },
+        { "gameId": "(O)287",  "quantity": 10,             "chance": 0.036,  "note": "3.6% — Bomb" },
+        { "gameId": "(O)275",  "quantity": 5,              "chance": 0.036,  "note": "1.22–3.6% — Artifact Trove" },
+        { "gameId": "(O)848",  "quantityRange": [10, 20],  "chance": 0.0238, "note": "0–2.38% — Cinder Shard, only if Volcano Shortcut open" },
+        { "gameId": "(O)773",  "quantityRange": [2, 4],    "chance": 0.036,  "note": "3.6% — Life Elixir" },
+        { "gameId": "(O)749",  "quantity": 5,              "chance": 0.054,  "note": "2.7–5.4% — Omni Geode ×5" },
+        { "gameId": "(O)749",  "quantity": 10,             "chance": 0.018,  "note": "0.9–1.8% — Omni Geode ×10" },
+        { "gameId": "(O)688",  "quantity": 5,              "chance": 0.036,  "note": "3.6% — Warp Totem: Farm" },
+        { "gameId": "(O)681",  "quantityRange": [1, 3],    "chance": 0.036,  "note": "3.6% — Rain Totem" },
+        { "gameId": "(O)628",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Cherry Sapling" },
+        { "gameId": "(O)629",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Apricot Sapling" },
+        { "gameId": "(O)630",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Orange Sapling" },
+        { "gameId": "(O)631",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Peach Sapling" },
+        { "gameId": "(O)632",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Pomegranate Sapling" },
+        { "gameId": "(O)633",  "quantity": 1,              "chance": 0.006,  "note": "0.6% — Apple Sapling" },
+        { "gameId": "(O)645",  "quantityRange": [1, 2],    "chance": 0.036,  "note": "3.6% — Iridium Sprinkler" },
+        { "gameId": "(O)621",  "quantity": 4,              "chance": 0.036,  "note": "3.6% — Quality Sprinkler" },
+        { "gameId": "(O)472",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Parsnip Seeds" },
+        { "gameId": "(O)473",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Bean Starter" },
+        { "gameId": "(O)474",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Cauliflower Seeds" },
+        { "gameId": "(O)475",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Potato Seeds" },
+        { "gameId": "(O)476",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Garlic Seeds" },
+        { "gameId": "(O)477",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Kale Seeds" },
+        { "gameId": "(O)478",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Rhubarb Seeds" },
+        { "gameId": "(O)479",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Melon Seeds" },
+        { "gameId": "(O)480",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Tomato Seeds" },
+        { "gameId": "(O)481",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Blueberry Seeds" },
+        { "gameId": "(O)482",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Pepper Seeds" },
+        { "gameId": "(O)483",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Wheat Seeds" },
+        { "gameId": "(O)484",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Radish Seeds" },
+        { "gameId": "(O)485",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Red Cabbage Seeds" },
+        { "gameId": "(O)486",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Starfruit Seeds" },
+        { "gameId": "(O)487",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Corn Seeds" },
+        { "gameId": "(O)488",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Eggplant Seeds" },
+        { "gameId": "(O)489",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Artichoke Seeds" },
+        { "gameId": "(O)490",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Pumpkin Seeds" },
+        { "gameId": "(O)491",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Bok Choy Seeds" },
+        { "gameId": "(O)492",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Yam Seeds" },
+        { "gameId": "(O)493",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Cranberry Seeds" },
+        { "gameId": "(O)494",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Beet Seeds" },
+        { "gameId": "(O)495",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Spring Seeds" },
+        { "gameId": "(O)496",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Summer Seeds" },
+        { "gameId": "(O)497",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Fall Seeds" },
+        { "gameId": "(O)498",  "quantityRange": [5, 20],   "chance": 0.0009, "note": "0.09% — Winter Seeds" },
+        { "gameId": "(O)802",  "quantity": 15,             "chance": 0.0119, "note": "1.19% — Cactus Seeds" },
+        { "gameId": "(O)286",  "quantity": 15,             "chance": 0.036,  "note": "3.6% — Cherry Bomb" },
+        { "gameId": "(O)437",  "quantity": 1,              "chance": 0.018,  "note": "1.8% — Red Slime Egg" },
+        { "gameId": "(O)265",  "quantity": 1,              "chance": 0.018,  "note": "1.8% — Seafoam Pudding" },
+        { "gameId": "(O)439",  "quantity": 1,              "chance": 0.036,  "note": "3.6% — Purple Slime Egg" },
+        { "gameId": "(O)349",  "quantityRange": [2, 4],    "chance": 0.0241, "note": "2.41% — Energy Tonic" },
+        { "gameId": "(O)226",  "quantity": 5,              "chance": 0.0119, "note": "1.19% — Spicy Eel" },
+        { "gameId": "(O)732",  "quantity": 5,              "chance": 0.0119, "note": "1.19% — Crab Cakes" },
+        { "gameId": "(O)337",  "quantityRange": [2, 3],    "chance": 0.036,  "note": "3.6% — Iridium Bar" },
+        { "gameId": "(O)235",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Autumn's Bounty" },
+        { "gameId": "(O)236",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Pumpkin Soup" },
+        { "gameId": "(O)237",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Super Meal" },
+        { "gameId": "(O)238",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Cranberry Sauce" },
+        { "gameId": "(O)239",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Stuffing" },
+        { "gameId": "(O)240",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Farmer's Lunch" },
+        { "gameId": "(O)241",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Survival Burger" },
+        { "gameId": "(O)242",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Dish O' The Sea" },
+        { "gameId": "(O)243",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Miner's Treat" },
+        { "gameId": "(O)244",  "quantity": 5,              "chance": 0.0024, "note": "0.24% — Roots Platter" },
+        { "gameId": "(O)74",   "quantity": 1,              "chance": 0.036,  "note": "3.6% — Prismatic Shard" },
+        { "gameId": "(BC)21",  "quantity": 1,              "chance": 0.036,  "note": "3.6% — Crystalarium" },
+        { "gameId": "(BC)25",  "quantity": 1,              "chance": 0.036,  "note": "3.6% — Seed Maker" },
+        { "gameId": "(BC)165", "quantity": 1,              "chance": 0.036,  "note": "3.6% — Auto-Grabber" },
+        { "gameId": "(H)38",   "quantity": 1,              "chance": 0.018,  "note": "1.8% — Red Cowboy Hat" },
+        { "gameId": "(H)37",   "quantity": 1,              "chance": 0.018,  "note": "1.8% — Blue Cowboy Hat" },
+        { "gameId": "(O)MysteryBox",       "quantity": 5,  "chance": 0.036,  "note": "3.6% — Mystery Box (if Foraging Mastery not claimed)" },
+        { "gameId": "(O)GoldenMysteryBox", "quantity": 5,  "chance": 0.036,  "note": "3.6% — Golden Mystery Box (if Foraging Mastery claimed)" },
+        { "gameId": "(H)65",   "quantity": 1,              "chance": 0.036,  "note": "3.6% — White Turban" },
+        { "gameId": "(BC)272", "quantity": 1,              "chance": 0.036,  "note": "3.6% — Auto-Petter" },
+        { "gameId": "(H)83",   "quantity": 1,              "chance": 0.036,  "note": "3.6% — Dark Cowboy Hat" }
+      ]
+    },
+
+    {
+      "_sectionComment": "=== Volcano Dungeon ===",
+      "id": "volcano-chest-common",
+      "name": "Volcano Dungeon Chest",
+      "icon": "volcano-chest-common.png",
+      "subtype": "volcano-chest",
+      "location": "map-volcano-dungeon",
+      "floor": null,
+      "repeatable": false,
+      "_dropNotes": "Appears on a random floor (1–9) of the Volcano Dungeon. One-time. 7 equally-weighted slots: 6 items at 1/7 each, 3 weapons sharing the last slot at 1/21 each. Source: https://stardewvalleywiki.com/Volcano_Dungeon#Treasure_Chests",
+      "drops": [
+        { "gameId": "(O)848", "quantity": 3,  "chance": 0.143,  "note": "Cinder Shard — 1/7" },
+        { "gameId": "(O)791", "quantity": 1,  "chance": 0.143,  "note": "Golden Coconut — 1/7" },
+        { "gameId": "(O)831", "quantity": 8,  "chance": 0.143,  "note": "Taro Tuber — 1/7" },
+        { "gameId": "(O)833", "quantity": 5,  "chance": 0.143,  "note": "Pineapple Seeds — 1/7" },
+        { "gameId": "(O)861", "quantity": 1,  "chance": 0.143,  "note": "Protection Ring — 1/7" },
+        { "gameId": "(O)862", "quantity": 1,  "chance": 0.143,  "note": "Soul Sapper Ring — 1/7" },
+        { "gameId": "(W)54",  "quantity": 1,  "chance": 0.0476, "note": "Dwarf Sword — 1/21" },
+        { "gameId": "(W)55",  "quantity": 1,  "chance": 0.0476, "note": "Dwarf Hammer — 1/21" },
+        { "gameId": "(W)56",  "quantity": 1,  "chance": 0.0476, "note": "Dwarf Dagger — 1/21" }
+      ]
+    },
+    {
+      "id": "volcano-chest-rare",
+      "name": "Volcano Dungeon Rare Chest",
+      "icon": "volcano-chest-rare.png",
+      "subtype": "volcano-chest",
+      "location": "map-volcano-dungeon",
+      "floor": 9,
+      "repeatable": false,
+      "_dropNotes": "Always on floor 9 (the caldera). One-time. 9 equally-weighted slots: 8 items at 1/9 each, 3 weapons sharing the last slot at 1/27 each. Source: https://stardewvalleywiki.com/Volcano_Dungeon#Treasure_Chests",
+      "drops": [
+        { "gameId": "(O)848",  "quantity": 10, "chance": 0.111,  "note": "Cinder Shard — 1/9" },
+        { "gameId": "(B)854",  "quantity": 1,  "chance": 0.111,  "note": "Mermaid Boots — 1/9" },
+        { "gameId": "(B)855",  "quantity": 1,  "chance": 0.111,  "note": "Dragonscale Boots — 1/9" },
+        { "gameId": "(O)791",  "quantity": 3,  "chance": 0.111,  "note": "Golden Coconut — 1/9" },
+        { "gameId": "(O)863",  "quantity": 1,  "chance": 0.111,  "note": "Phoenix Ring — 1/9" },
+        { "gameId": "(O)860",  "quantity": 1,  "chance": 0.111,  "note": "Hot Java Ring — 1/9" },
+        { "gameId": "(H)76",   "quantity": 1,  "chance": 0.111,  "note": "Deluxe Pirate Hat — 1/9" },
+        { "gameId": "(O)289",  "quantity": 1,  "chance": 0.111,  "note": "Ostrich Egg — 1/9" },
+        { "gameId": "(W)57",   "quantity": 1,  "chance": 0.037,  "note": "Dragontooth Cutlass — 1/27" },
+        { "gameId": "(W)58",   "quantity": 1,  "chance": 0.037,  "note": "Dragontooth Club — 1/27" },
+        { "gameId": "(W)59",   "quantity": 1,  "chance": 0.037,  "note": "Dragontooth Shiv — 1/27" }
+      ]
+    }
+
+  ]
+}

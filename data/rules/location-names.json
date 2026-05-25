@@ -62,7 +62,7 @@
     "Desert": {
       "displayName": "Desert",
       "type": "valley",
-      "entityId": "map-desert-area",
+      "entityId": "map-desert",
       "mapName": "Calico Desert",
       "mapEntityId": "map-desert",
       "parentRegion": "map-desert"
@@ -161,11 +161,11 @@
       "parentRegion": "map-valley"
     },
     "Submarine": {
-      "displayName": "Night Market",
+      "displayName": "Submarine",
       "type": "special",
-      "entityId": "map-night-market",
-      "mapName": "Pelican Beach",
-      "mapEntityId": "map-beach",
+      "entityId": "map-submarine",
+      "mapName": "Night Market",
+      "mapEntityId": "map-night-market",
       "parentRegion": "map-valley",
       "notes": "Winter event only"
     },
@@ -176,7 +176,7 @@
       "mapName": "Pelican Beach",
       "mapEntityId": "map-beach",
       "parentRegion": "map-valley",
-      "notes": "Alternative name for Submarine location"
+      "notes": "Night Market festival area"
     },
     "IslandWest": {
       "displayName": "Ginger Island West",

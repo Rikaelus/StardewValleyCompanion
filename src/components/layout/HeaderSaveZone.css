@@ -1,8 +1,9 @@
 .header-save-zone {
-  position: absolute;
+  position: fixed;
   top: 4px;
   right: 8px;
-  bottom: 8px;
+  bottom: auto;
+  height: 68px;
   z-index: 1100;
   display: flex;
   flex-direction: column;
@@ -19,13 +20,13 @@
   transition: border-color 0.15s, color 0.15s, background 0.15s;
   white-space: nowrap;
   user-select: none;
-  background: rgba(21, 71, 148, 0.92);
+  background: rgb(21, 71, 148);
 }
 
 .header-save-zone:hover {
   border-color: rgba(255, 255, 255, 0.65);
   color: rgba(255, 255, 255, 0.95);
-  background: rgba(21, 71, 148, 1);
+  background: rgb(28, 85, 170);
 }
 
 .header-save-zone--over {

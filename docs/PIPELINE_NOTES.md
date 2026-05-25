@@ -20,7 +20,7 @@ Each item's `sources[]` is built by `buildAcquisitionSources(gameId)`, which que
 | `fish-pond` | `FishPondData.json` | `fishPondSourcesByGameId` | |
 | `forage` | `Locations.json > Forage[]` | `forageSourcesByGameId` | |
 | `garbage-can` | `GarbageCans.json` | `garbageCanSourcesByGameId` | |
-| `crafting` | `CraftingRecipes.json` | `craftingSourcesByGameId` | **Verify**: covers `(BC)` outputs? Audit found 84/123 big-craftables with no sources |
+| `crafting` | `CraftingRecipes.json` | `craftingSourcesByGameId` | Covers both `(O)` and `(BC)` outputs. Bug fixed 2026-05-23: lookup must use `qualifiedBCId` (e.g. `"(BC)9"`), not bare integer, for big-craftables. |
 | `cooking` | `CookingRecipes.json` | `cookingSourcesByGameId` | |
 | `tapper` | `data/rules/tapper-products.json` (hand-curated) | `tapperSourcesByGameId` | |
 | `mail` | `mail.xnb` references in source code | `mailSourcesByGameId` | |
@@ -185,3 +185,19 @@ From the coverage audit run today. Each is worth investigating during the data-m
 - `trinket` — 100% empty (8/8). 1.6 trinkets, dropped by Skull Cavern monsters.
 - `metal-bar` — 50% empty. Comes from furnace via `data/rules/smelting-recipes.json` — verify it's wired as a source.
 - `misc` — 31% empty. Heterogeneous; case-by-case.
+
+## Audit-suspicious entity types as of 2026-05-23 (updated after BC fix)
+
+Full re-run after the 2026-05-23 BC crafting-source bug fix. Updated numbers:
+
+- `big-craftable` — **was 68% empty (84/123); now ~15% empty after fix** (BC crafting lookup used wrong key — see Discoveries log 2026-05-23).
+- `trinket` — **100% empty (8/8)**. Trinket drops are hardcoded in C# (`MeleeWeapon.cs` / `SlingshotProjectile.cs`). No data file. Would require a `data/rules/trinket-drops.json` hand-curated rules file (same pattern as `breakables.json`). Wiki has the canonical monster-to-trinket mapping.
+- `tool` — **67% empty (24/36)**. Tool upgrades flow through Clint's shop via the `TOOL_UPGRADES` special token in `Shops.json`. This is a single shop entry expanding to all tool upgrades, not parseable per-item from current exports. Would require either (a) expanding the TOOL_UPGRADES token during shop parsing, or (b) a `data/rules/tool-upgrades.json` mapping tool → upgrade cost/source.
+- `tree-fruit` — **7/8 empty**. Fruit tree fruits have no `sources[]` — they should derive `{ type: 'fruit-tree', treeId }` from `FruitTrees.json`. The data is available; the pipeline just doesn't wire it up.
+- `metal-bar` — **by design**: metal bars intentionally use `producedBy` (pointing at the furnace entity) rather than `sources[]`. The copper/iron bars incidentally have quest sources from Quests.json. This is a data model divergence — `producedBy` was used before `sources[]` was the standard. Either migrate bars to `sources[]` or treat `producedBy` as an alias during display.
+- `tree` — **expected empty**. Tree entities represent world objects (Oak, Maple, Pine, etc.), not obtainable items. `sources[]` doesn't apply; they're encountered in the world, not collected.
+- `calico-egg` — 0 sources. Calico Eggs are a barter currency used during Stardew Valley Fair, not obtained through a standard source. By design.
+
+- **2026-05-23** — Comprehensive sources audit run across all 2493 obtainable-item-type entities. Confirmed: `crafting` source type in `buildAcquisitionSources` was being called for big-craftables, but the lookup key was wrong — see bug below.
+
+- **2026-05-23** — **BC crafting source bug**: `craftingSourcesByGameId` is keyed on qualified IDs like `"(BC)9"` (set during the CraftingRecipes parsing pass via `normalizeItemId()`). But the big-craftable processing loop called `buildAcquisitionSources(id)` where `id` was the bare integer parsed by `parseGameId(rawId)` (e.g. `9`). The map lookup used the bare integer, which never matched a key in the `(BC)9`-keyed map. Result: ~62 big-craftables (Keg, Bee House, Chest, Cask, Furnace, etc.) had no crafting source even though their recipes exist. **Fix (2026-05-23):** changed the lookup in the big-craftable processing block to use `qualifiedBCId` (e.g. `"(BC)9"`) instead of the bare `id`. Verified by running `node scripts/ProcessGameData.cjs` — pipeline completed successfully and big-craftable sources populated correctly. Location in `ProcessGameData.cjs`: big-craftable processing block, `buildAcquisitionSources` call site (~line 3002 before fix).

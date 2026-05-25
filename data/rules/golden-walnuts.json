@@ -9,7 +9,7 @@
       "area": "general",
       "category": "exploration",
       "track_type": "A",
-      "save_key": "mail:goldenCoconutHat"
+      "save_key": "rootField:goldenCoconutCracked"
     },
     {
       "id": "island_fishing",
@@ -59,7 +59,7 @@
       "area": "east",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandShrine_23_34"
+      "save_key": "collectedNutTracker:Bush_IslandShrine_23_34"
     },
     {
       "id": "east_gem_bird_puzzle",
@@ -349,7 +349,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_9_84"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_9_84"
     },
     {
       "id": "north_buried_flower_circle_1",
@@ -399,7 +399,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_4_42"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_4_42"
     },
     {
       "id": "north_dig_site_two_plants_1",
@@ -409,7 +409,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_45_38"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_45_38"
     },
     {
       "id": "north_dig_site_two_plants_2",
@@ -419,7 +419,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_47_40"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_47_40"
     },
     {
       "id": "north_field_office_large_animal",
@@ -469,7 +469,7 @@
       "area": "north",
       "category": "donation",
       "track_type": "A",
-      "save_key": "mail:fieldOfficeFinale"
+      "save_key": "location:IslandFieldOffice.plantsRestoredLeft"
     },
     {
       "id": "north_field_office_survey_starfish",
@@ -479,7 +479,7 @@
       "area": "north",
       "category": "donation",
       "track_type": "A",
-      "save_key": "mail:fieldOfficeFinale"
+      "save_key": "location:IslandFieldOffice.plantsRestoredRight"
     },
     {
       "id": "north_volcano_plant_se",
@@ -489,7 +489,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_56_27"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_56_27"
     },
     {
       "id": "north_buried_volcano_sand",
@@ -539,7 +539,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_20_26"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_20_26"
     },
     {
       "id": "north_lava_watering_can_1",
@@ -549,7 +549,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_13_33"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_13_33"
     },
     {
       "id": "north_lava_watering_can_2",
@@ -559,7 +559,7 @@
       "area": "north",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandNorth_5_30"
+      "save_key": "collectedNutTracker:Bush_IslandNorth_5_30"
     },
     {
       "id": "volcano_mining",
@@ -639,7 +639,7 @@
       "area": "south",
       "category": "exploration",
       "track_type": "C",
-      "save_key": "foundBuriedNuts:IslandSouth_31_5"
+      "save_key": "collectedNutTracker:Bush_IslandSouth_31_5"
     },
     {
       "id": "southeast_fishing",

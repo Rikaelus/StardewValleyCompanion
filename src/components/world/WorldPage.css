@@ -1,0 +1,179 @@
+.world-page {
+  padding: 1.5rem;
+}
+
+.world-header {
+  margin-bottom: 1.25rem;
+}
+
+.world-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  color: #5c4a32;
+  text-transform: uppercase;
+  font-family: 'Stardew Valley', sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.world-subtitle {
+  margin: 0;
+  color: #8b7355;
+  font-size: 0.875rem;
+}
+
+/* ── Toolbar (tabs + toggles) ────────────────────────────────────────────── */
+
+.world-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Region tabs ─────────────────────────────────────────────────────────── */
+
+.world-tabs {
+  display: flex;
+  width: max-content;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.world-tab {
+  padding: 0.4rem 1.1rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.world-tab:hover:not(.world-tab--active) {
+  color: #5c4a32;
+  background: rgba(139, 111, 71, 0.08);
+}
+
+.world-tab--active {
+  background: #8b6f47;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Toggles ─────────────────────────────────────────────────────────────── */
+
+.world-toggles {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.world-toggle {
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.world-toggle:hover:not(.world-toggle--active) {
+  color: #5c4a32;
+  background: rgba(139, 111, 71, 0.08);
+}
+
+.world-toggle--active {
+  background: #8b6f47;
+  border-color: #8b6f47;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Area card grid ──────────────────────────────────────────────────────── */
+
+.world-areas {
+  columns: 3 280px;
+  column-gap: 1rem;
+}
+
+.world-area-card {
+  break-inside: avoid;
+  background: #faf4e8;
+  border: 1px solid #e8d5b0;
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.world-area-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #5c4a32;
+}
+
+.world-area-heading--divided {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e8d5b0;
+}
+
+/* ── Location tree ───────────────────────────────────────────────────────── */
+
+.world-tree,
+.world-node-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.world-node {
+  padding: 0.1rem 0;
+}
+
+.world-node-children {
+  padding-left: 1rem;
+}
+
+.world-node-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.world-node-chips {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.world-node-chip {
+  font-size: 0.7rem;
+  color: #8b7355;
+  background: rgba(139, 115, 85, 0.1);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  white-space: nowrap;
+}
+
+.world-loading {
+  padding: 2rem;
+  color: #8b7355;
+}

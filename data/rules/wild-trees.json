@@ -1,14 +1,14 @@
 {
-  "_comment": "Maps WildTrees.json IDs to tree names. Some IDs are variants of the same tree type — 'mergeInto' collapses them into one entity.",
+  "_comment": "Maps WildTrees.json IDs to tree names. Some IDs are variants of the same tree type — 'mergeInto' collapses them into one entity. woodDrop/hardwoodDrop are curated wiki quantities for a full-grown tree (DropWoodOnChop/DropHardwoodOnLumberChop flags carry no quantity in game exports).",
   "trees": {
-    "1":  { "name": "Oak Tree" },
-    "2":  { "name": "Maple Tree" },
-    "3":  { "name": "Pine Tree" },
-    "6":  { "name": "Palm Tree" },
+    "1":  { "name": "Oak Tree",        "woodDrop": 12, "hardwoodDrop": 12 },
+    "2":  { "name": "Maple Tree",      "woodDrop": 12, "hardwoodDrop": 12 },
+    "3":  { "name": "Pine Tree",       "woodDrop": 12, "hardwoodDrop": 12 },
+    "6":  { "name": "Palm Tree",       "woodDrop": 10, "hardwoodDrop": 10 },
     "7":  { "name": "Mushroom Tree" },
     "8":  { "name": "Mahogany Tree" },
-    "9":  { "name": "Palm Tree", "mergeInto": "6" },
-    "10": { "name": "Green Rain Tree" },
+    "9":  { "name": "Palm Tree",       "mergeInto": "6" },
+    "10": { "name": "Green Rain Tree", "woodDrop": 12, "hardwoodDrop": 12 },
     "11": { "name": "Green Rain Tree", "mergeInto": "10" },
     "12": { "name": "Green Rain Tree", "mergeInto": "10" },
     "13": { "name": "Mystic Tree" }

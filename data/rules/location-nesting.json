@@ -10,6 +10,8 @@
     "map-bathhouse-menslocker": "map-bathhouse-entry",
     "map-bathhouse-womenslocker": "map-bathhouse-entry",
     "map-bathhouse-pool": "map-bathhouse-entry",
+    "map-boattunnel": "map-fishshop",
+    "map-submarine": "map-night-market",
     "map-mermaidhouse": "map-night-market",
     "map-witchhut": "map-witch-swamp",
     "map-witchwarpcave": "map-witch-swamp"

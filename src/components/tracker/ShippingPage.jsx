@@ -36,15 +36,19 @@ function ShippingPage() {
     const monoCrops = items.filter(i => i.type === 'crop' && MONOCULTURE_ONLY_NAMES.has(i.name))
     const allTracked = [...polyCrops, ...monoCrops]
 
+    // Monoculture is earned by shipping 300 of *any one* crop (poly or mono-only).
+    // Compute the global max first so mono-only items can reflect the achievement state.
+    const counts = new Map(allTracked.map(item => [item, progress.getItemShippedCount(item.gameId)]))
+    const monocultureMax = Math.max(0, ...counts.values())
+    const monocultureDone = monocultureMax >= MONOCULTURE_TARGET
+
     const buckets = {}
-    let monocultureMax = 0
 
     for (const item of allTracked) {
       const isPolyculture = POLYCULTURE_NAMES.has(item.name)
       const season = cropSeason(item)
       if (!buckets[season]) buckets[season] = []
-      const count = progress.getItemShippedCount(item.gameId)
-      if (count > monocultureMax) monocultureMax = count
+      const count = counts.get(item)
 
       if (isPolyculture) {
         const shipped = count > 0
@@ -58,16 +62,19 @@ function ShippingPage() {
             : `${item.name} — Not shipped`
         buckets[season].push({ entity: item, state, count: count > 0 ? count : null, badge, tileTitle })
       } else {
-        // Monoculture-only: complete at 300, partial if any shipped
+        // Monoculture-only: the achievement is complete if *any* crop hit 300,
+        // so mark these complete once monocultureDone, regardless of this item's own count.
         const shipped = count > 0
         const metMono = count >= MONOCULTURE_TARGET
-        const state = metMono ? 'complete' : shipped ? 'partial' : 'missing'
-        const badge = shipped && !metMono ? 'check' : null
+        const state = (metMono || monocultureDone) ? 'complete' : shipped ? 'partial' : 'missing'
+        const badge = shipped && !metMono && !monocultureDone ? 'check' : null
         const tileTitle = metMono
           ? `${item.name} — ${count} shipped (Monoculture done)`
-          : shipped
-            ? `${item.name} — ${count} shipped (need ${MONOCULTURE_TARGET} for Monoculture)`
-            : `${item.name} — Not shipped (Monoculture only)`
+          : monocultureDone
+            ? `${item.name} — Monoculture already achieved`
+            : shipped
+              ? `${item.name} — ${count} shipped (need ${MONOCULTURE_TARGET} for Monoculture)`
+              : `${item.name} — Not shipped (Monoculture only)`
         buckets[season].push({ entity: item, state, count: count > 0 ? count : null, badge, tileTitle })
       }
     }

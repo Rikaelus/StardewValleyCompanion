@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { TRACKER_MENU_ITEMS } from './trackerMenuData'
+import { TRACKER_MENU_GROUPS } from './trackerMenuData'
+import { useTrackerCompletion } from '../../hooks/UseTrackerCompletion'
 import './TrackerMenu.css'
 
 function TrackerMenu({ isOpen, onClose }) {
@@ -8,6 +9,7 @@ function TrackerMenu({ isOpen, onClose }) {
   const [isClosing, setIsClosing] = useState(false)
   const panelRef = useRef(null)
   const location = useLocation()
+  const completion = useTrackerCompletion()
 
   useEffect(() => {
     if (isOpen) {
@@ -55,25 +57,44 @@ function TrackerMenu({ isOpen, onClose }) {
 
   return (
     <div className={`tracker-menu ${isClosing ? 'tracker-menu--closing' : ''}`} ref={panelRef}>
-      <ul className="tracker-menu-items">
-        {TRACKER_MENU_ITEMS.map(item => (
-          <li key={item.label}>
-            {item.disabled ? (
-              <span className="tracker-menu-item tracker-menu-item--disabled">
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                to={item.path}
-                className={`tracker-menu-item ${isActive(item.path) ? 'tracker-menu-item--active' : ''}`}
-                onClick={onClose}
-              >
-                {item.label}
-              </Link>
-            )}
-          </li>
+      <div className="tracker-menu-content">
+        {TRACKER_MENU_GROUPS.map(group => (
+          <div key={group.domain} className="tracker-menu-group">
+            <h3 className="tracker-menu-group-heading">{group.domain}</h3>
+            <ul className="tracker-menu-group-items">
+              {group.items.map(item => {
+                const counts = completion.get(item.path)
+                const pct = counts
+                  ? counts.total > 0 ? Math.floor((counts.done / counts.total) * 100) : 0
+                  : null
+
+                return (
+                  <li key={item.label}>
+                    {item.disabled ? (
+                      <span className="tracker-menu-item tracker-menu-item--disabled">
+                        {item.label}
+                      </span>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        className={`tracker-menu-item ${isActive(item.path) ? 'tracker-menu-item--active' : ''}`}
+                        onClick={onClose}
+                      >
+                        {item.label}
+                        {pct !== null && (
+                          <span className={`tracker-menu-pct ${pct === 100 ? 'tracker-menu-pct--done' : ''}`}>
+                            {pct}%
+                          </span>
+                        )}
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

@@ -92,6 +92,7 @@ export function EntityProvider({ children }) {
       'ring':           entity => entity.type === 'ring',
       'artifact':       entity => entity.type === 'artifact',
       'breakable':      entity => entity.type === 'breakable',
+      'chest':          entity => entity.type === 'chest',
       'geode':          entity => entity.type === 'geode',
       'monster':        entity => entity.type === 'monster',
       'villager':       entity => entity.type === 'villager',

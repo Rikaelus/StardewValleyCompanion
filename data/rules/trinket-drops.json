@@ -1,0 +1,12 @@
+{
+  "_comment": "Trinket monster drop sources. Hardcoded in C# (Trinket::TrySpawnTrinket / GameLocation::monsterDrop). Any monster can drop any trinket randomly — there are no per-trinket monster associations. Magic Hair Gel (MagicHairDye) is excluded from monster drops (DropsNaturally=false in Trinkets.json); it is purchased from Alex's Desert Festival stall for 100 Calico Eggs (Combat Mastery required). Drop chance formula: Min(0.4% + 0.001% × maxHP + y, 2.5%) + DailyLuck/25 + LuckBuffs×0.133%. Trinkets are spawned separately from normal loot and are unaffected by the Burglar's Ring or Monster Compendium. Sourced from: https://stardewvalleywiki.com/Trinkets",
+  "monsterDroppableTrinkets": [
+    "(TR)BasiliskPaw",
+    "(TR)FairyBox",
+    "(TR)FrogEgg",
+    "(TR)IridiumSpur",
+    "(TR)IceRod",
+    "(TR)MagicQuiver",
+    "(TR)ParrotEgg"
+  ]
+}

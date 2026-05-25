@@ -17,7 +17,9 @@
     "Woods": "map-secret-woods",
     "Sewer": "map-sewers",
     "BugLand": "map-mutant-bug-lair",
-    "Submarine": "map-night-market",
+    "Submarine": "map-submarine",
+    "BeachNightMarket": "map-night-market",
+    "DesertFestival": "map-desert-festival",
     "Caldera": "map-volcano-caldera",
     "IslandNorthCave1": "map-volcano-dungeon",
     "IslandSouthEastCave": "map-island-pirate-cove",
@@ -26,7 +28,7 @@
     "IslandWest": "map-island-west",
     "IslandNorth": "map-island-north",
     "IslandEast": "map-island-east",
-    "Desert": "map-desert-area"
+    "Desert": "map-desert"
   },
   "displayNameOverrides": {
     "_comment": "Override or provide display names for locations where the game data is missing, wrong, or unhelpful. Do NOT put fish zone names here — those go in fishZoneOverrides.",
@@ -34,7 +36,7 @@
     "UndergroundMine": "Mines",
     "BugLand": "Mutant Bug Lair",
     "BeachNightMarket": "Night Market",
-    "Submarine": "Night Market",
+    "Submarine": "Submarine",
     "Caldera": "Volcano Caldera",
     "IslandNorthCave1": "Volcano Dungeon",
     "IslandSouthEastCave": "Pirate Cove",
@@ -92,11 +94,9 @@
     "MasteryCave": "Town",
     "IslandFieldOffice": "IslandNorth",
     "LeoTreeHouse": "IslandEast",
-    "BoatTunnel": "Beach",
     "Mine": "Mountain",
     "UndergroundMine": "Mountain",
     "QuarryMine": "Mountain",
-    "BoatTunnel": "Beach",
     "BugLand": "Sewer"
   },
   "farmVariants": {
@@ -134,7 +134,6 @@
     "map-beach": "assets/objects/WarpTotemBeach.png",
     "map-forest": "assets/objects/WarpTotemFarm.png",
     "map-railroad": "assets/objects/RetroRadio.png",
-    "map-desert-area": "assets/objects/WarpTotemDesert.png",
 
     "map-farm": "assets/objects/WarpTotemFarm.png",
     "map-farm-standard": "assets/objects/WarpTotemFarm.png",
@@ -166,7 +165,7 @@
     "map-forest-river": "assets/objects/Catfish.png",
     "map-town-river": "assets/objects/SmallmouthBass.png",
     "map-night-market": "assets/objects/MidnightCarp.png",
-    "map-beachnightmarket": "assets/objects/MidnightCarp.png",
+    "map-submarine": "assets/objects/MidnightCarp.png",
 
     "map-island-south": "assets/objects/WarpTotemIsland.png",
     "map-island-north": "assets/objects/WarpTotemIsland.png",

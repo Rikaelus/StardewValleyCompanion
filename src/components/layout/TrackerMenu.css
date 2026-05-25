@@ -24,11 +24,31 @@
   to   { opacity: 0; transform: translateY(-8px); }
 }
 
-.tracker-menu-items {
+.tracker-menu-content {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 1rem 2rem 1.25rem;
+  padding: 1.25rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.tracker-menu-group-heading {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tracker-menu-group-items {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
@@ -36,9 +56,9 @@
 
 .tracker-menu-item {
   display: block;
-  padding: 0.35rem 0.6rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 3px;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: white;
   text-decoration: none;
@@ -63,8 +83,27 @@
   background: none;
 }
 
+.tracker-menu-pct {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+}
+
+.tracker-menu-pct--done {
+  color: #7cdd7c;
+}
+
+@media (max-width: 1100px) {
+  .tracker-menu-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 700px) {
-  .tracker-menu-items {
-    padding: 0.75rem 1rem;
+  .tracker-menu-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
   }
 }

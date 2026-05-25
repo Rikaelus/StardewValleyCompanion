@@ -7,6 +7,7 @@ import { useProgress } from '../../hooks/UseProgress'
 import { pluralize } from '../../utils/Pluralize'
 import { getEntityLabels } from '../../utils/Formatters'
 import 'react-tooltip/dist/react-tooltip.css'
+import './UniversalModalButton.css'
 // TODO: rename UniversalModalButton → UniversalModalButton and item prop → entity (high churn, cosmetic)
 
 
@@ -177,39 +178,24 @@ function UniversalModalButton({
     return (
       <button
         onClick={handleClick}
-        style={{
-          background: 'none',
-          border: 'none',
-          padding: 0,
-          fontWeight: isTableInline ? 'normal' : 600,
-          color: '#2d1b00',
-          fontSize: isTableInline ? 'inherit' : '0.875rem',
-          cursor: 'pointer',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.25rem',
-          textAlign: 'left',
-          transition: 'color 0.15s ease'
-        }}
-        onMouseEnter={(e) => e.currentTarget.style.color = '#8b7355'}
-        onMouseLeave={(e) => e.currentTarget.style.color = '#2d1b00'}
+        className={`inline-button${isTableInline ? ' inline-button--table' : ''}`}
         aria-label={`View ${item.name} details`}
         type="button"
       >
         {showIcon && (
           iconSrc && !imageError
-            ? <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: inlineIconSize, height: inlineIconSize, flexShrink: 0 }}>
-                <img src={iconSrc} alt="" onError={() => setImageError(true)} style={{ maxWidth: inlineIconSize, maxHeight: inlineIconSize, width: 'auto', height: 'auto', imageRendering: 'pixelated' }} />
+            ? <span className="inline-button-icon-wrap" style={{ width: inlineIconSize, height: inlineIconSize }}>
+                <img src={iconSrc} alt="" onError={() => setImageError(true)} />
               </span>
             : (item.iconChar || item.iconClass)
               ? <span className="inline-icon-badge" style={{ backgroundColor: item.iconColor || '#7f8c8d' }}>
                   {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
                 </span>
-              : isTableInline ? null : <span style={{ fontSize: '0.75rem', opacity: 0.4 }}>🔍</span>
+              : isTableInline ? null : <span className="inline-button-fallback-icon">🔍</span>
         )}
-        <span style={{ position: 'relative' }} className={inlineLabelClass}>
+        <span className={`inline-button-label${inlineLabelClass ? ` ${inlineLabelClass}` : ''}`}>
           {label ?? (plural ? pluralize(item.name) : item.name)}
-          {quantity > 1 && <span className="inline-quantity"> ×{quantity}</span>}
+          {quantity != null && quantity !== 1 && <span className="inline-quantity"> ×{quantity}</span>}
           {hearts > 0 && <span className="inline-hearts"> ♥×{hearts}</span>}
           {item.contextTags?.includes('fish_legendary') && <span title="Legendary Fish"> ⭐</span>}
         </span>

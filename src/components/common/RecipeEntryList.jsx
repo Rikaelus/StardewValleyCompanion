@@ -33,21 +33,22 @@ function RecipeEntryList({ recipes, subject, onNavigate }) {
       <span key={i} className="source-entry">
         <span className="source-name">
           {recipeItem
-            ? <UniversalModalButton item={recipeItem} variant="inline" onNavigate={onNavigate} quantity={r.amount} />
+            ? <UniversalModalButton item={recipeItem} variant="inline" onNavigate={onNavigate} />
             : r.recipeName}
         </span>
         <span className="source-qualifiers">
-          {others.map((ing, j) => {
-            const ingItem = findById(ing.id)
-            return (
-              <span key={j} className="source-qualifier source-qualifier--ingredient">
-                with {ingItem
-                  ? <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} />
-                  : <>{ing.name}{ing.amount > 1 ? ` ×${ing.amount}` : ''}</>
-                }
-              </span>
-            )
-          })}
+          <span className="source-qualifier source-qualifier--ingredient">
+            {r.amount > 1 ? `×${r.amount}` : ''}
+            {others.map((ing, j) => {
+              const ingItem = findById(ing.id)
+              const label = ingItem
+                ? <UniversalModalButton item={ingItem} variant="inline" onNavigate={onNavigate} quantity={ing.amount} />
+                : `${ing.name}${ing.amount > 1 ? ` ×${ing.amount}` : ''}`
+              // " + " before first other ingredient, ", " before subsequent ones
+              const sep = j === 0 ? ' + ' : ', '
+              return <span key={j}>{sep}{label}</span>
+            })}
+          </span>
         </span>
       </span>
     )

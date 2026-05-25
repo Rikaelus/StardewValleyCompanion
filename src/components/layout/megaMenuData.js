@@ -35,6 +35,7 @@ export const MEGA_MENU_GROUPS = [
       { label: 'Weapons', path: '/weapons' },
       { label: 'Boots', path: '/boots' },
       { label: 'Rings', path: '/rings' },
+      { label: 'Dungeon Chests', path: '/chests' },
     ]
   },
   {

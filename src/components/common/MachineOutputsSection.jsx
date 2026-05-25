@@ -73,7 +73,10 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
               // Header row — always rendered, no qualifier when sub-rows follow
               const headerRow = (
                 <span key={item.id} className={`source-entry${multipleInputs ? ' source-entry--subrow' : ''}`}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <span className="source-name" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                    {multipleInputs && (
+                      <span style={{ color: '#333', userSelect: 'none', fontFamily: 'monospace', lineHeight: 1, fontSize: '1.1rem' }}>┌‣</span>
+                    )}
                     <UniversalModalButton item={item} variant="inline" onNavigate={onNavigate} />
                   </span>
                   {!multipleInputs && (() => {
@@ -127,20 +130,16 @@ function MachineOutputsSection({ entity, allItems, findById, onNavigate }) {
 
                 return (
                   <span key={`${item.id}-${detail.inputId || idx}`} className="source-entry source-entry--subrow">
-                    <span className="source-name--indented" style={{ color: '#b8a07a', userSelect: 'none' }}>
-                      {isLast ? '└→' : '├→'}
-                    </span>
-                    <span className="source-qualifiers">
-                      <span className="source-qualifier">
-                        {count > 1 && <><span className="output-count" style={{ marginRight: '0.2rem' }}>×{count}</span>{' '}</>}
-                        from {inputItem
-                          ? <UniversalModalButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
-                          : detail.inputName
-                        }
-                      </span>
+                    <span className="source-name" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                      <span style={{ color: '#333', userSelect: 'none', fontFamily: 'monospace', lineHeight: 1, fontSize: '1.1rem' }}>{isLast ? '└──' : '├──'}</span>
+                      {count > 1 && <span className="output-count">×{count}</span>}
+                      {inputItem
+                        ? <UniversalModalButton item={inputItem} variant="inline" label={inputLabel} onNavigate={onNavigate} />
+                        : detail.inputName
+                      }
                     </span>
                     {processingTime && (
-                      <span className="source-detail">{formatProcessingTime(processingTime)}</span>
+                      <span className="source-detail" style={{ paddingTop: 0, paddingBottom: 0 }}>{formatProcessingTime(processingTime)}</span>
                     )}
                   </span>
                 )

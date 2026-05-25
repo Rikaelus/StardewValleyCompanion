@@ -117,7 +117,14 @@ function Modal({ isOpen, onClose, title, breadcrumb, children }) {
           {breadcrumb && breadcrumb}
           {sections.length > 1 && (
             <nav className="modal-section-nav">
-              {sections.map(({ id, label }) => (
+              {[...sections].sort((a, b) => {
+                const body = bodyRef.current
+                if (!body) return 0
+                const elA = body.querySelector(`#${a.id}`)
+                const elB = body.querySelector(`#${b.id}`)
+                if (!elA || !elB) return 0
+                return elA.compareDocumentPosition(elB) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+              }).map(({ id, label }) => (
                 <button
                   key={id}
                   className="modal-section-nav-link"

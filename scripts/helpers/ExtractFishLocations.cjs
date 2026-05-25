@@ -126,7 +126,7 @@ function extractFishLocations() {
   const fishMinLevels = new Map(); // MinFishingLevel requirements
 
   // Helper: record a (fish, location, seasons) tuple, merging seasons across multiple spawn rules
-  function addFishLocation(fishId, locationName, seasons, locationId) {
+  function addFishLocation(fishId, locationName, seasons, locationId, qualifier = null) {
     if (!fishLocations.has(fishId)) fishLocations.set(fishId, new Map());
     const locMap = fishLocations.get(fishId);
 
@@ -134,6 +134,7 @@ function extractFishLocations() {
       locMap.set(locationName, {
         seasons: seasons ? new Set(seasons) : null,
         locationId: locationId || null,
+        qualifier: qualifier || null,
       });
     } else {
       const existing = locMap.get(locationName);
@@ -142,10 +143,9 @@ function extractFishLocations() {
       } else {
         for (const s of seasons) existing.seasons.add(s);
       }
-      // Keep locationId if we didn't have one
-      if (!existing.locationId && locationId) {
-        existing.locationId = locationId;
-      }
+      if (!existing.locationId && locationId) existing.locationId = locationId;
+      // If any rule for this location is unconditional, clear the qualifier
+      if (!qualifier) existing.qualifier = null;
     }
   }
 
@@ -155,6 +155,10 @@ function extractFishLocations() {
 
     // Skip unmapped locations (interiors, temp areas, etc.)
     if (!friendlyName) return;
+
+    // BeachNightMarket delegates all fish from Beach via LOCATION_FISH; any explicit
+    // entries there are duplicates of Beach sources and should not create separate entries.
+    if (locationKey === 'BeachNightMarket') return;
 
     const entityId = mapLocationEntityId(friendlyName);
 
@@ -167,11 +171,17 @@ function extractFishLocations() {
       // Skip if no ItemId (shouldn't happen, but be defensive)
       if (!spawnRule.ItemId) return;
 
+      // Skip spawn rules that only apply when the regular version of the fish is absent
+      // (negated LEGENDARY_FAMILY condition = normal fish, not affected)
+      // Skip spawn rules gated behind Qi Beans drop — not a catchable fish location
+      if (spawnRule.Condition?.includes('DROP_QI_BEANS')) return;
+
       const fishId = extractGameId(spawnRule.ItemId);
       if (!fishId) return;
 
       const seasons = parseSeasonsFromRule(spawnRule);
-      addFishLocation(fishId, friendlyName, seasons, entityId);
+      const isLegendaryFamily = /(?<!!)\bPLAYER_SPECIAL_ORDER_RULE_ACTIVE\s+Current\s+LEGENDARY_FAMILY/.test(spawnRule.Condition || '');
+      addFishLocation(fishId, friendlyName, seasons, entityId, isLegendaryFamily ? 'Legendary Family order' : null);
 
       // Capture MinFishingLevel if present
       if (spawnRule.MinFishingLevel && spawnRule.MinFishingLevel > 0) {
@@ -288,7 +298,8 @@ function extractFishLocations() {
       .map(([location, data]) => ({
         location,
         locationId: data.locationId,
-        seasons: data.seasons ? Array.from(data.seasons).sort() : null
+        seasons: data.seasons ? Array.from(data.seasons).sort() : null,
+        ...(data.qualifier && { qualifier: data.qualifier }),
       }))
       .sort((a, b) => a.location.localeCompare(b.location));
   });

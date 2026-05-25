@@ -271,7 +271,7 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {outputs.filter(o => !o.isGeneric).map((output, idx, specificOutputs) => {
           const outputProfessionMultiplier = calculateProfessionMultiplier(output.outputItem, activeProfessions)
-          const outputHasQuality = output.outputItem.type !== 'artisan' && output.outputQuality == null
+          const outputHasQuality = output.outputItem.capabilities?.hasQualityTiers !== false && output.outputQuality == null
           const fixedQualityMultiplier = output.outputQuality === 0 ? 1.0
             : output.outputQuality === 1 ? 1.25
             : output.outputQuality === 2 ? 1.5

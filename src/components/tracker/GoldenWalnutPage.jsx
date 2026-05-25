@@ -45,6 +45,12 @@ function resolveSourceStatus(source, walnutData, mailReceived) {
     return { found: mailReceived?.includes(flag) ? source.count : 0, max: source.count }
   }
 
+  if (key.startsWith('rootField:')) {
+    const field = key.slice(10)
+    const val = walnutData[field]
+    return { found: val === true ? source.count : 0, max: source.count }
+  }
+
   if (key.startsWith('limitedNutDrops:')) {
     const val = walnutData.limitedNutDrops?.[key.slice(16)] ?? 0
     return { found: val, max: source.count }

@@ -21,7 +21,8 @@ const CATEGORY_LABELS = {
 
 function StoreContentsSection({ entity, entityType, allItems, findById, onNavigate }) {
   const storeId = entity.id
-  const childStalls = allItems
+  // Location entities show child shops via collectDescendantShops in the modal — skip here to avoid duplication
+  const childStalls = entityType === 'location' ? [] : allItems
     .filter(s => s.type === 'location' && s.locations?.some(l => l.id === storeId))
     .sort((a, b) => a.name.localeCompare(b.name))
 
@@ -74,26 +75,19 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                 const isBarter = src.tradeItemId !== undefined || src.tradeItemGameId !== undefined
                 const currencyItem = isBarter && findById ? findById(src.tradeItemId) : null
                 const priceDetail = isBarter ? (
-                  <>
-                    {src.quantity > 1 && (
-                      <span className="source-qualifier">{src.quantity} for</span>
-                    )}
-                    {currencyItem ? (
-                      <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} quantity={src.tradeItemAmount} />
-                    ) : (
-                      <>
-                        {src.tradeItemAmount > 1 && <span className="source-qualifier">×{src.tradeItemAmount}</span>}
-                        {src.tradeItemIcon && (
-                          <img src={`/${src.tradeItemIcon}`} alt={src.tradeItemName} className="source-trade-icon" />
-                        )}
-                        {src.tradeItemName}
-                      </>
-                    )}
-                  </>
+                  currencyItem ? (
+                    <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} quantity={src.tradeItemAmount} />
+                  ) : (
+                    <>
+                      {src.tradeItemAmount > 1 && <span className="source-qualifier">×{src.tradeItemAmount}</span>}
+                      {src.tradeItemIcon && (
+                        <img src={`/${src.tradeItemIcon}`} alt={src.tradeItemName} className="source-trade-icon" />
+                      )}
+                      {src.tradeItemName}
+                    </>
+                  )
                 ) : (
-                  src.price != null
-                    ? (src.quantity > 1 ? `${src.quantity} for ${src.price.toLocaleString()}g` : `${src.price.toLocaleString()}g`)
-                    : '—'
+                  src.price != null ? `${src.price.toLocaleString()}g` : '—'
                 )
 
                 // Build qualifier chips (year, season, etc.) matching ShopSourceList logic
@@ -116,7 +110,7 @@ function StoreContentsSection({ entity, entityType, allItems, findById, onNaviga
                     {(badge, clauseElements, open) => (
                       <>
                         <span className="source-entry">
-                          <UniversalModalButton item={item} variant="inline" onNavigate={onNavigate} />
+                          <span className="source-name"><UniversalModalButton item={item} variant="inline" quantity={src.quantity > 1 ? src.quantity : undefined} onNavigate={onNavigate} /></span>
                           <span className="source-qualifiers">
                             {qualifiers.map((q, qi) => <span key={qi} className="source-qualifier">{q}</span>)}
                             {badge}

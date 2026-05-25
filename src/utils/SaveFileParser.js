@@ -345,7 +345,9 @@ function extractGoldenWalnutData(doc) {
     }
   }
 
-  return { collectedNutTracker, foundBuriedNuts, limitedNutDrops, locationFlags }
+  const goldenCoconutCracked = root.querySelector(':scope > goldenCoconutCracked')?.textContent?.trim() === 'true'
+
+  return { collectedNutTracker, foundBuriedNuts, limitedNutDrops, locationFlags, goldenCoconutCracked }
 }
 
 // ---------------------------------------------------------------------------
@@ -466,7 +468,7 @@ function extractItemRecord(itemEl) {
 
   // Flavored artisan goods (juice, wine, pickle, etc.) store their input item ID
   // and preserve type so we can identify the specific variant (e.g. Pumpkin Juice).
-  const preserveType = childText(itemEl, 'preserveType')
+  const preserveType = childText(itemEl, 'preserveType') ?? childText(itemEl, 'preserve')
   const rawPreservedId = childText(itemEl, 'preservedParentSheetIndex')
   const preservedParentSheetIndex = rawPreservedId
     ? (rawPreservedId.startsWith('(') ? rawPreservedId : `(O)${rawPreservedId}`)
@@ -533,6 +535,15 @@ function extractPlacedBigCraftables(doc) {
       const stack = childInt(obj, 'stack') ?? childInt(obj, 'Stack') ?? 1
       const quality = childInt(obj, 'quality') ?? childInt(obj, 'Quality') ?? 0
       out.push({ gameId: qualified, count: stack, quality, location: locName, container: 'Placed' })
+
+      // Casks hold an item in <heldObject> while aging — extract it for ownership tracking
+      if (xsiType === 'Cask') {
+        const heldEl = obj.querySelector(':scope > heldObject')
+        if (heldEl) {
+          const rec = extractItemRecord(heldEl)
+          if (rec) out.push({ ...rec, location: locName, container: 'Cask' })
+        }
+      }
     }
   }
 

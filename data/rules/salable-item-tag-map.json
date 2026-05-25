@@ -40,7 +40,7 @@
   },
   "tagToEntityType": {
     "category_weapon": "weapon",
-    "category_boots": "boots",
+    "category_boots": "boot",
     "category_ring": "ring",
     "category_trinket": "trinket"
   }

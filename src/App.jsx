@@ -15,11 +15,13 @@ import AchievementsPage from './components/tracker/AchievementsPage'
 import SecretNotesPage from './components/tracker/SecretNotesPage'
 import BundlesPage from './components/tracker/BundlesPage'
 import FarmhousePage from './components/tracker/FarmhousePage'
+import WorldPage from './components/world/WorldPage'
 import RaccoonPage from './components/tracker/RaccoonPage'
 import WellReadPage from './components/tracker/WellReadPage'
 import GoldenWalnutPage from './components/tracker/GoldenWalnutPage'
 import Footer from './components/layout/Footer'
 import AppHeader from './components/layout/AppHeader'
+import HeaderSaveZone from './components/layout/HeaderSaveZone'
 import MegaMenu from './components/layout/MegaMenu'
 import TrackerMenu from './components/layout/TrackerMenu'
 import CharacterBar from './components/common/CharacterBar'
@@ -39,6 +41,7 @@ const MainContent = memo(function MainContent() {
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/world" element={<WorldPage />} />
               <Route path="/tracker/bundles" element={<BundlesPage />} />
               <Route path="/tracker/shrine" element={<ShrinePage />} />
               <Route path="/tracker/museum" element={<MuseumPage />} />
@@ -75,6 +78,7 @@ const MainContent = memo(function MainContent() {
               <Route path="/rings" element={<EntityListPage pageType="rings" />} />
               <Route path="/artifacts" element={<EntityListPage pageType="artifacts" />} />
               <Route path="/breakables" element={<EntityListPage pageType="breakables" />} />
+              <Route path="/chests" element={<EntityListPage pageType="chests" />} />
               <Route path="/geodes" element={<EntityListPage pageType="geodes" />} />
               <Route path="/clothing" element={<EntityListPage pageType="clothing" />} />
               <Route path="/villagers" element={<EntityListPage pageType="villagers" />} />
@@ -134,16 +138,17 @@ function AppShell({ searchOpen, setSearchOpen }) {
 
   return (
     <div className="app">
-      <AppHeader
-        onSearchOpen={() => setSearchOpen(true)}
-        onToggleMegaMenu={toggleMegaMenu}
-        onToggleTrackerMenu={toggleTrackerMenu}
-        onToggleCharacterBar={toggleCharacterBar}
-        megaMenuOpen={megaMenuOpen}
-        trackerMenuOpen={trackerMenuOpen}
-        characterBarOpen={characterBarOpen}
-      />
-      <div className="app-body">
+      <HeaderSaveZone />
+      <div className="app-header-region">
+        <AppHeader
+          onSearchOpen={() => setSearchOpen(true)}
+          onToggleMegaMenu={toggleMegaMenu}
+          onToggleTrackerMenu={toggleTrackerMenu}
+          onToggleCharacterBar={toggleCharacterBar}
+          megaMenuOpen={megaMenuOpen}
+          trackerMenuOpen={trackerMenuOpen}
+          characterBarOpen={characterBarOpen}
+        />
         <MegaMenu
           isOpen={megaMenuOpen}
           onClose={() => setMegaMenuOpen(false)}
@@ -156,6 +161,8 @@ function AppShell({ searchOpen, setSearchOpen }) {
           isOpen={characterBarOpen}
           onClose={() => setCharacterBarOpen(false)}
         />
+      </div>
+      <div className="app-body">
         <MainContent />
       </div>
       <GlobalSearch isOpen={searchOpen} onClose={() => setSearchOpen(false)} />

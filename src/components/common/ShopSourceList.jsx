@@ -78,9 +78,6 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
 
         const priceDetail = isBarter ? (
           <span className="source-detail-inner">
-            {src.quantity > 1 && (
-              <span className="source-qualifier">{src.quantity} for</span>
-            )}
             {currencyItem ? (
               <UniversalModalButton item={currencyItem} variant="inline" onNavigate={onNavigate} plural={src.tradeItemAmount > 1} quantity={src.tradeItemAmount} />
             ) : (
@@ -95,15 +92,10 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
           </span>
         ) : shopCurrencyItem ? (
           <span className="source-detail-inner">
-            {src.quantity > 1 && (
-              <span className="source-qualifier">{src.quantity} for</span>
-            )}
             <UniversalModalButton item={shopCurrencyItem} variant="inline" onNavigate={onNavigate} plural={price > 1} quantity={price} />
           </span>
         ) : (
-          price != null
-            ? (src.quantity > 1 ? `${src.quantity} for ${price.toLocaleString()}g` : `${price.toLocaleString()}g`)
-            : '—'
+          price != null ? `${price.toLocaleString()}g` : '—'
         )
 
         return (
@@ -113,7 +105,7 @@ function ShopSourceList({ sources, compact = false, findEntity, findEntityById, 
                 <span className="source-entry">
                   <span className="source-name">
                     {storeEntity && onNavigate ? (
-                      <UniversalModalButton item={storeEntity} variant="inline" onNavigate={onNavigate} />
+                      <UniversalModalButton item={storeEntity} variant="inline" quantity={src.quantity > 1 ? src.quantity : undefined} onNavigate={onNavigate} />
                     ) : (
                       storeName
                     )}

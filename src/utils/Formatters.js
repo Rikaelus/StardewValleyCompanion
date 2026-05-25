@@ -182,7 +182,6 @@ const TYPE_LABELS = {
   'buff': 'Buff',
   'event': 'Event',
   'villager': 'Villager',
-  'festival': 'Festival',
   'weapon': 'Weapon',
   'boot': 'Boots',
   'trinket': 'Trinket',
@@ -248,6 +247,7 @@ const SUBTYPE_LABELS = {
   'fruit-tree': 'Fruit Tree',
   // location subtypes
   'shop': 'Shop',
+  'festival': 'Festival',
   'region': 'Region',
   'map-area': 'Area',
   'zone': 'Zone',
@@ -291,7 +291,6 @@ export function getEntitySubtitle(entity) {
   if (!entity) return ''
   const type = entity.type
 
-  if (type === 'festival') return 'Festival'
   if (type === 'bundle') return entity.room ? `${entity.room} Bundle` : 'Community Center Bundle'
 
   if (type === 'location' && entity.id?.startsWith('cc-')) return 'Community Center Room'

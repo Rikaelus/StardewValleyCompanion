@@ -26,10 +26,10 @@ function TreeConnectionsSection({ entity, findById, allItems, onNavigate }) {
 
     const hasProduces = fruitItem || tapItems.length > 0
 
-    const chopDrops = entity.chopDrops || []
-    const woodItem = entity.dropsWood ? findById('wood') : null
-    const chopSeedItem = entity.seedOnChopChance ? (findById(entity.seedId) || null) : null
-    const hasChopDrops = entity.dropsWood || entity.seedOnChopChance || chopDrops.length > 0
+    const chopDrops = entity.computedChopDrops || []
+    const shakeDrops = entity.computedShakeDrops || []
+    const hasChopDrops = chopDrops.length > 0
+    const hasShakeDrops = shakeDrops.length > 0
 
     return (
       <>
@@ -107,37 +107,50 @@ function TreeConnectionsSection({ entity, findById, allItems, onNavigate }) {
         {hasChopDrops && (
           <ModalSection id="section-when-chopped" title="When Chopped" navLabel="When Chopped">
             <div className="source-list">
-              {entity.dropsWood && (
-                <span className="source-entry">
-                  {woodItem
-                    ? <UniversalModalButton item={woodItem} variant="inline" onNavigate={onNavigate} />
-                    : <span className="source-name--indented">Wood</span>}
-                </span>
-              )}
-              {chopSeedItem && entity.seedOnChopChance && (
-                <span className="source-entry">
-                  <UniversalModalButton item={chopSeedItem} variant="inline" onNavigate={onNavigate} />
-                  <span className="source-detail">{formatChance(entity.seedOnChopChance)}</span>
-                </span>
-              )}
               {chopDrops.map((drop, i) => {
-                const dropItem = findById(drop.id)
-                const stackLabel = drop.maxStack
-                  ? `${drop.minStack}–${drop.maxStack}`
-                  : drop.minStack > 1 ? `${drop.minStack}` : null
+                const dropItem = findById(drop.entityId)
+                const qty = drop.minStack == null ? null
+                  : drop.maxStack == null ? (drop.minStack > 1 ? `×${drop.minStack}+` : null)
+                  : drop.minStack === drop.maxStack ? `×${drop.minStack}`
+                  : `×${drop.minStack}–${drop.maxStack}`
                 return (
-                  <span key={`${drop.gameId}-${i}`} className="source-entry">
+                  <span key={i} className="source-entry">
                     <span className="source-name">
                       {dropItem
                         ? <UniversalModalButton item={dropItem} variant="inline" onNavigate={onNavigate} />
-                        : <span className="source-name--indented">{drop.name}</span>}
+                        : <span className="source-name--indented">{drop.entityId}</span>}
                     </span>
                     <span className="source-detail">
                       {[
-                        drop.chance < 1 ? formatChance(drop.chance) : null,
-                        stackLabel ? `×${stackLabel}` : null,
-                      ].filter(Boolean).join(', ')}
+                        qty,
+                        drop.chance != null ? formatChance(drop.chance) : null,
+                      ].filter(Boolean).join(' ')}
                     </span>
+                  </span>
+                )
+              })}
+            </div>
+          </ModalSection>
+        )}
+        {hasShakeDrops && (
+          <ModalSection id="section-when-shaken" title="When Shaken" navLabel="When Shaken">
+            <div className="source-list">
+              {shakeDrops.map((drop, i) => {
+                const dropItem = findById(drop.entityId)
+                return (
+                  <span key={i} className="source-entry">
+                    <span className="source-name">
+                      {dropItem
+                        ? <UniversalModalButton item={dropItem} variant="inline" onNavigate={onNavigate} />
+                        : <span className="source-name--indented">{drop.entityId}</span>}
+                    </span>
+                    <span className="source-qualifiers">
+                      {drop.note && <span className="source-qualifier source-condition">{drop.note}</span>}
+                      {drop.seasons && <SeasonBadges seasons={drop.seasons} compact />}
+                    </span>
+                    {drop.chance != null && (
+                      <span className="source-detail">{formatChance(drop.chance)}</span>
+                    )}
                   </span>
                 )
               })}

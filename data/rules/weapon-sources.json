@@ -16,14 +16,12 @@
     },
     "22": {
       "sources": [
-        { "description": "Breaking boxes/barrels or monster drop on floors 20–39 of the Mines" },
-        { "description": "Remixed mine rewards: chest on floor 10" }
+        { "description": "Breaking boxes/barrels or monster drop on floors 20–39 of the Mines" }
       ]
     },
     "45": {
       "sources": [
-        { "description": "Monster drop or breaking crates/barrels in Skull Cavern or Quarry Mine" },
-        { "description": "Remixed mine rewards: chest on floor 90" }
+        { "description": "Monster drop or breaking crates/barrels in Skull Cavern or Quarry Mine" }
       ]
     },
     "47": {
@@ -37,24 +35,6 @@
     },
     "53": {
       "sources": [{ "description": "Found at the Grim Reaper statue in the Quarry Mine" }]
-    },
-    "54": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
-    },
-    "55": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
-    },
-    "56": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
-    },
-    "57": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
-    },
-    "58": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
-    },
-    "59": {
-      "sources": [{ "description": "Volcano Dungeon chest" }]
     },
     "61": {
       "sources": [{ "description": "14% drop from special Slimes in the Mines during Danger In The Deep or after activating the Shrine of Challenge" }]

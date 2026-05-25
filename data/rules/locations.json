@@ -8,7 +8,7 @@
       "shop": {
         "gameShopId": "SeedShop"
       },
-      "address": "Pelican Town",
+      "locations": [{ "id": "map-seedshop" }],
       "hours": {
         "open": 900,
         "close": 1700,
@@ -28,7 +28,7 @@
       "shop": {
         "gameShopId": "Joja"
       },
-      "address": "Pelican Town",
+      "locations": [{ "id": "map-jojamart" }],
       "hours": {
         "open": 900,
         "close": 2300
@@ -41,7 +41,7 @@
       "shop": {
         "gameShopId": "FishShop"
       },
-      "address": "Beach",
+      "locations": [{ "id": "map-fishshop" }],
       "hours": {
         "open": 900,
         "close": 1700
@@ -54,7 +54,7 @@
       "shop": {
         "gameShopId": "AnimalShop"
       },
-      "address": "South of Farm",
+      "locations": [{ "id": "map-animalshop" }],
       "hours": {
         "open": 900,
         "close": 1600,
@@ -71,7 +71,7 @@
       "shop": {
         "gameShopId": "Blacksmith"
       },
-      "address": "Pelican Town",
+      "locations": [{ "id": "map-blacksmith" }],
       "hours": {
         "open": 900,
         "close": 1600,
@@ -87,7 +87,7 @@
       "shop": {
         "gameShopId": "Carpenter"
       },
-      "address": "Mountain",
+      "locations": [{ "id": "map-sciencehouse" }],
       "hours": {
         "open": 900,
         "close": 1700,
@@ -103,7 +103,7 @@
       "shop": {
         "gameShopId": "Saloon"
       },
-      "address": "Pelican Town",
+      "locations": [{ "id": "map-saloon" }],
       "hours": {
         "open": 1200,
         "close": 2400
@@ -117,7 +117,7 @@
       "shop": {
         "gameShopId": "AdventureShop"
       },
-      "address": "Mountain",
+      "locations": [{ "id": "map-adventureguild" }],
       "hours": {
         "open": 900,
         "close": 2200
@@ -130,7 +130,7 @@
       "shop": {
         "gameShopId": "Sandy"
       },
-      "address": "Calico Desert",
+      "locations": [{ "id": "map-sandyhouse" }],
       "hours": {
         "open": 900,
         "close": 2350,
@@ -144,7 +144,7 @@
       "shop": {
         "gameShopId": "DesertTrade"
       },
-      "address": "Calico Desert",
+      "locations": [{ "id": "map-desert" }],
       "hours": {
         "open": 900,
         "close": 2350,
@@ -158,17 +158,11 @@
       "shop": {
         "gameShopId": "Traveler"
       },
-      "address": "Cindersap Forest",
       "locations": [
-        { "id": "fest-night-market", "note": "Visits all 3 nights" },
-        { "id": "fest-desert-festival" }
-      ],
-      "hours": {
-        "open": 600,
-        "close": 2000,
-        "days": ["Friday", "Sunday"]
-      },
-      "note": "Appears Fridays and Sundays in Cindersap Forest."
+        { "id": "map-forest", "hours": { "open": 600, "close": 2000, "days": ["Friday", "Sunday"] } },
+        { "id": "map-night-market", "note": "Visits all 3 nights" },
+        { "id": "map-desert-festival", "hours": { "open": 1200, "close": 2400 } }
+      ]
     },
     "loc-island-trader": {
       "id": "loc-island-trader",
@@ -177,7 +171,7 @@
       "shop": {
         "gameShopId": "IslandTrade"
       },
-      "address": "Ginger Island",
+      "locations": [{ "id": "map-island-north" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -191,7 +185,7 @@
       "shop": {
         "gameShopId": "Dwarf"
       },
-      "address": "Mines",
+      "locations": [{ "id": "map-mines" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -205,7 +199,7 @@
       "shop": {
         "gameShopId": "HatMouse"
       },
-      "address": "Cindersap Forest",
+      "locations": [{ "id": "map-forest" }],
       "hours": {
         "open": 600,
         "close": 2400,
@@ -220,7 +214,7 @@
       "shop": {
         "gameShopId": "Casino"
       },
-      "address": "Calico Desert",
+      "locations": [{ "id": "map-club" }],
       "hours": {
         "open": 900,
         "close": 2300,
@@ -235,7 +229,7 @@
       "shop": {
         "gameShopId": "QiGemShop"
       },
-      "address": "Ginger Island",
+      "locations": [{ "id": "map-qinutroom" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -249,7 +243,7 @@
       "shop": {
         "gameShopId": "VolcanoShop"
       },
-      "address": "Volcano Dungeon",
+      "locations": [{ "id": "map-volcano-dungeon" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -263,7 +257,7 @@
       "shop": {
         "gameShopId": "Raccoon"
       },
-      "address": "Cindersap Forest",
+      "locations": [{ "id": "map-forest" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -277,7 +271,7 @@
       "shop": {
         "gameShopId": "ShadowShop"
       },
-      "address": "Sewers",
+      "locations": [{ "id": "map-sewers" }],
       "hours": {
         "open": 0,
         "close": 2400
@@ -290,7 +284,7 @@
       "shop": {
         "gameShopId": "ResortBar"
       },
-      "address": "Ginger Island Resort",
+      "locations": [{ "id": "map-island-south" }],
       "hours": {
         "open": 0,
         "close": 2400,
@@ -304,7 +298,7 @@
       "shop": {
         "gameShopId": "Bookseller"
       },
-      "address": "Pelican Town",
+      "locations": [{ "id": "map-town" }],
       "hours": {
         "open": 600,
         "close": 2000,
@@ -327,7 +321,7 @@
       },
       "locations": [
         {
-          "id": "fest-egg-festival"
+          "id": "map-egg-festival"
         }
       ]
     },
@@ -340,7 +334,7 @@
       },
       "locations": [
         {
-          "id": "fest-flower-dance"
+          "id": "map-flower-dance"
         }
       ]
     },
@@ -353,7 +347,7 @@
       },
       "locations": [
         {
-          "id": "fest-luau"
+          "id": "map-luau"
         }
       ]
     },
@@ -366,7 +360,7 @@
       },
       "locations": [
         {
-          "id": "fest-spirits-eve"
+          "id": "map-spirits-eve"
         }
       ]
     },
@@ -379,7 +373,7 @@
       },
       "locations": [
         {
-          "id": "fest-moonlight-jellies"
+          "id": "map-moonlight-jellies"
         }
       ]
     },
@@ -392,7 +386,7 @@
       },
       "locations": [
         {
-          "id": "fest-winter-star"
+          "id": "map-winter-star"
         }
       ]
     },
@@ -405,7 +399,7 @@
       },
       "locations": [
         {
-          "id": "fest-festival-of-ice"
+          "id": "map-festival-of-ice"
         }
       ]
     },
@@ -418,7 +412,7 @@
       },
       "locations": [
         {
-          "id": "fest-stardew-valley-fair"
+          "id": "map-stardew-valley-fair"
         }
       ]
     },
@@ -429,11 +423,7 @@
       "shop": {
         "gameShopId": "Festival_NightMarket_DecorationBoat"
       },
-      "locations": [
-        {
-          "id": "fest-night-market"
-        }
-      ]
+      "locations": [{ "id": "map-night-market" }]
     },
     "loc-night-market-magic": {
       "id": "loc-night-market-magic",
@@ -442,22 +432,14 @@
       "shop": {
         "gameShopId": "Festival_NightMarket_MagicBoat_Day1"
       },
-      "locations": [
-        {
-          "id": "fest-night-market"
-        }
-      ]
+      "locations": [{ "id": "map-night-market" }]
     },
     "loc-night-market-lupini": {
       "id": "loc-night-market-lupini",
       "name": "Night Market (Lupini's Paintings)",
       "icon": "assets/objects/MidnightCarp.png",
       "note": "Sells 3 rotating paintings, one per night.",
-      "locations": [
-        {
-          "id": "fest-night-market"
-        }
-      ]
+      "locations": [{ "id": "map-night-market" }]
     },
     "loc-desert-festival-egg-shop": {
       "id": "loc-desert-festival-egg-shop",
@@ -468,7 +450,7 @@
       },
       "locations": [
         {
-          "id": "fest-desert-festival"
+          "id": "map-desert-festival"
         }
       ]
     },
@@ -479,13 +461,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Abigail"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -497,13 +478,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Alex"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -515,13 +495,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Caroline"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -533,13 +512,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Clint"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -551,13 +529,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Demetrius"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -569,13 +546,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Elliott"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -587,13 +563,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Emily"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -605,13 +580,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Evelyn"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -623,13 +597,12 @@
       "shop": {
         "gameShopId": "DesertFestival_George"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -641,13 +614,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Gus"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -659,13 +631,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Haley"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -677,13 +648,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Harvey"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -695,13 +665,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Jas"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -713,13 +682,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Jodi"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -731,13 +699,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Kent"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -749,13 +716,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Leah"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -767,13 +733,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Leo"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -785,13 +750,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Marnie"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -803,13 +767,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Maru"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -821,13 +784,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Pam"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -839,13 +801,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Penny"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -857,13 +818,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Pierre"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -875,13 +835,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Robin"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -893,13 +852,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Sam"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -911,13 +869,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Sebastian"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -929,13 +886,12 @@
       "shop": {
         "gameShopId": "DesertFestival_Shane"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
@@ -947,16 +903,107 @@
       "shop": {
         "gameShopId": "DesertFestival_Vincent"
       },
-      "note": "One of 27 possible villager stalls; 2 are randomly chosen each year.",
       "locations": [
         {
-          "id": "fest-desert-festival",
+          "id": "map-desert-festival",
           "rotation": {
             "pool": "desert-festival-villager-stalls",
-            "countPerYear": 2
+            "countPerDay": 2
           }
         }
       ]
+    },
+    "map-egg-festival": {
+      "id": "map-egg-festival",
+      "name": "Egg Festival",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "spring",
+      "day": 13,
+      "hours": { "open": 900, "close": 1400 },
+      "parentLocation": "map-town"
+    },
+    "map-flower-dance": {
+      "id": "map-flower-dance",
+      "name": "Flower Dance",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "spring",
+      "day": 24,
+      "hours": { "open": 900, "close": 1400 },
+      "parentLocation": "map-forest"
+    },
+    "map-luau": {
+      "id": "map-luau",
+      "name": "Luau",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "summer",
+      "day": 11,
+      "hours": { "open": 900, "close": 1400 },
+      "parentLocation": "map-beach"
+    },
+    "map-moonlight-jellies": {
+      "id": "map-moonlight-jellies",
+      "name": "Dance of the Moonlight Jellies",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "summer",
+      "day": 28,
+      "hours": { "open": 2000, "close": 2400 },
+      "parentLocation": "map-beach"
+    },
+    "map-stardew-valley-fair": {
+      "id": "map-stardew-valley-fair",
+      "name": "Stardew Valley Fair",
+      "icon": "assets/objects/StarToken.png",
+      "season": "fall",
+      "day": 16,
+      "hours": { "open": 900, "close": 1500 },
+      "parentLocation": "map-town"
+    },
+    "map-spirits-eve": {
+      "id": "map-spirits-eve",
+      "name": "Spirit's Eve",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "fall",
+      "day": 27,
+      "hours": { "open": 2000, "close": 2400 },
+      "parentLocation": "map-town"
+    },
+    "map-festival-of-ice": {
+      "id": "map-festival-of-ice",
+      "name": "Festival of Ice",
+      "icon": "assets/objects/FrozenTear.png",
+      "season": "winter",
+      "day": 8,
+      "hours": { "open": 900, "close": 1400 },
+      "parentLocation": "map-forest"
+    },
+    "map-winter-star": {
+      "id": "map-winter-star",
+      "name": "Feast of the Winter Star",
+      "icon": "assets/villagers/Pierre.png",
+      "season": "winter",
+      "day": 25,
+      "hours": { "open": 900, "close": 1400 },
+      "parentLocation": "map-town"
+    },
+    "map-night-market": {
+      "id": "map-night-market",
+      "name": "Night Market",
+      "icon": "assets/objects/MidnightCarp.png",
+      "season": "winter",
+      "dayStart": 15,
+      "dayEnd": 17,
+      "hours": { "open": 1700, "close": 2400 },
+      "parentLocation": "map-beach"
+    },
+    "map-desert-festival": {
+      "id": "map-desert-festival",
+      "name": "Desert Festival",
+      "icon": "assets/objects/CalicoEgg.png",
+      "season": "spring",
+      "dayStart": 15,
+      "dayEnd": 17,
+      "hours": { "open": 1000, "close": 2400 },
+      "parentLocation": "map-desert"
     }
   },
   "categorySellingLocations": {
