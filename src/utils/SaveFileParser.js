@@ -782,6 +782,91 @@ function extractMuseumPieces(doc) {
   return [...donated]
 }
 
+function extractFieldOfficePieces(doc) {
+  // piecesDonated is an 11-element boolean array inside the IslandFieldOffice GameLocation.
+  // Index→fossil mapping is from FieldOfficeMenu.getPieceIndexForDonationItem() (game source).
+  // Plants are tracked separately via plantsRestoredLeft / plantsRestoredRight booleans.
+  const locations = doc.documentElement.querySelector(':scope > locations')
+  if (!locations) return null
+
+  let foLoc = null
+  for (const loc of locations.children) {
+    const nameEl = loc.querySelector(':scope > name')
+    if (nameEl?.textContent?.trim() === 'IslandFieldOffice') {
+      foLoc = loc
+      break
+    }
+  }
+  if (!foLoc) return null
+
+  // The save file stores piecesDonated as 11 sibling elements (not a wrapper array).
+  const donated = []
+  for (const el of foLoc.querySelectorAll(':scope > piecesDonated')) {
+    donated.push(el.textContent?.trim() === 'true')
+  }
+
+  const plantsRestoredLeft = foLoc.querySelector(':scope > plantsRestoredLeft')?.textContent?.trim() === 'true'
+  const plantsRestoredRight = foLoc.querySelector(':scope > plantsRestoredRight')?.textContent?.trim() === 'true'
+
+  return { piecesDonated: donated, plantsRestoredLeft, plantsRestoredRight }
+}
+
+function extractIslandShrine(doc) {
+  // Four Item Pedestal objects at fixed tile coords inside IslandShrine.
+  // Each has isIslandShrinePedestal=true, a match flag, and a heldObject when a gem is placed.
+  // Positions (x,y) → position label:
+  //   (24,25)=top, (21,27)=left, (27,27)=right, (24,28)=bottom
+  const PEDESTAL_POSITIONS = {
+    '24,25': 'top',
+    '21,27': 'left',
+    '27,27': 'right',
+    '24,28': 'bottom',
+  }
+
+  const locations = doc.documentElement.querySelector(':scope > locations')
+  if (!locations) return null
+
+  let shrineLoc = null
+  for (const loc of locations.children) {
+    if (loc.querySelector(':scope > name')?.textContent?.trim() === 'IslandShrine') {
+      shrineLoc = loc
+      break
+    }
+  }
+  if (!shrineLoc) return null
+
+  const puzzleFinished = shrineLoc.querySelector(':scope > puzzleFinished')?.textContent?.trim() === 'true'
+
+  const pedestals = {}
+  const objectsEl = shrineLoc.querySelector(':scope > objects')
+  if (objectsEl) {
+    for (const item of objectsEl.querySelectorAll('item')) {
+      const xy = item.querySelector('Vector2')
+      if (!xy) continue
+      const x = xy.querySelector('X')?.textContent?.trim()
+      const y = xy.querySelector('Y')?.textContent?.trim()
+      const key = `${x},${y}`
+      if (!PEDESTAL_POSITIONS[key]) continue
+
+      const obj = item.querySelector('value > Object')
+      if (!obj) continue
+      if (obj.querySelector('isIslandShrinePedestal')?.textContent?.trim() !== 'true') continue
+
+      const match = obj.querySelector(':scope > match')?.textContent?.trim() === 'true'
+      const heldObj = obj.querySelector(':scope > heldObject')
+      const gemName = heldObj?.querySelector('name')?.textContent?.trim() ?? null
+      const gemItemId = heldObj?.querySelector('itemId')?.textContent?.trim() ?? null
+      const reqObj = obj.querySelector(':scope > requiredItem')
+      const requiredName = reqObj?.querySelector('name')?.textContent?.trim() ?? null
+      const requiredItemId = reqObj?.querySelector('itemId')?.textContent?.trim() ?? null
+
+      pedestals[PEDESTAL_POSITIONS[key]] = { match, gemName, gemItemId, requiredName, requiredItemId }
+    }
+  }
+
+  return { puzzleFinished, pedestals }
+}
+
 // ---------------------------------------------------------------------------
 // Main entry point
 // ---------------------------------------------------------------------------
@@ -876,6 +961,8 @@ function parseMainSave(doc) {
     // Main save extras
     bundleProgress: extractBundleProgress(doc),
     museumPieces: extractMuseumPieces(doc),
+    fieldOfficePieces: extractFieldOfficePieces(doc),
+    islandShrine: extractIslandShrine(doc),
     grandpaScore: childInt(doc.documentElement, 'grandpaScore') ?? null,
     goldenWalnuts: childInt(doc.documentElement, 'goldenWalnutsFound') ?? null,
     walnutData: extractGoldenWalnutData(doc),

@@ -83,6 +83,25 @@ function getAvailableProfessions(entity, artisanItems) {
   return professions
 }
 
+const OUTPUT_QUALITY_TIERS = [
+  { sym: '●', tier: 'regular',  mult: 1.0  },
+  { sym: '◆', tier: 'silver',   mult: 1.25 },
+  { sym: '★', tier: 'gold',     mult: 1.5  },
+  { sym: '◆', tier: 'iridium',  mult: 2.0  },
+]
+
+function getOutputTiers(entity) {
+  const type = entity.type || ''
+  if (['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)) {
+    if (type === 'food') return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular' || t.tier === 'iridium')
+    if (entity.maxQuality === 0) return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular')
+    if (entity.isTrapFish) return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular' || t.tier === 'silver')
+    return OUTPUT_QUALITY_TIERS
+  }
+  // Artisan goods, resources, etc. — normal quality only
+  return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular')
+}
+
 function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality, setInputQuality, showTrashRefund, findById, onNavigate }) {
   if (!inputDetails || inputDetails.length === 0) return null
   if (showTrashRefund) return null
@@ -91,6 +110,8 @@ function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality,
   const qualityMultipliers = { regular: 1.0, silver: 1.25, gold: 1.5, iridium: 2.0 }
   const inputMultiplier = qualityMultipliers[inputQuality]
   const outputProfessionMultiplier = calculateProfessionMultiplier(entity, activeProfessions)
+  const outputTiers = getOutputTiers(entity)
+
   return (
     <div className="profit-section">
       <div className="profit-header">
@@ -113,16 +134,6 @@ function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality,
           const inputProfessionMultiplier = calculateProfessionMultiplier({ gameCategory: input.inputGameCategory }, activeProfessions)
           const adjustedInputPrice = Math.floor(baseInputPrice * inputMultiplier * inputProfessionMultiplier)
 
-          const regularOutputPrice = Math.floor(baseOutputPrice * outputProfessionMultiplier)
-          const silverOutputPrice = Math.floor(baseOutputPrice * 1.25 * outputProfessionMultiplier)
-          const goldOutputPrice = Math.floor(baseOutputPrice * 1.5 * outputProfessionMultiplier)
-          const iridiumOutputPrice = Math.floor(baseOutputPrice * 2.0 * outputProfessionMultiplier)
-
-          const regularProfit = adjustedInputPrice > 0 ? Math.round(((regularOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const silverProfit = adjustedInputPrice > 0 ? Math.round(((silverOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const goldProfit = adjustedInputPrice > 0 ? Math.round(((goldOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-          const iridiumProfit = adjustedInputPrice > 0 ? Math.round(((iridiumOutputPrice - adjustedInputPrice) / adjustedInputPrice) * 100) : 0
-
           return (
             <div key={idx} className="processing-row processing-row--input">
               <div style={{ fontSize: '0.875rem', display: 'flex', alignItems: 'center' }}>
@@ -142,30 +153,20 @@ function ProfitAnalysis({ entity, inputDetails, activeProfessions, inputQuality,
               </div>
 
               <div className="quality-tiers">
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--regular">●</span>
-                  <span style={{ color: getProfitColor(regularProfit) }}>
-                    {regularProfit >= 0 ? '+' : ''}{regularProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--silver">◆</span>
-                  <span style={{ color: getProfitColor(silverProfit) }}>
-                    {silverProfit >= 0 ? '+' : ''}{silverProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--gold">★</span>
-                  <span style={{ color: getProfitColor(goldProfit) }}>
-                    {goldProfit >= 0 ? '+' : ''}{goldProfit}%
-                  </span>
-                </div>
-                <div className="quality-tier">
-                  <span className="quality-symbol quality-symbol--iridium">◆</span>
-                  <span style={{ color: getProfitColor(iridiumProfit) }}>
-                    {iridiumProfit >= 0 ? '+' : ''}{iridiumProfit}%
-                  </span>
-                </div>
+                {outputTiers.map(({ sym, tier, mult }) => {
+                  const outputPrice = Math.floor(baseOutputPrice * mult * outputProfessionMultiplier)
+                  const profit = adjustedInputPrice > 0
+                    ? Math.round(((outputPrice - adjustedInputPrice) / adjustedInputPrice) * 100)
+                    : 0
+                  return (
+                    <div key={tier} className="quality-tier">
+                      <span className={`quality-symbol quality-symbol--${tier}`}>{sym}</span>
+                      <span style={{ color: getProfitColor(profit) }}>
+                        {profit >= 0 ? '+' : ''}{profit}%
+                      </span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )

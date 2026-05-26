@@ -10,8 +10,10 @@ export const TRACKER_MENU_GROUPS = [
   {
     domain: 'Collections',
     items: [
-      { label: 'Museum Collection',  path: '/tracker/museum' },
-      { label: 'Rarecrow Collection', path: '/tracker/rarecrows' },
+      { label: 'Museum Collection',      path: '/tracker/museum' },
+      { label: 'Island Field Office',    path: '/tracker/field-office' },
+      { label: 'Island Shrine',          path: '/tracker/island-shrine' },
+      { label: 'Rarecrow Collection',    path: '/tracker/rarecrows' },
       { label: 'Secret Notes',       path: '/tracker/secret-notes' },
       { label: 'Well-read',          path: '/tracker/well-read' },
     ],

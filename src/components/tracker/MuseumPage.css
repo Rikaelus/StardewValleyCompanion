@@ -216,50 +216,6 @@
   gap: 0.4rem;
 }
 
-.museum-tile {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 4px;
-  background: #faf4e8;
-  border: 1px solid #d9c4a0;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.1s, border-color 0.15s, background 0.15s;
-}
-
-.museum-tile:hover {
-  border-color: #8b6f47;
-  transform: scale(1.05);
-}
-
-.museum-tile--donated {
-  background: #ecf5e2;
-  border-color: #c5dba0;
-}
-
-.museum-tile--missing .museum-tile-icon {
-  filter: grayscale(1) opacity(0.45);
-}
-
-.museum-tile--neutral {
-  background: #faf4e8;
-  border-color: #d9c4a0;
-}
-
-.museum-tile-icon {
-  width: 32px;
-  height: 32px;
-  image-rendering: pixelated;
-}
-
-.museum-tile-fallback {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #8b6f47;
-}
 
 /* List view (when "show only needed" is on) */
 .museum-list {

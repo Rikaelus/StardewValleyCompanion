@@ -19,6 +19,8 @@ import WorldPage from './components/world/WorldPage'
 import RaccoonPage from './components/tracker/RaccoonPage'
 import WellReadPage from './components/tracker/WellReadPage'
 import GoldenWalnutPage from './components/tracker/GoldenWalnutPage'
+import FieldOfficePage from './components/tracker/FieldOfficePage'
+import IslandShrinePage from './components/tracker/IslandShrinePage'
 import Footer from './components/layout/Footer'
 import AppHeader from './components/layout/AppHeader'
 import HeaderSaveZone from './components/layout/HeaderSaveZone'
@@ -58,6 +60,8 @@ const MainContent = memo(function MainContent() {
               <Route path="/tracker/raccoon-shop" element={<RaccoonPage />} />
               <Route path="/tracker/well-read" element={<WellReadPage />} />
               <Route path="/tracker/golden-walnuts" element={<GoldenWalnutPage />} />
+              <Route path="/tracker/field-office" element={<FieldOfficePage />} />
+              <Route path="/tracker/island-shrine" element={<IslandShrinePage />} />
               <Route path="/fish" element={<EntityListPage pageType="fish" />} />
               <Route path="/artisan/*" element={<EntityListPage pageType="artisan" />} />
               <Route path="/forage" element={<EntityListPage pageType="forage" />} />

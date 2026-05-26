@@ -46,6 +46,8 @@ export function useTrackerCompletion() {
         empty('/tracker/farmhouse'),
         empty('/tracker/raccoon-shop'),
         empty('/tracker/golden-walnuts'),
+        empty('/tracker/field-office'),
+        empty('/tracker/island-shrine'),
       ])
     }
 
@@ -148,6 +150,15 @@ export function useTrackerCompletion() {
     // ── Grandpa's Shrine ───────────────────────────────────────────────────────
     const candlesDone = computeShrineScore(saveData)?.candles ?? 0
 
+    // ── Island Field Office ────────────────────────────────────────────────────
+    // 11 fossil pieces + 2 plant survey completions = 13 total
+    const TOTAL_FIELD_OFFICE = 13
+    const foPieces = saveData.fieldOfficePieces?.piecesDonated ?? []
+    const foPiecesDone = foPieces.filter(Boolean).length
+    const foPlantsLeft = saveData.fieldOfficePieces?.plantsRestoredLeft ? 1 : 0
+    const foPlantsRight = saveData.fieldOfficePieces?.plantsRestoredRight ? 1 : 0
+    const fieldOfficeDone = foPiecesDone + foPlantsLeft + foPlantsRight
+
     return new Map([
       ['/tracker/bundles',      { done: bundlesDone,      total: bundlesTotal }],
       ['/tracker/shrine',       { done: candlesDone,      total: TOTAL_CANDLES }],
@@ -165,6 +176,12 @@ export function useTrackerCompletion() {
       ['/tracker/farmhouse',    { done: farmhouseDone,     total: TOTAL_FARMHOUSE_UPGRADES }],
       ['/tracker/raccoon-shop', { done: raccoonDone,       total: TOTAL_RACCOON_FEEDINGS }],
       ['/tracker/golden-walnuts',{ done: walnutsDone,      total: TOTAL_WALNUTS }],
+      ['/tracker/field-office',  { done: fieldOfficeDone, total: TOTAL_FIELD_OFFICE }],
+      ['/tracker/island-shrine', (() => {
+        const pedestals = saveData.islandShrine?.pedestals ?? {}
+        const done = ['top','left','right','bottom'].filter(p => pedestals[p]?.match).length
+        return { done, total: 4 }
+      })()],
     ])
   }, [items, loading, progress, saveData])
 }

@@ -147,6 +147,10 @@
     "(BC)204": {
       "type": "furniture",
       "notes": "Seasonal Plant variant 6 — stored as BigCraftable but is functionally decorative furniture."
+    },
+    "(BLD)Junimo Hut": {
+      "uniqueId": "junimo-hut-building",
+      "notes": "The Wizard-built farm building (Junimo Hut). Collides on id with the furniture item (F)JunimoHut; disambiguated so both survive the merge."
     }
   }
 }

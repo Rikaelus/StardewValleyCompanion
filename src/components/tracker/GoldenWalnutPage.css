@@ -144,6 +144,15 @@
   padding: 0.5rem 0.75rem;
 }
 
+.walnut-parrot-card--unlocked {
+  background: #f0f9e8;
+  border-color: #8ec86a;
+}
+
+.walnut-parrot-card--unlocked .walnut-parrot-label {
+  color: #3a6b1a;
+}
+
 .walnut-parrot-cost {
   font-size: 0.88rem;
   font-weight: 700;

@@ -26,7 +26,7 @@ function UniversalModalButton({
   iconSize = 32,
   className = '',
   stopPropagation = false,
-  variant = 'default', // 'default' | 'inline' | 'bundle-item' | 'row'
+  variant = 'default', // 'default' | 'inline' | 'bundle-item' | 'row' | 'collection-tile'
   onNavigate = null, // Optional override (e.g. for breadcrumb navigation within modal)
   plural = false, // Display the item name in plural form (inline variant only)
   label = null, // Override the displayed name (inline variant only)
@@ -36,12 +36,17 @@ function UniversalModalButton({
   showSlotBackground = false, // Show bundle slot background (bundle-item variant only)
   noDoubleFrame = false, // Opt out of inner state-color frame (bundle-item variant only)
   highlighted = false, // row variant: highlight state (mirrors :hover)
-  onMouseEnter = null // row variant: hover callback
+  onMouseEnter = null, // row variant: hover callback
+  donated = null, // collection-tile variant: true | false | null (no save data)
+  frameColor = 'tan', // collection-tile variant: 'tan' | 'gold' | 'teal' | 'green'
+  tileSize = 'sm', // collection-tile variant: 'sm' (48px) | 'lg' (72px)
 }) {
   const openModal = useOpenModal()
   const entities = useEntities()
-  const { hasSaveData, isOwned, isNeeded, getBundleProgress, hasAchievement } = useProgress()
-  const owned = hasSaveData && !!item?.gameId && isOwned(item.gameId, item)
+  const { hasSaveData, isOwned, getOwnedCount, isNeeded, getBundleProgress, hasAchievement } = useProgress()
+  const ownedCount = hasSaveData && !!item?.gameId ? getOwnedCount(item.gameId, item) : 0
+  const owned = ownedCount > 0
+  const partiallyOwned = owned && quantity > 1 && ownedCount < quantity
   const needed = isNeeded(item, entities.findById)
   const [imageError, setImageError] = useState(false)
 
@@ -81,12 +86,44 @@ function UniversalModalButton({
     }
   }
 
+  // Render collection-tile variant (Museum, Field Office)
+  if (variant === 'collection-tile') {
+    const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
+    const stateClass = donated === null ? 'ctile--neutral' : donated ? 'ctile--donated' : 'ctile--missing'
+    const tooltipId = `ctile-${item.id}`
+    const tooltipContent = donated === null ? item.name : `${item.name} — ${donated ? 'Donated' : 'Not donated'}`
+    return (
+      <>
+        <button
+          type="button"
+          className={`ctile ctile--${tileSize} ctile--${frameColor} ${stateClass}`}
+          onClick={handleClick}
+          data-tooltip-id={tooltipId}
+          data-tooltip-content={tooltipContent}
+        >
+          {iconSrc && !imageError ? (
+            <img
+              src={iconSrc}
+              alt=""
+              className={`ctile-icon${(!donated && donated !== null) ? ' ctile-icon--missing' : ''}`}
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <span className="ctile-fallback">{item.name?.slice(0, 2).toUpperCase()}</span>
+          )}
+        </button>
+        <Tooltip id={tooltipId} float style={{ zIndex: 9999 }} />
+      </>
+    )
+  }
+
   // Render bundle-item variant (icon with quality/quantity overlays)
   if (variant === 'bundle-item') {
     const starColor = getQualityStarColor(quality)
     const tooltipId = `bundle-item-${item.id}`
     const stateClass = !noDoubleFrame
       ? (owned && needed ? 'bundle-item--owned bundle-item--needed'
+        : partiallyOwned ? 'bundle-item--partial'
         : owned ? 'bundle-item--owned'
         : needed ? 'bundle-item--needed'
         : '')
@@ -135,6 +172,7 @@ function UniversalModalButton({
     const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(item)
     const nameLabelClass = getCollectionLabelClass()
       || (owned && needed ? 'inline-owned-needed'
+      : partiallyOwned ? 'inline-partial'
       : owned ? 'inline-owned'
       : needed ? 'inline-needed'
       : '')
@@ -172,6 +210,7 @@ function UniversalModalButton({
     const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
     const inlineLabelClass = getCollectionLabelClass()
       || (owned && needed ? 'inline-owned-needed'
+      : partiallyOwned ? 'inline-partial'
       : owned ? 'inline-owned'
       : needed ? 'inline-needed'
       : '')
@@ -223,6 +262,7 @@ function UniversalModalButton({
       className={className}
       stopPropagation={stopPropagation}
       owned={owned}
+      partiallyOwned={partiallyOwned}
       needed={needed}
     />
   )

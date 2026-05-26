@@ -20,19 +20,34 @@ const AREA_LABELS = {
 }
 
 const PARROT_UPGRADES = [
-  { cost: 1, label: 'Island North access', description: 'Unlock the north side of the island.' },
-  { cost: 10, label: 'Island West access', description: 'Unlock the west side of the island.' },
-  { cost: 20, label: 'Island Farmhouse', description: 'Unlock the farmhouse — sleep here to skip leaving the island.' },
-  { cost: 5, label: 'Farmhouse Mailbox', description: 'Check your mail without leaving the island.' },
-  { cost: 20, label: 'Farm Obelisk', description: 'Teleport back to your farm.' },
-  { cost: 10, label: 'Dig Site Bridge', description: 'Repair the bridge to access the dig site.' },
-  { cost: 10, label: 'Island Trader', description: 'Unlock the Island Trader shop.' },
-  { cost: 5, label: 'Volcano Bridge', description: 'Permanent bridge into the Volcano (no watering can needed).' },
-  { cost: 5, label: 'Volcano Exit Shortcut', description: 'Quick escape from level 5 of the Volcano Dungeon.' },
-  { cost: 20, label: 'Beach Resort', description: 'Unlock the beach resort, Island Southeast, and Pirate Cove.' },
-  { cost: 10, label: 'Parrot Express', description: 'Unlock fast travel around the island.' },
+  { cost: 1,  label: 'Island North access',   description: 'Unlock the north side of the island.', saveKey: 'mail:bouncerGone' },
+  { cost: 10, label: 'Island West access',    description: 'Unlock the west side of the island.', saveKey: 'mail:Island_Turtle' },
+  { cost: 20, label: 'Island Farmhouse',      description: 'Unlock the farmhouse — sleep here to skip leaving the island.', saveKey: 'mail:Island_UpgradeHouse' },
+  { cost: 5,  label: 'Farmhouse Mailbox',     description: 'Check your mail without leaving the island.', saveKey: 'mail:Island_UpgradeHouse_Mailbox' },
+  { cost: 20, label: 'Farm Obelisk',          description: 'Teleport back to your farm.', saveKey: 'mail:Island_W_Obelisk' },
+  { cost: 10, label: 'Dig Site Bridge',       description: 'Repair the bridge to access the dig site.', saveKey: 'mail:Island_UpgradeBridge' },
+  { cost: 10, label: 'Island Trader',         description: 'Unlock the Island Trader shop.', saveKey: 'mail:Island_UpgradeTrader' },
+  { cost: 5,  label: 'Volcano Bridge',        description: 'Permanent bridge into the Volcano (no watering can needed).', saveKey: 'mail:Island_VolcanoBridge' },
+  { cost: 5,  label: 'Volcano Exit Shortcut', description: 'Quick escape from level 5 of the Volcano Dungeon.', saveKey: 'mail:Island_VolcanoShortcutOut' },
+  { cost: 20, label: 'Beach Resort',          description: 'Unlock the beach resort, Island Southeast, and Pirate Cove.', saveKey: 'mail:Island_Resort' },
+  { cost: 10, label: 'Parrot Express',        description: 'Unlock fast travel around the island.', saveKey: 'mail:Island_UpgradeParrotPlatform' },
 ]
 const TOTAL_PARROT_COST = PARROT_UPGRADES.reduce((s, u) => s + u.cost, 0)
+
+function resolveParrotUpgrade(upgrade, walnutData, mailReceived) {
+  if (!upgrade.saveKey) return null
+  if (upgrade.saveKey.startsWith('mail:')) {
+    const flag = upgrade.saveKey.slice(5)
+    return mailReceived?.includes(flag) ? true : false
+  }
+  if (upgrade.saveKey.startsWith('location:')) {
+    const key = upgrade.saveKey.slice(9)
+    const val = walnutData?.locationFlags?.[key]
+    if (val == null) return null
+    return val === true || val === 1
+  }
+  return null
+}
 
 function resolveSourceStatus(source, walnutData, mailReceived) {
   if (!walnutData) return { found: null, max: source.count }
@@ -251,15 +266,18 @@ function GoldenWalnutPage() {
             Spend walnuts to unlock island infrastructure. Total cost: <strong>{TOTAL_PARROT_COST} walnuts</strong>.
           </p>
           <div className="walnut-parrot-grid">
-            {PARROT_UPGRADES.map(u => (
-              <div key={u.label} className="walnut-parrot-card">
-                <span className="walnut-parrot-cost">🌰 {u.cost}</span>
-                <div>
-                  <div className="walnut-parrot-label">{u.label}</div>
-                  <div className="walnut-parrot-desc">{u.description}</div>
+            {PARROT_UPGRADES.map(u => {
+              const unlocked = hasSaveData ? resolveParrotUpgrade(u, walnutData, mailReceived) : null
+              return (
+                <div key={u.label} className={`walnut-parrot-card${unlocked ? ' walnut-parrot-card--unlocked' : ''}`}>
+                  <span className="walnut-parrot-cost">🌰 {u.cost}</span>
+                  <div>
+                    <div className="walnut-parrot-label">{u.label}</div>
+                    <div className="walnut-parrot-desc">{u.description}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 

@@ -1,0 +1,156 @@
+.shrine-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.shrine-loading {
+  text-align: center;
+  color: #6b5d4f;
+  margin: 4rem auto;
+}
+
+.shrine-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.shrine-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.75rem;
+}
+
+.shrine-status {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8b6f47;
+}
+
+.shrine-status--complete {
+  color: #4a7228;
+}
+
+.shrine-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.shrine-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+/* Diamond layout using a 3×3 grid with corners empty */
+.shrine-diamond-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.shrine-diamond {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: fit-content;
+}
+
+.shrine-pedestal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.shrine-pedestal--top    { grid-column: 2; grid-row: 1; }
+.shrine-pedestal--left   { grid-column: 1; grid-row: 2; }
+.shrine-pedestal--right  { grid-column: 3; grid-row: 2; }
+.shrine-pedestal--bottom { grid-column: 2; grid-row: 3; }
+
+.shrine-pedestal-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #8b6f47;
+  white-space: nowrap;
+}
+
+.shrine-pedestal-unknown {
+  width: 48px;
+  height: 48px;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shrine-pedestal-qmark {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #c0a878;
+  line-height: 1;
+  user-select: none;
+}
+
+.shrine-reveal-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.shrine-reveal-btn {
+  padding: 0.4rem 1.1rem;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #8b6f47;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.shrine-reveal-btn:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+.shrine-reveal-btn--active {
+  background: #8b6f47;
+  border-color: #8b6f47;
+  color: white;
+}
+
+.shrine-reveal-btn--active:hover {
+  background: #7a5e38;
+  border-color: #7a5e38;
+}
+
+.shrine-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  line-height: 1.5;
+  margin: 0;
+}

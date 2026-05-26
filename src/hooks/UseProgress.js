@@ -73,6 +73,16 @@ export function useProgress() {
       return key != null && saveData.museumPieces.includes(key)
     }
 
+    function isFieldOfficeDonated(pieceIndex) {
+      return saveData?.fieldOfficePieces?.piecesDonated?.[pieceIndex] === true
+    }
+
+    function isFieldOfficePlantRestored(side) {
+      if (side === 'left') return saveData?.fieldOfficePieces?.plantsRestoredLeft === true
+      if (side === 'right') return saveData?.fieldOfficePieces?.plantsRestoredRight === true
+      return false
+    }
+
     function isRecipeKnown(recipeName) {
       if (!saveData?.cookingRecipes) return false
       return recipeName in saveData.cookingRecipes
@@ -301,6 +311,8 @@ export function useProgress() {
       isArtifactFound,
       isMineralFound,
       isMuseumDonated,
+      isFieldOfficeDonated,
+      isFieldOfficePlantRestored,
       isRecipeKnown,
       isRecipeCooked,
       getRecipeCookedCount,

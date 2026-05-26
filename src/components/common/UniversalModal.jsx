@@ -2153,12 +2153,13 @@ function UniversalModal({ entity, isOpen, onClose }) {
                   const hasMachineOutputs = machineOutputs.length > 0
                   const hasBundles = bundleDetails.length > 0
                   const hasMuseum = isMuseumDonatable
+                  const isFieldOfficeDonatable = displayEntity.fieldOfficeDonatable
                   const hasAchievements = achievementEntities.length > 0
-                  if (!hasUseGroups && !hasMachineOutputs && !hasBundles && !hasMuseum && !hasAchievements) return null
+                  if (!hasUseGroups && !hasMachineOutputs && !hasBundles && !hasMuseum && !isFieldOfficeDonatable && !hasAchievements) return null
 
-                  const totalGroups = useGroups.length + (hasMachineOutputs ? 1 : 0) + (hasBundles ? 1 : 0) + (hasMuseum ? 1 : 0) + (hasAchievements ? 1 : 0)
+                  const totalGroups = useGroups.length + (hasMachineOutputs ? 1 : 0) + (hasBundles ? 1 : 0) + (hasMuseum ? 1 : 0) + (isFieldOfficeDonatable ? 1 : 0) + (hasAchievements ? 1 : 0)
                   const sectionTitle = totalGroups === 1
-                    ? (hasMachineOutputs ? 'Processed In' : hasBundles ? 'Needed for Bundles' : hasMuseum ? 'Museum Donation' : hasAchievements ? 'Achievements' : useGroups[0].label)
+                    ? (hasMachineOutputs ? 'Processed In' : hasBundles ? 'Needed for Bundles' : hasMuseum ? 'Museum Donation' : isFieldOfficeDonatable ? 'Field Office Donation' : hasAchievements ? 'Achievements' : useGroups[0].label)
                     : 'Uses'
 
                   return (
@@ -2253,6 +2254,32 @@ function UniversalModal({ entity, isOpen, onClose }) {
                                 </span>
                               </span>
                             ))}
+                          </div>
+                        </div>
+                      )}
+                      {isFieldOfficeDonatable && (
+                        <div className="source-group">
+                          {totalGroups > 1 && <span className="modal-label">Field Office Donation:</span>}
+                          <div className="source-list">
+                            <span className="source-entry">
+                              <span className="source-name">
+                                {findById('map-islandfieldoffice')
+                                  ? <UniversalModalButton item={findById('map-islandfieldoffice')} variant="inline" onNavigate={handleNavigate} />
+                                  : 'Island Field Office'}
+                              </span>
+                              <span className="source-qualifiers">
+                                {hasSaveData && (() => {
+                                  const primaryDonated = progress.isFieldOfficeDonated(displayEntity.pieceIndex)
+                                  const altDonated = displayEntity.pieceIndexAlt !== undefined
+                                    ? progress.isFieldOfficeDonated(displayEntity.pieceIndexAlt)
+                                    : null
+                                  const allDonated = primaryDonated && (altDonated === null || altDonated)
+                                  return allDonated
+                                    ? <span className="source-qualifier bundle-use-provided">Donated</span>
+                                    : <span className="source-qualifier bundle-use-needed">Not Donated</span>
+                                })()}
+                              </span>
+                            </span>
                           </div>
                         </div>
                       )}

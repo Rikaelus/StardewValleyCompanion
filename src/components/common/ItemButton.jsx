@@ -15,6 +15,7 @@ function ItemButton({
   className = '',
   stopPropagation = false,
   owned = false,
+  partiallyOwned = false,
   needed = false
 }) {
   const [imageError, setImageError] = useState(false)
@@ -72,7 +73,7 @@ function ItemButton({
     return <span className="item-button-label">{item.name}</span>
   }
 
-  const ownedClass = owned ? 'item-button--owned' : ''
+  const ownedClass = partiallyOwned ? 'item-button--partial' : owned ? 'item-button--owned' : ''
   const neededClass = needed ? 'item-button--needed' : ''
 
   // If showing both icon and label, the icon is inset; label sits outside.

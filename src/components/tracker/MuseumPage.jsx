@@ -20,27 +20,6 @@ const GROUPS = [
     match: () => true },  // catch-all — runs last
 ]
 
-function ItemTile({ item, donated, onClick }) {
-  const iconSrc = item.icon
-    ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
-    : null
-  const tileClass = donated == null ? 'museum-tile--neutral' : donated ? 'museum-tile--donated' : 'museum-tile--missing'
-  const tileTitle = donated == null ? item.name : `${item.name} — ${donated ? 'Donated' : 'Not donated'}`
-  return (
-    <button
-      type="button"
-      onClick={() => onClick(item)}
-      className={`museum-tile ${tileClass}`}
-      title={tileTitle}
-    >
-      {iconSrc ? (
-        <img src={iconSrc} alt="" className="museum-tile-icon" />
-      ) : (
-        <span className="museum-tile-fallback">{item.name?.slice(0, 2).toUpperCase()}</span>
-      )}
-    </button>
-  )
-}
 
 // Resolve the entity a source row points to using the Phase 2 normalized
 // fields. Some rows have no entity link (fishing-chest, secret-note-reward,
@@ -242,11 +221,11 @@ function MuseumPage() {
                 </header>
                 <div className="museum-grid">
                   {group.items.map(it => (
-                    <ItemTile
+                    <UniversalModalButton
                       key={it.id}
                       item={it}
+                      variant="collection-tile"
                       donated={hasSaveData ? progress.isMuseumDonated(it.gameId) : null}
-                      onClick={openModal}
                     />
                   ))}
                 </div>

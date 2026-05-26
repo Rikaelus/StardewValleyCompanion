@@ -3093,6 +3093,11 @@ console.log(`  Processed ${resourceData.length} resources`);
 console.log('\nProcessing big craftables...');
 const bigCraftableData = [];
 
+// Player-facing notes for specific big craftables, keyed by qualified gameId
+const BC_NOTES = {
+  '(BC)25': 'Output quantity varies by location and time of day.',
+};
+
 // World-placed / internal BC objects that players cannot obtain — no wiki images, no point showing them
 const UNOBTAINABLE_BC_IDS = new Set([
   22, 23,           // Table Piece L/R (decoration placed in saloons)
@@ -3161,6 +3166,7 @@ for (const [rawId, bigCraftable] of Object.entries(gameData.bigCraftables)) {
   const bcVariant = rules.itemVariants[qualifiedBCId];
   const typeOverride = bcVariant?.type;
 
+  const bcNotes = BC_NOTES[qualifiedBCId];
   bigCraftableData.push({
     subtype: 'big-craftable',
     ...(typeOverride ? { type: typeOverride } : {}),
@@ -3175,6 +3181,7 @@ for (const [rawId, bigCraftable] of Object.entries(gameData.bigCraftables)) {
     bundles: [],
     gifts: {},
     sources,
+    ...(bcNotes ? { notes: bcNotes } : {}),
   });
 }
 
@@ -4718,6 +4725,92 @@ seedData.sort((a, b) => a.name.localeCompare(b.name));
 console.log(`  Processed ${seedData.length} seeds`);
 
 // ============================================================================
+// Seed Maker machine sources
+// ============================================================================
+// The Seed Maker accepts any crop (or special forage) NOT tagged seedmaker_banned.
+// Main output: 97.51% chance → 1–3 matching seeds.
+// Side outputs (added to Mixed Seeds and Ancient Seeds entities directly):
+//   1.99% → 1–4 Mixed Seeds, 0.5% → 1 Ancient Seeds (from any valid input).
+// Crops.json keys are seed gameIds; HarvestItemId is the crop gameId.
+// We invert this to build a crop→seed map, then inject a machine source into
+// each seed entity whose crop is not banned.
+{
+  // Build set of banned crop harvest gameIds (items tagged seedmaker_banned)
+  const seedmakerBannedCropIds = new Set();
+  for (const [gid, obj] of Object.entries(gameData.objects)) {
+    const tags = obj.ContextTags || [];
+    if (tags.includes('seedmaker_banned')) {
+      // The banned item IS the crop input (e.g. Coffee Bean 433 is both seed and crop)
+      seedmakerBannedCropIds.add(`(O)${gid}`);
+    }
+  }
+
+  // Build harvest crop gameId → seed entity lookup from Crops.json
+  const cropGameIdToSeedEntity = new Map();
+  for (const [seedGameIdStr, cropInfo] of Object.entries(gameData.crops)) {
+    const harvestGameId = cropInfo.HarvestItemId ? `(O)${cropInfo.HarvestItemId}` : null;
+    if (!harvestGameId) continue;
+    const seedGameId = `(O)${seedGameIdStr}`;
+    const seedEntity = seedData.find(s => s.gameId === seedGameId);
+    if (seedEntity) {
+      cropGameIdToSeedEntity.set(harvestGameId, seedEntity);
+    }
+  }
+
+  // Inject machine source into each seed entity for valid (non-banned) crop inputs
+  let seedMakerSourceCount = 0;
+  for (const [cropGameId, seedEntity] of cropGameIdToSeedEntity) {
+    if (seedmakerBannedCropIds.has(cropGameId)) continue;
+    // Seasonal seeds (Spring/Summer/Fall/Winter Seeds) accept forageable inputs —
+    // their crop gameId is the forage item itself (e.g. Wild Horseradish → Spring Seeds).
+    // These are already handled correctly by the mapping.
+    seedEntity.sources = seedEntity.sources || [];
+    seedEntity.sources.push({
+      type: 'machine',
+      id: 'seed-maker',
+      inputType: 'crop',
+      inputGameId: cropGameId,
+      outputChance: 0.9751,
+      outputMinStack: 1,
+      outputMaxStack: 3,
+      processingTimeMinutes: 20,
+    });
+    seedMakerSourceCount++;
+  }
+  console.log(`  ✓ Added Seed Maker sources to ${seedMakerSourceCount} seed entities`);
+
+  // Mixed Seeds (770): 1.99% side-output from any valid crop/forage input
+  const mixedSeedsEntity = seedData.find(s => s.gameId === `(O)${MIXED_SEEDS_ID}`);
+  if (mixedSeedsEntity) {
+    mixedSeedsEntity.sources = mixedSeedsEntity.sources || [];
+    mixedSeedsEntity.sources.push({
+      type: 'machine',
+      id: 'seed-maker',
+      inputType: 'any valid crop or forage',
+      outputChance: 0.0199,
+      outputMinStack: 1,
+      outputMaxStack: 4,
+      processingTimeMinutes: 20,
+    });
+  }
+
+  // Ancient Seeds (499): 0.5% side-output from any valid crop/forage input
+  const ancientSeedsEntity = seedData.find(s => s.gameId === '(O)499');
+  if (ancientSeedsEntity) {
+    ancientSeedsEntity.sources = ancientSeedsEntity.sources || [];
+    ancientSeedsEntity.sources.push({
+      type: 'machine',
+      id: 'seed-maker',
+      inputType: 'any valid crop or forage',
+      outputChance: 0.005,
+      outputMinStack: 1,
+      outputMaxStack: 1,
+      processingTimeMinutes: 20,
+    });
+  }
+}
+
+// ============================================================================
 // Process Furniture
 // ============================================================================
 console.log('\nProcessing furniture...');
@@ -5497,7 +5590,7 @@ for (const [rawId, buildingObj] of Object.entries(gameData.buildings)) {
 
   buildingData.push({
     subtype: 'building',
-    id: toKebabCase(name),
+    id: getUniqueItemId(gameId, name),
     gameId,
     name,
     description,
@@ -7696,6 +7789,51 @@ console.log('\n🏛️  Enriching museum-donatable items...');
     enriched++;
   }
   console.log(`  ✓ Marked ${enriched} items as museum-donatable (${itemToRewardIds.size} linked to specific rewards, ${donatableGameIds.size} in raw game data)`);
+}
+
+// ---------------------------------------------------------------------------
+// Post-merge: mark Island Field Office fossil donations
+// piecesDonated[0..10] index per getPieceIndexForDonationItem() in FieldOfficeMenu.cs
+// ---------------------------------------------------------------------------
+console.log('\n🦴 Marking Field Office fossil donations...');
+{
+  // Map from qualified gameId → piecesDonated index (from decompiled FieldOfficeMenu.cs)
+  const FIELD_OFFICE_PIECE_INDEX = new Map([
+    ['(O)820', 5],  // Fossilized Skull
+    ['(O)821', 4],  // Fossilized Spine
+    ['(O)822', 3],  // Fossilized Tail
+    ['(O)823', 0],  // Fossilized Leg (two slots: 0 and 2; pieceIndex is primary slot)
+    ['(O)824', 1],  // Fossilized Ribs
+    ['(O)825', 8],  // Snake Skull
+    ['(O)826', 7],  // Snake Vertebrae (two slots: 6 and 7; pieceIndex is primary slot)
+    ['(O)827', 9],  // Mummified Bat
+    ['(O)828', 10], // Mummified Frog
+  ]);
+  // Fossilized Leg has a second slot at index 2; Snake Vertebrae has a second slot at index 6.
+  const FIELD_OFFICE_EXTRA_SLOTS = new Map([
+    ['(O)823', 2],
+    ['(O)826', 6],
+  ]);
+  // Plant fossils tracked separately via plantsRestoredLeft / plantsRestoredRight NPC surveys
+  const FIELD_OFFICE_PLANT_GAME_IDS = new Set(['(O)586', '(O)587', '(O)588']);
+
+  let foCount = 0;
+  for (const entity of allCompiledEntities) {
+    if (!entity.gameId) continue;
+    const idx = FIELD_OFFICE_PIECE_INDEX.get(entity.gameId);
+    if (idx !== undefined) {
+      entity.fieldOfficeDonatable = true;
+      entity.pieceIndex = idx;
+      const extra = FIELD_OFFICE_EXTRA_SLOTS.get(entity.gameId);
+      if (extra !== undefined) entity.pieceIndexAlt = extra;
+      foCount++;
+      continue;
+    }
+    if (FIELD_OFFICE_PLANT_GAME_IDS.has(entity.gameId)) {
+      entity.fieldOfficePlant = true;
+    }
+  }
+  console.log(`  ✓ Marked ${foCount} fossils as Field Office donatable`);
 }
 
 // ---------------------------------------------------------------------------

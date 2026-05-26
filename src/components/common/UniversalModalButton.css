@@ -50,3 +50,74 @@
 .inline-button-label {
   position: relative;
 }
+
+/* ── collection-tile variant ─────────────────────────────────────────────── */
+/*
+ * Square tile for collection grids (Museum, Field Office).
+ * State modifier: --donated | --missing | --neutral
+ * Frame modifier: --tan (default) | --gold | --teal | --green
+ * Size modifier:  --sm (default, 48px) | --lg (72px)
+ */
+
+.ctile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  flex-shrink: 0;
+}
+
+.ctile:hover {
+  transform: scale(1.06);
+}
+
+/* Sizes */
+.ctile--sm { width: 48px; height: 48px; }
+.ctile--lg { width: 72px; height: 72px; }
+
+/* Icon */
+.ctile-icon {
+  image-rendering: pixelated;
+  display: block;
+}
+.ctile--sm .ctile-icon { width: 32px; height: 32px; }
+.ctile--lg .ctile-icon { width: 48px; height: 48px; }
+
+.ctile-icon--missing { filter: grayscale(1) opacity(0.45); }
+
+.ctile-fallback {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* ── tan (Museum) ── */
+.ctile--tan               { background: #faf4e8; border: 1px solid #d9c4a0; }
+.ctile--tan:hover         { border-color: #8b6f47; }
+.ctile--tan.ctile--donated  { background: #ecf5e2; border-color: #c5dba0; }
+.ctile--tan.ctile--missing  { background: #faf4e8; border-color: #d9c4a0; }
+.ctile--tan .ctile-fallback { color: #8b6f47; }
+
+/* ── gold (Field Office skeleton / snake) ── */
+.ctile--gold               { background: #d4a017; border: 3px solid #a87810; box-shadow: inset 0 0 0 2px rgba(255,220,80,0.4); }
+.ctile--gold:hover         { box-shadow: inset 0 0 0 2px rgba(255,220,80,0.4), 0 0 0 2px rgba(180,140,20,0.5); }
+.ctile--gold.ctile--donated  { background: #c8982a; border-color: #8a6010; }
+.ctile--gold.ctile--missing  { background: #c4900e; border-color: #9a6e0a; }
+.ctile--gold .ctile-fallback { color: #5c3a00; }
+.ctile--gold .ctile-icon--missing { filter: grayscale(0.5) opacity(0.35); }
+
+/* ── teal (Mummified Bat) ── */
+.ctile--teal               { background: #1d6d7a; border: 3px solid #2a8fa0; box-shadow: inset 0 0 0 2px rgba(100,200,220,0.35); }
+.ctile--teal:hover         { box-shadow: inset 0 0 0 2px rgba(100,200,220,0.35), 0 0 0 2px rgba(42,143,160,0.5); }
+.ctile--teal.ctile--donated  { background: #1d6d7a; border-color: #2a8fa0; }
+.ctile--teal.ctile--missing  { background: #144d57; border-color: #1e6e7c; }
+.ctile--teal .ctile-fallback { color: #a0e0ec; }
+
+/* ── green (Mummified Frog) ── */
+.ctile--green               { background: #266026; border: 3px solid #3a8a3a; box-shadow: inset 0 0 0 2px rgba(100,200,100,0.35); }
+.ctile--green:hover         { box-shadow: inset 0 0 0 2px rgba(100,200,100,0.35), 0 0 0 2px rgba(58,138,58,0.5); }
+.ctile--green.ctile--donated  { background: #266026; border-color: #3a8a3a; }
+.ctile--green.ctile--missing  { background: #1a4020; border-color: #2a6030; }
+.ctile--green .ctile-fallback { color: #a0e0a0; }
