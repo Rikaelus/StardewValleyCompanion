@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useEntities } from '../../contexts/EntityContext'
 import { useProgress } from '../../hooks/UseProgress'
 import { useOpenModal } from '../../contexts/ModalContext'
 import { computeAchievementProgress } from '../../utils/AchievementProgress'
 import PagePanel from '../common/PagePanel'
+import UniversalModalButton from '../common/UniversalModalButton'
 import './AchievementsPage.css'
 
 const GROUPS = [
@@ -62,35 +62,29 @@ function formatProgress(p) {
   return `${p.done.toLocaleString()} / ${p.total.toLocaleString()}`
 }
 
-function AchievementRow({ achievement, earned, onClick, progressEntry }) {
+function AchievementCard({ achievement, earned, onClick, progressEntry }) {
   const hasCounter = progressEntry && progressEntry.done != null && progressEntry.total != null
   const linkPath = progressEntry?.linkPath
+  const cardState = earned === null ? null : earned ? 'earned' : 'needed'
+
+  const desc = achievement.isSecret && !earned && earned !== null
+    ? 'Secret achievement'
+    : achievement.description
+
+  const meta = hasCounter ? formatProgress(progressEntry) : null
 
   return (
-    <li className={`achievement-row ${earned ? 'achievement-row--earned' : ''}`}>
-      <button type="button" className="achievement-row-btn" onClick={() => onClick(achievement)}>
-        {earned != null && (
-          <span className={`achievement-status-dot ${earned ? 'achievement-status-dot--earned' : ''}`} />
-        )}
-        <span className="achievement-name">{achievement.name}</span>
-        <span className="achievement-desc">{achievement.description}</span>
-        {achievement.isSecret && !earned && earned != null && (
-          <span className="achievement-secret">secret</span>
-        )}
-        {hasCounter && (
-          <span className="achievement-progress">{formatProgress(progressEntry)}</span>
-        )}
-      </button>
-      {linkPath && (
-        <Link
-          to={linkPath}
-          className="achievement-page-link"
-          title="View detail page"
-          onClick={e => e.stopPropagation()}
-        >
-          →
-        </Link>
-      )}
+    <li className="achievement-card-item">
+      <UniversalModalButton
+        item={achievement}
+        variant="card"
+        cardState={cardState}
+        cardDesc={desc}
+        cardMeta={meta}
+        gutter={linkPath || true}
+        onNavigate={onClick}
+        className="achievement-card-btn"
+      />
     </li>
   )
 }
@@ -196,9 +190,9 @@ function AchievementsPage() {
                   </span>
                 )}
               </header>
-              <ul className="achievements-list">
+              <ul className="achievements-card-grid">
                 {group.items.map(({ achievement, earned }) => (
-                  <AchievementRow
+                  <AchievementCard
                     key={achievement.id}
                     achievement={achievement}
                     earned={hasSaveData ? earned : null}

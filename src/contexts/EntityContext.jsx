@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react'
+import { usePlayer } from './PlayerContext'
 
 const EntityContext = createContext(null)
 
@@ -6,7 +7,84 @@ const EntityContext = createContext(null)
  * Unified entity store. Loads entities.json once for the entire app.
  * Replaces both ItemsContext and useRelationalData.
  */
+/**
+ * Generate goal entities derived from save data (pets, farm animals).
+ * These are first-class entities injected into the catalog so findById works.
+ */
+function buildSaveEntities(saveData) {
+  if (!saveData) return []
+  const entities = []
+
+  // Map animal type names to sprite assets
+  const ANIMAL_ICONS = {
+    'Blue Chicken':   'assets/animals/BlueChicken.png',
+    'Brown Chicken':  'assets/animals/BrownChicken.png',
+    'White Chicken':  'assets/animals/WhiteChicken.png',
+    'Golden Chicken': 'assets/animals/GoldenChicken.png',
+    'Void Chicken':   'assets/animals/VoidChicken.png',
+    'Brown Cow':      'assets/animals/BrownCow.png',
+    'White Cow':      'assets/animals/WhiteCow.png',
+    'Goat':           'assets/animals/Goat.png',
+    'Sheep':          'assets/animals/Sheep.png',
+    'Pig':            'assets/animals/Pig.png',
+    'Duck':           'assets/animals/Duck.png',
+    'Rabbit':         'assets/animals/Rabbit.png',
+    'Dinosaur':       'assets/animals/Dinosaur.png',
+    'Ostrich':        'assets/animals/Ostrich.png',
+  }
+
+  // Per-pet friendship goals
+  for (const pet of (saveData.pets ?? [])) {
+    const slug = pet.name.toLowerCase().replace(/[^a-z0-9]/g, '-')
+    entities.push({
+      id: `goal-pet-${slug}`,
+      name: `${pet.name}'s Friendship`,
+      description: `Max out ${pet.name}'s friendship.`,
+      type: 'goal',
+      entityType: 'goal',
+      subtype: 'social',
+      iconClass: 'fa-solid fa-paw',
+      iconColor: '#8b6914',
+      capabilities: { isGoal: true },
+      deadline: { type: 'none' },
+      petName: pet.name,
+      petType: pet.petType,
+      criteria: { type: 'pet-max', petName: pet.name },
+      children: [
+        { kind: 'action-type', id: 'pet-care', weight: 1.0 },
+      ],
+    })
+  }
+
+  // Per-animal friendship goals
+  for (const animal of (saveData.farmAnimals ?? [])) {
+    const slug = animal.name.toLowerCase().replace(/[^a-z0-9]/g, '-')
+    const animalIcon = ANIMAL_ICONS[animal.type]
+    entities.push({
+      id: `goal-animal-${slug}`,
+      name: `${animal.name}'s Friendship`,
+      description: `Max out ${animal.name}'s friendship.`,
+      type: 'goal',
+      entityType: 'goal',
+      subtype: 'social',
+      ...(animalIcon ? { icon: animalIcon } : { iconClass: 'fa-solid fa-horse', iconColor: '#8b6914' }),
+      capabilities: { isGoal: true },
+      deadline: { type: 'none' },
+      animalName: animal.name,
+      animalType: animal.type,
+      criteria: { type: 'animal-max', animalName: animal.name },
+      children: [
+        { kind: 'action-type', id: 'animal-care', weight: 1.0 },
+      ],
+    })
+  }
+
+  return entities
+}
+
 export function EntityProvider({ children }) {
+  const { player } = usePlayer()
+  const saveData = player.saveData
   const [rawData, setRawData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -60,7 +138,8 @@ export function EntityProvider({ children }) {
       }
     }
 
-    const allEntities = rawData.items || []
+    const saveEntities = buildSaveEntities(saveData)
+    const allEntities = [...(rawData.items || []), ...saveEntities]
     const gameIdIndex = rawData.gameIdIndex || {}
     const allBundles = allEntities.filter(i => i.type === 'bundle')
     const allVillagers = allEntities.filter(i => i.type === 'villager')
@@ -218,7 +297,7 @@ export function EntityProvider({ children }) {
       eventNames,
       achievementNames,
     }
-  }, [rawData, loading, error])
+  }, [rawData, loading, error, saveData])
 
   return (
     <EntityContext.Provider value={value}>

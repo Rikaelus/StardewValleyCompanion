@@ -107,6 +107,18 @@ body {
   padding: 2rem 4rem;
 }
 
+@media (max-width: 900px) {
+  .main-padding {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-padding {
+    padding: 1rem 0.75rem;
+  }
+}
+
 main {
   max-width: 1600px;
   margin: 0 auto;

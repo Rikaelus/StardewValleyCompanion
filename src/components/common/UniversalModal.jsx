@@ -31,6 +31,8 @@ import { SectionNavProvider } from '../../contexts/SectionNavContext'
 import { collectLocationItems } from '../../utils/LocationItems'
 import { renderVillagerHearts, STATUS_ICON } from './EntityPageConfigs'
 import { computeAchievementProgress, POLYCULTURE_TARGET, MONOCULTURE_TARGET } from '../../utils/AchievementProgress'
+import { computeCollectionProgress, computeGoalStates, findGoalsForEntity } from '../../utils/GoalEngine'
+import { maxHeartsFor } from '../../utils/FriendshipUtils'
 import './UniversalModal.css'
 
 
@@ -132,7 +134,7 @@ function UniversalModal({ entity, isOpen, onClose }) {
   // Load unified entity data (fetched once for the whole app via EntityContext)
   const entityData = useEntities()
   const progress = useProgress()
-  const { hasSaveData, getBundleProgress, isMuseumDonated, hasSecretNote, hasSecretNoteReward, getFriendshipHearts, getFriendshipStatus, hasAchievement, isItemShipped, getItemShippedCount, isFishCaught, isRecipeCooked, isCraftingRecipeCrafted } = progress
+  const { hasSaveData, saveData, getBundleProgress, isMuseumDonated, hasSecretNote, hasSecretNoteReward, getFriendshipHearts, getFriendshipStatus, hasAchievement, isItemShipped, getItemShippedCount, isFishCaught, isRecipeCooked, isCraftingRecipeCrafted } = progress
   const { byType: itemsByType, items: allItems, findById, findByGameId, findEntity, loading: entitiesLoading, error: itemsError } = entityData
 
   // Derive typed views for sections that reference specific item types
@@ -188,6 +190,28 @@ function UniversalModal({ entity, isOpen, onClose }) {
 
   // Use the appropriate entity based on active tab (only for items with dual contexts)
   const displayEntity = activeTab === 'alternate' && alternateContext ? alternateContext : primaryEntity
+
+  // Render heart pips for pet/animal friendship (5 hearts, 200 pts each, half at 100)
+  function renderAnimalHearts(points, max = 5) {
+    const ptsPerHeart = 1000 / max
+    return (
+      <span style={{ display: 'inline-flex', gap: '2px', fontSize: '0.9rem', lineHeight: 1 }}>
+        {Array.from({ length: max }, (_, i) => {
+          const threshold = i * ptsPerHeart
+          const full = points >= threshold + ptsPerHeart
+          const half = !full && points >= threshold + ptsPerHeart / 2
+          if (full) return <span key={i} style={{ color: '#e05c6a' }}>♥</span>
+          if (half) return (
+            <span key={i} style={{ position: 'relative', display: 'inline-block', width: '1em' }}>
+              <span style={{ color: '#ddd' }}>♥</span>
+              <span style={{ position: 'absolute', left: 0, top: 0, width: '50%', overflow: 'hidden', color: '#e05c6a' }}>♥</span>
+            </span>
+          )
+          return <span key={i} style={{ color: '#ddd' }}>♥</span>
+        })}
+      </span>
+    )
+  }
 
   const renderContextTabs = () => {
     if (!alternateContext) return null
@@ -500,6 +524,20 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     )}
                   </div>
                 )}
+                {(() => {
+                  const trackingGoal = allItems.find(i => i.type === 'goal' && i.completionAchievementId === displayEntity.achievementId)
+                  if (!trackingGoal) return null
+                  return (
+                    <ModalSection title="Tracked By">
+                      <div className="source-list">
+                        <span className="source-entry">
+                          <UniversalModalButton item={trackingGoal} variant="inline" onNavigate={handleNavigate}
+                            goalEarned={earned} />
+                        </span>
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
                 {displayEntity.prerequisiteId && (
                   <ModalSection title="Prerequisite">
                     <div className="source-list">
@@ -1163,10 +1201,305 @@ function UniversalModal({ entity, isOpen, onClose }) {
             )
           })()}
 
+          {/* Collection-Specific Sections */}
+          {entityType === 'collection' && (() => {
+            const parentGoals = allItems.filter(i =>
+              i.type === 'goal' &&
+              (i.children ?? []).some(c => c.kind === 'collection' && c.id === displayEntity.id)
+            )
+            const achievementChild = (displayEntity.children ?? []).find(c => c.kind === 'achievement')
+            const achievement = achievementChild ? findById(achievementChild.id) : null
+            const colProgress = computeCollectionProgress(displayEntity, allItems, progress)
+            const isComplete = colProgress ? colProgress.percent >= 100 : false
+
+            const goalEntities = hasSaveData ? allItems.filter(i => i.type === 'goal') : []
+            const goalStates = hasSaveData
+              ? computeGoalStates(goalEntities, saveData, progress, progress.saveDate, allItems)
+              : new Map()
+
+            return (
+              <>
+                {colProgress && (
+                  <ModalSection id="section-collection-progress" title="Progress">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                      <div className="goal-progress-bar-wrap">
+                        <div className="goal-progress-bar">
+                          <div
+                            className={`goal-progress-fill${isComplete ? ' goal-progress-fill--complete' : ''}`}
+                            style={{ width: `${colProgress.percent}%` }}
+                          />
+                        </div>
+                        <span className="goal-progress-frac">
+                          {colProgress.done} / {colProgress.total}
+                        </span>
+                      </div>
+                      <span className={`goal-completion-badge${isComplete ? ' goal-completion-badge--complete' : ' goal-completion-badge--incomplete'}`}>
+                        {isComplete ? 'Complete' : `${colProgress.percent}% complete`}
+                      </span>
+                    </div>
+                  </ModalSection>
+                )}
+                {achievement && (
+                  <ModalSection id="section-collection-achievement" title="Achievement">
+                    <div className="source-list">
+                      <span className="source-entry">
+                        <UniversalModalButton item={achievement} variant="inline" onNavigate={handleNavigate} />
+                      </span>
+                    </div>
+                  </ModalSection>
+                )}
+                {parentGoals.length > 0 && (
+                  <ModalSection id="section-collection-goals" title="Part Of">
+                    <div className="source-list">
+                      {parentGoals.map(g => (
+                        <span key={g.id} className="source-entry">
+                          <UniversalModalButton item={g} variant="inline" onNavigate={handleNavigate}
+                            goalEarned={goalStates.get(g.id)?.earned ?? null} />
+                        </span>
+                      ))}
+                    </div>
+                  </ModalSection>
+                )}
+              </>
+            )
+          })()}
+
+          {/* Goal-Specific Sections */}
+          {entityType === 'goal' && (() => {
+            const parentGoals = allItems.filter(i =>
+              i.type === 'goal' &&
+              (i.children ?? []).some(c => c.kind === 'goal' && c.id === displayEntity.id)
+            )
+            const childGoals = (displayEntity.children ?? []).filter(c => c.kind === 'goal')
+            const childCollections = (displayEntity.children ?? []).filter(c => c.kind === 'collection')
+            const isFriendshipGoal = displayEntity.criteria?.type === 'friendship-max'
+
+            // Compute goal state for progress display
+            const goalEntities = hasSaveData ? allItems.filter(i => i.type === 'goal') : []
+            const goalStates = hasSaveData
+              ? computeGoalStates(goalEntities, saveData, progress, progress.saveDate, allItems)
+              : new Map()
+            const thisGoalState = goalStates.get(displayEntity.id)
+            return (
+              <>
+                {(thisGoalState || displayEntity.trackerPage) && (() => {
+                  const earned = thisGoalState?.earned
+                  const percent = thisGoalState?.percent ?? null
+                  const done = thisGoalState?.done ?? null
+                  const total = thisGoalState?.total ?? null
+                  const isComplete = !!earned
+                  const hasPercent = percent != null
+                  return (
+                    <ModalSection id="section-goal-progress" title="Progress">
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                        {hasPercent && (
+                          <div className="goal-progress-bar-wrap">
+                            <div className="goal-progress-bar">
+                              <div
+                                className={`goal-progress-fill${isComplete ? ' goal-progress-fill--complete' : ''}`}
+                                style={{ width: `${percent}%` }}
+                              />
+                            </div>
+                            <span className="goal-progress-frac">
+                              {done != null && total != null ? `${done} / ${total}` : `${percent}%`}
+                            </span>
+                          </div>
+                        )}
+                        {thisGoalState && (
+                          <span className={`goal-completion-badge${isComplete ? ' goal-completion-badge--complete' : ' goal-completion-badge--incomplete'}`}>
+                            {isComplete ? 'Complete' : hasPercent ? `${percent}% complete` : 'Not complete'}
+                          </span>
+                        )}
+                        {displayEntity.trackerPage && (
+                          <a href={`#${displayEntity.trackerPage}`} style={{ fontSize: '0.8rem', color: '#5a7fb5', textDecoration: 'underline' }}>
+                            View Tracker →
+                          </a>
+                        )}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+                {displayEntity.criteria?.type === 'pet-max' && hasSaveData && (() => {
+                  const pet = (saveData.pets ?? []).find(p => p.name === displayEntity.criteria.petName)
+                  if (!pet) return null
+                  const maxH = 5
+                  return (
+                    <ModalSection id="section-goal-pet-friendship" title="Friendship">
+                      <div className="entity-detail-grid">
+                        <span className="label">Pet</span>
+                        <span>{displayEntity.criteria.petName}{displayEntity.petType ? ` (${displayEntity.petType})` : ''}</span>
+                        <span className="label">Hearts</span>
+                        {renderAnimalHearts(pet.friendship, maxH)}
+                        <span className="label">Progress</span>
+                        <span>{pet.friendship} / 1000</span>
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+                {displayEntity.criteria?.type === 'animal-max' && hasSaveData && (() => {
+                  const animal = (saveData.farmAnimals ?? []).find(a => a.name === displayEntity.criteria.animalName)
+                  if (!animal) return null
+                  const maxH = 5
+                  return (
+                    <ModalSection id="section-goal-animal-friendship" title="Friendship">
+                      <div className="entity-detail-grid">
+                        <span className="label">Animal</span>
+                        <span>{displayEntity.criteria.animalName}{displayEntity.animalType ? ` (${displayEntity.animalType})` : ''}</span>
+                        <span className="label">Hearts</span>
+                        {renderAnimalHearts(animal.friendship, maxH)}
+                        <span className="label">Progress</span>
+                        <span>{animal.friendship} / 1000</span>
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+                {isFriendshipGoal && (() => {
+                  const villager = displayEntity.villagerId ? findById(displayEntity.villagerId) : null
+                  const vilName = displayEntity.criteria.villager
+                  const hearts = hasSaveData ? getFriendshipHearts(vilName) : null
+                  const status = hasSaveData ? (getFriendshipStatus(vilName) ?? 'Friendly') : null
+                  const maxH = maxHeartsFor(displayEntity.criteria.canBeRomanced, status ?? 'Friendly')
+                  return (
+                    <ModalSection id="section-goal-friendship" title="Friendship">
+                      <div className="entity-detail-grid">
+                        <span className="label">Villager</span>
+                        <span>{villager
+                          ? <UniversalModalButton item={villager} variant="inline" onNavigate={handleNavigate} />
+                          : vilName}
+                        </span>
+                        {hasSaveData && hearts != null && (
+                          <>
+                            <span className="label">Hearts</span>
+                            <span>
+                              {renderVillagerHearts({
+                                hearts,
+                                status,
+                                canBeRomanced: displayEntity.criteria.canBeRomanced,
+                                isKrobus: vilName === 'Krobus',
+                                size: '0.9rem',
+                              })}
+                            </span>
+                            <span className="label">Progress</span>
+                            <span>{hearts} / {maxH} hearts{status && status !== 'Friendly' ? ` (${status})` : ''}</span>
+                          </>
+                        )}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+                {parentGoals.length > 0 && (
+                  <ModalSection id="section-goal-parents" title="Part Of">
+                    <div className="source-list">
+                      {parentGoals.map(p => (
+                        <span key={p.id} className="source-entry">
+                          <UniversalModalButton item={p} variant="inline" onNavigate={handleNavigate}
+                            goalEarned={goalStates.get(p.id)?.earned ?? null} />
+                        </span>
+                      ))}
+                    </div>
+                  </ModalSection>
+                )}
+                {childGoals.length > 0 && (
+                  <ModalSection id="section-goal-children" title="Sub-Goals">
+                    <div className="source-list">
+                      {childGoals.map(c => {
+                        const goal = findById(c.id)
+                        return goal ? (
+                          <span key={c.id} className="source-entry">
+                            <UniversalModalButton item={goal} variant="inline" onNavigate={handleNavigate}
+                              goalEarned={goalStates.get(c.id)?.earned ?? null} />
+                          </span>
+                        ) : null
+                      })}
+                    </div>
+                  </ModalSection>
+                )}
+                {childCollections.length > 0 && (
+                  <ModalSection id="section-goal-collections" title="Collections">
+                    <div className="source-list">
+                      {childCollections.map(c => {
+                        const col = findById(c.id)
+                        return col ? (
+                          <span key={c.id} className="source-entry">
+                            <UniversalModalButton item={col} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        ) : null
+                      })}
+                    </div>
+                  </ModalSection>
+                )}
+                {(() => {
+                  const entityChildren = (displayEntity.children ?? []).filter(c => c.kind === 'entity')
+                  if (!entityChildren.length) return null
+                  // Group by entity type for type-aware rendering
+                  const bundles = [], collections = [], achievements = [], other = []
+                  for (const c of entityChildren) {
+                    const ent = findById(c.id)
+                    if (!ent) continue
+                    if (ent.type === 'bundle') bundles.push(ent)
+                    else if (ent.type === 'collection') collections.push(ent)
+                    else if (ent.type === 'achievement') achievements.push(ent)
+                    else other.push(ent)
+                  }
+                  if (!bundles.length && !collections.length && !achievements.length && !other.length) return null
+                  return (
+                    <ModalSection id="section-goal-requires" title="Requires">
+                      <div className="source-list">
+                        {[...bundles, ...collections, ...achievements, ...other].map(ent => (
+                          <span key={ent.id} className="source-entry">
+                            <UniversalModalButton item={ent} variant="inline" onNavigate={handleNavigate} />
+                          </span>
+                        ))}
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+                {(() => {
+                  if (displayEntity.completionAchievementId == null) return null
+                  const ach = allItems.find(i => i.type === 'achievement' && i.achievementId === displayEntity.completionAchievementId)
+                  if (!ach) return null
+                  return (
+                    <ModalSection id="section-goal-tracking-for" title="Tracking For">
+                      <div className="source-list">
+                        <span className="source-entry">
+                          <UniversalModalButton item={ach} variant="inline" onNavigate={handleNavigate} />
+                        </span>
+                      </div>
+                    </ModalSection>
+                  )
+                })()}
+              </>
+            )
+          })()}
+
+          {/* Contributes To — goals this entity furthers (any entity type except goals/collections) */}
+          {entityType !== 'goal' && entityType !== 'collection' && hasSaveData && (() => {
+            const goalEntities = allItems.filter(i => i.type === 'goal')
+            const collectionEntities = allItems.filter(i => i.type === 'collection')
+            const goalStates = computeGoalStates(goalEntities, saveData, progress, progress.saveDate, allItems)
+            const contributions = findGoalsForEntity(displayEntity, goalStates, collectionEntities)
+            if (!contributions.length) return null
+            return (
+              <ModalSection id="section-contributes-to" title="Contributes To">
+                <div className="source-list">
+                  {contributions.map(g => {
+                    const goalEntity = findById(g.id)
+                    return goalEntity ? (
+                      <span key={g.id} className="source-entry">
+                        <UniversalModalButton item={goalEntity} variant="inline" onNavigate={handleNavigate}
+                          goalEarned={g.earned ?? null} />
+                      </span>
+                    ) : null
+                  })}
+                </div>
+              </ModalSection>
+            )
+          })()}
+
           {/* Event-Specific Sections */}
           {entityType === 'event' && (
             <>
-              {getLocationNames(displayEntity, findById).length > 0 && (
+              {(getLocationNames(displayEntity, findById).length > 0 || displayEntity.locationLabel) && (
                 <ModalSection id="section-event-location" title="Location">
                   {(() => {
                     const locIds = getLocationIds(displayEntity)
@@ -1184,7 +1517,9 @@ function UniversalModal({ entity, isOpen, onClose }) {
                         </div>
                       )
                     }
-                    return <span className="value">{getLocationNames(displayEntity, findById).join(', ')}</span>
+                    const names = getLocationNames(displayEntity, findById)
+                    if (names.length > 0) return <span className="value">{names.join(', ')}</span>
+                    return <span className="value">{displayEntity.locationLabel}</span>
                   })()}
                 </ModalSection>
               )}
@@ -1615,6 +1950,78 @@ function UniversalModal({ entity, isOpen, onClose }) {
                     </span>
                   ))}
                 </div>
+              </ModalSection>
+            )
+          })()}
+
+          {/* Pan Unveils */}
+          {entityType === 'tool' && displayEntity.subtype === 'pan' && (() => {
+            const panItems = allItems.filter(i =>
+              i.sources?.some(s => s.type === 'pan')
+            )
+            if (panItems.length === 0) return null
+            const oreItems = panItems.filter(i => i.sources.some(s => s.type === 'pan' && s.category === 'ore'))
+            const specialItems = panItems.filter(i => i.sources.some(s => s.type === 'pan' && s.category === 'special'))
+            const islandItems = panItems.filter(i => i.sources.some(s => s.type === 'pan' && s.category === 'ginger-island'))
+            return (
+              <ModalSection title="Unveils">
+                {oreItems.length > 0 && (
+                  <>
+                    <div className="modal-label" style={{ marginBottom: '0.25rem' }}>Guaranteed ore (one type per session):</div>
+                    <div className="source-list" style={{ marginBottom: '0.5rem' }}>
+                      {oreItems.map(item => {
+                        const src = item.sources.find(s => s.type === 'pan' && s.category === 'ore')
+                        return (
+                          <span key={item.id} className="source-entry">
+                            <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                            <span className="source-qualifiers">
+                              {src?.chance != null && <span className="source-qualifier">{Math.round(src.chance * 100)}% base</span>}
+                            </span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </>
+                )}
+                {specialItems.length > 0 && (
+                  <>
+                    <div className="modal-label" style={{ marginBottom: '0.25rem' }}>Special items (chance-gated rolls):</div>
+                    <div className="source-list" style={{ marginBottom: '0.5rem' }}>
+                      {specialItems.map(item => {
+                        const src = item.sources.find(s => s.type === 'pan' && s.category === 'special')
+                        const qty = src?.minStack != null && src?.maxStack != null && src.minStack !== src.maxStack
+                          ? `${src.minStack}–${src.maxStack}` : null
+                        return (
+                          <span key={item.id} className="source-entry">
+                            <UniversalModalButton item={item} variant="inline" quantity={qty} onNavigate={handleNavigate} />
+                            <span className="source-qualifiers">
+                              {src?.chance != null && <span className="source-qualifier">{Math.round(src.chance * 100)}%</span>}
+                            </span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </>
+                )}
+                {islandItems.length > 0 && (
+                  <>
+                    <div className="modal-label" style={{ marginBottom: '0.25rem' }}>Ginger Island:</div>
+                    <div className="source-list">
+                      {islandItems.map(item => {
+                        const src = item.sources.find(s => s.type === 'pan' && s.category === 'ginger-island')
+                        return (
+                          <span key={item.id} className="source-entry">
+                            <UniversalModalButton item={item} variant="inline" onNavigate={handleNavigate} />
+                            <span className="source-qualifiers">
+                              {src?.location && <span className="source-qualifier">{src.location}</span>}
+                              {src?.chance != null && <span className="source-qualifier">{Math.round(src.chance * 100)}%</span>}
+                            </span>
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </>
+                )}
               </ModalSection>
             )
           })()}

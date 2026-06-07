@@ -201,6 +201,8 @@ const TYPE_LABELS = {
   'bundle': 'Bundle',
   'museum-reward': 'Museum Reward',
   'tv-show': 'TV Show',
+  'goal': 'Goal',
+  'collection': 'Collection',
 }
 
 // Subtype-level labels (distinct subtypes within a type)
@@ -228,7 +230,7 @@ const SUBTYPE_LABELS = {
   'shears': 'Shears',
   'pan': 'Pan',
   'wand': 'Wand',
-  'generic-tool': 'Tool',
+  'generic-tool': 'Trash Can',
   // animal product subtypes
   'egg': 'Egg',
   'milk': 'Milk',
@@ -257,6 +259,17 @@ const SUBTYPE_LABELS = {
   'shirt': 'Shirt',
   // tv-show subtypes
   'queen-of-sauce': 'Queen of Sauce',
+  // goal subtypes
+  'social':      'Social',
+  'bundle':      'Bundle',
+  'fishing':     'Fishing',
+  'shipping':    'Shipping',
+  'museum':      'Museum',
+  'cooking':     'Cooking',
+  'crafting':    'Crafting',
+  'perfection':  'Perfection',
+  'achievement': 'Achievement',
+  'progression': 'Progression',
 }
 
 /**
@@ -289,76 +302,41 @@ export function getEntityLabel(entity) {
  */
 export function getEntitySubtitle(entity) {
   if (!entity) return ''
+
+  // Compute a custom subtype string for entities where getEntityLabels
+  // can't capture the full context from subtype alone.
   const type = entity.type
+  let customSubtype = null
 
-  if (type === 'bundle') return entity.room ? `${entity.room} Bundle` : 'Community Center Bundle'
-
-  if (type === 'location' && entity.id?.startsWith('cc-')) return 'Community Center Room'
-
-  if (type === 'buff') return entity.isDebuff ? 'Debuff' : 'Buff'
-
-  if (type === 'event') {
-    const base = entity.heartLevel ? `${entity.heartLevel} Heart Event` : 'Event'
-    return entity.npc ? `${entity.npc} — ${base}` : base
-  }
-
-  if (type === 'villager') {
-    return 'Villager'
-  }
-
-  if (type === 'quest') {
-    return entity.isSecret ? 'Secret Quest' : 'Quest'
-  }
-
-  if (type === 'achievement') {
-    return entity.isSecret ? 'Secret Achievement' : 'Achievement'
-  }
-
-  if (type === 'power') {
-    return entity.subtype === 'mastery' ? 'Skill Mastery' : 'Unlock'
-  }
-
-  if (type === 'concession') {
-    return 'Movie Theater Concession'
-  }
-
-  if (type === 'movie') {
+  if (type === 'bundle') {
+    customSubtype = entity.room ?? 'Community Center'
+  } else if (type === 'location' && entity.id?.startsWith('cc-')) {
+    customSubtype = 'Community Center Room'
+  } else if (type === 'buff') {
+    customSubtype = entity.isDebuff ? 'Debuff' : null
+  } else if (type === 'event') {
+    const heartPart = entity.heartLevel ? `${entity.heartLevel} Heart Event` : null
+    const npcPart = entity.npc ?? null
+    customSubtype = [npcPart, heartPart].filter(Boolean).join(' — ') || null
+  } else if (type === 'quest' && entity.isSecret) {
+    customSubtype = 'Secret'
+  } else if (type === 'achievement' && entity.isSecret) {
+    customSubtype = 'Secret'
+  } else if (type === 'movie') {
     const genres = entity.genres || []
-    return genres.length > 0
-      ? `Movie Theater — ${genres.map(g => g.charAt(0).toUpperCase() + g.slice(1)).join(', ')}`
-      : 'Movie Theater'
+    customSubtype = genres.length > 0
+      ? genres.map(g => g.charAt(0).toUpperCase() + g.slice(1)).join(', ')
+      : null
+  } else if (type === 'animal') {
+    customSubtype = entity.houseType ?? null
+  } else if (type === 'building') {
+    if (entity.subtype === 'fish-pond-variant') customSubtype = 'Fish Pond'
+    else if (entity.magical) customSubtype = 'Magical'
   }
 
-  if (type === 'clothing') {
-    if (entity.subtype === 'hat') return 'Hat'
-    if (entity.subtype === 'pants') return 'Pants'
-    return 'Shirt'
-  }
-
-  if (type === 'tag') {
-    return 'Context Tag'
-  }
-
-  if (type === 'type') {
-    return 'Item Type'
-  }
-
-  if (type === 'museum-reward') {
-    return 'Museum Reward'
-  }
-
-  if (type === 'animal') {
-    return entity.houseType ? `${entity.houseType} Animal` : 'Farm Animal'
-  }
-
-  if (type === 'building') {
-    if (entity.subtype === 'fish-pond-variant') return 'Fish Pond'
-    return entity.magical ? 'Magical Building' : 'Farm Building'
-  }
-
-  // General case: "Type - Subtype" when distinct subtype exists
   const { type: typeLabel, subtype: subtypeLabel } = getEntityLabels(entity)
-  return subtypeLabel ? `${typeLabel} - ${subtypeLabel}` : typeLabel
+  const secondPart = customSubtype ?? subtypeLabel
+  return secondPart ? `${typeLabel} — ${secondPart}` : typeLabel
 }
 
 // ---------------------------------------------------------------------------
@@ -611,4 +589,22 @@ export function computeDropCountDistribution(rolls) {
     .map((chance, count) => ({ count, chance }))
     .filter(({ count, chance }) => count > 0 && chance >= 0.0001)
     .sort((a, b) => b.count - a.count)
+}
+
+const LOWERCASE_WORDS = new Set([
+  'a', 'an', 'the', 'and', 'but', 'or', 'nor', 'for', 'so', 'yet',
+  'at', 'by', 'in', 'of', 'on', 'to', 'up', 'as', 'via',
+])
+
+export function toTitleCase(str) {
+  if (!str) return str
+  return str
+    .split(' ')
+    .map((word, i) => {
+      if (!word) return word
+      // Always capitalize first word; lowercase short function words mid-title
+      if (i > 0 && LOWERCASE_WORDS.has(word.toLowerCase())) return word.toLowerCase()
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+    .join(' ')
 }

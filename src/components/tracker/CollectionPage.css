@@ -53,6 +53,21 @@
   margin-bottom: 2rem;
 }
 
+.collection-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.collection-page-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  padding-bottom: 0.75rem;
+}
+
 .collection-title {
   font-family: 'Stardew Valley', sans-serif;
   font-size: 36px;
@@ -128,6 +143,11 @@
   border-radius: 999px;
   padding: 3px;
   gap: 2px;
+}
+
+.collection-groupby-toggle {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
 }
 
 .collection-filter-btn {
@@ -210,11 +230,13 @@
 }
 
 .collection-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
 }
 
+.collection-page 
 /* Legend */
 .collection-legend {
   display: flex;
@@ -246,8 +268,8 @@
 }
 
 .collection-legend-swatch--partial {
-  background: #faf4e8;
-  border-color: #d9c4a0;
+  background: #fdf8ec;
+  border-color: #d4b86a;
 }
 
 .collection-legend-swatch--missing {

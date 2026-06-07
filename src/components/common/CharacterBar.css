@@ -49,11 +49,13 @@
 }
 
 .character-details {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: var(--header-bottom, 0px);
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
+  max-width: 1400px;
+  max-height: calc(100vh - var(--header-bottom, 0px) - 1rem);
   padding: 1.5rem;
   background: #fdfbf7;
   border-bottom: 3px solid #8b6f47;
@@ -62,6 +64,7 @@
   flex-direction: column;
   gap: 1.5rem;
   animation: characterSlideDown 0.2s ease-out;
+  overflow-y: auto;
 }
 
 @keyframes characterSlideDown {
@@ -673,6 +676,13 @@
   gap: 1rem;
 }
 
+.character-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
 .character-module {
   border: 1px solid #e8d4b0;
   border-radius: 6px;
@@ -688,6 +698,132 @@
   letter-spacing: 0.5px;
   background: rgba(139, 111, 71, 0.06);
   border-bottom: 1px solid #e8d4b0;
+}
+
+/* Relationships module */
+.character-relationships {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.character-rel-spouse {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #f0e8d8;
+}
+
+.character-rel-spouse-label {
+  color: #8b6f47;
+  font-size: 0.7rem;
+}
+
+.character-rel-spouse-name {
+  font-weight: 600;
+  color: #5c4a32;
+}
+
+.character-rel-thresholds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.character-rel-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 1.5rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.character-rel-hearts {
+  font-size: 0.72rem;
+  color: #8b6f47;
+  text-align: right;
+}
+
+.heart-married .character-rel-hearts { color: #c0506a; }
+.heart-10 .character-rel-hearts      { color: #b06040; }
+
+.character-rel-bar {
+  height: 5px;
+  background: #ede7db;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.character-rel-fill {
+  height: 100%;
+  background: #d4955a;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.heart-married .character-rel-fill { background: #c0506a; }
+.heart-10 .character-rel-fill      { background: #b06040; }
+.heart-8 .character-rel-fill       { background: #c07840; }
+
+.character-rel-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5c4a32;
+  text-align: right;
+}
+
+.character-rel-total {
+  font-size: 0.68rem;
+  color: #a08060;
+  padding-top: 0.15rem;
+  border-top: 1px solid #f0e8d8;
+}
+
+/* Progress module */
+.character-progress-list {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.character-progress-row {
+  display: grid;
+  grid-template-columns: 4rem 1fr 2.5rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.character-progress-label {
+  font-size: 0.72rem;
+  color: #8b6f47;
+}
+
+.character-progress-bar {
+  height: 5px;
+  background: #ede7db;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.character-progress-fill {
+  height: 100%;
+  background: #5a9e6a;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.character-progress-fill--cooking  { background: #c07840; }
+.character-progress-fill--crafting { background: #7070b0; }
+.character-progress-fill--walnut   { background: #c8a020; }
+
+.character-progress-frac {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #5c4a32;
+  text-align: right;
 }
 
 .character-no-save {
@@ -757,19 +893,20 @@
 
 .character-stats-grid {
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
+  overflow: hidden;
 }
 
 .character-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.6rem;
   background: white;
   border: 1px solid #e8d4b0;
   border-radius: 6px;
-  min-width: 4.5rem;
+  flex: 1 0 auto;
+  white-space: nowrap;
 }
 
 .character-stat-value {

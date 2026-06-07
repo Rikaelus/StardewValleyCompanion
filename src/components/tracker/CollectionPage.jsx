@@ -1,6 +1,7 @@
 import PagePanel from '../common/PagePanel'
 import { useOpenModal } from '../../contexts/ModalContext'
-import CollectionTile from './CollectionTile'
+import UniversalModalButton from '../common/UniversalModalButton'
+import { usePageGoals } from '../../hooks/UsePageGoals'
 import './CollectionPage.css'
 
 /**
@@ -15,8 +16,25 @@ import './CollectionPage.css'
  *   filterTabs   — [{ id, label, count }]  optional (defaults to All / Still Needed)
  *   activeFilter — current filter id
  *   onFilter     — (id) => void
+ *   groupByTabs  — [{ id, label }]  optional pivot tabs (e.g. By Season / By Location)
+ *   activeGroupBy — current groupBy id
+ *   onGroupBy    — (id) => void
  *   noSaveMessage — string shown when no save loaded
  */
+function tileCardState(state) {
+  if (state === 'complete') return 'earned'
+  if (state === 'partial') return 'partial'
+  if (state === 'missing') return 'needed'
+  return null // neutral
+}
+
+function tileCardMeta(state, count, quantityType) {
+  if (quantityType) return count > 0 ? `×${count} ${quantityType}` : null
+  if (state === 'partial') return 'Known'
+  if (state === 'complete' && count > 1) return `×${count}`
+  return null
+}
+
 function CollectionPage({
   title,
   groups,
@@ -26,11 +44,16 @@ function CollectionPage({
   filterTabs,
   activeFilter,
   onFilter,
+  groupByTabs,
+  activeGroupBy,
+  onGroupBy,
   noSaveMessage,
   hasSaveData,
   keepGroups = false,
+  quantityType = null, // when set, shows '×N <quantityType>' in card meta row
 }) {
   const openModal = useOpenModal()
+  const pageGoals = usePageGoals()
 
   const tabs = filterTabs ?? [
     { id: 'all', label: 'All Items', count: totals.total },
@@ -54,7 +77,16 @@ function CollectionPage({
     <PagePanel>
       <div className="collection-page">
         <header className="collection-header">
-          <h1 className="collection-title">{title}</h1>
+          <div className="collection-title-row">
+            <h1 className="collection-title">{title}</h1>
+            {pageGoals.length > 0 && (
+              <div className="collection-page-goals">
+                {pageGoals.map(g => (
+                  <UniversalModalButton key={g.id} item={g} variant="inline" />
+                ))}
+              </div>
+            )}
+          </div>
           {hasSaveData && (
             <div className="collection-score-block">
               <div className="collection-score-numbers">
@@ -84,6 +116,23 @@ function CollectionPage({
           >
             {noSaveMessage}
           </button>
+        )}
+
+        {groupByTabs && (
+          <div className="collection-filter-toggle collection-groupby-toggle" role="tablist" aria-label="Group by">
+            {groupByTabs.map(tab => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeGroupBy === tab.id}
+                className={`collection-filter-btn ${activeGroupBy === tab.id ? 'collection-filter-btn--active' : ''}`}
+                onClick={() => onGroupBy(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         )}
 
         <div className="collection-filter-toggle" role="tablist">
@@ -116,15 +165,14 @@ function CollectionPage({
         {neededItems ? (
           <section className="collection-group">
             <div className="collection-grid">
-              {neededItems.map(({ entity, state, count, badge, tileTitle }) => (
-                <CollectionTile
+              {neededItems.map(({ entity, state, count }) => (
+                <UniversalModalButton
                   key={entity.id}
                   item={entity}
-                  state={state}
-                  count={count}
-                  badge={badge}
-                  onClick={openModal}
-                  title={tileTitle}
+                  variant="card"
+                  cardState={tileCardState(state)}
+                  cardMeta={tileCardMeta(state, count, quantityType)}
+                  onNavigate={openModal}
                 />
               ))}
             </div>
@@ -142,17 +190,20 @@ function CollectionPage({
                   )}
                 </header>
                 <div className="collection-grid">
-                  {group.items.map(({ entity, state, count, badge, tileTitle }) => (
-                    <CollectionTile
-                      key={entity.id}
-                      item={entity}
-                      state={hasSaveData ? state : 'neutral'}
-                      count={hasSaveData ? count : null}
-                      badge={hasSaveData ? badge : null}
-                      onClick={openModal}
-                      title={hasSaveData ? tileTitle : entity.name}
-                    />
-                  ))}
+                  {group.items.map(({ entity, state, count }) => {
+                    const effectiveState = hasSaveData ? state : 'neutral'
+                    const effectiveCount = hasSaveData ? count : null
+                    return (
+                      <UniversalModalButton
+                        key={entity.id}
+                        item={entity}
+                        variant="card"
+                        cardState={tileCardState(effectiveState)}
+                        cardMeta={tileCardMeta(effectiveState, effectiveCount, quantityType)}
+                        onNavigate={openModal}
+                      />
+                    )
+                  })}
                 </div>
               </section>
             ))}

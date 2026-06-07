@@ -1,0 +1,567 @@
+{
+  "goals": [
+    {
+      "id": "goal-fishing-collection",
+      "name": "Complete the Fishing Collection",
+      "description": "Catch every species of fish.",
+      "linkPath": "/tracker/fishing",
+      "trackerPage": "/tracker/fishing",
+      "completionAchievementId": 26,
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "collection",
+          "id": "collection-fishing",
+          "weight": 1
+        }
+      ],
+      "subtype": "fishing"
+    },
+    {
+      "id": "goal-community-center",
+      "name": "Complete the Community Center",
+      "description": "Restore every bundle in the Community Center.",
+      "linkPath": "/tracker/bundles",
+      "trackerPage": "/tracker/bundles",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "collection",
+          "id": "collection-community-center",
+          "weight": 1
+        }
+      ],
+      "subtype": "bundle"
+    },
+    {
+      "id": "goal-full-shipment",
+      "name": "Full Shipment",
+      "description": "Ship at least one of every item.",
+      "linkPath": "/tracker/full-shipment",
+      "trackerPage": "/tracker/full-shipment",
+      "completionAchievementId": 34,
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "collection",
+          "id": "collection-full-shipment",
+          "weight": 1
+        }
+      ],
+      "subtype": "shipping"
+    },
+    {
+      "id": "goal-museum",
+      "name": "Complete the Museum",
+      "description": "Donate all 95 artifacts and minerals to the museum.",
+      "linkPath": "/tracker/museum",
+      "trackerPage": "/tracker/museum",
+      "completionAchievementId": 5,
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "collection",
+          "id": "collection-museum",
+          "weight": 1
+        }
+      ],
+      "subtype": "museum"
+    },
+    {
+      "id": "goal-cooking-recipes",
+      "name": "Learn All Cooking Recipes",
+      "description": "Learn and cook every recipe.",
+      "linkPath": "/tracker/cooking",
+      "trackerPage": "/tracker/cooking",
+      "completionAchievementId": 17,
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        { "kind": "collection",  "id": "collection-cooking", "weight": 1.0 },
+        { "kind": "action-type", "id": "cooking-recipe",     "weight": 1.0 },
+        { "kind": "action-type", "id": "queen-of-sauce",     "weight": 1.0 }
+      ],
+      "subtype": "cooking"
+    },
+    {
+      "id": "goal-great-friends",
+      "name": "Great Friends",
+      "description": "Reach maximum hearts with every villager.",
+      "linkPath": "/villagers",
+      "trackerPage": "/villagers",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "goal",
+          "id": "goal-friendship-abigail",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-alex",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-caroline",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-clint",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-demetrius",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-dwarf",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-elliott",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-emily",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-evelyn",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-george",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-gus",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-haley",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-harvey",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-jas",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-jodi",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-kent",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-krobus",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-leah",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-leo",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-lewis",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-linus",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-marnie",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-maru",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-pam",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-penny",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-pierre",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-robin",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-sam",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-sandy",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-sebastian",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-shane",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-vincent",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-willy",
+          "weight": 1
+        },
+        {
+          "kind": "goal",
+          "id": "goal-friendship-wizard",
+          "weight": 1
+        }
+      ],
+      "subtype": "social"
+    },
+    {
+      "id": "goal-golden-clock",
+      "name": "Golden Clock on Farm",
+      "description": "Build the Gold Clock on your farm.",
+      "linkPath": "/tracker/perfection",
+      "perfectionCategory": "golden-clock",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-monster-slayer",
+      "name": "Monster Eradication",
+      "description": "Complete all 12 monster eradication goals.",
+      "linkPath": "/tracker/slayer",
+      "trackerPage": "/tracker/slayer",
+      "perfectionCategory": "monster-slayer",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-stardrops",
+      "name": "Found All Stardrops",
+      "description": "Find all 7 Stardrops.",
+      "linkPath": "/tracker/perfection",
+      "perfectionCategory": "stardrops",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-crafting-recipes",
+      "name": "Craft Master",
+      "description": "Craft every craftable item at least once.",
+      "linkPath": "/tracker/crafting",
+      "trackerPage": "/tracker/crafting",
+      "completionAchievementId": 22,
+      "perfectionCategory": "crafting",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "action-type",
+          "id": "crafting",
+          "weight": 1
+        }
+      ],
+      "subtype": "crafting"
+    },
+    {
+      "id": "goal-obelisks",
+      "name": "Obelisks on Farm",
+      "description": "Build all 4 obelisks on your farm.",
+      "linkPath": "/tracker/perfection",
+      "perfectionCategory": "obelisks",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-farmer-level",
+      "name": "Farmer Level",
+      "description": "Reach level 10 in all 5 skills.",
+      "linkPath": "/tracker/perfection",
+      "perfectionCategory": "farmer-level",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-qi-walnut-room",
+      "name": "Unlock Qi's Walnut Room",
+      "description": "Collect 100 Golden Walnuts to unlock Qi's Walnut Room on Ginger Island.",
+      "linkPath": "/tracker/golden-walnuts",
+      "trackerPage": "/tracker/golden-walnuts",
+      "deadline": {
+        "type": "none"
+      },
+      "criteria": {
+        "type": "walnuts-threshold",
+        "threshold": 100
+      },
+      "children": [
+        {
+          "kind": "action-type",
+          "id": "golden-walnut",
+          "weight": 1
+        }
+      ],
+      "subtype": "progression"
+    },
+    {
+      "id": "goal-golden-walnuts",
+      "name": "Find All Golden Walnuts",
+      "description": "Find all 130 Golden Walnuts on Ginger Island.",
+      "linkPath": "/tracker/golden-walnuts",
+      "trackerPage": "/tracker/golden-walnuts",
+      "perfectionCategory": "walnuts",
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "action-type",
+          "id": "golden-walnut",
+          "weight": 1
+        }
+      ],
+      "subtype": "perfection"
+    },
+    {
+      "id": "goal-grandpa-4-candle",
+      "name": "Grandpa's Evaluation — 4 Candles",
+      "description": "Earn 12+ shrine points. Grandpa evaluates at the start of Year 3, then re-evaluates any year you bring a diamond to his shrine.",
+      "linkPath": "/tracker/shrine",
+      "trackerPage": "/tracker/shrine",
+      "deadline": {
+        "type": "year-end",
+        "year": 2,
+        "recurring": {
+          "type": "annual",
+          "cost": {
+            "gameId": 72,
+            "name": "Diamond",
+            "quantity": 1
+          }
+        }
+      },
+      "points": {
+        "max": 21,
+        "threshold": 12
+      },
+      "children": [
+        {
+          "kind": "goal",
+          "id": "goal-fishing-collection",
+          "weight": 0.5,
+          "label": "Master Angler (1 shrine pt)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-full-shipment",
+          "weight": 0.5,
+          "label": "Full Shipment (1 shrine pt)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-museum",
+          "weight": 0.5,
+          "label": "Complete Collection (1 shrine pt)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-community-center",
+          "weight": 0.4,
+          "label": "Community Center (3 shrine pts)"
+        },
+        {
+          "kind": "action-type",
+          "id": "villager-gift",
+          "weight": 0.4,
+          "label": "Friendship — 8❤️ with 5–10 villagers (2 shrine pts)"
+        },
+        {
+          "kind": "action-type",
+          "id": "villager-birthday",
+          "weight": 0.4,
+          "label": "Friendship — 8❤️ with 5–10 villagers (2 shrine pts)"
+        },
+        {
+          "kind": "action-type",
+          "id": "progression",
+          "weight": 0.3,
+          "label": "Keys & Progression (2 shrine pts)"
+        },
+        {
+          "kind": "action-type",
+          "id": "pet-care",
+          "weight": 0.3,
+          "label": "Pet friendship (1 shrine pt)"
+        },
+        {
+          "kind": "action-type",
+          "id": "animal-care",
+          "weight": 0.2,
+          "label": "Animal produce quality"
+        },
+        {
+          "kind": "action-type",
+          "id": "grandpa",
+          "weight": 0.2,
+          "label": "Shrine preparation"
+        }
+      ],
+      "subtype": "progression"
+    },
+    {
+      "id": "goal-perfection",
+      "name": "Perfection",
+      "description": "Achieve 100% perfection score across all 11 categories.",
+      "linkPath": "/tracker/perfection",
+      "trackerPage": "/tracker/perfection",
+      "completionAchievementId": 44,
+      "deadline": {
+        "type": "none"
+      },
+      "children": [
+        {
+          "kind": "goal",
+          "id": "goal-fishing-collection",
+          "weight": 1,
+          "label": "Fish Caught (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-full-shipment",
+          "weight": 1.5,
+          "label": "Produce & Forage Shipped (15%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-cooking-recipes",
+          "weight": 1,
+          "label": "Cooking Recipes Made (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-crafting-recipes",
+          "weight": 1,
+          "label": "Craft Master (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-great-friends",
+          "weight": 1.1,
+          "label": "Great Friends (11%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-golden-clock",
+          "weight": 1,
+          "label": "Golden Clock on Farm (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-monster-slayer",
+          "weight": 1,
+          "label": "Monster Eradication (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-stardrops",
+          "weight": 1,
+          "label": "Found All Stardrops (10%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-obelisks",
+          "weight": 0.4,
+          "label": "Obelisks on Farm (4%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-farmer-level",
+          "weight": 0.5,
+          "label": "Farmer Level (5%)"
+        },
+        {
+          "kind": "goal",
+          "id": "goal-golden-walnuts",
+          "weight": 0.5,
+          "label": "Find All Golden Walnuts (5%)"
+        }
+      ],
+      "subtype": "perfection"
+    }
+  ]
+}

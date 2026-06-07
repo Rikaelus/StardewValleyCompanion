@@ -92,6 +92,7 @@ const OUTPUT_QUALITY_TIERS = [
 
 function getOutputTiers(entity) {
   const type = entity.type || ''
+  if (entity.canBeAged) return OUTPUT_QUALITY_TIERS
   if (['fish', 'crop', 'forage', 'tree-fruit', 'animal-product', 'food'].includes(type)) {
     if (type === 'food') return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular' || t.tier === 'iridium')
     if (entity.maxQuality === 0) return OUTPUT_QUALITY_TIERS.filter(t => t.tier === 'regular')
@@ -272,7 +273,8 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {outputs.filter(o => !o.isGeneric).map((output, idx, specificOutputs) => {
           const outputProfessionMultiplier = calculateProfessionMultiplier(output.outputItem, activeProfessions)
-          const outputHasQuality = output.outputItem.capabilities?.hasQualityTiers !== false && output.outputQuality == null
+          const canBeAged = output.outputItem.canBeAged
+          const outputHasQuality = output.outputItem.capabilities?.hasQualityTiers !== false && (output.outputQuality == null || canBeAged)
           const fixedQualityMultiplier = output.outputQuality === 0 ? 1.0
             : output.outputQuality === 1 ? 1.25
             : output.outputQuality === 2 ? 1.5
@@ -306,7 +308,9 @@ function OutputProfitAnalysis({ entity, artisanItems, activeProfessions, outputI
 
               <div className="quality-tiers">
                 {outputHasQuality ? (
-                  [['●', 'regular', 1.0], ['◆', 'silver', 1.25], ['★', 'gold', 1.5], ['◆', 'iridium', 2.0]].map(([sym, tier, mult]) => {
+                  [['●', 'regular', 1.0, 0], ['◆', 'silver', 1.25, 1], ['★', 'gold', 1.5, 2], ['◆', 'iridium', 2.0, 4]]
+                  .filter(([,, , q]) => output.outputQuality == null || q >= output.outputQuality)
+                  .map(([sym, tier, mult]) => {
                     const pct = calcProfit(mult)
                     return (
                       <div key={tier} className="quality-tier">

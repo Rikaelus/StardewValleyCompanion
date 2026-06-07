@@ -76,13 +76,7 @@
   border: 2px solid #c9a01c;
 }
 
-.walnut-tracking-note {
-  font-size: 0.75rem;
-  color: #a08060;
-  margin: 0.5rem 0 0;
-  text-align: center;
-  line-height: 1.4;
-}
+
 
 /* Upload nudge */
 .walnut-upload-nudge {
@@ -216,6 +210,8 @@
 /* Source rows */
 .walnut-area-rows {
   background: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .walnut-row {
@@ -225,10 +221,28 @@
   gap: 0.5rem;
   padding: 0.45rem 0.75rem;
   border-bottom: 1px solid #f0e4cc;
+  border-right: 1px solid #f0e4cc;
 }
 
+.walnut-row:nth-child(2n) {
+  border-right: none;
+}
+
+.walnut-row:nth-last-child(-n+2):nth-child(2n+1),
 .walnut-row:last-child {
   border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .walnut-area-rows {
+    grid-template-columns: 1fr;
+  }
+  .walnut-row {
+    border-right: none;
+  }
+  .walnut-row:last-child {
+    border-bottom: none;
+  }
 }
 
 .walnut-row--done {

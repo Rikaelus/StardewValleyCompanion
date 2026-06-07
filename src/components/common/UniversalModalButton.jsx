@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Tooltip } from 'react-tooltip'
 import ItemButton from './ItemButton'
 import { useOpenModal } from '../../contexts/ModalContext'
 import { useEntities } from '../../contexts/EntityContext'
 import { useProgress } from '../../hooks/UseProgress'
+import { computeCollectionProgress } from '../../utils/GoalEngine'
 import { pluralize } from '../../utils/Pluralize'
 import { getEntityLabels } from '../../utils/Formatters'
 import 'react-tooltip/dist/react-tooltip.css'
@@ -40,10 +42,17 @@ function UniversalModalButton({
   donated = null, // collection-tile variant: true | false | null (no save data)
   frameColor = 'tan', // collection-tile variant: 'tan' | 'gold' | 'teal' | 'green'
   tileSize = 'sm', // collection-tile variant: 'sm' (48px) | 'lg' (72px)
+  cardState = null, // card variant: 'earned' | 'needed' | null (neutral)
+  cardDesc = null, // card variant: second-row description text
+  cardMeta = null, // card variant: third-row contextual text (counts, progress, etc.)
+  quantityType = null, // card variant: label appended to owned count — e.g. 'needed', 'shipped', 'caught'
+  gutter = false, // card variant: true = reserve gutter space; string = link path shown as →
+  goalEarned = null, // goal inline coloring: true | false | null (no save data / not a goal)
 }) {
   const openModal = useOpenModal()
   const entities = useEntities()
-  const { hasSaveData, isOwned, getOwnedCount, isNeeded, getBundleProgress, hasAchievement } = useProgress()
+  const progress = useProgress()
+  const { hasSaveData, isOwned, getOwnedCount, isNeeded, getBundleProgress, hasAchievement } = progress
   const ownedCount = hasSaveData && !!item?.gameId ? getOwnedCount(item.gameId, item) : 0
   const owned = ownedCount > 0
   const partiallyOwned = owned && quantity > 1 && ownedCount < quantity
@@ -61,6 +70,13 @@ function UniversalModalButton({
     }
     if (item?.type === 'achievement') {
       return hasAchievement(item.achievementId) ? 'inline-owned' : 'inline-needed'
+    }
+    if (item?.type === 'goal' && goalEarned !== null) {
+      return goalEarned ? 'inline-owned' : 'inline-needed'
+    }
+    if (item?.type === 'collection') {
+      const colProgress = computeCollectionProgress(item, entities.items, progress)
+      if (colProgress) return colProgress.percent >= 100 ? 'inline-owned' : 'inline-needed'
     }
     return ''
   }
@@ -114,6 +130,46 @@ function UniversalModalButton({
         </button>
         <Tooltip id={tooltipId} float style={{ zIndex: 9999 }} />
       </>
+    )
+  }
+
+  // Render card variant (icon left, text column right: name / desc / meta)
+  if (variant === 'card') {
+    const iconSrc = item.icon ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`) : null
+    const stateClass = cardState ? `item-card-wrap--${cardState}` : ''
+    const hasGutter = gutter === true || typeof gutter === 'string'
+    const resolvedMeta = cardMeta
+      ?? (quantityType && hasSaveData && ownedCount > 0 ? `×${ownedCount} ${quantityType}` : null)
+      ?? ' '
+    return (
+      <div className={`item-card-wrap ${stateClass} ${hasGutter ? 'item-card-wrap--gutter' : ''} ${className}`.trim()}>
+        <button
+          type="button"
+          className="item-card"
+          onClick={handleClick}
+        >
+          <span className="item-card-icon">
+            {iconSrc && !imageError
+              ? <img src={iconSrc} alt="" onError={() => setImageError(true)} />
+              : (item.iconChar || item.iconClass)
+                ? <span className="item-card-fallback">
+                    {item.iconClass ? <i className={item.iconClass} /> : item.iconChar}
+                  </span>
+                : <span className="item-card-fallback">{item.name?.slice(0, 2).toUpperCase() || '??'}</span>
+            }
+          </span>
+          <span className="item-card-body">
+            <span className="item-card-label">{label ?? item.name}</span>
+            {cardDesc && <span className="item-card-desc">{cardDesc}</span>}
+            <span className="item-card-meta">{resolvedMeta}</span>
+          </span>
+        </button>
+        {hasGutter && (
+          typeof gutter === 'string'
+            ? <Link to={gutter} className="item-card-gutter item-card-gutter--link" onClick={e => e.stopPropagation()}>→</Link>
+            : <span className="item-card-gutter" />
+        )}
+      </div>
     )
   }
 

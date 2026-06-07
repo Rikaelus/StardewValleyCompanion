@@ -2,6 +2,7 @@ export const TRACKER_MENU_GROUPS = [
   {
     domain: 'Milestones',
     items: [
+      { label: 'Perfection',       path: '/tracker/perfection' },
       { label: 'Bundles',          path: '/tracker/bundles' },
       { label: "Grandpa's Shrine", path: '/tracker/shrine' },
       { label: 'Achievements',     path: '/tracker/achievements' },

@@ -3,7 +3,9 @@ import { usePlayer } from '../../contexts/PlayerContext'
 import { useEntities } from '../../contexts/EntityContext'
 import PagePanel from '../common/PagePanel'
 import UniversalModalButton from '../common/UniversalModalButton'
+import { usePageGoals } from '../../hooks/UsePageGoals'
 import './GoldenWalnutPage.css'
+import './CollectionPage.css'
 import walnutRules from '../../../data/rules/golden-walnuts.json'
 
 const WALNUT_SOURCES = walnutRules.sources.map(s => ({ ...s, saveKey: s.save_key }))
@@ -171,6 +173,7 @@ function GoldenWalnutPage() {
   const { items: allEntities } = useEntities()
   const saveData = player.saveData
   const hasSaveData = saveData != null
+  const pageGoals = usePageGoals()
 
   const qiRoomEntity = useMemo(() => allEntities?.find(e => e.id === 'map-qinutroom') ?? null, [allEntities])
 
@@ -196,20 +199,6 @@ function GoldenWalnutPage() {
   }, [])
 
   // Count trackable progress
-  const trackableProgress = useMemo(() => {
-    if (!hasSaveData || !walnutData) return null
-    let found = 0
-    let total = 0
-    for (const src of WALNUT_SOURCES) {
-      const status = resolveSourceStatus(src, walnutData, mailReceived)
-      if (status.found != null) {
-        found += status.found
-        total += status.max
-      }
-    }
-    return { found, total }
-  }, [hasSaveData, walnutData, mailReceived])
-
   const TOTAL_WALNUTS = 130
   const pct = totalFound != null ? Math.min(1, totalFound / TOTAL_WALNUTS) : 0
 
@@ -217,9 +206,16 @@ function GoldenWalnutPage() {
     <PagePanel>
       <div className="walnut-page">
         <header className="walnut-header">
-          <h1 className="walnut-title">Golden Walnuts</h1>
+          <div className="collection-title-row">
+            <h1 className="walnut-title">Golden Walnuts</h1>
+            {pageGoals.length > 0 && (
+              <div className="collection-page-goals">
+                {pageGoals.map(g => <UniversalModalButton key={g.id} item={g} variant="inline" />)}
+              </div>
+            )}
+          </div>
           <p className="walnut-subtitle">
-            Ginger Island currency — 130 total, 129 individually trackable. Collecting 100 unlocks{' '}
+            Ginger Island currency — 130 total. Collecting 100 unlocks{' '}
             {qiRoomEntity ? <UniversalModalButton item={qiRoomEntity} variant="inline" showIcon /> : "Qi's Walnut Room"}.
           </p>
 
@@ -240,12 +236,7 @@ function GoldenWalnutPage() {
                 />
                 <div className="walnut-progress-pip walnut-progress-pip--100" style={{ left: `${(100 / TOTAL_WALNUTS) * 100}%` }} title="100 — Qi's Walnut Room" />
               </div>
-              {trackableProgress && (
-                <p className="walnut-tracking-note">
-                  {trackableProgress.found} / {trackableProgress.total} walnuts tracked from save data
-                  ({TOTAL_WALNUTS - trackableProgress.total} come from exploration items not stored individually in your save)
-                </p>
-              )}
+
             </div>
           )}
         </header>

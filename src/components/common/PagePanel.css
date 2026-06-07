@@ -5,6 +5,7 @@
   margin-bottom: 1.5rem;
   box-shadow: var(--panel-shadow);
   border: var(--panel-border);
+  overflow: hidden;
 }
 
 .page-panel-header-section {

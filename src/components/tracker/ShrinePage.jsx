@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom'
 import PagePanel from '../common/PagePanel'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { computeShrineScore } from '../../utils/ShrineScore'
+import { usePageGoals } from '../../hooks/UsePageGoals'
+import UniversalModalButton from '../common/UniversalModalButton'
 import './ShrinePage.css'
+import './CollectionPage.css'
 
 const RUBRIC = computeShrineScore({})
 
@@ -87,6 +90,7 @@ function ShrinePage() {
   const { player } = usePlayer()
   const score = useMemo(() => computeShrineScore(player.saveData), [player.saveData])
   const hasSaveData = !!score
+  const pageGoals = usePageGoals()
 
   const displayed = score ?? RUBRIC
 
@@ -101,7 +105,14 @@ function ShrinePage() {
     <PagePanel>
       <div className="shrine-page">
         <header className="shrine-header">
-          <h1 className="shrine-title">Grandpa's Shrine</h1>
+          <div className="collection-title-row">
+            <h1 className="shrine-title">Grandpa's Shrine</h1>
+            {pageGoals.length > 0 && (
+              <div className="collection-page-goals">
+                {pageGoals.map(g => <UniversalModalButton key={g.id} item={g} variant="inline" />)}
+              </div>
+            )}
+          </div>
           <p className="shrine-subtitle">
             At the start of Year 3, Grandpa returns to judge your accomplishments.
             Each candle requires more dedication — 4 candles is the gold standard.

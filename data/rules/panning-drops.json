@@ -1,0 +1,30 @@
+{
+  "_comment": "Hand-curated panning loot from Tool.Pan.getPanItems(). Items obtainable via the Copper Pan and its upgrades. Source: Stardew Valley Wiki - Pans page.",
+  "_note_ore": "One ore type is always guaranteed per panning session. Relative probabilities shown as base chance. Pan upgrade level, daily luck, and Luck buffs shift these odds.",
+  "_note_special": "Special items are chance-gated: base 40% per roll (modified by luck), with up to 1-4 rolls depending on pan tier. minTier indicates the first tier where this category appears.",
+  "_note_ginger_island": "Fossilized Tail and Taro Tubers are Ginger Island exclusive extras, rolled separately from the main pool.",
+  "oreDrops": [
+    { "id": "copper-ore",   "gameId": "(O)378", "chance": 0.36,  "minTier": "copper" },
+    { "id": "iron-ore",     "gameId": "(O)380", "chance": 0.323, "minTier": "copper" },
+    { "id": "gold-ore",     "gameId": "(O)384", "chance": 0.208, "minTier": "copper" },
+    { "id": "bone-fragment","gameId": "(O)881", "chance": 0.10,  "minTier": "copper" },
+    { "id": "iridium-ore",  "gameId": "(O)386", "chance": 0.01,  "minTier": "copper" }
+  ],
+  "specialDrops": [
+    { "id": "coal",         "gameId": "(O)382", "chance": 0.50,  "minTier": "copper" },
+    { "id": "omni-geode",   "gameId": "(O)749", "chance": 0.28,  "minTier": "copper", "minStack": 1, "maxStack": 3 },
+    { "id": "earth-crystal","gameId": "(O)86",  "chance": 0.047, "minTier": "copper" },
+    { "id": "frozen-tear",  "gameId": "(O)84",  "chance": 0.047, "minTier": "copper" },
+    { "id": "fire-quartz",  "gameId": "(O)82",  "chance": 0.047, "minTier": "copper" },
+    { "id": "amethyst",     "gameId": "(O)66",  "chance": 0.01,  "minTier": "copper" },
+    { "id": "aquamarine",   "gameId": "(O)62",  "chance": 0.01,  "minTier": "copper" },
+    { "id": "emerald",      "gameId": "(O)60",  "chance": 0.01,  "minTier": "copper" },
+    { "id": "ruby",         "gameId": "(O)64",  "chance": 0.01,  "minTier": "copper" },
+    { "id": "topaz",        "gameId": "(O)68",  "chance": 0.01,  "minTier": "copper" },
+    { "id": "diamond",      "gameId": "(O)72",  "chance": 0.015, "minTier": "copper" }
+  ],
+  "gingerIslandDrops": [
+    { "id": "fossilized-tail","gameId": "(O)822","chance": 0.20, "location": "Ginger Island Dig Site river", "minTier": "copper" },
+    { "id": "taro-tuber",    "gameId": "(O)831","chance": 0.20, "location": "Ginger Island",               "minTier": "copper" }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "collections": [
+    {
+      "id": "collection-fishing",
+      "name": "Fishing Collection",
+      "description": "Catch every species of fish.",
+      "linkPath": "/tracker/fishing",
+      "completionAchievementId": 26,
+      "todoTypes": ["fish-collection", "fish-bundle"],
+      "iconClass": "fa-solid fa-fish",
+      "iconColor": "#2e86ab"
+    },
+    {
+      "id": "collection-museum",
+      "name": "Museum Collection",
+      "description": "Donate all artifacts and minerals to the museum.",
+      "linkPath": "/tracker/museum",
+      "completionAchievementId": 5,
+      "todoTypes": ["museum"],
+      "iconClass": "fa-solid fa-landmark",
+      "iconColor": "#8b6914"
+    },
+    {
+      "id": "collection-full-shipment",
+      "name": "Full Shipment",
+      "description": "Ship at least one of every item.",
+      "linkPath": "/tracker/full-shipment",
+      "completionAchievementId": 34,
+      "todoTypes": ["full-shipment"],
+      "iconClass": "fa-solid fa-box",
+      "iconColor": "#5c8a3c"
+    },
+    {
+      "id": "collection-cooking",
+      "name": "Cooking Recipes",
+      "description": "Learn and cook every recipe.",
+      "linkPath": "/tracker/cooking",
+      "completionAchievementId": 17,
+      "todoTypes": ["queen-of-sauce"],
+      "iconClass": "fa-solid fa-utensils",
+      "iconColor": "#c0392b"
+    },
+    {
+      "id": "collection-community-center",
+      "name": "Community Center",
+      "description": "Restore every bundle in the Community Center.",
+      "linkPath": "/tracker/bundles",
+      "completionAchievementId": null,
+      "todoTypes": ["crop-bundle", "fish-bundle"],
+      "iconClass": "fa-solid fa-house-chimney",
+      "iconColor": "#7d5a3c"
+    }
+  ]
+}

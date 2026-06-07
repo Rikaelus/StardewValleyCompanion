@@ -83,6 +83,10 @@ function BundleRequirementsSection({ entity, entityType, findByGameId, onNavigat
           )
         })}
       </div>
+
+      {progress?.complete && (
+        <div className="bundle-complete-stamp">Complete!</div>
+      )}
     </ModalSection>
   )
 }

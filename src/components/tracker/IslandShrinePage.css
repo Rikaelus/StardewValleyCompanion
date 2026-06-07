@@ -1,21 +1,21 @@
-.shrine-page {
+.island-shrine-page {
   max-width: 600px;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
-.shrine-loading {
+.island-shrine-loading {
   text-align: center;
   color: #6b5d4f;
   margin: 4rem auto;
 }
 
-.shrine-header {
+.island-shrine-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.shrine-title {
+.island-shrine-title {
   font-family: 'Stardew Valley', sans-serif;
   font-size: 36px;
   font-weight: normal;
@@ -33,7 +33,7 @@
   color: #4a7228;
 }
 
-.shrine-upload-nudge {
+.island-shrine-upload-nudge {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +50,7 @@
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.shrine-upload-nudge:hover {
+.island-shrine-upload-nudge:hover {
   background: #f5ead8;
   border-color: #c9a87a;
   color: #5c4a32;

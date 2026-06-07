@@ -36,6 +36,14 @@ function childInt(parent, tagName) {
   return isNaN(n) ? null : n
 }
 
+/** Get a float from a direct child element. Returns null if missing. */
+function childFloat(parent, tagName) {
+  const text = childText(parent, tagName)
+  if (text == null) return null
+  const n = parseFloat(text)
+  return isNaN(n) ? null : n
+}
+
 /** Parse all <int> children into a number array. */
 function parseIntArray(parent) {
   if (!parent) return []
@@ -202,18 +210,30 @@ function extractMineralsFound(playerEl) {
 function extractStats(playerEl) {
   const statsEl = playerEl.querySelector(':scope > stats')
   if (!statsEl) return {}
-  const valuesEl = statsEl.querySelector(':scope > Values')
-  if (!valuesEl) return {}
   const result = {}
-  for (const { key, valueElement } of parseDictionaryEntries(valuesEl)) {
-    const val = valueElement?.querySelector('int')?.textContent
-      ?? valueElement?.querySelector('unsignedInt')?.textContent
-      ?? valueElement?.querySelector('string')?.textContent
-    if (val != null) {
-      const num = parseInt(val, 10)
-      result[key] = isNaN(num) ? val : num
+
+  // Direct numeric children (the primary stats fields)
+  for (const child of statsEl.children) {
+    const tag = child.tagName
+    if (tag === 'specificMonstersKilled' || tag === 'Values' || tag === 'stat_dictionary') continue
+    const num = parseInt(child.textContent, 10)
+    if (!isNaN(num)) result[tag] = num
+  }
+
+  // stat_dictionary / Values — extra keyed stats (MasteryExp, etc.)
+  const valuesEl = statsEl.querySelector(':scope > Values') ?? statsEl.querySelector(':scope > stat_dictionary')
+  if (valuesEl) {
+    for (const { key, valueElement } of parseDictionaryEntries(valuesEl)) {
+      const val = valueElement?.querySelector('int')?.textContent
+        ?? valueElement?.querySelector('unsignedInt')?.textContent
+        ?? valueElement?.querySelector('string')?.textContent
+      if (val != null) {
+        const num = parseInt(val, 10)
+        result[key] = isNaN(num) ? val : num
+      }
     }
   }
+
   return result
 }
 
@@ -251,6 +271,55 @@ function extractDateFromMainSave(doc) {
     day: day ?? 1,
     season: seasonText ?? SEASON_MAP[seasonInt] ?? 'spring',
     year: year ?? 1,
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Weather extraction (main save only)
+// ---------------------------------------------------------------------------
+
+// weatherForTomorrow integer → string
+const WEATHER_INT_MAP = { 0: 'sun', 1: 'rain', 2: 'debris', 3: 'storm', 4: 'festival', 5: 'snow', 6: 'wedding', 7: 'greenRain' }
+
+function extractWeatherForContext(doc, contextName) {
+  // 1.6 stores per-context weather in <locationWeather> dictionary
+  const locationWeather = doc.documentElement.querySelector(':scope > locationWeather')
+  if (locationWeather) {
+    for (const { key, valueElement } of parseDictionaryEntries(locationWeather)) {
+      if (key !== contextName) continue
+      const isRaining = valueElement?.querySelector('isRaining')?.textContent?.trim() === 'true'
+      const isLightning = valueElement?.querySelector('isLightning')?.textContent?.trim() === 'true'
+      const isSnowing = valueElement?.querySelector('isSnowing')?.textContent?.trim() === 'true'
+      const isGreenRain = valueElement?.querySelector('isGreenRain')?.textContent?.trim() === 'true'
+      const tomorrowInt = parseInt(valueElement?.querySelector('weatherForTomorrow')?.textContent ?? '', 10)
+      return {
+        today: isGreenRain ? 'greenRain' : isLightning ? 'storm' : isRaining ? 'rain' : isSnowing ? 'snow' : 'sun',
+        tomorrow: WEATHER_INT_MAP[tomorrowInt] ?? 'sun',
+        isRaining: isRaining || isLightning,
+        isRainingTomorrow: tomorrowInt === 1 || tomorrowInt === 3,
+      }
+    }
+  }
+  // Pre-1.6 fallback: root-level booleans for the default context only
+  if (contextName === 'Default') {
+    const isRaining = childText(doc.documentElement, 'isRaining') === 'true'
+    const isLightning = childText(doc.documentElement, 'isLightning') === 'true'
+    const isSnowing = childText(doc.documentElement, 'isSnowing') === 'true'
+    const tomorrowInt = childInt(doc.documentElement, 'weatherForTomorrow') ?? 0
+    return {
+      today: isLightning ? 'storm' : isRaining ? 'rain' : isSnowing ? 'snow' : 'sun',
+      tomorrow: WEATHER_INT_MAP[tomorrowInt] ?? 'sun',
+      isRaining: isRaining || isLightning,
+      isRainingTomorrow: tomorrowInt === 1 || tomorrowInt === 3,
+    }
+  }
+  return null
+}
+
+function extractWeather(doc) {
+  return {
+    valley: extractWeatherForContext(doc, 'Default'),
+    island: extractWeatherForContext(doc, 'Island'),
   }
 }
 
@@ -378,18 +447,57 @@ function countChildren(doc) {
 }
 
 /**
+ * Return all pets with name and friendship, or [] if none.
+ */
+function extractPets(doc) {
+  return findNpcsByType(doc, 'Pet').map(pet => ({
+    name: childText(pet, 'name') ?? 'Pet',
+    petType: childText(pet, 'petType') ?? 'Unknown',
+    friendship: childInt(pet, 'friendshipTowardFarmer') ?? 0,
+  }))
+}
+
+/**
  * Return the maximum friendshipTowardFarmer across all pet NPCs (game allows
  * multiple pets in 1.6). Returns null if no pet exists.
  */
 function extractPetFriendship(doc) {
-  const pets = findNpcsByType(doc, 'Pet')
+  const pets = extractPets(doc)
   if (pets.length === 0) return null
-  let max = 0
-  for (const pet of pets) {
-    const v = childInt(pet, 'friendshipTowardFarmer') ?? 0
-    if (v > max) max = v
+  return Math.max(...pets.map(p => p.friendship))
+}
+
+/**
+ * Extract all farm animals from buildings across all farm locations.
+ * Returns [{name, type, friendship, happiness, wasPet}].
+ */
+function extractFarmAnimals(doc) {
+  const locations = doc.documentElement.querySelector(':scope > locations')
+  if (!locations) return []
+  const animals = []
+  for (const loc of locations.children) {
+    const buildings = loc.querySelector(':scope > buildings')
+    if (!buildings) continue
+    for (const building of buildings.children) {
+      // Animals are stored inside <indoors xsi:type="AnimalHouse"><animals>
+      const indoors = building.querySelector(':scope > indoors')
+      const animalsEl = indoors?.querySelector(':scope > animals')
+        ?? building.querySelector(':scope > animals')  // fallback for older formats
+      if (!animalsEl) continue
+      for (const entry of animalsEl.children) {
+        const fa = entry.querySelector('FarmAnimal')
+        if (!fa) continue
+        animals.push({
+          name:       childText(fa, 'name') ?? 'Animal',
+          type:       childText(fa, 'type') ?? 'Unknown',
+          friendship: childInt(fa, 'friendshipTowardFarmer') ?? 0,
+          happiness:  childInt(fa, 'happiness') ?? 0,
+          wasPet:     childText(fa, 'wasPet') === 'true',
+        })
+      }
+    }
   }
-  return max
+  return animals
 }
 
 // xsi:type → qualified-id namespace prefix, mirroring entities.json convention.
@@ -529,6 +637,12 @@ function extractPlacedBigCraftables(doc) {
       const xsiType = obj.getAttribute('xsi:type') ?? ''
       if (SKIP_TYPES.has(xsiType)) continue
       const isBigCraftable = childText(obj, 'bigCraftable') === 'true'
+      // Skip regular (non-BigCraftable) objects with no xsi:type — these are
+      // game-spawned forageables, crops, stones, etc., not player-placed items.
+      if (!isBigCraftable && !xsiType) continue
+      // fragility=1 or fragility=2 means the game placed it permanently — not player-owned.
+      const fragility = childInt(obj, 'fragility') ?? 0
+      if (fragility > 0) continue
       let rawId = childText(obj, 'itemId') ?? childText(obj, 'parentSheetIndex')
       if (rawId == null) continue
       const qualified = rawId.startsWith('(') ? rawId : isBigCraftable ? `(BC)${rawId}` : `(O)${rawId}`
@@ -927,6 +1041,8 @@ function parseSaveGameInfo(doc) {
     money: childInt(player, 'money') ?? 0,
     houseUpgradeLevel: childInt(player, 'houseUpgradeLevel') ?? 0,
     spouse: childText(player, 'spouse'),
+    pets: [],
+    farmAnimals: [],
   }
 }
 
@@ -964,6 +1080,8 @@ function parseMainSave(doc) {
     fieldOfficePieces: extractFieldOfficePieces(doc),
     islandShrine: extractIslandShrine(doc),
     grandpaScore: childInt(doc.documentElement, 'grandpaScore') ?? null,
+    weather: extractWeather(doc),
+    dailyLuck: childFloat(doc.documentElement, 'dailyLuck'),
     goldenWalnuts: childInt(doc.documentElement, 'goldenWalnutsFound') ?? null,
     walnutData: extractGoldenWalnutData(doc),
     timesFedRaccoons: childInt(doc.documentElement, 'timesFedRaccoons') ?? 0,
@@ -973,6 +1091,8 @@ function parseMainSave(doc) {
     spouse: childText(player, 'spouse'),
     childCount: countChildren(doc),
     petFriendship: extractPetFriendship(doc),
+    pets: extractPets(doc),
+    farmAnimals: extractFarmAnimals(doc),
     inventory: buildInventoryAggregate(
       extractPlayerInventory(player),
       extractChestContents(doc),

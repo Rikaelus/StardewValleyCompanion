@@ -109,6 +109,7 @@ function ShippingPage() {
       onFilter={setFilter}
       hasSaveData={progress.hasSaveData}
       keepGroups
+      quantityType="shipped"
       noSaveMessage="Upload your save file to track how many of each crop you've shipped."
     />
   )

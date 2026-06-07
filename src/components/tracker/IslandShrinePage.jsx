@@ -76,14 +76,14 @@ function IslandShrinePage() {
   }, [allItems, hasSaveData, saveData])
 
   if (loading) {
-    return <PagePanel><div className="shrine-loading">Loading…</div></PagePanel>
+    return <PagePanel><div className="island-shrine-loading">Loading…</div></PagePanel>
   }
 
   return (
     <PagePanel>
-      <div className="shrine-page">
-        <header className="shrine-header">
-          <h1 className="shrine-title">Island Shrine</h1>
+      <div className="island-shrine-page">
+        <header className="island-shrine-header">
+          <h1 className="island-shrine-title">Island Shrine</h1>
           {hasSaveData && (
             <div className={`shrine-status ${complete ? 'shrine-status--complete' : ''}`}>
               {complete ? 'Puzzle complete ✓' : `${placedCount} / 4 gems placed`}
@@ -94,7 +94,7 @@ function IslandShrinePage() {
         {!hasSaveData && (
           <button
             type="button"
-            className="shrine-upload-nudge"
+            className="island-shrine-upload-nudge"
             onClick={() => window.dispatchEvent(new Event('open-character-bar'))}
           >
             Upload your save file to track your Island Shrine progress.

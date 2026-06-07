@@ -12,7 +12,9 @@
   gap: 2rem;
   max-width: 1600px;
   margin: 0 auto;
+  /* Reserve space for the fixed Upload Save zone */
   padding-right: 130px;
+  overflow: hidden;
 }
 
 .header-branding {
@@ -89,8 +91,99 @@
   padding: 0.375rem 0.5rem;
 }
 
+.header-character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.125rem;
+  line-height: 1.2;
+}
+
 .header-character-name {
   font-size: 0.85rem;
   font-weight: 600;
-  margin-left: 0.125rem;
+}
+
+.header-character-date {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+/* Branding short form — same styles as .header-companion */
+.header-branding-short {
+  display: none;
+  font-family: 'Stardew Valley All Caps', sans-serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+/* Hamburger nav menu */
+.header-nav-hamburger {
+  display: none;
+}
+
+.header-nav-menu {
+  position: relative;
+}
+
+.header-nav-dropdown {
+  position: fixed;
+  min-width: 160px;
+  background: rgba(21, 71, 148, 0.97);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 1200;
+  overflow: hidden;
+}
+
+.header-nav-item {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1.25rem;
+  color: rgba(255,255,255,0.85);
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+}
+
+.header-nav-item:hover,
+.header-nav-item--active {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+/* Narrow layout */
+@media (max-width: 1050px) {
+  .header-nav-wide {
+    display: none;
+  }
+
+  .header-nav-hamburger {
+    display: flex;
+  }
+
+  .header-logo--full,
+  .header-companion {
+    display: none;
+  }
+
+  .header-branding-short {
+    display: inline;
+  }
 }

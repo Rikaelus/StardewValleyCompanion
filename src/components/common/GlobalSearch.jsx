@@ -158,7 +158,7 @@ function GlobalSearch({ isOpen, onClose }) {
                 ref={inputRef}
                 className="search-input"
                 type="text"
-                placeholder="Search items..."
+                placeholder="Search Everything..."
                 value={query}
                 onChange={e => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}

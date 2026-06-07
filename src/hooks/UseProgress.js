@@ -290,6 +290,7 @@ export function useProgress() {
 
     return {
       hasSaveData,
+      saveData,
       saveDate: saveData?.date ?? null,
       skills: saveData?.skills ?? null,
       grandpaScore: saveData?.grandpaScore ?? null,

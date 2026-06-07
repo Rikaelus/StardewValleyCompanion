@@ -621,6 +621,7 @@ const rules = {
   weaponSources: loadJson(path.join(RULES_DIR, 'weapon-sources.json')),
   fishingChestDrops: loadJson(path.join(RULES_DIR, 'fishing-chest-drops.json')).drops,
   secretNoteRewards: loadJson(path.join(RULES_DIR, 'secret-note-rewards.json')).rewards,
+  panningDrops: loadJson(path.join(RULES_DIR, 'panning-drops.json')),
 };
 
 console.log(`Loaded ${Object.keys(gameData.objects).length} objects`);
@@ -1684,6 +1685,30 @@ for (const drop of rules.fishingChestDrops) {
 }
 console.log(`  ✓ Fishing chest sources: ${fishingChestSourcesByGameId.size} items`);
 
+// panningSourcesByGameId: gameId -> [{ type:'pan', category, chance, location?, minStack?, maxStack? }]
+// Hand-curated from rules/panning-drops.json. Loot logic is in Tool.Pan.getPanItems()
+// in C# source — not data-driven.
+const panningSourcesByGameId = new Map();
+const panDrops = rules.panningDrops;
+for (const drop of [...(panDrops.oreDrops || []), ...(panDrops.specialDrops || []), ...(panDrops.gingerIslandDrops || [])]) {
+  if (!drop.gameId) continue;
+  const existing = panningSourcesByGameId.get(drop.gameId) || [];
+  const category = (panDrops.oreDrops || []).some(d => d.gameId === drop.gameId) ? 'ore'
+    : (panDrops.gingerIslandDrops || []).some(d => d.gameId === drop.gameId) ? 'ginger-island'
+    : 'special';
+  existing.push({
+    type: 'pan',
+    category,
+    chance: drop.chance,
+    minTier: drop.minTier,
+    ...(drop.location ? { location: drop.location } : {}),
+    ...(drop.minStack != null ? { minStack: drop.minStack } : {}),
+    ...(drop.maxStack != null ? { maxStack: drop.maxStack } : {}),
+  });
+  panningSourcesByGameId.set(drop.gameId, existing);
+}
+console.log(`  ✓ Panning sources: ${panningSourcesByGameId.size} items`);
+
 // secretNoteSourcesByGameId: gameId -> [{ type:'secret-note-reward', noteNumber, note }]
 // Hand-curated from rules/secret-note-rewards.json. These are deterministic
 // puzzle solutions (image-puzzle dig spots, mermaid show, etc.) — hardcoded
@@ -2740,6 +2765,7 @@ for (const [gameId, objectData] of Object.entries(gameData.objects)) {
     gameCategory: objectData.Category || 0,
     contextTags: objectData.ContextTags || [],
     producedBy: producedBy,
+    sources: buildAcquisitionSources(`(O)${gameId}`),
     sellingLocations: getSellingLocations(objectData.Category || 0, shopSellingLocations, gameId),
     bundles: [],
     gifts: {}
@@ -3224,12 +3250,15 @@ function parseMachineRecipes(machines) {
 
     for (const rule of machineData.OutputRules || []) {
       const triggers = rule.Triggers || [];
-      const output = rule.OutputItem?.[0];
-      if (!output) continue;
+      // Some machines (e.g. Bone Mill) produce a random item from multiple OutputItems.
+      // Create one recipe entry per output so each output gets its own machine source.
+      const outputs = (rule.OutputItem || []).filter(o => o.ItemId);
+      if (outputs.length === 0) continue;
 
       // Extract input requirements
       const specificItems = [];
       const requiredTags = [];
+      const excludedTags = [];  // negative tags (!tag) — used as exclusion filters when matching
       let requiredCount = 1;
 
       for (const trigger of triggers) {
@@ -3238,46 +3267,52 @@ function parseMachineRecipes(machines) {
           if (itemId) specificItems.push(itemId);
         }
         if (trigger.RequiredTags) {
-          requiredTags.push(...trigger.RequiredTags);
+          for (const tag of trigger.RequiredTags) {
+            if (tag.startsWith('!')) excludedTags.push(tag.slice(1));
+            else requiredTags.push(tag);
+          }
         }
         if (trigger.RequiredCount > 1) {
           requiredCount = trigger.RequiredCount;
         }
       }
 
-      // Parse output
-      const outputItemId = parseItemId(output.ItemId);
-      let outputName = null;
-      let isFlavored = false;
-
-      if (output.ItemId && output.ItemId.includes('FLAVORED_ITEM')) {
-        const match = output.ItemId.match(/FLAVORED_ITEM (\w+)/);
-        outputName = match ? match[1] : null;
-        isFlavored = true;
-      }
-
       const processingMinutes = (rule.MinutesUntilReady > 0)
         ? rule.MinutesUntilReady
         : (rule.DaysUntilReady > 0 ? rule.DaysUntilReady * 1440 : 0);
 
-      // Quality: -1 = inherit/default, 0 = regular, 1 = silver, 2 = gold, 4 = iridium
-      const outputQuality = (output.Quality != null && output.Quality >= 0) ? output.Quality : null;
-      // MinStack > 1 means multiple items produced (e.g. Ostrich Egg → 10 Mayonnaise)
-      const outputCount = (output.MinStack != null && output.MinStack > 1) ? output.MinStack : 1;
+      for (const output of outputs) {
+        // Parse output
+        const outputItemId = parseItemId(output.ItemId);
+        let outputName = null;
+        let isFlavored = false;
 
-      recipes.push({
-        id: rule.Id,
-        machineId: toKebabCase(machineName),
-        outputItemId,
-        outputName,
-        isFlavored,
-        specificItems,
-        requiredTags,
-        requiredCount,
-        processingMinutes,
-        outputQuality,
-        outputCount
-      });
+        if (output.ItemId && output.ItemId.includes('FLAVORED_ITEM')) {
+          const match = output.ItemId.match(/FLAVORED_ITEM (\w+)/);
+          outputName = match ? match[1] : null;
+          isFlavored = true;
+        }
+
+        // Quality: -1 = inherit/default, 0 = regular, 1 = silver, 2 = gold, 4 = iridium
+        const outputQuality = (output.Quality != null && output.Quality >= 0) ? output.Quality : null;
+        // MinStack > 1 means multiple items produced (e.g. Ostrich Egg → 10 Mayonnaise)
+        const outputCount = (output.MinStack != null && output.MinStack > 1) ? output.MinStack : 1;
+
+        recipes.push({
+          id: rule.Id,
+          machineId: toKebabCase(machineName),
+          outputItemId,
+          outputName,
+          isFlavored,
+          specificItems,
+          requiredTags,
+          excludedTags,
+          requiredCount,
+          processingMinutes,
+          outputQuality,
+          outputCount
+        });
+      }
     }
   }
 
@@ -3536,11 +3571,23 @@ for (const recipe of machineRecipes) {
       }
     }
   }
-  // Handle tag-based non-flavored recipes (e.g. Mayonnaise from egg_item tags)
+  // Handle tag-based non-flavored recipes (e.g. Mayonnaise from egg_item tags, Bone Mill)
   // These produce a fixed output item from any item matching the required context tags.
+  // excludedTags (negative tags like !id_o_881) are filtered out during matching.
   else if (recipe.requiredTags.length > 0 && !recipe.isFlavored && outputItemId) {
+    const excluded = new Set((recipe.excludedTags || []).map(t => t.replace(/_/g, ' ')));
     const matchingItems = Object.entries(gameData.objects)
-      .filter(([, obj]) => recipe.requiredTags.every(tag => (obj.ContextTags || []).includes(tag)))
+      .filter(([rawId, obj]) => {
+        const tags = obj.ContextTags || [];
+        if (!recipe.requiredTags.every(tag => tags.includes(tag))) return false;
+        // Apply exclusions: negative tags like !id_o_881 map to game ID checks
+        if (excluded.has(`(O)${rawId}`)) return false;
+        // Also handle the !id_o_NNN → gameId format used in game data
+        for (const ex of recipe.excludedTags || []) {
+          if (ex.startsWith('id_o_') && ex === `id_o_${rawId}`) return false;
+        }
+        return true;
+      })
       .map(([rawId, obj]) => ({ rawId, obj }));
 
     if (matchingItems.length === 0) continue;
@@ -3787,6 +3834,35 @@ for (const [gameId, fishInfo] of Object.entries(gameData.fish)) {
       gifts: {}
     });
   }
+}
+
+// Jellies: counted as fish catches (counts_as_fish_catch tag) but not in Fish.json.
+// They appear in fishCaught in the save file and show on the Fish Caught tracker,
+// but are NOT in AquariumFish.json so they don't count toward perfection.
+for (const jellyId of ['CaveJelly', 'RiverJelly', 'SeaJelly']) {
+  const objectData = gameData.objects[jellyId];
+  if (!objectData) { console.warn(`  Warning: Jelly ${jellyId} not found in Objects.json`); continue; }
+  fishData.push({
+    subtype: 'fish',
+    id: toKebabCase(objectData.Name),
+    gameId: `(O)${jellyId}`,
+    name: objectData.Name,
+    icon: `assets/objects/${toIconFilename(objectData.Name)}`,
+    difficulty: 0,
+    behaviorType: 'mixed',
+    minSize: 0,
+    maxSize: 0,
+    times: [],
+    seasons: [],
+    weather: 'both',
+    isTrapFish: false,
+    price: objectData.Price || 0,
+    edibility: objectData.Edibility || -300,
+    gameCategory: objectData.Category || 0,
+    contextTags: objectData.ContextTags || [],
+    bundles: [],
+    gifts: {}
+  });
 }
 
 console.log(`  Processed ${fishData.length} fish`);
@@ -4808,6 +4884,67 @@ console.log(`  Processed ${seedData.length} seeds`);
       processingTimeMinutes: 20,
     });
   }
+}
+
+// ============================================================================
+// Bone Mill machine sources
+// ============================================================================
+// The Bone Mill (BC)90 accepts any bone_item (×1) or Bone Fragment (×5) and
+// randomly produces one of: Deluxe Speed-Gro, Speed-Gro, Quality Fertilizer,
+// Tree Fertilizer. This doesn't fit the artisan pipeline (fixed non-artisan
+// outputs), so we inject machine sources directly onto the fertilizer entities.
+{
+  const BONE_MILL_OUTPUTS = [
+    { gameId: '(O)466', minStack: 3 },  // Deluxe Speed-Gro
+    { gameId: '(O)465', minStack: 5 },  // Speed-Gro
+    { gameId: '(O)369', minStack: 10 }, // Quality Fertilizer
+    { gameId: '(O)805', minStack: 5 },  // Tree Fertilizer
+  ];
+
+  // Build list of valid inputs: any bone_item except Bone Fragment (handled separately)
+  const boneItemIds = Object.entries(gameData.objects)
+    .filter(([rawId, obj]) => {
+      const tags = obj.ContextTags || [];
+      return tags.includes('bone_item') && rawId !== '881';
+    })
+    .map(([rawId]) => `(O)${rawId}`);
+
+  for (const { gameId: outputGameId, minStack } of BONE_MILL_OUTPUTS) {
+    // Find the entity across all data collections (fertilizers live in miscData at compile time)
+    // We store a pending injection to apply after all entities are merged
+    const key = outputGameId;
+    if (!bonMillPendingInjections) var bonMillPendingInjections = new Map();
+    bonMillPendingInjections.set(key, {
+      type: 'machine',
+      id: 'bone-mill',
+      inputType: 'bone item',
+      outputCount: minStack,
+      outputChance: 0.25,
+      inputDetails: [
+        // Bone Fragment: 5 required
+        {
+          inputId: 'bone-fragment',
+          inputName: 'Bone Fragment',
+          inputGameId: '(O)881',
+          inputBasePrice: gameData.objects['881']?.Price || 0,
+          requiredCount: 5,
+        },
+        // Any other bone_item: 1 required
+        ...boneItemIds.map(inputGameId => {
+          const rawId = inputGameId.replace('(O)', '');
+          const obj = gameData.objects[rawId];
+          return {
+            inputId: getUniqueItemId(inputGameId, obj?.Name || rawId),
+            inputName: getVariantName(inputGameId, obj?.Name || rawId),
+            inputGameId,
+            inputBasePrice: obj?.Price || 0,
+            requiredCount: 1,
+          };
+        }),
+      ],
+    });
+  }
+  console.log(`\n🦴 Bone Mill: pending injection for ${BONE_MILL_OUTPUTS.length} fertilizer outputs (${boneItemIds.length + 1} valid inputs)`);
 }
 
 // ============================================================================
@@ -5957,6 +6094,22 @@ console.log(`  ✓ Processed ${buffData.length} buffs`);
 // ---------------------------------------------------------------------------
 console.log('\n🏆 Processing achievements...');
 
+// Achievement name → wiki star image number (from Stardew Valley Wiki achievements page)
+const ACHIEVEMENT_STAR_ICONS = {
+  'Greenhorn': 12, 'Cowpoke': 2, 'Homesteader': 11, 'Millionaire': 9, 'Legend': 4,
+  'A Complete Collection': 2, 'A New Friend': 2, 'Best Friends': 4, 'The Beloved Farmer': 6,
+  'Cliques': 10, 'Networking': 4, 'Popular': 9,
+  'Cook': 2, 'Sous Chef': 9, 'Gourmet Chef': 8,
+  'Moving Up': 1, 'Living Large': 9,
+  'D.I.Y.': 6, 'Artisan': 6, 'Craft Master': 10,
+  'Fisherman': 6, "Ol' Mariner": 6, 'Master Angler': 7, 'Mother Catch': 8,
+  'Treasure Trove': 8, 'Gofer': 10, 'A Big Help': 6,
+  'Polyculture': 12, 'Monoculture': 1, 'Full Shipment': 4,
+  'A Distant Shore': 9, 'Well-read': 6, 'Two Thumbs Up': 8, 'Blue Ribbon': 8,
+  'An Unforgettable Soup': 2, 'Good Neighbors': 11,
+  'Danger In The Deep': 3, 'Infinite Power': 7, 'Perfection': 10,
+};
+
 const achievementData = [];
 for (const [gameKey, raw] of Object.entries(gameData.achievements)) {
   // Format: "Name^Description^IsVisible^PrerequisiteId^IconIndex"
@@ -5968,13 +6121,18 @@ for (const [gameKey, raw] of Object.entries(gameData.achievements)) {
   const name = rawName.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const id = `achievement-${toKebabCase(name)}`;
 
+  const starNum = ACHIEVEMENT_STAR_ICONS[name];
+  const icon = starNum != null
+    ? `assets/achievements/Achievement_Star_${String(starNum).padStart(2, '0')}.png`
+    : 'assets/objects/StarToken.png';
+
   achievementData.push({
     id,
     achievementId: parseInt(gameKey),
     name,
     description,
     entityType: 'achievement',
-    icon: 'assets/objects/StarToken.png',
+    icon,
     isSecret: isVisible === 'false',
     prerequisite: parseInt(prerequisiteId) >= 0 ? parseInt(prerequisiteId) : null,
     iconIndex: parseInt(iconIndex),
@@ -6719,6 +6877,7 @@ for (const eventFile of gameEventFiles) {
         ev.blockingMail.add(p.startsWith('l ') ? p.slice(2) : p.slice(3));
       } else if (p.startsWith('n ') && !ev.internalName) {
         ev.internalName = p.slice(2);
+        ev.requiresMail.add(p.slice(2));  // /n Flag means mail flag must be set
       }
     }
   }
@@ -6799,6 +6958,49 @@ const allEventIds = new Set([
   )),
 ]);
 
+// Friendly labels for event trigger locations (internal key → display name)
+const EVENT_LOCATION_LABELS = {
+  AbandonedJojaMart: 'Abandoned JojaMart',
+  AnimalShop:        "Marnie's Ranch",
+  ArchaeologyHouse:  'Museum',
+  Backwoods:         'Backwoods',
+  BathHouse_Pool:    'Spa',
+  Beach:             'Beach',
+  BoatTunnel:        'Boat Tunnel',
+  BusStop:           'Bus Stop',
+  CommunityCenter:   'Community Center',
+  ElliottHouse:      "Elliott's Cabin",
+  Farm:              'Farm',
+  FarmHouse:         'Farmhouse',
+  FishShop:          "Willy's Fish Shop",
+  Forest:            'Cindersap Forest',
+  HaleyHouse:        "Haley & Emily's House",
+  HarveyRoom:        "Harvey's Room",
+  Hospital:          'Clinic',
+  IslandFarmHouse:   'Island Farmhouse',
+  IslandHut:         "Leo's Hut",
+  IslandNorth:       'Island North',
+  IslandSouth:       'Island South',
+  IslandWest:        'Island West',
+  JoshHouse:         "Alex & Evelyn's House",
+  LeahHouse:         "Leah's Cottage",
+  ManorHouse:        "Mayor's Manor",
+  Mine:              'The Mines',
+  Mountain:          'The Mountains',
+  Railroad:          'Railroad',
+  SamHouse:          "Sam's House",
+  ScienceHouse:      "Maru & Robin's House",
+  SebastianRoom:     "Sebastian's Room",
+  SeedShop:          "Pierre's General Store",
+  Saloon:            'Stardrop Saloon',
+  Sewer:             'Sewers',
+  Sunroom:           "Caroline's Sunroom",
+  Town:              'Pelican Town',
+  Trailer:           "Penny & Pam's Trailer",
+  Trailer_Big:       "Penny & Pam's Trailer",
+  Woods:             'Secret Woods',
+};
+
 const eventData = [];
 for (const eventId of [...allEventIds].sort((a, b) => {
   const aNum = parseInt(a); const bNum = parseInt(b);
@@ -6853,8 +7055,9 @@ for (const eventId of [...allEventIds].sort((a, b) => {
     ? uniqueFriendshipNpcs[0]
     : parseNpcFromDescription(description);
 
-  // All villagers meaningfully involved: union of friendship + present + owner, filtered to known NPCs
+  // All villagers meaningfully involved: union of friendship + present + owner + primary npc, filtered to known NPCs
   const villagersInvolved = [...new Set([
+    ...(npc && knownNpcNames.has(npc) ? [npc] : []),
     ...friendshipNpcs,
     ...[...(game?.present || new Set())].filter(n => knownNpcNames.has(n)),
     ...[...(game?.owner || new Set())].filter(n => knownNpcNames.has(n)),
@@ -6886,6 +7089,7 @@ for (const eventId of [...allEventIds].sort((a, b) => {
   // Icon: villager portrait if primary NPC known
   const icon = npc ? `assets/villagers/${npc}.png` : null;
 
+  const locationKey = game?.location ?? null;
   eventData.push({
     id: `event-${eventId}`,
     eventKey: eventId,
@@ -6900,6 +7104,8 @@ for (const eventId of [...allEventIds].sort((a, b) => {
     requiredEvents,
     mutuallyExclusive: mutuallyExclusive.length ? mutuallyExclusive : undefined,
     marriageVariant,
+    location: locationKey ?? undefined,
+    locationLabel: locationKey ? (EVENT_LOCATION_LABELS[locationKey] ?? locationKey) : undefined,
     year: year !== null ? year : undefined,
     seasons: seasons.length ? seasons : undefined,
     weather: weather.length ? weather : undefined,
@@ -6916,6 +7122,22 @@ for (const eventId of [...allEventIds].sort((a, b) => {
 }
 
 console.log(`  ✓ Processed ${eventData.length} events (${[...eventGrantedBy.keys()].length} with grantedBy)`);
+
+// Post-pass: follow-up events with no villagersInvolved inherit from their required parent event
+{
+  const eventByKey = new Map(eventData.map(e => [e.eventKey, e]));
+  for (const ev of eventData) {
+    if (ev.villagersInvolved?.length) continue;
+    for (const parentKey of (ev.requiredEvents ?? [])) {
+      const parent = eventByKey.get(parentKey);
+      if (parent?.villagersInvolved?.length) {
+        ev.villagersInvolved = parent.villagersInvolved;
+        if (!ev.npc && parent.npc) ev.npc = parent.npc;
+        break;
+      }
+    }
+  }
+}
 
 // ============================================================================
 // COMPILATION PIPELINE
@@ -7557,6 +7779,21 @@ for (const entity of allTypedEntities) {
 
 const allCompiledEntities = [...mergedEntitiesById.values()];
 console.log(`  ✓ Merged ${mergedDuplicates} duplicate ids → ${allCompiledEntities.length} unique entities`);
+
+// Apply Bone Mill machine sources to fertilizer entities
+if (typeof bonMillPendingInjections !== 'undefined' && bonMillPendingInjections.size > 0) {
+  let bonMillApplied = 0;
+  for (const entity of allCompiledEntities) {
+    const src = bonMillPendingInjections.get(entity.gameId);
+    if (!src) continue;
+    if (!entity.sources) entity.sources = [];
+    if (!entity.sources.some(s => s.type === 'machine' && s.id === 'bone-mill')) {
+      entity.sources.push({ ...src });
+      bonMillApplied++;
+    }
+  }
+  console.log(`  ✓ Applied Bone Mill machine sources to ${bonMillApplied} fertilizer entities`);
+}
 
 // ---------------------------------------------------------------------------
 // Post-merge: derive subtypes for location entities
@@ -8272,6 +8509,26 @@ for (const item of allCompiledEntities) {
 console.log(`  ✓ Added ${enrichedChestDrops} chest-drop sources to items`);
 
 // ---------------------------------------------------------------------------
+// Enrich items with panning sources
+// ---------------------------------------------------------------------------
+console.log('\n🪣 Enriching panning sources...');
+let enrichedPanningSources = 0;
+for (const item of allCompiledEntities) {
+  const gameId = item.gameId;
+  if (gameId == null) continue;
+  const drops = panningSourcesByGameId.get(String(gameId));
+  if (!drops) continue;
+  if (!item.sources) item.sources = [];
+  for (const drop of drops) {
+    if (!item.sources.some(s => s.type === 'pan' && s.category === drop.category)) {
+      item.sources.push({ ...drop });
+      enrichedPanningSources++;
+    }
+  }
+}
+console.log(`  ✓ Added ${enrichedPanningSources} panning sources to items`);
+
+// ---------------------------------------------------------------------------
 // Enrich items with quest-requirement sources
 // ---------------------------------------------------------------------------
 console.log('\n📜 Enriching quest-requirement sources...');
@@ -8550,7 +8807,7 @@ const SUBTYPE_DISPLAY_NAMES = {
   'sword': 'Sword', 'dagger': 'Dagger', 'club': 'Club', 'slingshot': 'Slingshot',
   'axe': 'Axe', 'pickaxe': 'Pickaxe', 'hoe': 'Hoe', 'fishing-rod': 'Fishing Rod',
   'watering-can': 'Watering Can', 'milk-pail': 'Milk Pail', 'shears': 'Shears',
-  'pan': 'Pan', 'wand': 'Wand', 'generic-tool': 'Tool',
+  'pan': 'Pan', 'wand': 'Wand', 'generic-tool': 'Trash Can',
   'egg': 'Egg', 'milk': 'Milk',
   'mine-container': 'Mine Container', 'resource-clump': 'Resource Clump',
   'mine-chest': 'Mine Chest', 'skull-cavern-chest': 'Skull Cavern Chest', 'volcano-chest': 'Volcano Chest',
@@ -8849,6 +9106,7 @@ console.log('\n🔗 Normalizing source rows (Phase 2)...');
     'cooking':            { entityId: () => null },
     'tailoring':          { entityId: () => null },
     'fishing-chest':      { entityId: () => null },
+    'pan':                { entityId: () => null },
     'secret-note-reward': { entityId: () => null },
     'crane-game':         { entityId: () => null },
     'mine-chest':         { entityId: () => null },
@@ -9052,6 +9310,7 @@ console.log('\n🏷️  Deriving capabilities (Phase 3)...');
       obtainableFromShop:         sTypes.has('shop'),
       obtainableFromMail:         sTypes.has('mail'),
       obtainableFromGarbage:      sTypes.has('garbage-can'),
+      obtainableFromPanning:      sTypes.has('pan'),
       obtainableFromAnimal:       sTypes.has('animal') || sTypes.has('hatch') || sTypes.has('pregnancy'),
       obtainableFromTapping:      sTypes.has('tapper'),
       obtainableFromFruitTree:    sTypes.has('fruit-tree'),
@@ -9093,6 +9352,196 @@ console.log('\n🏷️  Deriving capabilities (Phase 3)...');
     derived++
   }
   console.log(`  ✓ Derived capabilities for ${derived} entities`)
+}
+
+// ---------------------------------------------------------------------------
+// Collection entities (from data/rules/collections.json)
+// ---------------------------------------------------------------------------
+console.log('\n📦 Loading collection entities...');
+
+const collectionsRulesPath = path.join(RULES_DIR, 'collections.json');
+if (fs.existsSync(collectionsRulesPath)) {
+  const collectionsRules = JSON.parse(fs.readFileSync(collectionsRulesPath, 'utf8'));
+  const collectionEntities = (collectionsRules.collections ?? []).map(c => ({
+    ...c,
+    type: 'collection',
+    entityType: 'collection',
+    capabilities: { isCollection: true },
+  }));
+  allCompiledEntities.push(...collectionEntities);
+  console.log(`  ✓ Loaded ${collectionEntities.length} collection entities`);
+} else {
+  console.log('  (no collections.json found — skipping)');
+}
+
+// ---------------------------------------------------------------------------
+// Goal entities (from data/rules/goals.json)
+// ---------------------------------------------------------------------------
+console.log('\n🎯 Loading goal entities...');
+
+const goalsRulesPath = path.join(RULES_DIR, 'goals.json');
+let goalEntities = [];
+if (fs.existsSync(goalsRulesPath)) {
+  const goalsRules = JSON.parse(fs.readFileSync(goalsRulesPath, 'utf8'));
+  // Map from collection id → entity id for automatic entity-child injection
+  const COLLECTION_ENTITY_MAP = {
+    'collection-fishing':          'collection-fishing',
+    'collection-museum':           'collection-museum',
+    'collection-full-shipment':    'collection-full-shipment',
+    'collection-cooking':          'collection-cooking',
+    'collection-community-center': 'collection-community-center',
+  }
+
+  goalEntities = (goalsRules.goals ?? []).map(g => {
+    const base = {
+      ...g,
+      type: 'goal',
+      entityType: 'goal',
+      iconClass: 'fa-solid fa-bullseye',
+      iconColor: '#8b6914',
+      capabilities: { isGoal: true },
+    }
+    // Inject kind:'entity' child for collection-backed goals that don't already have one
+    const collectionChild = (g.children ?? []).find(c => c.kind === 'collection')
+    if (collectionChild && COLLECTION_ENTITY_MAP[collectionChild.id]) {
+      const entityId = COLLECTION_ENTITY_MAP[collectionChild.id]
+      const alreadyHas = (g.children ?? []).some(c => c.kind === 'entity' && c.id === entityId)
+      if (!alreadyHas) {
+        base.children = [...(g.children ?? []), { kind: 'entity', id: entityId }]
+      }
+    }
+    return base
+  });
+
+  // Validate child references
+  const allIds = new Set(allCompiledEntities.map(e => e.id));
+  allIds.add(...goalEntities.map(g => g.id));
+  for (const goal of goalEntities) {
+    for (const child of (goal.children ?? [])) {
+      if (child.kind === 'entity' && !allIds.has(child.id)) {
+        console.warn(`  ⚠️  Goal ${goal.id}: child entity "${child.id}" not found`);
+      }
+    }
+  }
+
+  // Generate per-villager friendship goals
+  const villagerEntities = allCompiledEntities.filter(e => e.type === 'villager' && e.subtype === 'villager')
+  const friendshipGoals = villagerEntities.map(v => ({
+    id: `goal-friendship-${v.id.replace('vil-', '')}`,
+    name: `${v.name}'s Friendship`,
+    description: `Reach maximum hearts with ${v.name}.`,
+    linkPath: '/villagers',
+    type: 'goal',
+    entityType: 'goal',
+    subtype: 'social',
+    iconClass: 'fa-solid fa-heart',
+    iconColor: '#c0392b',
+    capabilities: { isGoal: true },
+    deadline: { type: 'none' },
+    villagerId: v.id,
+    criteria: { type: 'friendship-max', villager: v.name, canBeRomanced: !!v.canBeRomanced },
+    children: [
+      { kind: 'action-type', id: 'villager-birthday', weight: 1.0 },
+      { kind: 'action-type', id: 'villager-gift',     weight: 1.0 },
+      { kind: 'action-type', id: 'heart-event',       weight: 0.3 },
+    ],
+  }))
+  goalEntities.push(...friendshipGoals)
+
+  // Generate per-villager lore goals (one per villager who has heart events)
+  const heartEventEntities = allCompiledEntities.filter(e => e.type === 'event' && e.eventType === 'heart')
+  const eventsByVillager = new Map()
+  for (const ev of heartEventEntities) {
+    const npc = ev.npc
+    if (!npc) continue
+    if (!eventsByVillager.has(npc)) eventsByVillager.set(npc, [])
+    eventsByVillager.get(npc).push(ev.eventKey)
+  }
+  const loreGoals = []
+  for (const v of villagerEntities) {
+    const eventKeys = eventsByVillager.get(v.name)
+    if (!eventKeys?.length) continue
+    loreGoals.push({
+      id: `goal-lore-${v.id.replace('vil-', '')}`,
+      name: `${v.name}'s Story`,
+      description: `See all of ${v.name}'s heart events.`,
+      linkPath: '/villagers',
+      type: 'goal',
+      entityType: 'goal',
+      subtype: 'social',
+      iconClass: 'fa-solid fa-book-open',
+      iconColor: '#7f8c8d',
+      capabilities: { isGoal: true },
+      isLore: true,
+      deadline: { type: 'none' },
+      villagerId: v.id,
+      criteria: { type: 'lore-complete', villager: v.name, eventKeys },
+      children: [
+        { kind: 'action-type', id: 'heart-event', weight: 1.0 },
+      ],
+    })
+  }
+  goalEntities.push(...loreGoals)
+  console.log(`  ✓ Generated ${loreGoals.length} per-villager lore goals`)
+
+  // Generate per-bundle goals
+  const bundleEntities = allCompiledEntities.filter(e => e.type === 'bundle')
+  const bundleGoals = bundleEntities.map(bundle => ({
+    id: `goal-${bundle.id}`,
+    name: bundle.name,
+    description: `Complete the ${bundle.name} bundle in the Community Center.`,
+    linkPath: '/tracker/bundles',
+    trackerPage: '/tracker/bundles',
+    type: 'goal',
+    entityType: 'goal',
+    subtype: 'bundle',
+    iconClass: 'fa-solid fa-box-open',
+    iconColor: '#7d5a3c',
+    capabilities: { isGoal: true },
+    deadline: { type: 'none' },
+    bundleId: bundle.id,
+    bundleNumber: bundle.bundleNumber,
+    bundleRoom: bundle.room ?? null,
+    criteria: { type: 'bundle-complete', bundleNumber: bundle.bundleNumber, bundleId: bundle.id, goldCost: bundle.goldCost ?? null, minItemsRequired: bundle.minItemsRequired ?? null, itemCount: bundle.goldCost ? 1 : (bundle.items?.length ?? 0) },
+    children: [
+      { kind: 'entity', id: bundle.id },
+    ],
+  }))
+  goalEntities.push(...bundleGoals)
+  console.log(`  ✓ Generated ${bundleGoals.length} bundle goals`)
+
+  // Generate per-achievement goals (skip achievements already claimed by hand-authored goals)
+  const claimedAchievementIds = new Set(
+    goalEntities
+      .map(g => g.completionAchievementId)
+      .filter(id => id != null)
+  )
+  const achievementEntities = allCompiledEntities.filter(e => e.type === 'achievement')
+  const achievementGoals = achievementEntities
+    .filter(a => !claimedAchievementIds.has(a.achievementId))
+    .map(achievement => ({
+      id: `goal-achievement-${achievement.id.replace('achievement-', '')}`,
+      name: achievement.name,
+      description: achievement.description ?? `Earn the ${achievement.name} achievement.`,
+      linkPath: '/tracker/achievements',
+      trackerPage: '/tracker/achievements',
+      type: 'goal',
+      entityType: 'goal',
+      subtype: 'achievement',
+      iconClass: 'fa-solid fa-trophy',
+      iconColor: '#c8a020',
+      capabilities: { isGoal: true },
+      deadline: { type: 'none' },
+      completionAchievementId: achievement.achievementId,
+      children: [],
+    }))
+  goalEntities.push(...achievementGoals)
+  console.log(`  ✓ Generated ${achievementGoals.length} achievement goals (${claimedAchievementIds.size} already claimed by existing goals)`)
+
+  allCompiledEntities.push(...goalEntities);
+  console.log(`  ✓ Loaded ${goalEntities.length} goal entities total (${friendshipGoals.length} friendship, ${bundleGoals.length} bundle, ${achievementGoals.length} achievement)`);
+} else {
+  console.log('  (no goals.json found — skipping)');
 }
 
 // ---------------------------------------------------------------------------

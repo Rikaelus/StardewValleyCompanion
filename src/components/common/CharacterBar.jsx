@@ -1,9 +1,57 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { usePlayer } from '../../contexts/PlayerContext'
+import { useEntities } from '../../contexts/EntityContext'
 import { useSaveFileImport } from '../../hooks/UseSaveFileImport'
+import { computePerfectionScore } from '../../utils/PerfectionScore'
 import './CharacterBar.css'
 
 const SEASON_LABELS = { spring: 'Spring', summer: 'Summer', fall: 'Fall', winter: 'Winter' }
+
+const FISH_TOTAL = 77
+const MUSEUM_TOTAL = 95
+const BUNDLE_TOTAL = 31
+
+const HEART_THRESHOLDS = [
+  { label: '14♥', points: 3500, className: 'heart-married' },
+  { label: '10♥', points: 2500, className: 'heart-10' },
+  { label: '8♥',  points: 2000, className: 'heart-8' },
+  { label: '5♥',  points: 1250, className: 'heart-5' },
+]
+
+function formatGold(amount) {
+  if (amount == null) return '0'
+  if (amount >= 1_000_000) return `${(amount / 1_000_000).toFixed(1).replace(/\.0$/, '')}m`
+  if (amount >= 1_000) return `${(amount / 1_000).toFixed(1).replace(/\.0$/, '')}k`
+  return String(amount)
+}
+
+function useStatsGridRef() {
+  const gridRef = useRef(null)
+  const roRef = useRef(null)
+
+  const attach = useCallback((el) => {
+    roRef.current?.disconnect()
+    roRef.current = null
+    gridRef.current = el
+    if (!el) return
+
+    const measure = () => {
+      const children = Array.from(el.children)
+      children.forEach(c => { c.style.display = '' })
+      const containerRight = el.getBoundingClientRect().right
+      children.forEach(c => {
+        if (c.getBoundingClientRect().right > containerRight + 1) c.style.display = 'none'
+      })
+    }
+
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    roRef.current = ro
+    measure()
+  }, [])
+
+  return attach
+}
 
 // Full skill tree: each skill has two level-5 choices, each branching into two level-10 choices
 const PROF_ICON = (name) => `/assets/icons/professions/${name}.png`
@@ -203,10 +251,12 @@ function ImportSection() {
 
 function CharacterBar({ isOpen, onClose }) {
   const { player, setProfession, setPlayer } = usePlayer()
+  const { items } = useEntities()
   const [shouldRender, setShouldRender] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const [activeTab, setActiveTab] = useState('character')
   const containerRef = useRef(null)
+
 
   // Handle open/close with animation
   useEffect(() => {
@@ -224,6 +274,7 @@ function CharacterBar({ isOpen, onClose }) {
   }, [isOpen])
 
   const hasSaveData = !!player.saveData
+  const statsGridRef = useStatsGridRef()
 
   const toggleProfession = (key) => {
     if (hasSaveData) return
@@ -327,77 +378,221 @@ function CharacterBar({ isOpen, onClose }) {
                 <div className="character-character-tab">
                   {hasSaveData ? (() => {
                     const mastery = getMasteryData(player.saveData)
+                    const sd = player.saveData
+                    const friendships = sd.friendships ?? {}
+                    const friendshipValues = Object.values(friendships)
+                    const fishCaught = Object.keys(sd.fishCaught ?? {}).length
+                    const museumDonated = sd.museumPieces?.length ?? null
+                    const bundlesComplete = sd.bundleProgress
+                      ? Object.values(sd.bundleProgress).filter(bools => bools.every(Boolean)).length
+                      : null
+                    const recipesCooked = Object.keys(sd.recipesCooked ?? {}).length
+                    const craftingKnown = Object.keys(sd.craftingRecipes ?? {}).length
+                    const stats = sd.stats ?? {}
+                    const monstersKilled = stats.monstersKilled ?? Object.values(sd.monstersKilled ?? {}).reduce((s, n) => s + n, 0)
+                    const perfection = items.length ? computePerfectionScore(items, sd).overallPct : null
+
                     return (
                     <>
-                      <div className="character-module">
-                        <div className="character-module-title">Skills</div>
-                      <div className="character-skills-grid">
-                        {Object.entries(player.saveData.skills || {}).map(([skill, level]) => {
-                          const perk = mastery?.perks.find(p => p.skill.toLowerCase() === skill)
-                          const isMastered = perk?.claimed
-                          const isMaxed = level >= 10
-                          return (
-                            <div key={skill} className="character-skill-row">
-                              <img
-                                src={SKILL_ICON(skill.charAt(0).toUpperCase() + skill.slice(1))}
-                                alt={skill}
-                                className="character-skill-icon"
-                              />
-                              <span className="character-skill-name">{skill.charAt(0).toUpperCase() + skill.slice(1)}</span>
-                              <div className="character-skill-stars">
-                                {Array.from({ length: 10 }, (_, i) => (
-                                  <span key={i} className={`skill-star ${i < level ? 'skill-star--filled' : ''}`}>★</span>
-                                ))}
-                              </div>
-                              <span className={`character-skill-level ${isMaxed ? 'character-skill-level--maxed' : ''}`}>{level}</span>
-                              {mastery && (
-                                <span className={`character-skill-mastery-badge ${isMastered ? 'character-skill-mastery-badge--claimed' : isMaxed ? 'character-skill-mastery-badge--available' : 'character-skill-mastery-badge--locked'}`}
-                                  title={isMastered ? 'Mastery claimed' : isMaxed ? 'Mastery available' : 'Skill not maxed'}
-                                >
-                                  {isMastered ? '✦' : '◇'}
+                      <div className="character-modules-grid">
+                        <div className="character-module">
+                          <div className="character-module-title">Skills</div>
+                          <div className="character-skills-grid">
+                            {Object.entries(sd.skills || {}).map(([skill, level]) => {
+                              const perk = mastery?.perks.find(p => p.skill.toLowerCase() === skill)
+                              const isMastered = perk?.claimed
+                              const isMaxed = level >= 10
+                              return (
+                                <div key={skill} className="character-skill-row">
+                                  <img
+                                    src={SKILL_ICON(skill.charAt(0).toUpperCase() + skill.slice(1))}
+                                    alt={skill}
+                                    className="character-skill-icon"
+                                  />
+                                  <span className="character-skill-name">{skill.charAt(0).toUpperCase() + skill.slice(1)}</span>
+                                  <div className="character-skill-stars">
+                                    {Array.from({ length: 10 }, (_, i) => (
+                                      <span key={i} className={`skill-star ${i < level ? 'skill-star--filled' : ''}`}>★</span>
+                                    ))}
+                                  </div>
+                                  <span className={`character-skill-level ${isMaxed ? 'character-skill-level--maxed' : ''}`}>{level}</span>
+                                  {mastery && (
+                                    <span className={`character-skill-mastery-badge ${isMastered ? 'character-skill-mastery-badge--claimed' : isMaxed ? 'character-skill-mastery-badge--available' : 'character-skill-mastery-badge--locked'}`}
+                                      title={isMastered ? 'Mastery claimed' : isMaxed ? 'Mastery available' : 'Skill not maxed'}
+                                    >
+                                      {isMastered ? '✦' : '◇'}
+                                    </span>
+                                  )}
+                                </div>
+                              )
+                            })}
+                            {mastery && (
+                              <div className="character-mastery-row">
+                                <span className="character-mastery-row-label">Mastery Lv.{mastery.masteryLevel}</span>
+                                <div className="character-mastery-row-bar">
+                                  <div
+                                    className="character-mastery-row-fill"
+                                    style={{ width: mastery.xpToNext ? `${(mastery.xpIntoLevel / mastery.xpToNext) * 100}%` : '100%' }}
+                                  />
+                                </div>
+                                <span className="character-mastery-row-xp">
+                                  {mastery.xpToNext
+                                    ? `${mastery.xpIntoLevel.toLocaleString()}/${mastery.xpToNext.toLocaleString()}`
+                                    : 'Max'}
                                 </span>
-                              )}
-                            </div>
-                          )
-                        })}
-                        {mastery && (
-                          <div className="character-mastery-row">
-                            <span className="character-mastery-row-label">Mastery Lv.{mastery.masteryLevel}</span>
-                            <div className="character-mastery-row-bar">
-                              <div
-                                className="character-mastery-row-fill"
-                                style={{ width: mastery.xpToNext ? `${(mastery.xpIntoLevel / mastery.xpToNext) * 100}%` : '100%' }}
-                              />
-                            </div>
-                            <span className="character-mastery-row-xp">
-                              {mastery.xpToNext
-                                ? `${mastery.xpIntoLevel.toLocaleString()}/${mastery.xpToNext.toLocaleString()}`
-                                : 'Max'}
-                            </span>
-                            {mastery.claimable > 0 && (
-                              <span className="character-mastery-row-claimable" title={`${mastery.claimable} perk${mastery.claimable !== 1 ? 's' : ''} ready to claim`}>+{mastery.claimable}</span>
+                                {mastery.claimable > 0 && (
+                                  <span className="character-mastery-row-claimable" title={`${mastery.claimable} perk${mastery.claimable !== 1 ? 's' : ''} ready to claim`}>+{mastery.claimable}</span>
+                                )}
+                              </div>
                             )}
                           </div>
+                        </div>
+
+                        <div className="character-module">
+                          <div className="character-module-title">Relationships</div>
+                          <div className="character-relationships">
+                            {sd.spouse && (
+                              <div className="character-rel-spouse">
+                                <span className="character-rel-spouse-label">Married to</span>
+                                <span className="character-rel-spouse-name">{sd.spouse}</span>
+                              </div>
+                            )}
+                            <div className="character-rel-thresholds">
+                              {HEART_THRESHOLDS.map(({ label, points, className }) => {
+                                const count = friendshipValues.filter(f => f.points >= points).length
+                                return (
+                                  <div key={label} className={`character-rel-row ${className}`}>
+                                    <span className="character-rel-hearts">{label}</span>
+                                    <div className="character-rel-bar">
+                                      <div className="character-rel-fill" style={{ width: `${(count / 34) * 100}%` }} />
+                                    </div>
+                                    <span className="character-rel-count">{count}</span>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                            <div className="character-rel-total">
+                              {friendshipValues.length} villager{friendshipValues.length !== 1 ? 's' : ''} met
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="character-module">
+                          <div className="character-module-title">Progress</div>
+                          <div className="character-progress-list">
+                            <div className="character-progress-row">
+                              <span className="character-progress-label">Fish</span>
+                              <div className="character-progress-bar">
+                                <div className="character-progress-fill" style={{ width: `${(fishCaught / FISH_TOTAL) * 100}%` }} />
+                              </div>
+                              <span className="character-progress-frac">{fishCaught}/{FISH_TOTAL}</span>
+                            </div>
+                            {museumDonated != null && (
+                              <div className="character-progress-row">
+                                <span className="character-progress-label">Museum</span>
+                                <div className="character-progress-bar">
+                                  <div className="character-progress-fill" style={{ width: `${(museumDonated / MUSEUM_TOTAL) * 100}%` }} />
+                                </div>
+                                <span className="character-progress-frac">{museumDonated}/{MUSEUM_TOTAL}</span>
+                              </div>
+                            )}
+                            {bundlesComplete != null && (
+                              <div className="character-progress-row">
+                                <span className="character-progress-label">Bundles</span>
+                                <div className="character-progress-bar">
+                                  <div className="character-progress-fill" style={{ width: `${(bundlesComplete / BUNDLE_TOTAL) * 100}%` }} />
+                                </div>
+                                <span className="character-progress-frac">{bundlesComplete}/{BUNDLE_TOTAL}</span>
+                              </div>
+                            )}
+                            <div className="character-progress-row">
+                              <span className="character-progress-label">Cooking</span>
+                              <div className="character-progress-bar">
+                                <div className="character-progress-fill character-progress-fill--cooking" style={{ width: `${Math.min((recipesCooked / 80) * 100, 100)}%` }} />
+                              </div>
+                              <span className="character-progress-frac">{recipesCooked}</span>
+                            </div>
+                            <div className="character-progress-row">
+                              <span className="character-progress-label">Crafting</span>
+                              <div className="character-progress-bar">
+                                <div className="character-progress-fill character-progress-fill--crafting" style={{ width: `${Math.min((craftingKnown / 130) * 100, 100)}%` }} />
+                              </div>
+                              <span className="character-progress-frac">{craftingKnown}</span>
+                            </div>
+                            {sd.goldenWalnuts != null && (
+                              <div className="character-progress-row">
+                                <span className="character-progress-label">Walnuts</span>
+                                <div className="character-progress-bar">
+                                  <div className="character-progress-fill character-progress-fill--walnut" style={{ width: `${(sd.goldenWalnuts / 130) * 100}%` }} />
+                                </div>
+                                <span className="character-progress-frac">{sd.goldenWalnuts}/130</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="character-stats-grid" ref={statsGridRef}>
+                        {perfection != null && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{perfection}%</span>
+                            <span className="character-stat-label">Perfection</span>
+                          </div>
                         )}
-                      </div>
-                      </div>
-                      <div className="character-stats-grid">
                         <div className="character-stat">
-                          <span className="character-stat-value">{Object.keys(player.saveData.fishCaught || {}).length}</span>
-                          <span className="character-stat-label">Fish Caught</span>
-                        </div>
-                        <div className="character-stat">
-                          <span className="character-stat-value">{Object.keys(player.saveData.friendships || {}).length}</span>
-                          <span className="character-stat-label">Friendships</span>
-                        </div>
-                        <div className="character-stat">
-                          <span className="character-stat-value">{(player.saveData.achievements || []).length}</span>
+                          <span className="character-stat-value">{(sd.achievements || []).length}</span>
                           <span className="character-stat-label">Achievements</span>
                         </div>
-                        {player.saveData.grandpaScore != null && (
+                        <div className="character-stat">
+                          <span className="character-stat-value">{formatGold(sd.totalMoneyEarned)}</span>
+                          <span className="character-stat-label">Total Earned</span>
+                        </div>
+                        {monstersKilled > 0 && (
                           <div className="character-stat">
-                            <span className="character-stat-value">{player.saveData.grandpaScore}</span>
-                            <span className="character-stat-label">Grandpa Score</span>
+                            <span className="character-stat-value">{monstersKilled.toLocaleString()}</span>
+                            <span className="character-stat-label">Monsters Killed</span>
+                          </div>
+                        )}
+                        {stats.stepsTaken > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.stepsTaken.toLocaleString()}</span>
+                            <span className="character-stat-label">Steps Taken</span>
+                          </div>
+                        )}
+                        {stats.daysPlayed > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.daysPlayed}</span>
+                            <span className="character-stat-label">Days Played</span>
+                          </div>
+                        )}
+                        {stats.geodesCracked > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.geodesCracked.toLocaleString()}</span>
+                            <span className="character-stat-label">Geodes Cracked</span>
+                          </div>
+                        )}
+                        {stats.giftsGiven > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.giftsGiven.toLocaleString()}</span>
+                            <span className="character-stat-label">Gifts Given</span>
+                          </div>
+                        )}
+                        {stats.timesUnconscious > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.timesUnconscious}</span>
+                            <span className="character-stat-label">Knocked Out</span>
+                          </div>
+                        )}
+                        {stats.seedsSown > 0 && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{stats.seedsSown.toLocaleString()}</span>
+                            <span className="character-stat-label">Seeds Sown</span>
+                          </div>
+                        )}
+                        {sd.grandpaScore != null && (
+                          <div className="character-stat">
+                            <span className="character-stat-value">{sd.grandpaScore}/4</span>
+                            <span className="character-stat-label">Grandpa</span>
                           </div>
                         )}
                       </div>

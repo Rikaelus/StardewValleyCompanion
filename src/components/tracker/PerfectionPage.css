@@ -1,0 +1,263 @@
+.perf-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.perf-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.perf-title {
+  font-family: 'Stardew Valley', sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  color: #5c4a32;
+  margin: 0 0 0.5rem;
+}
+
+.perf-subtitle {
+  font-size: 0.88rem;
+  color: #8b6f47;
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.perf-score-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 8px;
+  min-width: 280px;
+}
+
+.perf-score-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.perf-score-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #5c4a32;
+  line-height: 1;
+}
+
+.perf-score-max {
+  font-size: 1.4rem;
+  color: #8b6f47;
+}
+
+.perf-complete-badge {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #4a7228;
+  background: #ecf5e2;
+  border: 1px solid #c5dba0;
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+}
+
+.perf-upload-nudge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  margin: 0 auto 1.5rem;
+  background: #fdf7ed;
+  border: 1px solid #e8d4b0;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.82rem;
+  color: #8b6f47;
+  max-width: max-content;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.perf-upload-nudge:hover {
+  background: #f5ead8;
+  border-color: #c9a87a;
+  color: #5c4a32;
+}
+
+/* Progress bar */
+.perf-bar {
+  width: 100%;
+  height: 6px;
+  background: #e8d4b0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.perf-bar-fill {
+  height: 100%;
+  background: #5a9e4a;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Category rows */
+.perf-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .perf-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perf-category {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: white;
+  border: 2px solid #e8d4b0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.perf-category--complete {
+  border-color: #c5dba0;
+  background: #f8fcf4;
+}
+
+.perf-category-body {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.perf-category-gutter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  flex-shrink: 0;
+  border-left: 1px solid transparent;
+}
+
+.perf-category-gutter--link {
+  border-left-color: #e8d4b0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #8b6f47;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.perf-category-gutter--link:hover {
+  background: #f0e4cc;
+  color: #5c4a32;
+}
+
+.perf-category--complete .perf-category-gutter--link {
+  border-left-color: #c5dba0;
+}
+
+.perf-category-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.perf-category--complete .perf-category-header {
+  margin-bottom: 0;
+}
+
+.perf-category-body:has(.perf-bar) .perf-category-header {
+  margin-bottom: 0.5rem;
+}
+
+.perf-category-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.perf-category-check {
+  font-size: 1rem;
+  color: #b39c7a;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.perf-category--complete .perf-category-check {
+  color: #4a7228;
+}
+
+.perf-category-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.perf-category-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #5c4a32;
+}
+
+.perf-category-detail {
+  font-size: 0.78rem;
+  color: #8b6f47;
+  line-height: 1.4;
+}
+
+.perf-category-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.perf-category-score {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #5c4a32;
+  white-space: nowrap;
+}
+
+.perf-category-weight {
+  font-size: 0.75rem;
+  color: #8b6f47;
+  background: #faf4e8;
+  border: 1px solid #d9c4a0;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+
+.perf-category-binary-note {
+  display: block;
+  font-size: 0.72rem;
+  color: #a08060;
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+.perf-waiver-note {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: #8b6f47;
+  text-align: center;
+}

@@ -3,7 +3,9 @@ import { useEntities } from '../../contexts/EntityContext'
 import { useProgress } from '../../hooks/UseProgress'
 import PagePanel from '../common/PagePanel'
 import UniversalModalButton from '../common/UniversalModalButton'
+import { usePageGoals } from '../../hooks/UsePageGoals'
 import './SlayerPage.css'
+import './CollectionPage.css'
 
 // Quest groups — targets only; count/reward come from monster.slayerQuest in entities.json
 const QUEST_GROUPS = [
@@ -71,6 +73,7 @@ function QuestGroupCard({ group, kills, done }) {
 function SlayerPage() {
   const { items, loading } = useEntities()
   const progress = useProgress()
+  const pageGoals = usePageGoals()
   const [filter, setFilter] = useState('all')
 
   const { quests, totals } = useMemo(() => {
@@ -114,7 +117,14 @@ function SlayerPage() {
     <PagePanel>
       <div className="slayer-page">
         <header className="slayer-header">
-          <h1 className="slayer-title">Monster Slayer</h1>
+          <div className="collection-title-row">
+            <h1 className="slayer-title">Monster Eradication</h1>
+            {pageGoals.length > 0 && (
+              <div className="collection-page-goals">
+                {pageGoals.map(g => <UniversalModalButton key={g.id} item={g} variant="inline" />)}
+              </div>
+            )}
+          </div>
           {hasSaveData && (
             <div className="slayer-score-block">
               <div className="slayer-score-numbers">

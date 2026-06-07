@@ -59,6 +59,13 @@ const GROUPS = [
     ],
   },
   {
+    id: 'tree-fruits',
+    title: 'Tree Fruits',
+    names: [
+      'Apple', 'Apricot', 'Cherry', 'Orange', 'Peach', 'Pomegranate',
+    ],
+  },
+  {
     id: 'forageable-misc',
     title: 'Fish Tank & Other',
     names: [
@@ -130,6 +137,7 @@ function FullShipmentPage() {
       onFilter={setFilter}
       hasSaveData={progress.hasSaveData}
       keepGroups
+      quantityType="shipped"
       noSaveMessage="Upload your save file to track which items you've shipped."
     />
   )

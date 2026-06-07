@@ -1,0 +1,85 @@
+{
+  "categories": [
+    {
+      "id": "shipped",
+      "label": "Produce & Forage Shipped",
+      "weight": 15,
+      "detail": "Ship one of every item in the Farm & Forage tab of the collections menu.",
+      "linkPath": "/tracker/full-shipment"
+    },
+    {
+      "id": "golden-clock",
+      "label": "Golden Clock on Farm",
+      "weight": 10,
+      "detail": "Build the Gold Clock on your farm.",
+      "binary": true
+    },
+    {
+      "id": "monster-slayer",
+      "label": "Monster Eradication",
+      "weight": 10,
+      "detail": "Complete all 12 monster eradication goals.",
+      "binary": true,
+      "linkPath": "/tracker/slayer"
+    },
+    {
+      "id": "stardrops",
+      "label": "Found All Stardrops",
+      "weight": 10,
+      "detail": "Find all 7 Stardrops.",
+      "binary": true,
+      "mailFlags": ["CF_Fair", "CF_Fish", "CF_Mines", "CF_Sewer", "CF_Spouse", "CF_Statue", "museumComplete"]
+    },
+    {
+      "id": "cooking",
+      "label": "Cooking Recipes Made",
+      "weight": 10,
+      "detail": "Cook every recipe.",
+      "linkPath": "/tracker/cooking"
+    },
+    {
+      "id": "crafting",
+      "label": "Crafting Recipes Made",
+      "weight": 10,
+      "detail": "Craft every item. Wedding Ring not required.",
+      "linkPath": "/tracker/crafting"
+    },
+    {
+      "id": "fish",
+      "label": "Fish Caught",
+      "weight": 10,
+      "detail": "Catch every fish in the Fish tab of the collections menu.",
+      "linkPath": "/tracker/fishing"
+    },
+    {
+      "id": "friends",
+      "label": "Great Friends",
+      "weight": 11,
+      "detail": "Reach maximum hearts with every villager. Datable villagers max at 8 hearts; others at 10. Includes Kent (not available until Year 2).",
+      "romanceableMaxHearts": 8,
+      "nonRomanceableMaxHearts": 10
+    },
+    {
+      "id": "obelisks",
+      "label": "Obelisks on Farm",
+      "weight": 4,
+      "detail": "Build all four obelisks on your farm.",
+      "buildings": ["Earth Obelisk", "Water Obelisk", "Desert Obelisk", "Island Obelisk"]
+    },
+    {
+      "id": "farmer-level",
+      "label": "Farmer Level",
+      "weight": 5,
+      "detail": "Reach level 10 in all 5 skills (Farming, Mining, Fishing, Foraging, Combat).",
+      "maxLevel": 25
+    },
+    {
+      "id": "walnuts",
+      "label": "Golden Walnuts Found",
+      "weight": 5,
+      "detail": "Find all 130 Golden Walnuts on Ginger Island.",
+      "linkPath": "/tracker/golden-walnuts"
+    }
+  ],
+  "waiverCost": 500000
+}

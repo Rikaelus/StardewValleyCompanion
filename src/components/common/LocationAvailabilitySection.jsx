@@ -77,6 +77,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
   const rewardSources = allSources.filter(s => s.type === 'reward')
   const craneGameSources = allSources.filter(s => s.type === 'crane-game')
   const locationSources = allSources.filter(s => s.type === 'location')
+  const panningSources = allSources.filter(s => s.type === 'pan')
   // Sources with no type (freeform description + optional condition — e.g. ??? hat)
   const freeformSources = allSources.filter(s => !s.type && s.description)
   const hasBuyingInfo = shopSources.length > 0
@@ -88,7 +89,7 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
     breakableDropSources.length > 0 || chopTreeSources.length > 0 || shakeTreeSources.length > 0 ||
     tailoringSources.length > 0 || geodeSources.length > 0 ||
     otherSources.length > 0 || mailSources.length > 0 || rewardSources.length > 0 ||
-    craneGameSources.length > 0 || freeformSources.length > 0
+    craneGameSources.length > 0 || panningSources.length > 0 || freeformSources.length > 0
 
   const ownedTotal = hasSaveData && entity.gameId ? getOwnedCount(entity.gameId, entity) : 0
   const ownedByLocation = new Map()
@@ -892,6 +893,31 @@ function LocationAvailabilitySection({ entity, findById, findByGameId, onNavigat
                       <SeasonBadges seasons={src.seasons} compact />
                     </span>
                   )}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {panningSources.length > 0 && (
+        <div className="source-group">
+          <span className="modal-label">Panning:</span>
+          <div className="source-list">
+            {panningSources.map((src, i) => {
+              const qty = src.minStack == null ? null
+                : src.maxStack == null ? (src.minStack > 1 ? `×${src.minStack}+` : null)
+                : src.minStack === src.maxStack ? `×${src.minStack}`
+                : `×${src.minStack}–${src.maxStack}`
+              return (
+                <span key={i} className="source-entry">
+                  <span className="source-name source-name--indented">
+                    {src.location ?? (src.category === 'ore' ? 'Guaranteed ore (one type per session)' : 'Any panning spot')}
+                  </span>
+                  <span className="source-qualifiers">
+                    {qty && <span className="source-qualifier">{qty}</span>}
+                    {src.chance != null && <span className="source-qualifier">{formatChance(src.chance)}</span>}
+                  </span>
                 </span>
               )
             })}

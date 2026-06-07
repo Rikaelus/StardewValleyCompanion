@@ -47,6 +47,8 @@ export const FULL_SHIPMENT_NAMES = new Set([
   'Blackberry', 'Winter Root', 'Crystal Fruit', 'Snow Yam', 'Crocus',
   'Red Mushroom', 'Sunflower', 'Purple Mushroom', 'Grape', 'Spice Berry',
   'Magma Cap', 'Green Tea',
+  // Tree Fruits
+  'Apple', 'Apricot', 'Cherry', 'Orange', 'Peach', 'Pomegranate',
   // Animal Products
   'Egg (White)', 'Large Egg (White)', 'Egg (Brown)', 'Large Egg (Brown)',
   'Milk', 'Large Milk', 'Void Egg', 'Duck Egg', 'Goat Milk', 'L. Goat Milk',

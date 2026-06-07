@@ -38,7 +38,8 @@ Stardew keeps some loot logic in C# code, not data files. These need hand-curate
 
 - **`GameLocation.getFishingTreasure()`** — Fishing chest contents. Rules in `data/rules/fishing-chest-drops.json`. Sourced from wiki Fishing#Contents section.
 - **`ResourceClump.performToolAction()`** — Bone Node rare artifact drops. Folded into `data/rules/breakables.json` `fossil-node` entry (added 2026-05-14).
-- **`Tool.Pan.getPanItems()`** — Panning loot. Not currently extracted. Loot is mostly ores/gems already covered by other paths; not high-priority. If added later, would require similar hand-curated file.
+- **`Tool.Pan.getPanItems()`** — Panning loot. Now extracted via `data/rules/panning-drops.json` (hand-curated 2026-05-27). Injected as `type: 'pan'` sources onto 18 items. Displayed in LocationAvailabilitySection "Panning:" group and in a Pan tool's "Unveils" ModalSection.
+- **Bone Mill (`(BC)90`) outputs** — Produces one of 4 fertilizers randomly from any `bone_item` input. Doesn't fit the artisan pipeline (fixed non-artisan outputs), so handled via a dedicated injection block after entity merge (added 2026-05-27). `machine` sources are injected directly onto the fertilizer entities. `machine-names.json` intentionally excludes `(BC)90` to avoid the artisan pipeline. The parser now also handles negative tags (`!id_o_NNN`) and multi-output rules (one recipe per `OutputItem` entry) — both added for correctness but currently only triggered by the Bone Mill pattern.
 
 ## Known game-data inconsistencies we have to absorb
 

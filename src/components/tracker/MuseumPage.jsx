@@ -21,75 +21,27 @@ const GROUPS = [
 ]
 
 
-// Resolve the entity a source row points to using the Phase 2 normalized
-// fields. Some rows have no entity link (fishing-chest, secret-note-reward,
-// crafting recipes — handled separately by the caller).
-function sourceEntity(s, findById, findByGameId) {
-  if (s.entityId) return findById(s.entityId)
-  if (s.entityGameId) return findByGameId(s.entityGameId)
-  return null
-}
-
-const INLINE_SOURCE_THRESHOLD = 4
-
-function ListRow({ item, onClick, findById, findByGameId }) {
-  const iconSrc = item.icon
-    ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
-    : null
-
-  // Build a deduped list of source representations. Each entry is either an
-  // entity (rendered as a UniversalModalButton) or a static label (rendered as text).
-  const renderItems = []  // [{ kind: 'entity', entity } | { kind: 'label', label }]
+function sourceDesc(item, findById, findByGameId) {
+  const labels = []
   const seenEntityIds = new Set()
   const seenLabels = new Set()
   for (const s of (item.sources ?? [])) {
     if (s.type === 'fishing-chest') {
-      if (!seenLabels.has('fishing-chest')) {
-        seenLabels.add('fishing-chest')
-        renderItems.push({ kind: 'label', key: 'fishing-chest', label: 'Fishing Chest' })
-      }
+      if (!seenLabels.has('fishing-chest')) { seenLabels.add('fishing-chest'); labels.push('Fishing Chest') }
       continue
     }
     if (s.type === 'secret-note-reward') {
       const key = `secret-note-${s.noteNumber}`
-      if (!seenLabels.has(key)) {
-        seenLabels.add(key)
-        renderItems.push({ kind: 'label', key, label: `Secret Note #${s.noteNumber}` })
-      }
+      if (!seenLabels.has(key)) { seenLabels.add(key); labels.push(`Secret Note #${s.noteNumber}`) }
       continue
     }
-    const ent = sourceEntity(s, findById, findByGameId)
+    const ent = s.entityId ? findById(s.entityId) : s.entityGameId ? findByGameId(s.entityGameId) : null
     if (!ent || seenEntityIds.has(ent.id)) continue
     seenEntityIds.add(ent.id)
-    renderItems.push({ kind: 'entity', key: ent.id, entity: ent })
+    labels.push(ent.name)
   }
-  const inline = renderItems.length > 0 && renderItems.length <= INLINE_SOURCE_THRESHOLD
-
-  return (
-    <li className="museum-list-row">
-      <button type="button" className="museum-list-button" onClick={() => onClick(item)}>
-        {iconSrc && <img src={iconSrc} alt="" className="museum-list-icon" />}
-        <span className="museum-list-name">{item.name}</span>
-      </button>
-      {inline ? (
-        <span className="museum-source-buttons" onClick={(e) => e.stopPropagation()}>
-          {renderItems.map(r => r.kind === 'entity' ? (
-            <UniversalModalButton
-              key={r.key}
-              item={r.entity}
-              variant="inline"
-              showIcon
-              stopPropagation
-            />
-          ) : (
-            <span key={r.key} className="museum-source-label">{r.label}</span>
-          ))}
-        </span>
-      ) : (
-        <span className="museum-list-cta">{renderItems.length} sources — click row →</span>
-      )}
-    </li>
-  )
+  if (!labels.length) return null
+  return labels.length <= 3 ? labels.join(', ') : `${labels.slice(0, 3).join(', ')} +${labels.length - 3}`
 }
 
 function MuseumPage() {
@@ -197,15 +149,26 @@ function MuseumPage() {
 
         {hasSaveData && showOnlyNeeded ? (
           <section className="museum-group">
-            <ul className="museum-list">
-              {groups
-                .flatMap(g => g.items)
-                .filter(it => !progress.isMuseumDonated(it.gameId))
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map(it => (
-                  <ListRow key={it.id} item={it} onClick={openModal} findById={findById} findByGameId={findByGameId} />
-                ))}
-            </ul>
+            {totals.missing === 0 ? (
+              <p className="museum-complete-note">You've donated everything — the museum is complete!</p>
+            ) : (
+              <div className="museum-card-grid">
+                {groups
+                  .flatMap(g => g.items)
+                  .filter(it => !progress.isMuseumDonated(it.gameId))
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .map(it => (
+                    <UniversalModalButton
+                      key={it.id}
+                      item={it}
+                      variant="card"
+                      cardState="needed"
+                      cardDesc={sourceDesc(it, findById, findByGameId)}
+                      onNavigate={openModal}
+                    />
+                  ))}
+              </div>
+            )}
           </section>
         ) : (
           <div className="museum-groups">
@@ -219,15 +182,20 @@ function MuseumPage() {
                     </span>
                   )}
                 </header>
-                <div className="museum-grid">
-                  {group.items.map(it => (
-                    <UniversalModalButton
-                      key={it.id}
-                      item={it}
-                      variant="collection-tile"
-                      donated={hasSaveData ? progress.isMuseumDonated(it.gameId) : null}
-                    />
-                  ))}
+                <div className="museum-card-grid">
+                  {group.items.map(it => {
+                    const donated = hasSaveData ? progress.isMuseumDonated(it.gameId) : null
+                    return (
+                      <UniversalModalButton
+                        key={it.id}
+                        item={it}
+                        variant="card"
+                        cardState={donated === null ? null : donated ? 'earned' : 'needed'}
+                        cardDesc={sourceDesc(it, findById, findByGameId)}
+                        onNavigate={openModal}
+                      />
+                    )
+                  })}
                 </div>
               </section>
             ))}

@@ -21,6 +21,8 @@ import WellReadPage from './components/tracker/WellReadPage'
 import GoldenWalnutPage from './components/tracker/GoldenWalnutPage'
 import FieldOfficePage from './components/tracker/FieldOfficePage'
 import IslandShrinePage from './components/tracker/IslandShrinePage'
+import PerfectionPage from './components/tracker/PerfectionPage'
+import TodoPage from './components/tracker/TodoPage'
 import Footer from './components/layout/Footer'
 import AppHeader from './components/layout/AppHeader'
 import HeaderSaveZone from './components/layout/HeaderSaveZone'
@@ -62,6 +64,8 @@ const MainContent = memo(function MainContent() {
               <Route path="/tracker/golden-walnuts" element={<GoldenWalnutPage />} />
               <Route path="/tracker/field-office" element={<FieldOfficePage />} />
               <Route path="/tracker/island-shrine" element={<IslandShrinePage />} />
+              <Route path="/tracker/perfection" element={<PerfectionPage />} />
+              <Route path="/todo" element={<TodoPage />} />
               <Route path="/fish" element={<EntityListPage pageType="fish" />} />
               <Route path="/artisan/*" element={<EntityListPage pageType="artisan" />} />
               <Route path="/forage" element={<EntityListPage pageType="forage" />} />
@@ -195,13 +199,13 @@ function App() {
 
   return (
     <HashRouter>
-      <EntityProvider>
-        <PlayerProvider>
+      <PlayerProvider>
+        <EntityProvider>
           <ModalProvider>
             <AppShell searchOpen={searchOpen} setSearchOpen={setSearchOpen} />
           </ModalProvider>
-        </PlayerProvider>
-      </EntityProvider>
+        </EntityProvider>
+      </PlayerProvider>
     </HashRouter>
   )
 }

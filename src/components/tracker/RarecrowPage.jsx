@@ -6,70 +6,17 @@ import { useOpenModal } from '../../contexts/ModalContext'
 import UniversalModalButton from '../common/UniversalModalButton'
 import './RarecrowPage.css'
 
-function ItemTile({ item, owned, onClick }) {
-  const iconSrc = item.icon
-    ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
-    : null
-  const tileClass = owned == null ? 'rarecrow-tile--neutral' : owned ? 'rarecrow-tile--owned' : 'rarecrow-tile--missing'
-  const tileTitle = owned == null ? item.name : `${item.name} — ${owned ? 'Obtained' : 'Not obtained'}`
-  return (
-    <button
-      type="button"
-      onClick={() => onClick(item)}
-      className={`rarecrow-tile ${tileClass}`}
-      title={tileTitle}
-    >
-      {iconSrc ? (
-        <img src={iconSrc} alt="" className="rarecrow-tile-icon" />
-      ) : (
-        <span className="rarecrow-tile-fallback">{item.name?.slice(0, 2).toUpperCase()}</span>
-      )}
-    </button>
-  )
-}
-
-function sourceEntity(s, findById, findByGameId) {
-  if (s.entityId) return findById(s.entityId)
-  if (s.entityGameId) return findByGameId(s.entityGameId)
-  return null
-}
-
-function ListRow({ item, onClick, findById, findByGameId }) {
-  const iconSrc = item.icon
-    ? (item.icon.startsWith('/') ? item.icon : `/${item.icon}`)
-    : null
-
-  const renderItems = []
-  const seenEntityIds = new Set()
-  const seenLabels = new Set()
-  for (const s of (item.sources ?? [])) {
-    const ent = sourceEntity(s, findById, findByGameId)
-    if (!ent || seenEntityIds.has(ent.id)) continue
-    seenEntityIds.add(ent.id)
-    renderItems.push({ kind: 'entity', key: ent.id, entity: ent })
+function sourceLabel(item, findById, findByGameId) {
+  const sources = item.sources ?? []
+  const names = []
+  const seen = new Set()
+  for (const s of sources) {
+    const ent = s.entityId ? findById(s.entityId) : s.entityGameId ? findByGameId(s.entityGameId) : null
+    if (!ent || seen.has(ent.id)) continue
+    seen.add(ent.id)
+    names.push(ent.name)
   }
-
-  return (
-    <li className="rarecrow-list-row">
-      <button type="button" className="rarecrow-list-button" onClick={() => onClick(item)}>
-        {iconSrc && <img src={iconSrc} alt="" className="rarecrow-list-icon" />}
-        <span className="rarecrow-list-name">{item.name}</span>
-      </button>
-      {renderItems.length > 0 ? (
-        <span className="rarecrow-source-buttons" onClick={(e) => e.stopPropagation()}>
-          {renderItems.map(r => (
-            <UniversalModalButton
-              key={r.key}
-              item={r.entity}
-              variant="inline"
-              showIcon
-              stopPropagation
-            />
-          ))}
-        </span>
-      ) : null}
-    </li>
-  )
+  return names.join(', ') || null
 }
 
 function RarecrowPage() {
@@ -157,26 +104,23 @@ function RarecrowPage() {
           )}
         </div>
 
-        {hasSaveData && showOnlyNeeded ? (
-          <ul className="rarecrow-list">
-            {displayed.map(r => (
-              <ListRow key={r.id} item={r} onClick={openModal} findById={findById} findByGameId={findByGameId} />
-            ))}
-          </ul>
-        ) : (
-          <div className="rarecrow-group">
-            <div className="rarecrow-grid">
-              {displayed.map(r => (
-                <ItemTile
-                  key={r.id}
+        <ul className="rarecrow-card-grid">
+          {displayed.map(r => {
+            const owned = hasSaveData ? progress.isOwned(r.gameId) : null
+            const cardState = owned === null ? null : owned ? 'earned' : 'needed'
+            const desc = sourceLabel(r, findById, findByGameId)
+            return (
+              <li key={r.id}>
+                <UniversalModalButton
                   item={r}
-                  owned={hasSaveData ? progress.isOwned(r.gameId) : null}
-                  onClick={openModal}
+                  variant="card"
+                  cardState={cardState}
+                  cardDesc={desc}
                 />
-              ))}
-            </div>
-          </div>
-        )}
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </PagePanel>
   )

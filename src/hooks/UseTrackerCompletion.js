@@ -3,11 +3,15 @@ import { useEntities } from '../contexts/EntityContext'
 import { useProgress } from './UseProgress'
 import { usePlayer } from '../contexts/PlayerContext'
 import { computeShrineScore } from '../utils/ShrineScore'
+import { computePerfectionScore } from '../utils/PerfectionScore'
 import upgradeRules from '../../data/rules/farmhouse-upgrades.json'
+import aquariumFish from '../../data/game-exports/AquariumFish.json'
 import {
   POLYCULTURE_NAMES,
   FULL_SHIPMENT_NAMES,
 } from '../utils/AchievementProgress'
+
+const AQUARIUM_IDS = new Set(Object.keys(aquariumFish))
 
 const PLACEHOLDER_GAME_IDS = new Set(['(O)0', '(O)2', '(O)10'])
 const TOTAL_WALNUTS = 130
@@ -30,6 +34,7 @@ export function useTrackerCompletion() {
 
     if (loading || !progress.hasSaveData || !saveData) {
       return new Map([
+        empty('/tracker/perfection'),
         empty('/tracker/bundles'),
         empty('/tracker/shrine'),
         empty('/tracker/museum'),
@@ -73,7 +78,7 @@ export function useTrackerCompletion() {
     const achievementsDone = achievements.filter(a => progress.hasAchievement(a.achievementId)).length
 
     // ── Fish Caught ────────────────────────────────────────────────────────────
-    const fish = items.filter(i => i.type === 'fish')
+    const fish = items.filter(i => AQUARIUM_IDS.has(String(i.gameId).replace(/^\(O\)/, '')))
     const fishDone = fish.filter(f => progress.isFishCaught(f.gameId)).length
 
     // ── Crops Shipped (Polyculture — shipped any of each polyculture crop) ──────
@@ -159,7 +164,10 @@ export function useTrackerCompletion() {
     const foPlantsRight = saveData.fieldOfficePieces?.plantsRestoredRight ? 1 : 0
     const fieldOfficeDone = foPiecesDone + foPlantsLeft + foPlantsRight
 
+    const perfection = computePerfectionScore(items, saveData)
+
     return new Map([
+      ['/tracker/perfection',   { done: perfection.overallPct, total: 100 }],
       ['/tracker/bundles',      { done: bundlesDone,      total: bundlesTotal }],
       ['/tracker/shrine',       { done: candlesDone,      total: TOTAL_CANDLES }],
       ['/tracker/museum',       { done: museumDone,        total: donatable.length }],

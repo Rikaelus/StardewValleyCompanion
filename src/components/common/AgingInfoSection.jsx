@@ -29,7 +29,7 @@ function AgingInfoSection({ entity }) {
               <strong>Gold → Iridium:</strong> {agingDaysPerTier} days
             </span>
 
-            <span style={{ fontWeight: 'bold', color: '#9c27b0' }}>◆</span>
+            <span className="quality-symbol quality-symbol--sell quality-symbol--iridium">◆</span>
             <span style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>
               <strong>Total to Iridium:</strong> {agingDaysToIridium} days
             </span>
